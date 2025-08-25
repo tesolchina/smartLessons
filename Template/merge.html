@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+  <meta charset="UTF-8">
+  <title>Research Module + Fixed-ratio Movable Avatar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    #main-iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      display: block;
+    }
+    .avatar-floating-box {
+      position: fixed;
+      right: 32px;
+      bottom: 32px;
+      width: 340px;
+      height: 400px;
+      min-width: 170px;
+      min-height: 200px;
+      max-width: 96vw;
+      max-height: 96vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      border: 2px solid #fff;
+      z-index: 100001;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      touch-action: none;
+      transition: box-shadow 0.2s;
+      user-select: none;
+    }
+    .avatar-floating-box.active {
+      box-shadow: 0 12px 48px rgba(80,60,180,0.25);
+      border-color: #7b7ae8;
+    }
+    .avatar-box-header {
+      cursor: move;
+      background: rgba(255,255,255,0.85);
+      padding: 5px 8px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 28px;
+      z-index: 2;
+      user-select: none;
+    }
+    .avatar-box-header .close-btn {
+      font-size: 21px;
+      cursor: pointer;
+      color: #4338ca;
+      opacity: 0.75;
+      border-radius: 4px;
+      transition: background 0.18s;
+      padding: 0 7px;
+      background: transparent;
+      border: none;
+      outline: none;
+      line-height: 1;
+      margin-left: 8px;
+      user-select: none;
+    }
+    .avatar-box-header .close-btn:hover, .avatar-box-header .close-btn:focus {
+      background: #ddd;
+      opacity: 1;
+    }
+    .avatar-iframe {
+      width: 100%;
+      height: 100%;
+      min-width: 80px;
+      min-height: 80px;
+      border: none;
+      background: transparent;
+      flex: 1 1 0%;
+      display: block;
+    }
+    .avatar-resize-handle {
+      position: absolute;
+      bottom: 3px;
+      right: 3px;
+      width: 32px;
+      height: 32px;
+      cursor: se-resize;
+      z-index: 10;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      pointer-events: auto;
+      user-select: none;
+      background: transparent;
+    }
+    .avatar-resize-handle svg {
+      width: 22px;
+      height: 22px;
+      opacity: 0.7;
+      color: #a5b4fc;
+      pointer-events: none;
+    }
+    @media (max-width: 700px) {
+      .avatar-floating-box {
+        right: 6px !important;
+        bottom: 6px !important;
+        width: 86vw !important;
+        height: calc(86vw * 1.176) !important; /* 1/0.85 ≈ 1.176 */
+        min-width: 120px;
+        min-height: 120px;
+        max-width: 98vw;
+        max-height: 90vw;
+      }
+    }
+  </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body>
+  <iframe id="main-iframe" src="interactive.html" title="Interactive Research Module"></iframe>
+  <div id="avatarBox" class="avatar-floating-box" style="display:flex;">
+    <div class="avatar-box-header" id="avatarBoxHeader">
+      <button class="close-btn" id="avatarBoxCloseBtn" title="Hide" aria-label="Hide avatar">×</button>
+    </div>
+    <iframe class="avatar-iframe" src="simpleAvatar01.html" title="Digital Sidekick"></iframe>
+    <div class="avatar-resize-handle" id="avatarResizeHandle" title="Resize" aria-label="Resize avatar box">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M14 20H20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 20L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+  </div>
+  <button id="restoreAvatarBtn" style="display:none;position:fixed;right:20px;bottom:20px;z-index:100002" class="rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 text-white px-4 py-2 shadow-xl text-sm font-semibold hover:scale-105 transition">
+    Show Sidekick
+  </button>
+  <script>
+    (function(){
+      const avatarBox = document.getElementById('avatarBox');
+      const header = document.getElementById('avatarBoxHeader');
+      const resizeHandle = document.getElementById('avatarResizeHandle');
+      const closeBtn = document.getElementById('avatarBoxCloseBtn');
+      const restoreBtn = document.getElementById('restoreAvatarBtn');
+      const ASPECT = 0.85; // width/height
+
+      // Default sizes
+      function getDefaultBox() {
+        const isMobile = window.innerWidth <= 700;
+        if (isMobile) {
+          let width = Math.min(window.innerWidth * 0.86, 360);
+          let height = width / ASPECT;
+          if (height > window.innerHeight * 0.85) {
+            height = window.innerHeight * 0.85;
+            width = height * ASPECT;
+          }
+          return {
+            width: width,
+            height: height,
+            right: 6,
+            bottom: 6
+          };
+        }
+        return {
+          width: 340,
+          height: 400,
+          right: 32,
+          bottom: 32
+        };
+      }
+      function setDefaultPositionAndSize() {
+        const box = getDefaultBox();
+        avatarBox.style.width = box.width + 'px';
+        avatarBox.style.height = box.height + 'px';
+        avatarBox.style.left = 'auto';
+        avatarBox.style.top = 'auto';
+        avatarBox.style.right = box.right + 'px';
+        avatarBox.style.bottom = box.bottom + 'px';
+      }
+      setDefaultPositionAndSize();
+
+      // DRAGGING
+      let isDragging = false, dragStartX, dragStartY, dragStartLeft, dragStartTop;
+      header.addEventListener('mousedown', function(e){
+        isDragging = true;
+        avatarBox.classList.add('active');
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        const rect = avatarBox.getBoundingClientRect();
+        dragStartLeft = rect.left;
+        dragStartTop = rect.top;
+        document.body.style.userSelect = 'none';
+      });
+      document.addEventListener('mousemove', function(e){
+        if (!isDragging) return;
+        let left = dragStartLeft + (e.clientX - dragStartX);
+        let top = dragStartTop + (e.clientY - dragStartY);
+        const boxW = avatarBox.offsetWidth, boxH = avatarBox.offsetHeight;
+        left = Math.max(0, Math.min(left, window.innerWidth - boxW));
+        top = Math.max(0, Math.min(top, window.innerHeight - boxH));
+        avatarBox.style.left = left + 'px';
+        avatarBox.style.top = top + 'px';
+        avatarBox.style.right = 'auto';
+        avatarBox.style.bottom = 'auto';
+      });
+      document.addEventListener('mouseup', function(){
+        isDragging = false;
+        avatarBox.classList.remove('active');
+        document.body.style.userSelect = '';
+      });
+      // Touch drag
+      header.addEventListener('touchstart', function(e){
+        isDragging = true;
+        avatarBox.classList.add('active');
+        dragStartX = e.touches[0].clientX;
+        dragStartY = e.touches[0].clientY;
+        const rect = avatarBox.getBoundingClientRect();
+        dragStartLeft = rect.left;
+        dragStartTop = rect.top;
+        document.body.style.userSelect = 'none';
+      }, {passive:false});
+      document.addEventListener('touchmove', function(e){
+        if (!isDragging) return;
+        let left = dragStartLeft + (e.touches[0].clientX - dragStartX);
+        let top = dragStartTop + (e.touches[0].clientY - dragStartY);
+        const boxW = avatarBox.offsetWidth, boxH = avatarBox.offsetHeight;
+        left = Math.max(0, Math.min(left, window.innerWidth - boxW));
+        top = Math.max(0, Math.min(top, window.innerHeight - boxH));
+        avatarBox.style.left = left + 'px';
+        avatarBox.style.top = top + 'px';
+        avatarBox.style.right = 'auto';
+        avatarBox.style.bottom = 'auto';
+        e.preventDefault();
+      }, {passive:false});
+      document.addEventListener('touchend', function(){
+        isDragging = false;
+        avatarBox.classList.remove('active');
+        document.body.style.userSelect = '';
+      });
+
+      // RESIZE (fixed aspect ratio)
+      let isResizing = false, resizeStartX, resizeStartY, resizeStartW, resizeStartH;
+      resizeHandle.addEventListener('mousedown', function(e){
+        isResizing = true;
+        avatarBox.classList.add('active');
+        resizeStartX = e.clientX;
+        resizeStartY = e.clientY;
+        resizeStartW = avatarBox.offsetWidth;
+        resizeStartH = avatarBox.offsetHeight;
+        document.body.style.userSelect = 'none';
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      document.addEventListener('mousemove', function(e){
+        if (!isResizing) return;
+        // Compute change so width/height stays at ASPECT ratio
+        let delta = Math.max(e.clientX - resizeStartX, (e.clientY - resizeStartY) / ASPECT);
+        let newW = Math.max(170, resizeStartW + delta);
+        let newH = newW / ASPECT;
+        // Clamp to viewport
+        if (newW > window.innerWidth - 10) {
+          newW = window.innerWidth - 10;
+          newH = newW / ASPECT;
+        }
+        if (newH > window.innerHeight - 10) {
+          newH = window.innerHeight - 10;
+          newW = newH * ASPECT;
+        }
+        avatarBox.style.width = newW + 'px';
+        avatarBox.style.height = newH + 'px';
+      });
+      document.addEventListener('mouseup', function(){
+        isResizing = false;
+        avatarBox.classList.remove('active');
+        document.body.style.userSelect = '';
+      });
+      // Touch resize with fixed ratio
+      resizeHandle.addEventListener('touchstart', function(e){
+        isResizing = true;
+        avatarBox.classList.add('active');
+        resizeStartX = e.touches[0].clientX;
+        resizeStartY = e.touches[0].clientY;
+        resizeStartW = avatarBox.offsetWidth;
+        resizeStartH = avatarBox.offsetHeight;
+        document.body.style.userSelect = 'none';
+        e.stopPropagation();
+        e.preventDefault();
+      }, {passive:false});
+      document.addEventListener('touchmove', function(e){
+        if (!isResizing) return;
+        let delta = Math.max(e.touches[0].clientX - resizeStartX, (e.touches[0].clientY - resizeStartY) / ASPECT);
+        let newW = Math.max(120, resizeStartW + delta);
+        let newH = newW / ASPECT;
+        if (newW > window.innerWidth - 10) {
+          newW = window.innerWidth - 10;
+          newH = newW / ASPECT;
+        }
+        if (newH > window.innerHeight - 10) {
+          newH = window.innerHeight - 10;
+          newW = newH * ASPECT;
+        }
+        avatarBox.style.width = newW + 'px';
+        avatarBox.style.height = newH + 'px';
+        e.preventDefault();
+      }, {passive:false});
+      document.addEventListener('touchend', function(){
+        isResizing = false;
+        avatarBox.classList.remove('active');
+        document.body.style.userSelect = '';
+      });
+
+      // CLOSE/HIDE/SHOW
+      closeBtn.addEventListener('click', function(){
+        avatarBox.style.display = 'none';
+        restoreBtn.style.display = 'block';
+      });
+      restoreBtn.addEventListener('click', function(){
+        setDefaultPositionAndSize();
+        avatarBox.style.display = 'flex';
+        restoreBtn.style.display = 'none';
+      });
+
+      // Double click anywhere to restore if hidden
+      window.addEventListener('dblclick', function(e){
+        if(avatarBox.style.display === 'none') {
+          setDefaultPositionAndSize();
+          avatarBox.style.display = 'flex';
+          restoreBtn.style.display = 'none';
+        }
+      });
+
+      // On window resize, keep avatar on screen, reset if screen too small
+      window.addEventListener('resize', function(){
+        let rect = avatarBox.getBoundingClientRect();
+        let changed = false;
+        if(rect.right > window.innerWidth) {
+          avatarBox.style.left = (window.innerWidth - rect.width - 10) + 'px';
+          avatarBox.style.right = 'auto';
+          changed = true;
+        }
+        if(rect.bottom > window.innerHeight) {
+          avatarBox.style.top = (window.innerHeight - rect.height - 10) + 'px';
+          avatarBox.style.bottom = 'auto';
+          changed = true;
+        }
+        if(rect.left < 0) {
+          avatarBox.style.left = '10px';
+          avatarBox.style.right = 'auto';
+          changed = true;
+        }
+        if(rect.top < 0) {
+          avatarBox.style.top = '10px';
+          avatarBox.style.bottom = 'auto';
+          changed = true;
+        }
+        if(window.innerWidth < 200 || window.innerHeight < 200) {
+          setDefaultPositionAndSize();
+        }
+      });
+
+      window.addEventListener('orientationchange', function(){
+        setTimeout(setDefaultPositionAndSize, 400);
+      });
+    })();
+  </script>
+
+
+</body></html>
