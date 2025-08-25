@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Roadmap Visualization</title>
+    <title>GCAP 3226 Course Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -82,7 +82,92 @@
     <div class="min-h-screen p-6">
         <!-- Header -->
         <div class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">GCAP3226 Course Roadmap</h1>
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">GCAP 3226 Course Hub</h1>
+        </div>
+
+        <!-- Course Overview Section -->
+        <div class="max-w-6xl mx-auto mb-12 bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-8 border border-primary/20">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">📚 Course Overview</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Course Title -->
+                <div class="lg:col-span-3 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-3">Course Title</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                        <span class="font-semibold">GCAP3226</span> - Empowering Citizens Through Data: Participatory Policy Analysis for Hong Kong
+                    </p>
+                </div>
+
+                <!-- Instructors -->
+                <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4">👩‍🏫 Instructors</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-purple-100 dark:bg-purple-900/30 rounded-lg p-3 flex-shrink-0">
+                                <span class="text-purple-600 dark:text-purple-400 font-bold">Dr. Talia Wu</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <span class="font-medium">Math Department</span><br>
+                                    <a href="mailto:taliawu17@hkbu.edu.hk" class="text-primary hover:underline">taliawu17@hkbu.edu.hk</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-100 dark:bg-green-900/30 rounded-lg p-3 flex-shrink-0">
+                                <span class="text-green-600 dark:text-green-400 font-bold">Dr. Simon Wang</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <span class="font-medium">Language Centre</span><br>
+                                    <a href="mailto:simonwang@hkbu.edu.hk" class="text-primary hover:underline">simonwang@hkbu.edu.hk</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Objectives -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4">🎯 Course Objectives</h3>
+                    <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Equip students with analytical tools for data-informed policymaking in Hong Kong</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Integrate quantitative and qualitative insights to address social issues aligned with UN SDGs</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Evaluate government data use for transparency</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Engage students in practical projects for experiential learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Toggle Section -->
+        <div class="max-w-6xl mx-auto mb-8">
+            <div class="text-center">
+                <button onclick="toggleRoadmap()" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors shadow-lg">
+                    <span id="roadmapToggleText">📅 Show Course Roadmap</span>
+                    <svg id="roadmapToggleIcon" class="ml-2 w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Container (Hidden by default) -->
+        <div id="roadmapContainer" class="hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">📅 Course Roadmap</h2>
             <!-- Color Legend -->
             <div class="mt-4 flex justify-center flex-wrap gap-4 text-xs">
                 <div class="flex items-center">
@@ -239,6 +324,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <!-- Course Introduction Slides (Hidden by default) -->
@@ -999,6 +1085,31 @@
                 }
             }
         });
+
+        // Roadmap toggle functionality
+        function toggleRoadmap() {
+            const container = document.getElementById('roadmapContainer');
+            const toggleText = document.getElementById('roadmapToggleText');
+            const toggleIcon = document.getElementById('roadmapToggleIcon');
+            
+            if (container.classList.contains('hidden')) {
+                // Show roadmap
+                container.classList.remove('hidden');
+                toggleText.textContent = '📅 Hide Course Roadmap';
+                toggleIcon.style.transform = 'rotate(180deg)';
+                // Smooth scroll to roadmap
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                // Hide roadmap
+                container.classList.add('hidden');
+                toggleText.textContent = '📅 Show Course Roadmap';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
     </script>
 </body>
 </html>
+
+
