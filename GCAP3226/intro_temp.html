@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP 3226 Course Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .week-card {
+            transition: all 0.3s ease;
+        }
+        .week-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(93, 92, 222, 0.15);
+        }
+        .assessment-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .timeline-connector {
+            position: relative;
+        }
+        .timeline-connector::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(135deg, #5D5CDE, #7B7AE8);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .week-node {
+            position: relative;
+            z-index: 10;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .zigzag-line {
+            stroke: #5D5CDE;
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 5,5;
+            animation: dash 2s linear infinite;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 overflow-x-auto">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="min-h-screen p-6">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">GCAP 3226 Course Hub</h1>
+        </div>
+
+        <!-- Course Overview Section -->
+        <section class="max-w-3xl mx-auto mb-10 bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-primary/20">
+            <h2 class="text-2xl font-bold text-primary mb-4">Course Overview</h2>
+            <div class="mb-2">
+                <span class="font-semibold text-gray-700 dark:text-gray-200">Course Title:</span>
+                <span class="text-gray-800 dark:text-gray-100">GCAP3226 - Empowering Citizens Through Data: Participatory Policy Analysis for Hong Kong</span>
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold text-gray-700 dark:text-gray-200">Instructors:</span>
+                <span class="text-gray-800 dark:text-gray-100">
+                    Dr. Talia Wu (Math Department, <a href="mailto:taliawu17@hkbu.edu.hk" class="text-primary underline">taliawu17@hkbu.edu.hk</a>), 
+                    Dr. Simon Wang (Language Centre, <a href="mailto:simonwang@hkbu.edu.hk" class="text-primary underline">simonwang@hkbu.edu.hk</a>)
+                </span>
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold text-gray-700 dark:text-gray-200">Course Objectives:</span>
+                <span class="text-gray-800 dark:text-gray-100">
+                    This course equips students with analytical tools and interdisciplinary approaches for data-informed policymaking in Hong Kong. It integrates quantitative and qualitative insights to address social issues aligned with UN SDGs, evaluates government data use for transparency, and engages students in practical projects for experiential learning.
+                </span>
+            </div>
+        </section>
+
+        <!-- Toggle Button for Course Roadmap -->
+        <div class="flex justify-center mb-6">
+            <button id="toggleRoadmapBtn" onclick="toggleRoadmap()" class="px-6 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+                Show Course Roadmap
+            </button>
+        </div>
+
+        <!-- Course Roadmap Section (Initially Hidden) -->
+        <section id="courseRoadmapSection" class="hidden">
+            <!-- ...existing roadmap content... -->
+            <!-- Color Legend -->
+            <div class="text-center mb-8">
+                <div class="mt-4 flex justify-center flex-wrap gap-4 text-xs">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-green-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">In-class Exercises</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-blue-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Reflective Essays</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-purple-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Presentations</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-orange-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Reports</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-red-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Final Deliverables</span>
+                    </div>
+                </div>
+            </div>
+            <!-- S-shaped Timeline Container -->
+            <div class="relative w-full max-w-7xl mx-auto">
+                <!-- Animated zigzag line using SVG -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 800">
+                    <path class="zigzag-line" d="M 100 100 L 300 100 L 500 200 L 700 200 L 900 300 L 700 400 L 500 400 L 300 500 L 100 500 L 300 600 L 500 600 L 700 700 L 900 700"></path>
+                </svg>
+                <!-- Week cards positioned in S-shape -->
+                <div class="relative z-10">
+                    <!-- ...existing roadmap week cards... -->
+                    <!-- Copy all roadmap week cards here from your original file -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ...existing code for course intro slides, assessment, etc... -->
+        <!-- Place all the rest of your original content here, after the roadmap section -->
+        <!-- ...existing code... -->
+        <!-- Course Introduction Slides (Hidden by default) -->
+        <div id="courseIntroSection" class="hidden mt-12 bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-6 max-w-6xl mx-auto border border-primary/20">
+            <!-- ...existing code for slides... -->
+        </div>
+        <!-- ...existing code for fullscreen modal, assessment, etc... -->
+        <!-- ...existing code... -->
+    </div>
+
+    <script>
+        // Toggle Course Roadmap Section
+        function toggleRoadmap() {
+            const roadmap = document.getElementById('courseRoadmapSection');
+            const btn = document.getElementById('toggleRoadmapBtn');
+            roadmap.classList.toggle('hidden');
+            if (!roadmap.classList.contains('hidden')) {
+                btn.textContent = 'Hide Course Roadmap';
+                roadmap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                btn.textContent = 'Show Course Roadmap';
+            }
+        }
+
+        // ...existing JS code for slides, assessment tabs, etc...
+        // (Copy all your original <script> content here)
+        // ...existing code...
+    </script>
+</body>
+</html>
