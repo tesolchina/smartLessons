@@ -1,0 +1,1216 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCLC 1008 University English I</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .week-card {
+            transition: all 0.3s ease;
+        }
+        .week-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(93, 92, 222, 0.15);
+        }
+        .assessment-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .timeline-connector {
+            position: relative;
+        }
+        .timeline-connector::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(135deg, #5D5CDE, #7B7AE8);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .week-node {
+            position: relative;
+            z-index: 10;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .zigzag-line {
+            stroke: #5D5CDE;
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 5,5;
+            animation: dash 2s linear infinite;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body class="bg-white dark:bg-gray-900 overflow-x-auto">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="min-h-screen p-6">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">UCLC 1008 University English I</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Section 37 • Dr. Simon Wang • Language Centre</p>
+        </div>
+
+        <!-- Course Overview Section -->
+        <div class="max-w-6xl mx-auto mb-12 bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-8 border border-primary/20">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">📚 Course Overview</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Course Title -->
+                <div class="lg:col-span-3 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-3">Course Title</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                        <span class="font-semibold">UCLC1008</span> - University English I
+                    </p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">3 Units • Prerequisites: None • Medium: English</p>
+                </div>
+
+                <!-- Instructor -->
+                <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4">👨‍🏫 Course Instructor</h3>
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 dark:bg-blue-900/30 rounded-lg p-4 flex-shrink-0">
+                            <span class="text-blue-600 dark:text-blue-400 font-bold text-lg">Dr. Simon Wang</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                                <span class="font-medium">Language Centre, HKBU</span><br>
+                                <a href="mailto:simonwang@hkbu.edu.hk" class="text-primary hover:underline">simonwang@hkbu.edu.hk</a>
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Office Hours: By appointment</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                        <p><strong>Course Coordinator:</strong> Leo Yu</p>
+                        <p><strong>Section:</strong> 37</p>
+                    </div>
+                </div>
+
+                <!-- Course Objectives -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4">🎯 Course Aims</h3>
+                    <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Enhance critical reading, listening, academic writing, and speaking skills</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Introduce academic arguments and various argumentation models</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Develop critical thinking and analytical skills</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Foster independent learning through reflection and self-assessment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Toggle Section -->
+        <div class="max-w-6xl mx-auto mb-8">
+            <div class="text-center">
+                <button onclick="toggleRoadmap()" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors shadow-lg">
+                    <span id="roadmapToggleText">📅 Show Course Roadmap</span>
+                    <svg id="roadmapToggleIcon" class="ml-2 w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Container (Hidden by default) -->
+        <div id="roadmapContainer" class="hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">📅 Course Roadmap</h2>
+            <!-- Color Legend -->
+            <div class="mt-4 flex justify-center flex-wrap gap-4 text-xs">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Academic Writing Quizzes</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-blue-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Argument Construction</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-purple-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Critical Responses</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-orange-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">AI Workshops</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-red-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Final Portfolio</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- S-shaped Timeline Container -->
+        <div class="relative w-full max-w-7xl mx-auto">
+            <!-- Animated zigzag line using SVG -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 800">
+                <path class="zigzag-line" d="M 100 100 L 300 100 L 500 200 L 700 200 L 900 300 L 700 400 L 500 400 L 300 500 L 100 500 L 300 600 L 500 600 L 700 700 L 900 700"></path>
+            </svg>
+
+            <!-- Week cards positioned in S-shape -->
+            <div class="relative z-10">
+                <!-- Row 1: Left to Right -->
+                <div class="flex justify-between items-start mb-20">
+                    <!-- Week 1 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in cursor-pointer hover:border-primary-light" style="animation-delay: 0.1s" onclick="toggleCourseIntro()">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">1</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Course Introduction</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 1a: Components of academic journal articles</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                        <div class="text-xs text-primary mt-2 font-medium">👆 Click to view course intro</div>
+                    </div>
+
+                    <!-- Week 2 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.2s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">2</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Referencing &amp; Writing</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 1b: Referencing skills • Module 2: Summarizing, Paraphrasing &amp; Synthesizing</div>
+                        <div class="text-xs text-green-600 dark:text-green-400 font-medium">📝 Pre-course Writing (2.5%)</div>
+                    </div>
+
+                    <!-- Week 3 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.3s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">3</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Summarizing &amp; Paraphrasing</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Continue Module 2: Summarizing, Paraphrasing &amp; Synthesizing Skills</div>
+                        <div class="text-xs text-green-600 dark:text-green-400 font-medium">📝 Referencing Quiz (2.5%)</div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Right to Left -->
+                <div class="flex justify-between items-start mb-20 flex-row-reverse">
+                    <!-- Week 4 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-orange-500 fade-in" style="animation-delay: 0.4s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">4</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">AI Workshop 1</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 2 continues • AI Workshop: Tools for Academic English &amp; Ethical Considerations</div>
+                        <div class="text-xs text-orange-600 dark:text-orange-400 font-medium">🤖 AI Workshop 1 (1 hour)</div>
+                    </div>
+
+                    <!-- Week 5 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.5s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">5</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Argumentation Models</h3>
+                        </div>
+                        <div class="text-xs text-orange-600 dark:text-orange-400 mb-1">⚠️ Oct 1 (Wed) Public Holiday</div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Begin Module 3: Argumentation Model</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                    </div>
+
+                    <!-- Week 6 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-green-500 fade-in" style="animation-delay: 0.6s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">6</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Academic Writing Quiz</h3>
+                        </div>
+                        <div class="text-xs text-orange-600 dark:text-orange-400 mb-1">⚠️ Oct 7 (Tue) Public Holiday</div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Continue Module 3: Argumentation Model</div>
+                        <div class="text-xs text-green-600 dark:text-green-400 font-medium">📝 Academic Writing Quiz (15%)</div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Left to Right -->
+                <div class="flex justify-between items-start mb-20">
+                    <!-- Week 7 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.7s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">7</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Argumentation Model</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Continue Module 3: Argumentation Model</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                    </div>
+
+                    <!-- Week 8 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.8s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">8</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Critical Response</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Begin Module 4: Critical Response to Academic Arguments</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                    </div>
+
+                    <!-- Week 9 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-blue-500 fade-in" style="animation-delay: 0.9s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">9</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Argument Construction</h3>
+                        </div>
+                        <div class="text-xs text-orange-600 dark:text-orange-400 mb-1">⚠️ Oct 29 (Wed) Public Holiday</div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Continue Module 4: Critical Response to Academic Arguments</div>
+                        <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">📝 Argument Construction (Draft) (15%)</div>
+                    </div>
+                </div>
+
+                <!-- Row 4: Right to Left -->
+                <div class="flex justify-between items-start mb-20 flex-row-reverse">
+                    <!-- Week 10 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-orange-500 fade-in" style="animation-delay: 1.0s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">10</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">AI Workshop 2</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Continue Module 4 • AI Workshop: Structured Argumentation &amp; Ethical Considerations</div>
+                        <div class="text-xs text-orange-600 dark:text-orange-400 font-medium">🤖 AI Workshop 2 (1 hour)</div>
+                    </div>
+
+                    <!-- Week 11 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 1.1s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">11</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Critical Response</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Continue Module 4: Critical Response to Academic Arguments</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                    </div>
+
+                    <!-- Week 12 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 1.2s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">12</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Peer Evaluation</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Peer Evaluation on Argument Construction &amp; Consultations</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                    </div>
+                </div>
+
+                <!-- Final Week - Center aligned -->
+                <div class="flex justify-center">
+                    <!-- Week 13 -->
+                    <div class="week-card bg-gradient-to-r from-yellow-100 to-yellow-50 dark:from-yellow-900 dark:to-yellow-800 rounded-lg shadow-lg p-4 w-80 border-l-4 border-yellow-500 fade-in" style="animation-delay: 1.3s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm mr-3 ring-2 ring-yellow-300">13</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white">🎯 Final Assessments</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Critical Response to Academic Arguments (6 mins/student)</div>
+                        <div class="text-xs mb-1">
+                            <span class="text-purple-600 dark:text-purple-400 font-medium">📝 Critical Response (20%)</span>
+                        </div>
+                        <div class="text-xs mb-1">
+                            <span class="text-red-600 dark:text-red-400 font-medium">📝 Reflective Portfolio (10%)</span>
+                        </div>
+                        <div class="text-xs">
+                            <span class="text-blue-600 dark:text-blue-400 font-medium">📝 Argument Construction (Final) (25%)</span>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="assessment-badge bg-yellow-500 text-white text-xs px-3 py-1 rounded-full font-bold">55% FINAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Course Introduction Slides (Hidden by default) -->
+        <div id="courseIntroSection" class="hidden mt-12 bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-6 max-w-6xl mx-auto border border-primary/20">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">📚 Course Introduction: University English I</h2>
+                <button onclick="toggleCourseIntro()" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-xl font-bold">×</button>
+            </div>
+            
+            <!-- Slide Navigation -->
+            <div class="flex justify-center mb-4">
+                <div class="flex space-x-2">
+                    <button onclick="prevSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">← Previous</button>
+                    <span id="slideCounter" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium">1 / 5</span>
+                    <button onclick="nextSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">Next →</button>
+                    <button onclick="openFullscreenSlide()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">🔍 Fullscreen</button>
+                </div>
+            </div>
+
+            <!-- Slide Container -->
+            <div id="slideContainer" class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                <!-- Slide 1: Course Overview -->
+                <div class="slide active" data-slide="1">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📚 Course Overview</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-4">What is this course about?</h4>
+                            <ul class="text-base text-gray-700 dark:text-gray-300 space-y-3">
+                                <li>• Academic reading and writing skills</li>
+                                <li>• Critical thinking and argumentation</li>
+                                <li>• AI-assisted learning partnership</li>
+                                <li>• Academic discourse analysis</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-4">Key Focus Areas</h4>
+                            <ul class="text-base text-gray-700 dark:text-gray-300 space-y-3">
+                                <li>📖 Critical reading and analysis</li>
+                                <li>✍️ Academic writing and argumentation</li>
+                                <li>🤖 AI collaboration and ethics</li>
+                                <li>🗣️ Academic communication skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Learning Objectives -->
+                <div class="slide hidden" data-slide="2">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🎯 Course Intended Learning Outcomes</h3>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">By the end of this course, you will be able to:</h4>
+                        <ul class="text-base text-gray-700 dark:text-gray-300 space-y-3">
+                            <li>✅ Examine academic discourse and argumentation models</li>
+                            <li>✅ Evaluate and synthesize source materials using proper citations</li>
+                            <li>✅ Construct well-supported logical arguments</li>
+                            <li>✅ Formulate critical spoken responses to academic arguments</li>
+                            <li>✅ Use AI as a learning partner for independent skill development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Teaching Staff -->
+                <div class="slide hidden" data-slide="3">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">👨‍🏫 Meet Your Instructor</h3>
+                    <div class="flex justify-center">
+                        <div class="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-lg max-w-md w-full">
+                            <h4 class="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4 text-center">Dr. Simon Wang</h4>
+                            <div class="text-base text-gray-700 dark:text-gray-300 space-y-3">
+                                <p><strong>Department:</strong> Language Centre, HKBU</p>
+                                <p><strong>Email:</strong> simonwang@hkbu.edu.hk</p>
+                                <p><strong>Office Hours:</strong> By appointment</p>
+                                <p><strong>Section:</strong> 37</p>
+                                <p><strong>Course Coordinator:</strong> Leo Yu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Assessment Structure -->
+                <div class="slide hidden" data-slide="4">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📋 Assessment Overview</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-4">Writing &amp; Analysis (60%)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Academic Writing Quiz</span>
+                                    <span class="font-medium">15%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Argument Construction (Draft)</span>
+                                    <span class="font-medium">15%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Argument Construction (Final)</span>
+                                    <span class="font-medium">25%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Reflective Portfolio</span>
+                                    <span class="font-medium">10%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-4">Speaking &amp; Participation (40%)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Critical Response</span>
+                                    <span class="font-medium">20%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>In-class Participation</span>
+                                    <span class="font-medium">15%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Pre-course + Referencing</span>
+                                    <span class="font-medium">5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Course Schedule -->
+                <div class="slide hidden" data-slide="5">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📅 Course Structure</h3>
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-3">📚 Course Modules</h4>
+                                <div class="text-base text-gray-700 dark:text-gray-300 space-y-2">
+                                    <p><strong>Module 1:</strong> Academic journal articles &amp; referencing</p>
+                                    <p><strong>Module 2:</strong> Summarizing, paraphrasing &amp; synthesizing</p>
+                                    <p><strong>Module 3:</strong> Argumentation models</p>
+                                    <p><strong>Module 4:</strong> Critical response to arguments</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-3">🤖 AI Integration</h4>
+                                <div class="text-base text-gray-700 dark:text-gray-300 space-y-2">
+                                    <p><strong>Workshop 1:</strong> AI tools for academic English</p>
+                                    <p><strong>Workshop 2:</strong> Structured argumentation with AI</p>
+                                    <p><strong>Ethics:</strong> Responsible AI collaboration</p>
+                                    <p><strong>Portfolio:</strong> Reflective AI learning analysis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Question Section -->
+            <div id="questionSection" class="mt-6 bg-primary/5 dark:bg-primary/10 rounded-lg p-4">
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check: Test Your Understanding</h4>
+                <div id="question1" class="question-container">
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3"><strong>Question:</strong> What is the main focus of SDG 11 in the context of this course?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span class="text-sm text-gray-700 dark:text-gray-300">A) Economic development only</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span class="text-sm text-gray-700 dark:text-gray-300">B) Sustainable cities and communities</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span class="text-sm text-gray-700 dark:text-gray-300">C) Technology advancement</span>
+                        </label>
+                    </div>
+                    <button onclick="checkAnswer(1, 'b')" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark">Check Answer</button>
+                    <div id="feedback1" class="hidden mt-2 text-sm"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fullscreen Slide Modal -->
+        <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden">
+            <div class="relative w-full h-full flex items-center justify-center p-4">
+                <div class="bg-white dark:bg-gray-800 rounded-lg w-full max-w-5xl h-5/6 flex flex-col">
+                    <!-- Modal Header -->
+                    <div class="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white">Course Introduction Slides</h2>
+                        <button onclick="closeFullscreenSlide()" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl font-bold">×</button>
+                    </div>
+                    
+                    <!-- Modal Navigation -->
+                    <div class="flex justify-center p-4 border-b border-gray-200 dark:border-gray-700">
+                        <div class="flex space-x-3">
+                            <button onclick="prevSlideFullscreen()" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-lg">← Previous</button>
+                            <span id="slideCounterFullscreen" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium text-lg">1 / 5</span>
+                            <button onclick="nextSlideFullscreen()" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-lg">Next →</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal Slide Content -->
+                    <div id="fullscreenSlideContainer" class="flex-1 p-8 overflow-y-auto">
+                        <!-- Content will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Assessment Section -->
+        <div class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 max-w-6xl mx-auto border border-blue-200 dark:border-blue-800">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">📋 Detailed Assessment Guide</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
+                <button onclick="showAssessmentTab('writing-quiz')" class="assessment-tab active px-4 py-2 text-sm font-medium border-b-2 transition-colors">Academic Writing Quiz</button>
+                <button onclick="showAssessmentTab('argument-construction')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">Argument Construction</button>
+                <button onclick="showAssessmentTab('critical-response')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">Critical Response</button>
+                <button onclick="showAssessmentTab('reflective-portfolio')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">Reflective Portfolio</button>
+                <button onclick="showAssessmentTab('participation')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">Participation</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="assessment-tabs">
+                <!-- Academic Writing Quiz Tab -->
+                <div id="writing-quiz-tab" class="assessment-tab-content">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">📝</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Academic Writing Quiz</h3>
+                                <p class="text-primary font-semibold">15% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📋 Quiz Details</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Duration:</strong> 45 minutes</li>
+                                    <li><strong>Schedule:</strong> Week 6 (in-class)</li>
+                                    <li><strong>Format:</strong> Written examination</li>
+                                    <li><strong>Focus:</strong> Academic writing skills</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">📚 Content Areas</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Summarizing academic texts</li>
+                                    <li>• Paraphrasing techniques</li>
+                                    <li>• Synthesizing multiple sources</li>
+                                    <li>• Academic tone and style</li>
+                                    <li>• Citation and referencing (APA)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">🎯 Assessment Criteria</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Accuracy of summarization</li>
+                                    <li>• Appropriate paraphrasing</li>
+                                    <li>• Proper citation format</li>
+                                    <li>• Academic language use</li>
+                                    <li>• Understanding of source materials</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">⚠️ Preparation Notes</h4>
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">Review modules 1-2 content, practice with academic articles, and familiarize yourself with APA citation style.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Argument Construction Tab -->
+                <div id="argument-construction-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">📄</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Argument Construction &amp; Evaluation</h3>
+                                <p class="text-primary font-semibold">40% of Final Grade (15% Draft + 25% Final)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📝 Draft Assignment (15%)</h4>
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-4">
+                                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <li><strong>Length:</strong> 400-500 words</li>
+                                        <li><strong>Due:</strong> Week 9 (in-class)</li>
+                                        <li><strong>Duration:</strong> 45 minutes</li>
+                                        <li><strong>Format:</strong> Written essay</li>
+                                    </ul>
+                                </div>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📊 Content Requirements</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Apply specific argumentation model</li>
+                                    <li>• Construct detailed argument</li>
+                                    <li>• Include counterargument and rebuttal</li>
+                                    <li>• Use evidence from provided sources</li>
+                                    <li>• Proper summarizing and synthesizing</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📝 Final Assignment (25%)</h4>
+                                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mb-4">
+                                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <li><strong>Length:</strong> ~800 words</li>
+                                        <li><strong>Due:</strong> Week 13 (Dec 5, 6pm on Moodle)</li>
+                                        <li><strong>Format:</strong> Extended written essay</li>
+                                        <li><strong>Type:</strong> Revision of draft</li>
+                                    </ul>
+                                </div>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">🔄 Revision Process</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Incorporate teacher feedback</li>
+                                    <li>• Use AI tools for enhancement</li>
+                                    <li>• Include peer evaluation insights</li>
+                                    <li>• Reflect on AI collaboration process</li>
+                                    <li>• Justify changes made in final version</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Response Tab -->
+                <div id="critical-response-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🎤</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Critical Response to Academic Arguments</h3>
+                                <p class="text-primary font-semibold">20% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">🗣️ Presentation Format</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Duration:</strong> 6 minutes per student</li>
+                                    <li><strong>Schedule:</strong> Week 13</li>
+                                    <li><strong>Format:</strong> Oral presentation</li>
+                                    <li><strong>Audience:</strong> Class and instructor</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">🎧 Listening Component</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Listen to academic audio clip</li>
+                                    <li>• Background information provided</li>
+                                    <li>• Argument analysis required</li>
+                                    <li>• Preparation time given</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📋 Response Structure</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Summary:</strong> Key points of the argument</li>
+                                    <li><strong>Analysis:</strong> Strengths and weaknesses</li>
+                                    <li><strong>Rebuttal:</strong> Counter-arguments</li>
+                                    <li><strong>Evaluation:</strong> Overall assessment</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">⭐ Assessment Criteria</h4>
+                                <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                    <ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                        <li>• Comprehension of audio content</li>
+                                        <li>• Quality of critical analysis</li>
+                                        <li>• Use of argumentation models</li>
+                                        <li>• Clarity of verbal communication</li>
+                                        <li>• Logical structure of response</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reflective Portfolio Tab -->
+                <div id="reflective-portfolio-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🤖</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Reflective Learning Portfolio</h3>
+                                <p class="text-primary font-semibold">10% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📝 Portfolio Details</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Length:</strong> 500 words</li>
+                                    <li><strong>Due:</strong> Week 13 (Dec 5, 6pm on Moodle)</li>
+                                    <li><strong>Type:</strong> Individual reflection</li>
+                                    <li><strong>Focus:</strong> AI learning partnership</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">🎯 Learning Episodes</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• 2-3 learning episodes analyzed</li>
+                                    <li>• AI tool interactions documented</li>
+                                    <li>• Original vs. AI-generated work compared</li>
+                                    <li>• Rationale for adoption/rejection explained</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📋 Required Documentation</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Comprehensive interaction records</li>
+                                    <li>• AI dialogue transcripts</li>
+                                    <li>• Original drafts and revisions</li>
+                                    <li>• Final versions with justifications</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">🌟 Portfolio Goals</h4>
+                                <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg">
+                                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <li>• Develop AI as learning partner relationship</li>
+                                        <li>• Enhance self-directed learning skills</li>
+                                        <li>• Reflect on work evolution process</li>
+                                        <li>• Critical evaluation of AI contributions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Participation Tab -->
+                <div id="participation-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">👥</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">In-class Participation &amp; Preparation</h3>
+                                <p class="text-primary font-semibold">20% of Final Grade (15% + 5%)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">🎯 Participation (15%)</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>In-class activities:</strong> Active engagement</li>
+                                    <li><strong>Flipped classroom:</strong> Preparation and discussion</li>
+                                    <li><strong>Peer evaluation:</strong> Constructive feedback</li>
+                                    <li><strong>Collaboration:</strong> Group work contribution</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">⭐ Evaluation Criteria</h4>
+                                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <li>• Quality of contributions</li>
+                                        <li>• Preparation for class</li>
+                                        <li>• Respectful interaction with peers</li>
+                                        <li>• Constructive feedback provision</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📝 Preparation Tasks (5%)</h4>
+                                <div class="grid grid-cols-1 gap-3">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+                                        <h5 class="font-medium text-blue-800 dark:text-blue-200 mb-1">Pre-course Writing (2.5%)</h5>
+                                        <p class="text-xs text-gray-700 dark:text-gray-300">Due: Sep 12, 6pm on Moodle</p>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+                                        <h5 class="font-medium text-purple-800 dark:text-purple-200 mb-1">Referencing Quiz (2.5%)</h5>
+                                        <p class="text-xs text-gray-700 dark:text-gray-300">Due: Sep 19, 6pm on Moodle</p>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">🎬 Flipped Classroom Videos</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• In-text Citations and Reference Lists</li>
+                                    <li>• Secondary Citations</li>
+                                    <li>• AI Literacy (Authenticity)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Assessment Summary -->
+        <div class="mt-12 bg-gray-50 dark:bg-gray-800 rounded-lg p-4 max-w-4xl mx-auto">
+            <div class="grid grid-cols-2 gap-6 text-sm">
+                <div>
+                    <h4 class="font-bold text-gray-700 dark:text-gray-300 mb-2">📝 Writing &amp; Analysis (75%)</h4>
+                    <div class="space-y-1 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Academic Writing Quiz</span>
+                            <span class="font-medium">15%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Argument Construction (Draft)</span>
+                            <span class="font-medium">15%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Argument Construction (Final)</span>
+                            <span class="font-medium">25%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Critical Response</span>
+                            <span class="font-medium">20%</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 dark:text-gray-300 mb-2">🤖 Portfolio &amp; Participation (25%)</h4>
+                    <div class="space-y-1 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Reflective Learning Portfolio</span>
+                            <span class="font-medium">10%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">In-class Participation</span>
+                            <span class="font-medium">15%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all week cards
+        document.querySelectorAll('.fade-in-up').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        // Course Introduction Slide Functionality
+        let currentSlide = 1;
+        const totalSlides = 5;
+        
+        // Questions for each slide
+        const slideQuestions = {
+            1: {
+                question: "What is the main focus of SDG 11 in the context of this course?",
+                options: [
+                    "A) Economic development only",
+                    "B) Sustainable cities and communities", 
+                    "C) Technology advancement"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! SDG 11 focuses on sustainable cities and communities, which is central to this course's policy analysis approach.",
+                    incorrect: "❌ Not quite. SDG 11 specifically targets sustainable cities and communities, which aligns with our participatory policy analysis goals."
+                }
+            },
+            2: {
+                question: "Which of the following is NOT a learning objective of this course?",
+                options: [
+                    "A) Analyze public policy using data-driven approaches",
+                    "B) Master advanced statistical modeling",
+                    "C) Collaborate effectively with AI tools"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! This course focuses on policy analysis and AI collaboration, not advanced statistical modeling.",
+                    incorrect: "❌ Incorrect. Advanced statistical modeling is not a primary learning objective of this course."
+                }
+            },
+            3: {
+                question: "Dr. Talia Wu is from which department?",
+                options: [
+                    "A) Liberal & Cultural Studies",
+                    "B) Mathematics",
+                    "C) Computer Science"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! Dr. Talia Wu is from the Mathematics department.",
+                    incorrect: "❌ Incorrect. Dr. Talia Wu is from the Mathematics department, while Dr. Simon Wang is from Liberal & Cultural Studies."
+                }
+            },
+            4: {
+                question: "What percentage of the final grade comes from individual work?",
+                options: [
+                    "A) 40%",
+                    "B) 50%",
+                    "C) 60%"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! Individual work accounts for 50% of the final grade (10% + 20% + 20%).",
+                    incorrect: "❌ Incorrect. Individual work accounts for exactly 50% of the final grade."
+                }
+            },
+            5: {
+                question: "True or False: Classes are held on Tuesdays from 9:30 to 12:20.",
+                options: [
+                    "A) True",
+                    "B) False"
+                ],
+                correct: "a",
+                feedback: {
+                    correct: "✅ Correct! Classes are indeed held on Tuesdays from 9:30 to 12:20.",
+                    incorrect: "❌ Incorrect. The schedule clearly states classes are on Tuesdays from 9:30 to 12:20."
+                }
+            }
+        };
+
+        function toggleCourseIntro() {
+            const section = document.getElementById('courseIntroSection');
+            section.classList.toggle('hidden');
+            if (!section.classList.contains('hidden')) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                updateQuestion();
+            }
+        }
+
+        function showSlide(slideNumber) {
+            // Hide all slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.add('hidden');
+                slide.classList.remove('active');
+            });
+            
+            // Show current slide
+            const currentSlideElement = document.querySelector(`[data-slide="${slideNumber}"]`);
+            if (currentSlideElement) {
+                currentSlideElement.classList.remove('hidden');
+                currentSlideElement.classList.add('active');
+            }
+            
+            // Update counter
+            document.getElementById('slideCounter').textContent = `${slideNumber} / ${totalSlides}`;
+            
+            // Update question
+            updateQuestion();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function updateQuestion() {
+            const questionData = slideQuestions[currentSlide];
+            if (questionData) {
+                const questionContainer = document.getElementById('questionSection');
+                questionContainer.innerHTML = `
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check: Test Your Understanding</h4>
+                    <div class="question-container">
+                        <p class="text-sm text-gray-700 dark:text-gray-300 mb-3"><strong>Question:</strong> ${questionData.question}</p>
+                        <div class="space-y-2">
+                            ${questionData.options.map((option, index) => `
+                                <label class="flex items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded">
+                                    <input type="radio" name="currentQuestion" value="${String.fromCharCode(97 + index)}" class="mr-2">
+                                    <span class="text-sm text-gray-700 dark:text-gray-300">${option}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                        <button onclick="checkCurrentAnswer()" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark transition-colors">Check Answer</button>
+                        <div id="currentFeedback" class="hidden mt-2 text-sm"></div>
+                    </div>
+                `;
+            }
+        }
+
+        function checkCurrentAnswer() {
+            const selected = document.querySelector('input[name="currentQuestion"]:checked');
+            const questionData = slideQuestions[currentSlide];
+            const feedback = document.getElementById('currentFeedback');
+            
+            if (!selected) {
+                feedback.className = 'mt-2 text-sm text-orange-600 dark:text-orange-400';
+                feedback.textContent = '⚠️ Please select an answer first.';
+                feedback.classList.remove('hidden');
+                return;
+            }
+            
+            const isCorrect = selected.value === questionData.correct;
+            
+            if (isCorrect) {
+                feedback.className = 'mt-2 text-sm text-green-600 dark:text-green-400';
+                feedback.textContent = questionData.feedback.correct;
+            } else {
+                feedback.className = 'mt-2 text-sm text-red-600 dark:text-red-400';
+                feedback.textContent = questionData.feedback.incorrect;
+            }
+            
+            feedback.classList.remove('hidden');
+            
+            // Disable radio buttons after answering
+            document.querySelectorAll('input[name="currentQuestion"]').forEach(input => {
+                input.disabled = true;
+            });
+        }
+
+        // Legacy function for compatibility
+        function checkAnswer(questionNum, correctAnswer) {
+            checkCurrentAnswer();
+        }
+
+        // Fullscreen slide functionality
+        function openFullscreenSlide() {
+            const modal = document.getElementById('fullscreenModal');
+            const fullscreenContainer = document.getElementById('fullscreenSlideContainer');
+            const currentSlideElement = document.querySelector('.slide.active');
+            
+            if (currentSlideElement) {
+                // Clone the current slide content for fullscreen
+                fullscreenContainer.innerHTML = currentSlideElement.outerHTML;
+                // Update the fullscreen counter
+                document.getElementById('slideCounterFullscreen').textContent = `${currentSlide} / ${totalSlides}`;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closeFullscreenSlide() {
+            const modal = document.getElementById('fullscreenModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        function nextSlideFullscreen() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                const nextSlideElement = document.querySelector(`[data-slide="${currentSlide}"]`);
+                if (nextSlideElement) {
+                    const fullscreenContainer = document.getElementById('fullscreenSlideContainer');
+                    fullscreenContainer.innerHTML = nextSlideElement.outerHTML;
+                    document.getElementById('slideCounterFullscreen').textContent = `${currentSlide} / ${totalSlides}`;
+                    // Also update the regular slide view
+                    showSlide(currentSlide);
+                }
+            }
+        }
+
+        function prevSlideFullscreen() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                const prevSlideElement = document.querySelector(`[data-slide="${currentSlide}"]`);
+                if (prevSlideElement) {
+                    const fullscreenContainer = document.getElementById('fullscreenSlideContainer');
+                    fullscreenContainer.innerHTML = prevSlideElement.outerHTML;
+                    document.getElementById('slideCounterFullscreen').textContent = `${currentSlide} / ${totalSlides}`;
+                    // Also update the regular slide view
+                    showSlide(currentSlide);
+                }
+            }
+        }
+
+        // Assessment tab functionality
+        function showAssessmentTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.assessment-tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.assessment-tab').forEach(tab => {
+                tab.classList.remove('active', 'text-primary', 'border-primary');
+                tab.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            });
+            
+            // Show selected tab content
+            const selectedContent = document.getElementById(`${tabName}-tab`);
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active', 'text-primary', 'border-primary');
+            event.target.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+        }
+
+        // Initialize assessment tabs on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial active tab styling
+            const firstTab = document.querySelector('.assessment-tab.active');
+            if (firstTab) {
+                firstTab.classList.add('text-primary', 'border-primary');
+                firstTab.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            }
+            
+            // Style inactive tabs
+            document.querySelectorAll('.assessment-tab:not(.active)').forEach(tab => {
+                tab.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+                tab.classList.remove('text-primary', 'border-primary');
+            });
+        });
+
+        // Close fullscreen modal when clicking outside
+        document.getElementById('fullscreenModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFullscreenSlide();
+            }
+        });
+
+        // Close fullscreen modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('fullscreenModal');
+                if (!modal.classList.contains('hidden')) {
+                    closeFullscreenSlide();
+                }
+            }
+        });
+
+        // Roadmap toggle functionality
+        function toggleRoadmap() {
+            const container = document.getElementById('roadmapContainer');
+            const toggleText = document.getElementById('roadmapToggleText');
+            const toggleIcon = document.getElementById('roadmapToggleIcon');
+            
+            if (container.classList.contains('hidden')) {
+                // Show roadmap
+                container.classList.remove('hidden');
+                toggleText.textContent = '📅 Hide Course Roadmap';
+                toggleIcon.style.transform = 'rotate(180deg)';
+                // Smooth scroll to roadmap
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                // Hide roadmap
+                container.classList.add('hidden');
+                toggleText.textContent = '📅 Show Course Roadmap';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+
+
+
+
+
+</body></html>
