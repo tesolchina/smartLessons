@@ -1,7 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Research &amp; Ph.D. Studies - UCLC 1008</title>
+    <title>Understanding Research & Ph.D. Studies - UCLC 1008</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -28,6 +30,10 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
         .annotation-highlight {
             background: linear-gradient(120deg, #5D5CDE20 0%, #5D5CDE20 100%);
             border-left: 3px solid #5D5CDE;
@@ -52,7 +58,7 @@
             ring-color: #5D5CDE;
         }
     </style>
-<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+</head>
 <body class="bg-white dark:bg-gray-900">
     <script>
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -73,10 +79,11 @@
             <div class="max-w-6xl mx-auto">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h1 class="text-3xl font-bold mb-2">Understanding Research &amp; Ph.D. Studies</h1>
+                        <h1 class="text-3xl font-bold mb-2">Understanding Research & Ph.D. Studies</h1>
                         <p class="text-primary-light">UCLC 1008 University English I • Module 4: Research Foundations</p>
                     </div>
-                    <a href="https://smartlessons.hkbu.tech/UCLC1008/index.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-colors flex items-center">
+                    <a href="https://smartlessons.hkbu.tech/UCLC1008/index.html" 
+                       class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-colors flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                         </svg>
@@ -110,7 +117,7 @@
                             <span class="text-white text-2xl">📖</span>
                         </div>
                         <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Module Overview</h2>
-                        <p class="text-lg text-gray-600 dark:text-gray-400">Understanding Research &amp; Ph.D. Studies</p>
+                        <p class="text-lg text-gray-600 dark:text-gray-400">Understanding Research & Ph.D. Studies</p>
                     </div>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -223,7 +230,7 @@
                                         <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">Think of knowledge as a circle...</h4>
                                         <div class="w-48 h-48 mx-auto relative">
                                             <svg viewBox="0 0 200 200" class="w-full h-full">
-                                                <circle cx="100" cy="100" r="80" fill="#5D5CDE" opacity="0.6" class="interactive-circle" onclick="highlightKnowledge()"></circle>
+                                                <circle cx="100" cy="100" r="80" fill="#5D5CDE" opacity="0.6" class="interactive-circle" onclick="highlightKnowledge()"/>
                                                 <text x="100" y="100" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="12" font-weight="bold">All Human Knowledge</text>
                                             </svg>
                                         </div>
@@ -282,7 +289,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 class="text-lg font-semibold text-primary mb-4">Research Papers &amp; Boundary</h4>
+                                        <h4 class="text-lg font-semibold text-primary mb-4">Research Papers & Boundary</h4>
                                         <p class="text-gray-700 dark:text-gray-300 mb-4">Reading research papers takes you to the edge of human knowledge. At the boundary, you focus and push until you make your own contribution.</p>
                                         <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
                                             <p class="text-sm text-purple-800 dark:text-purple-200 italic">"Once you're at the boundary, you focus. You push at the boundary for a few years. Until one day, the boundary gives way. And, that dent you've made is called a Ph.D."</p>
@@ -400,7 +407,7 @@
                                         <li>• <strong>Literature Review:</strong> Survey existing knowledge</li>
                                         <li>• <strong>Research Proposal:</strong> Outline your planned contribution</li>
                                         <li>• <strong>Methodology:</strong> Explain your research approach</li>
-                                        <li>• <strong>Results &amp; Analysis:</strong> Present your findings</li>
+                                        <li>• <strong>Results & Analysis:</strong> Present your findings</li>
                                         <li>• <strong>Discussion:</strong> Interpret implications</li>
                                         <li>• <strong>Conclusion:</strong> Summarize your contribution</li>
                                     </ul>
@@ -455,15 +462,15 @@
                                     <div class="w-64 h-64 mx-auto mb-6 relative">
                                         <svg viewBox="0 0 300 300" class="w-full h-full">
                                             <!-- Large circle representing knowledge -->
-                                            <circle cx="150" cy="150" r="120" fill="#5D5CDE" opacity="0.6"></circle>
+                                            <circle cx="150" cy="150" r="120" fill="#5D5CDE" opacity="0.6"/>
                                             <!-- Small dent representing PhD contribution -->
-                                            <circle cx="250" cy="150" r="25" fill="#7B7AE8" opacity="0.8"></circle>
+                                            <circle cx="250" cy="150" r="25" fill="#7B7AE8" opacity="0.8"/>
                                             <!-- Arrow pointing outward -->
-                                            <path d="M 250 150 L 280 150" stroke="#4A49C2" stroke-width="3" marker-end="url(#arrowhead)"></path>
+                                            <path d="M 250 150 L 280 150" stroke="#4A49C2" stroke-width="3" marker-end="url(#arrowhead)"/>
                                             <!-- Arrow marker -->
                                             <defs>
                                                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4A49C2"></polygon>
+                                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4A49C2"/>
                                                 </marker>
                                             </defs>
                                             <text x="150" y="150" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="14" font-weight="bold">Knowledge</text>
@@ -571,15 +578,15 @@
                                                 <div class="text-2xl mb-2">📚</div>
                                                 <div class="text-sm">Choose Field</div>
                                             </button>
-                                            <button onclick="advanceResearch(2)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="2" disabled="">
+                                            <button onclick="advanceResearch(2)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="2" disabled>
                                                 <div class="text-2xl mb-2">🔍</div>
                                                 <div class="text-sm">Find Gap</div>
                                             </button>
-                                            <button onclick="advanceResearch(3)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="3" disabled="">
+                                            <button onclick="advanceResearch(3)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="3" disabled>
                                                 <div class="text-2xl mb-2">🎯</div>
                                                 <div class="text-sm">Focus</div>
                                             </button>
-                                            <button onclick="advanceResearch(4)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="4" disabled="">
+                                            <button onclick="advanceResearch(4)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="4" disabled>
                                                 <div class="text-2xl mb-2">🚀</div>
                                                 <div class="text-sm">Push Boundary</div>
                                             </button>
@@ -678,7 +685,7 @@
 
             <!-- Section 3: Open-Ended Reflection Tasks -->
             <div id="reflection-tasks" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">💭 Reflection &amp; Analysis Tasks</h2>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">💭 Reflection & Analysis Tasks</h2>
                 
                 <div class="space-y-6">
                     <!-- Task 1 -->
@@ -692,13 +699,23 @@
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Where do you see yourself currently on this knowledge journey? Explain your reasoning.
                                 </label>
-                                <textarea id="task1-response" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Share your thoughts about your current position in the knowledge circle..." onchange="updateProgress()"></textarea>
+                                <textarea 
+                                    id="task1-response" 
+                                    class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base"
+                                    placeholder="Share your thoughts about your current position in the knowledge circle..."
+                                    onchange="updateProgress()"
+                                ></textarea>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     What specific area of knowledge interests you most for deeper exploration?
                                 </label>
-                                <textarea id="task1-interest" class="w-full h-20 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Describe your area of interest and why it fascinates you..." onchange="updateProgress()"></textarea>
+                                <textarea 
+                                    id="task1-interest" 
+                                    class="w-full h-20 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base"
+                                    placeholder="Describe your area of interest and why it fascinates you..."
+                                    onchange="updateProgress()"
+                                ></textarea>
                             </div>
                         </div>
                     </div>
@@ -714,13 +731,23 @@
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Formulate one specific research question you would like to investigate:
                                 </label>
-                                <textarea id="task2-question" class="w-full h-20 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Write a clear, focused research question..." onchange="updateProgress()"></textarea>
+                                <textarea 
+                                    id="task2-question" 
+                                    class="w-full h-20 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base"
+                                    placeholder="Write a clear, focused research question..."
+                                    onchange="updateProgress()"
+                                ></textarea>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Why is this question important? What gap in knowledge does it address?
                                 </label>
-                                <textarea id="task2-significance" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Explain the significance and potential impact of your research question..." onchange="updateProgress()"></textarea>
+                                <textarea 
+                                    id="task2-significance" 
+                                    class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base"
+                                    placeholder="Explain the significance and potential impact of your research question..."
+                                    onchange="updateProgress()"
+                                ></textarea>
                             </div>
                         </div>
                     </div>
@@ -736,13 +763,23 @@
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     How could your research question contribute to solving real-world problems?
                                 </label>
-                                <textarea id="task3-impact" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Describe the potential real-world applications and benefits..." onchange="updateProgress()"></textarea>
+                                <textarea 
+                                    id="task3-impact" 
+                                    class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base"
+                                    placeholder="Describe the potential real-world applications and benefits..."
+                                    onchange="updateProgress()"
+                                ></textarea>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     What challenges do you anticipate in pursuing this research, and how might you overcome them?
                                 </label>
-                                <textarea id="task3-challenges" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Identify potential obstacles and strategies for addressing them..." onchange="updateProgress()"></textarea>
+                                <textarea 
+                                    id="task3-challenges" 
+                                    class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base"
+                                    placeholder="Identify potential obstacles and strategies for addressing them..."
+                                    onchange="updateProgress()"
+                                ></textarea>
                             </div>
                         </div>
                     </div>
@@ -882,7 +919,9 @@
                                 Take your learning further by discussing these topics with your classmates and instructor on Moodle.
                             </p>
                             <div class="space-y-3">
-                                <a href="https://buelearning.hkbu.edu.hk/course/view.php?id=120414" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <a href="https://buelearning.hkbu.edu.hk/course/view.php?id=120414" 
+                                   target="_blank"
+                                   class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                                     🌐 Access Moodle Forum
                                     <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -907,76 +946,6 @@
 
         </div>
     </div>
-
-    <!-- Avatar Info Panel -->
-    <div id="avatarInfoPanel" class="fixed bottom-6 left-6 bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600 shadow-lg max-w-xs z-40 hidden">
-        <div class="font-semibold text-gray-900 dark:text-white text-sm">AI Research Assistant</div>
-        <div class="text-xs text-gray-500 dark:text-gray-400">UCLC 1008 Learning Support</div>
-        <div class="text-xs text-primary hover:underline cursor-pointer">Ask about research topics →</div>
-    </div>
-
-    <!-- Avatar Toggle Button -->
-    <div class="fixed bottom-80 left-6 z-50">
-        <button id="avatarToggleButton" onclick="toggleAvatar()" class="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors shadow-lg">
-            ❌ Hide AI Assistant
-        </button>
-    </div>
-
-    <!-- Fallback Local AI Assistant (hidden by default, shown if HeyGen fails) -->
-    <div id="ai-assistant-fallback" class="fixed left-5 bottom-5 z-40 hidden">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border-2 border-white overflow-hidden transition-all duration-300 ease-in-out" style="width: 280px; height: 320px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-            
-            <!-- Fallback AI Header -->
-            <div class="bg-gradient-to-r from-primary to-primary-light p-4 text-white">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                        <span class="text-lg">🤖</span>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-sm">AI Research Assistant</h4>
-                        <p class="text-xs opacity-80">Fallback Mode</p>
-                    </div>
-                    <button onclick="toggleAvatar()" class="ml-auto text-white hover:bg-white hover:bg-opacity-20 rounded-full p-1 transition-colors">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Fallback Chat Messages -->
-            <div class="bg-white dark:bg-gray-800 p-4 h-48 overflow-y-auto space-y-3">
-                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 text-sm">
-                    <p class="text-gray-800 dark:text-gray-200">🔧 HeyGen avatar unavailable. Using local assistant:</p>
-                    <ul class="mt-2 text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                        <li>• Research guidance available</li>
-                        <li>• Progress tracking active</li>
-                        <li>• Learning support ready</li>
-                    </ul>
-                </div>
-                <div class="text-center">
-                    <button onclick="startFallbackConversation()" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary-dark transition-colors">
-                        💬 Start Conversation
-                    </button>
-                </div>
-            </div>
-
-            <!-- Fallback Action Buttons -->
-            <div class="bg-gray-50 dark:bg-gray-700 p-3 border-t border-gray-200 dark:border-gray-600">
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="askAboutResearch()" class="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600 transition-colors">
-                        🔬 Research Help
-                    </button>
-                    <button onclick="askAboutPhD()" class="bg-purple-500 text-white px-2 py-1 rounded text-xs hover:bg-purple-600 transition-colors">
-                        🎓 Ph.D. Journey
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- HeyGen Avatar Embed Script -->
-    <script>!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 20px;\n    bottom: 20px;\n    width: 260px;\n    height: 280px;\n    border-radius: 16px;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease;\n    overflow: hidden;\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 340px; width: calc(100vw - 40px); left: 20px;":"height: 380px; width: 300px; right: 20px; left: auto;"}\n    border-radius: 16px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n    border-radius: 14px;\n    overflow: hidden;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n    border-radius: 14px;\n  }\n  `;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);</script>
 
     <script>
         // Learning Progress Tracking
@@ -1552,284 +1521,13 @@ ${report.responses.task3.challenges || 'Not completed'}
             }
         }
 
-        // Avatar Toggle Functionality
-        let avatarVisible = false; // Start as false since avatar starts hidden
-        let usingFallback = false;
-        
-        function toggleAvatar() {
-            console.log('Toggle avatar called');
-            
-            // Check if we have HeyGen avatar or fallback
-            let avatarEmbed = document.getElementById('heygen-streaming-embed');
-            let fallbackWidget = document.getElementById('ai-assistant-fallback');
-            
-            if (!avatarEmbed && !usingFallback) {
-                // HeyGen avatar not loaded, show fallback
-                showFallbackAssistant();
-                return;
-            }
-            
-            if (usingFallback) {
-                performFallbackToggle(fallbackWidget);
-            } else {
-                performAvatarToggle(avatarEmbed);
-            }
-        }
-        
-        function performAvatarToggle(avatarEmbed) {
-            const toggleButton = document.getElementById('avatarToggleButton');
-            
-            if (avatarVisible) {
-                // Hide avatar
-                avatarEmbed.style.opacity = '0';
-                avatarEmbed.style.visibility = 'hidden';
-                avatarEmbed.style.transform = 'scale(0.8)';
-                avatarVisible = false;
-                
-                if (toggleButton) {
-                    toggleButton.innerHTML = '🤖 Show AI Assistant';
-                    toggleButton.classList.remove('bg-red-500', 'hover:bg-red-600');
-                    toggleButton.classList.add('bg-green-500', 'hover:bg-green-600');
-                }
-            } else {
-                // Show avatar
-                avatarEmbed.style.opacity = '1';
-                avatarEmbed.style.visibility = 'visible';
-                avatarEmbed.style.transform = 'scale(1)';
-                avatarEmbed.classList.add('show');
-                avatarVisible = true;
-                
-                if (toggleButton) {
-                    toggleButton.innerHTML = '❌ Hide AI Assistant';
-                    toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
-                    toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
-                }
-            }
-        }
-
-        function performFallbackToggle(fallbackWidget) {
-            const toggleButton = document.getElementById('avatarToggleButton');
-            
-            if (avatarVisible) {
-                // Hide fallback
-                fallbackWidget.style.opacity = '0';
-                fallbackWidget.style.visibility = 'hidden';
-                fallbackWidget.style.transform = 'scale(0.8) translateY(20px)';
-                avatarVisible = false;
-                
-                if (toggleButton) {
-                    toggleButton.innerHTML = '🤖 Show AI Assistant';
-                    toggleButton.classList.remove('bg-red-500', 'hover:bg-red-600');
-                    toggleButton.classList.add('bg-green-500', 'hover:bg-green-600');
-                }
-            } else {
-                // Show fallback
-                fallbackWidget.style.opacity = '1';
-                fallbackWidget.style.visibility = 'visible';
-                fallbackWidget.style.transform = 'scale(1) translateY(0)';
-                avatarVisible = true;
-                
-                if (toggleButton) {
-                    toggleButton.innerHTML = '❌ Hide AI Assistant';
-                    toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
-                    toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
-                }
-            }
-        }
-
-        function showFallbackAssistant() {
-            const fallbackWidget = document.getElementById('ai-assistant-fallback');
-            const toggleButton = document.getElementById('avatarToggleButton');
-            
-            fallbackWidget.classList.remove('hidden');
-            fallbackWidget.style.opacity = '1';
-            fallbackWidget.style.visibility = 'visible';
-            fallbackWidget.style.transform = 'scale(1) translateY(0)';
-            
-            usingFallback = true;
-            avatarVisible = true;
-            
-            if (toggleButton) {
-                toggleButton.innerHTML = '❌ Hide AI Assistant';
-                toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
-                toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
-            }
-            
-            console.log('Fallback AI assistant activated');
-        }
-
-        // Auto-show avatar when it's ready
-        function checkAndShowAvatar() {
-            const avatarEmbed = document.getElementById('heygen-streaming-embed');
-            if (avatarEmbed && !avatarVisible) {
-                // Avatar is loaded but hidden, show it
-                avatarEmbed.style.opacity = '1';
-                avatarEmbed.style.visibility = 'visible';
-                avatarEmbed.classList.add('show');
-                avatarVisible = true;
-                
-                const toggleButton = document.getElementById('avatarToggleButton');
-                if (toggleButton) {
-                    toggleButton.innerHTML = '❌ Hide AI Assistant';
-                    toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
-                    toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
-                }
-                console.log('HeyGen avatar auto-shown');
-                return true;
-            }
-            return false;
-        }
-
-        // Fallback AI Assistant Functions
-        function startFallbackConversation() {
-            const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
-            messagesContainer.innerHTML = `
-                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 text-sm">
-                    <p class="text-gray-800 dark:text-gray-200">💬 I'm here to help with your research learning. What would you like to explore?</p>
-                </div>
-                <div class="space-y-2">
-                    <button onclick="askAboutKnowledgeCircle()" class="w-full text-left bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 p-2 rounded text-sm transition-colors">
-                        💡 Knowledge circle concept
-                    </button>
-                    <button onclick="askAboutResearchProcess()" class="w-full text-left bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 p-2 rounded text-sm transition-colors">
-                        🔍 Research methodology
-                    </button>
-                    <button onclick="askAboutMyProgress()" class="w-full text-left bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 p-2 rounded text-sm transition-colors">
-                        📊 Your progress
-                    </button>
-                </div>
-            `;
-        }
-
-        function askAboutResearch() {
-            // This works for both HeyGen (if available) and fallback
-            if (usingFallback) {
-                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
-                messagesContainer.innerHTML = `
-                    <div class="bg-blue-100 dark:bg-blue-900/20 rounded-lg p-3 text-sm">
-                        <p class="text-blue-800 dark:text-blue-200"><strong>🔬 Research Help</strong></p>
-                        <p class="text-gray-700 dark:text-gray-300 mt-2">I can guide you through research fundamentals, question development, and methodologies.</p>
-                    </div>
-                `;
-            }
-        }
-
-        function askAboutPhD() {
-            if (usingFallback) {
-                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
-                messagesContainer.innerHTML = `
-                    <div class="bg-purple-100 dark:bg-purple-900/20 rounded-lg p-3 text-sm">
-                        <p class="text-purple-800 dark:text-purple-200"><strong>🎓 Ph.D. Journey</strong></p>
-                        <p class="text-gray-700 dark:text-gray-300 mt-2">A Ph.D. is about making a small but meaningful "dent" in human knowledge. Focus and persistence are key!</p>
-                    </div>
-                `;
-            }
-        }
-
-        function askAboutKnowledgeCircle() {
-            if (usingFallback) {
-                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
-                messagesContainer.innerHTML = `
-                    <div class="bg-blue-100 dark:bg-blue-900/20 rounded-lg p-3 text-sm">
-                        <p class="text-blue-800 dark:text-blue-200"><strong>💡 Knowledge Circle</strong></p>
-                        <p class="text-gray-700 dark:text-gray-300 mt-2">Matt Might's circle shows that all human knowledge forms a circle, and research happens at the boundary.</p>
-                    </div>
-                `;
-            }
-        }
-
-        function askAboutResearchProcess() {
-            if (usingFallback) {
-                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
-                messagesContainer.innerHTML = `
-                    <div class="bg-green-100 dark:bg-green-900/20 rounded-lg p-3 text-sm">
-                        <p class="text-green-800 dark:text-green-200"><strong>🔍 Research Process</strong></p>
-                        <p class="text-gray-700 dark:text-gray-300 mt-2">Research follows key steps: identify gaps, focus questions, design methodology, push boundaries, make contributions.</p>
-                    </div>
-                `;
-            }
-        }
-
-        function askAboutMyProgress() {
-            if (usingFallback) {
-                const slideProgress = completionData.slides.filter(s => s).length;
-                const taskProgress = completionData.tasks.filter(t => t).length;
-                const interactionProgress = completionData.interactions.filter(i => i).length;
-                
-                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
-                messagesContainer.innerHTML = `
-                    <div class="bg-purple-100 dark:bg-purple-900/20 rounded-lg p-3 text-sm">
-                        <p class="text-purple-800 dark:text-purple-200"><strong>📊 Your Progress</strong></p>
-                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-2 space-y-1">
-                            <div>📚 Learning Slides: ${slideProgress}/5</div>
-                            <div>💭 Reflection Tasks: ${taskProgress}/3</div>
-                            <div>🎮 Interactive Activities: ${interactionProgress}/3</div>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        // HeyGen Avatar Initialization Functions
-        function initializeAvatarInfo() {
-            const avatarEmbed = document.getElementById('heygen-streaming-embed');
-            const avatarInfoPanel = document.getElementById('avatarInfoPanel');
-            
-            if (avatarEmbed && avatarInfoPanel) {
-                let hoverTimeout;
-                
-                avatarEmbed.addEventListener('mouseenter', function() {
-                    clearTimeout(hoverTimeout);
-                    avatarInfoPanel.classList.remove('hidden');
-                });
-                
-                avatarEmbed.addEventListener('mouseleave', function() {
-                    hoverTimeout = setTimeout(() => {
-                        avatarInfoPanel.classList.add('hidden');
-                    }, 2000);
-                });
-                
-                avatarInfoPanel.addEventListener('mouseenter', function() {
-                    clearTimeout(hoverTimeout);
-                });
-                
-                avatarInfoPanel.addEventListener('mouseleave', function() {
-                    hoverTimeout = setTimeout(() => {
-                        avatarInfoPanel.classList.add('hidden');
-                    }, 1000);
-                });
-            }
-        }
-
-        function initializePiPHandler() {
-            const avatarEmbed = document.getElementById('heygen-streaming-embed');
-            const avatarContainer = document.getElementById('heygen-streaming-container');
-            
-            if (avatarContainer) {
-                const iframe = avatarContainer.querySelector('iframe');
-                
-                if (iframe) {
-                    iframe.addEventListener('enterpictureinpicture', function() {
-                        if (avatarEmbed) {
-                            avatarEmbed.style.opacity = '0';
-                            avatarEmbed.style.visibility = 'hidden';
-                            avatarEmbed.style.pointerEvents = 'none';
-                        }
-                    });
-                    
-                    iframe.addEventListener('leavepictureinpicture', function() {
-                        if (avatarEmbed) {
-                            avatarEmbed.style.opacity = '1';
-                            avatarEmbed.style.visibility = 'visible';
-                            avatarEmbed.style.pointerEvents = 'auto';
-                        }
-                    });
-                }
-            }
-        }
-
         // Initialize the page
-     </script>
-
-
-</body></html>
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(1);
+            showGame(1);
+            showChatMessage(0);
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
