@@ -1,0 +1,1876 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Research &amp; Ph.D. Studies - UCLC 1008</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .slide-container {
+            transition: transform 0.3s ease-in-out;
+        }
+        .chat-message {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .annotation-highlight {
+            background: linear-gradient(120deg, #5D5CDE20 0%, #5D5CDE20 100%);
+            border-left: 3px solid #5D5CDE;
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+        .interactive-circle {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .interactive-circle:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+        textarea:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #5D5CDE;
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body class="bg-white dark:bg-gray-900">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="min-h-screen">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-primary to-primary-light text-white p-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-2">Understanding Research &amp; Ph.D. Studies</h1>
+                        <p class="text-primary-light">UCLC 1008 University English I • Module 4: Research Foundations</p>
+                    </div>
+                    <a href="https://smartlessons.hkbu.tech/UCLC1008/index.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-colors flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Back to Course
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Learning Progress</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400" id="progressText">0% Complete</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div class="progress-bar bg-primary h-2 rounded-full" style="width: 0%" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-6xl mx-auto p-6">
+
+            <!-- Overview Section -->
+            <div class="mb-12">
+                <div class="bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-8 border border-primary/20">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary to-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl">📖</span>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Module Overview</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400">Understanding Research &amp; Ph.D. Studies</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Learning Objectives -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-bold text-primary mb-4">🎯 Learning Objectives</h3>
+                            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <li>• Understand the nature and purpose of research</li>
+                                <li>• Explore the Ph.D. journey and knowledge creation</li>
+                                <li>• Develop research thinking and question formulation</li>
+                                <li>• Connect academic writing to research process</li>
+                                <li>• Learn effective AI collaboration for research</li>
+                            </ul>
+                        </div>
+
+                        <!-- Module Structure -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-bold text-primary mb-4">📚 Module Structure</h3>
+                            <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                                    <span>5 Interactive Learning Slides</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                                    <span>3 Interactive Activities</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                    <span>3 Reflection Tasks</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span>AI Consultation Guide</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Key Features -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-bold text-primary mb-4">✨ Key Features</h3>
+                            <div class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <div>🤖 <strong>AI Assistant:</strong> Interactive chat support</div>
+                                <div>📊 <strong>Progress Tracking:</strong> Real-time completion monitoring</div>
+                                <div>📝 <strong>Report Generation:</strong> Downloadable learning summary</div>
+                                <div>💬 <strong>Moodle Integration:</strong> Seamless discussion forum access</div>
+                                <div>🎮 <strong>Gamification:</strong> Interactive knowledge exploration</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Navigation -->
+                    <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">📋 Section Navigation</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <button onclick="toggleSection('learning-content')" class="section-toggle-btn bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 p-4 rounded-lg text-center transition-colors">
+                                <div class="text-2xl mb-2">📚</div>
+                                <div class="text-sm font-medium text-blue-800 dark:text-blue-200">Learning Content</div>
+                            </button>
+                            <button onclick="toggleSection('interactive-activities')" class="section-toggle-btn bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 p-4 rounded-lg text-center transition-colors">
+                                <div class="text-2xl mb-2">🎮</div>
+                                <div class="text-sm font-medium text-green-800 dark:text-green-200">Activities</div>
+                            </button>
+                            <button onclick="toggleSection('reflection-tasks')" class="section-toggle-btn bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 p-4 rounded-lg text-center transition-colors">
+                                <div class="text-2xl mb-2">💭</div>
+                                <div class="text-sm font-medium text-purple-800 dark:text-purple-200">Reflection</div>
+                            </button>
+                            <button onclick="toggleSection('ai-assistant')" class="section-toggle-btn bg-orange-50 dark:bg-orange-900/20 hover:bg-orange-100 dark:hover:bg-orange-900/30 p-4 rounded-lg text-center transition-colors">
+                                <div class="text-2xl mb-2">🤖</div>
+                                <div class="text-sm font-medium text-orange-800 dark:text-orange-200">AI Assistant</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Learning Slides -->
+            <div id="learning-content" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📚 Learning Content</h2>
+                
+                <!-- Slide Navigation -->
+                <div class="flex justify-center mb-6">
+                    <div class="flex space-x-3">
+                        <button onclick="prevSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">← Previous</button>
+                        <span id="slideCounter" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium">1 / 5</span>
+                        <button onclick="nextSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Slides Container -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <div id="slidesContainer" class="slide-container">
+                        
+                        <!-- Slide 1: Introduction to Research -->
+                        <div class="slide p-8" data-slide="1">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🔬 What is Research?</h3>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary mb-4">Definition of Research</h4>
+                                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                        <li>• Systematic investigation to establish facts</li>
+                                        <li>• Process of discovering new knowledge</li>
+                                        <li>• Building upon existing human understanding</li>
+                                        <li>• Contributing to the circle of knowledge</li>
+                                        <li>• Addressing gaps in current understanding</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+                                        <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">Think of knowledge as a circle...</h4>
+                                        <div class="w-48 h-48 mx-auto relative">
+                                            <svg viewBox="0 0 200 200" class="w-full h-full">
+                                                <circle cx="100" cy="100" r="80" fill="#5D5CDE" opacity="0.6" class="interactive-circle" onclick="highlightKnowledge()"></circle>
+                                                <text x="100" y="100" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="12" font-weight="bold">All Human Knowledge</text>
+                                            </svg>
+                                        </div>
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 mt-2 text-center">Click the circle to explore!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Comprehension Task -->
+                            <div class="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4"><strong>What is the primary goal of academic research?</strong></p>
+                                <div class="space-y-2" id="slide1-options">
+                                    <label class="flex items-center cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-800 p-2 rounded">
+                                        <input type="radio" name="q1" value="a" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">A) To discover new knowledge and expand human understanding</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-800 p-2 rounded">
+                                        <input type="radio" name="q1" value="b" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">B) To repeat what others have already discovered</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-800 p-2 rounded">
+                                        <input type="radio" name="q1" value="c" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">C) To prove existing theories wrong</span>
+                                    </label>
+                                </div>
+                                <button onclick="checkAnswer(1, 'a')" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark">Check Answer</button>
+                                <div id="feedback1" class="hidden mt-2 text-sm"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Educational Journey -->
+                        <div class="slide p-8 hidden" data-slide="2">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🎓 The Educational Journey</h3>
+                            <div class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-primary mb-4">Academic Progression</h4>
+                                        <div class="space-y-4">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="bg-yellow-500 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">K-12</div>
+                                                <span class="text-gray-700 dark:text-gray-300">Basic knowledge foundation</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="bg-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">BA</div>
+                                                <span class="text-gray-700 dark:text-gray-300">Specialization begins</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">MA</div>
+                                                <span class="text-gray-700 dark:text-gray-300">Deeper specialization</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="bg-purple-500 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">PhD</div>
+                                                <span class="text-gray-700 dark:text-gray-300">Push knowledge boundary</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-primary mb-4">Research Papers &amp; Boundary</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 mb-4">Reading research papers takes you to the edge of human knowledge. At the boundary, you focus and push until you make your own contribution.</p>
+                                        <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                            <p class="text-sm text-purple-800 dark:text-purple-200 italic">"Once you're at the boundary, you focus. You push at the boundary for a few years. Until one day, the boundary gives way. And, that dent you've made is called a Ph.D."</p>
+                                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-2">- Matt Might</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Comprehension Task -->
+                            <div class="mt-8 bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4"><strong>According to Matt Might's analogy, what happens when you complete a Ph.D.?</strong></p>
+                                <div class="space-y-2" id="slide2-options">
+                                    <label class="flex items-center cursor-pointer hover:bg-purple-100 dark:hover:bg-purple-800 p-2 rounded">
+                                        <input type="radio" name="q2" value="a" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">A) You learn everything there is to know</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-purple-100 dark:hover:bg-purple-800 p-2 rounded">
+                                        <input type="radio" name="q2" value="b" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">B) You make a small dent in the boundary of human knowledge</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-purple-100 dark:hover:bg-purple-800 p-2 rounded">
+                                        <input type="radio" name="q2" value="c" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">C) You become the world's leading expert</span>
+                                    </label>
+                                </div>
+                                <button onclick="checkAnswer(2, 'b')" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark">Check Answer</button>
+                                <div id="feedback2" class="hidden mt-2 text-sm"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Research Process -->
+                        <div class="slide p-8 hidden" data-slide="3">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🔍 The Research Process</h3>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary mb-4">Key Steps in Research</h4>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1">1</div>
+                                            <div>
+                                                <h5 class="font-medium">Identify the Gap</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Find the edge of current knowledge</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1">2</div>
+                                            <div>
+                                                <h5 class="font-medium">Focus Your Area</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Narrow down to a specific research question</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1">3</div>
+                                            <div>
+                                                <h5 class="font-medium">Push the Boundary</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Conduct systematic investigation</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1">4</div>
+                                            <div>
+                                                <h5 class="font-medium">Make Your Dent</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Contribute new knowledge</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary mb-4">Research Mindset</h4>
+                                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                        <li>🤔 <strong>Curiosity:</strong> Ask "Why?" and "How?"</li>
+                                        <li>📚 <strong>Thoroughness:</strong> Read extensively in your field</li>
+                                        <li>🎯 <strong>Persistence:</strong> Keep pushing when progress is slow</li>
+                                        <li>🔄 <strong>Iteration:</strong> Refine your approach continuously</li>
+                                        <li>🌍 <strong>Perspective:</strong> Remember the bigger picture</li>
+                                    </ul>
+                                    <div class="mt-4 bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg">
+                                        <p class="text-sm text-yellow-800 dark:text-yellow-200 font-medium">"The world looks different to you now. So, don't forget the bigger picture: Keep pushing."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Comprehension Task -->
+                            <div class="mt-8 bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4"><strong>What is the first step in the research process?</strong></p>
+                                <div class="space-y-2" id="slide3-options">
+                                    <label class="flex items-center cursor-pointer hover:bg-green-100 dark:hover:bg-green-800 p-2 rounded">
+                                        <input type="radio" name="q3" value="a" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">A) Identifying gaps in current knowledge</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-green-100 dark:hover:bg-green-800 p-2 rounded">
+                                        <input type="radio" name="q3" value="b" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">B) Conducting experiments immediately</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-green-100 dark:hover:bg-green-800 p-2 rounded">
+                                        <input type="radio" name="q3" value="c" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">C) Writing the final paper</span>
+                                    </label>
+                                </div>
+                                <button onclick="checkAnswer(3, 'a')" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark">Check Answer</button>
+                                <div id="feedback3" class="hidden mt-2 text-sm"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Academic Writing and Research -->
+                        <div class="slide p-8 hidden" data-slide="4">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📝 Academic Writing in Research</h3>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary mb-4">Writing for Research</h4>
+                                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                        <li>• <strong>Literature Review:</strong> Survey existing knowledge</li>
+                                        <li>• <strong>Research Proposal:</strong> Outline your planned contribution</li>
+                                        <li>• <strong>Methodology:</strong> Explain your research approach</li>
+                                        <li>• <strong>Results &amp; Analysis:</strong> Present your findings</li>
+                                        <li>• <strong>Discussion:</strong> Interpret implications</li>
+                                        <li>• <strong>Conclusion:</strong> Summarize your contribution</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary mb-4">Research Communication</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+                                            <h5 class="font-medium text-blue-800 dark:text-blue-200">Peer Review</h5>
+                                            <p class="text-sm text-gray-700 dark:text-gray-300">Other experts evaluate your work</p>
+                                        </div>
+                                        <div class="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+                                            <h5 class="font-medium text-green-800 dark:text-green-200">Publication</h5>
+                                            <p class="text-sm text-gray-700 dark:text-gray-300">Share findings with academic community</p>
+                                        </div>
+                                        <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+                                            <h5 class="font-medium text-purple-800 dark:text-purple-200">Citation</h5>
+                                            <p class="text-sm text-gray-700 dark:text-gray-300">Others build upon your work</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Comprehension Task -->
+                            <div class="mt-8 bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4"><strong>What is the purpose of a literature review in research?</strong></p>
+                                <div class="space-y-2" id="slide4-options">
+                                    <label class="flex items-center cursor-pointer hover:bg-orange-100 dark:hover:bg-orange-800 p-2 rounded">
+                                        <input type="radio" name="q4" value="a" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">A) To survey and understand existing knowledge in your field</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-orange-100 dark:hover:bg-orange-800 p-2 rounded">
+                                        <input type="radio" name="q4" value="b" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">B) To copy other researchers' work</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-orange-100 dark:hover:bg-orange-800 p-2 rounded">
+                                        <input type="radio" name="q4" value="c" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">C) To prove that research is unnecessary</span>
+                                    </label>
+                                </div>
+                                <button onclick="checkAnswer(4, 'a')" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark">Check Answer</button>
+                                <div id="feedback4" class="hidden mt-2 text-sm"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Keep Pushing -->
+                        <div class="slide p-8 hidden" data-slide="5">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🚀 Keep Pushing Forward</h3>
+                            <div class="text-center">
+                                <div class="bg-gradient-to-br from-primary/10 to-primary-light/10 p-8 rounded-lg mb-6">
+                                    <div class="w-64 h-64 mx-auto mb-6 relative">
+                                        <svg viewBox="0 0 300 300" class="w-full h-full">
+                                            <!-- Large circle representing knowledge -->
+                                            <circle cx="150" cy="150" r="120" fill="#5D5CDE" opacity="0.6"></circle>
+                                            <!-- Small dent representing PhD contribution -->
+                                            <circle cx="250" cy="150" r="25" fill="#7B7AE8" opacity="0.8"></circle>
+                                            <!-- Arrow pointing outward -->
+                                            <path d="M 250 150 L 280 150" stroke="#4A49C2" stroke-width="3" marker-end="url(#arrowhead)"></path>
+                                            <!-- Arrow marker -->
+                                            <defs>
+                                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4A49C2"></polygon>
+                                                </marker>
+                                            </defs>
+                                            <text x="150" y="150" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="14" font-weight="bold">Knowledge</text>
+                                            <text x="250" y="150" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" font-weight="bold">Your PhD</text>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-2xl font-bold text-primary mb-4">Remember the Bigger Picture</h4>
+                                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">Your contribution may seem small, but it's part of humanity's continuous journey of discovery.</p>
+                                </div>
+                                
+                                <div class="grid md:grid-cols-3 gap-6">
+                                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                        <h5 class="font-bold text-primary mb-2">🎯 Stay Focused</h5>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Your research question matters</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                        <h5 class="font-bold text-primary mb-2">🔄 Keep Learning</h5>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Knowledge builds upon knowledge</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                        <h5 class="font-bold text-primary mb-2">🌟 Make Impact</h5>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Your dent can change the world</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Final Comprehension Task -->
+                            <div class="mt-8 bg-primary/10 rounded-lg p-6">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Final Reflection</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4"><strong>What is the key message of Matt Might's illustration?</strong></p>
+                                <div class="space-y-2" id="slide5-options">
+                                    <label class="flex items-center cursor-pointer hover:bg-primary/20 p-2 rounded">
+                                        <input type="radio" name="q5" value="a" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">A) Research is only for the most brilliant minds</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-primary/20 p-2 rounded">
+                                        <input type="radio" name="q5" value="b" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">B) Every small contribution to knowledge matters and you should keep pushing</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer hover:bg-primary/20 p-2 rounded">
+                                        <input type="radio" name="q5" value="c" class="mr-2">
+                                        <span class="text-gray-700 dark:text-gray-300">C) PhD studies are a waste of time</span>
+                                    </label>
+                                </div>
+                                <button onclick="checkAnswer(5, 'b')" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark">Check Answer</button>
+                                <div id="feedback5" class="hidden mt-2 text-sm"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Interactive Knowledge Game -->
+            <div id="interactive-activities" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🎮 Interactive Knowledge Explorer</h2>
+                
+                <!-- Game Navigation -->
+                <div class="flex justify-center mb-6">
+                    <div class="flex space-x-3">
+                        <button onclick="prevGame()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">← Previous</button>
+                        <span id="gameCounter" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium">1 / 3</span>
+                        <button onclick="nextGame()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">Next →</button>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Interactive Section -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <div id="gameContainer">
+                            <!-- Game 1: Knowledge Circle Explorer -->
+                            <div class="game-slide" data-game="1">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🔍 Knowledge Circle Explorer</h3>
+                                <div class="relative bg-gray-50 dark:bg-gray-700 rounded-lg p-8 min-h-96">
+                                    <div class="text-center">
+                                        <div class="mb-4">
+                                            <select id="educationLevel" onchange="updateKnowledgeCircle()" class="px-4 py-2 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                                                <option value="elementary">Elementary School</option>
+                                                <option value="highschool">High School</option>
+                                                <option value="bachelor">Bachelor's Degree</option>
+                                                <option value="master">Master's Degree</option>
+                                                <option value="phd">Ph.D.</option>
+                                            </select>
+                                        </div>
+                                        <div class="w-80 h-80 mx-auto relative" id="knowledgeVisualization">
+                                            <!-- Dynamic SVG will be inserted here -->
+                                        </div>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">Select different education levels to see how knowledge grows!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game 2: Research Journey Simulator -->
+                            <div class="game-slide hidden" data-game="2">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🧭 Research Journey Simulator</h3>
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+                                    <div class="space-y-4">
+                                        <div class="text-center mb-6">
+                                            <p class="text-gray-700 dark:text-gray-300 mb-4">Simulate your research journey! Click each step:</p>
+                                            <div id="researchProgress" class="text-lg font-bold text-primary">Step 1: Choose Your Field</div>
+                                        </div>
+                                        
+                                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                            <button onclick="advanceResearch(1)" class="research-step bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-colors" data-step="1">
+                                                <div class="text-2xl mb-2">📚</div>
+                                                <div class="text-sm">Choose Field</div>
+                                            </button>
+                                            <button onclick="advanceResearch(2)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="2" disabled="">
+                                                <div class="text-2xl mb-2">🔍</div>
+                                                <div class="text-sm">Find Gap</div>
+                                            </button>
+                                            <button onclick="advanceResearch(3)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="3" disabled="">
+                                                <div class="text-2xl mb-2">🎯</div>
+                                                <div class="text-sm">Focus</div>
+                                            </button>
+                                            <button onclick="advanceResearch(4)" class="research-step bg-gray-400 text-white p-4 rounded-lg transition-colors" data-step="4" disabled="">
+                                                <div class="text-2xl mb-2">🚀</div>
+                                                <div class="text-sm">Push Boundary</div>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="mt-6 bg-white dark:bg-gray-800 rounded-lg p-4">
+                                            <div id="researchFeedback" class="text-gray-700 dark:text-gray-300">
+                                                Click "Choose Field" to start your research journey!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game 3: Citation Network -->
+                            <div class="game-slide hidden" data-game="3">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🔗 Citation Network Explorer</h3>
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+                                    <div class="text-center mb-4">
+                                        <p class="text-gray-700 dark:text-gray-300 mb-4">Explore how research builds upon previous work:</p>
+                                        <button onclick="showCitationNetwork()" class="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors">
+                                            🌐 Generate Citation Network
+                                        </button>
+                                    </div>
+                                    <div id="citationNetwork" class="mt-6">
+                                        <!-- Citation network visualization will be inserted here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Notes -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <div id="activityNotes">
+                            <!-- Notes 1 -->
+                            <div class="activity-notes" data-notes="1">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🎯 Learning Insights</h3>
+                                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Knowledge Growth</h4>
+                                        <p class="text-sm">Notice how your knowledge area grows but always remains small compared to all human knowledge. This teaches humility and the importance of collaboration.</p>
+                                    </div>
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Specialization Process</h4>
+                                        <p class="text-sm">Each education level narrows your focus but deepens your expertise. A Ph.D. means becoming an expert in a very specific area.</p>
+                                    </div>
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">The Bigger Picture</h4>
+                                        <p class="text-sm">Your specialized knowledge connects to the larger circle of human understanding. Every contribution matters.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notes 2 -->
+                            <div class="activity-notes hidden" data-notes="2">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🧭 Research Journey</h3>
+                                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Sequential Process</h4>
+                                        <p class="text-sm">Research follows a logical sequence. You can't jump to pushing boundaries without first understanding your field and finding gaps.</p>
+                                    </div>
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Time Investment</h4>
+                                        <p class="text-sm">Each step takes significant time and effort. The "pushing" phase often takes years of persistent work.</p>
+                                    </div>
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Breakthrough Moment</h4>
+                                        <p class="text-sm">The moment when "the boundary gives way" is the culmination of years of preparation and focused effort.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notes 3 -->
+                            <div class="activity-notes hidden" data-notes="3">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🔗 Knowledge Connections</h3>
+                                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Building on Others</h4>
+                                        <p class="text-sm">Every research contribution builds upon previous work. Citations create a network of interconnected knowledge.</p>
+                                    </div>
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Academic Dialogue</h4>
+                                        <p class="text-sm">Research is a conversation across time. Your work responds to previous scholars and invites future responses.</p>
+                                    </div>
+                                    <div class="annotation-highlight">
+                                        <h4 class="font-medium text-primary">Collective Progress</h4>
+                                        <p class="text-sm">Individual contributions combine to advance human understanding. Science is collaborative, even when done alone.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Open-Ended Reflection Tasks -->
+            <div id="reflection-tasks" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">💭 Reflection &amp; Analysis Tasks</h2>
+                
+                <div class="space-y-6">
+                    <!-- Task 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🤔 Task 1: Personal Knowledge Reflection</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Reflect on Matt Might's illustration of knowledge as a circle. Think about your own academic journey and current understanding.
+                        </p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Where do you see yourself currently on this knowledge journey? Explain your reasoning.
+                                </label>
+                                <textarea id="task1-response" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Share your thoughts about your current position in the knowledge circle..." onchange="updateProgress()"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    What specific area of knowledge interests you most for deeper exploration?
+                                </label>
+                                <textarea id="task1-interest" class="w-full h-20 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Describe your area of interest and why it fascinates you..." onchange="updateProgress()"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">📊 Task 2: Research Question Development</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Practice identifying potential research questions in your field of interest. Consider what gaps might exist at the boundary of current knowledge.
+                        </p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Formulate one specific research question you would like to investigate:
+                                </label>
+                                <textarea id="task2-question" class="w-full h-20 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Write a clear, focused research question..." onchange="updateProgress()"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Why is this question important? What gap in knowledge does it address?
+                                </label>
+                                <textarea id="task2-significance" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Explain the significance and potential impact of your research question..." onchange="updateProgress()"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🎯 Task 3: Research Impact Vision</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Consider the broader implications of research work. How might your "small dent" in the knowledge boundary contribute to the bigger picture?
+                        </p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    How could your research question contribute to solving real-world problems?
+                                </label>
+                                <textarea id="task3-impact" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Describe the potential real-world applications and benefits..." onchange="updateProgress()"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    What challenges do you anticipate in pursuing this research, and how might you overcome them?
+                                </label>
+                                <textarea id="task3-challenges" class="w-full h-24 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-base" placeholder="Identify potential obstacles and strategies for addressing them..." onchange="updateProgress()"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Report Section -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📈 Learning Report</h2>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Your Learning Summary</h3>
+                        <div class="flex space-x-3">
+                            <button onclick="generateReport()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+                                📊 Generate Report
+                            </button>
+                            <button onclick="downloadReport()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                                📥 Download MD
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="learningReport" class="space-y-4">
+                        <div class="text-center text-gray-500 dark:text-gray-400 py-8">
+                            <p>Complete the tasks above and click "Generate Report" to see your learning summary.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Consultation Section -->
+            <div id="ai-assistant" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🤖 AI Learning Assistant</h2>
+                
+                <!-- AI Signup Instructions -->
+                <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-6 mb-6">
+                    <h3 class="text-lg font-bold text-yellow-800 dark:text-yellow-200 mb-3">🚀 Getting Started with AI Tools</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-yellow-700 dark:text-yellow-300 mb-2">Recommended AI Platforms:</h4>
+                            <ul class="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
+                                <li>• <a href="#" class="underline hover:text-yellow-600">ChatGPT (OpenAI)</a> - General purpose AI assistant</li>
+                                <li>• <a href="#" class="underline hover:text-yellow-600">Claude (Anthropic)</a> - Research and analysis focused</li>
+                                <li>• <a href="#" class="underline hover:text-yellow-600">Google Bard</a> - Integration with Google services</li>
+                                <li>• <a href="#" class="underline hover:text-yellow-600">Bing Chat</a> - Web-connected AI assistant</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-yellow-700 dark:text-yellow-300 mb-2">Quick Setup Guide:</h4>
+                            <ol class="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
+                                <li>1. Choose an AI platform from the list</li>
+                                <li>2. Create a free account with your email</li>
+                                <li>3. Verify your account if required</li>
+                                <li>4. Copy your learning report and paste it into the AI chat</li>
+                                <li>5. Ask for feedback and guidance on your responses</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- AI Chat Demo -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                        <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white">💬 AI Consultation Demo</h3>
+                                <div class="flex space-x-2">
+                                    <button onclick="prevChatMessage()" class="px-3 py-1 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 transition-colors">←</button>
+                                    <span id="chatProgress" class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded text-sm">1 / 6</span>
+                                    <button onclick="nextChatMessage()" class="px-3 py-1 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 transition-colors">→</button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Click next to see how to discuss your research interests with AI</p>
+                        </div>
+                        <div class="p-4 max-h-96 overflow-y-auto space-y-4" id="aiChatDemo">
+                            <!-- Chat messages will be dynamically inserted here -->
+                        </div>
+                        
+
+                    </div>
+
+                    <!-- AI Guidelines & Analysis -->
+                    <div class="space-y-6">
+                        <!-- Current Chat Analysis -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">🔍 Chat Message Analysis</h3>
+                            <div id="chatAnalysis">
+                                <div class="annotation-highlight">
+                                    <h4 class="font-medium text-primary">Effective Opening</h4>
+                                    <p class="text-sm">Start by sharing your specific learning context and what you hope to achieve through the conversation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Best Practices -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">📋 AI Research Discussion Tips</h3>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium text-green-600 dark:text-green-400 mb-2">✅ Effective Strategies</h4>
+                                    <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                                        <li>• Share your specific research interests and questions</li>
+                                        <li>• Ask for feedback on the clarity and focus of your ideas</li>
+                                        <li>• Request suggestions for exploring research methodologies</li>
+                                        <li>• Seek help in identifying relevant literature and sources</li>
+                                        <li>• Discuss potential challenges and how to address them</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-medium text-red-600 dark:text-red-400 mb-2">❌ Avoid These Approaches</h4>
+                                    <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                                        <li>• Asking AI to conduct research for you</li>
+                                        <li>• Requesting AI to write your research proposal</li>
+                                        <li>• Accepting AI suggestions without critical evaluation</li>
+                                        <li>• Using AI-generated content without attribution</li>
+                                        <li>• Relying solely on AI without consulting human experts</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Moodle Discussion Section -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">💬 Continue the Discussion</h2>
+                
+                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-blue-800 dark:text-blue-200 mb-4">📚 Join the Moodle Forum</h3>
+                            <p class="text-blue-700 dark:text-blue-300 mb-4">
+                                Take your learning further by discussing these topics with your classmates and instructor on Moodle.
+                            </p>
+                            <div class="space-y-3">
+                                <a href="https://buelearning.hkbu.edu.hk/course/view.php?id=120414" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                    🌐 Access Moodle Forum
+                                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-blue-800 dark:text-blue-200 mb-4">💡 Discussion Topics</h3>
+                            <ul class="text-sm text-blue-700 dark:text-blue-300 space-y-2">
+                                <li>• Share your research interests and get peer feedback</li>
+                                <li>• Discuss different interpretations of Matt Might's illustration</li>
+                                <li>• Compare research methodologies across different fields</li>
+                                <li>• Exchange tips for academic reading and writing</li>
+                                <li>• Collaborate on understanding complex research concepts</li>
+                                <li>• Help each other refine research questions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Avatar Info Panel -->
+    <div id="avatarInfoPanel" class="fixed bottom-6 left-6 bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600 shadow-lg max-w-xs z-40 hidden">
+        <div class="font-semibold text-gray-900 dark:text-white text-sm">AI Research Assistant</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400">UCLC 1008 Learning Support</div>
+        <div class="text-xs text-primary hover:underline cursor-pointer">Ask about research topics →</div>
+    </div>
+
+    <!-- Avatar Toggle Button -->
+    <div class="fixed bottom-80 left-6 z-50">
+        <button id="avatarToggleButton" onclick="toggleAvatar()" class="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors shadow-lg">
+            ❌ Hide AI Assistant
+        </button>
+    </div>
+
+    <!-- Fallback Local AI Assistant (hidden by default, shown if HeyGen fails) -->
+    <div id="ai-assistant-fallback" class="fixed left-5 bottom-5 z-40 hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border-2 border-white overflow-hidden transition-all duration-300 ease-in-out" style="width: 280px; height: 320px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            
+            <!-- Fallback AI Header -->
+            <div class="bg-gradient-to-r from-primary to-primary-light p-4 text-white">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                        <span class="text-lg">🤖</span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">AI Research Assistant</h4>
+                        <p class="text-xs opacity-80">Fallback Mode</p>
+                    </div>
+                    <button onclick="toggleAvatar()" class="ml-auto text-white hover:bg-white hover:bg-opacity-20 rounded-full p-1 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fallback Chat Messages -->
+            <div class="bg-white dark:bg-gray-800 p-4 h-48 overflow-y-auto space-y-3">
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 text-sm">
+                    <p class="text-gray-800 dark:text-gray-200">🔧 HeyGen avatar unavailable. Using local assistant:</p>
+                    <ul class="mt-2 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <li>• Research guidance available</li>
+                        <li>• Progress tracking active</li>
+                        <li>• Learning support ready</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <button onclick="startFallbackConversation()" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary-dark transition-colors">
+                        💬 Start Conversation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fallback Action Buttons -->
+            <div class="bg-gray-50 dark:bg-gray-700 p-3 border-t border-gray-200 dark:border-gray-600">
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="askAboutResearch()" class="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600 transition-colors">
+                        🔬 Research Help
+                    </button>
+                    <button onclick="askAboutPhD()" class="bg-purple-500 text-white px-2 py-1 rounded text-xs hover:bg-purple-600 transition-colors">
+                        🎓 Ph.D. Journey
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HeyGen Avatar Embed Script -->
+    <script>!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 20px;\n    bottom: 20px;\n    width: 260px;\n    height: 280px;\n    border-radius: 16px;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease;\n    overflow: hidden;\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 340px; width: calc(100vw - 40px); left: 20px;":"height: 380px; width: 300px; right: 20px; left: auto;"}\n    border-radius: 16px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n    border-radius: 14px;\n    overflow: hidden;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n    border-radius: 14px;\n  }\n  `;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);</script>
+
+    <script>
+        // Learning Progress Tracking
+        let completionData = {
+            slides: [false, false, false, false, false],
+            tasks: [false, false, false],
+            interactions: [false, false, false]
+        };
+
+        // Slide Navigation
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        function showSlide(slideNumber) {
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.add('hidden');
+            });
+            
+            const currentSlideElement = document.querySelector(`[data-slide="${slideNumber}"]`);
+            if (currentSlideElement) {
+                currentSlideElement.classList.remove('hidden');
+            }
+            
+            document.getElementById('slideCounter').textContent = `${slideNumber} / ${totalSlides}`;
+            
+            // Mark slide as visited
+            if (!completionData.slides[slideNumber - 1]) {
+                completionData.slides[slideNumber - 1] = true;
+                updateProgress();
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Interactive Game Navigation
+        let currentGame = 1;
+        const totalGames = 3;
+
+        function showGame(gameNumber) {
+            document.querySelectorAll('.game-slide').forEach(slide => {
+                slide.classList.add('hidden');
+            });
+            
+            document.querySelectorAll('.activity-notes').forEach(slide => {
+                slide.classList.add('hidden');
+            });
+            
+            const currentGameElement = document.querySelector(`[data-game="${gameNumber}"]`);
+            const currentNotesElement = document.querySelector(`[data-notes="${gameNumber}"]`);
+            
+            if (currentGameElement) {
+                currentGameElement.classList.remove('hidden');
+            }
+            if (currentNotesElement) {
+                currentNotesElement.classList.remove('hidden');
+            }
+            
+            document.getElementById('gameCounter').textContent = `${gameNumber} / ${totalGames}`;
+            
+            // Initialize specific game content
+            if (gameNumber === 1) {
+                updateKnowledgeCircle();
+            }
+            
+            // Mark interaction as completed
+            if (!completionData.interactions[gameNumber - 1]) {
+                completionData.interactions[gameNumber - 1] = true;
+                updateProgress();
+            }
+        }
+
+        function nextGame() {
+            if (currentGame < totalGames) {
+                currentGame++;
+                showGame(currentGame);
+            }
+        }
+
+        function prevGame() {
+            if (currentGame > 1) {
+                currentGame--;
+                showGame(currentGame);
+            }
+        }
+
+        // Interactive Knowledge Circle
+        function updateKnowledgeCircle() {
+            const level = document.getElementById('educationLevel').value;
+            const container = document.getElementById('knowledgeVisualization');
+            
+            const configurations = {
+                elementary: { size: 30, color: '#FFB800', label: 'Basic Knowledge' },
+                highschool: { size: 50, color: '#FF8C00', label: 'Expanded Knowledge' },
+                bachelor: { size: 70, color: '#5D5CDE', label: 'Specialized Knowledge' },
+                master: { size: 85, color: '#7B7AE8', label: 'Deep Specialty' },
+                phd: { size: 95, color: '#4A49C2', label: 'Expert + New Knowledge' }
+            };
+            
+            const config = configurations[level];
+            
+            container.innerHTML = `
+                <svg viewBox="0 0 320 320" class="w-full h-full">
+                    <!-- Outer circle representing all human knowledge -->
+                    <circle cx="160" cy="160" r="150" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2"/>
+                    <text x="160" y="50" text-anchor="middle" fill="#6B7280" font-size="12" font-weight="bold">All Human Knowledge</text>
+                    
+                    <!-- Your knowledge circle -->
+                    <circle cx="160" cy="160" r="${config.size}" fill="${config.color}" opacity="0.7" class="interactive-circle" onclick="highlightKnowledge()"/>
+                    <text x="160" y="160" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" font-weight="bold">${config.label}</text>
+                    
+                    ${level === 'phd' ? `
+                        <!-- Small dent representing PhD contribution -->
+                        <circle cx="${160 + config.size - 10}" cy="160" r="15" fill="#9F9EED" opacity="0.9"/>
+                        <text x="${160 + config.size - 10}" y="160" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-weight="bold">Your Dent</text>
+                    ` : ''}
+                </svg>
+            `;
+        }
+
+        function highlightKnowledge() {
+            // Add visual feedback when clicking the knowledge circle
+            const circles = document.querySelectorAll('.interactive-circle');
+            circles.forEach(circle => {
+                circle.style.filter = 'brightness(1.2)';
+                setTimeout(() => {
+                    circle.style.filter = 'brightness(1)';
+                }, 200);
+            });
+        }
+
+        // Research Journey Simulator
+        let researchStep = 0;
+        const researchSteps = [
+            'Choose Your Field',
+            'Find Knowledge Gap',
+            'Focus Your Question',
+            'Push the Boundary',
+            'Make Your Contribution!'
+        ];
+
+        const researchFeedback = [
+            'Click "Choose Field" to start your research journey!',
+            'Great! You\'ve chosen your field. Now find a gap in current knowledge.',
+            'Excellent! You\'ve identified a gap. Time to focus on a specific research question.',
+            'Perfect! Now comes the hard part - years of pushing at the boundary.',
+            'Congratulations! You\'ve made your dent in human knowledge. Keep pushing!'
+        ];
+
+        function advanceResearch(step) {
+            if (step === researchStep + 1) {
+                researchStep = step;
+                
+                // Update progress display
+                document.getElementById('researchProgress').textContent = `Step ${step}: ${researchSteps[step - 1]}`;
+                document.getElementById('researchFeedback').textContent = researchFeedback[step];
+                
+                // Enable next button and style current one
+                const currentButton = document.querySelector(`[data-step="${step}"]`);
+                currentButton.classList.remove('bg-gray-400');
+                currentButton.classList.add('bg-green-500', 'hover:bg-green-600');
+                
+                if (step < 4) {
+                    const nextButton = document.querySelector(`[data-step="${step + 1}"]`);
+                    nextButton.disabled = false;
+                    nextButton.classList.remove('bg-gray-400');
+                    nextButton.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                }
+            }
+        }
+
+        // Citation Network Visualization
+        function showCitationNetwork() {
+            const container = document.getElementById('citationNetwork');
+            container.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                    <svg viewBox="0 0 600 400" class="w-full h-auto">
+                        <!-- Research papers as nodes -->
+                        <circle cx="100" cy="100" r="15" fill="#FFB800" opacity="0.8"/>
+                        <text x="100" y="85" text-anchor="middle" fill="#374151" font-size="10">Smith 2010</text>
+                        
+                        <circle cx="200" cy="150" r="15" fill="#FF8C00" opacity="0.8"/>
+                        <text x="200" y="135" text-anchor="middle" fill="#374151" font-size="10">Jones 2015</text>
+                        
+                        <circle cx="300" cy="120" r="15" fill="#5D5CDE" opacity="0.8"/>
+                        <text x="300" y="105" text-anchor="middle" fill="#374151" font-size="10">Lee 2018</text>
+                        
+                        <circle cx="400" cy="180" r="15" fill="#7B7AE8" opacity="0.8"/>
+                        <text x="400" y="165" text-anchor="middle" fill="#374151" font-size="10">Taylor 2020</text>
+                        
+                        <circle cx="500" cy="140" r="20" fill="#4A49C2" opacity="0.9"/>
+                        <text x="500" y="125" text-anchor="middle" fill="#374151" font-size="10" font-weight="bold">Your Work 2024</text>
+                        
+                        <!-- Citation connections -->
+                        <line x1="115" y1="100" x2="185" y2="150" stroke="#9CA3AF" stroke-width="2"/>
+                        <line x1="215" y1="150" x2="285" y2="120" stroke="#9CA3AF" stroke-width="2"/>
+                        <line x1="315" y1="120" x2="385" y2="180" stroke="#9CA3AF" stroke-width="2"/>
+                        <line x1="415" y1="180" x2="480" y2="140" stroke="#9CA3AF" stroke-width="2"/>
+                        <line x1="115" y1="100" x2="285" y2="120" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="215" y1="150" x2="480" y2="140" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="5,5"/>
+                        
+                        <!-- Legend -->
+                        <text x="50" y="350" fill="#374151" font-size="12" font-weight="bold">Citation Network:</text>
+                        <line x1="50" y1="365" x2="80" y2="365" stroke="#9CA3AF" stroke-width="2"/>
+                        <text x="90" y="370" fill="#6B7280" font-size="10">Direct Citation</text>
+                        <line x1="200" y1="365" x2="230" y2="365" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="5,5"/>
+                        <text x="240" y="370" fill="#6B7280" font-size="10">Indirect Influence</text>
+                    </svg>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center">
+                        Each research contribution builds upon previous work and enables future discoveries.
+                    </p>
+                </div>
+            `;
+        }
+
+        // Answer Checking
+        function checkAnswer(questionNumber, correctAnswer) {
+            const selected = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+            const feedback = document.getElementById(`feedback${questionNumber}`);
+            
+            if (!selected) {
+                feedback.className = 'mt-2 text-sm text-orange-600 dark:text-orange-400';
+                feedback.textContent = '⚠️ Please select an answer first.';
+                feedback.classList.remove('hidden');
+                return;
+            }
+            
+            const isCorrect = selected.value === correctAnswer;
+            
+            const feedbackMessages = {
+                1: {
+                    correct: "✅ Excellent! Research is indeed about discovering new knowledge and expanding human understanding.",
+                    incorrect: "❌ Not quite. The primary goal of academic research is to discover new knowledge and expand human understanding."
+                },
+                2: {
+                    correct: "✅ Perfect! A Ph.D. represents making a small but meaningful contribution to the boundary of human knowledge.",
+                    incorrect: "❌ Incorrect. According to Matt Might, a Ph.D. is about making a small dent in the boundary of human knowledge."
+                },
+                3: {
+                    correct: "✅ Correct! Research begins by identifying what we don't yet know - the gaps in current understanding.",
+                    incorrect: "❌ Not quite. The research process starts by identifying gaps in current knowledge at the boundary of what we know."
+                },
+                4: {
+                    correct: "✅ Exactly! Literature reviews help you understand what has already been discovered in your field.",
+                    incorrect: "❌ Incorrect. Literature reviews are conducted to survey and understand existing knowledge in your research area."
+                },
+                5: {
+                    correct: "✅ Perfect! Matt Might's key message is that every contribution matters and we should keep pushing the boundaries.",
+                    incorrect: "❌ Not quite. The key message is that every small contribution to knowledge matters and you should keep pushing."
+                }
+            };
+            
+            if (isCorrect) {
+                feedback.className = 'mt-2 text-sm text-green-600 dark:text-green-400';
+                feedback.textContent = feedbackMessages[questionNumber].correct;
+            } else {
+                feedback.className = 'mt-2 text-sm text-red-600 dark:text-red-400';
+                feedback.textContent = feedbackMessages[questionNumber].incorrect;
+            }
+            
+            feedback.classList.remove('hidden');
+            
+            document.querySelectorAll(`input[name="q${questionNumber}"]`).forEach(input => {
+                input.disabled = true;
+            });
+        }
+
+        // Progress Tracking
+        function updateProgress() {
+            // Check task completion
+            const task1 = document.getElementById('task1-response').value.trim() && 
+                         document.getElementById('task1-interest').value.trim();
+            const task2 = document.getElementById('task2-question').value.trim() && 
+                         document.getElementById('task2-significance').value.trim();
+            const task3 = document.getElementById('task3-impact').value.trim() && 
+                         document.getElementById('task3-challenges').value.trim();
+            
+            completionData.tasks = [task1, task2, task3];
+            
+            // Calculate overall progress
+            const totalItems = completionData.slides.length + completionData.tasks.length + completionData.interactions.length;
+            const completedItems = [...completionData.slides, ...completionData.tasks, ...completionData.interactions]
+                .filter(item => item).length;
+            
+            const progress = Math.round((completedItems / totalItems) * 100);
+            
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `${progress}% Complete`;
+        }
+
+        // Report Generation
+        function generateReport() {
+            const report = {
+                timestamp: new Date().toLocaleString(),
+                slideCompletion: completionData.slides.filter(s => s).length,
+                taskCompletion: completionData.tasks.filter(t => t).length,
+                interactionCompletion: completionData.interactions.filter(i => i).length,
+                responses: {
+                    task1: {
+                        position: document.getElementById('task1-response').value,
+                        interest: document.getElementById('task1-interest').value
+                    },
+                    task2: {
+                        question: document.getElementById('task2-question').value,
+                        significance: document.getElementById('task2-significance').value
+                    },
+                    task3: {
+                        impact: document.getElementById('task3-impact').value,
+                        challenges: document.getElementById('task3-challenges').value
+                    }
+                }
+            };
+            
+            const reportHTML = `
+                <div class="space-y-6">
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">${report.slideCompletion}/5</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Learning Slides</div>
+                        </div>
+                        <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-green-600 dark:text-green-400">${report.taskCompletion}/3</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Reflection Tasks</div>
+                        </div>
+                        <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">${report.interactionCompletion}/3</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Interactive Activities</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-3">📝 Your Responses Summary</h4>
+                        <div class="space-y-3 text-sm">
+                            <div><strong>Knowledge Position:</strong> ${report.responses.task1.position ? 'Completed' : 'Not completed'}</div>
+                            <div><strong>Research Interest:</strong> ${report.responses.task1.interest ? 'Completed' : 'Not completed'}</div>
+                            <div><strong>Research Question:</strong> ${report.responses.task2.question ? 'Completed' : 'Not completed'}</div>
+                            <div><strong>Research Impact:</strong> ${report.responses.task3.impact ? 'Completed' : 'Not completed'}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Generated on: ${report.timestamp}</p>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('learningReport').innerHTML = reportHTML;
+            
+            // Store report data for download
+            window.currentReport = report;
+        }
+
+        function downloadReport() {
+            if (!window.currentReport) {
+                alert('Please generate a report first!');
+                return;
+            }
+            
+            const report = window.currentReport;
+            const markdown = `# Learning Report: Understanding Research & Ph.D. Studies
+
+**Course:** UCLC 1008 University English I  
+**Module:** Research Foundations  
+**Generated:** ${report.timestamp}
+
+## Completion Summary
+
+- **Learning Slides:** ${report.slideCompletion}/5 completed
+- **Reflection Tasks:** ${report.taskCompletion}/3 completed  
+- **Interactive Activities:** ${report.interactionCompletion}/3 completed
+
+## Reflection Responses
+
+### Task 1: Personal Knowledge Reflection
+
+**Current position in knowledge journey:**
+${report.responses.task1.position || 'Not completed'}
+
+**Area of interest for exploration:**
+${report.responses.task1.interest || 'Not completed'}
+
+### Task 2: Research Question Development
+
+**Research question:**
+${report.responses.task2.question || 'Not completed'}
+
+**Significance and knowledge gap:**
+${report.responses.task2.significance || 'Not completed'}
+
+### Task 3: Research Impact Vision
+
+**Real-world contributions:**
+${report.responses.task3.impact || 'Not completed'}
+
+**Anticipated challenges and solutions:**
+${report.responses.task3.challenges || 'Not completed'}
+
+## Next Steps
+
+1. Review any incomplete sections
+2. Discuss your research interests with classmates on Moodle
+3. Consult with AI assistant for further guidance
+4. Meet with instructor during office hours for personalized feedback
+
+---
+*This report was generated from the UCLC 1008 interactive learning module on research fundamentals.*
+`;
+
+            const blob = new Blob([markdown], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'research-learning-report.md';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // AI Chat Demo
+        let currentChatMessage = 0;
+        const chatMessages = [
+            {
+                type: 'student',
+                message: 'Hi! I just completed a learning module about research and Ph.D. studies. Can you help me think through my research interests?',
+                analysis: {
+                    title: 'Effective Opening',
+                    content: 'Student provides context and clearly states what they want help with. This sets up a productive conversation.'
+                }
+            },
+            {
+                type: 'ai',
+                message: 'I\'d be happy to help you explore your research interests! Could you share what aspects of research most intrigued you from the module? Also, feel free to paste any reflection responses you completed.',
+                analysis: {
+                    title: 'Good AI Response',
+                    content: 'AI shows willingness to help and asks for specific information to provide better guidance.'
+                }
+            },
+            {
+                type: 'student',
+                message: 'I found Matt Might\'s illustration really compelling. I\'m interested in environmental sustainability, particularly how social media can influence environmental behaviors. Here\'s my research question: "How do social media campaigns affect young adults\' environmental behaviors?"',
+                analysis: {
+                    title: 'Specific Sharing',
+                    content: 'Student shares specific interests and a concrete research question, giving AI something substantive to work with.'
+                }
+            },
+            {
+                type: 'ai',
+                message: 'That\'s a fascinating research question that sits at the intersection of environmental psychology, digital media studies, and behavioral science! Your question has good scope but could be refined further. What specific environmental behaviors are you most interested in? And what aspect of social media campaigns - their messaging, frequency, visual elements, or something else?',
+                analysis: {
+                    title: 'Constructive Guidance',
+                    content: 'AI recognizes the value of the question while suggesting specific ways to make it more focused and researchable.'
+                }
+            },
+            {
+                type: 'student',
+                message: 'I\'m particularly interested in recycling and energy conservation behaviors. For social media, I think the visual storytelling aspect might be most influential - like before/after images or infographics showing environmental impact.',
+                analysis: {
+                    title: 'Building Specificity',
+                    content: 'Student responds to AI\'s questions with more specific details, showing engagement and refinement of thinking.'
+                }
+            },
+            {
+                type: 'ai',
+                message: 'Excellent refinement! Now you\'re looking at: "How do visual storytelling elements in social media campaigns influence recycling and energy conservation behaviors among young adults?" This is much more focused and researchable. Some follow-up considerations: What age range defines "young adults" for your study? How would you measure behavior change? What existing research might you build upon?',
+                analysis: {
+                    title: 'Methodological Thinking',
+                    content: 'AI helps student think about practical research design elements and connects to the broader research process discussed in the module.'
+                }
+            }
+        ];
+
+        function showChatMessage(index) {
+            const container = document.getElementById('aiChatDemo');
+            const message = chatMessages[index];
+            
+            // Clear previous messages and show only current one
+            container.innerHTML = '';
+            
+            // Show all messages up to current index
+            for (let i = 0; i <= index; i++) {
+                const msg = chatMessages[i];
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chat-message ${msg.type === 'student' ? 'flex justify-end' : 'flex justify-start'}`;
+                
+                messageDiv.innerHTML = `
+                    <div class="${msg.type === 'student' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100'} rounded-lg p-3 max-w-xs">
+                        <p class="text-sm">${msg.message}</p>
+                    </div>
+                `;
+                
+                container.appendChild(messageDiv);
+            }
+            
+            // Update progress
+            document.getElementById('chatProgress').textContent = `${index + 1} / ${chatMessages.length}`;
+            
+            // Update analysis
+            updateChatAnalysis(index);
+            
+            // Scroll to bottom
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function updateChatAnalysis(index) {
+            const message = chatMessages[index];
+            const analysisContainer = document.getElementById('chatAnalysis');
+            
+            analysisContainer.innerHTML = `
+                <div class="annotation-highlight">
+                    <h4 class="font-medium text-primary">${message.analysis.title}</h4>
+                    <p class="text-sm">${message.analysis.content}</p>
+                </div>
+            `;
+        }
+
+        function nextChatMessage() {
+            if (currentChatMessage < chatMessages.length - 1) {
+                currentChatMessage++;
+                showChatMessage(currentChatMessage);
+            }
+        }
+
+        function prevChatMessage() {
+            if (currentChatMessage > 0) {
+                currentChatMessage--;
+                showChatMessage(currentChatMessage);
+            }
+        }
+
+
+
+        // Section Toggle Functionality
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const isCurrentlyHidden = section.classList.contains('hidden');
+                
+                if (isCurrentlyHidden) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+                
+                // Update button appearance
+                const button = document.querySelector(`button[onclick="toggleSection('${sectionId}')"]`);
+                if (button) {
+                    if (!isCurrentlyHidden) {
+                        // Section is now hidden
+                        button.style.opacity = '0.5';
+                        button.style.transform = 'scale(0.95)';
+                        button.style.filter = 'grayscale(0.5)';
+                    } else {
+                        // Section is now visible
+                        button.style.opacity = '1';
+                        button.style.transform = 'scale(1)';
+                        button.style.filter = 'grayscale(0)';
+                        // Scroll to section
+                        setTimeout(() => {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 200);
+                    }
+                }
+            }
+        }
+
+        // Avatar Toggle Functionality
+        let avatarVisible = false; // Start as false since avatar starts hidden
+        let usingFallback = false;
+        
+        function toggleAvatar() {
+            console.log('Toggle avatar called');
+            
+            // Check if we have HeyGen avatar or fallback
+            let avatarEmbed = document.getElementById('heygen-streaming-embed');
+            let fallbackWidget = document.getElementById('ai-assistant-fallback');
+            
+            if (!avatarEmbed && !usingFallback) {
+                // HeyGen avatar not loaded, show fallback
+                showFallbackAssistant();
+                return;
+            }
+            
+            if (usingFallback) {
+                performFallbackToggle(fallbackWidget);
+            } else {
+                performAvatarToggle(avatarEmbed);
+            }
+        }
+        
+        function performAvatarToggle(avatarEmbed) {
+            const toggleButton = document.getElementById('avatarToggleButton');
+            
+            if (avatarVisible) {
+                // Hide avatar
+                avatarEmbed.style.opacity = '0';
+                avatarEmbed.style.visibility = 'hidden';
+                avatarEmbed.style.transform = 'scale(0.8)';
+                avatarVisible = false;
+                
+                if (toggleButton) {
+                    toggleButton.innerHTML = '🤖 Show AI Assistant';
+                    toggleButton.classList.remove('bg-red-500', 'hover:bg-red-600');
+                    toggleButton.classList.add('bg-green-500', 'hover:bg-green-600');
+                }
+            } else {
+                // Show avatar
+                avatarEmbed.style.opacity = '1';
+                avatarEmbed.style.visibility = 'visible';
+                avatarEmbed.style.transform = 'scale(1)';
+                avatarEmbed.classList.add('show');
+                avatarVisible = true;
+                
+                if (toggleButton) {
+                    toggleButton.innerHTML = '❌ Hide AI Assistant';
+                    toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+                    toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
+                }
+            }
+        }
+
+        function performFallbackToggle(fallbackWidget) {
+            const toggleButton = document.getElementById('avatarToggleButton');
+            
+            if (avatarVisible) {
+                // Hide fallback
+                fallbackWidget.style.opacity = '0';
+                fallbackWidget.style.visibility = 'hidden';
+                fallbackWidget.style.transform = 'scale(0.8) translateY(20px)';
+                avatarVisible = false;
+                
+                if (toggleButton) {
+                    toggleButton.innerHTML = '🤖 Show AI Assistant';
+                    toggleButton.classList.remove('bg-red-500', 'hover:bg-red-600');
+                    toggleButton.classList.add('bg-green-500', 'hover:bg-green-600');
+                }
+            } else {
+                // Show fallback
+                fallbackWidget.style.opacity = '1';
+                fallbackWidget.style.visibility = 'visible';
+                fallbackWidget.style.transform = 'scale(1) translateY(0)';
+                avatarVisible = true;
+                
+                if (toggleButton) {
+                    toggleButton.innerHTML = '❌ Hide AI Assistant';
+                    toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+                    toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
+                }
+            }
+        }
+
+        function showFallbackAssistant() {
+            const fallbackWidget = document.getElementById('ai-assistant-fallback');
+            const toggleButton = document.getElementById('avatarToggleButton');
+            
+            fallbackWidget.classList.remove('hidden');
+            fallbackWidget.style.opacity = '1';
+            fallbackWidget.style.visibility = 'visible';
+            fallbackWidget.style.transform = 'scale(1) translateY(0)';
+            
+            usingFallback = true;
+            avatarVisible = true;
+            
+            if (toggleButton) {
+                toggleButton.innerHTML = '❌ Hide AI Assistant';
+                toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+                toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
+            }
+            
+            console.log('Fallback AI assistant activated');
+        }
+
+        // Auto-show avatar when it's ready
+        function checkAndShowAvatar() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            if (avatarEmbed && !avatarVisible) {
+                // Avatar is loaded but hidden, show it
+                avatarEmbed.style.opacity = '1';
+                avatarEmbed.style.visibility = 'visible';
+                avatarEmbed.classList.add('show');
+                avatarVisible = true;
+                
+                const toggleButton = document.getElementById('avatarToggleButton');
+                if (toggleButton) {
+                    toggleButton.innerHTML = '❌ Hide AI Assistant';
+                    toggleButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+                    toggleButton.classList.add('bg-red-500', 'hover:bg-red-600');
+                }
+                console.log('HeyGen avatar auto-shown');
+                return true;
+            }
+            return false;
+        }
+
+        // Fallback AI Assistant Functions
+        function startFallbackConversation() {
+            const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
+            messagesContainer.innerHTML = `
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 text-sm">
+                    <p class="text-gray-800 dark:text-gray-200">💬 I'm here to help with your research learning. What would you like to explore?</p>
+                </div>
+                <div class="space-y-2">
+                    <button onclick="askAboutKnowledgeCircle()" class="w-full text-left bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 p-2 rounded text-sm transition-colors">
+                        💡 Knowledge circle concept
+                    </button>
+                    <button onclick="askAboutResearchProcess()" class="w-full text-left bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 p-2 rounded text-sm transition-colors">
+                        🔍 Research methodology
+                    </button>
+                    <button onclick="askAboutMyProgress()" class="w-full text-left bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 p-2 rounded text-sm transition-colors">
+                        📊 Your progress
+                    </button>
+                </div>
+            `;
+        }
+
+        function askAboutResearch() {
+            // This works for both HeyGen (if available) and fallback
+            if (usingFallback) {
+                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
+                messagesContainer.innerHTML = `
+                    <div class="bg-blue-100 dark:bg-blue-900/20 rounded-lg p-3 text-sm">
+                        <p class="text-blue-800 dark:text-blue-200"><strong>🔬 Research Help</strong></p>
+                        <p class="text-gray-700 dark:text-gray-300 mt-2">I can guide you through research fundamentals, question development, and methodologies.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function askAboutPhD() {
+            if (usingFallback) {
+                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
+                messagesContainer.innerHTML = `
+                    <div class="bg-purple-100 dark:bg-purple-900/20 rounded-lg p-3 text-sm">
+                        <p class="text-purple-800 dark:text-purple-200"><strong>🎓 Ph.D. Journey</strong></p>
+                        <p class="text-gray-700 dark:text-gray-300 mt-2">A Ph.D. is about making a small but meaningful "dent" in human knowledge. Focus and persistence are key!</p>
+                    </div>
+                `;
+            }
+        }
+
+        function askAboutKnowledgeCircle() {
+            if (usingFallback) {
+                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
+                messagesContainer.innerHTML = `
+                    <div class="bg-blue-100 dark:bg-blue-900/20 rounded-lg p-3 text-sm">
+                        <p class="text-blue-800 dark:text-blue-200"><strong>💡 Knowledge Circle</strong></p>
+                        <p class="text-gray-700 dark:text-gray-300 mt-2">Matt Might's circle shows that all human knowledge forms a circle, and research happens at the boundary.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function askAboutResearchProcess() {
+            if (usingFallback) {
+                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
+                messagesContainer.innerHTML = `
+                    <div class="bg-green-100 dark:bg-green-900/20 rounded-lg p-3 text-sm">
+                        <p class="text-green-800 dark:text-green-200"><strong>🔍 Research Process</strong></p>
+                        <p class="text-gray-700 dark:text-gray-300 mt-2">Research follows key steps: identify gaps, focus questions, design methodology, push boundaries, make contributions.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function askAboutMyProgress() {
+            if (usingFallback) {
+                const slideProgress = completionData.slides.filter(s => s).length;
+                const taskProgress = completionData.tasks.filter(t => t).length;
+                const interactionProgress = completionData.interactions.filter(i => i).length;
+                
+                const messagesContainer = document.querySelector('#ai-assistant-fallback .bg-white');
+                messagesContainer.innerHTML = `
+                    <div class="bg-purple-100 dark:bg-purple-900/20 rounded-lg p-3 text-sm">
+                        <p class="text-purple-800 dark:text-purple-200"><strong>📊 Your Progress</strong></p>
+                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-2 space-y-1">
+                            <div>📚 Learning Slides: ${slideProgress}/5</div>
+                            <div>💭 Reflection Tasks: ${taskProgress}/3</div>
+                            <div>🎮 Interactive Activities: ${interactionProgress}/3</div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // HeyGen Avatar Initialization Functions
+        function initializeAvatarInfo() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarInfoPanel = document.getElementById('avatarInfoPanel');
+            
+            if (avatarEmbed && avatarInfoPanel) {
+                let hoverTimeout;
+                
+                avatarEmbed.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                    avatarInfoPanel.classList.remove('hidden');
+                });
+                
+                avatarEmbed.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 2000);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 1000);
+                });
+            }
+        }
+
+        function initializePiPHandler() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarContainer = document.getElementById('heygen-streaming-container');
+            
+            if (avatarContainer) {
+                const iframe = avatarContainer.querySelector('iframe');
+                
+                if (iframe) {
+                    iframe.addEventListener('enterpictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '0';
+                            avatarEmbed.style.visibility = 'hidden';
+                            avatarEmbed.style.pointerEvents = 'none';
+                        }
+                    });
+                    
+                    iframe.addEventListener('leavepictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '1';
+                            avatarEmbed.style.visibility = 'visible';
+                            avatarEmbed.style.pointerEvents = 'auto';
+                        }
+                    });
+                }
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(1);
+            showGame(1);
+            showChatMessage(0);
+            updateProgress();
+            
+            // Initialize avatar system
+            let avatarCheckAttempts = 0;
+            const maxAttempts = 10; // 5 seconds total
+            
+            function initAvatarSystem() {
+                const avatarEmbed = document.getElementById('heygen-streaming-embed');
+                
+                if (avatarEmbed) {
+                    console.log('HeyGen avatar found, initializing...');
+                    
+                    // Show avatar if it's hidden
+                    if (!avatarVisible) {
+                        checkAndShowAvatar();
+                    }
+                    
+                    // Initialize info panel and PiP handler
+                    initializeAvatarInfo();
+                    initializePiPHandler();
+                    
+                    return true;
+                } else if (avatarCheckAttempts < maxAttempts) {
+                    avatarCheckAttempts++;
+                    console.log(`Avatar check attempt ${avatarCheckAttempts}/${maxAttempts}`);
+                    setTimeout(initAvatarSystem, 500);
+                    return false;
+                } else {
+                    console.log('HeyGen avatar failed to load, showing fallback');
+                    showFallbackAssistant();
+                    return false;
+                }
+            }
+            
+            // Start avatar initialization after a short delay
+            setTimeout(initAvatarSystem, 1000);
+        });
+    </script>
+
+
+</body></html>
