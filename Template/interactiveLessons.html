@@ -1829,48 +1829,7 @@ ${report.responses.task3.challenges || 'Not completed'}
         }
 
         // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            showSlide(1);
-            showGame(1);
-            showChatMessage(0);
-            updateProgress();
-            
-            // Initialize avatar system
-            let avatarCheckAttempts = 0;
-            const maxAttempts = 10; // 5 seconds total
-            
-            function initAvatarSystem() {
-                const avatarEmbed = document.getElementById('heygen-streaming-embed');
-                
-                if (avatarEmbed) {
-                    console.log('HeyGen avatar found, initializing...');
-                    
-                    // Show avatar if it's hidden
-                    if (!avatarVisible) {
-                        checkAndShowAvatar();
-                    }
-                    
-                    // Initialize info panel and PiP handler
-                    initializeAvatarInfo();
-                    initializePiPHandler();
-                    
-                    return true;
-                } else if (avatarCheckAttempts < maxAttempts) {
-                    avatarCheckAttempts++;
-                    console.log(`Avatar check attempt ${avatarCheckAttempts}/${maxAttempts}`);
-                    setTimeout(initAvatarSystem, 500);
-                    return false;
-                } else {
-                    console.log('HeyGen avatar failed to load, showing fallback');
-                    showFallbackAssistant();
-                    return false;
-                }
-            }
-            
-            // Start avatar initialization after a short delay
-            setTimeout(initAvatarSystem, 1000);
-        });
-    </script>
+     </script>
 
 
 </body></html>
