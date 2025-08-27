@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="css/shell.css">
 </head>
 <body>
-    <!-- This iframe will load your entire learning module -->
-    <iframe id="main-iframe" src="interactive.html" title="Interactive Research Module"></iframe>
+    <!-- 
+      THE MAIN FIX IS HERE: 
+      The src attribute now points to the correct filename "interactive-activities.html".
+    -->
+    <iframe id="main-iframe" src="modules/interactive-activities.html" title="Interactive Research Module"></iframe>
 
-    <!-- This is the floating avatar box -->
     <div id="avatarBox" class="avatar-floating-box" style="display:flex;">
         <div class="avatar-box-header" id="avatarBoxHeader">
             <button class="close-btn" id="avatarBoxCloseBtn" title="Hide" aria-label="Hide avatar">×</button>
         </div>
-        <iframe class="avatar-iframe" src="simpleAvatar01.html" title="Digital Sidekick"></iframe>
+        <!-- This path should also be correct based on your information -->
+        <iframe class="avatar-iframe" src="modules/simpleAvatar01.html" title="Digital Sidekick"></iframe>
         <div class="avatar-resize-handle" id="avatarResizeHandle" title="Resize" aria-label="Resize avatar box">
             <svg viewBox="0 0 24 24" fill="none"><path d="M14 20H20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 20L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </div>
     </div>
 
-    <!-- This button appears when the avatar is hidden -->
     <button id="restoreAvatarBtn" style="display:none;">
         Show Sidekick
     </button>
