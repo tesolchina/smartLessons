@@ -1,6 +1,6 @@
 // js/main.js
 
-// This is the main orchestrator for the interactive.html page.
+// This is the main orchestrator for the interactive-activities.html page.
 // It loads all HTML modules and then initializes the interactive components.
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,9 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to load an HTML module into its container
     const loadModule = async (moduleName) => {
         try {
-            const response = await fetch(`modules/${moduleName}.html`);
+            // 
+            // THIS IS THE FIX: 
+            // Removed the "modules/" prefix. The script will now look for files like "overview.html"
+            // in the same directory as interactive-activities.html, which is correct.
+            //
+            const response = await fetch(`${moduleName}.html`);
+            
             if (!response.ok) throw new Error(`Failed to load ${moduleName}.html`);
             const content = await response.text();
+            
             const container = document.getElementById(`${moduleName}-container`);
             if (container) {
                 container.innerHTML = content;
