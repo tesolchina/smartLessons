@@ -196,6 +196,7 @@ if __name__ == '__main__':
     print("   2. Get HKBU API key: https://genai.hkbu.edu.hk/settings/api-docs")
     print("   3. Get OpenRouter key: https://openrouter.ai/keys")
     
-    port = int(os.environ.get('PORT', 5000))
+    #port = int(os.environ.get('PORT', 5000))
+    port = 5000 
     print(f"🚀 Starting server on host=0.0.0.0 port={port}")
     app.run(host='0.0.0.0', port=port, debug=False)
