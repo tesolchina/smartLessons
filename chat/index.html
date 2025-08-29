@@ -505,7 +505,7 @@
             connectBtn.textContent = 'Testing...';
             
             try {
-                const response = await fetch('/api/test', {
+                const response = await fetch('https://smartlessons-production.up.railway.app/api/test', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -617,7 +617,7 @@
             showTyping();
             
             try {
-                const response = await fetch('/api/chat', {
+                const response = await fetch('https://smartlessons-production.up.railway.app/api/chat', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
