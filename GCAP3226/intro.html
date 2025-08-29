@@ -151,7 +151,32 @@
                 </div>
             </div>
         </div>
+<!-- Add this section right before the Course Roadmap Toggle Section -->
+<div class="max-w-6xl mx-auto mb-8">
+    <div class="text-center">
+        <button onclick="toggleGoogleDoc()" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors shadow-lg mb-4">
+            <span id="googleDocToggleText">📝 Show Course Notes</span>
+            <svg id="googleDocToggleIcon" class="ml-2 w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Google Doc Container (Hidden by default) -->
+    <div id="googleDocContainer" class="hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vRL5HteUK7PAgDl4_FK7uynz31tKSrIt6hqVA2uQIxolxtBTCqAJXzklIliXORKzyIEk7AORlxREbm9/pub?embedded=true" 
+                    class="w-full h-[600px] border-0"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Existing Course Roadmap Toggle Section continues here -->
         <!-- Course Roadmap Toggle Section -->
         <div class="max-w-6xl mx-auto mb-8">
             <div class="text-center">
@@ -1109,6 +1134,27 @@
                 toggleText.textContent = '📅 Show Course Roadmap';
                 toggleIcon.style.transform = 'rotate(0deg)';
             }
+        }
+        // Add this to the existing <script> section
+    function toggleGoogleDoc() {
+        const container = document.getElementById('googleDocContainer');
+        const toggleText = document.getElementById('googleDocToggleText');
+        const toggleIcon = document.getElementById('googleDocToggleIcon');
+        
+        if (container.classList.contains('hidden')) {
+            // Show Google Doc
+            container.classList.remove('hidden');
+            toggleText.textContent = '📝 Hide Course Notes';
+            toggleIcon.style.transform = 'rotate(180deg)';
+            // Smooth scroll to Google Doc
+            setTimeout(() => {
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        } else {
+            // Hide Google Doc
+            container.classList.add('hidden');
+            toggleText.textContent = '📝 Show Course Notes';
+            toggleIcon.style.transform = 'rotate(0deg)';
         }
     </script>
 </body>
