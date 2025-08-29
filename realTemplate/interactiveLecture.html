@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+    <div class="p-6">
+        <h2 class="text-2xl font-bold mb-6 text-primary">📚 Interactive Lecture</h2>
+        
+        <!-- Lecture Content -->
+        <div class="space-y-6">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">Lecture Content</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Welcome to the interactive lecture. This section includes video content, slides, and interactive elements to enhance your learning experience.
+                </p>
+                <!-- Placeholder for video or slides -->
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <div class="bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-lg">
+                        <p class="text-gray-500 dark:text-gray-400">Video or Slide Content Placeholder</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300">
+                    Take notes or answer questions below based on the lecture content.
+                </p>
+            </div>
+
+            <!-- Interactive Elements -->
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">Lecture Notes</h3>
+                <textarea id="lectureNotes" 
+                          class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                          placeholder="Take notes here..." 
+                          rows="5"
+                          onchange="saveResponse('lectureNotes', this.value)"></textarea>
+            </div>
+
+            <!-- Quiz or Question -->
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">Quick Question</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">What was the main concept discussed in the lecture?</p>
+                <input type="text" id="lectureQuestion" 
+                       class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                       placeholder="Your answer..." 
+                       onchange="saveResponse('lectureQuestion', this.value)">
+            </div>
+
+            <!-- Completion Button -->
+            <div class="mt-6 text-center">
+                <button onclick="markComplete()" 
+                        class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium">
+                    Mark Lecture as Complete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveResponse(field, value) {
+            window.parent.postMessage({
+                type: 'saveResponse',
+                section: 'lecture',
+                response: { [field]: value }
+            }, '*');
+        }
+
+        function markComplete() {
+            window.parent.postMessage({
+                type: 'saveResponse',
+                section: 'lecture',
+                response: { completed: true }
+            }, '*');
+            alert('Lecture marked as complete!');
+        }
+    </script>
+</body>
+</html>

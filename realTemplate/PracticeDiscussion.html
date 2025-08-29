@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice & Discussion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+    <div class="p-6">
+        <h2 class="text-2xl font-bold mb-6 text-primary">💬 Practice & Discussion</h2>
+        
+        <!-- Practice Content -->
+        <div class="space-y-6">
+            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-800 dark:text-green-200 mb-4">Practice Exercises</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Apply what you've learned through these practice exercises. These activities are designed to reinforce key concepts.
+                </p>
+                <!-- Placeholder for interactive exercises -->
+                <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                    <p class="text-gray-500 dark:text-gray-400 text-center">Interactive Exercise Placeholder</p>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300">
+                    Record your answers or thoughts below.
+                </p>
+            </div>
+
+            <!-- Practice Responses -->
+            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-800 dark:text-green-200 mb-4">Your Answers</h3>
+                <textarea id="practiceAnswers" 
+                          class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                          placeholder="Record your answers or solutions here..." 
+                          rows="5"
+                          onchange="saveResponse('practiceAnswers', this.value)"></textarea>
+            </div>
+
+            <!-- Discussion Section -->
+            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-800 dark:text-green-200 mb-4">Discussion Points</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">Share your thoughts on the following discussion prompt:</p>
+                <p class="text-gray-700 dark:text-gray-300 font-medium mb-4">How can the concepts learned be applied in real-world scenarios?</p>
+                <textarea id="discussionResponse" 
+                          class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                          placeholder="Your thoughts..." 
+                          rows="4"
+                          onchange="saveResponse('discussionResponse', this.value)"></textarea>
+            </div>
+
+            <!-- Completion Button -->
+            <div class="mt-6 text-center">
+                <button onclick="markComplete()" 
+                        class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium">
+                    Mark Practice & Discussion as Complete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveResponse(field, value) {
+            window.parent.postMessage({
+                type: 'saveResponse',
+                section: 'practice',
+                response: { [field]: value }
+            }, '*');
+        }
+
+        function markComplete() {
+            window.parent.postMessage({
+                type: 'saveResponse',
+                section: 'practice',
+                response: { completed: true }
+            }, '*');
+            alert('Practice & Discussion marked as complete!');
+        }
+    </script>
+</body>
+</html>
