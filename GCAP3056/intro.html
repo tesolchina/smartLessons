@@ -19,6 +19,40 @@
         }
     </script>
     <style>
+                /* Add inside the existing <style> tag */
+        .roadmap-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem; /* Reduced spacing between cards */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .week-number {
+            position: absolute;
+            left: -0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 1;
+        }
+        
+        .roadmap-card {
+            position: relative;
+            padding-left: 2rem;
+            margin-left: 1rem;
+        }
+    
         .week-card {
             transition: all 0.3s ease;
         }
@@ -212,79 +246,74 @@
                 </svg>
                 <div class="relative z-10">
                     <!-- Row 1: Left to Right -->
-                    <div class="flex flex-wrap md:flex-nowrap justify-between items-start mb-20 gap-4">
-                        <!-- Orientation & Issue Discovery -->
-                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full md:w-64 border-l-4 border-primary fade-in flex flex-col">
-                            <div class="flex flex-row items-center mb-3">
-                                <div class="flex items-center justify-center bg-primary text-white rounded-full w-10 h-10 font-bold text-base mr-3 shrink-0">1–3</div>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-sm flex-1">Orientation & Issue Discovery</h3>
+                                        <div class="roadmap-cards">
+                        <!-- First row -->
+                        <div class="roadmap-card">
+                            <div class="week-number">1-3</div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full border-l-4 border-primary fade-in">
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Orientation & Issue Discovery</h3>
+                                <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                    Course intro, JRE case study, civil service careers.<br>
+                                    Brainstorm project ideas; form teams; intro to Legco/SCMP writing.
+                                </div>
+                                <a href="https://smartlessons.hkbu.tech/GCAP3056/week1-3/index.html" target="_blank"
+                                   class="mt-2 inline-block px-3 py-1 rounded bg-primary text-white text-xs font-medium hover:bg-primary-dark text-center w-full">View Notes</a>
                             </div>
-                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
-                                Course intro, JRE case study, civil service careers.<br>
-                                Brainstorm project ideas; form teams; intro to Legco/SCMP writing.
-                            </div>
-                            <a href="https://smartlessons.hkbu.tech/GCAP3056/week1-3/index.html" target="_blank"
-                               class="mt-2 inline-block px-3 py-1 rounded bg-primary text-white text-xs font-medium hover:bg-primary-dark text-center w-full">View Notes</a>
                         </div>
-                        <!-- Data & Info Gathering -->
-                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full md:w-64 border-l-4 border-green-500 fade-in flex flex-col">
-                            <div class="flex flex-row items-center mb-3">
-                                <div class="flex items-center justify-center bg-green-500 text-white rounded-full w-10 h-10 font-bold text-base mr-3 shrink-0">4–5</div>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-sm flex-1">Data & Info Gathering</h3>
+                    
+                        <div class="roadmap-card">
+                            <div class="week-number">4-5</div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full border-l-4 border-green-500 fade-in">
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Data & Info Gathering</h3>
+                                <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                    Code on Access to Info, drafting requests.<br>
+                                    Gather background data, start info requests.
+                                </div>
+                                <a href="https://smartlessons.hkbu.tech/GCAP3056/week4-5/index.html" target="_blank"
+                                   class="mt-2 inline-block px-3 py-1 rounded bg-green-500 text-white text-xs font-medium hover:bg-green-600 text-center w-full">View Notes</a>
                             </div>
-                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
-                                Code on Access to Info, drafting requests.<br>
-                                Gather background data, start info requests.
-                            </div>
-                            <a href="https://smartlessons.hkbu.tech/GCAP3056/week4-5/index.html" target="_blank"
-                               class="mt-2 inline-block px-3 py-1 rounded bg-green-500 text-white text-xs font-medium hover:bg-green-600 text-center w-full">View Notes</a>
                         </div>
-                        <!-- Analysis & Writing Foundations -->
-                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full md:w-64 border-l-4 border-blue-500 fade-in flex flex-col">
-                            <div class="flex flex-row items-center mb-3">
-                                <div class="flex items-center justify-center bg-blue-500 text-white rounded-full w-10 h-10 font-bold text-base mr-3 shrink-0">6–7</div>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-sm flex-1">Analysis & Writing Foundations</h3>
+                    
+                        <div class="roadmap-card">
+                            <div class="week-number">6-7</div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full border-l-4 border-blue-500 fade-in">
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Analysis & Writing Foundations</h3>
+                                <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                    Seminar on "vibe coding" (tentative), field trip (tentative).<br>
+                                    Legco report writing workshop, draft arguments.
+                                </div>
+                                <a href="https://smartlessons.hkbu.tech/GCAP3056/week6-7/index.html" target="_blank"
+                                   class="mt-2 inline-block px-3 py-1 rounded bg-blue-500 text-white text-xs font-medium hover:bg-blue-600 text-center w-full">View Notes</a>
                             </div>
-                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
-                                Seminar on "vibe coding" (tentative), field trip (tentative).<br>
-                                Legco report writing workshop, draft arguments.
-                            </div>
-                            <a href="https://smartlessons.hkbu.tech/GCAP3056/week6-7/index.html" target="_blank"
-                               class="mt-2 inline-block px-3 py-1 rounded bg-blue-500 text-white text-xs font-medium hover:bg-blue-600 text-center w-full">View Notes</a>
                         </div>
-                    </div>
-                    <!-- Row 2: Right to Left -->
-                    <div class="flex flex-wrap md:flex-nowrap justify-between items-start mb-20 gap-4 flex-row-reverse">
-                        <!-- Argument Development & Engagement -->
-                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full md:w-64 border-l-4 border-orange-500 fade-in flex flex-col">
-                            <div class="flex flex-row items-center mb-3">
-                                <div class="flex items-center justify-center bg-orange-500 text-white rounded-full w-10 h-10 font-bold text-base mr-3 shrink-0">8–11</div>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-sm flex-1">Argument & Engagement</h3>
+                    
+                        <div class="roadmap-card">
+                            <div class="week-number">8-11</div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full border-l-4 border-orange-500 fade-in">
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Argument & Engagement</h3>
+                                <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                    Refine arguments, draft Legco reports & SCMP letters.<br>
+                                    SCMP/JRE/Legco workshops.<br>
+                                    Social media engagement & storytelling.
+                                </div>
+                                <a href="https://smartlessons.hkbu.tech/GCAP3056/week8-11/index.html" target="_blank"
+                                   class="mt-2 inline-block px-3 py-1 rounded bg-orange-500 text-white text-xs font-medium hover:bg-orange-600 text-center w-full">View Notes</a>
                             </div>
-                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
-                                Refine arguments, draft Legco reports & SCMP letters.<br>
-                                SCMP/JRE/Legco workshops.<br>
-                                Social media engagement & storytelling.
-                            </div>
-                            <a href="https://smartlessons.hkbu.tech/GCAP3056/week8-11/index.html" target="_blank"
-                               class="mt-2 inline-block px-3 py-1 rounded bg-orange-500 text-white text-xs font-medium hover:bg-orange-600 text-center w-full">View Notes</a>
                         </div>
-                        <!-- Finalization, Reflection & Submission -->
-                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full md:w-64 border-l-4 border-red-500 fade-in flex flex-col">
-                            <div class="flex flex-row items-center mb-3">
-                                <div class="flex items-center justify-center bg-red-500 text-white rounded-full w-10 h-10 font-bold text-base mr-3 shrink-0">12–13</div>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-sm flex-1">Finalization & Reflection</h3>
+                    
+                        <div class="roadmap-card">
+                            <div class="week-number">12-13</div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-full border-l-4 border-red-500 fade-in">
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Finalization & Reflection</h3>
+                                <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                    Finalize and submit reports, letters, portfolios.<br>
+                                    Reflective journal, peer review, optional showcase.
+                                </div>
+                                <a href="https://smartlessons.hkbu.tech/GCAP3056/week12-13/index.html" target="_blank"
+                                   class="mt-2 inline-block px-3 py-1 rounded bg-red-500 text-white text-xs font-medium hover:bg-red-600 text-center w-full">View Notes</a>
                             </div>
-                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
-                                Finalize and submit reports, letters, portfolios.<br>
-                                Reflective journal, peer review, optional showcase.
-                            </div>
-                            <a href="https://smartlessons.hkbu.tech/GCAP3056/week12-13/index.html" target="_blank"
-                               class="mt-2 inline-block px-3 py-1 rounded bg-red-500 text-white text-xs font-medium hover:bg-red-600 text-center w-full">View Notes</a>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
 
         <!-- Detailed Assessment Section -->
