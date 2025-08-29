@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Learning Chatbot</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function ChatInterface() {
+            const [selectedProvider, setSelectedProvider] = React.useState('hkbu');
+            const [apiKey, setApiKey] = React.useState('');
+            const [selectedModel, setSelectedModel] = React.useState('gpt-4.1');
+            const [message, setMessage] = React.useState('');
+            const [messages, setMessages] = React.useState([]);
+            const [isLoading, setIsLoading] = React.useState(false);
+            const [studentName, setStudentName] = React.useState('');
+            const [systemPrompt, setSystemPrompt] = React.useState('');
+            const [tempSystemPrompt, setTempSystemPrompt] = React.useState('');
+            const [isEditingPrompt, setIsEditingPrompt] = React.useState(false);
+            const [showSystemPrompt, setShowSystemPrompt] = React.useState(false);
+            const [connectionStatus, setConnectionStatus] = React.useState('');
+
+            // Your Vercel backend URL - replace with your actual URL
+            //const API_BASE_URL = 'https://student-chat-4suvj0wvo-simons-projects-ee91cbe6.vercel.app'; // Updated 
+            //const API_BASE_URL = 'https://student-chat-back-k8du8pmh1-simons-projects-ee91cbe6.vercel.app';
+            const API_BASE_URL = 'https://student-chat-back-gtrg43ylq-simons-projects-ee91cbe6.vercel.app';
+            const defaultSystemPrompt = "You are an English teacher. Your job is provide other members of the word family when the user provides a word.";
+
+            const providers = {
+                hkbu: {
+                    name: 'HKBU GenAI',
+                    models: [
+                        { id: 'gpt-4.1', name: 'GPT-4.1' },
+                        { id: 'gpt-4.1-mini', name: 'GPT-4.1 Mini' },
+                        { id: 'gpt-5', name: 'GPT-5' },
+                        { id: 'gpt-5-mini', name: 'GPT-5 Mini' },
+                        { id: 'o1', name: 'O1' },
+                        { id: 'o3-mini', name: 'O3 Mini' }
+                    ],
+                    keyUrl: 'https://genai.hkbu.edu.hk/settings/api-docs'
+                },
+                openrouter: {
+                    name: 'OpenRouter',
+                    models: [
+                        { id: 'openai/gpt-3.5-turbo', name: 'GPT-3.5 Turbo' },
+                        { id: 'openai/gpt-4o', name: 'GPT-4o' },
+                        { id: 'anthropic/claude-3.5-sonnet', name: 'Claude 3.5 Sonnet' },
+                        { id: 'google/gemini-pro', name: 'Gemini Pro' }
+                    ],
+                    keyUrl: 'https://openrouter.ai/keys'
+                }
+            };
+
+            // Load default system prompt on page load
+            React.useEffect(() => {
+                setSystemPrompt(defaultSystemPrompt);
+                setTempSystemPrompt(defaultSystemPrompt);
+            }, []);
+
+            React.useEffect(() => {
+                const models = providers[selectedProvider].models;
+                if (models.length > 0) {
+                    setSelectedModel(models[0].id);
+                }
+            }, [selectedProvider]);
+
+            const testConnection = async () => {
+                if (!apiKey) {
+                    setConnectionStatus('❌ Please enter an API key first');
+                    return;
+                }
+
+                setConnectionStatus('🔄 Testing connection...');
+
+                try {
+                    const response = await fetch(`${API_BASE_URL}/api/chat`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: 'Hello, this is a connection test.',
+                            apiKey: apiKey,
+                            provider: selectedProvider,
+                            model: selectedModel,
+                            systemPrompt: 'You are a helpful assistant.'
+                        })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.error) {
+                            setConnectionStatus(`❌ ${data.error}`);
+                        } else {
+                            setConnectionStatus('✅ Connected successfully!');
+                        }
+                    } else {
+                        setConnectionStatus(`❌ Connection failed: ${response.status}`);
+                    }
+                } catch (error) {
+                    setConnectionStatus(`❌ Network error: ${error.message}`);
+                }
+            };
+
+            const sendMessage = async () => {
+                if (!message.trim() || !apiKey) return;
+                
+                const userMessage = { 
+                    role: 'user', 
+                    content: message, 
+                    id: Date.now(),
+                    timestamp: new Date().toLocaleTimeString()
+                };
+                setMessages(prev => [...prev, userMessage]);
+                setMessage('');
+                setIsLoading(true);
+
+                try {
+                    const response = await fetch(`${API_BASE_URL}/api/chat`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: userMessage.content,
+                            apiKey: apiKey,
+                            provider: selectedProvider,
+                            model: selectedModel,
+                            systemPrompt: systemPrompt
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        
+                        if (data.error) {
+                            const errorMessage = { 
+                                role: 'error', 
+                                content: `Error: ${data.error}`, 
+                                id: Date.now() + 1,
+                                timestamp: new Date().toLocaleTimeString()
+                            };
+                            setMessages(prev => [...prev, errorMessage]);
+                        } else {
+                            const aiMessage = { 
+                                role: 'assistant', 
+                                content: data.response, 
+                                id: Date.now() + 1,
+                                timestamp: new Date().toLocaleTimeString(),
+                                model: selectedModel,
+                                provider: selectedProvider
+                            };
+                            setMessages(prev => [...prev, aiMessage]);
+                        }
+                    } else {
+                        const errorMessage = { 
+                            role: 'error', 
+                            content: `HTTP Error: ${response.status} - ${response.statusText}`, 
+                            id: Date.now() + 1,
+                            timestamp: new Date().toLocaleTimeString()
+                        };
+                        setMessages(prev => [...prev, errorMessage]);
+                    }
+                } catch (error) {
+                    const errorMessage = { 
+                        role: 'error', 
+                        content: `Network Error: ${error.message}. Make sure the backend is deployed!`, 
+                        id: Date.now() + 1,
+                        timestamp: new Date().toLocaleTimeString()
+                    };
+                    setMessages(prev => [...prev, errorMessage]);
+                }
+                
+                setIsLoading(false);
+            };
+
+            const clearChat = () => {
+                setMessages([]);
+            };
+
+            const saveConversation = () => {
+                const conversation = {
+                    studentName: studentName || 'Anonymous',
+                    provider: selectedProvider,
+                    model: selectedModel,
+                    systemPrompt: systemPrompt,
+                    timestamp: new Date().toLocaleString(),
+                    messages: messages
+                };
+                
+                const saved = JSON.parse(localStorage.getItem('savedChats') || '[]');
+                saved.push(conversation);
+                localStorage.setItem('savedChats', JSON.stringify(saved));
+                alert('Conversation saved locally!');
+            };
+
+            const emailConversation = () => {
+                const chatText = messages.map(msg => 
+                    `${msg.role.toUpperCase()}: ${msg.content}`
+                ).join('\n\n');
+                
+                const subject = `Word Family Learning Chat - ${new Date().toLocaleDateString()}`;
+                const body = `Student: ${studentName || 'Anonymous'}\nProvider: ${providers[selectedProvider].name}\nModel: ${selectedModel}\nSystem Prompt: ${systemPrompt}\n\n${chatText}`;
+                
+                window.open(`mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+            };
+
+            const resetToDefaultPrompt = () => {
+                setSystemPrompt(defaultSystemPrompt);
+                setTempSystemPrompt(defaultSystemPrompt);
+                setIsEditingPrompt(false);
+            };
+
+            const currentProvider = providers[selectedProvider];
+
+            return (
+                <div className="min-h-screen bg-gray-50 p-4">
+                    <div className="max-w-6xl mx-auto">
+                        <h1 className="text-3xl font-bold text-center mb-4 text-gray-800">
+                            Student Word Family Learning Chatbot
+                        </h1>
+                        <p className="text-center mb-8 text-gray-600">
+                            Discover word families with AI assistance
+                        </p>
+                        
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            {/* Settings Panel */}
+                            <div className="lg:col-span-1">
+                                <div className="bg-white rounded-lg shadow-md p-6">
+                                    <h2 className="text-lg font-semibold mb-4">Configuration</h2>
+                                    
+                                    {/* Student Name */}
+                                    <div className="mb-4">
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                            Student Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            value={studentName}
+                                            onChange={(e) => setStudentName(e.target.value)}
+                                            placeholder="Enter your name"
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        />
+                                    </div>
+
+                                    {/* Provider Selection */}
+                                    <div className="mb-4">
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                            API Provider
+                                        </label>
+                                        <select
+                                            value={selectedProvider}
+                                            onChange={(e) => {
+                                                setSelectedProvider(e.target.value);
+                                                setConnectionStatus('');
+                                            }}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        >
+                                            <option value="hkbu">HKBU GenAI (Recommended)</option>
+                                            <option value="openrouter">OpenRouter</option>
+                                        </select>
+                                    </div>
+
+                                    {/* API Key */}
+                                    <div className="mb-4">
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                            {currentProvider.name} API Key
+                                        </label>
+                                        <input
+                                            type="password"
+                                            value={apiKey}
+                                            onChange={(e) => {
+                                                setApiKey(e.target.value);
+                                                setConnectionStatus('');
+                                            }}
+                                            placeholder="Enter your API key"
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        />
+                                        <p className="text-xs text-gray-500 mt-1">
+                                            Get your API key at:{' '}
+                                            <a 
+                                                href={currentProvider.keyUrl} 
+                                                target="_blank" 
+                                                className="text-blue-600 hover:underline"
+                                            >
+                                                {currentProvider.keyUrl}
+                                            </a>
+                                        </p>
+                                        <div className="flex gap-2 mt-2">
+                                            <button
+                                                onClick={testConnection}
+                                                disabled={!apiKey}
+                                                className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 disabled:opacity-50"
+                                            >
+                                                Test Connection
+                                            </button>
+                                        </div>
+                                        {connectionStatus && (
+                                            <p className="text-xs mt-2 text-gray-700">{connectionStatus}</p>
+                                        )}
+                                    </div>
+
+                                    {/* Model Selection */}
+                                    <div className="mb-4">
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                            Select Model
+                                        </label>
+                                        <select
+                                            value={selectedModel}
+                                            onChange={(e) => setSelectedModel(e.target.value)}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        >
+                                            {currentProvider.models.map(model => (
+                                                <option key={model.id} value={model.id}>
+                                                    {model.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    {/* System Prompt Section */}
+                                    <div className="mb-4">
+                                        <button
+                                            onClick={() => setShowSystemPrompt(!showSystemPrompt)}
+                                            className="flex items-center justify-between w-full text-left text-sm font-medium text-gray-700 mb-2 hover:text-gray-900"
+                                        >
+                                            System Prompt (Word Family Teacher)
+                                            <span>{showSystemPrompt ? '▲' : '▼'}</span>
+                                        </button>
+                                        
+                                        {showSystemPrompt && (
+                                            <div className="space-y-3">
+                                                {!isEditingPrompt ? (
+                                                    <div>
+                                                        <div className="p-3 bg-gray-50 rounded-md text-sm text-gray-700 border">
+                                                            {systemPrompt}
+                                                        </div>
+                                                        <div className="flex gap-2 mt-2">
+                                                            <button
+                                                                onClick={() => {
+                                                                    setIsEditingPrompt(true);
+                                                                    setTempSystemPrompt(systemPrompt);
+                                                                }}
+                                                                className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200"
+                                                            >
+                                                                Edit
+                                                            </button>
+                                                            <button
+                                                                onClick={resetToDefaultPrompt}
+                                                                className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200"
+                                                            >
+                                                                Reset
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div>
+                                                        <textarea
+                                                            value={tempSystemPrompt}
+                                                            onChange={(e) => setTempSystemPrompt(e.target.value)}
+                                                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                                            rows={4}
+                                                            placeholder="Enter system prompt..."
+                                                        />
+                                                        <div className="flex gap-2 mt-2">
+                                                            <button
+                                                                onClick={() => {
+                                                                    setSystemPrompt(tempSystemPrompt);
+                                                                    setIsEditingPrompt(false);
+                                                                }}
+                                                                className="px-3 py-1 text-sm bg-green-600 text-white rounded-md hover:bg-green-700"
+                                                            >
+                                                                Save
+                                                            </button>
+                                                            <button
+                                                                onClick={() => {
+                                                                    setTempSystemPrompt(systemPrompt);
+                                                                    setIsEditingPrompt(false);
+                                                                }}
+                                                                className="px-3 py-1 text-sm bg-gray-500 text-white rounded-md hover:bg-gray-600"
+                                                            >
+                                                                Cancel
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Action Buttons */}
+                                    <div className="space-y-2">
+                                        <button
+                                            onClick={clearChat}
+                                            disabled={messages.length === 0}
+                                            className="w-full px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 disabled:opacity-50"
+                                        >
+                                            Clear Chat
+                                        </button>
+                                        <button
+                                            onClick={saveConversation}
+                                            disabled={messages.length === 0}
+                                            className="w-full px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50"
+                                        >
+                                            Save Conversation
+                                        </button>
+                                        <button
+                                            onClick={emailConversation}
+                                            disabled={messages.length === 0}
+                                            className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+                                        >
+                                            Email Conversation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Chat Interface */}
+                            <div className="lg:col-span-2">
+                                <div className="bg-white rounded-lg shadow-md h-96 flex flex-col">
+                                    <div className="p-4 border-b border-gray-200">
+                                        <h2 className="text-lg font-semibold">
+                                            Chat with {currentProvider.models.find(m => m.id === selectedModel)?.name}
+                                        </h2>
+                                        <p className="text-sm text-gray-600">
+                                            Powered by {currentProvider.name}
+                                        </p>
+                                    </div>
+
+                                    <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                                        {messages.length === 0 && (
+                                            <div className="text-center text-gray-500">
+                                                <p>Enter your API key and start learning word families!</p>
+                                                <p className="text-sm mt-2">
+                                                    Try words like: <span className="font-mono bg-gray-100 px-2 py-1 rounded">cat</span>, <span className="font-mono bg-gray-100 px-2 py-1 rounded">run</span>, <span className="font-mono bg-gray-100 px-2 py-1 rounded">make</span>, <span className="font-mono bg-gray-100 px-2 py-1 rounded">play</span>
+                                                </p>
+                                                <p className="text-xs mt-2 text-blue-600">
+                                                    The AI will show you all words in the same family!
+                                                </p>
+                                            </div>
+                                        )}
+                                        
+                                        {messages.map((msg) => (
+                                            <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                                <div className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                                                    msg.role === 'user' ? 'bg-blue-600 text-white' : 
+                                                    msg.role === 'error' ? 'bg-red-100 text-red-800 border border-red-300' : 
+                                                    'bg-gray-100 text-gray-800'
+                                                }`}>
+                                                    <div className="text-sm whitespace-pre-wrap">{msg.content}</div>
+                                                    <div className="text-xs opacity-75 mt-1">
+                                                        {msg.timestamp}
+                                                        {msg.model && ` • ${msg.model}`}
+                                                        {msg.provider && ` • ${providers[msg.provider]?.name}`}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        
+                                        {isLoading && (
+                                            <div className="flex justify-start">
+                                                <div className="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg">
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="animate-spin h-4 w-4 border-2 border-gray-600 border-t-transparent rounded-full"></div>
+                                                        Finding word family members...
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                    
+                                    <div className="p-4 border-t border-gray-200">
+                                        <div className="flex gap-2">
+                                            <input
+                                                type="text"
+                                                value={message}
+                                                onChange={(e) => setMessage(e.target.value)}
+                                                onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                                                placeholder="Enter a word to find its family (e.g., 'cat', 'run', 'make')..."
+                                                disabled={!apiKey || isLoading}
+                                                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
+                                            />
+                                            <button
+                                                onClick={sendMessage}
+                                                disabled={!apiKey || !message.trim() || isLoading}
+                                                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+                                            >
+                                                →
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<ChatInterface />, document.getElementById('root'));
+    </script>
+</body>
+</html>
