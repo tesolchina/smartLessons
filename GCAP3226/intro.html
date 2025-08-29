@@ -163,13 +163,18 @@
     </div>
     
     <!-- Google Doc Container (Hidden by default) -->
+         <!-- Replace the existing iframe section with this -->
     <div id="googleDocContainer" class="hidden">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <div class="aspect-w-16 aspect-h-9">
-                <iframe src="https://docs.google.com/document/d/e/2PACX-1vRL5HteUK7PAgDl4_FK7uynz31tKSrIt6hqVA2uQIxolxtBTCqAJXzklIliXORKzyIEk7AORlxREbm9/pub?embedded=true" 
+                <iframe 
+                    src="https://docs.google.com/document/d/e/2PACX-1vRL5HteUK7PAgDl4_FK7uynz31tKSrIt6hqVA2uQIxolxtBTCqAJXzklIliXORKzyIEk7AORlxREbm9/pub?embedded=true" 
                     class="w-full h-[600px] border-0"
                     frameborder="0"
-                    allowfullscreen>
+                    allowfullscreen
+                    loading="lazy"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                >
                 </iframe>
             </div>
         </div>
@@ -1156,6 +1161,7 @@
             toggleText.textContent = '📝 Show Course Notes';
             toggleIcon.style.transform = 'rotate(0deg)';
         }
+    }
     </script>
 </body>
 </html>
