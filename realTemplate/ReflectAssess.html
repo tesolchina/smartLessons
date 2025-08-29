@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reflect & Assess</title>
+    <title>Report & Reflection</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,76 +19,54 @@
         }
     </script>
 </head>
-<body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+<body class="bg-white dark:bg-gray-900">
     <div class="p-6">
-        <h2 class="text-2xl font-bold mb-6 text-primary">🎯 Reflect & Assess</h2>
-        
-        <!-- Reflection Content -->
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Report & Reflection</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">Submit your report and receive feedback from your teacher via Moodle.</p>
+
         <div class="space-y-6">
-            <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold text-purple-800 dark:text-purple-200 mb-4">Reflection Questions</h3>
+            <!-- Placeholder for Reflection Questions -->
+            <div class="mb-6 bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h2 class="text-xl font-bold text-purple-800 dark:text-purple-200 mb-4">Reflection Questions</h2>
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
-                    Take a moment to reflect on what you've learned. Answer the following questions to solidify your understanding.
+                    [Placeholder] This section will contain reflection questions. You can add:
                 </p>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                            1. What was the most important takeaway from this module?
-                        </label>
-                        <textarea id="reflection1" 
-                                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
-                                  rows="3"
-                                  onchange="saveResponse('reflection1', this.value)"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                            2. What challenges did you face, and how did you overcome them?
-                        </label>
-                        <textarea id="reflection2" 
-                                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
-                                  rows="3"
-                                  onchange="saveResponse('reflection2', this.value)"></textarea>
-                    </div>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>• Personal insight questions</li>
+                    <li>• Critical thinking prompts</li>
+                    <li>• Self-evaluation checklists</li>
+                    <li>• Journaling exercises</li>
+                </ul>
+                <div class="mt-4">
+                    <label for="reflectionResponse" class="block text-gray-700 dark:text-gray-300 mb-2">Your Reflection:</label>
+                    <textarea id="reflectionResponse" class="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300" 
+                              placeholder="Write your reflections here..."
+                              onchange="saveResponse('reflectionResponse', this.value)"></textarea>
                 </div>
             </div>
 
-            <!-- Self-Assessment -->
-            <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold text-purple-800 dark:text-purple-200 mb-4">Self-Assessment</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">Rate your understanding of the module's concepts:</p>
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 mb-1">Understanding of Key Concepts</label>
-                        <select id="assessment1" 
-                                class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                onchange="saveResponse('assessment1', this.value)">
-                            <option value="1">1 - Not Understood</option>
-                            <option value="2">2 - Somewhat Understood</option>
-                            <option value="3">3 - Moderately Understood</option>
-                            <option value="4">4 - Mostly Understood</option>
-                            <option value="5">5 - Fully Understood</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 mb-1">Ability to Apply Concepts</label>
-                        <select id="assessment2" 
-                                class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                onchange="saveResponse('assessment2', this.value)">
-                            <option value="1">1 - Not Able</option>
-                            <option value="2">2 - Somewhat Able</option>
-                            <option value="3">3 - Moderately Able</option>
-                            <option value="4">4 - Mostly Able</option>
-                            <option value="5">5 - Fully Able</option>
-                        </select>
-                    </div>
-                </div>
+            <!-- Report Submission Instructions -->
+            <div class="mb-6 bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h2 class="text-xl font-bold text-purple-800 dark:text-purple-200 mb-4">Report Submission</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Follow these instructions to submit your report:
+                </p>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>• Download your generated report from the main page.</li>
+                    <li>• Log in to Moodle and navigate to the appropriate course and assignment.</li>
+                    <li>• Upload the report file as instructed.</li>
+                    <li>• Check Moodle for feedback from your teacher after submission.</li>
+                </ul>
+                <p class="text-gray-700 dark:text-gray-300 mt-4">
+                    [Placeholder] Add specific Moodle links or additional instructions if needed.
+                </p>
             </div>
 
             <!-- Completion Button -->
-            <div class="mt-6 text-center">
+            <div class="flex justify-end">
                 <button onclick="markComplete()" 
-                        class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium">
-                    Mark Reflection & Assessment as Complete
+                        class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg">
+                    Mark as Complete
                 </button>
             </div>
         </div>
@@ -109,7 +87,6 @@
                 section: 'reflect',
                 response: { completed: true }
             }, '*');
-            alert('Reflection & Assessment marked as complete!');
         }
     </script>
 </body>
