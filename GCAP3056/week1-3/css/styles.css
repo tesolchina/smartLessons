@@ -3,33 +3,35 @@
    ============================================ */
 
 /* Strong text color for main content */
-body, .text-gray-700, .text-gray-800, .text-gray-900 {
+body, .text-gray-700, .text-gray-800, .text-gray-900, .text-gray-500, .text-gray-600 {
     color: #222 !important;
+    font-weight: 400;
 }
 
 .dark body, 
 .dark .text-gray-700, 
 .dark .text-gray-800, 
 .dark .text-gray-900,
-.dark .dark\:text-gray-300,
-.dark .dark\:text-gray-400,
-.dark .dark\:text-gray-500 {
+.dark .text-gray-500,
+.dark .text-gray-600 {
     color: #f1f5f9 !important;
 }
 
-/* Feedback text */
+/* Feedback and status text */
 #govMcFeedback,
 #govTfFeedback,
 #transFb,
 #codeQuizFb,
-#ltrFb {
-    color: #333 !important;
+#ltrFb,
+.completion-status {
+    color: #222 !important;
 }
 .dark #govMcFeedback,
 .dark #govTfFeedback,
 .dark #transFb,
 .dark #codeQuizFb,
-.dark #ltrFb {
+.dark #ltrFb,
+.dark .completion-status {
     color: #f1f5f9 !important;
 }
 
@@ -55,23 +57,21 @@ body, .text-gray-700, .text-gray-800, .text-gray-900 {
 
 ul, ul.list-disc, ul.list-decimal {
     margin-left: 0 !important;
-    padding-left: 1.5em !important;
+    padding-left: 1em !important;
     list-style-position: outside !important;
 }
-
 li {
     margin-left: 0 !important;
-    padding-left: 0 !important; /* Remove left padding to align with the ul */
+    padding-left: 0 !important;
     margin-bottom: 0.5em !important;
-    color: inherit !important; /* Inherit color from parent for both light/dark */
+    color: inherit !important;
 }
-
 .dark ul li {
     color: #f1f5f9 !important;
 }
 
-ul.list-disc li,
-ul.list-decimal li {
+/* No faded bullets anywhere */
+ul li, ul.list-disc li, ul.list-decimal li {
     color: inherit !important;
 }
 
@@ -79,6 +79,7 @@ ul.list-decimal li {
    PAGE WIDTH & LAYOUT
    ============================================ */
 
+/* Max width for main containers */
 .max-w-4xl, .max-w-6xl {
     max-width: 1400px !important;
     width: 98% !important;
@@ -110,38 +111,19 @@ ul.list-decimal li {
 }
 
 /* ============================================
-   OTHER FIXES
+   NOTIFICATION & FEEDBACK
    ============================================ */
 
-/* Prevent faint/faded text from .text-gray-500 etc */
-.text-gray-500, .text-gray-600, .text-gray-700 {
-    color: #222 !important;
-}
-.dark .text-gray-500, .dark .text-gray-600, .dark .text-gray-700 {
-    color: #f1f5f9 !important;
-}
-
-/* Remove overly gray for list items */
-ul li, ul.list-disc li, ul.list-decimal li {
-    color: inherit !important;
-}
-
-/* Ensure notification is visible */
 .notification {
     background: #fff;
     color: #222;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
 }
 .dark .notification {
     background: #222;
     color: #f1f5f9;
-}
-
-/* For feedbacks and marks */
-.completion-status {
-    color: #222 !important;
-}
-.dark .completion-status {
-    color: #f1f5f9 !important;
 }
 
 /* ============================================
@@ -158,4 +140,24 @@ html { scroll-behavior: smooth; }
 button:focus, .section-btn:focus {
     outline: 2px solid #5D5CDE;
     outline-offset: 2px;
+}
+
+/* ============================================
+   MISCELLANEOUS
+   ============================================ */
+
+/* Remove unwanted faded text for all gray variants */
+.text-gray-500, .text-gray-600, .text-gray-700 {
+    color: #222 !important;
+}
+.dark .text-gray-500, .dark .text-gray-600, .dark .text-gray-700 {
+    color: #f1f5f9 !important;
+}
+
+/* Ensure all list items are visible in dark mode */
+ul li {
+    color: inherit !important;
+}
+.dark ul li {
+    color: #f1f5f9 !important;
 }
