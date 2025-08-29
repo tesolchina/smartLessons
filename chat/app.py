@@ -82,6 +82,21 @@ def test_connection():
         }), 400
 
 # ADD THIS NEW ROUTE HERE:
+@app.route('/prompts/<filename>')
+def serve_prompts(filename):
+    try:
+        with open(f'prompts/{filename}', 'r', encoding='utf-8') as file:
+            content = file.read()
+        return jsonify({'content': content})
+    except FileNotFoundError:
+        return jsonify({'error': 'Prompt file not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/basicBot')
+def serve_basic_bot():
+    return send_file('bots/basicBot.html')
+
 @app.route('/frontend')
 def serve_frontend():
     return send_file('index.html')
