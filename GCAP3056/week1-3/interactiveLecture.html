@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Interactive Lecture: Accountability, Transparency & Letters to the Editor</title>
+    <title>Interactive Lecture: Accountability, Transparency & Access to Information</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind CSS is loaded by index.html -->
+    <!-- Tailwind CSS is loaded by index -->
 </head>
 <body class="bg-white dark:bg-gray-900">
-    <div class="max-w-2xl mx-auto">
+    <div class="max-w-4xl mx-auto">
 
         <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-200 mb-4">🗞️ Accountability, Transparency, and the Power of Letters</h2>
         <p class="text-gray-700 dark:text-gray-300 mb-6">
-            In this module, explore some foundational ideas on why government exists, what keeps it in check, and how ordinary people—including you—can take part in public debate via Letters to the Editor.
+            In this module, explore why government must be kept in check, how information access supports accountability, and how ordinary people (including you!) can join public debate via Letters to the Editor.
         </p>
 
         <!-- Section 1: Government is a Necessary Evil -->
@@ -20,7 +20,6 @@
             <p class="mb-3 text-gray-700 dark:text-gray-200">
                 The phrase “Government is a necessary evil” sounds like a paradox. Why do people say this?
             </p>
-
             <!-- MC Question -->
             <div class="mb-3">
                 <div class="font-medium mb-1">Which of the following best expresses the idea?</div>
@@ -37,7 +36,6 @@
                 </div>
                 <div id="govMcFeedback" class="mt-2 text-sm font-medium"></div>
             </div>
-
             <!-- T/F Question -->
             <div class="mb-3">
                 <div class="font-medium mb-1">True or False: In a modern society, we can do without any government at all.</div>
@@ -61,7 +59,6 @@
                 <button onclick="checkAccountability()" class="ml-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded">Check</button>
                 <span id="accountFb" class="ml-2 text-sm"></span>
             </div>
-
             <p class="mb-2 text-gray-700 dark:text-gray-200">
                 <strong>Transparency</strong> means government actions should be open to the public, so staff can be held accountable. For this to work, we need a <span class="underline text-green-800">free press</span> where people can voice their views.
             </p>
@@ -79,9 +76,65 @@
             </div>
         </div>
 
-        <!-- Section 3: Letters to the Editor -->
+        <!-- Section 3: Code on Access to Information -->
+        <div class="mb-8 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl p-5 border border-yellow-200 dark:border-yellow-700">
+            <h3 class="font-semibold text-yellow-700 mb-2">3. Code on Access to Information</h3>
+            <p class="mb-2 text-gray-700 dark:text-gray-200">
+                The Hong Kong Government's <a href="https://www.access.gov.hk/en/codeonacctoinfo/index.html" target="_blank" class="text-yellow-900 underline">Code on Access to Information</a> is a policy that lets any member of the public request information from government departments.
+            </p>
+            <ul class="list-disc ml-6 mb-2 text-sm text-gray-700 dark:text-gray-100">
+                <li>The government must inform the public about its services and policy decisions.</li>
+                <li>Information can be provided routinely or upon request, unless there are specific reasons to refuse (like privacy, security, or legal restrictions).</li>
+                <li>Requests should be handled <strong>promptly and helpfully</strong>. If unclear, the department will contact you for clarification.</li>
+                <li>There are procedures for <span class="font-semibold text-yellow-800">review or complaint</span> if you believe the Code was not properly applied.</li>
+                <li>The Code is available online: <a href="http://www.access.gov.hk" target="_blank" class="text-yellow-900 underline">access.gov.hk</a></li>
+            </ul>
+            <div class="mb-3">
+                <div class="font-medium mb-1">Quick Quiz: What can you do if your information request is refused?</div>
+                <div class="flex flex-col gap-2">
+                    <button class="code-btn bg-white dark:bg-gray-800 hover:bg-yellow-200 dark:hover:bg-yellow-800 px-3 py-2 rounded border text-left" data-correct="false">
+                        A. Give up and accept the refusal.
+                    </button>
+                    <button class="code-btn bg-white dark:bg-gray-800 hover:bg-yellow-200 dark:hover:bg-yellow-800 px-3 py-2 rounded border text-left" data-correct="true">
+                        B. Ask for a review or make a complaint.
+                    </button>
+                    <button class="code-btn bg-white dark:bg-gray-800 hover:bg-yellow-200 dark:hover:bg-yellow-800 px-3 py-2 rounded border text-left" data-correct="false">
+                        C. Wait for one year and ask again.
+                    </button>
+                </div>
+                <div id="codeQuizFb" class="mt-2 text-sm font-medium"></div>
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold text-yellow-800">Note:</span> The Code defines what info can be released, and sets a <strong>time frame</strong> for reply (usually 10 days, up to 21 days for complex cases). If refused, you can ask for a review or complain to the Ombudsman. <br>
+                <a href="https://www.access.gov.hk/en/codeonacctoinfo/index.html" target="_blank" class="text-yellow-900 underline">Learn more here</a>.
+            </div>
+        </div>
+
+        <!-- Section 4: YouTube Video Review -->
         <div class="mb-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-5 border border-blue-100 dark:border-blue-700">
-            <h3 class="font-semibold text-blue-600 mb-2">3. Letters to the Editor: Your Voice Matters</h3>
+            <h3 class="font-semibold text-blue-600 mb-2">4. Video: Access to Information (Critical Review)</h3>
+            <div class="mb-4 aspect-w-16 aspect-h-9 w-full max-w-xl mx-auto">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_hgEeVjRf2A" title="YouTube Access to Information" frameborder="0" allowfullscreen class="rounded-lg w-full h-64"></iframe>
+            </div>
+            <div class="mb-2 text-gray-700 dark:text-gray-300">
+                <span class="font-semibold">Critical Review:</span> The official video explains the basics of requesting information from the Hong Kong government, but it misses several vital points:
+                <ul class="list-disc ml-6 mt-2 text-sm">
+                    <li>It <strong>does not mention</strong> the official <strong>time frame</strong> for government replies (normally within 10 days, extendable to 21 days).</li>
+                    <li>It <strong>omits</strong> the right to request a review or complain to the Ombudsman if your request is refused or delayed.</li>
+                    <li>It gives examples, but does not explain what types of information may be refused (privacy, security, etc.).</li>
+                </ul>
+            </div>
+            <div class="mt-3">
+                <label class="font-medium block mb-1" for="videoReflection">Your Reflection: What’s missing from the official video?</label>
+                <textarea id="videoReflection" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-white dark:border-gray-700 p-2" rows="2" placeholder="Write your critical review..."></textarea>
+                <button onclick="recordVideoReflection()" class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded">Submit Reflection</button>
+                <span id="videoReflectionFb" class="ml-2 text-sm"></span>
+            </div>
+        </div>
+
+        <!-- Section 5: Letters to the Editor -->
+        <div class="mb-8 bg-white dark:bg-gray-800 rounded-xl p-5 border border-blue-200 dark:border-blue-700">
+            <h3 class="font-semibold text-blue-600 mb-2">5. Letters to the Editor: Your Voice Matters</h3>
             <p class="mb-2 text-gray-700 dark:text-gray-200">
                 Letters to the Editor, like those in the <a href="https://www.scmp.com/comment/letters/" class="text-blue-700 underline" target="_blank">South China Morning Post</a>, bridge the gap between the public and the “ivory tower.” Anyone can write, share opinions, and influence public debate—even students!
             </p>
@@ -109,9 +162,9 @@
                 <span id="toggleIcon">▶️</span>
                 Read: Simon Wang’s Letter for SCMP’s 120th Anniversary
             </button>
-            <div id="simonLetter" class="hidden bg-yellow-50 dark:bg-yellow-900/20 rounded-xl p-5 border border-yellow-200 dark:border-yellow-700 text-gray-800 dark:text-gray-100">
+            <div id="simonLetter" class="hidden bg-gray-50 dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 text-left">
                 <h4 class="font-bold text-lg mb-2">Letters to the South China Morning Post bridge the space between the public and the ivory tower</h4>
-                <div class="text-xs text-gray-500 mb-2">Published: 12:30pm, 6 Nov 2023</div>
+                <div class="text-sm text-gray-700 dark:text-gray-300 mb-2">Published: 12:30pm, 6 Nov 2023</div>
                 <p>As a frequent contributor to this column, I wish to congratulate the South China Morning Post on its 120th anniversary and thank the editors for their support for my research and advocacy work in the past 10 years.</p>
                 <p class="mt-2">I started writing to the Letters section in 2013 and have published over 100 letters. Since 2020, I have also been working with my colleague, Dr Benedict Rowlett, at Baptist University, helping over 300 students to publish nearly 140 letters.</p>
                 <p class="mt-2">My first published letter to the editor was on Creative Commons, an alternative approach to copyright management. In my first featured letter in 2016, I made the case for Hong Kong to phase out Octopus cards and imagined a smart city embracing diverse mobile payment methods. With the advent of generative artificial intelligence, my students and I also published the first letter in SCMP’s history that was edited by ChatGPT. An overarching theme of most of our letters is to question the status quo and envision a better world made possible by new technologies.</p>
@@ -136,6 +189,13 @@
         document.querySelectorAll('.gov-mc-btn').forEach(btn => {
             btn.onclick = function() {
                 const fb = document.getElementById('govMcFeedback');
+                const question = "Which of the following best expresses the idea?";
+                window.recordInteraction && window.recordInteraction({
+                    type: 'mc',
+                    section: 'lecture',
+                    question,
+                    answer: btn.textContent.trim()
+                });
                 if (btn.dataset.correct === "true") {
                     fb.textContent = "✅ Correct! Government is needed, but must be kept in check.";
                     fb.className = "mt-2 text-green-600 font-bold";
@@ -150,6 +210,13 @@
         document.querySelectorAll('.gov-tf-btn').forEach(btn => {
             btn.onclick = function() {
                 const fb = document.getElementById('govTfFeedback');
+                const question = "True or False: In a modern society, we can do without any government at all.";
+                window.recordInteraction && window.recordInteraction({
+                    type: 'tf',
+                    section: 'lecture',
+                    question,
+                    answer: btn.textContent.trim()
+                });
                 if (btn.dataset.answer === "true") {
                     fb.textContent = "✅ Correct! Most societies need some form of government.";
                     fb.className = "mt-2 text-green-600 font-bold";
@@ -162,9 +229,15 @@
 
         // Accountability fill-in-the-blank
         function checkAccountability() {
-            const ans = document.getElementById('accountInput').value.toLowerCase().trim();
+            const ans = document.getElementById('accountInput').value.trim();
             const fb = document.getElementById('accountFb');
-            if (ans.includes('tax') || ans.includes('public money') || ans.includes('funded')) {
+            window.recordInteraction && window.recordInteraction({
+                type: 'fill',
+                section: 'lecture',
+                question: "Fill in the blank: Government staff should be held accountable because __________.",
+                answer: ans
+            });
+            if (ans.toLowerCase().includes('tax') || ans.toLowerCase().includes('public money') || ans.toLowerCase().includes('funded')) {
                 fb.textContent = "✅ That's right! Accountability is needed because the public pays for government.";
                 fb.className = "ml-2 text-green-700 font-bold";
             } else if (ans.length < 3) {
@@ -179,6 +252,13 @@
         document.querySelectorAll('.trans-btn').forEach(btn => {
             btn.onclick = function() {
                 const fb = document.getElementById('transFb');
+                const question = "Which of the following helps most with transparency?";
+                window.recordInteraction && window.recordInteraction({
+                    type: 'mc',
+                    section: 'lecture',
+                    question,
+                    answer: btn.textContent.trim()
+                });
                 if (btn.dataset.correct === "true") {
                     fb.textContent = "✅ Correct! Open records + reporting support transparency.";
                     fb.className = "mt-2 text-green-600 font-bold";
@@ -189,6 +269,46 @@
             }
         });
 
+        // Code on Access to Information Quiz
+        document.querySelectorAll('.code-btn').forEach(btn => {
+            btn.onclick = function() {
+                const fb = document.getElementById('codeQuizFb');
+                const question = "What can you do if your information request is refused?";
+                window.recordInteraction && window.recordInteraction({
+                    type: 'mc',
+                    section: 'lecture',
+                    question,
+                    answer: btn.textContent.trim()
+                });
+                if (btn.dataset.correct === "true") {
+                    fb.textContent = "✅ Correct! You can request a review or complain.";
+                    fb.className = "mt-2 text-green-700 font-bold";
+                } else {
+                    fb.textContent = "❌ Not quite. You can always ask for a review or make a complaint.";
+                    fb.className = "mt-2 text-red-700 font-bold";
+                }
+            }
+        });
+
+        // Video Reflection
+        function recordVideoReflection() {
+            const ans = document.getElementById('videoReflection').value.trim();
+            const fb = document.getElementById('videoReflectionFb');
+            window.recordInteraction && window.recordInteraction({
+                type: 'reflection',
+                section: 'lecture',
+                question: "Your Reflection: What’s missing from the official video?",
+                answer: ans
+            });
+            if (ans.length > 5) {
+                fb.textContent = "✅ Reflection submitted!";
+                fb.className = "ml-2 text-green-700 font-bold";
+            } else {
+                fb.textContent = "❌ Please write a little more!";
+                fb.className = "ml-2 text-red-700 font-bold";
+            }
+        }
+
         // Letters to Editor: Checkbox check
         function checkLetters() {
             const checks = document.querySelectorAll('.ltr-check');
@@ -198,6 +318,13 @@
                 if (c.checked !== correct[i]) ok = false;
             });
             const fb = document.getElementById('ltrFb');
+            const selected = Array.from(checks).map((c, i) => c.checked ? c.parentNode.textContent.trim() : null).filter(Boolean).join('; ');
+            window.recordInteraction && window.recordInteraction({
+                type: 'checkbox',
+                section: 'lecture',
+                question: "Why are Letters to the Editor important? (Select all that apply)",
+                answer: selected
+            });
             if (ok) {
                 fb.textContent = "✅ Correct! Letters give citizens a voice and help keep government accountable.";
                 fb.className = "ml-2 text-green-700 font-bold";

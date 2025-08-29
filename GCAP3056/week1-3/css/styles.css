@@ -456,3 +456,126 @@ html {
 .dark #markdownText::-webkit-scrollbar-thumb {
     background: #6b7280;
 }
+
+ 
+
+/* ============================================
+   CONTENT & TEXT ENHANCEMENTS
+   ============================================ */
+
+/* Text color enhancement */
+.text-gray-700.dark\:text-gray-300 {
+    color: rgba(55, 65, 81, 0.95) !important;
+}
+
+.dark .text-gray-700.dark\:text-gray-300 {
+    color: rgba(209, 213, 219, 0.95) !important;
+}
+
+/* List styling improvements */
+ul {
+    padding-left: 1.25rem !important;
+    list-style-position: outside !important;
+    margin-left: 0 !important;
+}
+
+li {
+    padding-left: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Content width optimization */
+.max-w-6xl {
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (min-width: 1024px) {
+    .max-w-6xl {
+        max-width: 95% !important;
+    }
+}
+
+/* Container width adjustments */
+.container, 
+.content-area {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+
+    ul.list-disc {
+        padding-left: 2rem !important;
+        margin-left: 0 !important;
+    }
+    
+    ul.list-disc li {
+        margin-bottom: 0.5rem !important;
+        color: rgb(55, 65, 81) !important;
+    }
+    
+    .dark ul.list-disc li {
+        color: rgb(209, 213, 219) !important;
+    }
+
+
+
+/* Add before the closing </style> tag */
+
+/* ============================================
+   TEXT CONTRAST & LIST IMPROVEMENTS
+   ============================================ */
+
+/* Enhanced text contrast for all gray variants */
+.text-gray-500,
+.text-gray-600,
+.text-gray-700,
+.dark\:text-gray-300,
+.dark\:text-gray-400,
+.dark\:text-gray-500 {
+    color: rgb(55, 65, 81) !important;
+}
+
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-gray-700,
+.dark .dark\:text-gray-300,
+.dark .dark\:text-gray-400,
+.dark .dark\:text-gray-500 {
+    color: rgb(229, 231, 235) !important;
+}
+
+/* Quiz and MC button text improvements */
+.gov-mc-btn,
+.trans-btn,
+.code-btn,
+.quiz-option {
+    color: rgb(55, 65, 81) !important;
+}
+
+.dark .gov-mc-btn,
+.dark .trans-btn,
+.dark .code-btn,
+.dark .quiz-option {
+    color: rgb(229, 231, 235) !important;
+}
+
+/* Feedback text contrast */
+#govMcFeedback,
+#govTfFeedback,
+#transFb,
+#codeQuizFb,
+#ltrFb {
+    color: rgb(55, 65, 81) !important;
+}
+
+.dark #govMcFeedback,
+.dark #govTfFeedback,
+.dark #transFb,
+.dark #codeQuizFb,
+.dark #ltrFb {
+    color: rgb(229, 231, 235) !important;
+}
