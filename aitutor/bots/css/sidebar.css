@@ -214,21 +214,22 @@
 /* Sidebar Toggle Button */
 .sidebar-toggle-btn {
     position: absolute;
-    left: 350px; /* Same as sidebar width */
+    left: 350px;
     top: 20px;
     z-index: 1000;
     background: #667eea;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 24px;  /* reduced from 32px */
+    height: 24px; /* reduced from 32px */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 12px; /* added to make arrow smaller */
 }
 
 .sidebar-toggle-btn:hover {

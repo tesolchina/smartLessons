@@ -9,8 +9,8 @@ let defaultPrompts = {
 // Load prompts from files
 async function loadPrompts() {
     try {
-        const welcomeResponse = await fetch('prompts/welcome.txt');
-        const systemResponse = await fetch('prompts/system.txt');
+        const welcomeResponse = await fetch('../prompts/welcome.txt');
+        const systemResponse = await fetch('../prompts/system.txt');
         
         if (welcomeResponse.ok && systemResponse.ok) {
             defaultPrompts.welcome = await welcomeResponse.text();
