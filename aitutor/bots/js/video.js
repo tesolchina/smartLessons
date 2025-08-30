@@ -1,22 +1,22 @@
 // video.js
-// Avoid redeclaring variables that might be in core.js
-let systemPrompt = '';
-let welcomePrompt = '';
+// Use unique variable names to avoid conflicts with core.js
+let videoSystemPrompt = '';
+let videoWelcomePrompt = '';
 
 // Load prompts when page loads
 window.onload = async function() {
     try {
         // Load system prompt
         const sysResponse = await fetch('/aitutor/prompts/videoS.txt');
-        systemPrompt = await sysResponse.text();
+        videoSystemPrompt = await sysResponse.text();
 
         // Load welcome prompt
         const welcomeResponse = await fetch('/aitutor/prompts/videoW.txt');
-        welcomePrompt = await welcomeResponse.text();
+        videoWelcomePrompt = await welcomeResponse.text();
     } catch (error) {
         console.error('Error loading prompts:', error);
-        systemPrompt = 'You are a helpful assistant for EEGC students preparing their 2-minute pre-course video.';
-        welcomePrompt = 'Hello! I\'m here to help you prepare your video presentation.';
+        videoSystemPrompt = 'You are a helpful assistant for EEGC students preparing their 2-minute pre-course video.';
+        videoWelcomePrompt = 'Hello! I\'m here to help you prepare your video presentation.';
     }
 };
 
@@ -31,7 +31,7 @@ function connectAPI() {
 
     document.querySelector('.api-section').style.display = 'none';
     document.getElementById('chat-container').style.display = 'block';
-    addMessage(welcomePrompt, 'assistant');
+    addMessage(videoWelcomePrompt, 'assistant');
     
     // Store API key in a way that avoids global conflict
     window.videoHelperApiKey = localApiKey;
@@ -49,7 +49,7 @@ function addMessage(text, sender) {
 
 // Function to send a message to the API
 function sendMessage() {
-    const input = document.getElementById('user-input'); // Changed from 'message-input' to match videoHelper.html
+    const input = document.getElementById('user-input');
     const message = input.value.trim();
     const model = document.getElementById('model-select').value;
     
@@ -69,7 +69,7 @@ function sendMessage() {
             apiKey: window.videoHelperApiKey, // Use the stored local key
             provider: 'hkbu',
             model: model,
-            systemPrompt: systemPrompt
+            systemPrompt: videoSystemPrompt
         })
     })
     .then(response => {
