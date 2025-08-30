@@ -1,40 +1,40 @@
 // video.js
-// Use unique variable names to avoid conflicts with core.js
-let videoSystemPrompt = '';
-let videoWelcomePrompt = '';
+// Use highly unique variable names to avoid any conflicts with core.js or other scripts
+let videoHelperSysPrompt = '';
+let videoHelperWelcomeMsg = '';
 
 // Load prompts when page loads
 window.onload = async function() {
     try {
         // Load system prompt
         const sysResponse = await fetch('/aitutor/prompts/videoS.txt');
-        videoSystemPrompt = await sysResponse.text();
+        videoHelperSysPrompt = await sysResponse.text();
 
         // Load welcome prompt
         const welcomeResponse = await fetch('/aitutor/prompts/videoW.txt');
-        videoWelcomePrompt = await welcomeResponse.text();
+        videoHelperWelcomeMsg = await welcomeResponse.text();
     } catch (error) {
         console.error('Error loading prompts:', error);
-        videoSystemPrompt = 'You are a helpful assistant for EEGC students preparing their 2-minute pre-course video.';
-        videoWelcomePrompt = 'Hello! I\'m here to help you prepare your video presentation.';
+        videoHelperSysPrompt = 'You are a helpful assistant for EEGC students preparing their 2-minute pre-course video.';
+        videoHelperWelcomeMsg = 'Hello! I\'m here to help you prepare your video presentation.';
     }
 };
 
 // Function to start the chat session
 function connectAPI() {
     // Store API key locally to avoid global conflict
-    const localApiKey = document.getElementById('api-key').value;
-    if (!localApiKey) {
+    const videoHelperKey = document.getElementById('api-key').value;
+    if (!videoHelperKey) {
         alert('Please enter your API key');
         return;
     }
 
     document.querySelector('.api-section').style.display = 'none';
     document.getElementById('chat-container').style.display = 'block';
-    addMessage(videoWelcomePrompt, 'assistant');
+    addMessage(videoHelperWelcomeMsg, 'assistant');
     
     // Store API key in a way that avoids global conflict
-    window.videoHelperApiKey = localApiKey;
+    window.videoHelperUniqueKey = videoHelperKey;
 }
 
 // Function to add a message to the chat
@@ -66,10 +66,10 @@ function sendMessage() {
         },
         body: JSON.stringify({
             message: message,
-            apiKey: window.videoHelperApiKey, // Use the stored local key
+            apiKey: window.videoHelperUniqueKey, // Use the stored local key
             provider: 'hkbu',
             model: model,
-            systemPrompt: videoSystemPrompt
+            systemPrompt: videoHelperSysPrompt
         })
     })
     .then(response => {
