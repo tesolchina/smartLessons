@@ -259,6 +259,43 @@ function hideTyping() {
     }
 }
 
+// Session Management
+function startNewSession() {
+    // Show confirmation dialog
+    const confirmNew = confirm('Start a new session? This will clear the current conversation.');
+    
+    if (confirmNew) {
+        // Clear chat history
+        chatHistory = [];
+        
+        // Clear chat messages display
+        const chatMessages = document.getElementById('chat-messages');
+        chatMessages.innerHTML = `
+            <div class="message assistant">
+                <div class="message-content">
+                    🔄 Starting new session...<br><br>
+                    How can I help you today?
+                </div>
+            </div>
+        `;
+        
+        // Reset any session-specific variables
+        document.getElementById('message-input').value = '';
+        document.getElementById('done-btn').disabled = true;
+        
+        // Clear cached chat history
+        clearCache(STORAGE_KEYS.CHAT_HISTORY);
+        
+        // Show notification
+        showNotification('Started new session', 'success');
+    }
+}
+
+// Make function available globally
+window.startNewSession = startNewSession;
+
+
+
 // Cache utility functions
 function saveToCache(key, data) {
     try {

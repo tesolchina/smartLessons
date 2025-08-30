@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
-    <div class="container">
-        <button id="sidebar-toggle" class="sidebar-toggle-btn">
-        <span class="toggle-icon">◀</span>
-        </button>   
+     <div class="container">
+    <button id="sidebar-toggle" class="sidebar-toggle-btn">
+        <span class="toggle-icon">⚙️</span>
+    </button>
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
@@ -104,10 +104,16 @@
         <!-- Chat Area -->
         <div class="chat-area">
             <div class="chat-header">
-                <h1>HKBU Learning Assistant</h1>
-                <div style="font-size: 0.9rem; opacity: 0.9;">
-                    💡 Customize prompts, chat, and generate learning reports
+                <div class="chat-header-main">
+                    <h1>HKBU Learning Assistant</h1>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">
+                        💡 Customize prompts, chat, and generate learning reports
+                    </div>
                 </div>
+                <button class="new-session-btn" onclick="startNewSession()">
+                    <span class="btn-icon">🔄</span>
+                    New Session
+                </button>
             </div>
 
             <div class="chat-messages" id="chat-messages">

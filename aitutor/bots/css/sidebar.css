@@ -212,48 +212,50 @@
 }
 
 /* Sidebar Toggle Button */
+/* Sidebar Toggle Button */
 .sidebar-toggle-btn {
     position: absolute;
-    left: 350px;
-    top: 20px;
+    left: 340px;
+    top: 15px;
     z-index: 1000;
     background: #667eea;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 24px;  /* reduced from 32px */
-    height: 24px; /* reduced from 32px */
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    font-size: 12px; /* added to make arrow smaller */
+    font-size: 10px;
+    opacity: 0.8; /* make it slightly transparent */
 }
-
 .sidebar-toggle-btn:hover {
     background: #764ba2;
     transform: scale(1.1);
+    opacity: 1;
 }
 
 .sidebar-toggle-btn .toggle-icon {
+    font-size: 12px;
     transition: transform 0.3s ease;
 }
 
-/* Collapsed State */
+/* Collapsed state */
 .container.sidebar-collapsed .sidebar {
     transform: translateX(-350px);
 }
 
 .container.sidebar-collapsed .sidebar-toggle-btn {
-    left: 20px;
+    left: 15px;  /* changed from 20px to 15px for better positioning */
 }
 
 .container.sidebar-collapsed .sidebar-toggle-btn .toggle-icon {
     transform: rotate(180deg);
 }
-
 /* Adjust main content when sidebar is collapsed */
 .container.sidebar-collapsed .chat-area {
     margin-left: 0;
