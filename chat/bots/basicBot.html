@@ -51,8 +51,80 @@
             overflow-y: auto;
         }
 
+        .sidebar-footer {
+            padding: 15px;
+            background: #e9ecef;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+
         .prompt-section {
             margin-bottom: 20px;
+        }
+
+        .api-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        .api-section h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .api-instructions {
+            font-size: 0.85rem;
+            color: #856404;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .api-key-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .api-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .connection-status {
+            font-size: 0.8rem;
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-loading {
+            background: #cce7ff;
+            color: #004085;
+            border: 1px solid #b3d7ff;
         }
 
         .prompt-header {
@@ -127,6 +199,8 @@
         .btn-secondary { background: #6c757d; color: white; }
         .btn-success { background: #28a745; color: white; }
         .btn-warning { background: #ffc107; color: #212529; }
+        .btn-info { background: #17a2b8; color: white; }
+        .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
 
         .btn:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
 
@@ -144,17 +218,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        .api-key-input {
-            padding: 8px 12px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 6px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            width: 300px;
-        }
-
-        .api-key-input::placeholder { color: rgba(255,255,255,0.7); }
 
         .chat-messages {
             flex: 1;
@@ -315,7 +378,7 @@
                 grid-template-rows: auto 1fr;
             }
             .sidebar {
-                max-height: 300px;
+                max-height: 400px;
             }
         }
     </style>
@@ -325,11 +388,36 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>🤖 Chat Assistant</h2>
+                <h2>🤖 HKBU Chat Assistant</h2>
                 <p>Customize your learning experience</p>
             </div>
             
             <div class="sidebar-content">
+                <!-- API Configuration Section (Top Priority) -->
+                <div class="api-section">
+                    <h3>🔑 API Configuration</h3>
+                    <div class="api-instructions">
+                        <strong>Step 1:</strong> Get your API key from <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" style="color: #667eea;">HKBU GenAI Platform</a><br>
+                        <strong>Step 2:</strong> Copy and paste your API key below<br>
+                        <strong>Step 3:</strong> Click "Test Connection" to verify
+                    </div>
+                    
+                    <input 
+                        type="password" 
+                        id="api-key" 
+                        class="api-key-input"
+                        placeholder="Paste your HKBU GenAI API key here..."
+                    >
+                    
+                    <div class="api-buttons">
+                        <button class="btn btn-info btn-sm" onclick="testConnection()">🔍 Test</button>
+                        <button class="btn btn-success btn-sm" onclick="connectAPI()" id="connect-btn" disabled>✅ Connect</button>
+                        <button class="btn btn-secondary btn-sm" onclick="clearAPI()">🗑️ Clear</button>
+                    </div>
+                    
+                    <div id="connection-status" class="connection-status" style="display: none;"></div>
+                </div>
+
                 <!-- Welcome Prompt Section -->
                 <div class="prompt-section">
                     <div class="prompt-header" onclick="togglePrompt('welcome')">
@@ -337,7 +425,7 @@
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="prompt-content" id="welcome-content">
-                        <div class="prompt-display" id="welcome-display"></div>
+                        <div class="prompt-display" id="welcome-display">Loading welcome message from file...</div>
                         <button class="btn btn-primary" onclick="editPrompt('welcome')">Edit Welcome</button>
                         <button class="btn btn-secondary" onclick="resetPrompt('welcome')">Reset</button>
                     </div>
@@ -350,29 +438,23 @@
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="prompt-content" id="system-content">
-                        <div class="prompt-display" id="system-display"></div>
+                        <div class="prompt-display" id="system-display">Loading system instructions from file...</div>
                         <button class="btn btn-primary" onclick="editPrompt('system')">Edit System</button>
                         <button class="btn btn-secondary" onclick="resetPrompt('system')">Reset</button>
-                        <div class="mt-2">
+                        <div style="margin-top: 10px;">
                             <small style="color: #666;">💡 Try roles like: Math Tutor, Writing Coach, Research Assistant, Language Partner</small>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- API Configuration -->
-                <div class="prompt-section">
-                    <div class="prompt-header" onclick="togglePrompt('api')">
-                        <h3>🔑 API Configuration</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="prompt-content" id="api-content">
-                        <input type="password" id="api-key" placeholder="Enter HKBU GenAI API Key" 
-                               style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
-                        <button class="btn btn-success" onclick="connectAPI()">Connect</button>
-                        <div id="connection-status" style="margin-top: 10px; font-size: 0.8rem;"></div>
-                        <small style="color: #666;">Get your key at: <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank">HKBU GenAI</a></small>
-                    </div>
-                </div>
+            <!-- Credits Footer -->
+            <div class="sidebar-footer">
+                <strong>Created by:</strong><br>
+                Dr. Simon Wang<br>
+                Innovation Officer, Language Centre<br>
+                Hong Kong Baptist University<br>
+                <a href="mailto:simonwang@hkbu.edu.hk" style="color: #667eea;">simonwang@hkbu.edu.hk</a>
             </div>
         </div>
 
@@ -386,7 +468,12 @@
             </div>
 
             <div class="chat-messages" id="chat-messages">
-                <!-- Messages will appear here -->
+                <div class="message assistant">
+                    <div class="message-content">
+                        🔑 Please configure your API key first to start chatting!<br><br>
+                        Follow the instructions in the sidebar to get your HKBU GenAI API key and test the connection.
+                    </div>
+                </div>
             </div>
 
             <div class="chat-input-container">
@@ -394,7 +481,7 @@
                     <textarea 
                         class="chat-input" 
                         id="message-input" 
-                        placeholder="Type your message here... (Enter to send)"
+                        placeholder="Connect your API key first to start chatting..."
                         rows="1"
                         disabled
                     ></textarea>
@@ -440,7 +527,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadPrompts();
             setupEventListeners();
-            showWelcomeMessage();
         });
 
         function setupEventListeners() {
@@ -456,11 +542,52 @@
                 this.style.height = 'auto';
                 this.style.height = Math.min(this.scrollHeight, 100) + 'px';
             });
+
+            // Auto-enable connect button when API key is entered
+            document.getElementById('api-key').addEventListener('input', function() {
+                const connectBtn = document.getElementById('connect-btn');
+                if (this.value.trim()) {
+                    connectBtn.disabled = false;
+                } else {
+                    connectBtn.disabled = true;
+                }
+            });
         }
 
         async function loadPrompts() {
             try {
-                // For now, use default prompts since we can't directly read files from browser
+                // Load welcome prompt from backend API
+                const welcomeResponse = await fetch('https://smartlessons-production.up.railway.app/prompts/welcome.txt');
+                if (welcomeResponse.ok) {
+                    const welcomeData = await welcomeResponse.json();
+                    defaultWelcome = welcomeData.content;
+                    welcomePrompt = defaultWelcome;
+                    console.log('✅ Welcome prompt loaded from file');
+                } else {
+                    throw new Error('Failed to load welcome.txt');
+                }
+
+                // Load system prompt from backend API
+                const systemResponse = await fetch('https://smartlessons-production.up.railway.app/prompts/system.txt');
+                if (systemResponse.ok) {
+                    const systemData = await systemResponse.json();
+                    defaultSystem = systemData.content;
+                    systemPrompt = defaultSystem;
+                    console.log('✅ System prompt loaded from file');
+                } else {
+                    throw new Error('Failed to load system.txt');
+                }
+
+                // Update displays
+                updatePromptDisplay('welcome');
+                updatePromptDisplay('system');
+                
+                showNotification('Prompts loaded from files successfully!', 'success');
+                
+            } catch (error) {
+                console.error('❌ Error loading prompts from files:', error);
+                
+                // Fallback to hardcoded defaults
                 defaultWelcome = `Welcome to the HKBU Learning Assistant! 🎓
 
 I'm here to help you explore various topics and enhance your learning experience. You can customize my behavior by editing the system prompt below.
@@ -507,9 +634,7 @@ Remember: Guide students toward understanding rather than simply providing answe
                 updatePromptDisplay('welcome');
                 updatePromptDisplay('system');
                 
-            } catch (error) {
-                console.error('Error loading prompts:', error);
-                showNotification('Using default prompts', 'info');
+                showNotification('Using default prompts (files not accessible)', 'info');
             }
         }
 
@@ -526,6 +651,104 @@ Remember: Guide students toward understanding rather than simply providing answe
             const display = document.getElementById(type + '-display');
             const prompt = type === 'welcome' ? welcomePrompt : systemPrompt;
             display.textContent = prompt;
+        }
+
+        async function testConnection() {
+            const key = document.getElementById('api-key').value.trim();
+            const statusDiv = document.getElementById('connection-status');
+            
+            if (!key) {
+                showNotification('Please enter an API key first', 'error');
+                return;
+            }
+
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'connection-status status-loading';
+            statusDiv.innerHTML = '🔄 Testing connection to HKBU GenAI...';
+            
+            try {
+                const response = await fetch('https://smartlessons-production.up.railway.app/api/test', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        apiKey: key,
+                        provider: 'hkbu',
+                        model: 'gpt-4.1'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && !data.error) {
+                    statusDiv.className = 'connection-status status-success';
+                    statusDiv.innerHTML = '✅ Connection successful! API key is valid.';
+                    document.getElementById('connect-btn').disabled = false;
+                    showNotification('API key is valid!', 'success');
+                } else {
+                    throw new Error(data.error || 'Connection failed');
+                }
+            } catch (error) {
+                statusDiv.className = 'connection-status status-error';
+                statusDiv.innerHTML = '❌ Connection failed: ' + error.message;
+                showNotification(`Connection test failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function connectAPI() {
+            const key = document.getElementById('api-key').value.trim();
+            
+            if (!key) {
+                showNotification('Please enter an API key', 'error');
+                return;
+            }
+
+            apiKey = key;
+            isConnected = true;
+            
+            document.getElementById('message-input').disabled = false;
+            document.getElementById('message-input').placeholder = 'Type your message here... (Enter to send)';
+            document.getElementById('send-btn').disabled = false;
+            
+            // Show welcome message with loaded content
+            showWelcomeMessage();
+            showNotification('API connected successfully! Welcome message loaded.', 'success');
+        }
+
+        function clearAPI() {
+            apiKey = '';
+            isConnected = false;
+            document.getElementById('api-key').value = '';
+            document.getElementById('connection-status').style.display = 'none';
+            document.getElementById('connect-btn').disabled = true;
+            document.getElementById('message-input').disabled = true;
+            document.getElementById('message-input').placeholder = 'Connect your API key first to start chatting...';
+            document.getElementById('send-btn').disabled = true;
+            document.getElementById('done-btn').disabled = true;
+            
+            // Reset chat
+            chatHistory = [];
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.innerHTML = `
+                <div class="message assistant">
+                    <div class="message-content">
+                        🔑 Please configure your API key first to start chatting!<br><br>
+                        Follow the instructions in the sidebar to get your HKBU GenAI API key and test the connection.
+                    </div>
+                </div>
+            `;
+            
+            showNotification('API disconnected. Enter your key to reconnect.', 'info');
+        }
+
+        function showWelcomeMessage() {
+            if (!isConnected) return; // Only show when connected
+            
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.innerHTML = `
+                <div class="message assistant">
+                    <div class="message-content">${welcomePrompt.replace(/\n/g, '<br>')}</div>
+                </div>
+            `;
         }
 
         function editPrompt(type) {
@@ -560,6 +783,11 @@ Remember: Guide students toward understanding rather than simply providing answe
             
             cancelEdit(type);
             showNotification(`${type === 'welcome' ? 'Welcome' : 'System'} prompt updated! (Resets on page refresh)`, 'success');
+            
+            // Update welcome message if connected and editing welcome
+            if (type === 'welcome' && isConnected) {
+                showWelcomeMessage();
+            }
         }
 
         function cancelEdit(type) {
@@ -572,11 +800,20 @@ Remember: Guide students toward understanding rather than simply providing answe
             
             // Restore buttons
             const buttonsContainer = display.nextElementSibling;
-            buttonsContainer.innerHTML = `
-                <button class="btn btn-primary" onclick="editPrompt('${type}')">Edit ${type === 'welcome' ? 'Welcome' : 'System'}</button>
-                <button class="btn btn-secondary" onclick="resetPrompt('${type}')">Reset</button>
-                ${type === 'system' ? '<div class="mt-2"><small style="color: #666;">💡 Try roles like: Math Tutor, Writing Coach, Research Assistant, Language Partner</small></div>' : ''}
-            `;
+            if (type === 'welcome') {
+                buttonsContainer.innerHTML = `
+                    <button class="btn btn-primary" onclick="editPrompt('welcome')">Edit Welcome</button>
+                    <button class="btn btn-secondary" onclick="resetPrompt('welcome')">Reset</button>
+                `;
+            } else {
+                buttonsContainer.innerHTML = `
+                    <button class="btn btn-primary" onclick="editPrompt('system')">Edit System</button>
+                    <button class="btn btn-secondary" onclick="resetPrompt('system')">Reset</button>
+                    <div style="margin-top: 10px;">
+                        <small style="color: #666;">💡 Try roles like: Math Tutor, Writing Coach, Research Assistant, Language Partner</small>
+                    </div>
+                `;
+            }
             
             updatePromptDisplay(type);
         }
@@ -589,55 +826,11 @@ Remember: Guide students toward understanding rather than simply providing answe
             }
             updatePromptDisplay(type);
             showNotification(`${type === 'welcome' ? 'Welcome' : 'System'} prompt reset to default`, 'info');
-        }
-
-        async function connectAPI() {
-            const key = document.getElementById('api-key').value.trim();
-            const statusDiv = document.getElementById('connection-status');
             
-            if (!key) {
-                showNotification('Please enter an API key', 'error');
-                return;
+            // Update welcome message if connected and resetting welcome
+            if (type === 'welcome' && isConnected) {
+                showWelcomeMessage();
             }
-
-            statusDiv.innerHTML = '🔄 Testing connection...';
-            
-            try {
-                const response = await fetch('https://smartlessons-production.up.railway.app/api/test', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        apiKey: key,
-                        provider: 'hkbu',
-                        model: 'gpt-4.1'
-                    })
-                });
-
-                const data = await response.json();
-
-                if (response.ok && !data.error) {
-                    apiKey = key;
-                    isConnected = true;
-                    statusDiv.innerHTML = '✅ Connected successfully!';
-                    document.getElementById('message-input').disabled = false;
-                    document.getElementById('send-btn').disabled = false;
-                    showNotification('API connected successfully!', 'success');
-                } else {
-                    throw new Error(data.error || 'Connection failed');
-                }
-            } catch (error) {
-                statusDiv.innerHTML = '❌ Connection failed';
-                showNotification(`Connection failed: ${error.message}`, 'error');
-            }
-        }
-
-        function showWelcomeMessage() {
-            const messagesContainer = document.getElementById('chat-messages');
-            messagesContainer.innerHTML = `
-                <div class="message assistant">
-                    <div class="message-content">${welcomePrompt.replace(/\n/g, '<br>')}</div>
-                </div>
-            `;
         }
 
         async function sendMessage() {
@@ -741,7 +934,7 @@ Remember: Guide students toward understanding rather than simply providing answe
             const assistantMessages = chatHistory.filter(msg => msg.role === 'assistant');
             
             let report = `
-                <h2>📊 Learning Session Report</h2>
+                <h2>📊 HKBU Learning Session Report</h2>
                 <p><strong>Generated:</strong> ${now.toLocaleString()}</p>
                 <p><strong>Duration:</strong> ${duration} minutes</p>
                 <p><strong>Total Messages:</strong> ${chatHistory.length}</p>
@@ -771,6 +964,17 @@ Remember: Guide students toward understanding rather than simply providing answe
             });
             
             report += '</div>';
+            
+            // Add credits to report
+            report += `
+                <hr style="margin: 20px 0;">
+                <div style="text-align: center; font-size: 0.9rem; color: #666;">
+                    <strong>Created by:</strong> Dr. Simon Wang, Innovation Officer<br>
+                    Language Centre, Hong Kong Baptist University<br>
+                    <a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a>
+                </div>
+            `;
+            
             return report;
         }
 
@@ -787,6 +991,8 @@ Remember: Guide students toward understanding rather than simply providing answe
 
         function analyzeContribution() {
             const userMessages = chatHistory.filter(msg => msg.role === 'user');
+            if (userMessages.length === 0) return 'No user messages to analyze.';
+            
             const avgLength = userMessages.reduce((sum, msg) => sum + msg.content.length, 0) / userMessages.length;
             const questionsRatio = userMessages.filter(msg => msg.content.includes('?')).length / userMessages.length;
             
@@ -812,7 +1018,6 @@ Remember: Guide students toward understanding rather than simply providing answe
         }
 
         function extractTopics() {
-            // Simple keyword extraction
             const commonWords = ['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'can', 'may', 'might', 'must'];
             const allWords = chatHistory
                 .filter(msg => msg.role === 'user')
@@ -900,7 +1105,9 @@ ${analyzeContribution()}
             });
             
             markdown += `---
-*Report generated by HKBU Learning Assistant*`;
+*Created by: Dr. Simon Wang, Innovation Officer*  
+*Language Centre, Hong Kong Baptist University*  
+*simonwang@hkbu.edu.hk*`;
             
             return markdown;
         }

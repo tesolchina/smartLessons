@@ -10,7 +10,7 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return jsonify({'status': 'HKBU Student Chatbot API is running!', 'endpoints': ['/api/chat', '/api/test']})
+    return jsonify({'status': 'HKBU Student Chatbot API is running!', 'endpoints': ['/api/chat', '/api/test', '/basicBot', '/frontend']})
 
 @app.route('/api/chat', methods=['POST', 'OPTIONS'])
 def chat():
@@ -25,7 +25,7 @@ def chat():
     try:
         data = request.json
         user_message = data.get('message', '')
-        api_key = data.get('apiKey', '')
+        api_key = data.get('apiKey', '')  # Note: frontend sends 'apiKey'
         provider = data.get('provider', 'hkbu')
         model = data.get('model', 'gpt-4.1')
         system_prompt = data.get('systemPrompt', '')
@@ -81,7 +81,21 @@ def test_connection():
             'error': str(e)
         }), 400
 
-# ADD THIS NEW ROUTE HERE:
+@app.route('/prompts/<filename>')
+def serve_prompts(filename):
+    try:
+        with open(f'prompts/{filename}', 'r', encoding='utf-8') as file:
+            content = file.read()
+        return jsonify({'content': content})
+    except FileNotFoundError:
+        return jsonify({'error': f'Prompt file {filename} not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/basicBot')
+def serve_basic_bot():
+    return send_file('bots/basicBot.html')
+
 @app.route('/frontend')
 def serve_frontend():
     return send_file('index.html')
@@ -188,15 +202,16 @@ if __name__ == '__main__':
     print("🚀 Starting HKBU Student Chatbot Server...")
     print("📝 Available endpoints:")
     print("   GET  / - API status")
-    print("   GET  /frontend - Web interface")
+    print("   GET  /frontend - Original web interface")
+    print("   GET  /basicBot - Advanced chatbot interface")
     print("   POST /api/chat - Chat with AI")
     print("   POST /api/test - Test API connection")
+    print("   GET  /prompts/<filename> - Serve prompt files")
     print("\n🔧 Make sure to:")
     print("   1. Install: pip install flask flask-cors requests")
     print("   2. Get HKBU API key: https://genai.hkbu.edu.hk/settings/api-docs")
     print("   3. Get OpenRouter key: https://openrouter.ai/keys")
     
-    #port = int(os.environ.get('PORT', 5000))
-    port = 5000 
-    print(f"🚀 Starting server on host=0.0.0.0 port={port}")
+    # Use port 5000 for Railway
+    port = 5000
     app.run(host='0.0.0.0', port=port, debug=False)
