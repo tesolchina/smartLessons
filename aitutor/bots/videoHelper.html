@@ -124,7 +124,7 @@ Just let me know how I can help!`;
                 return;
             }
 
-            fetch('/api/test', {
+            fetch('/aitutorapi/test', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -172,7 +172,7 @@ Just let me know how I can help!`;
             addMessage(message, 'user');
             input.value = '';
 
-            fetch('/api/chat', {
+            fetch('/aitutor/api/chat', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
