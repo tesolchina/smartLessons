@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKBU Basic Chat Assistant</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/bots/css/main.css">
+    <link rel="stylesheet" href="/bots/css/sidebar.css">
+    <link rel="stylesheet" href="/bots/css/chat.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>🤖 HKBU Chat Assistant</h2>
+                <p>Customize your learning experience</p>
+            </div>
+            
+            <div class="sidebar-content">
+                <!-- API Configuration Section -->
+                <div class="api-section">
+                    <h3>🔑 API Configuration</h3>
+                    <div class="api-instructions">
+                        <strong>Step 1:</strong> Get your API key from <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" style="color: #667eea;">HKBU GenAI Platform</a><br>
+                        <strong>Step 2:</strong> Copy and paste your API key below<br>
+                        <strong>Step 3:</strong> Click "Test Connection" to verify
+                    </div>
+                    
+                    <input 
+                        type="password" 
+                        id="api-key" 
+                        class="api-key-input"
+                        placeholder="Paste your HKBU GenAI API key here..."
+                    >
+                    
+                    <div class="model-selection">
+    <label for="model-select" style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #856404;">
+        <strong>Model:</strong>
+    </label>
+    <select id="model-select" class="model-dropdown">
+        <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
+        <option value="gpt-4.1">GPT-4.1 (Standard)</option>
+        <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
+        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+    </select>
+</div>
+
+        <div class="model-selection">
+    <label for="model-select" style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #856404;">
+        <strong>Model:</strong>
+    </label>
+    <select id="model-select" class="model-dropdown">
+        <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
+        <option value="gpt-4.1">GPT-4.1 (Standard)</option>
+        <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
+        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+    </select>
+</div>
+
+<div class="model-selection">
+    <label for="model-select" style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #856404;">
+        <strong>Model:</strong>
+    </label>
+    <select id="model-select" class="model-dropdown">
+        <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
+        <option value="gpt-4.1">GPT-4.1 (Standard)</option>
+        <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
+        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+    </select>
+</div>
+
+<div class="api-buttons">
+    <button class="btn btn-info btn-sm" onclick="testConnection()">🔍 Test</button>
+    <button class="btn btn-success btn-sm" onclick="connectAPI()" id="connect-btn" disabled>✅ Connect</button>
+    <button class="btn btn-secondary btn-sm" onclick="clearAPI()">🗑️ Clear</button>
+</div>
+
+
+
+                    <div id="connection-status" class="connection-status" style="display: none;"></div>
+                </div>
+
+                <!-- Welcome Prompt Section -->
+                <div class="prompt-section">
+                    <div class="prompt-header" onclick="togglePrompt('welcome')">
+                        <h3>📝 Welcome Message</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="prompt-content" id="welcome-content">
+                        <div class="prompt-display" id="welcome-display">Loading welcome message from file...</div>
+                        <button class="btn btn-primary" onclick="editPrompt('welcome')">Edit Welcome</button>
+                        <button class="btn btn-secondary" onclick="resetPrompt('welcome')">Reset</button>
+                    </div>
+                </div>
+
+                <!-- System Prompt Section -->
+                <div class="prompt-section">
+                    <div class="prompt-header" onclick="togglePrompt('system')">
+                        <h3>⚙️ System Instructions</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="prompt-content" id="system-content">
+                        <div class="prompt-display" id="system-display">Loading system instructions from file...</div>
+                        <button class="btn btn-primary" onclick="editPrompt('system')">Edit System</button>
+                        <button class="btn btn-secondary" onclick="resetPrompt('system')">Reset</button>
+                        <div style="margin-top: 10px;">
+                            <small style="color: #666;">💡 Try roles like: Math Tutor, Writing Coach, Research Assistant, Language Partner</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credits Footer -->
+            <div class="sidebar-footer">
+                <strong>Created by:</strong><br>
+                Dr. Simon Wang<br>
+                Innovation Officer, Language Centre<br>
+                Hong Kong Baptist University<br>
+                <a href="mailto:simonwang@hkbu.edu.hk" style="color: #667eea;">simonwang@hkbu.edu.hk</a>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <h1>HKBU Learning Assistant</h1>
+                <div style="font-size: 0.9rem; opacity: 0.9;">
+                    💡 Customize prompts, chat, and generate learning reports
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message assistant">
+                    <div class="message-content">
+                        🔑 Please configure your API key first to start chatting!<br><br>
+                        Follow the instructions in the sidebar to get your HKBU GenAI API key and test the connection.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea 
+                        class="chat-input" 
+                        id="message-input" 
+                        placeholder="Connect your API key first to start chatting..."
+                        rows="1"
+                        disabled
+                    ></textarea>
+                    <div class="input-buttons">
+                        <button class="send-btn" id="send-btn" onclick="sendMessage()" disabled title="Send Message">
+                            ➤
+                        </button>
+                        <button class="done-btn" id="done-btn" onclick="generateReport()" disabled title="Generate Report">
+                            ✓
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div class="report-modal" id="report-modal">
+        <div class="report-content">
+            <button class="close-btn" onclick="closeReport()">&times;</button>
+            <div id="report-content">
+                <!-- Report will be generated here -->
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <button class="btn btn-success" onclick="downloadPDF()">📄 Download PDF</button>
+                <button class="btn btn-primary" onclick="downloadMarkdown()">📝 Download Markdown</button>
+                <button class="btn btn-secondary" onclick="copyReport()">📋 Copy Text</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="/bots/js/core.js"></script>
+    <script src="/bots/js/prompts.js"></script>
+    <script src="/bots/js/reports.js"></script>
+    <script src="/bots/js/ui.js"></script>
+    <script src="/bots/js/main.js"></script>
+</body>
+</html>
