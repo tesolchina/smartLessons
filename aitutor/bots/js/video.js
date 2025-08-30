@@ -22,7 +22,7 @@ window.onload = async function() {
 
 // Function to start the chat session
 function connectAPI() {
-    // Store apiKey locally to avoid global conflict
+    // Store API key locally to avoid global conflict
     const localApiKey = document.getElementById('api-key').value;
     if (!localApiKey) {
         alert('Please enter your API key');
@@ -33,8 +33,8 @@ function connectAPI() {
     document.getElementById('chat-container').style.display = 'block';
     addMessage(welcomePrompt, 'assistant');
     
-    // Store apiKey in a way that avoids global conflict
-    window.localApiKey = localApiKey;
+    // Store API key in a way that avoids global conflict
+    window.videoHelperApiKey = localApiKey;
 }
 
 // Function to add a message to the chat
@@ -49,7 +49,7 @@ function addMessage(text, sender) {
 
 // Function to send a message to the API
 function sendMessage() {
-    const input = document.getElementById('user-input');
+    const input = document.getElementById('user-input'); // Changed from 'message-input' to match videoHelper.html
     const message = input.value.trim();
     const model = document.getElementById('model-select').value;
     
@@ -66,7 +66,7 @@ function sendMessage() {
         },
         body: JSON.stringify({
             message: message,
-            apiKey: window.localApiKey, // Use the stored local key
+            apiKey: window.videoHelperApiKey, // Use the stored local key
             provider: 'hkbu',
             model: model,
             systemPrompt: systemPrompt
