@@ -138,20 +138,39 @@
         </div>
     </div>
 
-    <!-- Report Modal -->
-    <div class="report-modal" id="report-modal">
-        <div class="report-content">
+<!-- Report Modal -->
+<div class="report-modal" id="report-modal">
+    <div class="report-content">
+        <div class="report-header">
+            <h3>Chat Report</h3>
             <button class="close-btn" onclick="closeReport()">&times;</button>
+        </div>
+        <div class="report-body">
             <div id="report-content">
                 <!-- Report will be generated here -->
             </div>
-            <div style="margin-top: 20px; text-align: center;">
-                <button class="btn btn-success" onclick="downloadPDF()">📄 Download PDF</button>
-                <button class="btn btn-primary" onclick="downloadMarkdown()">📝 Download Markdown</button>
-                <button class="btn btn-secondary" onclick="copyReport()">📋 Copy Text</button>
+        </div>
+        <div class="report-footer">
+            <div class="report-actions">
+                <button class="btn btn-success" onclick="downloadPDF()">
+                    <span class="btn-icon">📄</span>
+                    <span class="btn-text">Download PDF</span>
+                </button>
+                <button class="btn btn-primary" onclick="downloadMarkdown()">
+                    <span class="btn-icon">📝</span>
+                    <span class="btn-text">Download Markdown</span>
+                </button>
+                <button class="btn btn-secondary" onclick="copyReport()">
+                    <span class="btn-icon">📋</span>
+                    <span class="btn-text">Copy Text</span>
+                </button>
+            </div>
+            <div class="report-info">
+                <small>Generated on <span id="report-timestamp"></span></small>
             </div>
         </div>
     </div>
+</div>
 
     <!-- JavaScript Modules -->
     <script src="js/core.js"></script>

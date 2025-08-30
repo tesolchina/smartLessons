@@ -1,5 +1,10 @@
 // reports.js - Report Generation Module
 
+function updateReportTimestamp() {
+    const timestamp = new Date().toLocaleString();
+    document.getElementById('report-timestamp').textContent = timestamp;
+}
+
 function generateReport() {
     if (chatHistory.length === 0) {
         showNotification('No conversation to report on', 'error');
@@ -8,6 +13,7 @@ function generateReport() {
 
     const report = createReport();
     document.getElementById('report-content').innerHTML = report;
+    updateReportTimestamp();
     document.getElementById('report-modal').style.display = 'flex';
 }
 
@@ -51,7 +57,6 @@ function createReport() {
     
     report += '</div>';
     
-    // Add credits to report
     report += `
         <hr style="margin: 20px 0;">
         <div style="text-align: center; font-size: 0.9rem; color: #666;">
