@@ -22,9 +22,9 @@ window.onload = async function() {
 
 // Function to start the chat session
 function connectAPI() {
-    // Assuming apiKey is defined in core.js
-    apiKey = document.getElementById('api-key').value;
-    if (!apiKey) {
+    // Store apiKey locally to avoid global conflict
+    const localApiKey = document.getElementById('api-key').value;
+    if (!localApiKey) {
         alert('Please enter your API key');
         return;
     }
@@ -32,6 +32,9 @@ function connectAPI() {
     document.querySelector('.api-section').style.display = 'none';
     document.getElementById('chat-container').style.display = 'block';
     addMessage(welcomePrompt, 'assistant');
+    
+    // Store apiKey in a way that avoids global conflict
+    window.localApiKey = localApiKey;
 }
 
 // Function to add a message to the chat
@@ -63,7 +66,7 @@ function sendMessage() {
         },
         body: JSON.stringify({
             message: message,
-            apiKey: apiKey,
+            apiKey: window.localApiKey, // Use the stored local key
             provider: 'hkbu',
             model: model,
             systemPrompt: systemPrompt
