@@ -4,208 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Helper Bot</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f0f2f5;
-        }
-        #chat-container {
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        #messages {
-            height: 400px;
-            overflow-y: auto;
-            border: 1px solid #e0e0e0;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        .message {
-            margin: 8px 0;
-            padding: 8px;
-            border-radius: 8px;
-        }
-        .user { 
-            background-color: #e3f2fd; 
-            margin-left: 20%; 
-        }
-        .assistant { 
-            background-color: #f5f5f5; 
-            margin-right: 20%; 
-        }
-        #input-container {
-            display: flex;
-            gap: 10px;
-        }
-        #user-input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #1a73e8;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover { 
-            background-color: #1557b0; 
-        }
-        #api-section {
-            text-align: center;
-            margin-bottom: 20px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        #api-key {
-            width: 300px;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-    </style>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
-    <div id="api-section">
-        <h1>EEGC Video Helper</h1>
-        <p>Enter your HKBU API key to start:</p>
-        <input type="password" id="api-key" placeholder="Paste your API key here">
-        <button onclick="startChat()">Start Chat</button>
-    </div>
+    <div class="container">
+        <!-- API Section -->
+        <div class="api-section">
+            <div class="api-header">
+                <h2>🎥 EEGC Video Helper</h2>
+            </div>
+            
+            <div class="api-content">
+                <div class="api-instructions">
+                    <strong>Step 1:</strong> Get your API key from <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank">HKBU GenAI Platform</a><br>
+                    <strong>Step 2:</strong> Copy and paste your API key below<br>
+                </div>
+                
+                <input 
+                    type="password" 
+                    id="api-key" 
+                    class="api-key-input"
+                    placeholder="Paste your HKBU GenAI API key here..."
+                >
+                
+                <div class="model-selection">
+                    <select id="model-select" class="model-dropdown">
+                        <option value="gpt-4.1">GPT-4.1 (Recommended)</option>
+                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+                    </select>
+                </div>
 
-    <div id="chat-container">
-        <div id="messages"></div>
-        <div id="input-container">
-            <input type="text" id="user-input" placeholder="Type your message here...">
-            <button onclick="sendMessage()">Send</button>
+                <div class="api-buttons">
+                    <button class="btn btn-primary" onclick="startChat()">Start Chat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div id="chat-container" class="chat-container" style="display: none;">
+            <div id="messages" class="messages"></div>
+            <div class="input-container">
+                <textarea 
+                    id="user-input" 
+                    class="chat-input" 
+                    placeholder="Type your message here..."
+                    rows="1"
+                ></textarea>
+                <button class="send-btn" onclick="sendMessage()">Send</button>
+            </div>
         </div>
     </div>
 
-    <script>
-        let apiKey = '';
-        const systemPrompt = `You are a helpful assistant for EEGC students preparing their 2-minute pre-course video. 
-The video should cover:
-1. Self-introduction with three descriptive words
-2. How their background shapes their view of global citizenship
-3. What being a global citizen means personally
-
-Guide students to:
-- Structure their content within 2 minutes
-- Be authentic and personal
-- Use clear examples
-- Practice good presentation skills`;
-
-        const welcomePrompt = `Hello! I'm here to help you prepare your 2-minute pre-course video. 
-Would you like to:
-1. Get tips on structuring your video
-2. Practice your script
-3. Receive feedback on your content
-4. Learn about presentation skills
-
-Just let me know how I can help!`;
-
-        function startChat() {
-            apiKey = document.getElementById('api-key').value;
-            if (!apiKey) {
-                alert('Please enter your API key');
-                return;
-            }
-
-            fetch('/aitutorapi/test', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    apiKey: apiKey, 
-                    provider: 'hkbu' 
-                })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.error) {
-                    throw new Error(data.error);
-                }
-                document.getElementById('api-section').style.display = 'none';
-                document.getElementById('chat-container').style.display = 'block';
-                addMessage(welcomePrompt, 'assistant');
-            })
-            .catch(error => {
-                alert('Connection Error: ' + error.message);
-                console.error('Error:', error);
-            });
-        }
-
-        function addMessage(text, sender) {
-            const messagesDiv = document.getElementById('messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}`;
-            messageDiv.textContent = text;
-            messagesDiv.appendChild(messageDiv);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('user-input');
-            const message = input.value.trim();
-            if (!message) return;
-
-            addMessage(message, 'user');
-            input.value = '';
-
-            fetch('/aitutor/api/chat', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    message: message,
-                    apiKey: apiKey,
-                    provider: 'hkbu',
-                    systemPrompt: systemPrompt
-                })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.error) {
-                    throw new Error(data.error);
-                }
-                addMessage(data.response, 'assistant');
-            })
-            .catch(error => {
-                addMessage('Error: ' + error.message, 'assistant');
-                console.error('Error:', error);
-            });
-        }
-
-        document.getElementById('user-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') sendMessage();
-        });
-    </script>
+    <!-- JavaScript Files -->
+    <script src="js/core.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 </html>
