@@ -30,7 +30,8 @@
             display: grid;
             grid-template-columns: 350px 1fr;
             height: 90vh;
-        }
+            min-height: 600px;
+        } 
 
         .sidebar {
             background: #f8f9fa;
@@ -224,7 +225,23 @@
             padding: 20px;
             overflow-y: auto;
             background: #f8f9fa;
+            max-height: calc(100vh - 200px);
+            min-height: 300px;
+            scroll-behavior: smooth;
         }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            line-height: 1.4;
+            max-width: min(70%, 500px);
+            word-break: break-word;
+            hyphens: auto;
+        } 
 
         .message {
             margin-bottom: 15px;
@@ -741,14 +758,23 @@ Remember: Guide students toward understanding rather than simply providing answe
         }
 
         function showWelcomeMessage() {
-            if (!isConnected) return; // Only show when connected
+            if (!isConnected) return;
             
             const messagesContainer = document.getElementById('chat-messages');
+            const formattedWelcome = welcomePrompt
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\n/g, '<br>');
+            
             messagesContainer.innerHTML = `
                 <div class="message assistant">
-                    <div class="message-content">${welcomePrompt.replace(/\n/g, '<br>')}</div>
+                    <div class="message-content">${formattedWelcome}</div>
                 </div>
             `;
+            
+            setTimeout(() => {
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 100);
         }
 
         function editPrompt(type) {
@@ -889,12 +915,22 @@ Remember: Guide students toward understanding rather than simply providing answe
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${type}`;
             
+            // Convert markdown-style formatting to HTML
+            const formattedContent = content
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')             // Italic
+                .replace(/\n/g, '<br>');                          // Line breaks
+            
             messageDiv.innerHTML = `
-                <div class="message-content">${content.replace(/\n/g, '<br>')}</div>
+                <div class="message-content">${formattedContent}</div>
             `;
             
             messagesContainer.appendChild(messageDiv);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Force scroll to bottom
+            setTimeout(() => {
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 100);
         }
 
         function showTyping() {
