@@ -163,3 +163,110 @@
 .close-btn:hover {
     color: #333;
 }
+
+/* Add after your existing chat.css content */
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .chat-area {
+        background: #1a1a1a;
+    }
+    
+    .message.assistant .message-content {
+        background: #2d2d2d;
+        color: #fff;
+        border-color: #404040;
+    }
+    
+    .chat-input {
+        background: #2d2d2d;
+        color: #fff;
+    }
+}
+
+/* Loading State Styles */
+.message-loading {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+}
+
+.loading-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #667eea;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+/* Accessibility Improvements */
+.chat-input:focus,
+.send-btn:focus,
+.done-btn:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 480px) {
+    .chat-header {
+        font-size: 0.9rem;
+    }
+    
+    .message-content {
+        font-size: 0.9rem;
+    }
+    
+    .chat-input {
+        font-size: 0.9rem;
+    }
+}
+
+/* Scrollbar Styling */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Code Block Styling */
+.message-content pre {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 8px 0;
+}
+
+.message-content code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
