@@ -32,8 +32,14 @@
             padding: 8px;
             border-radius: 8px;
         }
-        .user { background-color: #e3f2fd; margin-left: 20%; }
-        .assistant { background-color: #f5f5f5; margin-right: 20%; }
+        .user { 
+            background-color: #e3f2fd; 
+            margin-left: 20%; 
+        }
+        .assistant { 
+            background-color: #f5f5f5; 
+            margin-right: 20%; 
+        }
         #input-container {
             display: flex;
             gap: 10px;
@@ -52,15 +58,23 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        button:hover { background-color: #1557b0; }
+        button:hover { 
+            background-color: #1557b0; 
+        }
         #api-section {
             text-align: center;
             margin-bottom: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         #api-key {
             width: 300px;
             padding: 10px;
             margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -112,20 +126,33 @@ Just let me know how I can help!`;
 
             fetch('/api/test', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ apiKey: apiKey, provider: 'hkbu' })
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    apiKey: apiKey, 
+                    provider: 'hkbu' 
+                })
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.error) {
-                    alert('API Key Error: ' + data.error);
-                    return;
+                    throw new Error(data.error);
                 }
                 document.getElementById('api-section').style.display = 'none';
                 document.getElementById('chat-container').style.display = 'block';
                 addMessage(welcomePrompt, 'assistant');
             })
-            .catch(error => alert('Connection Error: ' + error));
+            .catch(error => {
+                alert('Connection Error: ' + error.message);
+                console.error('Error:', error);
+            });
         }
 
         function addMessage(text, sender) {
@@ -147,7 +174,10 @@ Just let me know how I can help!`;
 
             fetch('/api/chat', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
                 body: JSON.stringify({
                     message: message,
                     apiKey: apiKey,
@@ -155,15 +185,22 @@ Just let me know how I can help!`;
                     systemPrompt: systemPrompt
                 })
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.error) {
-                    addMessage('Error: ' + data.error, 'assistant');
-                } else {
-                    addMessage(data.response, 'assistant');
+                    throw new Error(data.error);
                 }
+                addMessage(data.response, 'assistant');
             })
-            .catch(error => addMessage('Error: ' + error, 'assistant'));
+            .catch(error => {
+                addMessage('Error: ' + error.message, 'assistant');
+                console.error('Error:', error);
+            });
         }
 
         document.getElementById('user-input').addEventListener('keypress', function(e) {
