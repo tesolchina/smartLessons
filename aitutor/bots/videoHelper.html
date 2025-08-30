@@ -3,46 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Helper Bot</title>
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/chat.css">
+    <title>EEGC Video Helper</title>
+    <!-- Update CSS paths -->
+    <link rel="stylesheet" href="/aitutor/bots/css/main.css">
+    <link rel="stylesheet" href="/aitutor/bots/css/chat.css">
 </head>
 <body>
     <div class="container">
-        <!-- API Section -->
         <div class="api-section">
-            <div class="api-header">
-                <h2>🎥 EEGC Video Helper</h2>
+            <h1>EEGC Video Helper</h1>
+            <p>Enter your HKBU API key to start:</p>
+            <input 
+                type="password" 
+                id="api-key" 
+                class="api-key-input"
+                placeholder="Paste your API key here"
+            >
+            <div class="model-selection">
+                <select id="model-select" class="model-dropdown">
+                    <option value="gpt-4.1">GPT-4.1 (Recommended)</option>
+                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+                </select>
             </div>
-            
-            <div class="api-content">
-                <div class="api-instructions">
-                    <strong>Step 1:</strong> Get your API key from <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank">HKBU GenAI Platform</a><br>
-                    <strong>Step 2:</strong> Copy and paste your API key below<br>
-                </div>
-                
-                <input 
-                    type="password" 
-                    id="api-key" 
-                    class="api-key-input"
-                    placeholder="Paste your HKBU GenAI API key here..."
-                >
-                
-                <div class="model-selection">
-                    <select id="model-select" class="model-dropdown">
-                        <option value="gpt-4.1">GPT-4.1 (Recommended)</option>
-                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
-                    </select>
-                </div>
-
-                <div class="api-buttons">
-                    <button class="btn btn-primary" onclick="startChat()">Start Chat</button>
-                </div>
-            </div>
+            <button class="btn btn-primary" onclick="startChat()">Start Chat</button>
         </div>
 
-        <!-- Chat Container -->
         <div id="chat-container" class="chat-container" style="display: none;">
             <div id="messages" class="messages"></div>
             <div class="input-container">
@@ -57,8 +42,8 @@
         </div>
     </div>
 
-    <!-- JavaScript Files -->
-    <script src="js/core.js"></script>
-    <script src="js/chat.js"></script>
+    <!-- Update JavaScript paths -->
+    <script src="/aitutor/bots/js/core.js"></script>
+    <script src="/aitutor/bots/js/chat.js"></script>
 </body>
 </html>
