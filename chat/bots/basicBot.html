@@ -539,12 +539,68 @@
         let systemPrompt = '';
         let defaultWelcome = '';
         let defaultSystem = '';
+        const STORAGE_KEYS = {
+            API_KEY: 'hkbu_chat_api_key',
+            CHAT_HISTORY: 'hkbu_chat_current_session',
+            PREFERENCES: 'hkbu_chat_preferences'
+        };
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            loadPrompts();
-            setupEventListeners();
+        let userPreferences = {
+            rememberApiKey: true,
+            saveConversations: true,
+            autoRestore: true
+        };
+        // Warn user before leaving if they have unsaved chat
+        window.addEventListener('beforeunload', function(e) {
+            if (chatHistory.length > 0 && userPreferences.saveConversations) {
+                e.preventDefault();
+                e.returnValue = 'You have an active chat session. Are you sure you want to leave?';
+                return 'You have an active chat session. Are you sure you want to leave?';
+            }
         });
+
+       
+        // Initialize
+            document.addEventListener('DOMContentLoaded', function() {
+            // Load user preferences first
+            loadPreferencesFromCache();
+            
+            // Load prompts from files
+            loadPrompts();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Try to restore API key
+            const cachedApiKey = loadApiKeyFromCache();
+            if (cachedApiKey) {
+                document.getElementById('connect-btn').disabled = false;
+                showNotification('API key restored from cache', 'info');
+            }
+            
+            // Check for previous chat session
+            checkForPreviousSession();
+        });
+
+        function checkForPreviousSession() {
+            const sessionData = loadChatHistoryFromCache();
+            if (sessionData && sessionData.messages.length > 0) {
+                const timeDiff = new Date() - new Date(sessionData.lastActivity);
+                const hoursSinceLastActivity = timeDiff / (1000 * 60 * 60);
+                
+                if (hoursSinceLastActivity < 2 && userPreferences.autoRestore) {
+                    // Auto-restore recent sessions
+                    restoreSession(sessionData);
+                    showNotification(`Previous session restored (${sessionData.messageCount} messages)`, 'success');
+                } else if (hoursSinceLastActivity < 24) {
+                    // Prompt user for older sessions
+                    showSessionRestorePrompt(sessionData);
+                } else {
+                    // Clear very old sessions
+                    clearCache(STORAGE_KEYS.CHAT_HISTORY);
+                }
+            }
+        }
 
         function setupEventListeners() {
             const messageInput = document.getElementById('message-input');
@@ -569,6 +625,122 @@
                     connectBtn.disabled = true;
                 }
             });
+        }
+
+        function showSessionRestorePrompt(sessionData) {
+            const timeDiff = new Date() - new Date(sessionData.lastActivity);
+            const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            const timeAgo = hours > 0 ? `${hours}h ${minutes}m ago` : `${minutes}m ago`;
+            
+            // Create restore banner
+            const banner = document.createElement('div');
+            banner.id = 'session-restore-banner';
+            banner.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 15px;
+                text-align: center;
+                z-index: 3000;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            `;
+            
+            banner.innerHTML = `
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <strong>📚 Previous learning session found</strong><br>
+                    ${sessionData.messageCount} messages • ${timeAgo}
+                    <div style="margin-top: 10px;">
+                        <button onclick="restoreSession(${JSON.stringify(sessionData).replace(/"/g, '&quot;')}); closeBanner()" 
+                                style="background: white; color: #667eea; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 5px; cursor: pointer;">
+                            Continue Session
+                        </button>
+                        <button onclick="startFreshSession(); closeBanner()" 
+                                style="background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 8px 16px; margin: 0 5px; border-radius: 5px; cursor: pointer;">
+                            Start Fresh
+                        </button>
+                        <button onclick="closeBanner()" 
+                                style="background: none; color: white; border: none; padding: 8px 16px; margin: 0 5px; cursor: pointer; text-decoration: underline;">
+                            Decide Later
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(banner);
+        }
+
+        function restoreSession(sessionData) {
+            try {
+                // Restore chat history
+                chatHistory = sessionData.messages.map(msg => ({
+                    ...msg,
+                    timestamp: new Date(msg.timestamp)
+                }));
+                
+                // Restore custom prompts if they exist
+                if (sessionData.customPrompts) {
+                    if (sessionData.customPrompts.welcome) {
+                        welcomePrompt = sessionData.customPrompts.welcome;
+                        updatePromptDisplay('welcome');
+                    }
+                    if (sessionData.customPrompts.system) {
+                        systemPrompt = sessionData.customPrompts.system;
+                        updatePromptDisplay('system');
+                    }
+                }
+                
+                // Restore chat display
+                const messagesContainer = document.getElementById('chat-messages');
+                messagesContainer.innerHTML = '';
+                
+                chatHistory.forEach(msg => {
+                    addMessage(msg.role, msg.content);
+                });
+                
+                // Enable done button if there are messages
+                if (chatHistory.length > 0) {
+                    document.getElementById('done-btn').disabled = false;
+                }
+                
+            } catch (error) {
+                console.error('Failed to restore session:', error);
+                showNotification('Failed to restore previous session', 'error');
+                startFreshSession();
+            }
+        }
+
+        function startFreshSession() {
+            // Clear current session
+            chatHistory = [];
+            clearCache(STORAGE_KEYS.CHAT_HISTORY);
+            
+            // Reset chat display
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.innerHTML = `
+                <div class="message assistant">
+                    <div class="message-content">
+                        🔑 Please configure your API key first to start chatting!<br><br>
+                        Follow the instructions in the sidebar to get your HKBU GenAI API key and test the connection.
+                    </div>
+                </div>
+            `;
+            
+            // Disable done button
+            document.getElementById('done-btn').disabled = true;
+            
+            showNotification('Started fresh session', 'info');
+        }
+
+        function closeBanner() {
+            const banner = document.getElementById('session-restore-banner');
+            if (banner) {
+                banner.remove();
+            }
         }
 
         async function loadPrompts() {
@@ -722,6 +894,9 @@ Remember: Guide students toward understanding rather than simply providing answe
             apiKey = key;
             isConnected = true;
             
+            // Save API key to cache
+            saveApiKeyToCache();
+            
             document.getElementById('message-input').disabled = false;
             document.getElementById('message-input').placeholder = 'Type your message here... (Enter to send)';
             document.getElementById('send-btn').disabled = false;
@@ -742,8 +917,13 @@ Remember: Guide students toward understanding rather than simply providing answe
             document.getElementById('send-btn').disabled = true;
             document.getElementById('done-btn').disabled = true;
             
+            // Clear API key from cache
+            clearCache(STORAGE_KEYS.API_KEY);
+            
             // Reset chat
             chatHistory = [];
+            clearCache(STORAGE_KEYS.CHAT_HISTORY);
+            
             const messagesContainer = document.getElementById('chat-messages');
             messagesContainer.innerHTML = `
                 <div class="message assistant">
@@ -754,7 +934,7 @@ Remember: Guide students toward understanding rather than simply providing answe
                 </div>
             `;
             
-            showNotification('API disconnected. Enter your key to reconnect.', 'info');
+            showNotification('API disconnected and cache cleared.', 'info');
         }
 
         function showWelcomeMessage() {
@@ -808,8 +988,9 @@ Remember: Guide students toward understanding rather than simply providing answe
             }
             
             cancelEdit(type);
-            showNotification(`${type === 'welcome' ? 'Welcome' : 'System'} prompt updated! (Resets on page refresh)`, 'success');
-            
+            // showNotification(`${type === 'welcome' ? 'Welcome' : 'System'} prompt updated! (Resets on page refresh)`, 'success');
+                showNotification(`${type === 'welcome' ? 'Welcome' : 'System'} prompt updated! (Resets on page refresh)`, 'success');
+                saveChatHistoryToCache();
             // Update welcome message if connected and editing welcome
             if (type === 'welcome' && isConnected) {
                 showWelcomeMessage();
@@ -872,8 +1053,9 @@ Remember: Guide students toward understanding rather than simply providing answe
 
             // Add user message
             addMessage('user', message);
+            //chatHistory.push({ role: 'user', content: message, timestamp: new Date() });
             chatHistory.push({ role: 'user', content: message, timestamp: new Date() });
-            
+            saveChatHistoryToCache();
             input.value = '';
             input.style.height = 'auto';
             
@@ -898,7 +1080,9 @@ Remember: Guide students toward understanding rather than simply providing answe
 
                 if (response.ok && !data.error) {
                     addMessage('assistant', data.response);
+                    //chatHistory.push({ role: 'assistant', content: data.response, timestamp: new Date() });
                     chatHistory.push({ role: 'assistant', content: data.response, timestamp: new Date() });
+                    saveChatHistoryToCache();
                     document.getElementById('done-btn').disabled = false;
                 } else {
                     addMessage('error', `Error: ${data.error || 'Unknown error'}`);
@@ -1158,6 +1342,107 @@ ${analyzeContribution()}
         function closeReport() {
             document.getElementById('report-modal').style.display = 'none';
         }
+
+        // Cache utility functions
+        function saveToCache(key, data) {
+            try {
+                localStorage.setItem(key, JSON.stringify(data));
+                return true;
+            } catch (error) {
+                console.error('Failed to save to cache:', error);
+                return false;
+            }
+        }
+
+        function loadFromCache(key) {
+            try {
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : null;
+            } catch (error) {
+                console.error('Failed to load from cache:', error);
+                return null;
+            }
+        }
+
+        function clearCache(key) {
+            try {
+                localStorage.removeItem(key);
+                return true;
+            } catch (error) {
+                console.error('Failed to clear cache:', error);
+                return false;
+            }
+        }
+
+        function encodeApiKey(key) {
+            // Simple encoding (not encryption, just obfuscation)
+            return btoa(key);
+        }
+
+        function decodeApiKey(encodedKey) {
+            try {
+                return atob(encodedKey);
+            } catch (error) {
+                return null;
+            }
+        }
+
+        function saveApiKeyToCache() {
+            if (userPreferences.rememberApiKey && apiKey) {
+                const encodedKey = encodeApiKey(apiKey);
+                saveToCache(STORAGE_KEYS.API_KEY, encodedKey);
+            }
+        }
+
+        function loadApiKeyFromCache() {
+            if (userPreferences.rememberApiKey) {
+                const encodedKey = loadFromCache(STORAGE_KEYS.API_KEY);
+                if (encodedKey) {
+                    const decodedKey = decodeApiKey(encodedKey);
+                    if (decodedKey) {
+                        document.getElementById('api-key').value = decodedKey;
+                        return decodedKey;
+                    }
+                }
+            }
+            return null;
+        }
+
+        function saveChatHistoryToCache() {
+            if (userPreferences.saveConversations && chatHistory.length > 0) {
+                const sessionData = {
+                    messages: chatHistory,
+                    startTime: chatHistory[0]?.timestamp || new Date(),
+                    lastActivity: new Date(),
+                    messageCount: chatHistory.length,
+                    customPrompts: {
+                        welcome: welcomePrompt,
+                        system: systemPrompt
+                    }
+                };
+                saveToCache(STORAGE_KEYS.CHAT_HISTORY, sessionData);
+            }
+        }
+
+        function loadChatHistoryFromCache() {
+            if (userPreferences.saveConversations) {
+                return loadFromCache(STORAGE_KEYS.CHAT_HISTORY);
+            }
+            return null;
+        }
+
+        function savePreferencesToCache() {
+            saveToCache(STORAGE_KEYS.PREFERENCES, userPreferences);
+        }
+
+        function loadPreferencesFromCache() {
+            const savedPrefs = loadFromCache(STORAGE_KEYS.PREFERENCES);
+            if (savedPrefs) {
+                userPreferences = { ...userPreferences, ...savedPrefs };
+            }
+        }
+
+
 
         function showNotification(message, type = 'info') {
             const notification = document.createElement('div');
