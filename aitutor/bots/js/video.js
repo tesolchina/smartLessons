@@ -1,4 +1,5 @@
-let apiKey = '';
+// video.js
+// Avoid redeclaring variables that might be in core.js
 let systemPrompt = '';
 let welcomePrompt = '';
 
@@ -19,10 +20,10 @@ window.onload = async function() {
     }
 };
 
-function startChat() {
+// Function to start the chat session
+function connectAPI() {
+    // Assuming apiKey is defined in core.js
     apiKey = document.getElementById('api-key').value;
-    const model = document.getElementById('model-select').value;
-    
     if (!apiKey) {
         alert('Please enter your API key');
         return;
@@ -33,6 +34,7 @@ function startChat() {
     addMessage(welcomePrompt, 'assistant');
 }
 
+// Function to add a message to the chat
 function addMessage(text, sender) {
     const messagesDiv = document.getElementById('messages');
     const messageDiv = document.createElement('div');
@@ -42,6 +44,7 @@ function addMessage(text, sender) {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
+// Function to send a message to the API
 function sendMessage() {
     const input = document.getElementById('user-input');
     const message = input.value.trim();
