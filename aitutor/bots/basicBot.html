@@ -7,9 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="/bots/css/main.css">
-    <link rel="stylesheet" href="/bots/css/sidebar.css">
-    <link rel="stylesheet" href="/bots/css/chat.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
     <div class="container">
@@ -38,26 +38,22 @@
                     >
                     
                     <div class="model-selection">
-    <label for="model-select" style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #856404;">
-        <strong>Model:</strong>
-    </label>
-    <select id="model-select" class="model-dropdown">
-        <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
-        <option value="gpt-4.1">GPT-4.1 (Standard)</option>
-        <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
-        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
-    </select>
-</div>
+                        <label for="model-select" style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #856404;">
+                            <strong>Model:</strong>
+                        </label>
+                        <select id="model-select" class="model-dropdown">
+                            <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
+                            <option value="gpt-4.1">GPT-4.1 (Standard)</option>
+                            <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
+                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+                        </select>
+                    </div>
 
-
-
-<div class="api-buttons">
-    <button class="btn btn-info btn-sm" onclick="testConnection()">🔍 Test</button>
-    <button class="btn btn-success btn-sm" onclick="connectAPI()" id="connect-btn" disabled>✅ Connect</button>
-    <button class="btn btn-secondary btn-sm" onclick="clearAPI()">🗑️ Clear</button>
-</div>
-
-
+                    <div class="api-buttons">
+                        <button class="btn btn-info btn-sm" onclick="testConnection()">🔍 Test</button>
+                        <button class="btn btn-success btn-sm" onclick="connectAPI()" id="connect-btn" disabled>✅ Connect</button>
+                        <button class="btn btn-secondary btn-sm" onclick="clearAPI()">🗑️ Clear</button>
+                    </div>
 
                     <div id="connection-status" class="connection-status" style="display: none;"></div>
                 </div>
@@ -158,10 +154,10 @@
     </div>
 
     <!-- JavaScript Modules -->
-    <script src="/bots/js/core.js"></script>
-    <script src="/bots/js/prompts.js"></script>
-    <script src="/bots/js/reports.js"></script>
-    <script src="/bots/js/ui.js"></script>
-    <script src="/bots/js/main.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/prompts.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
