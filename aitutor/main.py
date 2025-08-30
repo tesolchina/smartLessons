@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import requests
@@ -10,12 +9,20 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return jsonify({'status': 'HKBU Student Chatbot API is running!', 'endpoints': ['/api/chat', '/api/test', '/basicBot', '/frontend']})
+    return jsonify({
+        'status': 'HKBU Student Chatbot API is running!', 
+        'endpoints': [
+            '/api/chat', 
+            '/api/test', 
+            '/aitutor/bots/basicBot.html',
+            '/aitutor/bots/videoHelper.html',
+            '/frontend'
+        ]
+    })
 
 @app.route('/api/chat', methods=['POST', 'OPTIONS'])
 def chat():
     if request.method == 'OPTIONS':
-        # Handle preflight CORS request
         response = jsonify({'status': 'OK'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
@@ -25,7 +32,7 @@ def chat():
     try:
         data = request.json
         user_message = data.get('message', '')
-        api_key = data.get('apiKey', '')  # Note: frontend sends 'apiKey'
+        api_key = data.get('apiKey', '')
         provider = data.get('provider', 'hkbu')
         model = data.get('model', 'gpt-4.1')
         system_prompt = data.get('systemPrompt', '')
@@ -36,7 +43,6 @@ def chat():
         if not user_message:
             return jsonify({'error': 'No message provided'}), 400
         
-        # Route to appropriate API based on provider
         if provider == 'hkbu':
             response_text = call_hkbu_api(user_message, api_key, model, system_prompt)
         elif provider == 'openrouter':
@@ -64,7 +70,6 @@ def test_connection():
         if not api_key:
             return jsonify({'error': 'No API key provided'}), 400
         
-        # Test with a simple message
         if provider == 'hkbu':
             response = call_hkbu_api('Hello, this is a test.', api_key, model, 'You are a helpful assistant.')
         elif provider == 'openrouter':
@@ -81,8 +86,8 @@ def test_connection():
             'error': str(e)
         }), 400
 
-@app.route('/prompts/<filename>')
-def serve_prompts(filename):
+@app.route('/aitutor/prompts/<filename>')
+def serve_aitutor_prompts(filename):
     try:
         with open(f'prompts/{filename}', 'r', encoding='utf-8') as file:
             content = file.read()
@@ -92,16 +97,19 @@ def serve_prompts(filename):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/basicBot')
+@app.route('/aitutor/bots/basicBot.html')
 def serve_basic_bot():
     return send_file('bots/basicBot.html')
 
-# ADD THESE NEW ROUTES HERE:
-@app.route('/bots/css/<filename>')
+@app.route('/aitutor/bots/videoHelper.html')
+def serve_video_helper():
+    return send_file('bots/videoHelper.html')
+
+@app.route('/aitutor/bots/css/<filename>')
 def serve_css(filename):
     return send_file(f'bots/css/{filename}')
 
-@app.route('/bots/js/<filename>')
+@app.route('/aitutor/bots/js/<filename>')
 def serve_js(filename):
     return send_file(f'bots/js/{filename}')
 
@@ -115,7 +123,6 @@ def call_hkbu_api(message, api_key, model, system_prompt):
     api_version = "2024-12-01-preview"
     url = f"{base_url}/deployments/{model}/chat/completions?api-version={api_version}"
     
-    # Prepare messages
     messages = []
     if system_prompt.strip():
         messages.append({"role": "system", "content": system_prompt})
@@ -162,7 +169,6 @@ def call_openrouter_api(message, api_key, model, system_prompt):
     """Call OpenRouter API"""
     url = "https://openrouter.ai/api/v1/chat/completions"
     
-    # Prepare messages
     messages = []
     if system_prompt.strip():
         messages.append({"role": "system", "content": system_prompt})
@@ -211,16 +217,18 @@ if __name__ == '__main__':
     print("🚀 Starting HKBU Student Chatbot Server...")
     print("📝 Available endpoints:")
     print("   GET  / - API status")
-    print("   GET  /frontend - Original web interface")
-    print("   GET  /basicBot - Advanced chatbot interface")
+    print("   GET  /frontend - Web interface")
+    print("   GET  /aitutor/bots/basicBot.html - Basic chatbot")
+    print("   GET  /aitutor/bots/videoHelper.html - Video helper bot")
     print("   POST /api/chat - Chat with AI")
     print("   POST /api/test - Test API connection")
-    print("   GET  /prompts/<filename> - Serve prompt files")
+    print("   GET  /aitutor/prompts/<filename> - Serve prompt files")
+    
     print("\n🔧 Make sure to:")
     print("   1. Install: pip install flask flask-cors requests")
     print("   2. Get HKBU API key: https://genai.hkbu.edu.hk/settings/api-docs")
     print("   3. Get OpenRouter key: https://openrouter.ai/keys")
     
-    # Use port 5000 for Railway
     port = 5000
     app.run(host='0.0.0.0', port=port, debug=False)
+    
