@@ -1,203 +1,126 @@
 // prompts.js - Prompt Management Module
 
+let currentEditingPrompt = null;
+let defaultPrompts = {
+    welcome: "Welcome to HKBU Chat Assistant! I'm here to help you learn and explore. How can I assist you today?",
+    system: "You are a helpful AI learning assistant at HKBU, designed to support students in their academic journey."
+};
+
+// Load prompts from files
 async function loadPrompts() {
     try {
-        // Load welcome prompt from backend API
-        const welcomeResponse = await fetch('https://smartlessons-production.up.railway.app/prompts/welcome.txt');
-        if (welcomeResponse.ok) {
-            const welcomeData = await welcomeResponse.json();
-            defaultWelcome = welcomeData.content;
-            welcomePrompt = defaultWelcome;
-            console.log('✅ Welcome prompt loaded from file');
-        } else {
-            throw new Error('Failed to load welcome.txt');
-        }
-
-        // Load system prompt from backend API
-        const systemResponse = await fetch('https://smartlessons-production.up.railway.app/prompts/system.txt');
-        if (systemResponse.ok) {
-            const systemData = await systemResponse.json();
-            defaultSystem = systemData.content;
-            systemPrompt = defaultSystem;
-            console.log('✅ System prompt loaded from file');
-        } else {
-            throw new Error('Failed to load system.txt');
-        }
-
-        // Update displays
-        updatePromptDisplay('welcome');
-        updatePromptDisplay('system');
+        const welcomeResponse = await fetch('prompts/welcome.txt');
+        const systemResponse = await fetch('prompts/system.txt');
         
-        showNotification('Prompts loaded from files successfully!', 'success');
-        
+        if (welcomeResponse.ok && systemResponse.ok) {
+            defaultPrompts.welcome = await welcomeResponse.text();
+            defaultPrompts.system = await systemResponse.text();
+        }
     } catch (error) {
-        console.error('❌ Error loading prompts from files:', error);
-        
-        // Fallback to hardcoded defaults
-        defaultWelcome = `Welcome to the HKBU Learning Assistant! 🎓
-
-I'm here to help you explore various topics and enhance your learning experience. You can customize my behavior by editing the system prompt below.
-
-🔧 **How to customize:**
-- Click 'Edit System Prompt' to modify my personality and expertise
-- Try different roles: tutor, writing coach, research assistant, etc.
-- Experiment with different teaching styles
-
-💡 **Tips:**
-- Ask me to explain concepts step-by-step
-- Request examples and practice problems
-- Get help with assignments and projects
-
-When you're done with our conversation, click 'Done' to generate a comprehensive learning report!
-
-Let's start learning together!`;
-
-        defaultSystem = `You are a knowledgeable and friendly educational assistant for HKBU students. Your role is to:
-
-1. **Teaching Style**: Explain concepts clearly with examples, encourage critical thinking, and adapt to different learning styles.
-
-2. **Subject Expertise**: Help with various academic subjects including language learning, sciences, humanities, and general study skills.
-
-3. **Interaction Approach**: 
-   - Ask clarifying questions to understand student needs
-   - Provide step-by-step explanations
-   - Encourage students to think through problems
-   - Offer constructive feedback and encouragement
-
-4. **Learning Support**: 
-   - Break down complex topics into manageable parts
-   - Suggest additional resources when helpful
-   - Help students develop study strategies
-   - Foster independent learning skills
-
-5. **Communication**: Be encouraging, patient, and supportive. Use clear language appropriate for university-level students.
-
-Remember: Guide students toward understanding rather than simply providing answers.`;
-
-        welcomePrompt = defaultWelcome;
-        systemPrompt = defaultSystem;
-        
-        updatePromptDisplay('welcome');
-        updatePromptDisplay('system');
-        
-        showNotification('Using default prompts (files not accessible)', 'info');
+        console.log('Using default prompts:', error);
     }
+
+    // Initialize displays
+    document.getElementById('welcome-display').textContent = defaultPrompts.welcome;
+    document.getElementById('system-display').textContent = defaultPrompts.system;
 }
 
-function togglePrompt(section) {
-    const content = document.getElementById(section + '-content');
+// Toggle prompt sections
+function togglePrompt(type) {
+    const content = document.getElementById(`${type}-content`);
     const header = content.previousElementSibling;
     const icon = header.querySelector('.toggle-icon');
     
-    content.classList.toggle('hidden');
-    header.classList.toggle('collapsed');
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.textContent = '▼';
+    } else {
+        content.classList.add('hidden');
+        icon.textContent = '▶';
+    }
 }
 
-function updatePromptDisplay(type) {
-    const display = document.getElementById(type + '-display');
-    const prompt = type === 'welcome' ? welcomePrompt : systemPrompt;
-    display.textContent = prompt;
-}
-
+// Edit prompt in modal
 function editPrompt(type) {
-    const display = document.getElementById(type + '-display');
-    const currentText = type === 'welcome' ? welcomePrompt : systemPrompt;
+    currentEditingPrompt = type;
+    const modal = document.getElementById('prompt-edit-modal');
+    const textarea = document.getElementById('prompt-edit-textarea');
+    const title = document.getElementById('prompt-edit-title');
     
-    const textarea = document.createElement('textarea');
-    textarea.className = 'prompt-editor';
-    textarea.value = currentText;
+    // Set the title based on type
+    title.textContent = `Edit ${type.charAt(0).toUpperCase() + type.slice(1)} Prompt`;
     
-    display.parentNode.replaceChild(textarea, display);
+    // Get current content
+    const currentContent = document.getElementById(`${type}-display`).textContent;
+    textarea.value = currentContent;
     
-    // Replace buttons
-    const buttonsContainer = textarea.nextElementSibling;
-    buttonsContainer.innerHTML = `
-        <button class="btn btn-success" onclick="savePrompt('${type}')">Save</button>
-        <button class="btn btn-secondary" onclick="cancelEdit('${type}')">Cancel</button>
-    `;
-    
+    // Show modal
+    modal.style.display = 'flex';
     textarea.focus();
 }
 
-function savePrompt(type) {
-    const textarea = document.querySelector('.prompt-editor');
-    const newText = textarea.value;
-    
-    if (type === 'welcome') {
-        welcomePrompt = newText;
-    } else {
-        systemPrompt = newText;
-    }
-    
-    cancelEdit(type);
-    showNotification(`${type === 'welcome' ? 'Welcome' : 'System'} prompt updated! (Resets on page refresh)`, 'success');
-    saveChatHistoryToCache();
-    
-    // Update welcome message if connected and editing welcome
-    if (type === 'welcome' && isConnected) {
-        showWelcomeMessage();
-    }
+// Close prompt edit modal
+function closePromptEdit() {
+    const modal = document.getElementById('prompt-edit-modal');
+    modal.style.display = 'none';
+    currentEditingPrompt = null;
 }
 
-function cancelEdit(type) {
-    const textarea = document.querySelector('.prompt-editor');
-    const display = document.createElement('div');
-    display.className = 'prompt-display';
-    display.id = type + '-display';
+// Save prompt changes
+function savePromptEdit() {
+    if (!currentEditingPrompt) return;
     
-    textarea.parentNode.replaceChild(display, textarea);
+    const textarea = document.getElementById('prompt-edit-textarea');
+    const newContent = textarea.value.trim();
     
-    // Restore buttons
-    const buttonsContainer = display.nextElementSibling;
-    if (type === 'welcome') {
-        buttonsContainer.innerHTML = `
-            <button class="btn btn-primary" onclick="editPrompt('welcome')">Edit Welcome</button>
-            <button class="btn btn-secondary" onclick="resetPrompt('welcome')">Reset</button>
-        `;
-    } else {
-        buttonsContainer.innerHTML = `
-            <button class="btn btn-primary" onclick="editPrompt('system')">Edit System</button>
-            <button class="btn btn-secondary" onclick="resetPrompt('system')">Reset</button>
-            <div style="margin-top: 10px;">
-                <small style="color: #666;">💡 Try roles like: Math Tutor, Writing Coach, Research Assistant, Language Partner</small>
-            </div>
-        `;
+    if (newContent) {
+        // Update the display
+        document.getElementById(`${currentEditingPrompt}-display`).textContent = newContent;
+        
+        // Update the default prompts object
+        defaultPrompts[currentEditingPrompt] = newContent;
+        
+        // Show success notification
+        showNotification('Prompt updated successfully!', 'success');
     }
     
-    updatePromptDisplay(type);
+    // Close modal
+    closePromptEdit();
 }
 
+// Reset prompt to default
 function resetPrompt(type) {
-    if (type === 'welcome') {
-        welcomePrompt = defaultWelcome;
-    } else {
-        systemPrompt = defaultSystem;
-    }
-    updatePromptDisplay(type);
-    showNotification(`${type === 'welcome' ? 'Welcome' : 'System'} prompt reset to default`, 'info');
+    const confirmReset = confirm('Are you sure you want to reset this prompt to its default value?');
     
-    // Update welcome message if connected and resetting welcome
-    if (type === 'welcome' && isConnected) {
-        showWelcomeMessage();
+    if (confirmReset) {
+        document.getElementById(`${type}-display`).textContent = defaultPrompts[type];
+        showNotification('Prompt reset to default', 'info');
     }
 }
 
-function showWelcomeMessage() {
-    if (!isConnected) return; // Only show when connected
+// Initialize prompts when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadPrompts();
     
-    const messagesContainer = document.getElementById('chat-messages');
-    const formattedWelcome = welcomePrompt
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        .replace(/\n/g, '<br>');
+    // Add event listener for clicking outside the modal
+    const modal = document.getElementById('prompt-edit-modal');
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closePromptEdit();
+        }
+    });
     
-    messagesContainer.innerHTML = `
-        <div class="message assistant">
-            <div class="message-content">${formattedWelcome}</div>
-        </div>
-    `;
-    
-    setTimeout(() => {
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }, 100);
-}
+    // Add event listener for Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && currentEditingPrompt) {
+            closePromptEdit();
+        }
+    });
+});
+
+// Export necessary functions and variables
+window.editPrompt = editPrompt;
+window.closePromptEdit = closePromptEdit;
+window.savePromptEdit = savePromptEdit;
+window.resetPrompt = resetPrompt;
+window.togglePrompt = togglePrompt;

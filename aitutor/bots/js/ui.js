@@ -146,3 +146,63 @@ function initializeBeforeUnloadWarning() {
         }
     });
 }
+
+// Sidebar Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.container');
+    const toggleBtn = document.getElementById('sidebar-toggle');
+    const toggleIcon = toggleBtn.querySelector('.toggle-icon');
+
+    // Initialize sidebar state
+    function initializeSidebar() {
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+            container.classList.add('sidebar-collapsed');
+        }
+    }
+
+    // Toggle sidebar
+    function toggleSidebar() {
+        container.classList.toggle('sidebar-collapsed');
+        localStorage.setItem('sidebarCollapsed', 
+            container.classList.contains('sidebar-collapsed'));
+    }
+
+    // Add click event listener to toggle button
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', toggleSidebar);
+    }
+
+    // Initialize sidebar on page load
+    initializeSidebar();
+
+    // Handle window resize
+    let windowWidth = window.innerWidth;
+    window.addEventListener('resize', function() {
+        const newWidth = window.innerWidth;
+        
+        // Auto-collapse sidebar on small screens
+        if (newWidth < 768 && windowWidth >= 768) {
+            container.classList.add('sidebar-collapsed');
+        }
+        // Auto-expand sidebar on large screens
+        else if (newWidth >= 768 && windowWidth < 768) {
+            container.classList.remove('sidebar-collapsed');
+        }
+        
+        windowWidth = newWidth;
+    });
+
+    // Double-click header to toggle sidebar
+    const sidebarHeader = document.querySelector('.sidebar-header');
+    if (sidebarHeader) {
+        sidebarHeader.addEventListener('dblclick', toggleSidebar);
+    }
+});
+
+// Export functions if needed
+window.toggleSidebar = function() {
+    const container = document.querySelector('.container');
+    container.classList.toggle('sidebar-collapsed');
+    localStorage.setItem('sidebarCollapsed', 
+        container.classList.contains('sidebar-collapsed'));
+};

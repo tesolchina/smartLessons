@@ -210,3 +210,59 @@
 .model-dropdown option:hover {
     background: #f8f9fa;
 }
+
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+    position: absolute;
+    left: 350px; /* Same as sidebar width */
+    top: 20px;
+    z-index: 1000;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.sidebar-toggle-btn:hover {
+    background: #764ba2;
+    transform: scale(1.1);
+}
+
+.sidebar-toggle-btn .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Collapsed State */
+.container.sidebar-collapsed .sidebar {
+    transform: translateX(-350px);
+}
+
+.container.sidebar-collapsed .sidebar-toggle-btn {
+    left: 20px;
+}
+
+.container.sidebar-collapsed .sidebar-toggle-btn .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Adjust main content when sidebar is collapsed */
+.container.sidebar-collapsed .chat-area {
+    margin-left: 0;
+}
+
+/* Smooth transitions */
+.sidebar {
+    transition: transform 0.3s ease;
+}
+
+.chat-area {
+    transition: margin-left 0.3s ease;
+}

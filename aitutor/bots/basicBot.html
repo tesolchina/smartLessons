@@ -13,6 +13,9 @@
 </head>
 <body>
     <div class="container">
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">
+        <span class="toggle-icon">◀</span>
+        </button>   
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
@@ -138,39 +141,25 @@
         </div>
     </div>
 
-<!-- Report Modal -->
-<div class="report-modal" id="report-modal">
-    <div class="report-content">
-        <div class="report-header">
-            <h3>Chat Report</h3>
-            <button class="close-btn" onclick="closeReport()">&times;</button>
-        </div>
-        <div class="report-body">
-            <div id="report-content">
-                <!-- Report will be generated here -->
+    <!-- Report Modal -->
+    <div class="report-modal" id="report-modal">
+        <!-- ... report modal content ... -->
+    </div>
+
+    <!-- Prompt Edit Modal -->
+    <div class="prompt-edit-modal" id="prompt-edit-modal">
+        <div class="prompt-edit-content">
+            <div class="prompt-edit-header">
+                <h3 id="prompt-edit-title">Edit Prompt</h3>
+                <button class="close-btn" onclick="closePromptEdit()">&times;</button>
             </div>
-        </div>
-        <div class="report-footer">
-            <div class="report-actions">
-                <button class="btn btn-success" onclick="downloadPDF()">
-                    <span class="btn-icon">📄</span>
-                    <span class="btn-text">Download PDF</span>
-                </button>
-                <button class="btn btn-primary" onclick="downloadMarkdown()">
-                    <span class="btn-icon">📝</span>
-                    <span class="btn-text">Download Markdown</span>
-                </button>
-                <button class="btn btn-secondary" onclick="copyReport()">
-                    <span class="btn-icon">📋</span>
-                    <span class="btn-text">Copy Text</span>
-                </button>
-            </div>
-            <div class="report-info">
-                <small>Generated on <span id="report-timestamp"></span></small>
+            <textarea id="prompt-edit-textarea" class="prompt-edit-textarea"></textarea>
+            <div class="prompt-edit-buttons">
+                <button class="btn btn-success" onclick="savePromptEdit()">Save Changes</button>
+                <button class="btn btn-secondary" onclick="closePromptEdit()">Cancel</button>
             </div>
         </div>
     </div>
-</div>
 
     <!-- JavaScript Modules -->
     <script src="js/core.js"></script>
