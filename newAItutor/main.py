@@ -1,277 +1,75 @@
-from flask import Flask, request, jsonify, send_file, session 
-from flask_cors import CORS
-import requests
-import json
+from flask import Flask, send_file, jsonify, request, Response
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Add session support
-CORS(app, supports_credentials=True)  # Enable credentials for session
 
+# Main route - serve the simple bot
 @app.route('/')
 def index():
-    return jsonify({
-        'status': 'HKBU Student Chatbot API is running!', 
-        'endpoints': [
-            '/api/chat', 
-            '/api/test', 
-            '/aitutor/bots/basicBot.html',
-            '/aitutor/bots/videoHelper.html',
-            '/frontend'
-        ]
-    })
+    return send_file('bots/simpleBot.html')
 
-@app.route('/api/chat', methods=['POST', 'OPTIONS'])
-def chat():
-    if request.method == 'OPTIONS':
-        response = jsonify({'status': 'OK'})
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-        response.headers.add('Access-Control-Allow-Methods', 'POST, OPTIONS')
-        return response
-    
-    try:
-        data = request.get_json(force=True)
-        if data is None:
-            return jsonify({'error': 'Invalid JSON data'}), 400
-            
-        user_message = data.get('message', '')
-        api_key = data.get('apiKey', '') # type: ignore
-        provider = data.get('provider', 'hkbu') # type: ignore
-        model = data.get('model', 'gpt-4.1') # type: ignore
-       # system_prompt = data.get('systemPrompt', '')
-        system_prompt = session.get('custom_system_prompt', data.get('systemPrompt', ''))
-        
-        if not api_key:
-            return jsonify({'error': 'No API key provided'}), 400
-        
-        if not user_message:
-            return jsonify({'error': 'No message provided'}), 400
-        
-        if provider == 'hkbu':
-            response_text = call_hkbu_api(user_message, api_key, model, system_prompt)
-        elif provider == 'openrouter':
-            response_text = call_openrouter_api(user_message, api_key, model, system_prompt)
-        else:
-            return jsonify({'error': 'Unsupported provider'}), 400
-        
-        return jsonify({
-            'response': response_text
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'error': str(e)
-        }), 400
+@app.route('/bots/simpleBot.html')
+def serve_simple_bot():
+    return send_file('bots/simpleBot.html')
 
-@app.route('/api/test', methods=['POST'])
-def test_connection():
-    try:
-        data = request.json
-        api_key = data.get('apiKey', '') # type: ignore
-        provider = data.get('provider', 'hkbu') # type: ignore
-        model = data.get('model', 'gpt-4.1') # type: ignore
-        
-        if not api_key:
-            return jsonify({'error': 'No API key provided'}), 400
-        
-        if provider == 'hkbu':
-            response = call_hkbu_api('Hello, this is a test.', api_key, model, 'You are a helpful assistant.')
-        elif provider == 'openrouter':
-            response = call_openrouter_api('Hello, this is a test.', api_key, model, 'You are a helpful assistant.')
-        else:
-            return jsonify({'error': 'Unsupported provider'}), 400
-        
-        return jsonify({
-            'response': f'Connection successful! Response: {response[:50]}...'
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'error': str(e)
-        }), 400
-
-# Replace the serve_aitutor_prompts function (around line 72)
-
-@app.route('/aitutor/prompts/<filename>')
-def serve_aitutor_prompts(filename):
-    try:
-        with open(f'prompts/{filename}', 'r', encoding='utf-8') as file:
-            content = file.read()
-        # Return plain text, not JSON
-        from flask import Response
-        return Response(content, mimetype='text/plain')
-    except FileNotFoundError:
-        return f'Prompt file {filename} not found', 404
-    except Exception as e:
-        return f'Error: {str(e)}', 500
-@app.route('/aitutor/bots/basicBot.html')
-def serve_basic_bot():
-    return send_file('bots/basicBot.html')
-
-@app.route('/aitutor/bots/videoHelper.html')
-def serve_video_helper():
-    return send_file('bots/videoHelper.html')
-
-@app.route('/aitutor/bots/css/<filename>')
+# Serve CSS files
+@app.route('/bots/css/<filename>')
 def serve_css(filename):
     return send_file(f'bots/css/{filename}')
 
-@app.route('/aitutor/bots/js/<filename>')
+# Serve JS files  
+@app.route('/bots/js/<filename>')
 def serve_js(filename):
     return send_file(f'bots/js/{filename}')
 
-@app.route('/frontend')
-def serve_frontend():
-    return send_file('index.html')
-
-@app.route('/api/system-prompt', methods=['POST'])
-def update_system_prompt():
-    try:
-        data = request.get_json(force=True)
-        new_system_prompt = data.get('systemPrompt', '')
-        
-        if new_system_prompt:
-            session['custom_system_prompt'] = new_system_prompt
-            return jsonify({
-                'status': 'success',
-                'message': 'System prompt updated, session refreshed'
-            })
-        else:
-            # Reset to default
-            session.pop('custom_system_prompt', None)
-            return jsonify({
-                'status': 'success',
-                'message': 'System prompt reset to default'
-            })
-            
-    except Exception as e:
-        return jsonify({'error': str(e)}), 400
-
-def call_hkbu_api(message, api_key, model, system_prompt):
-    """Call HKBU GenAI API"""
-    base_url = "https://genai.hkbu.edu.hk/api/v0/rest"
-    api_version = "2024-12-01-preview"
-    url = f"{base_url}/deployments/{model}/chat/completions?api-version={api_version}"
-    
-    messages = []
-    if system_prompt.strip():
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": message})
-    
-    headers = {
-        "Content-Type": "application/json",
-        "api-key": api_key
-    }
-    
-    payload = {
-        "messages": messages,
-        "max_tokens": 1000,
-        "temperature": 0.7,
-        "top_p": 0.9,
-        "stream": False
-    }
-    
-    try:
-        print(f"HKBU API Request to: {url}")
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        print(f"HKBU Response status: {response.status_code}")
-        
-        if response.status_code == 200:
-            result = response.json()
-            if "choices" in result and len(result["choices"]) > 0:
-                return result["choices"][0]["message"]["content"]
-            else:
-                raise Exception("Invalid response format from HKBU API")
-        elif response.status_code == 401:
-            raise Exception("HKBU API: Invalid API key or access denied")
-        elif response.status_code == 404:
-            raise Exception(f"HKBU API: Model '{model}' not found")
-        else:
-            error_text = response.text
-            raise Exception(f"HKBU API Error {response.status_code}: {error_text}")
-            
-    except requests.exceptions.Timeout:
-        raise Exception("HKBU API: Request timeout")
-    except requests.exceptions.RequestException as e:
-        raise Exception(f"HKBU API: Network error - {str(e)}")
-
-def call_openrouter_api(message, api_key, model, system_prompt):
-    """Call OpenRouter API"""
-    url = "https://openrouter.ai/api/v1/chat/completions"
-    
-    messages = []
-    if system_prompt.strip():
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": message})
-    
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}",
-        "HTTP-Referer": "https://smartlessons.hkbu.tech",
-        "X-Title": "HKBU Student Chatbot"
-    }
-    
-    payload = {
-        "model": model,
-        "messages": messages,
-        "max_tokens": 1000,
-        "temperature": 0.7,
-        "top_p": 0.9
-    }
-    
-    try:
-        print(f"OpenRouter API Request to: {url}")
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        print(f"OpenRouter Response status: {response.status_code}")
-        
-        if response.status_code == 200:
-            result = response.json()
-            if "choices" in result and len(result["choices"]) > 0:
-                return result["choices"][0]["message"]["content"]
-            else:
-                raise Exception("Invalid response format from OpenRouter API")
-        elif response.status_code == 401:
-            raise Exception("OpenRouter API: Invalid API key")
-        elif response.status_code == 402:
-            raise Exception("OpenRouter API: Insufficient credits")
-        else:
-            error_text = response.text
-            raise Exception(f"OpenRouter API Error {response.status_code}: {error_text}")
-            
-    except requests.exceptions.Timeout:
-        raise Exception("OpenRouter API: Request timeout")
-    except requests.exceptions.RequestException as e:
-        raise Exception(f"OpenRouter API: Network error - {str(e)}")
-
-if __name__ == '__main__':
-    print("🚀 Starting HKBU Student Chatbot Server...")
-    print("📝 Available endpoints:")
-    print("   GET  / - API status")
-    print("   GET  /frontend - Web interface")
-    print("   GET  /aitutor/bots/basicBot.html - Basic chatbot")
-    print("   GET  /aitutor/bots/videoHelper.html - Video helper bot")
-    print("   POST /api/chat - Chat with AI")
-    print("   POST /api/test - Test API connection")
-    print("   GET  /aitutor/prompts/<filename> - Serve prompt files")
-    
-    print("\n🔧 Make sure to:")
-    print("   1. Install: pip install flask flask-cors requests")
-    print("   2. Get HKBU API key: https://genai.hkbu.edu.hk/settings/api-docs")
-    print("   3. Get OpenRouter key: https://openrouter.ai/keys")
-    
-    port = 5000
-    app.run(host='0.0.0.0', port=port, debug=False)
-    
-# Add prompt serving route
+# Serve prompt files
 @app.route('/prompts/<filename>')
 def serve_prompts(filename):
     try:
         with open(f'prompts/{filename}', 'r', encoding='utf-8') as file:
             content = file.read()
-        from flask import Response
         return Response(content, mimetype='text/plain')
     except FileNotFoundError:
         return f'Prompt file {filename} not found', 404
     except Exception as e:
         return f'Error: {str(e)}', 500
+
+# Test API connection
+@app.route('/api/test', methods=['POST'])
+def test_api():
+    try:
+        data = request.get_json()
+        api_key = data.get('apiKey', '')
+        
+        if len(api_key) > 10:
+            return jsonify({'success': True, 'message': 'API key validated'})
+        else:
+            return jsonify({'error': 'Invalid API key format'}), 400
+            
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# Chat API
+@app.route('/api/chat', methods=['POST'])
+def chat_api():
+    try:
+        data = request.get_json()
+        message = data.get('message', '')
+        api_key = data.get('apiKey', '')
+        system_prompt = data.get('systemPrompt', '')
+        
+        # For testing - echo response
+        response_text = f"Echo: {message}\n\n(This is a test response. In production, this would connect to HKBU GenAI API.)"
+        
+        return jsonify({'response': response_text, 'success': True})
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+if __name__ == '__main__':
+    print("🚀 Starting Simple AI Tutor")
+    print("📍 Available at:")
+    print("   http://localhost:5000/")
+    print("   http://localhost:5000/bots/simpleBot.html")
+    
+    app.run(debug=True, host='0.0.0.0', port=5000)
