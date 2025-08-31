@@ -19,6 +19,8 @@
                 <h2>🤖 Chatbot Configuration</h2>
             </div>
             
+                        <!-- Replace the sidebar content with this order: Welcome FIRST, then System -->
+            
             <div class="sidebar-content">
                 <!-- API Configuration Section -->
                 <div class="api-section">
@@ -27,31 +29,44 @@
                         <span class="toggle-icon" id="api-toggle">▼</span>
                     </div>
                     <div class="api-content" id="api-content">
-                        <div class="input-group">
-                            <label for="api-key">API Key:</label>
+                        <div class="api-form">
+                            <label for="api-key">HKBU GenAI API Key:</label>
                             <input type="password" id="api-key" placeholder="Enter your API key">
-                        </div>
-                        
-                        <div class="input-group">
+                            
                             <label for="model-select">Model:</label>
                             <select id="model-select">
                                 <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
-                                <option value="gpt-4.1">GPT-4.1</option>
-                                <option value="claude-3.5-sonnet">Claude 3.5 Sonnet</option>
+                                <option value="gpt-4">GPT-4</option>
+                                <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
                             </select>
+                            
+                            <div class="api-buttons">
+                                <button class="btn btn-secondary" onclick="testConnection()">🔍 Test</button>
+                                <button class="btn btn-primary" id="connect-btn" onclick="connectAPI()" disabled>🔌 Connect</button>
+                                <button class="btn btn-danger" onclick="clearAPI()">🧹 Clear</button>
+                            </div>
+                            
+                            <div id="connection-status" class="connection-status" style="display: none;"></div>
                         </div>
-                        
-                        <div class="api-buttons">
-                            <button onclick="testConnection()" class="btn btn-secondary">Test Connection</button>
-                            <button id="connect-btn" onclick="connectAPI()" class="btn btn-primary" disabled>Connect</button>
-                            <button onclick="clearAPI()" class="btn btn-danger">Clear API</button>
-                        </div>
-                        
-                        <div id="connection-status" class="connection-status" style="display: none;"></div>
                     </div>
                 </div>
-
-                <!-- System Prompt Section -->
+            
+                <!-- Welcome Message Section - MOVED TO TOP -->
+                <div class="prompt-section">
+                    <div class="prompt-header" onclick="togglePrompt('welcome')">
+                        <h3>👋 Welcome Message</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="prompt-content" id="welcome-content">
+                        <div class="prompt-display" id="welcome-display">Loading welcome message...</div>
+                        <div class="prompt-actions">
+                            <button class="btn btn-primary" onclick="handleWelcomePromptEdit()">✏️ Edit Welcome</button>
+                            <button class="btn btn-secondary" onclick="resetPrompt('welcome')">↺ Reset</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- System Instructions Section - MOVED BELOW -->
                 <div class="prompt-section">
                     <div class="prompt-header" onclick="togglePrompt('system')">
                         <h3>⚙️ System Instructions</h3>
@@ -62,14 +77,6 @@
                         <div class="prompt-actions">
                             <button class="btn btn-primary" onclick="handleSystemPromptEdit()">✏️ Edit System</button>
                             <button class="btn btn-secondary" onclick="resetPrompt('system')">↺ Reset</button>
-                            <button class="btn btn-info" onclick="startNewSession()">🔄 New Session</button>
-                        </div>
-                        <div class="prompt-hint">
-                            <small>💡 Example roles:</small><br>
-                            <span class="role-tag" onclick="handleRoleTagClick('Math Tutor')">Math Tutor</span>
-                            <span class="role-tag" onclick="handleRoleTagClick('Writing Coach')">Writing Coach</span>
-                            <span class="role-tag" onclick="handleRoleTagClick('Research Assistant')">Research Assistant</span>
-                            <span class="role-tag" onclick="handleRoleTagClick('Language Partner')">Language Partner</span>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .choice-button {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .choice-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .choice-button.selected {
+            background: #5D5CDE !important;
+            color: white !important;
+            border-color: #5D5CDE !important;
+        }
+        
+        .choice-button.correct {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #10b981 !important;
+        }
+        
+        .choice-button.incorrect {
+            background: #ef4444 !important;
+            color: white !important;
+            border-color: #ef4444 !important;
+        }
+        
+        .slide-container {
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .slide-container.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    
+    <!-- Notification System -->
+    <div id="notification" class="notification bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
+        <span id="notificationText">Task completed!</span>
+    </div>
+
+    <!-- Header with Progress -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-gray-900">Interactive Lecture</h1>
+                    <div class="flex items-center space-x-2 text-sm text-gray-600">
+                        <i class="fas fa-clock"></i>
+                        <span id="timeSpent">0m 0s</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm text-gray-600">
+                        Progress: <span id="progressText">0%</span>
+                    </div>
+                    <button type="button" id="reportBtn" 
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-chart-line mr-2"></i>Generate Report
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="mt-4 bg-gray-200 rounded-full h-2">
+                <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        
+        <!-- Section 1: Opening Task - Multiple Choice -->
+        <section id="section-1" class="slide-container active mb-8">
+            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-500">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">1</span>
+                        Opening Challenge
+                    </h2>
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Task • Multiple Choice
+                        </div>
+                        <div class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">
+                            Optional
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-6 p-4 bg-blue-50 rounded-lg">
+                    <h3 class="font-semibold text-blue-900 mb-2">Quick Assessment</h3>
+                    <p class="text-blue-800">Before we dive into the content, let's see what you already know about this topic!</p>
+                    <p class="text-blue-600 text-sm mt-2"><i class="fas fa-info-circle mr-1"></i>You can skip this if you prefer to go straight to the content.</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="quiz-question">
+                        <h4 class="font-semibold text-gray-900 mb-4">When facing a public service problem, what is typically the MOST effective first step?</h4>
+                        <div class="space-y-3">
+                            <button type="button" class="choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg" 
+                                    data-question="1" data-choice="A" data-correct="false">
+                                <span class="font-medium">A)</span> Post about it on social media to raise awareness
+                            </button>
+                            <button type="button" class="choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg" 
+                                    data-question="1" data-choice="B" data-correct="true">
+                                <span class="font-medium">B)</span> Contact the responsible organization directly with specific details
+                            </button>
+                            <button type="button" class="choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg" 
+                                    data-question="1" data-choice="C" data-correct="false">
+                                <span class="font-medium">C)</span> Wait to see if others complain about the same issue
+                            </button>
+                            <button type="button" class="choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg" 
+                                    data-question="1" data-choice="D" data-correct="false">
+                                <span class="font-medium">D)</span> Immediately escalate to government officials
+                            </button>
+                        </div>
+                        
+                        <div id="feedback-1" class="mt-4 p-4 rounded-lg hidden">
+                            <div class="flex items-start">
+                                <div class="mr-3 mt-1">
+                                    <i class="fas fa-lightbulb text-yellow-500"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold mb-1">Explanation:</h5>
+                                    <p class="text-sm">Direct contact with specific details is usually most effective. It shows you're serious, provides actionable information, and gives the organization a chance to respond before escalation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex justify-between">
+                    <button type="button" id="skipTask1" 
+                            class="skip-button px-4 py-2 bg-orange-100 text-orange-700 border border-orange-200 rounded-lg hover:bg-orange-200 transition-colors">
+                        <i class="fas fa-forward mr-2"></i>Skip Task
+                    </button>
+                    <button type="button" id="continue1" 
+                            class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Continue to Content →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Content Slides -->
+        <section id="section-2" class="slide-container mb-8 hidden">
+            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-green-500">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                        <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">2</span>
+                        Understanding Effective Advocacy
+                    </h2>
+                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Content • 3 Slides
+                    </div>
+                </div>
+                
+                <!-- Slide Content -->
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-bullhorn text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Advocacy Pyramid</h3>
+                    <p class="text-gray-600">Effective advocacy follows a strategic hierarchy</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="text-center p-4 bg-green-50 rounded-lg border border-green-200">
+                        <div class="w-12 h-12 bg-green-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <h4 class="font-semibold text-green-900 mb-2">Direct Contact</h4>
+                        <p class="text-sm text-green-700">Contact the responsible organization first</p>
+                    </div>
+                    <div class="text-center p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <h4 class="font-semibold text-yellow-900 mb-2">Strategic Escalation</h4>
+                        <p class="text-sm text-yellow-700">Move up the hierarchy if needed</p>
+                    </div>
+                    <div class="text-center p-4 bg-red-50 rounded-lg border border-red-200">
+                        <div class="w-12 h-12 bg-red-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <h4 class="font-semibold text-red-900 mb-2">Public Pressure</h4>
+                        <p class="text-sm text-red-700">Use external pressure as last resort</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex justify-end">
+                    <button type="button" id="continue2" 
+                            class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                        Continue to Next Task →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Completion Section -->
+        <section id="section-complete" class="slide-container mb-8 hidden">
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 shadow-lg border border-green-200">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-green-900 mb-4">Lesson Complete!</h2>
+                    <p class="text-green-800 mb-6">You've successfully completed the interactive lecture on effective advocacy strategies.</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
+                        <div class="text-center p-4 bg-white rounded-lg border border-green-200">
+                            <div class="text-2xl font-bold text-green-600" id="final-completion">100%</div>
+                            <div class="text-sm text-green-700">Content Viewed</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-green-200">
+                            <div class="text-2xl font-bold text-blue-600" id="final-time">0m 0s</div>
+                            <div class="text-sm text-blue-700">Time Spent</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-green-200">
+                            <div class="text-2xl font-bold text-purple-600" id="tasks-completed">1/1</div>
+                            <div class="text-sm text-purple-700">Tasks Completed</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-4">
+                        <button type="button" id="generateReportBtn" 
+                                class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            <i class="fas fa-chart-line mr-2"></i>View Detailed Report
+                        </button>
+                        <button type="button" onclick="window.location.href='index.html'" 
+                                class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700">
+                            <i class="fas fa-home mr-2"></i>Return to Course
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Ensure script runs after DOM is loaded
+        (function() {
+            'use strict';
+            
+            console.log('Interactive Lecture script loaded');
+            
+            // State management
+            let lectureState = {
+                currentSection: 1,
+                completedSections: [],
+                skippedTasks: [],
+                startTime: Date.now(),
+                interactions: [],
+                scores: {
+                    mc1: null
+                }
+            };
+
+            // Utility functions
+            function showNotification(message) {
+                console.log('Notification:', message);
+                const notification = document.getElementById('notification');
+                const notificationText = document.getElementById('notificationText');
+                
+                if (notification && notificationText) {
+                    notificationText.textContent = message;
+                    notification.classList.add('show');
+                    
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 3000);
+                }
+            }
+
+            function updateProgress() {
+                const progress = (lectureState.completedSections.length / 2) * 100;
+                const progressBar = document.getElementById('progressBar');
+                const progressText = document.getElementById('progressText');
+                
+                if (progressBar) {
+                    progressBar.style.width = `${progress}%`;
+                }
+                if (progressText) {
+                    progressText.textContent = `${Math.round(progress)}%`;
+                }
+            }
+
+            function updateTimer() {
+                const elapsed = Date.now() - lectureState.startTime;
+                const minutes = Math.floor(elapsed / 60000);
+                const seconds = Math.floor((elapsed % 60000) / 1000);
+                const timeElement = document.getElementById('timeSpent');
+                
+                if (timeElement) {
+                    timeElement.textContent = `${minutes}m ${seconds}s`;
+                }
+            }
+
+            function nextSection(sectionNum) {
+                console.log('Moving to section:', sectionNum);
+                
+                // Mark current section as completed
+                if (!lectureState.completedSections.includes(lectureState.currentSection)) {
+                    lectureState.completedSections.push(lectureState.currentSection);
+                }
+                
+                // Hide current section
+                const currentSection = document.querySelector(`#section-${lectureState.currentSection}`);
+                if (currentSection) {
+                    currentSection.classList.add('hidden');
+                    currentSection.classList.remove('active');
+                }
+                
+                // Show next section
+                lectureState.currentSection = sectionNum;
+                const nextElement = document.querySelector(`#section-${sectionNum}`);
+                
+                if (nextElement) {
+                    nextElement.classList.remove('hidden');
+                    setTimeout(() => {
+                        nextElement.classList.add('active');
+                    }, 100);
+                }
+                
+                updateProgress();
+                
+                // Record interaction
+                lectureState.interactions.push({
+                    type: 'section_start',
+                    section: sectionNum,
+                    timestamp: Date.now()
+                });
+            }
+
+            function skipTask(sectionNum) {
+                console.log('Skipping task:', sectionNum);
+                
+                if (!lectureState.skippedTasks.includes(sectionNum)) {
+                    lectureState.skippedTasks.push(sectionNum);
+                }
+                
+                lectureState.interactions.push({
+                    type: 'task_skipped',
+                    section: sectionNum,
+                    timestamp: Date.now()
+                });
+                
+                showNotification('Task skipped. Moving to next section...');
+                
+                setTimeout(() => {
+                    if (sectionNum === 1) {
+                        nextSection(2);
+                    } else {
+                        completeLesson();
+                    }
+                }, 1000);
+            }
+
+            function completeLesson() {
+                console.log('Completing lesson');
+                
+                // Calculate final time
+                const finalTime = Date.now() - lectureState.startTime;
+                const minutes = Math.floor(finalTime / 60000);
+                const seconds = Math.floor((finalTime % 60000) / 1000);
+                
+                // Update completion display
+                const finalTimeElement = document.getElementById('final-time');
+                if (finalTimeElement) {
+                    finalTimeElement.textContent = `${minutes}m ${seconds}s`;
+                }
+                
+                // Show completion section
+                const currentSection = document.querySelector(`#section-${lectureState.currentSection}`);
+                if (currentSection) {
+                    currentSection.classList.add('hidden');
+                }
+                
+                const completeSection = document.getElementById('section-complete');
+                if (completeSection) {
+                    completeSection.classList.remove('hidden');
+                    completeSection.classList.add('active');
+                }
+                
+                // Record completion
+                lectureState.interactions.push({
+                    type: 'lesson_complete',
+                    totalTime: finalTime,
+                    timestamp: Date.now()
+                });
+                
+                showNotification('Congratulations! Lesson completed successfully.');
+            }
+
+            // Multiple choice handler
+            function handleChoiceClick(event) {
+                const button = event.currentTarget;
+                const question = button.dataset.question;
+                const choice = button.dataset.choice;
+                const isCorrect = button.dataset.correct === 'true';
+                
+                console.log('Choice clicked:', { question, choice, isCorrect });
+                
+                // Remove previous selections
+                const allChoices = document.querySelectorAll(`[data-question="${question}"]`);
+                allChoices.forEach(btn => {
+                    btn.classList.remove('selected', 'correct', 'incorrect');
+                });
+                
+                // Mark selected choice
+                button.classList.add('selected');
+                
+                // Show all correct/incorrect after selection
+                setTimeout(() => {
+                    allChoices.forEach(btn => {
+                        const btnIsCorrect = btn.dataset.correct === 'true';
+                        btn.classList.add(btnIsCorrect ? 'correct' : 'incorrect');
+                    });
+                    
+                    // Show feedback
+                    const feedback = document.getElementById(`feedback-${question}`);
+                    if (feedback) {
+                        feedback.classList.remove('hidden');
+                    }
+                    
+                    // Record score
+                    lectureState.scores[`mc${question}`] = isCorrect ? 100 : 0;
+                    
+                    showNotification(isCorrect ? 'Correct! Well done.' : 'Good try! Check the explanation.');
+                }, 500);
+                
+                // Record interaction
+                lectureState.interactions.push({
+                    type: 'multiple_choice',
+                    question: parseInt(question),
+                    choice: choice,
+                    correct: isCorrect,
+                    timestamp: Date.now()
+                });
+            }
+
+            // Initialize when DOM is ready
+            function initialize() {
+                console.log('Initializing interactive lecture');
+                
+                // Attach event listeners for choice buttons
+                const choiceButtons = document.querySelectorAll('.choice-button');
+                choiceButtons.forEach(button => {
+                    button.addEventListener('click', handleChoiceClick);
+                });
+                
+                // Attach navigation event listeners
+                const skipTask1Btn = document.getElementById('skipTask1');
+                if (skipTask1Btn) {
+                    skipTask1Btn.addEventListener('click', () => skipTask(1));
+                }
+                
+                const continue1Btn = document.getElementById('continue1');
+                if (continue1Btn) {
+                    continue1Btn.addEventListener('click', () => nextSection(2));
+                }
+                
+                const continue2Btn = document.getElementById('continue2');
+                if (continue2Btn) {
+                    continue2Btn.addEventListener('click', () => completeLesson());
+                }
+                
+                // Report button
+                const reportBtn = document.getElementById('reportBtn');
+                if (reportBtn) {
+                    reportBtn.addEventListener('click', generateReport);
+                }
+                
+                const generateReportBtn = document.getElementById('generateReportBtn');
+                if (generateReportBtn) {
+                    generateReportBtn.addEventListener('click', generateReport);
+                }
+                
+                // Start timer
+                setInterval(updateTimer, 1000);
+                
+                // Initial progress update
+                updateProgress();
+                
+                console.log('Interactive lecture initialized successfully');
+            }
+
+            // Report generation
+            function generateReport() {
+                console.log('Generating report with data:', lectureState);
+                
+                // If parent window has report generator, use it
+                if (window.parent && window.parent.generateReport) {
+                    window.parent.generateReport(lectureState);
+                } else {
+                    alert('Report data: ' + JSON.stringify(lectureState, null, 2));
+                }
+            }
+
+            // Export state for parent window
+            window.getLectureState = function() {
+                return lectureState;
+            };
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initialize);
+            } else {
+                initialize();
+            }
+
+        })();
+    </script>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>

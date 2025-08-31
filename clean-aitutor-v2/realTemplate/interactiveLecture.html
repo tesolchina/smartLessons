@@ -1,0 +1,620 @@
+<div class="bg-gray-50 p-4">
+    
+    <!-- DEBUG PANEL - Visible debugging info -->
+    <div class="bg-red-100 border border-red-300 rounded-lg p-4 mb-4">
+        <h3 class="font-bold text-red-800 mb-2">🐛 DEBUG INFO</h3>
+        <div id="debug-log" class="text-sm text-red-700 space-y-1">
+            <div>Status: Loading...</div>
+        </div>
+        <button onclick="testFunction()" class="mt-2 bg-red-600 text-white px-3 py-1 rounded text-sm">
+            Test JavaScript
+        </button>
+        <button onclick="testParentCommunication()" class="mt-2 ml-2 bg-purple-600 text-white px-3 py-1 rounded text-sm">
+            Test Parent
+        </button>
+    </div>
+
+    <!-- Notification -->
+    <div id="lecture-notification" class="fixed top-20 right-4 z-50 bg-green-500 text-white px-4 py-2 rounded-lg opacity-0 transform translate-x-full transition-all duration-300">
+        <span id="lecture-notificationText">Ready!</span>
+    </div>
+
+    <!-- Progress Header -->
+    <div class="bg-white rounded-lg p-4 mb-6 shadow-sm">
+        <div class="flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-900">Interactive Lecture</h1>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-600">Progress: <span id="lecture-progressText">0%</span></span>
+                <!-- Fixed the report button with onclick -->
+                <button id="lecture-reportBtn" class="bg-blue-600 text-white px-3 py-2 rounded text-sm"
+                        onclick="debugLog('Header report clicked!'); generateReport();">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="mt-2 bg-gray-200 rounded-full h-2">
+            <div id="lecture-progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- Section 1: Multiple Choice -->
+    <div id="lecture-section-1" class="lecture-section bg-white rounded-lg p-6 shadow-sm">
+        <div class="mb-4">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">Opening Assessment</h2>
+            <p class="text-gray-600">Test your initial knowledge before we begin.</p>
+        </div>
+        
+        <div class="mb-6">
+            <h3 class="font-semibold text-gray-900 mb-4">When facing a public service problem, what is typically the MOST effective first step?</h3>
+            
+            <div id="lecture-choices-container">
+                <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                        data-choice="A" data-correct="false"
+                        onclick="debugLog('Button A clicked!'); handleChoice('A', false);">
+                    <span class="font-medium">A)</span> Post about it on social media to raise awareness
+                </button>
+                <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                        data-choice="B" data-correct="true"
+                        onclick="debugLog('Button B clicked!'); handleChoice('B', true);">
+                    <span class="font-medium">B)</span> Contact the responsible organization directly with specific details
+                </button>
+                <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                        data-choice="C" data-correct="false"
+                        onclick="debugLog('Button C clicked!'); handleChoice('C', false);">
+                    <span class="font-medium">C)</span> Wait to see if others complain about the same issue
+                </button>
+                <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                        data-choice="D" data-correct="false"
+                        onclick="debugLog('Button D clicked!'); handleChoice('D', false);">
+                    <span class="font-medium">D)</span> Immediately escalate to government officials
+                </button>
+            </div>
+            
+            <div id="lecture-feedback" class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg" style="display: none;">
+                <h4 class="font-semibold text-yellow-900 mb-1">Explanation:</h4>
+                <p class="text-yellow-800 text-sm">Direct contact with specific details is usually most effective. It shows you're serious, provides actionable information, and gives the organization a chance to respond before escalation.</p>
+            </div>
+        </div>
+        
+        <div class="flex justify-between">
+            <button id="lecture-skipBtn" class="px-4 py-2 bg-orange-100 text-orange-700 rounded hover:bg-orange-200"
+                    onclick="debugLog('Skip clicked!'); skipTask();">
+                Skip Task
+            </button>
+            <button id="lecture-continueBtn" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    onclick="debugLog('Continue clicked!'); continueToNext();">
+                Continue →
+            </button>
+        </div>
+    </div>
+
+    <!-- Section 2: Content -->
+    <div id="lecture-section-2" class="lecture-section bg-white rounded-lg p-6 shadow-sm" style="display: none;">
+        <div class="mb-4">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">Understanding Effective Advocacy</h2>
+            <p class="text-gray-600">Learn the strategic approach to public service advocacy.</p>
+        </div>
+        
+        <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span class="text-white text-2xl">📢</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2">The Advocacy Pyramid</h3>
+            <p class="text-gray-600">Effective advocacy follows a strategic hierarchy</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div class="text-center p-4 bg-green-50 rounded-lg border">
+                <div class="w-10 h-10 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center text-white font-bold">1</div>
+                <h4 class="font-semibold text-green-900 mb-1">Direct Contact</h4>
+                <p class="text-sm text-green-700">Contact the responsible organization first</p>
+            </div>
+            <div class="text-center p-4 bg-yellow-50 rounded-lg border">
+                <div class="w-10 h-10 bg-yellow-500 rounded-full mx-auto mb-2 flex items-center justify-center text-white font-bold">2</div>
+                <h4 class="font-semibold text-yellow-900 mb-1">Strategic Escalation</h4>
+                <p class="text-sm text-yellow-700">Move up the hierarchy if needed</p>
+            </div>
+            <div class="text-center p-4 bg-red-50 rounded-lg border">
+                <div class="w-10 h-10 bg-red-500 rounded-full mx-auto mb-2 flex items-center justify-center text-white font-bold">3</div>
+                <h4 class="font-semibold text-red-909 mb-1">Public Pressure</h4>
+                <p class="text-sm text-red-700">Use external pressure as last resort</p>
+            </div>
+        </div>
+        
+        <div class="flex justify-end">
+            <button id="lecture-completeBtn" class="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+                    onclick="debugLog('Complete clicked!'); completeLesson();">
+                Complete Lesson →
+            </button>
+        </div>
+    </div>
+
+    <!-- Section 3: Completion -->
+    <div id="lecture-section-3" class="lecture-section bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border border-green-200" style="display: none;">
+        <div class="text-center">
+            <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span class="text-white text-2xl">🎓</span>
+            </div>
+            <h2 class="text-2xl font-bold text-green-900 mb-2">Lesson Complete!</h2>
+            <p class="text-green-800 mb-6">You've successfully completed the interactive lecture.</p>
+            
+            <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-6">
+                <div class="text-center p-3 bg-white rounded border">
+                    <div class="text-lg font-bold text-green-600">100%</div>
+                    <div class="text-xs text-green-700">Complete</div>
+                </div>
+                <div class="text-center p-3 bg-white rounded border">
+                    <div class="text-lg font-bold text-blue-600" id="lecture-finalTime">0m</div>
+                    <div class="text-xs text-blue-700">Time</div>
+                </div>
+                <div class="text-center p-3 bg-white rounded border">
+                    <div class="text-lg font-bold text-purple-600" id="lecture-finalScore">--</div>
+                    <div class="text-xs text-purple-700">Score</div>
+                </div>
+            </div>
+            
+            <button id="lecture-finalReportBtn" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    onclick="debugLog('Final report clicked!'); generateReport();">
+                View Report
+            </button>
+        </div>
+    </div>
+
+    <!-- Report Display Area -->
+    <div id="lecture-report-display" class="bg-white rounded-lg p-6 shadow-sm mt-6" style="display: none;">
+        <h3 class="text-lg font-bold text-gray-900 mb-4">📊 Lecture Report</h3>
+        <div id="lecture-report-content" class="space-y-4">
+            <!-- Report content will be inserted here -->
+        </div>
+        <button onclick="hideReport()" class="mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+            Close Report
+        </button>
+    </div>
+</div>
+
+<style>
+.lecture-choice-button.selected {
+    background: #5D5CDE !important;
+    color: white !important;
+    border-color: #5D5CDE !important;
+}
+
+.lecture-choice-button.correct {
+    background: #10b981 !important;
+    color: white !important;
+    border-color: #10b981 !important;
+}
+
+.lecture-choice-button.incorrect {
+    background: #ef4444 !important;
+    color: white !important;
+    border-color: #ef4444 !important;
+}
+
+#lecture-notification.show {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+</style>
+
+<script>
+// Debug logging function that shows on UI
+function debugLog(message) {
+    console.log('DEBUG:', message);
+    const debugElement = document.getElementById('debug-log');
+    if (debugElement) {
+        const timestamp = new Date().toLocaleTimeString();
+        const logEntry = document.createElement('div');
+        logEntry.textContent = `[${timestamp}] ${message}`;
+        debugElement.appendChild(logEntry);
+        
+        // Keep only last 15 entries
+        while (debugElement.children.length > 15) {
+            debugElement.removeChild(debugElement.firstChild);
+        }
+        
+        // Scroll to bottom
+        debugElement.scrollTop = debugElement.scrollHeight;
+    }
+}
+
+// Test function to verify JavaScript is working
+function testFunction() {
+    debugLog('✅ JavaScript is working!');
+    debugLog('Document ready state: ' + document.readyState);
+    debugLog('Current timestamp: ' + Date.now());
+    debugLog('Window object: ' + typeof window);
+    debugLog('Parent window: ' + typeof window.parent);
+}
+
+// Test parent communication
+function testParentCommunication() {
+    debugLog('Testing parent window communication...');
+    debugLog('window.parent exists: ' + (window.parent !== window));
+    debugLog('window.top exists: ' + (window.top !== window));
+    
+    try {
+        if (window.parent && window.parent !== window) {
+            debugLog('Parent window found');
+            debugLog('Parent functions available:');
+            debugLog('- generateReport: ' + typeof window.parent.generateReport);
+            debugLog('- progressManager: ' + typeof window.parent.progressManager);
+            debugLog('- stateManager: ' + typeof window.parent.stateManager);
+            
+            // Try to access parent methods
+            if (window.parent.stateManager) {
+                debugLog('✅ Parent stateManager accessible');
+            }
+            if (window.parent.progressManager) {
+                debugLog('✅ Parent progressManager accessible');
+            }
+        } else {
+            debugLog('❌ No parent window detected');
+        }
+    } catch (error) {
+        debugLog('❌ Error accessing parent: ' + error.message);
+    }
+}
+
+// Enhanced global state with more tracking
+window.lectureData = {
+    score: null,
+    startTime: Date.now(),
+    currentSection: 1,
+    interactions: [],
+    completed: false,
+    timeSpent: 0,
+    choiceSelected: null,
+    sectionProgress: {
+        1: 0,  // Opening assessment
+        2: 0,  // Content
+        3: 0   // Completion
+    }
+};
+
+// Choice handling function
+function handleChoice(choice, isCorrect) {
+    debugLog(`Choice ${choice} selected. Correct: ${isCorrect}`);
+    
+    try {
+        // Update all buttons
+        const buttons = document.querySelectorAll('.lecture-choice-button');
+        debugLog(`Found ${buttons.length} choice buttons`);
+        
+        buttons.forEach((btn, index) => {
+            btn.classList.remove('selected', 'correct', 'incorrect');
+            
+            const btnCorrect = btn.dataset.correct === 'true';
+            btn.classList.add(btnCorrect ? 'correct' : 'incorrect');
+            
+            if (btn.dataset.choice === choice) {
+                btn.classList.add('selected');
+                debugLog(`Marked button ${choice} as selected`);
+            }
+        });
+        
+        // Show feedback
+        const feedback = document.getElementById('lecture-feedback');
+        if (feedback) {
+            feedback.style.display = 'block';
+            debugLog('Feedback shown');
+        }
+        
+        // Store comprehensive data
+        window.lectureData.score = isCorrect ? 100 : 0;
+        window.lectureData.choiceSelected = choice;
+        window.lectureData.sectionProgress[1] = 100; // Section 1 completed
+        window.lectureData.interactions.push({
+            type: 'multiple_choice',
+            choice: choice,
+            correct: isCorrect,
+            timestamp: Date.now(),
+            section: 1
+        });
+        
+        debugLog(`Score set to: ${window.lectureData.score}`);
+        debugLog('Interaction recorded');
+        
+        // Update parent progress if available
+        updateParentProgress();
+        
+        // Show notification
+        showNotification(isCorrect ? 'Correct! Well done.' : 'Good try! See explanation below.');
+        
+    } catch (error) {
+        debugLog('❌ Error in handleChoice: ' + error.message);
+    }
+}
+
+// Update parent window progress
+function updateParentProgress() {
+    try {
+        if (window.parent && window.parent.progressManager) {
+            const overallProgress = Math.round((Object.values(window.lectureData.sectionProgress).reduce((a, b) => a + b, 0) / 3));
+            window.parent.progressManager.markSectionProgress('lecture', overallProgress);
+            debugLog(`✅ Updated parent progress to ${overallProgress}%`);
+        }
+    } catch (error) {
+        debugLog('❌ Could not update parent progress: ' + error.message);
+    }
+}
+
+// Notification function
+function showNotification(message) {
+    debugLog('Showing notification: ' + message);
+    
+    const notification = document.getElementById('lecture-notification');
+    const text = document.getElementById('lecture-notificationText');
+    
+    if (notification && text) {
+        text.textContent = message;
+        notification.classList.add('show');
+        setTimeout(() => {
+            notification.classList.remove('show');
+            debugLog('Notification hidden');
+        }, 3000);
+        debugLog('Notification displayed successfully');
+    } else {
+        debugLog('❌ Notification elements not found');
+    }
+}
+
+// Navigation functions
+function skipTask() {
+    debugLog('Skipping task...');
+    window.lectureData.sectionProgress[1] = 50; // Partial credit for skipping
+    window.lectureData.interactions.push({
+        type: 'task_skipped',
+        section: 1,
+        timestamp: Date.now()
+    });
+    showNotification('Task skipped');
+    showSection(2);
+}
+
+function continueToNext() {
+    debugLog('Continuing to next section...');
+    showSection(2);
+}
+
+function showSection(sectionNum) {
+    debugLog(`Showing section ${sectionNum}`);
+    
+    try {
+        // Hide all sections
+        const sections = document.querySelectorAll('.lecture-section');
+        debugLog(`Found ${sections.length} sections to hide`);
+        
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show target section
+        const target = document.getElementById('lecture-section-' + sectionNum);
+        if (target) {
+            target.style.display = 'block';
+            window.lectureData.currentSection = sectionNum;
+            
+            // Mark section as viewed
+            if (sectionNum === 2) {
+                window.lectureData.sectionProgress[2] = 100;
+            }
+            
+            updateProgress((sectionNum - 1) * 50);
+            updateParentProgress();
+            debugLog(`✅ Section ${sectionNum} displayed`);
+        } else {
+            debugLog(`❌ Section ${sectionNum} not found`);
+        }
+    } catch (error) {
+        debugLog('❌ Error in showSection: ' + error.message);
+    }
+}
+
+function updateProgress(percent) {
+    const bar = document.getElementById('lecture-progressBar');
+    const text = document.getElementById('lecture-progressText');
+    
+    if (bar) {
+        bar.style.width = percent + '%';
+    }
+    
+    if (text) {
+        text.textContent = percent + '%';
+    }
+}
+
+function completeLesson() {
+    debugLog('Completing lesson...');
+    
+    try {
+        const duration = Date.now() - window.lectureData.startTime;
+        const minutes = Math.floor(duration / 60000);
+        
+        // Update final data
+        window.lectureData.completed = true;
+        window.lectureData.timeSpent = duration;
+        window.lectureData.sectionProgress[3] = 100;
+        window.lectureData.interactions.push({
+            type: 'lesson_completed',
+            timestamp: Date.now(),
+            totalDuration: duration
+        });
+        
+        const timeElement = document.getElementById('lecture-finalTime');
+        const scoreElement = document.getElementById('lecture-finalScore');
+        
+        if (timeElement) {
+            timeElement.textContent = minutes + 'm';
+        }
+        
+        if (scoreElement) {
+            scoreElement.textContent = window.lectureData.score || 'N/A';
+        }
+        
+        showSection(3);
+        updateProgress(100);
+        updateParentProgress();
+        showNotification('Lesson completed successfully!');
+        
+        debugLog('✅ Lesson completion successful');
+        
+    } catch (error) {
+        debugLog('❌ Error in completeLesson: ' + error.message);
+    }
+}
+
+function generateReport() {
+    debugLog('Generating comprehensive report...');
+    
+    try {
+        // Calculate final metrics
+        const duration = Date.now() - window.lectureData.startTime;
+        const minutes = Math.floor(duration / 60000);
+        const seconds = Math.floor((duration % 60000) / 1000);
+        
+        const reportData = {
+            ...window.lectureData,
+            finalMetrics: {
+                totalTime: `${minutes}m ${seconds}s`,
+                overallProgress: Math.round((Object.values(window.lectureData.sectionProgress).reduce((a, b) => a + b, 0) / 3)),
+                sectionsCompleted: Object.values(window.lectureData.sectionProgress).filter(p => p > 0).length,
+                engagementLevel: window.lectureData.interactions.length > 0 ? 'High' : 'Low'
+            }
+        };
+        
+        debugLog('Report data prepared');
+        
+        // Display report locally
+        displayReport(reportData);
+        
+        // Try to send to parent window
+        if (window.parent && window.parent.generateReport) {
+            debugLog('Sending to parent generateReport function...');
+            window.parent.generateReport(reportData);
+            debugLog('✅ Report sent to parent');
+        } else if (window.parent && window.parent !== window) {
+            debugLog('Parent exists but no generateReport function found');
+            debugLog('Available parent functions:');
+            for (let prop in window.parent) {
+                if (typeof window.parent[prop] === 'function') {
+                    debugLog(`- ${prop}`);
+                }
+            }
+        } else {
+            debugLog('No parent window available');
+        }
+        
+        showNotification('Report generated successfully!');
+        
+    } catch (error) {
+        debugLog('❌ Error generating report: ' + error.message);
+    }
+}
+
+function displayReport(reportData) {
+    debugLog('Displaying report locally...');
+    
+    const reportDisplay = document.getElementById('lecture-report-display');
+    const reportContent = document.getElementById('lecture-report-content');
+    
+    if (reportDisplay && reportContent) {
+        const reportHTML = `
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <h4 class="font-semibold text-gray-900">📈 Performance Metrics</h4>
+                    <div class="bg-gray-50 p-4 rounded">
+                        <div class="flex justify-between mb-2">
+                            <span>Overall Progress:</span>
+                            <span class="font-medium">${reportData.finalMetrics.overallProgress}%</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Time Spent:</span>
+                            <span class="font-medium">${reportData.finalMetrics.totalTime}</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Quiz Score:</span>
+                            <span class="font-medium">${reportData.score || 'N/A'}%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Choice Selected:</span>
+                            <span class="font-medium">${reportData.choiceSelected || 'None'}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <h4 class="font-semibold text-gray-900">🎯 Section Progress</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span>Opening Assessment:</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: ${reportData.sectionProgress[1]}%"></div>
+                            </div>
+                            <span class="text-sm">${reportData.sectionProgress[1]}%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Content Review:</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: ${reportData.sectionProgress[2]}%"></div>
+                            </div>
+                            <span class="text-sm">${reportData.sectionProgress[2]}%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Completion:</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: ${reportData.sectionProgress[3]}%"></div>
+                            </div>
+                            <span class="text-sm">${reportData.sectionProgress[3]}%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-blue-50 rounded">
+                <h5 class="font-semibold text-blue-900 mb-2">📊 Interaction Summary</h5>
+                <p class="text-blue-800 text-sm">Total interactions: ${reportData.interactions.length}</p>
+                <p class="text-blue-800 text-sm">Engagement level: ${reportData.finalMetrics.engagementLevel}</p>
+                <p class="text-blue-800 text-sm">Completion status: ${reportData.completed ? 'Completed' : 'In Progress'}</p>
+            </div>
+        `;
+        
+        reportContent.innerHTML = reportHTML;
+        reportDisplay.style.display = 'block';
+        
+        // Scroll to report
+        reportDisplay.scrollIntoView({ behavior: 'smooth' });
+        
+        debugLog('✅ Report displayed locally');
+    } else {
+        debugLog('❌ Report display elements not found');
+    }
+}
+
+function hideReport() {
+    const reportDisplay = document.getElementById('lecture-report-display');
+    if (reportDisplay) {
+        reportDisplay.style.display = 'none';
+        debugLog('Report hidden');
+    }
+}
+
+// Initialize on load
+debugLog('🚀 Interactive Lecture script starting...');
+debugLog('DOM ready state: ' + document.readyState);
+
+// Set initial state
+updateProgress(0);
+debugLog('Initial setup complete');
+
+// Test that everything is loaded
+setTimeout(() => {
+    debugLog('Delayed check - elements status:');
+    debugLog('Choice buttons: ' + document.querySelectorAll('.lecture-choice-button').length);
+    debugLog('Report button: ' + (document.getElementById('lecture-reportBtn') ? 'Found' : 'Not found'));
+    debugLog('✅ Interactive lecture ready!');
+    
+    // Test parent communication
+    testParentCommunication();
+}, 500);
+</script>

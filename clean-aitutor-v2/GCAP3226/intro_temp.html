@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP 3226 Course Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .week-card {
+            transition: all 0.3s ease;
+        }
+        .week-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(93, 92, 222, 0.15);
+        }
+        .assessment-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .timeline-connector {
+            position: relative;
+        }
+        .timeline-connector::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(135deg, #5D5CDE, #7B7AE8);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .week-node {
+            position: relative;
+            z-index: 10;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .zigzag-line {
+            stroke: #5D5CDE;
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 5,5;
+            animation: dash 2s linear infinite;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 overflow-x-auto">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="min-h-screen p-6">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">GCAP 3226 Course Hub</h1>
+        </div>
+
+        <!-- Course Overview Section -->
+        <div class="max-w-6xl mx-auto mb-12 bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-8 border border-primary/20">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">📚 Course Overview</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Course Title -->
+                <div class="lg:col-span-3 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-3">Course Title</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                        <span class="font-semibold">GCAP3226</span> - Empowering Citizens Through Data: Participatory Policy Analysis for Hong Kong
+                    </p>
+                </div>
+
+                <!-- Instructors -->
+                <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4">👩‍🏫 Instructors</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-purple-100 dark:bg-purple-900/30 rounded-lg p-3 flex-shrink-0">
+                                <span class="text-purple-600 dark:text-purple-400 font-bold">Dr. Talia Wu</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <span class="font-medium">Math Department</span><br>
+                                    <a href="mailto:taliawu17@hkbu.edu.hk" class="text-primary hover:underline">taliawu17@hkbu.edu.hk</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-100 dark:bg-green-900/30 rounded-lg p-3 flex-shrink-0">
+                                <span class="text-green-600 dark:text-green-400 font-bold">Dr. Simon Wang</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <span class="font-medium">Language Centre</span><br>
+                                    <a href="mailto:simonwang@hkbu.edu.hk" class="text-primary hover:underline">simonwang@hkbu.edu.hk</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Objectives -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4">🎯 Course Objectives</h3>
+                    <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Equip students with analytical tools for data-informed policymaking in Hong Kong</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Integrate quantitative and qualitative insights to address social issues aligned with UN SDGs</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Evaluate government data use for transparency</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Engage students in practical projects for experiential learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Toggle Section -->
+        <div class="max-w-6xl mx-auto mb-8">
+            <div class="text-center">
+                <button onclick="toggleRoadmap()" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors shadow-lg">
+                    <span id="roadmapToggleText">📅 Show Course Roadmap</span>
+                    <svg id="roadmapToggleIcon" class="ml-2 w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Container (Hidden by default) -->
+        <div id="roadmapContainer" class="hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">📅 Course Roadmap</h2>
+            <!-- Color Legend -->
+            <div class="mt-4 flex justify-center flex-wrap gap-4 text-xs">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">In-class Exercises</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-blue-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Reflective Essays</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-purple-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Presentations</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-orange-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Reports</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-red-500 rounded mr-2"></div>
+                    <span class="text-gray-600 dark:text-gray-300">Final Deliverables</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- S-shaped Timeline Container -->
+        <div class="relative w-full max-w-7xl mx-auto">
+            <!-- Animated zigzag line using SVG -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 800">
+                <path class="zigzag-line" d="M 100 100 L 300 100 L 500 200 L 700 200 L 900 300 L 700 400 L 500 400 L 300 500 L 100 500 L 300 600 L 500 600 L 700 700 L 900 700"></path>
+            </svg>
+
+            <!-- Week cards positioned in S-shape -->
+            <div class="relative z-10">
+                <!-- Row 1: Left to Right -->
+                <div class="flex justify-between items-start mb-20">
+                    <!-- Week 1 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in cursor-pointer hover:border-primary-light" style="animation-delay: 0.1s" onclick="toggleCourseIntro()">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">1</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Course Introduction</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Attend introductory lecture on public policy, the Hong Kong context, and SDGs. Install VS Code and apply for GitHub Copilot.</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                        <div class="text-xs text-primary mt-2 font-medium">👆 Click to view course slides</div>
+                    </div>
+
+                    <!-- Week 2 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.2s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">2</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Learning AI Tools</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Attend lecture on AI-assisted Python programming, focusing on data visualization and customized chatbots on Bytewise.</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                    </div>
+
+                    <!-- Week 3-4 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-green-500 fade-in" style="animation-delay: 0.3s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs mr-3">3-4</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Case Studies & Groups</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Participate in case study demonstrations. Form project groups and select a topic.</div>
+                        <div class="text-xs text-green-600 dark:text-green-400 font-medium">📝 In-class Exercise 1 & 2 (10%)</div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Right to Left -->
+                <div class="flex justify-between items-start mb-20 flex-row-reverse">
+                    <!-- Week 5-6 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-blue-500 fade-in" style="animation-delay: 0.4s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs mr-3">5-6</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Data Requests & Prep</h3>
+                        </div>
+                        <div class="text-xs text-orange-600 dark:text-orange-400 mb-1">⚠️ Week 6 includes a public holiday</div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Explore public datasets and draft data request emails. Design fieldwork plans.</div>
+                        <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">📝 Reflective Essay 1 (part of 20%)</div>
+                    </div>
+
+                    <!-- Week 7 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-blue-500 fade-in" style="animation-delay: 0.5s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">7</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Fieldwork</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Conduct fieldwork to collect primary data.</div>
+                        <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">📝 Reflective Essay 2 (part of 20%)</div>
+                    </div>
+
+                    <!-- Week 8-9 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-blue-500 fade-in" style="animation-delay: 0.6s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs mr-3">8-9</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Group Consultation</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Complete data governance checkpoint. Integrate data. Use AI tools for analysis, visualization, and storytelling.</div>
+                        <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">📝 Reflective Essay 3 (part of 20%)</div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Left to Right -->
+                <div class="flex justify-between items-start mb-20">
+                    <!-- Week 10 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.7s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">10</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Draft Report Outline</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Submit draft outline of group project report, including data analysis and governance critique.</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">📝 Assessment: None</div>
+                    </div>
+
+                    <!-- Week 11 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-purple-500 fade-in" style="animation-delay: 0.8s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">11</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">First Presentation</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Deliver In-Class Presentation 1 (8 minutes) on project progress and data governance findings.</div>
+                        <div class="text-xs text-purple-600 dark:text-purple-400 font-medium">📝 In-Class Presentation 1 (10%)</div>
+                    </div>
+
+                    <!-- Week 12 -->
+                    <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-orange-500 fade-in" style="animation-delay: 0.9s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">12</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Finalize Deliverables</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Refine models, visualizations, and advocacy products.</div>
+                        <div class="text-xs text-orange-600 dark:text-orange-400 font-medium">📝 Human-AI Collaboration Report (20%)</div>
+                    </div>
+                </div>
+
+                <!-- Final Week - Center aligned -->
+                <div class="flex justify-center">
+                    <!-- Week 13 -->
+                    <div class="week-card bg-gradient-to-r from-yellow-100 to-yellow-50 dark:from-yellow-900 dark:to-yellow-800 rounded-lg shadow-lg p-4 w-80 border-l-4 border-yellow-500 fade-in" style="animation-delay: 1.0s">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm mr-3 ring-2 ring-yellow-300">13</div>
+                            <h3 class="font-bold text-gray-900 dark:text-white">🎯 Final Presentation & Report</h3>
+                        </div>
+                        <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Deliver In-Class Presentation 2 (8 minutes) to peers, instructors, and stakeholders.</div>
+                        <div class="text-xs mb-1">
+                            <span class="text-purple-600 dark:text-purple-400 font-medium">📝 In-Class Presentation 2 (10%)</span>
+                        </div>
+                        <div class="text-xs">
+                            <span class="text-red-600 dark:text-red-400 font-medium">📝 Final Project Report & Poster (30%)</span>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="assessment-badge bg-yellow-500 text-white text-xs px-3 py-1 rounded-full font-bold">40% FINAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Course Introduction Slides (Hidden by default) -->
+        <div id="courseIntroSection" class="hidden mt-12 bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-6 max-w-6xl mx-auto border border-primary/20">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">📚 Course Introduction: Empowering Citizens Through Data</h2>
+                <button onclick="toggleCourseIntro()" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-xl font-bold">&times;</button>
+            </div>
+            
+            <!-- Slide Navigation -->
+            <div class="flex justify-center mb-4">
+                <div class="flex space-x-2">
+                    <button onclick="prevSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">← Previous</button>
+                    <span id="slideCounter" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium">1 / 5</span>
+                    <button onclick="nextSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">Next →</button>
+                    <button onclick="openFullscreenSlide()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">🔍 Fullscreen</button>
+                </div>
+            </div>
+
+            <!-- Slide Container -->
+            <div id="slideContainer" class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                <!-- Slide 1: Course Overview -->
+                <div class="slide active" data-slide="1">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🎯 Course Overview</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-4">What is this course about?</h4>
+                            <ul class="text-base text-gray-700 dark:text-gray-300 space-y-3">
+                                <li>• Participatory Policy Analysis for Hong Kong</li>
+                                <li>• Data-driven citizen empowerment</li>
+                                <li>• Real-world public policy challenges</li>
+                                <li>• AI-assisted research methods</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-4">Key Focus Areas</h4>
+                            <ul class="text-base text-gray-700 dark:text-gray-300 space-y-3">
+                                <li>🌍 Sustainable Development Goals (SDG 11)</li>
+                                <li>📊 Data governance and ethics</li>
+                                <li>🤖 Human-AI collaboration</li>
+                                <li>👥 Community engagement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Learning Objectives -->
+                <div class="slide hidden" data-slide="2">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📈 Learning Objectives</h3>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">By the end of this course, you will be able to:</h4>
+                        <ul class="text-base text-gray-700 dark:text-gray-300 space-y-3">
+                            <li>✅ Analyze public policy issues using data-driven approaches</li>
+                            <li>✅ Collaborate effectively with AI tools for policy research</li>
+                            <li>✅ Engage with communities to gather meaningful insights</li>
+                            <li>✅ Present policy recommendations to diverse stakeholders</li>
+                            <li>✅ Critically evaluate data governance and ethical implications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Teaching Staff -->
+                <div class="slide hidden" data-slide="3">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">👩‍🏫 Meet Your Instructors</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-purple-800 dark:text-purple-200 mb-4">Dr. Tian WU (Talia)</h4>
+                            <div class="text-base text-gray-700 dark:text-gray-300 space-y-2">
+                                <p><strong>Department:</strong> Mathematics</p>
+                                <p><strong>Office:</strong> FSC 1104</p>
+                                <p><strong>Email:</strong> taliawu17@hkbu.edu.hk</p>
+                                <p><strong>Office Hours:</strong> Mon & Tue 2:00-5:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-green-800 dark:text-green-200 mb-4">Dr. Simon Wang</h4>
+                            <div class="text-base text-gray-700 dark:text-gray-300 space-y-2">
+                                <p><strong>Department:</strong> Liberal & Cultural Studies</p>
+                                <p><strong>Office:</strong> OEE902(E)</p>
+                                <p><strong>Email:</strong> simonwang@hkbu.edu.hk</p>
+                                <p><strong>Office Hours:</strong> By appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Assessment Structure -->
+                <div class="slide hidden" data-slide="4">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📋 Assessment Overview</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-4">Individual Work (50%)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>In-class Exercises</span>
+                                    <span class="font-medium">10%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Reflective Essays</span>
+                                    <span class="font-medium">20%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Human-AI Report</span>
+                                    <span class="font-medium">20%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-4">Group Work (50%)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Presentations</span>
+                                    <span class="font-medium">20%</span>
+                                </div>
+                                <div class="flex justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded text-base">
+                                    <span>Final Report & Poster</span>
+                                    <span class="font-medium">30%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Course Schedule -->
+                <div class="slide hidden" data-slide="5">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📅 Course Schedule</h3>
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <h4 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-3">When & Where</h4>
+                                <div class="text-base text-gray-700 dark:text-gray-300 space-y-2">
+                                    <p><strong>Day:</strong> Tuesday</p>
+                                    <p><strong>Time:</strong> 9:30 – 12:20</p>
+                                    <p><strong>Room:</strong> TBA</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-3">Duration</h4>
+                                <div class="text-base text-gray-700 dark:text-gray-300 space-y-2">
+                                    <p>13 weeks</p>
+                                    <p>Semester 1, 2025-2026</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-3">Important Notes</h4>
+                                <div class="text-base text-gray-700 dark:text-gray-300 space-y-2">
+                                    <p>Week 6 includes a public holiday</p>
+                                    <p>Group formation in weeks 3-4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Question Section -->
+            <div id="questionSection" class="mt-6 bg-primary/5 dark:bg-primary/10 rounded-lg p-4">
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check: Test Your Understanding</h4>
+                <div id="question1" class="question-container">
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3"><strong>Question:</strong> What is the main focus of SDG 11 in the context of this course?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span class="text-sm text-gray-700 dark:text-gray-300">A) Economic development only</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span class="text-sm text-gray-700 dark:text-gray-300">B) Sustainable cities and communities</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span class="text-sm text-gray-700 dark:text-gray-300">C) Technology advancement</span>
+                        </label>
+                    </div>
+                    <button onclick="checkAnswer(1, 'b')" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark">Check Answer</button>
+                    <div id="feedback1" class="hidden mt-2 text-sm"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fullscreen Slide Modal -->
+        <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden">
+            <div class="relative w-full h-full flex items-center justify-center p-4">
+                <div class="bg-white dark:bg-gray-800 rounded-lg w-full max-w-5xl h-5/6 flex flex-col">
+                    <!-- Modal Header -->
+                    <div class="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white">Course Introduction Slides</h2>
+                        <button onclick="closeFullscreenSlide()" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl font-bold">&times;</button>
+                    </div>
+                    
+                    <!-- Modal Navigation -->
+                    <div class="flex justify-center p-4 border-b border-gray-200 dark:border-gray-700">
+                        <div class="flex space-x-3">
+                            <button onclick="prevSlideFullscreen()" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-lg">← Previous</button>
+                            <span id="slideCounterFullscreen" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium text-lg">1 / 5</span>
+                            <button onclick="nextSlideFullscreen()" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-lg">Next →</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal Slide Content -->
+                    <div id="fullscreenSlideContainer" class="flex-1 p-8 overflow-y-auto">
+                        <!-- Content will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Assessment Section -->
+        <div class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 max-w-6xl mx-auto border border-blue-200 dark:border-blue-800">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">📋 Detailed Assessment Guide</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
+                <button onclick="showAssessmentTab('group-project')" class="assessment-tab active px-4 py-2 text-sm font-medium border-b-2 transition-colors">Group Project</button>
+                <button onclick="showAssessmentTab('in-class-exercise')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">In-class Exercise</button>
+                <button onclick="showAssessmentTab('presentations')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">Presentations</button>
+                <button onclick="showAssessmentTab('reflective-essays')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">Reflective Essays</button>
+                <button onclick="showAssessmentTab('human-ai-report')" class="assessment-tab px-4 py-2 text-sm font-medium border-b-2 transition-colors">Human-AI Report</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="assessment-tabs">
+                <!-- Group Project Tab -->
+                <div id="group-project-tab" class="assessment-tab-content">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">👥</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Group Project Report & Poster</h3>
+                                <p class="text-primary font-semibold">30% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📝 Report Requirements (~3,000 words)</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Introduction:</strong> Problem, research question, SDG 11 relevance</li>
+                                    <li><strong>Background:</strong> Context, relevant policies/plans</li>
+                                    <li><strong>Data Analysis:</strong> Quantitative analysis, governance issues</li>
+                                    <li><strong>Community Engagement:</strong> Activities description, AI tool usage</li>
+                                    <li><strong>Recommendations:</strong> Actionable solutions for stakeholders</li>
+                                    <li><strong>Conclusion:</strong> Findings, limitations, future work</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">🎨 Poster Requirements</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Visual summary of key findings</li>
+                                    <li>• Clear and engaging presentation</li>
+                                    <li>• Concise recommendations</li>
+                                    <li>• Professional design standards</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">⚠️ Important Notes</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• Groups: 4-6 students</li>
+                                    <li>• Same grade for all group members</li>
+                                    <li>• No free rider mediation by instructor</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In-class Exercise Tab -->
+                <div id="in-class-exercise-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">💻</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">In-class Exercises</h3>
+                                <p class="text-primary font-semibold">10% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📋 Exercise Details</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Number:</strong> Two exercises</li>
+                                    <li><strong>Schedule:</strong> Week 3 & Week 4</li>
+                                    <li><strong>Type:</strong> AI-assisted programming tasks</li>
+                                    <li><strong>Format:</strong> Jupyter Notebook</li>
+                                    <li><strong>Submission:</strong> Zip file to Moodle</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">⚠️ Absence Policy</h4>
+                                <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg">
+                                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <li>• Email valid proof (e.g., doctor's note) within 3 days</li>
+                                        <li>• Submit exercise by assigned alternative date</li>
+                                        <li>• Late submission without justification = 0 marks</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Presentations Tab -->
+                <div id="presentations-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🎤</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">In-class Group Presentations</h3>
+                                <p class="text-primary font-semibold">20% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📅 Presentation 1 (Week 11)</h4>
+                                <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg mb-4">
+                                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <li><strong>Duration:</strong> 8 minutes</li>
+                                        <li><strong>Focus:</strong> Project progress update</li>
+                                        <li><strong>Content:</strong> Data governance findings</li>
+                                        <li><strong>Weight:</strong> 10% of final grade</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📅 Presentation 2 (Week 13)</h4>
+                                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mb-4">
+                                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <li><strong>Duration:</strong> 8 minutes</li>
+                                        <li><strong>Focus:</strong> Final project summary</li>
+                                        <li><strong>Audience:</strong> Peers, instructors, stakeholders</li>
+                                        <li><strong>Weight:</strong> 10% of final grade</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reflective Essays Tab -->
+                <div id="reflective-essays-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">✍️</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Reflective Essays</h3>
+                                <p class="text-primary font-semibold">20% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Essay 1 (Week 5)</h4>
+                                <ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Length:</strong> ~200 words</li>
+                                    <li><strong>Focus:</strong> Public policy analysis experience</li>
+                                    <li><strong>Submission:</strong> Moodle</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2">Essay 2 (Week 7)</h4>
+                                <ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Length:</strong> ~200 words</li>
+                                    <li><strong>Focus:</strong> Data governance insights</li>
+                                    <li><strong>Submission:</strong> Moodle</li>
+                                </ul>
+                            </div>
+                            <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                                <h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-2">Essay 3 (Week 9)</h4>
+                                <ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Length:</strong> ~200 words</li>
+                                    <li><strong>Focus:</strong> Effective communication strategies</li>
+                                    <li><strong>Submission:</strong> Moodle</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human-AI Report Tab -->
+                <div id="human-ai-report-tab" class="assessment-tab-content hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🤖</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Human-AI Collaboration Report</h3>
+                                <p class="text-primary font-semibold">20% of Final Grade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📝 Report Details</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Length:</strong> ~2,000 words</li>
+                                    <li><strong>Type:</strong> Individual portfolio</li>
+                                    <li><strong>Due:</strong> Week 12</li>
+                                    <li><strong>Submission:</strong> Moodle</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3 mt-4">🎯 Purpose</h4>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Explore how AI tools enhanced understanding and analysis of policy issues, focusing on personal contributions and ethical considerations.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">📋 Content Guidelines</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li>• AI assistance in methodology implementation</li>
+                                    <li>• Identification of data governance gaps</li>
+                                    <li>• Ethical considerations (bias, privacy, transparency)</li>
+                                    <li>• Personal role in AI-enhanced narratives/visualizations</li>
+                                    <li>• Stakeholder communication tailoring process</li>
+                                    <li>• Challenges encountered and lessons learned</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Assessment Summary -->
+        <div class="mt-12 bg-gray-50 dark:bg-gray-800 rounded-lg p-4 max-w-4xl mx-auto">
+            <div class="grid grid-cols-2 gap-6 text-sm">
+                <div>
+                    <h4 class="font-bold text-gray-700 dark:text-gray-300 mb-2">📋 Individual (50%)</h4>
+                    <div class="space-y-1 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">In-class exercises 1 & 2</span>
+                            <span class="font-medium">10%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Reflective essays</span>
+                            <span class="font-medium">20%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Human-AI collaboration report</span>
+                            <span class="font-medium">20%</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 dark:text-gray-300 mb-2">👥 Group (50%)</h4>
+                    <div class="space-y-1 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">In-class presentations</span>
+                            <span class="font-medium">20%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-400">Final project report & poster</span>
+                            <span class="font-medium">30%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all week cards
+        document.querySelectorAll('.fade-in-up').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        // Course Introduction Slide Functionality
+        let currentSlide = 1;
+        const totalSlides = 5;
+        
+        // Questions for each slide
+        const slideQuestions = {
+            1: {
+                question: "What is the main focus of SDG 11 in the context of this course?",
+                options: [
+                    "A) Economic development only",
+                    "B) Sustainable cities and communities", 
+                    "C) Technology advancement"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! SDG 11 focuses on sustainable cities and communities, which is central to this course's policy analysis approach.",
+                    incorrect: "❌ Not quite. SDG 11 specifically targets sustainable cities and communities, which aligns with our participatory policy analysis goals."
+                }
+            },
+            2: {
+                question: "Which of the following is NOT a learning objective of this course?",
+                options: [
+                    "A) Analyze public policy using data-driven approaches",
+                    "B) Master advanced statistical modeling",
+                    "C) Collaborate effectively with AI tools"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! This course focuses on policy analysis and AI collaboration, not advanced statistical modeling.",
+                    incorrect: "❌ Incorrect. Advanced statistical modeling is not a primary learning objective of this course."
+                }
+            },
+            3: {
+                question: "Dr. Talia Wu is from which department?",
+                options: [
+                    "A) Liberal & Cultural Studies",
+                    "B) Mathematics",
+                    "C) Computer Science"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! Dr. Talia Wu is from the Mathematics department.",
+                    incorrect: "❌ Incorrect. Dr. Talia Wu is from the Mathematics department, while Dr. Simon Wang is from Liberal & Cultural Studies."
+                }
+            },
+            4: {
+                question: "What percentage of the final grade comes from individual work?",
+                options: [
+                    "A) 40%",
+                    "B) 50%",
+                    "C) 60%"
+                ],
+                correct: "b",
+                feedback: {
+                    correct: "✅ Correct! Individual work accounts for 50% of the final grade (10% + 20% + 20%).",
+                    incorrect: "❌ Incorrect. Individual work accounts for exactly 50% of the final grade."
+                }
+            },
+            5: {
+                question: "True or False: Classes are held on Tuesdays from 9:30 to 12:20.",
+                options: [
+                    "A) True",
+                    "B) False"
+                ],
+                correct: "a",
+                feedback: {
+                    correct: "✅ Correct! Classes are indeed held on Tuesdays from 9:30 to 12:20.",
+                    incorrect: "❌ Incorrect. The schedule clearly states classes are on Tuesdays from 9:30 to 12:20."
+                }
+            }
+        };
+
+        function toggleCourseIntro() {
+            const section = document.getElementById('courseIntroSection');
+            section.classList.toggle('hidden');
+            if (!section.classList.contains('hidden')) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                updateQuestion();
+            }
+        }
+
+        function showSlide(slideNumber) {
+            // Hide all slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.add('hidden');
+                slide.classList.remove('active');
+            });
+            
+            // Show current slide
+            const currentSlideElement = document.querySelector(`[data-slide="${slideNumber}"]`);
+            if (currentSlideElement) {
+                currentSlideElement.classList.remove('hidden');
+                currentSlideElement.classList.add('active');
+            }
+            
+            // Update counter
+            document.getElementById('slideCounter').textContent = `${slideNumber} / ${totalSlides}`;
+            
+            // Update question
+            updateQuestion();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function updateQuestion() {
+            const questionData = slideQuestions[currentSlide];
+            if (questionData) {
+                const questionContainer = document.getElementById('questionSection');
+                questionContainer.innerHTML = `
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💭 Quick Check: Test Your Understanding</h4>
+                    <div class="question-container">
+                        <p class="text-sm text-gray-700 dark:text-gray-300 mb-3"><strong>Question:</strong> ${questionData.question}</p>
+                        <div class="space-y-2">
+                            ${questionData.options.map((option, index) => `
+                                <label class="flex items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded">
+                                    <input type="radio" name="currentQuestion" value="${String.fromCharCode(97 + index)}" class="mr-2">
+                                    <span class="text-sm text-gray-700 dark:text-gray-300">${option}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                        <button onclick="checkCurrentAnswer()" class="mt-3 px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark transition-colors">Check Answer</button>
+                        <div id="currentFeedback" class="hidden mt-2 text-sm"></div>
+                    </div>
+                `;
+            }
+        }
+
+        function checkCurrentAnswer() {
+            const selected = document.querySelector('input[name="currentQuestion"]:checked');
+            const questionData = slideQuestions[currentSlide];
+            const feedback = document.getElementById('currentFeedback');
+            
+            if (!selected) {
+                feedback.className = 'mt-2 text-sm text-orange-600 dark:text-orange-400';
+                feedback.textContent = '⚠️ Please select an answer first.';
+                feedback.classList.remove('hidden');
+                return;
+            }
+            
+            const isCorrect = selected.value === questionData.correct;
+            
+            if (isCorrect) {
+                feedback.className = 'mt-2 text-sm text-green-600 dark:text-green-400';
+                feedback.textContent = questionData.feedback.correct;
+            } else {
+                feedback.className = 'mt-2 text-sm text-red-600 dark:text-red-400';
+                feedback.textContent = questionData.feedback.incorrect;
+            }
+            
+            feedback.classList.remove('hidden');
+            
+            // Disable radio buttons after answering
+            document.querySelectorAll('input[name="currentQuestion"]').forEach(input => {
+                input.disabled = true;
+            });
+        }
+
+        // Legacy function for compatibility
+        function checkAnswer(questionNum, correctAnswer) {
+            checkCurrentAnswer();
+        }
+
+        // Fullscreen slide functionality
+        function openFullscreenSlide() {
+            const modal = document.getElementById('fullscreenModal');
+            const fullscreenContainer = document.getElementById('fullscreenSlideContainer');
+            const currentSlideElement = document.querySelector('.slide.active');
+            
+            if (currentSlideElement) {
+                // Clone the current slide content for fullscreen
+                fullscreenContainer.innerHTML = currentSlideElement.outerHTML;
+                // Update the fullscreen counter
+                document.getElementById('slideCounterFullscreen').textContent = `${currentSlide} / ${totalSlides}`;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closeFullscreenSlide() {
+            const modal = document.getElementById('fullscreenModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        function nextSlideFullscreen() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                const nextSlideElement = document.querySelector(`[data-slide="${currentSlide}"]`);
+                if (nextSlideElement) {
+                    const fullscreenContainer = document.getElementById('fullscreenSlideContainer');
+                    fullscreenContainer.innerHTML = nextSlideElement.outerHTML;
+                    document.getElementById('slideCounterFullscreen').textContent = `${currentSlide} / ${totalSlides}`;
+                    // Also update the regular slide view
+                    showSlide(currentSlide);
+                }
+            }
+        }
+
+        function prevSlideFullscreen() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                const prevSlideElement = document.querySelector(`[data-slide="${currentSlide}"]`);
+                if (prevSlideElement) {
+                    const fullscreenContainer = document.getElementById('fullscreenSlideContainer');
+                    fullscreenContainer.innerHTML = prevSlideElement.outerHTML;
+                    document.getElementById('slideCounterFullscreen').textContent = `${currentSlide} / ${totalSlides}`;
+                    // Also update the regular slide view
+                    showSlide(currentSlide);
+                }
+            }
+        }
+
+        // Assessment tab functionality
+        function showAssessmentTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.assessment-tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.assessment-tab').forEach(tab => {
+                tab.classList.remove('active', 'text-primary', 'border-primary');
+                tab.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            });
+            
+            // Show selected tab content
+            const selectedContent = document.getElementById(`${tabName}-tab`);
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active', 'text-primary', 'border-primary');
+            event.target.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+        }
+
+        // Initialize assessment tabs on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial active tab styling
+            const firstTab = document.querySelector('.assessment-tab.active');
+            if (firstTab) {
+                firstTab.classList.add('text-primary', 'border-primary');
+                firstTab.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            }
+            
+            // Style inactive tabs
+            document.querySelectorAll('.assessment-tab:not(.active)').forEach(tab => {
+                tab.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+                tab.classList.remove('text-primary', 'border-primary');
+            });
+        });
+
+        // Close fullscreen modal when clicking outside
+        document.getElementById('fullscreenModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFullscreenSlide();
+            }
+        });
+
+        // Close fullscreen modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('fullscreenModal');
+                if (!modal.classList.contains('hidden')) {
+                    closeFullscreenSlide();
+                }
+            }
+        });
+
+        // Roadmap toggle functionality
+        function toggleRoadmap() {
+            const container = document.getElementById('roadmapContainer');
+            const toggleText = document.getElementById('roadmapToggleText');
+            const toggleIcon = document.getElementById('roadmapToggleIcon');
+            
+            if (container.classList.contains('hidden')) {
+                // Show roadmap
+                container.classList.remove('hidden');
+                toggleText.textContent = '📅 Hide Course Roadmap';
+                toggleIcon.style.transform = 'rotate(180deg)';
+                // Smooth scroll to roadmap
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                // Hide roadmap
+                container.classList.add('hidden');
+                toggleText.textContent = '📅 Show Course Roadmap';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
+
+

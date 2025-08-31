@@ -93,6 +93,11 @@ function togglePrompt(type) {
         if (type === 'system' && (!systemPrompt || systemPrompt === '')) {
             loadSystemPrompt();
         }
+        
+        // Load prompt when expanding welcome prompt section
+        if (type === 'welcome' && (!welcomePrompt || welcomePrompt === '')) {
+            loadWelcomePrompt();
+        }
     }
 }
 
@@ -126,6 +131,18 @@ function updateSystemPromptDisplay() {
     }
 }
 
+function updateWelcomePromptDisplay() {
+    const welcomeDisplay = document.getElementById('welcome-display');
+    if (welcomeDisplay) {
+        const currentPrompt = welcomePrompt || defaultWelcome || 'Loading welcome message...';
+        welcomeDisplay.textContent = currentPrompt;
+        
+        if (currentPrompt.length > 200) {
+            welcomeDisplay.title = `${currentPrompt.length} characters`;
+        }
+    }
+}
+
 async function loadSystemPrompt() {
     try {
         const response = await fetch('/aitutor/prompts/system.txt');
@@ -153,15 +170,18 @@ async function loadWelcomePrompt() {
             const content = await response.text();
             defaultWelcome = content.trim();
             welcomePrompt = defaultWelcome;
+            updateWelcomePromptDisplay();
             console.log('✅ Welcome prompt loaded');
         } else {
             defaultWelcome = 'Welcome! How can I help you today?';
             welcomePrompt = defaultWelcome;
+            updateWelcomePromptDisplay();
         }
     } catch (error) {
         console.error('Error loading welcome prompt:', error);
         defaultWelcome = 'Welcome! How can I help you today?';
         welcomePrompt = defaultWelcome;
+        updateWelcomePromptDisplay();
     }
 }
 
@@ -205,6 +225,28 @@ async function handleSystemPromptEdit(initialPrompt = null) {
     document.body.appendChild(modal);
 }
 
+async function handleWelcomePromptEdit(initialPrompt = null) {
+    const currentPrompt = initialPrompt || welcomePrompt || defaultWelcome;
+    
+    const modal = document.createElement('div');
+    modal.className = 'prompt-edit-modal';
+    modal.innerHTML = `
+        <div class="prompt-edit-content">
+            <div class="prompt-edit-header">
+                <h3>Edit Welcome Message</h3>
+                <button class="close-btn" onclick="this.closest('.prompt-edit-modal').remove()">×</button>
+            </div>
+            <textarea class="prompt-edit-textarea">${currentPrompt}</textarea>
+            <div class="prompt-edit-buttons">
+                <button class="btn btn-secondary" onclick="this.closest('.prompt-edit-modal').remove()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveWelcomePrompt(this)">Save Changes</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+}
+
 async function saveSystemPrompt(button) {
     const modal = button.closest('.prompt-edit-modal');
     const newPrompt = modal.querySelector('.prompt-edit-textarea').value;
@@ -220,11 +262,29 @@ async function saveSystemPrompt(button) {
     }
 }
 
+async function saveWelcomePrompt(button) {
+    const modal = button.closest('.prompt-edit-modal');
+    const newPrompt = modal.querySelector('.prompt-edit-textarea').value;
+    
+    if (newPrompt && newPrompt !== welcomePrompt) {
+        welcomePrompt = newPrompt;
+        updateWelcomePromptDisplay();
+        modal.remove();
+        showNotification('Welcome message updated!', 'success');
+    } else {
+        modal.remove();
+    }
+}
+
 function resetPrompt(type) {
     if (type === 'system') {
         systemPrompt = defaultSystem;
         updateSystemPromptDisplay();
         showNotification('System prompt reset to default', 'info');
+    } else if (type === 'welcome') {
+        welcomePrompt = defaultWelcome;
+        updateWelcomePromptDisplay();
+        showNotification('Welcome message reset to default', 'info');
     }
 }
 
@@ -474,7 +534,6 @@ function startNewSession() {
     }
 }
 
-// Add this after startNewSession function
 async function generateReport() {
     if (chatHistory.length === 0) {
         showNotification('No conversation to generate report from', 'error');
@@ -662,6 +721,7 @@ function initializeSections() {
     
     const apiContent = document.getElementById('api-content');
     const systemContent = document.getElementById('system-content');
+    const welcomeContent = document.getElementById('welcome-content');
     const apiToggle = document.getElementById('api-toggle');
     const systemToggle = document.querySelector('.prompt-header .toggle-icon');
     
@@ -680,6 +740,13 @@ function initializeSections() {
         console.log('❌ System content element not found');
     }
     
+    if (welcomeContent) {
+        welcomeContent.classList.remove('expanded');
+        console.log('✅ Welcome section collapsed');
+    } else {
+        console.log('❌ Welcome content element not found');
+    }
+    
     // Set toggle icons
     if (apiToggle) {
         apiToggle.textContent = '▼';
@@ -696,9 +763,6 @@ function initializeSections() {
     }
 }
 
-
-
-
 // ============================================
 // GLOBAL EXPORTS
 // ============================================
@@ -706,7 +770,10 @@ window.togglePrompt = togglePrompt;
 window.toggleSection = toggleSection;
 window.handleRoleTagClick = handleRoleTagClick;
 window.handleSystemPromptEdit = handleSystemPromptEdit;
+window.handleWelcomePromptEdit = handleWelcomePromptEdit;
 window.saveSystemPrompt = saveSystemPrompt;
+window.saveWelcomePrompt = saveWelcomePrompt;
+window.updateWelcomePromptDisplay = updateWelcomePromptDisplay;
 window.resetPrompt = resetPrompt;
 window.testConnection = testConnection;
 window.connectAPI = connectAPI;
