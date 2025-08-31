@@ -614,3 +614,55 @@ function loadModelFromCache() {
     }
 }
 
+
+// Initialize application when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Initializing AI Tutor...');
+    
+    try {
+        // Initialize core functionality
+        setupEventListeners();
+        loadPreferencesFromCache();
+        loadModelFromCache();
+        loadApiKeyFromCache();
+        
+        // Initialize sections in collapsed state
+        initializeSections();
+        
+        // Load prompts
+        loadPrompts();
+        
+        console.log('✅ AI Tutor initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing AI Tutor:', error);
+    }
+});
+
+// Initialize sections in collapsed state
+function initializeSections() {
+    // Collapse API section by default
+    const apiContent = document.getElementById('api-content');
+    if (apiContent) {
+        apiContent.classList.remove('expanded');
+    }
+    
+    // Collapse system prompt section by default
+    const systemContent = document.getElementById('system-content');
+    if (systemContent) {
+        systemContent.classList.remove('expanded');
+    }
+    
+    // Set toggle icons to collapsed state
+    const apiToggle = document.getElementById('api-toggle');
+    if (apiToggle) {
+        apiToggle.textContent = '▼';
+    }
+    
+    const systemToggle = document.querySelector('#system-content').parentElement.querySelector('.toggle-icon');
+    if (systemToggle) {
+        systemToggle.textContent = '▼';
+    }
+}
+
+// Make function available globally
+window.initializeSections = initializeSections;
