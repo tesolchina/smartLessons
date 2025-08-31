@@ -263,3 +263,15 @@ if __name__ == '__main__':
     port = 5000
     app.run(host='0.0.0.0', port=port, debug=False)
     
+# Add prompt serving route
+@app.route('/prompts/<filename>')
+def serve_prompts(filename):
+    try:
+        with open(f'prompts/{filename}', 'r', encoding='utf-8') as file:
+            content = file.read()
+        from flask import Response
+        return Response(content, mimetype='text/plain')
+    except FileNotFoundError:
+        return f'Prompt file {filename} not found', 404
+    except Exception as e:
+        return f'Error: {str(e)}', 500

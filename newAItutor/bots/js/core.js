@@ -493,3 +493,4 @@ window.togglePrompt = togglePrompt;
 window.toggleSidebar = toggleSidebar;
 
 console.log('✅ Toggle functions added to core.js');
+// Prompt Loading Functions from videoHelper
