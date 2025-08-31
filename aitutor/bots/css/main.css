@@ -18,31 +18,37 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 350px 1fr;
+    display: flex;
     height: 90vh;
     min-height: 600px;
-    position: relative; /* Added */
-    transition: grid-template-columns 0.3s ease; /* Added */
 }
 
-/* Add this new class */
-.container.sidebar-collapsed {
-    grid-template-columns: 0 1fr;
+.sidebar {
+    flex: 0 0 350px;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
 }
 
-/* Add responsive design */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        height: 100vh;
-        border-radius: 0;
-        margin: 0;
-    }
-    
-    .container.sidebar-collapsed {
-        grid-template-columns: 1fr;
-    }
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.chat-input-container {
+    flex: 0 0 auto;
+    border-top: 1px solid #ddd;
+    background: white;
+    padding: 15px;
 }
 
 .notification {
@@ -73,62 +79,13 @@ body {
 
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
+        flex-direction: column;
+        height: 100vh;
+        border-radius: 0;
+        margin: 0;
     }
-}
-
-
-/* Ensure proper flexbox layout */
-.container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.sidebar {
-    flex: 0 0 350px;
-    overflow-y: auto;
-    border-right: 1px solid #ddd;
-}
-
-.chat-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    min-width: 0; /* Prevent flex item from growing beyond container */
-}
-
-.chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-}
-
-.chat-input-container {
-    flex: 0 0 auto;
-    border-top: 1px solid #ddd;
-    background: white;
-}
-/* Fix layout */
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-.sidebar {
-    flex: 0 0 350px;
-    overflow-y: auto;
-}
-
-.chat-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.chat-messages {
-    flex: 1;
-    overflow-y: auto;
+    
+    .sidebar {
+        flex: 0 0 200px;
+    }
 }
