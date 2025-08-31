@@ -663,3 +663,26 @@ function initializeSections() {
 
 // Make function available globally
 window.initializeSections = initializeSections;
+
+// Initialize application when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Initializing AI Tutor...');
+    
+    try {
+        // Initialize core functionality
+        setupEventListeners();
+        loadPreferencesFromCache();
+        loadModelFromCache();
+        loadApiKeyFromCache();
+        
+        // Initialize sections in collapsed state
+        initializeSections();
+        
+        // Load prompts
+        loadPrompts();
+        
+        console.log('✅ AI Tutor initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing AI Tutor:', error);
+    }
+});
