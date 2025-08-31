@@ -1,9 +1,6 @@
 .sidebar {
-    width: 350px;
-    height: 100vh;
     background: #f8f9fa;
     border-right: 1px solid #e0e0e0;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
@@ -29,205 +26,246 @@
     text-align: center;
 }
 
-/* API Section */
-.api-header {
-    padding: 12px 15px;
-    background: rgba(0, 0, 0, 0.03);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-    transition: background 0.2s ease;
-}
-
-.api-header:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.api-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    padding: 0 15px;
-}
-
-.api-content.expanded {
-    max-height: 400px;
-    padding: 15px;
-}
-
-/* Prompt Section */
 .prompt-section {
     margin-bottom: 20px;
 }
 
-.prompt-header {
-    padding: 12px 15px;
-    background: rgba(0, 0, 0, 0.03);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-    transition: background 0.2s ease;
+.api-section {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 25px;
 }
 
-.prompt-header:hover {
-    background: rgba(0, 0, 0, 0.05);
+.api-section h3 {
+    color: #856404;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
-.prompt-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    display: flex;
-    flex-direction: column;
+.api-instructions {
+    font-size: 0.85rem;
+    color: #856404;
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
-.prompt-content.expanded {
-    max-height: 400px;
-}
-
-.prompt-display {
-    flex: 1;
-    max-height: 250px;
-    overflow-y: auto;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.03);
+.api-key-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
     font-size: 0.9rem;
-    line-height: 1.5;
-    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.prompt-display::-webkit-scrollbar {
-    width: 6px;
-}
-
-.prompt-display::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-}
-
-.prompt-actions {
-    flex: 0 0 auto;
-    position: sticky;
-    bottom: 0;
-    background: inherit;
-    padding: 8px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    margin-top: auto;
+.api-buttons {
     display: flex;
     gap: 8px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
 }
 
-/* Input Groups */
-.input-group {
-    margin-bottom: 12px;
+.connection-status {
+    font-size: 0.8rem;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 8px;
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: 500;
+.status-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-loading {
+    background: #cce7ff;
+    color: #004085;
+    border: 1px solid #b3d7ff;
+}
+
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.prompt-header h3 {
+    font-size: 1rem;
+    color: #333;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.prompt-header.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.prompt-content {
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.prompt-content.hidden {
+    display: none;
+}
+
+.prompt-display {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
     font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-.input-group input,
-.input-group select {
+.prompt-editor {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-primary { background: #667eea; color: white; }
+.btn-secondary { background: #6c757d; color: white; }
+.btn-success { background: #28a745; color: white; }
+.btn-warning { background: #ffc107; color: #212529; }
+.btn-info { background: #17a2b8; color: white; }
+.btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+
+.btn:hover { 
+    transform: translateY(-1px); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        max-height: 400px;
+    }
+}
+
+.model-selection {
+    margin-bottom: 15px;
+}
+
+.model-dropdown {
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    font-size: 0.9rem;
-    box-sizing: border-box;
-}
-
-/* Buttons */
-.btn {
-    padding: 6px 12px;
+    border: 1px solid #ddd;
     border-radius: 6px;
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
+    background: white;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.model-dropdown:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.model-dropdown option {
+    padding: 8px;
+    background: white;
+    color: #333;
+}
+
+.model-dropdown option:hover {
+    background: #f8f9fa;
+}
+
+/* Sidebar Toggle Button */
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+    position: absolute;
+    left: 340px;
+    top: 15px;
+    z-index: 1000;
+    background: #667eea;
+    color: white;
     border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 10px;
+    opacity: 0.8; /* make it slightly transparent */
+}
+.sidebar-toggle-btn:hover {
+    background: #764ba2;
+    transform: scale(1.1);
+    opacity: 1;
 }
 
-.btn-primary {
-    background-color: #3b82f6;
-    color: white;
+.sidebar-toggle-btn .toggle-icon {
+    font-size: 12px;
+    transition: transform 0.3s ease;
 }
 
-.btn-secondary {
-    background-color: #6b7280;
-    color: white;
+/* Collapsed state */
+.container.sidebar-collapsed .sidebar {
+    transform: translateX(-350px);
 }
 
-.btn-info {
-    background-color: #60a5fa;
-    color: white;
+.container.sidebar-collapsed .sidebar-toggle-btn {
+    left: 15px;  /* changed from 20px to 15px for better positioning */
 }
 
-.btn:hover {
-    transform: translateY(-1px);
-    filter: brightness(110%);
+.container.sidebar-collapsed .sidebar-toggle-btn .toggle-icon {
+    transform: rotate(180deg);
+}
+/* Adjust main content when sidebar is collapsed */
+.container.sidebar-collapsed .chat-area {
+    margin-left: 0;
 }
 
-/* Role Tags */
-.role-tag {
-    display: inline-block;
-    padding: 2px 8px;
-    margin: 2px 4px;
-    background-color: #e5e7eb;
-    color: #374151;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
+/* Smooth transitions */
+.sidebar {
+    transition: transform 0.3s ease;
 }
 
-.role-tag:hover {
-    background-color: #60a5fa;
-    color: white;
-    transform: translateY(-1px);
+.chat-area {
+    transition: margin-left 0.3s ease;
 }
-
-/* Dark Mode */
-.dark .api-header,
-.dark .prompt-header {
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.dark .api-header:hover,
-.dark .prompt-header:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.dark .prompt-display {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark .prompt-display::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.dark .input-group input,
-.dark .input-group select {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: inherit;
-}
-
-.dark .prompt-actions {
-    border-top-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark .role-tag {
-    background-color: #374151;
-    color: #e5e7eb;
-}
-
