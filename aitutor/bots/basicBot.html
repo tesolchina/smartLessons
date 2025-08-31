@@ -74,7 +74,7 @@
                     </div>
                 </div>
 
-                <!-- System Prompt Section -->
+            <!-- System Prompt Section -->
                 <div class="prompt-section">
                     <div class="prompt-header" onclick="togglePrompt('system')">
                         <h3>⚙️ System Instructions</h3>
@@ -82,20 +82,34 @@
                     </div>
                     <div class="prompt-content" id="system-content">
                         <div class="prompt-display" id="system-display">Loading system instructions from file...</div>
-                        <button class="btn btn-primary" onclick="editPrompt('system')">Edit System</button>
-                        <button class="btn btn-secondary" onclick="resetPrompt('system')">Reset</button>
-                        <div style="margin-top: 10px;">
-                            <small style="color: #666;">💡 Try roles like: Math Tutor, Writing Coach, Research Assistant, Language Partner</small>
+                        <div class="prompt-actions">
+                            <button class="btn btn-primary" onclick="handleSystemPromptEdit()">✏️ Edit System</button>
+                            <button class="btn btn-secondary" onclick="resetPrompt('system')">↺ Reset</button>
+                            <button class="btn btn-info" onclick="startNewSession()">🔄 New Session</button>
+                        </div>
+                        <div class="prompt-hint" style="margin-top: 10px;">
+                            <small class="text-gray-600 dark:text-gray-400">
+                                💡 Example roles:
+                                <span class="role-tag" onclick="handleRoleTagClick('Math Tutor')">Math Tutor</span>
+                                <span class="role-tag" onclick="handleRoleTagClick('Writing Coach')">Writing Coach</span>
+                                <span class="role-tag" onclick="handleRoleTagClick('Research Assistant')">Research Assistant</span>
+                                <span class="role-tag" onclick="handleRoleTagClick('Language Partner')">Language Partner</span>
+                            </small>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Credits Footer -->
-            <div class="sidebar-footer">
-                <strong>Created by:</strong><br>
-                Dr. Simon Wang<br>
-                Innovation Officer, Language Centre<br>
+
+        
+        </div>
+    </div>
+
+    <!-- Credits Footer -->
+    <div class="sidebar-footer">
+        <strong>Created by:</strong><br>
+        Dr. Simon Wang<br>
+        Innovation Officer, Language Centre<br>
                 Hong Kong Baptist University<br>
                 <a href="mailto:simonwang@hkbu.edu.hk" style="color: #667eea;">simonwang@hkbu.edu.hk</a>
             </div>

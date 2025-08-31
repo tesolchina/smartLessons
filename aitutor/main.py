@@ -1,11 +1,12 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, session 
 from flask_cors import CORS
 import requests
 import json
 import os
 
 app = Flask(__name__)
-CORS(app)
+app.secret_key = os.urandom(24)  # Add session support
+CORS(app, supports_credentials=True)  # Enable credentials for session
 
 @app.route('/')
 def index():
@@ -30,12 +31,16 @@ def chat():
         return response
     
     try:
-        data = request.json
+        data = request.get_json(force=True)
+        if data is None:
+            return jsonify({'error': 'Invalid JSON data'}), 400
+            
         user_message = data.get('message', '')
-        api_key = data.get('apiKey', '')
-        provider = data.get('provider', 'hkbu')
-        model = data.get('model', 'gpt-4.1')
-        system_prompt = data.get('systemPrompt', '')
+        api_key = data.get('apiKey', '') # type: ignore
+        provider = data.get('provider', 'hkbu') # type: ignore
+        model = data.get('model', 'gpt-4.1') # type: ignore
+       # system_prompt = data.get('systemPrompt', '')
+        system_prompt = session.get('custom_system_prompt', data.get('systemPrompt', ''))
         
         if not api_key:
             return jsonify({'error': 'No API key provided'}), 400
@@ -63,9 +68,9 @@ def chat():
 def test_connection():
     try:
         data = request.json
-        api_key = data.get('apiKey', '')
-        provider = data.get('provider', 'hkbu')
-        model = data.get('model', 'gpt-4.1')
+        api_key = data.get('apiKey', '') # type: ignore
+        provider = data.get('provider', 'hkbu') # type: ignore
+        model = data.get('model', 'gpt-4.1') # type: ignore
         
         if not api_key:
             return jsonify({'error': 'No API key provided'}), 400
@@ -116,6 +121,29 @@ def serve_js(filename):
 @app.route('/frontend')
 def serve_frontend():
     return send_file('index.html')
+
+@app.route('/api/system-prompt', methods=['POST'])
+def update_system_prompt():
+    try:
+        data = request.get_json(force=True)
+        new_system_prompt = data.get('systemPrompt', '')
+        
+        if new_system_prompt:
+            session['custom_system_prompt'] = new_system_prompt
+            return jsonify({
+                'status': 'success',
+                'message': 'System prompt updated, session refreshed'
+            })
+        else:
+            # Reset to default
+            session.pop('custom_system_prompt', None)
+            return jsonify({
+                'status': 'success',
+                'message': 'System prompt reset to default'
+            })
+            
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
 
 def call_hkbu_api(message, api_key, model, system_prompt):
     """Call HKBU GenAI API"""

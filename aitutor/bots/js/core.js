@@ -67,6 +67,95 @@ function setupEventListeners() {
         }
 }
 
+// Add after setupEventListeners function
+function togglePrompt(type) {
+    const contentDiv = document.getElementById(`${type}-content`);
+    const toggleIcon = contentDiv.parentElement.querySelector('.toggle-icon');
+    
+    if (contentDiv.classList.contains('expanded')) {
+        contentDiv.classList.remove('expanded');
+        toggleIcon.textContent = '▼';
+    } else {
+        contentDiv.classList.add('expanded');
+        toggleIcon.textContent = '▲';
+        
+        // Scroll prompt into view if needed
+        const promptDisplay = contentDiv.querySelector('.prompt-display');
+        if (promptDisplay && promptDisplay.scrollHeight > promptDisplay.clientHeight) {
+            promptDisplay.scrollTop = 0;
+        }
+    }
+}
+
+// Make function available globally
+window.togglePrompt = togglePrompt;
+ 
+
+// System prompt display function
+function updateSystemPromptDisplay() {
+    const systemDisplay = document.getElementById('system-display');
+    if (systemDisplay) {
+        const currentPrompt = systemPrompt || defaultSystem || 'Loading system prompt...';
+        systemDisplay.textContent = currentPrompt;
+        
+        // Show character count for long prompts
+        if (currentPrompt.length > 200) {
+            systemDisplay.title = `${currentPrompt.length} characters`;
+        }
+    }
+}
+
+// Load and display system prompt from file
+async function loadSystemPrompt() {
+    try {
+        const response = await fetch('/aitutor/prompts/system.txt');
+        if (response.ok) {
+            const content = await response.text();
+            defaultSystem = content.trim();
+            systemPrompt = defaultSystem;
+            updateSystemPromptDisplay();
+            console.log('✅ System prompt loaded');
+        } else {
+            throw new Error('Failed to fetch system prompt');
+        }
+    } catch (error) {
+        console.error('Error loading system prompt:', error);
+        defaultSystem = 'You are a helpful AI assistant.';
+        systemPrompt = defaultSystem;
+        updateSystemPromptDisplay();
+    }
+}
+
+// Load prompts function (called by main.js)
+function loadPrompts() {
+    loadSystemPrompt();
+}
+
+
+// Role tag click handler
+function handleRoleTagClick(role) {
+    const rolePrompts = {
+        'Math Tutor': 'You are a patient and encouraging math tutor. Help students understand mathematical concepts step by step. Use clear explanations and examples.',
+        'Writing Coach': 'You are a writing coach helping students improve their writing skills. Provide constructive feedback, suggest improvements, and help with grammar and style.',
+        'Research Assistant': 'You are a research assistant helping students with academic research. Help them find sources, organize information, and develop arguments.',
+        'Language Partner': 'You are a friendly language learning partner. Help students practice conversation, correct mistakes gently, and explain grammar and vocabulary.'
+    };
+
+    if (rolePrompts[role]) {
+        handleSystemPromptEdit(rolePrompts[role]);
+    }
+}
+
+// Make functions available globally
+window.updateSystemPromptDisplay = updateSystemPromptDisplay;
+window.loadSystemPrompt = loadSystemPrompt;
+window.loadPrompts = loadPrompts;
+window.handleRoleTagClick = handleRoleTagClick;
+
+
+
+
+
 // API Functions
 async function testConnection() {
     const key = document.getElementById('api-key').value.trim();
@@ -291,10 +380,81 @@ function startNewSession() {
     }
 }
 
+// System Prompt Management
+async function updateSystemPrompt(newPrompt) {
+    try {
+        const response = await fetch('/api/system-prompt', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',  // Important for session handling
+            body: JSON.stringify({
+                systemPrompt: newPrompt
+            })
+        });
+        
+        if (response.ok) {
+            systemPrompt = newPrompt;  // Update local variable
+            saveChatHistoryToCache();  // Save to cache with new prompt
+            startNewSession();         // Start fresh session
+            return true;
+        } else {
+            throw new Error('Failed to update system prompt');
+        }
+    } catch (error) {
+        console.error('Error updating system prompt:', error);
+        showNotification('Failed to update system prompt', 'error');
+        return false;
+    }
+}
+
+// Add after the updateSystemPrompt function but before the Cache utility functions
+async function handleSystemPromptEdit(initialPrompt = null) {
+    const currentPrompt = initialPrompt || systemPrompt || defaultSystem;
+    
+    // Create modal for editing
+    const modal = document.createElement('div');
+    modal.className = 'prompt-edit-modal';
+    modal.innerHTML = `
+        <div class="prompt-edit-content">
+            <div class="prompt-edit-header">
+                <h3>Edit System Prompt</h3>
+                <button class="close-btn" onclick="this.closest('.prompt-edit-modal').remove()">×</button>
+            </div>
+            <textarea class="prompt-edit-textarea">${currentPrompt}</textarea>
+            <div class="prompt-edit-buttons">
+                <button class="btn btn-secondary" onclick="this.closest('.prompt-edit-modal').remove()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveSystemPrompt(this)">Save Changes</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+}
+
+// Add this helper function right after handleSystemPromptEdit
+async function saveSystemPrompt(button) {
+    const modal = button.closest('.prompt-edit-modal');
+    const newPrompt = modal.querySelector('.prompt-edit-textarea').value;
+    
+    if (newPrompt && newPrompt !== systemPrompt) {
+        const success = await updateSystemPrompt(newPrompt);
+        if (success) {
+            modal.remove();
+            startNewSession();
+        }
+    } else {
+        modal.remove();
+    }
+}
+
+
+
+
 // Make function available globally
 window.startNewSession = startNewSession;
-
-
+window.updateSystemPrompt = updateSystemPrompt;
+window.handleSystemPromptEdit = handleSystemPromptEdit;
+window.saveSystemPrompt = saveSystemPrompt;
 
 // Cache utility functions
 function saveToCache(key, data) {
@@ -398,7 +558,7 @@ function loadPreferencesFromCache() {
 // Notifications
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
+    notification.className = 'notification ' + type;
     notification.textContent = message;
     
     document.body.appendChild(notification);
