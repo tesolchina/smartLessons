@@ -24,44 +24,42 @@
             </div>
             
             <div class="sidebar-content">
-                <!-- API Configuration Section -->
-                <div class="api-section">
+            <!-- Replace the existing API configuration section with this -->
+            <div class="api-section">
+                <div class="api-header" onclick="toggleSection('api')">
                     <h3>🔑 API Configuration</h3>
+                    <span class="toggle-icon" id="api-toggle">▼</span>
+                </div>
+                <div class="api-content" id="api-content">
                     <div class="api-instructions">
-                        <strong>Step 1:</strong> Get your API key from <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" style="color: #667eea;">HKBU GenAI Platform</a><br>
-                        <strong>Step 2:</strong> Copy and paste your API key below<br>
-                        <strong>Step 3:</strong> Click "Test Connection" to verify
+                        <p>Enter your HKBU GenAI API key to start chatting:</p>
                     </div>
                     
-                    <input 
-                        type="password" 
-                        id="api-key" 
-                        class="api-key-input"
-                        placeholder="Paste your HKBU GenAI API key here..."
-                    >
+                    <div class="input-group">
+                        <label for="api-key">API Key:</label>
+                        <input type="password" id="api-key" class="api-key-input" placeholder="Enter your API key">
+                    </div>
                     
-                    <div class="model-selection">
-                        <label for="model-select" style="display: block; margin-bottom: 5px; font-size: 0.9rem; color: #856404;">
-                            <strong>Model:</strong>
-                        </label>
-                        <select id="model-select" class="model-dropdown">
-                            <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
-                            <option value="gpt-4.1">GPT-4.1 (Standard)</option>
-                            <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
-                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+                    <div class="input-group">
+                        <label for="model-select">Model:</label>
+                        <select id="model-select">
+                            <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                            <option value="gpt-4.1">GPT-4.1</option>
+                            <option value="claude-3.5-sonnet">Claude 3.5 Sonnet</option>
                         </select>
                     </div>
-
+                    
                     <div class="api-buttons">
-                        <button class="btn btn-info btn-sm" onclick="testConnection()">🔍 Test</button>
-                        <button class="btn btn-success btn-sm" onclick="connectAPI()" id="connect-btn" disabled>✅ Connect</button>
-                        <button class="btn btn-secondary btn-sm" onclick="clearAPI()">🗑️ Clear</button>
+                        <button onclick="testConnection()" class="btn btn-secondary">Test Connection</button>
+                        <button id="connect-btn" onclick="connectAPI()" class="btn btn-primary" disabled>Connect</button>
+                        <button onclick="clearAPI()" class="btn btn-danger">Clear API</button>
                     </div>
-
+                    
                     <div id="connection-status" class="connection-status" style="display: none;"></div>
                 </div>
+            </div>
 
-                <!-- Welcome Prompt Section -->
+            <!-- Welcome Prompt Section -->
                 <div class="prompt-section">
                     <div class="prompt-header" onclick="togglePrompt('welcome')">
                         <h3>📝 Welcome Message</h3>

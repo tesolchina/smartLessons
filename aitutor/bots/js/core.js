@@ -91,6 +91,23 @@ function togglePrompt(type) {
 window.togglePrompt = togglePrompt;
  
 
+// Add after the existing togglePrompt function
+function toggleSection(sectionType) {
+    const contentDiv = document.getElementById(`${sectionType}-content`);
+    const toggleIcon = document.getElementById(`${sectionType}-toggle`);
+    
+    if (contentDiv.classList.contains('expanded')) {
+        contentDiv.classList.remove('expanded');
+        toggleIcon.textContent = '▼';
+    } else {
+        contentDiv.classList.add('expanded');
+        toggleIcon.textContent = '▲';
+    }
+}
+
+// Make function available globally
+window.toggleSection = toggleSection;
+
 // System prompt display function
 function updateSystemPromptDisplay() {
     const systemDisplay = document.getElementById('system-display');
