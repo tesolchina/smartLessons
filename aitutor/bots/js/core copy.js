@@ -33,54 +33,44 @@ let userPreferences = {
     autoRestore: true
 };
 
-// ============================================
-// EVENT LISTENERS
-// ============================================
+// Event listeners setup
 function setupEventListeners() {
     const messageInput = document.getElementById('message-input');
-    if (messageInput) {
-        messageInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
+    messageInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
 
-        messageInput.addEventListener('input', function() {
-            this.style.height = 'auto';
-            this.style.height = Math.min(this.scrollHeight, 100) + 'px';
-        });
-    }
+    messageInput.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+    });
 
     // Auto-enable connect button when API key is entered
-    const apiKeyInput = document.getElementById('api-key');
-    if (apiKeyInput) {
-        apiKeyInput.addEventListener('input', function() {
-            const connectBtn = document.getElementById('connect-btn');
-            if (connectBtn) {
-                connectBtn.disabled = !this.value.trim();
-            }
-        });
-    }
-
+    document.getElementById('api-key').addEventListener('input', function() {
+        const connectBtn = document.getElementById('connect-btn');
+        if (this.value.trim()) {
+            connectBtn.disabled = false;
+        } else {
+            connectBtn.disabled = true;
+        }
+    });
     // Save model selection when changed
-    const modelSelect = document.getElementById('model-select');
-    if (modelSelect) {
-        modelSelect.addEventListener('change', function() {
-            saveModelToCache();
-            showNotification(`Model changed to ${this.options[this.selectedIndex].text}`, 'info');
-        });
-    }
+        const modelSelect = document.getElementById('model-select');
+        if (modelSelect) {
+            modelSelect.addEventListener('change', function() {
+                saveModelToCache();
+                showNotification(`Model changed to ${this.options[this.selectedIndex].text}`, 'info');
+            });
+        }
 }
 
-// ============================================
-// TOGGLE FUNCTIONS
-// ============================================
+// Add after setupEventListeners function
 function togglePrompt(type) {
     const contentDiv = document.getElementById(`${type}-content`);
-    const toggleIcon = contentDiv?.parentElement?.querySelector('.toggle-icon');
-    
-    if (!contentDiv || !toggleIcon) return;
+    const toggleIcon = contentDiv.parentElement.querySelector('.toggle-icon');
     
     if (contentDiv.classList.contains('expanded')) {
         contentDiv.classList.remove('expanded');
@@ -96,11 +86,13 @@ function togglePrompt(type) {
     }
 }
 
+// Make function available globally  
+window.togglePrompt = togglePrompt;
+
+// Add after the existing togglePrompt function
 function toggleSection(sectionType) {
     const contentDiv = document.getElementById(`${sectionType}-content`);
     const toggleIcon = document.getElementById(`${sectionType}-toggle`);
-    
-    if (!contentDiv || !toggleIcon) return;
     
     if (contentDiv.classList.contains('expanded')) {
         contentDiv.classList.remove('expanded');
@@ -111,21 +103,24 @@ function toggleSection(sectionType) {
     }
 }
 
-// ============================================
-// PROMPT MANAGEMENT
-// ============================================
+// Make function available globally
+window.toggleSection = toggleSection;
+
+// System prompt display function
 function updateSystemPromptDisplay() {
     const systemDisplay = document.getElementById('system-display');
     if (systemDisplay) {
         const currentPrompt = systemPrompt || defaultSystem || 'Loading system prompt...';
         systemDisplay.textContent = currentPrompt;
         
+        // Show character count for long prompts
         if (currentPrompt.length > 200) {
             systemDisplay.title = `${currentPrompt.length} characters`;
         }
     }
 }
 
+// Load and display system prompt from file
 async function loadSystemPrompt() {
     try {
         const response = await fetch('/aitutor/prompts/system.txt');
@@ -146,30 +141,13 @@ async function loadSystemPrompt() {
     }
 }
 
-async function loadWelcomePrompt() {
-    try {
-        const response = await fetch('/aitutor/prompts/welcome.txt');
-        if (response.ok) {
-            const content = await response.text();
-            defaultWelcome = content.trim();
-            welcomePrompt = defaultWelcome;
-            console.log('✅ Welcome prompt loaded');
-        } else {
-            defaultWelcome = 'Welcome! How can I help you today?';
-            welcomePrompt = defaultWelcome;
-        }
-    } catch (error) {
-        console.error('Error loading welcome prompt:', error);
-        defaultWelcome = 'Welcome! How can I help you today?';
-        welcomePrompt = defaultWelcome;
-    }
-}
-
+// Load prompts function (called by main.js)
 function loadPrompts() {
     loadSystemPrompt();
-    loadWelcomePrompt();
 }
 
+
+// Role tag click handler
 function handleRoleTagClick(role) {
     const rolePrompts = {
         'Math Tutor': 'You are a patient and encouraging math tutor. Help students understand mathematical concepts step by step. Use clear explanations and examples.',
@@ -183,9 +161,272 @@ function handleRoleTagClick(role) {
     }
 }
 
+// Make functions available globally
+window.updateSystemPromptDisplay = updateSystemPromptDisplay;
+window.loadSystemPrompt = loadSystemPrompt;
+window.loadPrompts = loadPrompts;
+window.handleRoleTagClick = handleRoleTagClick;
+
+
+
+
+
+// API Functions
+async function testConnection() {
+    const key = document.getElementById('api-key').value.trim();
+    const statusDiv = document.getElementById('connection-status');
+    
+    if (!key) {
+        showNotification('Please enter an API key first', 'error');
+        return;
+    }
+
+    statusDiv.style.display = 'block';
+    statusDiv.className = 'connection-status status-loading';
+    statusDiv.innerHTML = '🔄 Testing connection to HKBU GenAI...';
+    
+    try {
+        const response = await fetch('https://smartlessons-production.up.railway.app/api/test', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                apiKey: key,
+                provider: 'hkbu',
+                model: getSelectedModel()
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && !data.error) {
+            statusDiv.className = 'connection-status status-success';
+            statusDiv.innerHTML = '✅ Connection successful! API key is valid.';
+            document.getElementById('connect-btn').disabled = false;
+            showNotification('API key is valid!', 'success');
+        } else {
+            throw new Error(data.error || 'Connection failed');
+        }
+    } catch (error) {
+        statusDiv.className = 'connection-status status-error';
+        statusDiv.innerHTML = '❌ Connection failed: ' + error.message;
+        showNotification(`Connection test failed: ${error.message}`, 'error');
+    }
+}
+
+async function connectAPI() {
+    const key = document.getElementById('api-key').value.trim();
+    
+    if (!key) {
+        showNotification('Please enter an API key', 'error');
+        return;
+    }
+
+    apiKey = key;
+    isConnected = true;
+    
+    // Save API key to cache
+    saveApiKeyToCache();
+    
+    document.getElementById('message-input').disabled = false;
+    document.getElementById('message-input').placeholder = 'Type your message here... (Enter to send)';
+    document.getElementById('send-btn').disabled = false;
+    
+    // Show welcome message with loaded content (if prompts module is loaded)
+    if (typeof showWelcomeMessage === 'function') {
+        showWelcomeMessage();
+    }
+    showNotification('API connected successfully!', 'success');
+}
+
+function clearAPI() {
+    apiKey = '';
+    isConnected = false;
+    document.getElementById('api-key').value = '';
+    document.getElementById('connection-status').style.display = 'none';
+    document.getElementById('connect-btn').disabled = true;
+    document.getElementById('message-input').disabled = true;
+    document.getElementById('message-input').placeholder = 'Connect your API key first to start chatting...';
+    document.getElementById('send-btn').disabled = true;
+    document.getElementById('done-btn').disabled = true;
+    
+    // Clear API key from cache
+    clearCache(STORAGE_KEYS.API_KEY);
+    
+    // Reset chat
+    chatHistory = [];
+    clearCache(STORAGE_KEYS.CHAT_HISTORY);
+    
+    const messagesContainer = document.getElementById('chat-messages');
+    messagesContainer.innerHTML = `
+        <div class="message assistant">
+            <div class="message-content">
+                🔑 Please configure your API key first to start chatting!<br><br>
+                Follow the instructions in the sidebar to get your HKBU GenAI API key and test the connection.
+            </div>
+        </div>
+    `;
+    
+    showNotification('API disconnected and cache cleared.', 'info');
+}
+
+// Chat Functions
+async function sendMessage() {
+    if (!isConnected) {
+        showNotification('Please connect your API key first', 'error');
+        return;
+    }
+
+    const input = document.getElementById('message-input');
+    const message = input.value.trim();
+    
+    if (!message) return;
+
+    // Add user message
+    addMessage('user', message);
+    chatHistory.push({ role: 'user', content: message, timestamp: new Date() });
+    saveChatHistoryToCache();
+    
+    input.value = '';
+    input.style.height = 'auto';
+    
+    // Show typing indicator
+    showTyping();
+    
+    try {
+        const response = await fetch('https://smartlessons-production.up.railway.app/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: message,
+                apiKey: apiKey,
+                provider: 'hkbu',
+                model: 'gpt-4.1',
+                systemPrompt: getCombinedSystemPrompt()
+            })
+        });
+
+        const data = await response.json();
+        hideTyping();
+
+        if (response.ok && !data.error) {
+            addMessage('assistant', data.response);
+            chatHistory.push({ role: 'assistant', content: data.response, timestamp: new Date() });
+            saveChatHistoryToCache();
+            document.getElementById('done-btn').disabled = false;
+        } else {
+            addMessage('error', `Error: ${data.error || 'Unknown error'}`);
+        }
+        
+    } catch (error) {
+        hideTyping();
+        addMessage('error', `Network error: ${error.message}`);
+    }
+}
+
+function addMessage(type, content) {
+    const messagesContainer = document.getElementById('chat-messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}`;
+    
+    // Convert markdown-style formatting to HTML
+    const formattedContent = content
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')             // Italic
+        .replace(/\n/g, '<br>');                          // Line breaks
+    
+    messageDiv.innerHTML = `
+        <div class="message-content">${formattedContent}</div>
+    `;
+    
+    messagesContainer.appendChild(messageDiv);
+    
+    // Force scroll to bottom
+    setTimeout(() => {
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }, 100);
+}
+
+function showTyping() {
+    const typingDiv = document.createElement('div');
+    typingDiv.id = 'typing-indicator';
+    typingDiv.className = 'message assistant';
+    typingDiv.innerHTML = '<div class="message-content">🤖 Thinking...</div>';
+    
+    document.getElementById('chat-messages').appendChild(typingDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+
+function hideTyping() {
+    const typingDiv = document.getElementById('typing-indicator');
+    if (typingDiv) {
+        typingDiv.remove();
+    }
+}
+
+// Session Management
+function startNewSession() {
+    // Show confirmation dialog
+    const confirmNew = confirm('Start a new session? This will clear the current conversation.');
+    
+    if (confirmNew) {
+        // Clear chat history
+        chatHistory = [];
+        
+        // Clear chat messages display
+        const chatMessages = document.getElementById('chat-messages');
+        chatMessages.innerHTML = `
+            <div class="message assistant">
+                <div class="message-content">
+                    🔄 Starting new session...<br><br>
+                    How can I help you today?
+                </div>
+            </div>
+        `;
+        
+        // Reset any session-specific variables
+        document.getElementById('message-input').value = '';
+        document.getElementById('done-btn').disabled = true;
+        
+        // Clear cached chat history
+        clearCache(STORAGE_KEYS.CHAT_HISTORY);
+        
+        // Show notification
+        showNotification('Started new session', 'success');
+    }
+}
+
+// System Prompt Management
+async function updateSystemPrompt(newPrompt) {
+    try {
+        const response = await fetch('/api/system-prompt', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',  // Important for session handling
+            body: JSON.stringify({
+                systemPrompt: newPrompt
+            })
+        });
+        
+        if (response.ok) {
+            systemPrompt = newPrompt;  // Update local variable
+            saveChatHistoryToCache();  // Save to cache with new prompt
+            startNewSession();         // Start fresh session
+            return true;
+        } else {
+            throw new Error('Failed to update system prompt');
+        }
+    } catch (error) {
+        console.error('Error updating system prompt:', error);
+        showNotification('Failed to update system prompt', 'error');
+        return false;
+    }
+}
+
+// Add after the updateSystemPrompt function but before the Cache utility functions
 async function handleSystemPromptEdit(initialPrompt = null) {
     const currentPrompt = initialPrompt || systemPrompt || defaultSystem;
     
+    // Create modal for editing
     const modal = document.createElement('div');
     modal.className = 'prompt-edit-modal';
     modal.innerHTML = `
@@ -205,321 +446,32 @@ async function handleSystemPromptEdit(initialPrompt = null) {
     document.body.appendChild(modal);
 }
 
+// Add this helper function right after handleSystemPromptEdit
 async function saveSystemPrompt(button) {
     const modal = button.closest('.prompt-edit-modal');
     const newPrompt = modal.querySelector('.prompt-edit-textarea').value;
     
     if (newPrompt && newPrompt !== systemPrompt) {
-        systemPrompt = newPrompt;
-        updateSystemPromptDisplay();
-        modal.remove();
-        startNewSession();
-        showNotification('System prompt updated!', 'success');
+        const success = await updateSystemPrompt(newPrompt);
+        if (success) {
+            modal.remove();
+            startNewSession();
+        }
     } else {
         modal.remove();
     }
 }
 
-function resetPrompt(type) {
-    if (type === 'system') {
-        systemPrompt = defaultSystem;
-        updateSystemPromptDisplay();
-        showNotification('System prompt reset to default', 'info');
-    }
-}
 
-// ============================================
-// API FUNCTIONS
-// ============================================
-async function testConnection() {
-    const key = document.getElementById('api-key')?.value?.trim();
-    const statusDiv = document.getElementById('connection-status');
-    
-    if (!key) {
-        showNotification('Please enter an API key first', 'error');
-        return;
-    }
 
-    if (statusDiv) {
-        statusDiv.style.display = 'block';
-        statusDiv.className = 'connection-status status-loading';
-        statusDiv.innerHTML = '🔄 Testing connection to HKBU GenAI...';
-    }
-    
-    try {
-        const response = await fetch('https://smartlessons-production.up.railway.app/api/test', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                apiKey: key,
-                provider: 'hkbu',
-                model: getSelectedModel()
-            })
-        });
 
-        const data = await response.json();
+// Make function available globally
+window.startNewSession = startNewSession;
+window.updateSystemPrompt = updateSystemPrompt;
+window.handleSystemPromptEdit = handleSystemPromptEdit;
+window.saveSystemPrompt = saveSystemPrompt;
 
-        if (response.ok && !data.error) {
-            if (statusDiv) {
-                statusDiv.className = 'connection-status status-success';
-                statusDiv.innerHTML = '✅ Connection successful! API key is valid.';
-            }
-            const connectBtn = document.getElementById('connect-btn');
-            if (connectBtn) connectBtn.disabled = false;
-            showNotification('API key is valid!', 'success');
-        } else {
-            throw new Error(data.error || 'Connection failed');
-        }
-    } catch (error) {
-        if (statusDiv) {
-            statusDiv.className = 'connection-status status-error';
-            statusDiv.innerHTML = '❌ Connection failed: ' + error.message;
-        }
-        showNotification(`Connection test failed: ${error.message}`, 'error');
-    }
-}
-
-async function connectAPI() {
-    const key = document.getElementById('api-key')?.value?.trim();
-    
-    if (!key) {
-        showNotification('Please enter an API key', 'error');
-        return;
-    }
-
-    apiKey = key;
-    isConnected = true;
-    
-    saveApiKeyToCache();
-    
-    const messageInput = document.getElementById('message-input');
-    const sendBtn = document.getElementById('send-btn');
-    
-    if (messageInput) {
-        messageInput.disabled = false;
-        messageInput.placeholder = 'Type your message here... (Enter to send)';
-    }
-    if (sendBtn) sendBtn.disabled = false;
-    
-    showWelcomeMessage();
-    showNotification('API connected successfully!', 'success');
-}
-
-function clearAPI() {
-    apiKey = '';
-    isConnected = false;
-    
-    const apiKeyInput = document.getElementById('api-key');
-    const statusDiv = document.getElementById('connection-status');
-    const connectBtn = document.getElementById('connect-btn');
-    const messageInput = document.getElementById('message-input');
-    const sendBtn = document.getElementById('send-btn');
-    const doneBtn = document.getElementById('done-btn');
-    
-    if (apiKeyInput) apiKeyInput.value = '';
-    if (statusDiv) statusDiv.style.display = 'none';
-    if (connectBtn) connectBtn.disabled = true;
-    if (messageInput) {
-        messageInput.disabled = true;
-        messageInput.placeholder = 'Connect your API key first to start chatting...';
-    }
-    if (sendBtn) sendBtn.disabled = true;
-    if (doneBtn) doneBtn.disabled = true;
-    
-    clearCache(STORAGE_KEYS.API_KEY);
-    chatHistory = [];
-    clearCache(STORAGE_KEYS.CHAT_HISTORY);
-    
-    const messagesContainer = document.getElementById('chat-messages');
-    if (messagesContainer) {
-        messagesContainer.innerHTML = `
-            <div class="message assistant">
-                <div class="message-content">
-                    🔑 Please configure your API key first to start chatting!<br><br>
-                    Follow the instructions in the sidebar to get your HKBU GenAI API key and test the connection.
-                </div>
-            </div>
-        `;
-    }
-    
-    showNotification('API disconnected and cache cleared.', 'info');
-}
-
-// ============================================
-// CHAT FUNCTIONS
-// ============================================
-async function sendMessage() {
-    if (!isConnected) {
-        showNotification('Please connect your API key first', 'error');
-        return;
-    }
-
-    const input = document.getElementById('message-input');
-    const message = input?.value?.trim();
-    
-    if (!message) return;
-
-    addMessage('user', message);
-    chatHistory.push({ role: 'user', content: message, timestamp: new Date() });
-    saveChatHistoryToCache();
-    
-    if (input) {
-        input.value = '';
-        input.style.height = 'auto';
-    }
-    
-    showTyping();
-    
-    try {
-        const response = await fetch('https://smartlessons-production.up.railway.app/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                message: message,
-                apiKey: apiKey,
-                provider: 'hkbu',
-                model: getSelectedModel(),
-                systemPrompt: getCombinedSystemPrompt()
-            })
-        });
-
-        const data = await response.json();
-        hideTyping();
-
-        if (response.ok && !data.error) {
-            addMessage('assistant', data.response);
-            chatHistory.push({ role: 'assistant', content: data.response, timestamp: new Date() });
-            saveChatHistoryToCache();
-            const doneBtn = document.getElementById('done-btn');
-            if (doneBtn) doneBtn.disabled = false;
-        } else {
-            addMessage('error', `Error: ${data.error || 'Unknown error'}`);
-        }
-        
-    } catch (error) {
-        hideTyping();
-        addMessage('error', `Network error: ${error.message}`);
-    }
-}
-
-function addMessage(type, content) {
-    const messagesContainer = document.getElementById('chat-messages');
-    if (!messagesContainer) return;
-    
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${type}`;
-    
-    const formattedContent = content
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        .replace(/\n/g, '<br>');
-    
-    messageDiv.innerHTML = `<div class="message-content">${formattedContent}</div>`;
-    messagesContainer.appendChild(messageDiv);
-    
-    setTimeout(() => {
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }, 100);
-}
-
-function showTyping() {
-    const messagesContainer = document.getElementById('chat-messages');
-    if (!messagesContainer) return;
-    
-    const typingDiv = document.createElement('div');
-    typingDiv.id = 'typing-indicator';
-    typingDiv.className = 'message assistant';
-    typingDiv.innerHTML = '<div class="message-content">🤖 Thinking...</div>';
-    
-    messagesContainer.appendChild(typingDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-}
-
-function hideTyping() {
-    const typingDiv = document.getElementById('typing-indicator');
-    if (typingDiv) typingDiv.remove();
-}
-
-function showWelcomeMessage() {
-    const messagesContainer = document.getElementById('chat-messages');
-    if (!messagesContainer) return;
-    
-    const welcomeMsg = welcomePrompt || defaultWelcome || 'Welcome! How can I help you today?';
-    messagesContainer.innerHTML = `
-        <div class="message assistant">
-            <div class="message-content">${welcomeMsg}</div>
-        </div>
-    `;
-}
-
-// ============================================
-// SESSION MANAGEMENT
-// ============================================
-function startNewSession() {
-    const confirmNew = confirm('Start a new session? This will clear the current conversation.');
-    
-    if (confirmNew) {
-        chatHistory = [];
-        clearCache(STORAGE_KEYS.CHAT_HISTORY);
-        
-        showWelcomeMessage();
-        
-        const messageInput = document.getElementById('message-input');
-        const doneBtn = document.getElementById('done-btn');
-        
-        if (messageInput) messageInput.value = '';
-        if (doneBtn) doneBtn.disabled = true;
-        
-        showNotification('Started new session', 'success');
-    }
-}
-
-// Add this after startNewSession function
-async function generateReport() {
-    if (chatHistory.length === 0) {
-        showNotification('No conversation to generate report from', 'error');
-        return;
-    }
-
-    try {
-        const reportContent = `# Chat Session Report
-
-**Date:** ${new Date().toLocaleDateString()}
-**Time:** ${new Date().toLocaleTimeString()}
-**Messages:** ${chatHistory.length}
-
-## Conversation:
-
-${chatHistory.map((msg, index) => {
-    const role = msg.role === 'user' ? '**You:**' : '**Assistant:**';
-    return `${index + 1}. ${role} ${msg.content}`;
-}).join('\n\n')}
-
----
-*Generated by HKBU Learning Assistant*
-`;
-
-        // Create downloadable file
-        const blob = new Blob([reportContent], { type: 'text/markdown' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `chat-report-${new Date().toISOString().split('T')[0]}.md`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-
-        showNotification('Chat report downloaded!', 'success');
-    } catch (error) {
-        console.error('Error generating report:', error);
-        showNotification('Failed to generate report', 'error');
-    }
-}
-
-// ============================================
-// CACHE FUNCTIONS
-// ============================================
+// Cache utility functions
 function saveToCache(key, data) {
     try {
         localStorage.setItem(key, JSON.stringify(data));
@@ -551,6 +503,7 @@ function clearCache(key) {
 }
 
 function encodeApiKey(key) {
+    // Simple encoding (not encryption, just obfuscation)
     return btoa(key);
 }
 
@@ -575,8 +528,7 @@ function loadApiKeyFromCache() {
         if (encodedKey) {
             const decodedKey = decodeApiKey(encodedKey);
             if (decodedKey) {
-                const apiKeyInput = document.getElementById('api-key');
-                if (apiKeyInput) apiKeyInput.value = decodedKey;
+                document.getElementById('api-key').value = decodedKey;
                 return decodedKey;
             }
         }
@@ -618,22 +570,7 @@ function loadPreferencesFromCache() {
     }
 }
 
-function saveModelToCache() {
-    const selectedModel = getSelectedModel();
-    saveToCache('hkbu_selected_model', selectedModel);
-}
-
-function loadModelFromCache() {
-    const savedModel = loadFromCache('hkbu_selected_model');
-    if (savedModel) {
-        const modelSelect = document.getElementById('model-select');
-        if (modelSelect) modelSelect.value = savedModel;
-    }
-}
-
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
+// Notifications
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = 'notification ' + type;
@@ -641,93 +578,107 @@ function showNotification(message, type = 'info') {
     
     document.body.appendChild(notification);
     
-    setTimeout(() => notification.remove(), 4000);
+    setTimeout(() => {
+        notification.remove();
+    }, 4000);
 }
 
+// Helper function to get selected model
 function getSelectedModel() {
     const modelSelect = document.getElementById('model-select');
     return modelSelect ? modelSelect.value : 'gpt-4.1-mini';
 }
 
+// Helper function to combine core and user system prompts
 function getCombinedSystemPrompt() {
     const userSystemPrompt = systemPrompt || '';
     return CORE_SYSTEM_PROMPT + userSystemPrompt;
 }
 
-// ============================================
-// INITIALIZATION
-// ============================================
-function initializeSections() {
-    console.log('🔧 Initializing sections...');
-    
-    const apiContent = document.getElementById('api-content');
-    const systemContent = document.getElementById('system-content');
-    const apiToggle = document.getElementById('api-toggle');
-    const systemToggle = document.querySelector('.prompt-header .toggle-icon');
-    
-    // Start sections collapsed
-    if (apiContent) {
-        apiContent.classList.remove('expanded');
-        console.log('✅ API section collapsed');
-    } else {
-        console.log('❌ API content element not found');
-    }
-    
-    if (systemContent) {
-        systemContent.classList.remove('expanded');
-        console.log('✅ System section collapsed');
-    } else {
-        console.log('❌ System content element not found');
-    }
-    
-    // Set toggle icons
-    if (apiToggle) {
-        apiToggle.textContent = '▼';
-        console.log('✅ API toggle icon set');
-    } else {
-        console.log('❌ API toggle element not found');
-    }
-    
-    if (systemToggle) {
-        systemToggle.textContent = '▼';
-        console.log('✅ System toggle icon set');
-    } else {
-        console.log('❌ System toggle element not found');
+// Save model selection to cache
+function saveModelToCache() {
+    const selectedModel = getSelectedModel();
+    saveToCache('hkbu_selected_model', selectedModel);
+}
+
+// Load model selection from cache
+function loadModelFromCache() {
+    const savedModel = loadFromCache('hkbu_selected_model');
+    if (savedModel) {
+        const modelSelect = document.getElementById('model-select');
+        if (modelSelect) {
+            modelSelect.value = savedModel;
+        }
     }
 }
 
 
-
-
-// ============================================
-// GLOBAL EXPORTS
-// ============================================
-window.togglePrompt = togglePrompt;
-window.toggleSection = toggleSection;
-window.handleRoleTagClick = handleRoleTagClick;
-window.handleSystemPromptEdit = handleSystemPromptEdit;
-window.saveSystemPrompt = saveSystemPrompt;
-window.resetPrompt = resetPrompt;
-window.testConnection = testConnection;
-window.connectAPI = connectAPI;
-window.clearAPI = clearAPI;
-window.sendMessage = sendMessage;
-window.startNewSession = startNewSession;
-window.showWelcomeMessage = showWelcomeMessage;
-window.generateReport = generateReport;
-
-// ============================================
-// DOM READY INITIALIZATION
-// ============================================
+// Initialize application when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Initializing AI Tutor...');
     
     try {
+        // Initialize core functionality
         setupEventListeners();
         loadPreferencesFromCache();
         loadModelFromCache();
         loadApiKeyFromCache();
+        
+        // Initialize sections in collapsed state
         initializeSections();
+        
+        // Load prompts
+        loadPrompts();
+        
+        console.log('✅ AI Tutor initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing AI Tutor:', error);
+    }
+});
+
+// Initialize sections in collapsed state
+function initializeSections() {
+    // Start sections collapsed by default
+    const apiContent = document.getElementById('api-content');
+    if (apiContent) {
+        apiContent.classList.remove('expanded');
+    }
+    
+    const systemContent = document.getElementById('system-content');
+    if (systemContent) {
+        systemContent.classList.remove('expanded');
+    }
+    
+    // Set toggle icons to collapsed state (▼ = click to expand)
+    const apiToggle = document.getElementById('api-toggle');
+    if (apiToggle) {
+        apiToggle.textContent = '▼';
+    }
+    
+    const systemToggle = document.querySelector('#system-content').parentElement.querySelector('.toggle-icon');
+    if (systemToggle) {
+        systemToggle.textContent = '▼';
+    }
+}
+
+// Make function available globally
+window.initializeSections = initializeSections;
+
+// Initialize application when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Initializing AI Tutor...');
+    
+    try {
+        // Initialize core functionality
+        setupEventListeners();
+        loadPreferencesFromCache();
+        loadModelFromCache();
+        loadApiKeyFromCache();
+        
+        // Initialize sections in collapsed state
+        initializeSections();
+        
+        // Load prompts
         loadPrompts();
         
         console.log('✅ AI Tutor initialized successfully');
