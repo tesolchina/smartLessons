@@ -12,120 +12,83 @@
     <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
-     <div class="container">
-    <button id="sidebar-toggle" class="sidebar-toggle-btn">
-        <span class="toggle-icon">⚙️</span>
-    </button>
+    <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
                 <h2>🤖 Chatbot Configuration</h2>
-
             </div>
             
             <div class="sidebar-content">
-            <!-- Replace the existing API configuration section with this -->
-            <div class="api-section">
-                <div class="api-header" onclick="toggleSection('api')">
-                    <h3>🔑 API Configuration</h3>
-                    <span class="toggle-icon" id="api-toggle">▼</span>
-                </div>
-                <div class="api-content" id="api-content">
-                    <div class="api-instructions">
-                        <p>Enter your HKBU GenAI API key to start chatting:</p>
+                <!-- API Configuration Section -->
+                <div class="api-section">
+                    <div class="api-header" onclick="toggleSection('api')">
+                        <h3>🔑 API Configuration</h3>
+                        <span class="toggle-icon" id="api-toggle">▼</span>
                     </div>
-                    
-                    <div class="input-group">
-                        <label for="api-key">API Key:</label>
-                        <input type="password" id="api-key" class="api-key-input" placeholder="Enter your API key">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="model-select">Model:</label>
-                        <select id="model-select">
-                            <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
-                            <option value="gpt-4.1">GPT-4.1</option>
-                            <option value="claude-3.5-sonnet">Claude 3.5 Sonnet</option>
-                        </select>
-                    </div>
-                    
-                    <div class="api-buttons">
-                        <button onclick="testConnection()" class="btn btn-secondary">Test Connection</button>
-                        <button id="connect-btn" onclick="connectAPI()" class="btn btn-primary" disabled>Connect</button>
-                        <button onclick="clearAPI()" class="btn btn-danger">Clear API</button>
-                    </div>
-                    
-                    <div id="connection-status" class="connection-status" style="display: none;"></div>
-                </div>
-            </div>
-
-            <!-- Welcome Prompt Section -->
-                <div class="prompt-section">
-                    <div class="prompt-header" onclick="togglePrompt('welcome')">
-                        <h3>📝 Welcome Message</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="prompt-content" id="welcome-content">
-                        <div class="prompt-display" id="welcome-display">Loading welcome message from file...</div>
-                        <button class="btn btn-primary" onclick="editPrompt('welcome')">Edit Welcome</button>
-                        <button class="btn btn-secondary" onclick="resetPrompt('welcome')">Reset</button>
+                    <div class="api-content" id="api-content">
+                        <div class="input-group">
+                            <label for="api-key">API Key:</label>
+                            <input type="password" id="api-key" placeholder="Enter your API key">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="model-select">Model:</label>
+                            <select id="model-select">
+                                <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                                <option value="gpt-4.1">GPT-4.1</option>
+                                <option value="claude-3.5-sonnet">Claude 3.5 Sonnet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="api-buttons">
+                            <button onclick="testConnection()" class="btn btn-secondary">Test Connection</button>
+                            <button id="connect-btn" onclick="connectAPI()" class="btn btn-primary" disabled>Connect</button>
+                            <button onclick="clearAPI()" class="btn btn-danger">Clear API</button>
+                        </div>
+                        
+                        <div id="connection-status" class="connection-status" style="display: none;"></div>
                     </div>
                 </div>
 
-            <!-- System Prompt Section -->
+                <!-- System Prompt Section -->
                 <div class="prompt-section">
                     <div class="prompt-header" onclick="togglePrompt('system')">
                         <h3>⚙️ System Instructions</h3>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="prompt-content" id="system-content">
-                        <div class="prompt-display" id="system-display">Loading system instructions from file...</div>
+                        <div class="prompt-display" id="system-display">Loading system instructions...</div>
                         <div class="prompt-actions">
                             <button class="btn btn-primary" onclick="handleSystemPromptEdit()">✏️ Edit System</button>
                             <button class="btn btn-secondary" onclick="resetPrompt('system')">↺ Reset</button>
                             <button class="btn btn-info" onclick="startNewSession()">🔄 New Session</button>
                         </div>
-                        <div class="prompt-hint" style="margin-top: 10px;">
-                            <small class="text-gray-600 dark:text-gray-400">
-                                💡 Example roles:
-                                <span class="role-tag" onclick="handleRoleTagClick('Math Tutor')">Math Tutor</span>
-                                <span class="role-tag" onclick="handleRoleTagClick('Writing Coach')">Writing Coach</span>
-                                <span class="role-tag" onclick="handleRoleTagClick('Research Assistant')">Research Assistant</span>
-                                <span class="role-tag" onclick="handleRoleTagClick('Language Partner')">Language Partner</span>
-                            </small>
+                        <div class="prompt-hint">
+                            <small>💡 Example roles:</small><br>
+                            <span class="role-tag" onclick="handleRoleTagClick('Math Tutor')">Math Tutor</span>
+                            <span class="role-tag" onclick="handleRoleTagClick('Writing Coach')">Writing Coach</span>
+                            <span class="role-tag" onclick="handleRoleTagClick('Research Assistant')">Research Assistant</span>
+                            <span class="role-tag" onclick="handleRoleTagClick('Language Partner')">Language Partner</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-        
-        </div>
-    </div>
-
-    <!-- Credits Footer -->
-    <div class="sidebar-footer">
-        <strong>Created by:</strong><br>
-        Dr. Simon Wang<br>
-        Innovation Officer, Language Centre<br>
+            <div class="sidebar-footer">
+                <strong>Created by:</strong><br>
+                Dr. Simon Wang<br>
+                Innovation Officer, Language Centre<br>
                 Hong Kong Baptist University<br>
-                <a href="mailto:simonwang@hkbu.edu.hk" style="color: #667eea;">simonwang@hkbu.edu.hk</a>
+                <a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a>
             </div>
         </div>
 
         <!-- Chat Area -->
         <div class="chat-area">
             <div class="chat-header">
-                <div class="chat-header-main">
-                    <h1>HKBU Learning Assistant</h1>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">
-                        💡 Customize prompts, chat, and generate learning reports
-                    </div>
-                </div>
-                <button class="new-session-btn" onclick="startNewSession()">
-                    <span class="btn-icon">🔄</span>
-                    New Session
-                </button>
+                <h1>HKBU Learning Assistant</h1>
+                <button class="new-session-btn" onclick="startNewSession()">🔄 New Session</button>
             </div>
 
             <div class="chat-messages" id="chat-messages">
@@ -147,34 +110,10 @@
                         disabled
                     ></textarea>
                     <div class="input-buttons">
-                        <button class="send-btn" id="send-btn" onclick="sendMessage()" disabled title="Send Message">
-                            ➤
-                        </button>
-                        <button class="done-btn" id="done-btn" onclick="generateReport()" disabled title="Generate Report">
-                            ✓
-                        </button>
+                        <button class="send-btn" id="send-btn" onclick="sendMessage()" disabled>➤</button>
+                        <button class="done-btn" id="done-btn" onclick="generateReport()" disabled>✓</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Report Modal -->
-    <div class="report-modal" id="report-modal">
-        <!-- ... report modal content ... -->
-    </div>
-
-    <!-- Prompt Edit Modal -->
-    <div class="prompt-edit-modal" id="prompt-edit-modal">
-        <div class="prompt-edit-content">
-            <div class="prompt-edit-header">
-                <h3 id="prompt-edit-title">Edit Prompt</h3>
-                <button class="close-btn" onclick="closePromptEdit()">&times;</button>
-            </div>
-            <textarea id="prompt-edit-textarea" class="prompt-edit-textarea"></textarea>
-            <div class="prompt-edit-buttons">
-                <button class="btn btn-success" onclick="savePromptEdit()">Save Changes</button>
-                <button class="btn btn-secondary" onclick="closePromptEdit()">Cancel</button>
             </div>
         </div>
     </div>
