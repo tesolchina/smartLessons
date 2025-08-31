@@ -73,3 +73,8 @@ if __name__ == '__main__':
     print("   http://localhost:5000/bots/simpleBot.html")
     
     app.run(debug=True, host='0.0.0.0', port=5000)
+
+# Serve basic bot (main interface)
+@app.route('/bots/basicBot.html')
+def serve_basic_bot():
+    return send_file('bots/basicBot.html')

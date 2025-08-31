@@ -20,7 +20,6 @@
         <div class="sidebar">
             <div class="sidebar-header">
                 <h2>🤖 Chatbot Configuration</h2>
-
             </div>
             
             <div class="sidebar-content">
@@ -45,9 +44,9 @@
                             <strong>Model:</strong>
                         </label>
                         <select id="model-select" class="model-dropdown">
-                            <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
-                            <option value="gpt-4.1">GPT-4.1 (Standard)</option>
-                            <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
+                            <option value="gpt-4o-mini" selected>GPT-4o Mini (Default)</option>
+                            <option value="gpt-4o">GPT-4o (Standard)</option>
+                            <option value="gpt-4-turbo">GPT-4 Turbo</option>
                             <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
                         </select>
                     </div>
@@ -68,7 +67,7 @@
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="prompt-content" id="welcome-content">
-                        <div class="prompt-display" id="welcome-display">Loading welcome message from file...</div>
+                        <div class="prompt-display" id="welcome-display">Loading welcome message...</div>
                         <button class="btn btn-primary" onclick="editPrompt('welcome')">Edit Welcome</button>
                         <button class="btn btn-secondary" onclick="resetPrompt('welcome')">Reset</button>
                     </div>
@@ -81,7 +80,7 @@
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="prompt-content" id="system-content">
-                        <div class="prompt-display" id="system-display">Loading system instructions from file...</div>
+                        <div class="prompt-display" id="system-display">Loading system instructions...</div>
                         <button class="btn btn-primary" onclick="editPrompt('system')">Edit System</button>
                         <button class="btn btn-secondary" onclick="resetPrompt('system')">Reset</button>
                         <div style="margin-top: 10px;">
@@ -147,13 +146,8 @@
         </div>
     </div>
 
-    <!-- Report Modal -->
-    <div class="report-modal" id="report-modal">
-        <!-- ... report modal content ... -->
-    </div>
-
     <!-- Prompt Edit Modal -->
-    <div class="prompt-edit-modal" id="prompt-edit-modal">
+    <div class="prompt-edit-modal" id="prompt-edit-modal" style="display: none;">
         <div class="prompt-edit-content">
             <div class="prompt-edit-header">
                 <h3 id="prompt-edit-title">Edit Prompt</h3>
@@ -167,11 +161,7 @@
         </div>
     </div>
 
-    <!-- JavaScript Modules -->
+    <!-- Single JavaScript file with all functionality -->
     <script src="js/core.js"></script>
-    <script src="js/prompts.js"></script>
-    <script src="js/reports.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>
