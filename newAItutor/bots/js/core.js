@@ -436,3 +436,60 @@ function loadModelFromCache() {
         }
     }
 }
+// Toggle Functions for Sidebar Menu
+
+// Toggle prompt sections (welcome/system)
+function togglePrompt(type) {
+    const content = document.getElementById(`${type}-content`);
+    const header = document.querySelector(`[onclick="togglePrompt('${type}')"]`);
+    const icon = header ? header.querySelector('.toggle-icon') : null;
+    
+    if (content && icon) {
+        if (content.classList.contains('expanded')) {
+            content.classList.remove('expanded');
+            icon.textContent = '▼';
+        } else {
+            content.classList.add('expanded');
+            icon.textContent = '▲';
+        }
+    }
+}
+
+// Toggle sidebar collapse/expand
+function toggleSidebar() {
+    const container = document.querySelector('.container');
+    const toggleBtn = document.getElementById('sidebar-toggle');
+    
+    if (container) {
+        container.classList.toggle('sidebar-collapsed');
+        
+        // Update toggle button icon
+        const icon = toggleBtn ? toggleBtn.querySelector('.toggle-icon') : null;
+        if (icon) {
+            icon.textContent = container.classList.contains('sidebar-collapsed') ? '📋' : '⚙️';
+        }
+    }
+}
+
+// Initialize toggle functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add sidebar toggle functionality
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', toggleSidebar);
+    }
+    
+    // Initialize prompt sections as collapsed
+    const promptContents = document.querySelectorAll('[id$="-content"]');
+    promptContents.forEach(content => {
+        if (!content.classList.contains('expanded')) {
+            content.classList.add('collapsed');
+        }
+    });
+});
+
+// Export functions to global scope
+window.togglePrompt = togglePrompt;
+window.toggleSidebar = toggleSidebar;
+
+console.log('✅ Toggle functions added to core.js');
