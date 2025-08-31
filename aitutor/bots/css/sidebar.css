@@ -1,12 +1,11 @@
-/* ============================================
-   SIDEBAR LAYOUT
-   ============================================ */
 .sidebar {
+    width: 350px;
+    height: 100vh;
     background: #f8f9fa;
     border-right: 1px solid #e0e0e0;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
 }
 
 .sidebar-header {
@@ -30,17 +29,8 @@
     text-align: center;
 }
 
-/* ============================================
-   COLLAPSIBLE SECTIONS
-   ============================================ */
-.api-section, .prompt-section {
-    margin-bottom: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.api-header, .prompt-header {
+/* API Section */
+.api-header {
     padding: 12px 15px;
     background: rgba(0, 0, 0, 0.03);
     cursor: pointer;
@@ -51,36 +41,65 @@
     transition: background 0.2s ease;
 }
 
-.api-header:hover, .prompt-header:hover {
+.api-header:hover {
     background: rgba(0, 0, 0, 0.05);
 }
 
-.api-content, .prompt-content {
+.api-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     padding: 0 15px;
 }
 
-.api-content.expanded, .prompt-content.expanded {
+.api-content.expanded {
     max-height: 400px;
     padding: 15px;
 }
 
-/* ============================================
-   PROMPT DISPLAY
-   ============================================ */
+/* Prompt Section */
+.prompt-section {
+    margin-bottom: 20px;
+}
+
+.prompt-header {
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.prompt-header:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.prompt-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.prompt-content.expanded {
+    max-height: 400px;
+}
+
 .prompt-display {
+    flex: 1;
     max-height: 250px;
     overflow-y: auto;
     padding: 12px;
     background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     margin-bottom: 12px;
     font-size: 0.9rem;
     line-height: 1.5;
-    white-space: pre-wrap;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .prompt-display::-webkit-scrollbar {
@@ -92,9 +111,20 @@
     border-radius: 3px;
 }
 
-/* ============================================
-   FORM ELEMENTS
-   ============================================ */
+.prompt-actions {
+    flex: 0 0 auto;
+    position: sticky;
+    bottom: 0;
+    background: inherit;
+    padding: 8px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Input Groups */
 .input-group {
     margin-bottom: 12px;
 }
@@ -107,95 +137,46 @@
 }
 
 .input-group input,
-.input-group select,
-.api-key-input,
-.model-dropdown {
+.input-group select {
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     font-size: 0.9rem;
     box-sizing: border-box;
 }
 
-.input-group input:focus,
-.input-group select:focus,
-.model-dropdown:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+/* Buttons */
+.btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
-.btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    margin-right: 8px;
-    margin-bottom: 8px;
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-info {
+    background-color: #60a5fa;
+    color: white;
 }
 
 .btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    filter: brightness(110%);
 }
 
-.btn-primary { background: #667eea; color: white; }
-.btn-secondary { background: #6c757d; color: white; }
-.btn-info { background: #17a2b8; color: white; }
-.btn-danger { background: #dc3545; color: white; }
-
-.api-buttons, .prompt-actions {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-}
-
-.prompt-actions {
-    position: sticky;
-    bottom: 0;
-    background: inherit;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 8px 0;
-}
-
-/* ============================================
-   STATUS & FEEDBACK
-   ============================================ */
-.connection-status {
-    font-size: 0.8rem;
-    padding: 8px;
-    border-radius: 4px;
-    margin-top: 8px;
-}
-
-.status-success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.status-error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.status-loading {
-    background: #cce7ff;
-    color: #004085;
-    border: 1px solid #b3d7ff;
-}
-
-/* ============================================
-   ROLE TAGS
-   ============================================ */
+/* Role Tags */
 .role-tag {
     display: inline-block;
     padding: 2px 8px;
@@ -214,51 +195,7 @@
     transform: translateY(-1px);
 }
 
-/* ============================================
-   SIDEBAR TOGGLE
-   ============================================ */
-.sidebar-toggle-btn {
-    position: absolute;
-    left: 340px;
-    top: 15px;
-    z-index: 1000;
-    background: #667eea;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    font-size: 10px;
-    opacity: 0.8;
-}
-
-.sidebar-toggle-btn:hover {
-    background: #764ba2;
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-.container.sidebar-collapsed .sidebar {
-    transform: translateX(-350px);
-}
-
-.container.sidebar-collapsed .sidebar-toggle-btn {
-    left: 15px;
-}
-
-.container.sidebar-collapsed .sidebar-toggle-btn .toggle-icon {
-    transform: rotate(180deg);
-}
-
-/* ============================================
-   DARK MODE
-   ============================================ */
+/* Dark Mode */
 .dark .api-header,
 .dark .prompt-header {
     background: rgba(255, 255, 255, 0.03);
@@ -292,22 +229,4 @@
 .dark .role-tag {
     background-color: #374151;
     color: #e5e7eb;
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-@media (max-width: 768px) {
-    .sidebar {
-        max-height: 400px;
-    }
-    
-    .api-buttons,
-    .prompt-actions {
-        flex-direction: column;
-    }
-    
-    .btn {
-        margin-right: 0;
-    }
 }
