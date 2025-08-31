@@ -79,17 +79,15 @@ function togglePrompt(type) {
         contentDiv.classList.add('expanded');
         toggleIcon.textContent = '▲';
         
-        // Scroll prompt into view if needed
-        const promptDisplay = contentDiv.querySelector('.prompt-display');
-        if (promptDisplay && promptDisplay.scrollHeight > promptDisplay.clientHeight) {
-            promptDisplay.scrollTop = 0;
+        // Load prompt when expanding system prompt section
+        if (type === 'system' && (!systemPrompt || systemPrompt === '')) {
+            loadSystemPrompt();
         }
     }
 }
 
-// Make function available globally
+// Make function available globally  
 window.togglePrompt = togglePrompt;
- 
 
 // Add after the existing togglePrompt function
 function toggleSection(sectionType) {
@@ -640,19 +638,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize sections in collapsed state
 function initializeSections() {
-    // Collapse API section by default
+    // Start sections collapsed by default
     const apiContent = document.getElementById('api-content');
     if (apiContent) {
         apiContent.classList.remove('expanded');
     }
     
-    // Collapse system prompt section by default
     const systemContent = document.getElementById('system-content');
     if (systemContent) {
         systemContent.classList.remove('expanded');
     }
     
-    // Set toggle icons to collapsed state
+    // Set toggle icons to collapsed state (▼ = click to expand)
     const apiToggle = document.getElementById('api-toggle');
     if (apiToggle) {
         apiToggle.textContent = '▼';
