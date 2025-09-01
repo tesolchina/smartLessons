@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Wheel Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Password Protection Screen -->
+    <div id="login-screen">
+        <div class="login-box">
+            <h2>Enter Password</h2>
+            <form id="login-form">
+                <input type="password" id="password-input" placeholder="Password" required>
+                <button type="submit">Unlock</button>
+            </form>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Main Application Content (Initially Hidden) -->
+    <div id="app-content" style="display: none;">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Class Menu</h3>
+            </div>
+            <ul id="class-menu" class="components"></ul>
+        </nav>
+        <div id="content">
+            <button type="button" id="sidebarCollapse" class="btn"><span>☰</span></button>
+            <div id="iframe-container">
+                <h2>Welcome!</h2>
+                <p>Please select a class from the menu on the left to load the wheel.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
