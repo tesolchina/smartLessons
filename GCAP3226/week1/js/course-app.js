@@ -1074,8 +1074,37 @@ window.generateReport = function(lectureData = null) {
     }
 };
 
+window.resetContentArea = function() {
+    const contentArea = document.getElementById('contentArea');
+    
+    // Check if we have the content area and the stored HTML
+    if (contentArea && originalContentAreaHTML) {
+        contentArea.innerHTML = originalContentAreaHTML;
+
+        // Apply a fade-in animation for a smooth transition
+        contentArea.classList.remove('fade-in');
+        // This is a small trick to force the browser to re-apply the animation
+        void contentArea.offsetWidth; 
+        contentArea.classList.add('fade-in');
+        
+        console.log('🔄 View reset to initial state.');
+        
+        // Let the user know the view was reset
+        if (window.notificationManager) {
+            window.notificationManager.show('View has been reset', 'info');
+        }
+    } else {
+        console.error('❌ Could not reset the view. Original content not found.');
+    }
+};
+
+// A global variable to hold the initial welcome screen content.
+let originalContentAreaHTML = '';
+
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Capture the initial state of the content area once the DOM is loaded.
+    originalContentAreaHTML = document.getElementById('contentArea').innerHTML;
     window.app = new App();
     window.app.init();
 });

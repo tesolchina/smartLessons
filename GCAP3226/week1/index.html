@@ -144,22 +144,22 @@
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white">🧭 Week 1 Learning Activities</h3>
                     
-                    <div class="flex gap-3">
+                                       <div class="flex gap-3">
+                        <button onclick="resetContentArea()" 
+                                class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5"></path></svg>
+                            Reset View
+                        </button>
+
                         <button onclick="saveProgress()" 
                                 class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                      d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"/>
-                            </svg>
+                            <!-- ... existing SVG ... -->
                             Save Progress
                         </button>
                         
                         <button onclick="generateReport()" 
                                 class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                      d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            </svg>
+                            <!-- ... existing SVG ... -->
                             Generate Report
                         </button>
                     </div>
@@ -250,6 +250,32 @@
                     <div class="text-sm text-gray-600 dark:text-gray-400">Interactions</div>
                 </div>
             </div>
+
+                        <!-- START: AI Tutor Link Card -->
+            <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">🤖 AI Learning Companion</h3>
+                <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h4 class="font-semibold text-gray-800 dark:text-gray-200">HKBU AI Tutor: Discussion Prep</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Use the AI Tutor to help prepare your thoughts and arguments for class discussions.</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <a href="https://aitutor.hkbu.tech/chat/discussionPrep" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg transition-colors font-semibold shadow-md flex items-center gap-2">
+                            Launch AI Tutor
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END: AI Tutor Link Card -->
         </div>
     </div>
 
