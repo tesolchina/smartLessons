@@ -1,0 +1,567 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCLC1008 - APA 7th Edition Referencing Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'bg-light': '#FFFFFF',
+                        'bg-dark': '#181818'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #5D5CDE 0%, #7C3AED 100%);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        .completed {
+            background-color: #10B981;
+        }
+        .key-point {
+            border-left: 4px solid #5D5CDE;
+            transition: all 0.3s ease;
+        }
+        .key-point:hover {
+            border-left: 4px solid #7C3AED;
+            background-color: rgba(93, 92, 222, 0.05);
+        }
+        .countdown {
+            background: linear-gradient(45deg, #EF4444, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body class="bg-bg-light dark:bg-bg-dark text-gray-900 dark:text-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2">APA 7th Edition Referencing Guide</h1>
+            <h2 class="text-xl opacity-90">UCLC1008 University English I (2025-26, S1)</h2>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Important Notice -->
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 mb-8 rounded-r-lg">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-exclamation-triangle text-red-500 text-xl mr-3"></i>
+                <h3 class="text-lg font-semibold text-red-700 dark:text-red-300">Quiz Deadline Reminder</h3>
+            </div>
+            <p class="text-red-700 dark:text-red-300 mb-2">
+                <strong>The Referencing Quiz closes on Friday, September 19, 2025 at 6:00 PM</strong>
+            </p>
+            <p class="text-red-600 dark:text-red-400 text-sm">
+                ⚠️ You can attempt the quiz ONCE only. No late submissions are allowed.
+            </p>
+            <div id="countdown" class="mt-4 text-center">
+                <div class="countdown text-2xl font-mono" id="countdownTimer"></div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-primary">What You Need to Do</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">1</span>
+                    <div>
+                        <h4 class="font-semibold mb-1">Watch Both Required Videos</h4>
+                        <p class="text-gray-600 dark:text-gray-400">Complete viewing of both videos below before taking the quiz</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">2</span>
+                    <div>
+                        <h4 class="font-semibold mb-1">Review Key Learning Points</h4>
+                        <p class="text-gray-600 dark:text-gray-400">Study the important APA formatting rules highlighted below</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">3</span>
+                    <div>
+                        <h4 class="font-semibold mb-1">Take the Quiz on Moodle</h4>
+                        <p class="text-gray-600 dark:text-gray-400">10 questions worth 2.5% of your course grade</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Tracker -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-xl font-bold mb-4">Your Progress</h3>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <span>Video 1: Citing Journal Articles</span>
+                    <button id="video1-check" class="w-6 h-6 border-2 border-gray-300 rounded" onclick="toggleComplete('video1')"></button>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span>Video 2: Citing Secondary Sources</span>
+                    <button id="video2-check" class="w-6 h-6 border-2 border-gray-300 rounded" onclick="toggleComplete('video2')"></button>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                    <div id="progress-bar" class="progress-bar bg-primary h-3 rounded-full" style="width: 0%"></div>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    <span id="progress-text">0% Complete</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Videos Section -->
+        <section class="space-y-8 mb-8">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4">
+                    <i class="fas fa-play-circle text-primary mr-2"></i>
+                    Video 1: Citing Journal Articles in APA 7th Style
+                </h3>
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/JpT1YwNcV04" title="Citing Journal Articles in APA 7th Style" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+                    </iframe>
+                </div>
+                
+                <!-- Video 1 Learning Objectives -->
+                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold text-blue-800 dark:text-blue-300 mb-2">
+                        <i class="fas fa-bullseye mr-2"></i>Learning Objectives
+                    </h4>
+                    <ul class="space-y-1 text-sm text-blue-700 dark:text-blue-300">
+                        <li>• Master in-text citation formats (parenthetical vs narrative)</li>
+                        <li>• Create proper reference list entries using WHO-WHEN-WHAT-WHERE format</li>
+                        <li>• Apply correct author formatting rules for multiple authors</li>
+                        <li>• Understand title capitalization differences (sentence vs title case)</li>
+                        <li>• Format DOIs, volume numbers, and page ranges correctly</li>
+                    </ul>
+                </div>
+
+                <!-- Transcript Toggle -->
+                <div class="mb-4">
+                    <button onclick="toggleTranscript('video1')" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        <span id="video1-transcript-btn">Show Transcript</span>
+                    </button>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Transcript includes edited version with study notes and key concept summaries
+                    </p>
+                </div>
+
+                <!-- Transcript Content -->
+                <div id="video1-transcript" class="hidden bg-gray-50 dark:bg-gray-900 p-6 rounded-lg max-h-96 overflow-y-auto">
+                    <h4 class="font-bold mb-4 text-gray-800 dark:text-gray-200">Video Transcript with Key Points Highlighted</h4>
+                    <div class="space-y-4 text-sm leading-relaxed">
+                        <p>In this video you will learn how to properly cite Journal articles in the <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">APA 7th edition Style</span>. By the end of this video you will be able to reference a journal article using <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">in-text citations and reference lists</span> as well as identify best practices for doing so.</p>
+
+                        <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">APA style referencing involves two key elements: in-text citations within the body of your paper and a comprehensive reference list at the end.</span></p>
+
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded border-l-4 border-blue-500">
+                            <p><strong>In-Text Citations:</strong> Whenever you reference a journal article in the text of your paper you'll need to include an in-text citation. <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">The basic elements of an in-text citation are the author's surname and the year of publication.</span></p>
+                        </div>
+
+                        <p>For example, if the author's name is John Smith and the publication year is 2024, the in-text citation would be Smith 2024.</p>
+
+                        <div class="bg-green-100 dark:bg-green-900 p-3 rounded border-l-4 border-green-500">
+                            <p><strong>Two Types of Citations:</strong></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Parenthetical citation: you enclose the author's surname and publication year in parentheses</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Narrative citation: you incorporate the author's name into the sentence and then include the publication year in parenthesis</span></p>
+                        </div>
+
+                        <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded border-l-4 border-purple-500">
+                            <p><strong>Reference List Format - WHO-WHEN-WHAT-WHERE:</strong></p>
+                            <p>1. <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">WHO: Author's name (surname, followed by initials)</span></p>
+                            <p>2. <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">WHEN: Year of publication in parentheses</span></p>
+                            <p>3. <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">WHAT: Title of the article in sentence case</span></p>
+                            <p>4. <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">WHERE: Journal title (italicized, title case), volume, issue, pages, DOI</span></p>
+                        </div>
+
+                        <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Article titles should be in sentence case meaning only the first word of the title and subtitle and any proper nouns are capitalized.</span></p>
+
+                        <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Journal titles should be italicized and in title case meaning all content words are capitalized.</span></p>
+
+                        <div class="bg-orange-100 dark:bg-orange-900 p-3 rounded border-l-4 border-orange-500">
+                            <p><strong>Multiple Authors Rules:</strong></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Two authors: cite both surnames separated by an ampersand (&amp;)</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">More than two authors: cite only the surname of the first author followed by "et al."</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Reference list: For 3 to 20 authors, list all names separated by commas with an ampersand before the final author</span></p>
+                        </div>
+
+                        <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">When you include a direct quote, cite the author, year, and specific page number.</span></p>
+
+                        <div class="bg-red-100 dark:bg-red-900 p-3 rounded border-l-4 border-red-500">
+                            <p><strong>DOI Formatting:</strong> <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">If the DOI is not already presented with the "https://doi.org/" prefix in the original source, you should add it to the beginning of the DOI in your reference list entry.</span></p>
+                        </div>
+
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded border-l-4 border-gray-500">
+                            <p><strong>Reference List Formatting:</strong></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Arrange in alphabetical order by first author's surname</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Double space all entries</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Use hanging indent (first line flush left, subsequent lines indented)</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Exclude URL or database information</span></p>
+                        </div>
+
+                        <div class="bg-red-50 dark:bg-red-900 p-3 rounded border-l-4 border-red-600">
+                            <p><strong>Common Don'ts:</strong></p>
+                            <p>• Don't include unnecessary elements in in-text citations (article title, publication date, journal name)</p>
+                            <p>• Don't rely on suggested citation formats from databases</p>
+                            <p>• Don't forget to add the "https://doi.org/" prefix for DOIs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-400 mt-4">
+                    Learn the fundamentals of citing journal articles using APA 7th edition format, including in-text citations and reference list entries.
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4">
+                    <i class="fas fa-play-circle text-primary mr-2"></i>
+                    Video 2: Citing Secondary Sources in APA 7th Style
+                </h3>
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/qB6eFDNyz0E" title="Citing Secondary Sources in APA 7th Style" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+                    </iframe>
+                </div>
+                
+                <!-- Video 2 Learning Objectives -->
+                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold text-green-800 dark:text-green-300 mb-2">
+                        <i class="fas fa-bullseye mr-2"></i>Learning Objectives
+                    </h4>
+                    <ul class="space-y-1 text-sm text-green-700 dark:text-green-300">
+                        <li>• Distinguish between primary and secondary sources</li>
+                        <li>• Understand when and why to use indirect citations</li>
+                        <li>• Master the "as cited in" format for in-text citations</li>
+                        <li>• Apply correct reference list rules for secondary sources</li>
+                        <li>• Learn best practices for accessing original sources</li>
+                    </ul>
+                </div>
+
+                <!-- Transcript Toggle -->
+                <div class="mb-4">
+                    <button onclick="toggleTranscript('video2')" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        <span id="video2-transcript-btn">Show Transcript</span>
+                    </button>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Transcript includes edited version with study notes and key concept summaries
+                    </p>
+                </div>
+
+                <!-- Transcript Content -->
+                <div id="video2-transcript" class="hidden bg-gray-50 dark:bg-gray-900 p-6 rounded-lg max-h-96 overflow-y-auto">
+                    <h4 class="font-bold mb-4 text-gray-800 dark:text-gray-200">Video Transcript with Key Points Highlighted</h4>
+                    <div class="space-y-4 text-sm leading-relaxed">
+                        <p>This video will cover the proper way to cite <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">secondary sources in APA 7th edition Style</span>. By the end of the video you will understand what <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">secondary sources and indirect citations are</span>, learn how to cite secondary sources in in-text citations and how to cite secondary sources in your reference list.</p>
+
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded border-l-4 border-blue-500">
+                            <p><strong>Primary vs Secondary Sources:</strong></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">A primary source reports original content or firsthand information</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">A secondary source refers to content that was first reported in another source</span></p>
+                        </div>
+
+                        <div class="bg-green-100 dark:bg-green-900 p-3 rounded border-l-4 border-green-500">
+                            <p><strong>Common Examples of Secondary Sources:</strong></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Textbooks summarizing research findings</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Review articles synthesizing multiple primary studies</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Newspaper or magazine articles reporting on a study</span></p>
+                        </div>
+
+                        <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded border-l-4 border-purple-500">
+                            <p><strong>Best Practice Recommendation:</strong> <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">When conducting academic research you're advised to locate and read the original source material rather than relying solely on the information presented in a secondary source.</span></p>
+                            <p>The full citation details provided in the reference list of the secondary source can be used to help you find and access the primary source. You can use tools like OneSearch to locate and retrieve the original source document.</p>
+                        </div>
+
+                        <div class="bg-orange-100 dark:bg-orange-900 p-3 rounded border-l-4 border-orange-500">
+                            <p><strong>In-Text Citation Format for Secondary Sources:</strong></p>
+                            <p>For example, let's say you're reading an article written by Lyon et al. published in 2014, and they cite a study by Rabbit from 1982. If you were unable to access the original Rabbit study yourself, you would cite it in your paper like this:</p>
+                            <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">(Rabbit, 1982, as cited in Lyon et al., 2014)</span></p>
+                            <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Since you did not read the Rabbit study directly, you would cite it as an indirect or secondary source using the format described above.</span> This allows you to acknowledge the original work while also being transparent that you accessed it through a secondary source rather than the primary source itself.</p>
+                        </div>
+
+                        <div class="bg-red-100 dark:bg-red-900 p-3 rounded border-l-4 border-red-500">
+                            <p><strong>Reference List Rules for Secondary Sources:</strong></p>
+                            <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Unlike the in-text citation, for the reference list entry you will only include the details of the secondary source that you actually accessed.</span></p>
+                            <p><span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">This means you should not include the primary source (such as the Rabbit 1982 study) in your reference list since you did not directly consult that original work.</span></p>
+                        </div>
+
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded border-l-4 border-gray-500">
+                            <p><strong>Key Rule Summary:</strong></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">In-text citation should acknowledge both the original primary source and the secondary source you used</span></p>
+                            <p>• <span class="highlight bg-yellow-200 dark:bg-yellow-800 px-1 rounded">Reference list entry should only include details for the secondary source you referenced</span></p>
+                        </div>
+
+                        <div class="bg-blue-50 dark:bg-blue-900 p-3 rounded border-l-4 border-blue-600">
+                            <p><strong>Additional Resources:</strong> You can refer to the APA style 7th edition Library guide from the Hong Kong Baptist University library for a comprehensive guide that covers the key conventions of APA Citation. If you have any questions or need further assistance in citing secondary sources in APA style, feel free to seek help from your course instructor or the librarians.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-400 mt-4">
+                    Master the art of citing secondary sources when you haven't accessed the original work directly.
+                </p>
+            </div>
+        </section>
+
+        <!-- Key Learning Points -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold mb-6 text-primary">
+                <i class="fas fa-lightbulb mr-2"></i>
+                Essential APA 7th Edition Rules
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="key-point bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                    <h4 class="font-bold text-blue-800 dark:text-blue-300 mb-2">
+                        <i class="fas fa-users mr-2"></i>In-Text Citations
+                    </h4>
+                    <ul class="space-y-2 text-sm text-blue-700 dark:text-blue-300">
+                        <li>• Use ampersand (&amp;) in parenthetical citations for two authors</li>
+                        <li>• Use "et al." for three or more authors</li>
+                        <li>• Include page numbers for direct quotes</li>
+                    </ul>
+                </div>
+
+                <div class="key-point bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                    <h4 class="font-bold text-green-800 dark:text-green-300 mb-2">
+                        <i class="fas fa-font mr-2"></i>Title Formatting
+                    </h4>
+                    <ul class="space-y-2 text-sm text-green-700 dark:text-green-300">
+                        <li>• Article titles: Sentence case (first word + proper nouns)</li>
+                        <li>• Journal titles: Title Case (Each Major Word)</li>
+                        <li>• Capitalize first word after colon in titles</li>
+                    </ul>
+                </div>
+
+                <div class="key-point bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                    <h4 class="font-bold text-purple-800 dark:text-purple-300 mb-2">
+                        <i class="fas fa-link mr-2"></i>DOI Formatting
+                    </h4>
+                    <ul class="space-y-2 text-sm text-purple-700 dark:text-purple-300">
+                        <li>• Always use full URL format: https://doi.org/</li>
+                        <li>• Add prefix if missing from original source</li>
+                        <li>• No "Retrieved from" needed for DOIs</li>
+                    </ul>
+                </div>
+
+                <div class="key-point bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                    <h4 class="font-bold text-orange-800 dark:text-orange-300 mb-2">
+                        <i class="fas fa-quote-left mr-2"></i>Secondary Citations
+                    </h4>
+                    <ul class="space-y-2 text-sm text-orange-700 dark:text-orange-300">
+                        <li>• Use "as cited in" connector phrase</li>
+                        <li>• Only secondary source appears in reference list</li>
+                        <li>• In-text: cite both primary and secondary sources</li>
+                    </ul>
+                </div>
+
+                <div class="key-point bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
+                    <h4 class="font-bold text-red-800 dark:text-red-300 mb-2">
+                        <i class="fas fa-sort-alpha-down mr-2"></i>Author Order
+                    </h4>
+                    <ul class="space-y-2 text-sm text-red-700 dark:text-red-300">
+                        <li>• Reference list: alphabetize by first author's surname</li>
+                        <li>• Never rearrange author order from original</li>
+                        <li>• Use last name, first initial format</li>
+                    </ul>
+                </div>
+
+                <div class="key-point bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+                    <h4 class="font-bold text-indigo-800 dark:text-indigo-300 mb-2">
+                        <i class="fas fa-list mr-2"></i>Reference List Rules
+                    </h4>
+                    <ul class="space-y-2 text-sm text-indigo-700 dark:text-indigo-300">
+                        <li>• Only include sources you actually accessed</li>
+                        <li>• Use hanging indent for each entry</li>
+                        <li>• Italicize journal titles, not article titles</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Access Section -->
+        <section class="bg-gradient-to-r from-primary to-purple-600 text-white rounded-lg p-6 mb-8 text-center">
+            <h3 class="text-2xl font-bold mb-4">
+                <i class="fas fa-clipboard-check mr-2"></i>
+                Ready to Take the Quiz?
+            </h3>
+            <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 mb-4">
+                <p class="text-lg font-semibold mb-2">⏰ Quiz Time Limit: 30 Minutes</p>
+                <p class="text-sm opacity-90">Once you start, you must complete the quiz within 30 minutes</p>
+            </div>
+            
+            <!-- Section 37 Direct Link -->
+            <div class="bg-yellow-400 text-black rounded-lg p-4 mb-4">
+                <h4 class="font-bold mb-2">Section 37 Students</h4>
+                <p class="text-sm mb-3">Click the link below to access your quiz directly:</p>
+                <a href="https://buelearning.hkbu.edu.hk/mod/quiz/view.php?id=1821779" target="_blank" class="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    Access Section 37 Quiz
+                </a>
+            </div>
+            
+            <!-- Other Sections -->
+            <div class="bg-white/10 rounded-lg p-4">
+                <h4 class="font-bold mb-2">Students from Other Sections</h4>
+                <p class="text-sm">Please access your quiz through your individual Moodle section</p>
+                <a href="https://buelearning.hkbu.edu.hk/login/index.php" target="_blank" class="inline-block mt-2 bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-sign-in-alt mr-2"></i>
+                    Go to HKBU Moodle
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 text-center">
+            <h3 class="text-lg font-bold mb-2">Need Help?</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-2">
+                If you have any questions about the quiz, please contact:
+            </p>
+            <p class="font-semibold text-primary">
+                <i class="fas fa-envelope mr-2"></i>
+                Ms Yongshi Li: yongshi_li@hkbu.edu.hk
+            </p>
+        </section>
+
+        <!-- Credits Section -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center border-t-4 border-primary">
+            <h3 class="text-lg font-bold mb-3 text-primary">About This Learning Package</h3>
+            <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                <p>This interactive learning package was developed by <strong class="text-gray-800 dark:text-gray-200">Dr. Simon Wang</strong></p>
+                <p class="text-xs">Lecturer and Innovation Officer, Language Centre, HKBU</p>
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                    <p class="text-xs">⚠️ <em>Created with AI assistance, including AI-generated content. Please verify accuracy and use as supplementary material alongside official course resources.</em></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Progress tracking
+        let progress = {
+            video1: false,
+            video2: false
+        };
+
+        function toggleComplete(video) {
+            progress[video] = !progress[video];
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const video1Check = document.getElementById('video1-check');
+            const video2Check = document.getElementById('video2-check');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+
+            // Update checkboxes
+            video1Check.innerHTML = progress.video1 ? '<i class="fas fa-check text-green-500"></i>' : '';
+            video1Check.className = progress.video1 ? 'w-6 h-6 border-2 border-green-500 rounded bg-green-100 flex items-center justify-center' : 'w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center';
+
+            video2Check.innerHTML = progress.video2 ? '<i class="fas fa-check text-green-500"></i>' : '';
+            video2Check.className = progress.video2 ? 'w-6 h-6 border-2 border-green-500 rounded bg-green-100 flex items-center justify-center' : 'w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center';
+
+            // Update progress bar
+            const completedCount = Object.values(progress).filter(Boolean).length;
+            const percentage = (completedCount / 2) * 100;
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = Math.round(percentage) + '% Complete';
+
+            if (percentage === 100) {
+                progressBar.classList.add('completed');
+                progressText.textContent = '✅ Ready for Quiz!';
+            }
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const deadline = new Date('2025-09-19T18:00:00+08:00'); // 6 PM Hong Kong time
+            const now = new Date();
+            const difference = deadline - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('countdownTimer').innerHTML = 
+                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById('countdownTimer').innerHTML = 'Quiz Deadline Passed';
+                document.getElementById('countdown').className += ' opacity-50';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Initialize progress
+        updateProgress();
+
+        // Transcript toggle functionality
+        function toggleTranscript(videoId) {
+            const transcript = document.getElementById(videoId + '-transcript');
+            const button = document.getElementById(videoId + '-transcript-btn');
+            
+            if (transcript.classList.contains('hidden')) {
+                transcript.classList.remove('hidden');
+                button.textContent = 'Hide Transcript';
+            } else {
+                transcript.classList.add('hidden');
+                button.textContent = 'Show Transcript';
+            }
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+</body></html>
