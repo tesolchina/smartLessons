@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice & Discussion: Accountability & Transparency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: #666;
+        }
+        .error {
+            background-color: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .markdown-content {
+            max-width: 100%;
+        }
+        .markdown-content h1 {
+            color: #5D5CDE;
+            margin-bottom: 1rem;
+        }
+        .markdown-content h2 {
+            color: #4A49C2;
+            margin-bottom: 0.75rem;
+        }
+        .markdown-content .mc-question,
+        .markdown-content .tf-question,
+        .markdown-content .fill-blank,
+        .markdown-content .textarea-question,
+        .markdown-content .checkbox-question {
+            background: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .discussion-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .practice-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 min-h-screen">
+    <div class="max-w-6xl mx-auto py-8 px-4">
+        
+        <!-- Navigation -->
+        <nav class="mb-6">
+            <div class="flex items-center space-x-4 text-sm text-gray-600">
+                <a href="../../intro.html" class="hover:text-primary">Home</a>
+                <span>›</span>
+                <a href="../index.html" class="hover:text-primary">Week 1</a>
+                <span>›</span>
+                <span class="text-primary font-medium">Practice & Discussion</span>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl p-6 mb-8">
+            <h1 class="text-3xl font-bold mb-2">💬 Practice & Discussion</h1>
+            <p class="text-purple-100 text-lg opacity-90">
+                Engage with ideas and practice your understanding
+            </p>
+        </div>
+
+        <!-- Content Loading Switch -->
+        <div class="mb-6 p-4 bg-purple-50 dark:bg-purple-900 rounded-lg border border-purple-200 dark:border-purple-700">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="font-medium text-purple-800 dark:text-purple-200">Content Mode</h3>
+                    <p class="text-sm text-purple-600 dark:text-purple-300">Switch between original interactive content and new markdown-driven content</p>
+                </div>
+                <label class="flex items-center">
+                    <input type="checkbox" id="contentModeSwitch" class="mr-2">
+                    <span class="text-sm font-medium text-purple-800 dark:text-purple-200">Use Markdown Content</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Original Interactive Content (Default) -->
+        <div id="originalContent" class="space-y-8">
+            
+            <!-- Quick Quiz Section -->
+            <div class="discussion-card">
+                <h2 class="text-2xl font-bold mb-4">🧠 Quick Quiz: Test Your Understanding</h2>
+                <p class="mb-6 opacity-90">Let's review the key concepts from the interactive lecture.</p>
+                
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4">
+                    <h3 class="font-semibold mb-3">What is accountability?</h3>
+                    <div class="space-y-2">
+                        <button class="quiz-btn w-full text-left p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded border-l-4 border-transparent hover:border-white" data-correct="false">
+                            A. Government keeping secrets from the public.
+                        </button>
+                        <button class="quiz-btn w-full text-left p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded border-l-4 border-transparent hover:border-white" data-correct="true">
+                            B. Government staff answering for their actions and facing consequences for misuse.
+                        </button>
+                        <button class="quiz-btn w-full text-left p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded border-l-4 border-transparent hover:border-white" data-correct="false">
+                            C. Citizens paying taxes without question.
+                        </button>
+                    </div>
+                    <div id="quiz1Feedback" class="mt-3 text-sm font-medium"></div>
+                </div>
+            </div>
+
+            <!-- Discussion Section -->
+            <div class="practice-card">
+                <h2 class="text-2xl font-bold mb-4">💭 Discussion Questions</h2>
+                <p class="mb-6 opacity-90">Engage with these questions to deepen your understanding.</p>
+                
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4">
+                    <h3 class="font-semibold mb-3">Do you think the Hong Kong government is sufficiently accountable to its citizens? Why or why not?</h3>
+                    <textarea id="discussion1" class="w-full p-3 rounded bg-white bg-opacity-50 text-gray-800 placeholder-gray-600 h-24" placeholder="Share your thoughts on government accountability in Hong Kong..."></textarea>
+                    <button onclick="submitDiscussion(1)" class="mt-2 bg-white bg-opacity-30 hover:bg-opacity-40 px-4 py-2 rounded text-white">Submit Response</button>
+                    <div id="discussion1Feedback" class="mt-2 text-sm"></div>
+                </div>
+            </div>
+
+            <!-- Practice Activity -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">📝 Practice Activity: Information Request</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">Practice writing a formal information request using the Code on Access to Information.</p>
+                
+                <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg mb-4">
+                    <h3 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Scenario:</h3>
+                    <p class="text-blue-700 dark:text-blue-300">You want to know how much money your local district office spent on community events last year.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block font-medium mb-2">Write your formal information request:</label>
+                        <textarea id="requestDraft" class="w-full p-3 border rounded h-32" placeholder="Dear Sir/Madam, I am writing to request information under the Code on Access to Information regarding..."></textarea>
+                    </div>
+                    <button onclick="reviewRequest()" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark">Review Request</button>
+                    <div id="requestFeedback" class="mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Placeholder for more content -->
+            <div class="text-center py-8">
+                <p class="text-gray-600 dark:text-gray-400">More practice activities and discussion prompts...</p>
+                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                    Switch to "Markdown Content" mode above to see the full content loaded dynamically from markdown files.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Markdown-driven Content (Hidden by default) -->
+        <div id="markdownContent" class="hidden markdown-content">
+            <!-- Content will be loaded dynamically here -->
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="mt-12 flex justify-between items-center pt-6 border-t border-gray-200 dark:border-gray-700">
+            <a href="../interactive-lecture-hybrid/index.html" class="flex items-center text-gray-600 hover:text-primary">
+                ← Back to Interactive Lecture
+            </a>
+            <a href="../reflect-assess-hybrid/index.html" class="flex items-center text-primary hover:text-primary-dark">
+                Next: Reflect & Assess →
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Load the watch-markdown script -->
+    <script src="../js/watch-markdown.js"></script>
+    
+    <!-- Original Interactive JavaScript -->
+    <script>
+        // Quiz functionality
+        document.querySelectorAll('.quiz-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const isCorrect = this.dataset.correct === 'true';
+                const feedback = document.getElementById('quiz1Feedback');
+                
+                // Reset all buttons
+                document.querySelectorAll('.quiz-btn').forEach(b => {
+                    b.classList.remove('border-green-400', 'border-red-400', 'bg-green-200', 'bg-red-200');
+                    b.classList.add('border-transparent');
+                });
+                
+                if (isCorrect) {
+                    this.classList.remove('border-transparent');
+                    this.classList.add('border-green-400', 'bg-green-200');
+                    feedback.innerHTML = '✅ Correct! Accountability means government staff must answer for their actions.';
+                    feedback.className = 'mt-3 text-sm font-medium text-green-200';
+                } else {
+                    this.classList.remove('border-transparent');
+                    this.classList.add('border-red-400', 'bg-red-200');
+                    feedback.innerHTML = '❌ Not quite. Think about what government staff should do when they use public money.';
+                    feedback.className = 'mt-3 text-sm font-medium text-red-200';
+                }
+            });
+        });
+
+        // Discussion submission
+        function submitDiscussion(num) {
+            const textarea = document.getElementById(`discussion${num}`);
+            const feedback = document.getElementById(`discussion${num}Feedback`);
+            
+            if (textarea.value.trim().length >= 50) {
+                feedback.innerHTML = '✅ Thanks for sharing your perspective!';
+                feedback.className = 'mt-2 text-sm text-green-200';
+                // Store in localStorage
+                localStorage.setItem(`discussion_${num}_${Date.now()}`, textarea.value);
+            } else {
+                feedback.innerHTML = '❌ Please write a bit more to fully express your thoughts (at least 50 characters).';
+                feedback.className = 'mt-2 text-sm text-red-200';
+            }
+        }
+
+        // Information request review
+        function reviewRequest() {
+            const textarea = document.getElementById('requestDraft');
+            const feedback = document.getElementById('requestFeedback');
+            const text = textarea.value.toLowerCase();
+            
+            let score = 0;
+            let suggestions = [];
+            
+            // Check for key elements
+            if (text.includes('dear sir/madam') || text.includes('dear')) score++;
+            else suggestions.push('Start with a proper salutation');
+            
+            if (text.includes('code on access to information')) score++;
+            else suggestions.push('Reference the Code on Access to Information');
+            
+            if (text.includes('community events') || text.includes('spending') || text.includes('expenditure')) score++;
+            else suggestions.push('Be specific about what information you want');
+            
+            if (text.includes('last year') || text.includes('2023') || text.includes('period')) score++;
+            else suggestions.push('Specify the time period clearly');
+            
+            if (text.length >= 100) score++;
+            else suggestions.push('Provide more detail in your request');
+            
+            // Provide feedback
+            if (score >= 4) {
+                feedback.innerHTML = `<div class="p-3 bg-green-100 text-green-800 rounded">
+                    ✅ Excellent request! Your format is professional and includes all necessary elements.
+                </div>`;
+            } else if (score >= 2) {
+                feedback.innerHTML = `<div class="p-3 bg-yellow-100 text-yellow-800 rounded">
+                    ⚠️ Good start! Consider these improvements: ${suggestions.join(', ')}.
+                </div>`;
+            } else {
+                feedback.innerHTML = `<div class="p-3 bg-red-100 text-red-800 rounded">
+                    ❌ Your request needs work. Include: ${suggestions.join(', ')}.
+                </div>`;
+            }
+        }
+
+        // Content mode switching
+        const contentModeSwitch = document.getElementById('contentModeSwitch');
+        const originalContent = document.getElementById('originalContent');
+        const markdownContent = document.getElementById('markdownContent');
+
+        contentModeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                // Switch to markdown content
+                originalContent.classList.add('hidden');
+                markdownContent.classList.remove('hidden');
+                
+                // Load markdown content if not already loaded
+                if (markdownContent.innerHTML.trim() === '') {
+                    loadContent('practice-discussion.md', 'markdownContent');
+                }
+            } else {
+                // Switch back to original content
+                markdownContent.classList.add('hidden');
+                originalContent.classList.remove('hidden');
+            }
+        });
+
+        // Initialize content watching for development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            setTimeout(() => {
+                startContentWatch(['practice-discussion.md'], ['markdownContent']);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP3226 Week 1 - Interactive Lecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Notification -->
+    <div id="lecture-notification" class="fixed top-20 right-4 z-50 bg-green-500 text-white px-4 py-2 rounded-lg opacity-0 transform translate-x-full transition-all duration-300">
+        <span id="lecture-notificationText">Ready!</span>
+    </div>
+
+    <div class="max-w-4xl mx-auto p-6">
+        <!-- Progress Header -->
+        <div class="bg-white rounded-lg p-6 mb-6 shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">📊 The St Martin Bus Stop Case</h1>
+                    <p class="text-gray-600">Data Governance in Action - How Citizens Can Drive Change</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Progress: <span id="lecture-progressText">0%</span></span>
+                    <button id="lecture-reportBtn" class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-primary-dark"
+                            onclick="generateReport();">
+                        📊 Report
+                    </button>
+                </div>
+            </div>
+            <div class="bg-gray-200 rounded-full h-3">
+                <div id="lecture-progressBar" class="bg-gradient-to-r from-primary to-primary-light h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Section 1: Setting the Scene -->
+        <div id="lecture-section-1" class="lecture-section bg-white rounded-lg p-6 shadow-sm mb-6">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-white text-2xl">🚌</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">The Problem Discovery</h2>
+                <p class="text-gray-600">A seemingly simple issue that reveals deeper data governance challenges</p>
+            </div>
+
+            <!-- Interactive Map Simulation -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 mb-6 border border-blue-200">
+                <h3 class="font-bold text-blue-900 mb-4">🗺️ The St Martin Bus Stops</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-lg p-4 border-2 border-red-300">
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-2">🚏</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">St Martin</h4>
+                                <p class="text-sm text-red-600">North Side (Towards Central)</p>
+                            </div>
+                        </div>
+                        <div class="text-xs text-red-500">Bus Stop ID: Unclear in app</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border-2 border-red-300">
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-2">🚏</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">St Martin</h4>
+                                <p class="text-sm text-red-600">South Side (Towards Aberdeen)</p>
+                            </div>
+                        </div>
+                        <div class="text-xs text-red-500">Bus Stop ID: Unclear in app</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-yellow-100 rounded border border-yellow-300">
+                    <p class="text-sm text-yellow-800">
+                        <strong>The Confusion:</strong> Both stops appear as "St Martin" in bus tracking apps. 
+                        Passengers can't tell which side of the street the incoming bus is actually approaching.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Initial Assessment Question -->
+            <div class="mb-6">
+                <h3 class="font-semibold text-gray-900 mb-4">🤔 Initial Assessment: What type of problem is this?</h3>
+                <div id="lecture-choices-container-1">
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="A" data-correct="false"
+                            onclick="handleChoice(1, 'A', false);">
+                        <span class="font-medium">A)</span> A technology problem - apps need better GPS accuracy
+                    </button>
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="B" data-correct="true"
+                            onclick="handleChoice(1, 'B', true);">
+                        <span class="font-medium">B)</span> A data governance problem - inconsistent naming standards
+                    </button>
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="C" data-correct="false"
+                            onclick="handleChoice(1, 'C', false);">
+                        <span class="font-medium">C)</span> A user experience problem - people need better training
+                    </button>
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="D" data-correct="false"
+                            onclick="handleChoice(1, 'D', false);">
+                        <span class="font-medium">D)</span> A business problem - bus companies need better coordination
+                    </button>
+                </div>
+                
+                <div id="lecture-feedback-1" class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg" style="display: none;">
+                    <h4 class="font-semibold text-blue-900 mb-2">✅ Correct! This is fundamentally a data governance issue.</h4>
+                    <p class="text-blue-800 text-sm">
+                        While technology and user experience are affected, the root cause is poor data standards. 
+                        Without unique identifiers and consistent naming conventions, data quality suffers across all systems.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex justify-end">
+                <button id="lecture-continueBtn-1" class="px-6 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors"
+                        onclick="showSection(2);">
+                    Continue to Dr. Wang's Journey →
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 2: The Citizen's Journey -->
+        <div id="lecture-section-2" class="lecture-section bg-white rounded-lg p-6 shadow-sm mb-6" style="display: none;">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-white text-2xl">👨‍🏫</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Dr. Simon Wang's Advocacy Journey</h2>
+                <p class="text-gray-600">From problem discovery to solution implementation</p>
+            </div>
+
+            <!-- Timeline Interactive -->
+            <div class="space-y-6 mb-6">
+                <div class="timeline-item bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1</span>
+                        <h3 class="font-semibold text-blue-900">Problem Recognition</h3>
+                    </div>
+                    <p class="text-blue-800 text-sm ml-11">
+                        Dr. Wang experiences confusion multiple times when waiting for buses at St Martin stops. 
+                        Realizes this affects many daily commuters.
+                    </p>
+                </div>
+
+                <div class="timeline-item bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg p-4 border-l-4 border-yellow-500">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2</span>
+                        <h3 class="font-semibold text-yellow-900">Initial Contact</h3>
+                    </div>
+                    <p class="text-yellow-800 text-sm ml-11">
+                        Emails Transport Department (TD) staff with specific details about the confusion and suggested solutions. 
+                        Gets polite but ineffective response.
+                    </p>
+                </div>
+
+                <div class="timeline-item bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg p-4 border-l-4 border-orange-500">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">3</span>
+                        <h3 class="font-semibold text-orange-900">Strategic Escalation</h3>
+                    </div>
+                    <p class="text-orange-800 text-sm ml-11">
+                        After no action from initial contact, escalates to Assistant Director of TD with 
+                        clear business case and public safety concerns.
+                    </p>
+                </div>
+
+                <div class="timeline-item bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4 border-l-4 border-green-500">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">4</span>
+                        <h3 class="font-semibold text-green-900">Solution Implementation</h3>
+                    </div>
+                    <p class="text-green-800 text-sm ml-11">
+                        TD coordinates with bus companies to add unique identifiers to distinguish the two stops in mobile apps.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Email Analysis Exercise -->
+            <div class="bg-purple-50 rounded-lg p-6 border border-purple-200 mb-6">
+                <h3 class="font-bold text-purple-900 mb-4">📧 Analyze the Effective Email Strategy</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded p-4">
+                        <h4 class="font-semibold text-red-800 mb-2">❌ Initial Email (Ineffective)</h4>
+                        <ul class="text-sm text-red-700 space-y-1">
+                            <li>• Vague complaint without specifics</li>
+                            <li>• No clear action requested</li>
+                            <li>• Sent to general contact</li>
+                            <li>• No business impact mentioned</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded p-4">
+                        <h4 class="font-semibold text-green-800 mb-2">✅ Escalation Email (Effective)</h4>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li>• Specific location and problem details</li>
+                            <li>• Clear solution proposed</li>
+                            <li>• Sent to decision-maker</li>
+                            <li>• Public safety concerns highlighted</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Question -->
+            <div class="mb-6">
+                <h3 class="font-semibold text-gray-900 mb-4">🎯 What made the escalation successful?</h3>
+                <div id="lecture-choices-container-2">
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="A" data-correct="false"
+                            onclick="handleChoice(2, 'A', false);">
+                        <span class="font-medium">A)</span> Using more emotional language and urgency
+                    </button>
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="B" data-correct="true"
+                            onclick="handleChoice(2, 'B', true);">
+                        <span class="font-medium">B)</span> Reaching the right decision-maker with a clear business case
+                    </button>
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="C" data-correct="false"
+                            onclick="handleChoice(2, 'C', false);">
+                        <span class="font-medium">C)</span> Threatening to go public with the complaint
+                    </button>
+                    <button class="lecture-choice-button w-full text-left p-4 border-2 border-gray-200 rounded-lg mb-3 hover:bg-gray-50 transition-all" 
+                            data-choice="D" data-correct="false"
+                            onclick="handleChoice(2, 'D', false);">
+                        <span class="font-medium">D)</span> Including multiple government departments in the email
+                    </button>
+                </div>
+                
+                <div id="lecture-feedback-2" class="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg" style="display: none;">
+                    <h4 class="font-semibold text-green-900 mb-2">✅ Exactly right!</h4>
+                    <p class="text-green-800 text-sm">
+                        Effective advocacy requires reaching decision-makers with authority to act, combined with a clear business case 
+                        that shows impact and provides actionable solutions. This approach is professional and solution-oriented.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-end">
+                <button id="lecture-continueBtn-2" class="px-6 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors"
+                        onclick="showSection(3);">
+                    Explore Data Governance Lessons →
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 3: Data Governance & Mathematical Analysis -->
+        <div id="lecture-section-3" class="lecture-section bg-white rounded-lg p-6 shadow-sm mb-6" style="display: none;">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-white text-2xl">📊</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Data Governance & Mathematical Opportunities</h2>
+                <p class="text-gray-600">From individual problems to systematic analysis</p>
+            </div>
+
+            <!-- Data Quality Principles -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
+                    <h3 class="font-bold text-blue-900 mb-4">🎯 Data Quality Principles Violated</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">!</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Uniqueness</h4>
+                                <p class="text-sm text-red-700">Duplicate names without distinguishing identifiers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">!</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Usability</h4>
+                                <p class="text-sm text-red-700">Data structure doesn't match user needs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">!</span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Consistency</h4>
+                                <p class="text-sm text-red-700">Different systems may use different naming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6 border border-green-200">
+                    <h3 class="font-bold text-green-900 mb-4">✅ Mathematical Analysis Opportunities</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">+</span>
+                            <div>
+                                <h4 class="font-semibold text-green-800">Scale Analysis</h4>
+                                <p class="text-sm text-green-700">Find all duplicate bus stop names using data mining</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">+</span>
+                            <div>
+                                <h4 class="font-semibold text-green-800">Impact Modeling</h4>
+                                <p class="text-sm text-green-700">Calculate user confusion rates and economic impact</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">+</span>
+                            <div>
+                                <h4 class="font-semibold text-green-800">Optimization</h4>
+                                <p class="text-sm text-green-700">Design optimal naming conventions using algorithms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Programming Simulation -->
+            <div class="bg-gray-900 rounded-lg p-6 mb-6 text-green-400 font-mono text-sm">
+                <div class="flex items-center mb-4">
+                    <span class="text-white bg-green-600 px-2 py-1 rounded text-xs mr-3">API DEMO</span>
+                    <h3 class="text-white font-bold">Finding Similar Data Issues Programmatically</h3>
+                </div>
+                <div class="space-y-2">
+                    <div><span class="text-blue-400"># Simulate API call to find duplicate bus stop names</span></div>
+                    <div><span class="text-yellow-400">import</span> requests, pandas</div>
+                    <div class="ml-4">
+                        <div><span class="text-yellow-400">def</span> <span class="text-white">find_duplicate_stops</span>():</div>
+                        <div class="ml-4"><span class="text-blue-400"># Get HK bus stop data</span></div>
+                        <div class="ml-4">response = requests.get(<span class="text-green-300">'https://api.data.gov.hk/v1/bus-stops'</span>)</div>
+                        <div class="ml-4">stops = response.json()</div>
+                        <div class="ml-4"><span class="text-blue-400"># Find duplicates</span></div>
+                        <div class="ml-4">duplicates = stops.groupby(<span class="text-green-300">'name'</span>).filter(<span class="text-yellow-400">lambda</span> x: len(x) > 1)</div>
+                        <div class="ml-4"><span class="text-yellow-400">return</span> duplicates</div>
+                    </div>
+                    <div class="mt-3 text-white">
+                        <span class="text-red-400">Results found:</span> 
+                        <span class="bg-red-600 px-2 py-1 rounded">127 duplicate bus stop names</span> across Hong Kong
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mathematical Applications -->
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6 border border-purple-200 mb-6">
+                <h3 class="font-bold text-purple-900 mb-4">🔢 Mathematical Applications in Data Governance</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded p-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">📈 Statistical Analysis</h4>
+                        <ul class="text-sm text-purple-700 space-y-1">
+                            <li>• Error rate calculations</li>
+                            <li>• User confusion metrics</li>
+                            <li>• Cost-benefit analysis</li>
+                            <li>• Performance indicators</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded p-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">🤖 Machine Learning</h4>
+                        <ul class="text-sm text-purple-700 space-y-1">
+                            <li>• Duplicate detection algorithms</li>
+                            <li>• Pattern recognition</li>
+                            <li>• Automated quality scoring</li>
+                            <li>• Predictive maintenance</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded p-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">🎯 Optimization</h4>
+                        <ul class="text-sm text-purple-700 space-y-1">
+                            <li>• Naming convention design</li>
+                            <li>• Resource allocation</li>
+                            <li>• Update prioritization</li>
+                            <li>• System efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-end">
+                <button id="lecture-continueBtn-3" class="px-6 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors"
+                        onclick="showSection(4);">
+                    Complete Lesson →
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 4: Completion -->
+        <div id="lecture-section-4" class="lecture-section bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border border-green-200" style="display: none;">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-white text-2xl">🎓</span>
+                </div>
+                <h2 class="text-2xl font-bold text-green-900 mb-2">Lesson Complete!</h2>
+                <p class="text-green-800 mb-6">You've explored the St Martin bus stop case and its broader implications for data governance and mathematical analysis.</p>
+                
+                <!-- Key Takeaways -->
+                <div class="bg-white rounded-lg p-6 mb-6 text-left">
+                    <h3 class="font-bold text-gray-900 mb-4">🔑 Key Takeaways</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-800 mb-2">🏛️ Citizen Advocacy</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Start with direct, specific contact</li>
+                                <li>• Escalate strategically to decision-makers</li>
+                                <li>• Present clear business cases</li>
+                                <li>• Persistence with professionalism works</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-800 mb-2">📊 Data Governance</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Small data issues have big impacts</li>
+                                <li>• Quality principles: unique, accurate, usable</li>
+                                <li>• Mathematical analysis can scale solutions</li>
+                                <li>• Citizens can influence data practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-6">
+                    <div class="text-center p-3 bg-white rounded border">
+                        <div class="text-lg font-bold text-green-600">100%</div>
+                        <div class="text-xs text-green-700">Complete</div>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded border">
+                        <div class="text-lg font-bold text-blue-600" id="lecture-finalTime">0m</div>
+                        <div class="text-xs text-blue-700">Time</div>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded border">
+                        <div class="text-lg font-bold text-purple-600" id="lecture-finalScore">--</div>
+                        <div class="text-xs text-purple-700">Score</div>
+                    </div>
+                </div>
+                
+                <button id="lecture-finalReportBtn" class="px-6 py-2 bg-primary text-white rounded hover:bg-primary-dark"
+                        onclick="generateReport();">
+                    📊 View Detailed Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Report Display Area -->
+        <div id="lecture-report-display" class="bg-white rounded-lg p-6 shadow-sm mt-6" style="display: none;">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">📊 Interactive Lecture Report</h3>
+            <div id="lecture-report-content" class="space-y-4">
+                <!-- Report content will be inserted here -->
+            </div>
+            <button onclick="hideReport()" class="mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+                Close Report
+            </button>
+        </div>
+    </div>
+
+    <style>
+        .lecture-choice-button.selected {
+            background: #5D5CDE !important;
+            color: white !important;
+            border-color: #5D5CDE !important;
+        }
+
+        .lecture-choice-button.correct {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #10b981 !important;
+        }
+
+        .lecture-choice-button.incorrect {
+            background: #ef4444 !important;
+            color: white !important;
+            border-color: #ef4444 !important;
+        }
+
+        #lecture-notification.show {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 40px;
+            bottom: -20px;
+            width: 2px;
+            background: #e5e7eb;
+        }
+
+        .timeline-item:last-child:before {
+            display: none;
+        }
+    </style>
+
+    <script>
+        // Enhanced global state for GCAP3226
+        window.lectureData = {
+            course: 'GCAP3226',
+            week: 1,
+            topic: 'St Martin Bus Stop Case',
+            startTime: Date.now(),
+            currentSection: 1,
+            interactions: [],
+            completed: false,
+            timeSpent: 0,
+            questions: {
+                1: { answered: false, choice: null, correct: null },
+                2: { answered: false, choice: null, correct: null }
+            },
+            sectionProgress: {
+                1: 0,  // Problem discovery
+                2: 0,  // Citizen journey  
+                3: 0,  // Data governance
+                4: 0   // Completion
+            }
+        };
+
+        function handleChoice(questionNum, choice, isCorrect) {
+            console.log(`Question ${questionNum}: Choice ${choice} selected. Correct: ${isCorrect}`);
+            
+            try {
+                // Update buttons for this question
+                const buttons = document.querySelectorAll(`#lecture-choices-container-${questionNum} .lecture-choice-button`);
+                
+                buttons.forEach(btn => {
+                    btn.classList.remove('selected', 'correct', 'incorrect');
+                    const btnCorrect = btn.dataset.correct === 'true';
+                    btn.classList.add(btnCorrect ? 'correct' : 'incorrect');
+                    
+                    if (btn.dataset.choice === choice) {
+                        btn.classList.add('selected');
+                    }
+                });
+                
+                // Show feedback
+                const feedback = document.getElementById(`lecture-feedback-${questionNum}`);
+                if (feedback) {
+                    feedback.style.display = 'block';
+                }
+                
+                // Store answer
+                window.lectureData.questions[questionNum] = {
+                    answered: true,
+                    choice: choice,
+                    correct: isCorrect
+                };
+                
+                // Update section progress
+                window.lectureData.sectionProgress[questionNum] = 100;
+                
+                // Record interaction
+                window.lectureData.interactions.push({
+                    type: 'multiple_choice',
+                    question: questionNum,
+                    choice: choice,
+                    correct: isCorrect,
+                    timestamp: Date.now(),
+                    section: questionNum
+                });
+                
+                updateParentProgress();
+                showNotification(isCorrect ? 'Correct! Well done.' : 'Good try! See explanation below.');
+                
+            } catch (error) {
+                console.error('Error in handleChoice:', error);
+            }
+        }
+
+        function showSection(sectionNum) {
+            console.log(`Showing section ${sectionNum}`);
+            
+            try {
+                // Hide all sections
+                const sections = document.querySelectorAll('.lecture-section');
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show target section
+                const target = document.getElementById('lecture-section-' + sectionNum);
+                if (target) {
+                    target.style.display = 'block';
+                    window.lectureData.currentSection = sectionNum;
+                    
+                    // Mark section as viewed
+                    if (sectionNum > 2) {
+                        window.lectureData.sectionProgress[sectionNum] = 100;
+                    }
+                    
+                    updateProgress((sectionNum - 1) * 25);
+                    updateParentProgress();
+                }
+            } catch (error) {
+                console.error('Error in showSection:', error);
+            }
+        }
+
+        function updateProgress(percent) {
+            const bar = document.getElementById('lecture-progressBar');
+            const text = document.getElementById('lecture-progressText');
+            
+            if (bar) bar.style.width = percent + '%';
+            if (text) text.textContent = percent + '%';
+        }
+
+        function updateParentProgress() {
+            try {
+                if (window.parent && window.parent.progressManager) {
+                    const overallProgress = Math.round((Object.values(window.lectureData.sectionProgress).reduce((a, b) => a + b, 0) / 4));
+                    window.parent.progressManager.markSectionProgress('lecture', overallProgress);
+                }
+            } catch (error) {
+                console.error('Could not update parent progress:', error);
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('lecture-notification');
+            const text = document.getElementById('lecture-notificationText');
+            
+            if (notification && text) {
+                text.textContent = message;
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 3000);
+            }
+        }
+
+        function generateReport() {
+            console.log('Generating GCAP3226 report...');
+            
+            try {
+                const duration = Date.now() - window.lectureData.startTime;
+                const minutes = Math.floor(duration / 60000);
+                const seconds = Math.floor((duration % 60000) / 1000);
+                
+                // Calculate scores
+                const correctAnswers = Object.values(window.lectureData.questions).filter(q => q.correct).length;
+                const totalQuestions = Object.keys(window.lectureData.questions).length;
+                const score = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
+                
+                const reportData = {
+                    ...window.lectureData,
+                    finalMetrics: {
+                        totalTime: `${minutes}m ${seconds}s`,
+                        overallProgress: Math.round((Object.values(window.lectureData.sectionProgress).reduce((a, b) => a + b, 0) / 4)),
+                        sectionsCompleted: Object.values(window.lectureData.sectionProgress).filter(p => p > 0).length,
+                        score: score,
+                        questionsAnswered: Object.values(window.lectureData.questions).filter(q => q.answered).length,
+                        correctAnswers: correctAnswers
+                    }
+                };
+                
+                // Update completion display
+                const timeElement = document.getElementById('lecture-finalTime');
+                const scoreElement = document.getElementById('lecture-finalScore');
+                
+                if (timeElement) timeElement.textContent = `${minutes}m`;
+                if (scoreElement) scoreElement.textContent = score + '%';
+                
+                displayReport(reportData);
+                
+                // Send to parent
+                if (window.parent && window.parent.generateReport) {
+                    window.parent.generateReport(reportData);
+                }
+                
+                showNotification('Report generated successfully!');
+                
+            } catch (error) {
+                console.error('Error generating report:', error);
+            }
+        }
+
+        function displayReport(reportData) {
+            const reportDisplay = document.getElementById('lecture-report-display');
+            const reportContent = document.getElementById('lecture-report-content');
+            
+            if (reportDisplay && reportContent) {
+                const reportHTML = `
+                    <div class="bg-gradient-to-r from-primary/5 to-primary-light/5 rounded-lg p-6 mb-6">
+                        <h4 class="font-bold text-primary mb-3">📊 GCAP3226 Week 1 - St Martin Bus Stop Case Analysis</h4>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="text-center p-4 bg-white rounded border">
+                                <div class="text-2xl font-bold text-blue-600">${reportData.finalMetrics.score}%</div>
+                                <div class="text-sm text-blue-700">Quiz Score</div>
+                                <div class="text-xs text-gray-500">${reportData.finalMetrics.correctAnswers}/${reportData.finalMetrics.questionsAnswered} correct</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded border">
+                                <div class="text-2xl font-bold text-green-600">${reportData.finalMetrics.totalTime}</div>
+                                <div class="text-sm text-green-700">Time Spent</div>
+                                <div class="text-xs text-gray-500">Interactive learning</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded border">
+                                <div class="text-2xl font-bold text-purple-600">${reportData.finalMetrics.overallProgress}%</div>
+                                <div class="text-sm text-purple-700">Completion</div>
+                                <div class="text-xs text-gray-500">${reportData.finalMetrics.sectionsCompleted}/4 sections</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">🎯 Learning Objectives Met</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-center">
+                                    <span class="w-4 h-4 rounded-full ${reportData.sectionProgress[1] > 0 ? 'bg-green-500' : 'bg-gray-300'} mr-2"></span>
+                                    <span>Understanding data governance problems</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-4 h-4 rounded-full ${reportData.sectionProgress[2] > 0 ? 'bg-green-500' : 'bg-gray-300'} mr-2"></span>
+                                    <span>Citizen advocacy strategies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-4 h-4 rounded-full ${reportData.sectionProgress[3] > 0 ? 'bg-green-500' : 'bg-gray-300'} mr-2"></span>
+                                    <span>Mathematical analysis opportunities</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-4 h-4 rounded-full ${reportData.completed ? 'bg-green-500' : 'bg-gray-300'} mr-2"></span>
+                                    <span>Course context and applications</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">📈 Interaction Summary</h4>
+                            <div class="bg-gray-50 p-4 rounded text-sm">
+                                <div class="flex justify-between mb-1">
+                                    <span>Total interactions:</span>
+                                    <span class="font-medium">${reportData.interactions.length}</span>
+                                </div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Question 1 (Data governance):</span>
+                                    <span class="font-medium ${reportData.questions[1]?.correct ? 'text-green-600' : reportData.questions[1]?.answered ? 'text-red-600' : 'text-gray-500'}">
+                                        ${reportData.questions[1]?.answered ? (reportData.questions[1].correct ? '✓ Correct' : '✗ Incorrect') : 'Not answered'}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Question 2 (Advocacy strategy):</span>
+                                    <span class="font-medium ${reportData.questions[2]?.correct ? 'text-green-600' : reportData.questions[2]?.answered ? 'text-red-600' : 'text-gray-500'}">
+                                        ${reportData.questions[2]?.answered ? (reportData.questions[2].correct ? '✓ Correct' : '✗ Incorrect') : 'Not answered'}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded border border-blue-200">
+                        <h5 class="font-semibold text-blue-900 mb-2">🔗 Connection to Course Goals</h5>
+                        <p class="text-blue-800 text-sm mb-2">
+                            This case study demonstrates how individual citizen action can drive systematic improvements in data governance, 
+                            setting the foundation for our exploration of mathematical analysis in public policy.
+                        </p>
+                        <p class="text-blue-700 text-xs">
+                            Next: Practice analyzing real Hong Kong data governance cases and apply mathematical modeling concepts.
+                        </p>
+                    </div>
+                `;
+                
+                reportContent.innerHTML = reportHTML;
+                reportDisplay.style.display = 'block';
+                reportDisplay.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function hideReport() {
+            const reportDisplay = document.getElementById('lecture-report-display');
+            if (reportDisplay) {
+                reportDisplay.style.display = 'none';
+            }
+        }
+
+        // Initialize
+        updateProgress(0);
+        console.log('GCAP3226 Interactive Lecture initialized');
+    </script>
+</body>
+</html>

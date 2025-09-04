@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Framework & Accountability - Interactive Lecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5D5CDE',
+              'primary-light': '#7B7AE8',
+              'primary-dark': '#4A49C2'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../../../css/styles.css">
+</head>
+<body class="bg-white dark:bg-gray-900 min-h-screen">
+    <div class="max-w-6xl mx-auto py-8 px-4 md:px-0">
+        
+        <!-- Breadcrumb Navigation -->
+        <nav class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
+            <a href="../../../index.html" class="hover:text-primary">Week 1</a>
+            <span>/</span>
+            <span class="text-gray-400">Government Framework & Accountability</span>
+            <span>/</span>
+            <span class="text-primary font-medium">Interactive Lecture</span>
+        </nav>
+
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="text-3xl">🏛️</div>
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Government Framework & Accountability</h1>
+                    <p class="text-gray-600 dark:text-gray-300">Interactive Lecture</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div id="markdownContent" class="prose dark:prose-invert max-w-none">
+            <!-- Markdown content will be loaded here -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-4 mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <button onclick="history.back()" 
+                    class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"/>
+                </svg>
+                Back
+            </button>
+            
+            <button onclick="markComplete()" 
+                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Mark Complete
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Markdown parsing function with interactive elements
+        function parseMarkdown(markdown) {
+            let html = markdown;
+            
+            // Headers
+            html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">$1</h1>');
+            
+            // Interactive Elements - Multiple Choice Questions
+            html = html.replace(/\[MC-QUESTION id="([^"]+)"\]([\s\S]*?)\[\/MC-QUESTION\]/g, function(match, id, content) {
+                const lines = content.trim().split('\n').filter(line => line.trim());
+                let mcHtml = '<div class="mb-6 bg-gray-50 dark:bg-gray-800 rounded-xl p-5 border">';
+                mcHtml += '<div class="flex flex-col gap-2">';
+                
+                lines.forEach((line, index) => {
+                    const [text, correct] = line.split(' | ');
+                    const isCorrect = correct?.trim() === 'true';
+                    mcHtml += `<button class="mc-btn bg-white dark:bg-gray-800 hover:bg-blue-200 dark:hover:bg-blue-700 px-3 py-2 rounded border text-left" data-correct="${isCorrect}" data-question-id="${id}">
+                        ${text.trim()}
+                    </button>`;
+                });
+                
+                mcHtml += '</div>';
+                mcHtml += `<div id="${id}Feedback" class="mt-2 text-sm font-medium"></div>`;
+                mcHtml += '</div>';
+                return mcHtml;
+            });
+            
+            // Interactive Elements - True/False Questions
+            html = html.replace(/\[TF-QUESTION id="([^"]+)"\]([\s\S]*?)\[\/TF-QUESTION\]/g, function(match, id, content) {
+                const lines = content.trim().split('\n').filter(line => line.trim());
+                let tfHtml = '<div class="mb-6">';
+                tfHtml += '<div class="flex gap-3">';
+                
+                lines.forEach((line) => {
+                    const [text, correct] = line.split(' | ');
+                    const isCorrect = correct?.trim() === 'true';
+                    tfHtml += `<button class="tf-btn bg-white dark:bg-gray-800 hover:bg-blue-200 dark:hover:bg-blue-700 px-3 py-2 rounded border" data-answer="${isCorrect}" data-question-id="${id}">
+                        ${text.trim()}
+                    </button>`;
+                });
+                
+                tfHtml += '</div>';
+                tfHtml += `<div id="${id}Feedback" class="mt-2 text-sm font-medium"></div>`;
+                tfHtml += '</div>';
+                return tfHtml;
+            });
+            
+            // Interactive Elements - Fill in the Blank
+            html = html.replace(/\[FILL-BLANK id="([^"]+)" answer-contains="([^"]+)"\][\s\S]*?\[\/FILL-BLANK\]/g, function(match, id, answers) {
+                return `<div class="mb-6">
+                    <input id="${id}Input" class="rounded border px-2 py-1 w-full max-w-sm dark:bg-gray-800 dark:text-white dark:border-gray-700" placeholder="Type your answer..." />
+                    <button onclick="checkFillBlank('${id}', '${answers}')" class="ml-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded">Check</button>
+                    <span id="${id}Feedback" class="ml-2 text-sm"></span>
+                </div>`;
+            });
+            
+            // Interactive Elements - Checkbox Questions
+            html = html.replace(/\[CHECKBOX-QUESTION id="([^"]+)"\]([\s\S]*?)\[\/CHECKBOX-QUESTION\]/g, function(match, id, content) {
+                const lines = content.trim().split('\n').filter(line => line.trim());
+                let cbHtml = '<div class="mb-6">';
+                
+                lines.forEach((line, index) => {
+                    const [text, correct] = line.split(' | ');
+                    const isCorrect = correct?.trim() === 'true';
+                    cbHtml += `<label class="flex items-center gap-2 mb-2">
+                        <input type="checkbox" class="checkbox-option" data-correct="${isCorrect}" data-question-id="${id}">
+                        <span>${text.trim()}</span>
+                    </label>`;
+                });
+                
+                cbHtml += `<button onclick="checkCheckboxes('${id}')" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded mt-2">Check Answer</button>`;
+                cbHtml += `<div id="${id}Feedback" class="mt-2 text-sm font-medium"></div>`;
+                cbHtml += '</div>';
+                return cbHtml;
+            });
+            
+            // Interactive Elements - Text Area
+            html = html.replace(/\[TEXT-AREA id="([^"]+)" min-length="([^"]+)"\][\s\S]*?\[\/TEXT-AREA\]/g, function(match, id, minLength) {
+                return `<div class="mb-6">
+                    <textarea id="${id}" class="w-full p-3 border rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-700" rows="4" placeholder="Share your thoughts..."></textarea>
+                    <button onclick="checkTextArea('${id}', ${minLength})" class="mt-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded">Submit Reflection</button>
+                    <div id="${id}Feedback" class="mt-2 text-sm font-medium"></div>
+                </div>`;
+            });
+            
+            // Interactive Elements - Toggle Section
+            html = html.replace(/\[TOGGLE-SECTION id="([^"]+)" title="([^"]+)"\]([\s\S]*?)\[\/TOGGLE-SECTION\]/g, function(match, id, title, content) {
+                return `<div class="mb-6">
+                    <button onclick="toggleSection('${id}')" class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium">
+                        <span id="${id}Icon">▶️</span> ${title}
+                    </button>
+                    <div id="${id}" class="hidden mt-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                        ${content.trim()}
+                    </div>
+                </div>`;
+            });
+            
+            // Interactive Elements - Progress Button
+            html = html.replace(/\[PROGRESS-BUTTON section="([^"]+)" value="([^"]+)"\]([\s\S]*?)\[\/PROGRESS-BUTTON\]/g, function(match, section, value, text) {
+                return `<div class="mt-8 text-center">
+                    <button onclick="updateSectionProgress('${section}', ${value})" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium">
+                        ${text.trim()}
+                    </button>
+                </div>`;
+            });
+            
+            // Bold and Italic
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>');
+            html = html.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>');
+            
+            // Links
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-200">$1</a>');
+            
+            // Lists
+            html = html.replace(/^- (.*$)/gim, '<li class="mb-1">$1</li>');
+            html = html.replace(/^(\d+)\. (.*$)/gim, '<li class="mb-1">$2</li>');
+            
+            // Wrap consecutive list items in ul tags
+            html = html.replace(/(<li.*?<\/li>\s*)+/g, '<ul class="list-disc list-inside mb-4 space-y-1">$&</ul>');
+            
+            // Paragraphs
+            const paragraphs = html.split(/\n\s*\n/);
+            html = paragraphs.map(p => {
+                if (p.trim() && !p.includes('<div') && !p.includes('<h') && !p.includes('<ul') && !p.includes('<button')) {
+                    return `<p class="mb-4 text-gray-700 dark:text-gray-300">${p.trim()}</p>`;
+                }
+                return p;
+            }).join('\n');
+            
+            return html;
+        }
+
+        // Interactive function handlers
+        function checkFillBlank(id, validAnswers) {
+            const input = document.getElementById(id + 'Input');
+            const feedback = document.getElementById(id + 'Feedback');
+            const answer = input.value.trim().toLowerCase();
+            const validList = validAnswers.split(',').map(v => v.trim().toLowerCase());
+            
+            const isCorrect = validList.some(valid => answer.includes(valid));
+            
+            if (isCorrect) {
+                feedback.textContent = "✅ Correct! Government accountability is essential because they use public money.";
+                feedback.className = "ml-2 text-green-700 font-bold";
+            } else if (answer.length < 3) {
+                feedback.textContent = "";
+            } else {
+                feedback.textContent = "❌ Hint: Think about where government funding comes from!";
+                feedback.className = "ml-2 text-red-700 font-bold";
+            }
+        }
+        
+        function checkCheckboxes(id) {
+            const checkboxes = document.querySelectorAll(`input[data-question-id="${id}"]`);
+            const feedback = document.getElementById(id + 'Feedback');
+            let allCorrect = true;
+            
+            checkboxes.forEach(cb => {
+                const shouldBeChecked = cb.dataset.correct === 'true';
+                if (cb.checked !== shouldBeChecked) {
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                feedback.textContent = "✅ Correct! Letters give citizens a voice and help keep government accountable.";
+                feedback.className = "mt-2 text-green-600 font-bold";
+            } else {
+                feedback.textContent = "❌ Check your selections and try again.";
+                feedback.className = "mt-2 text-red-600 font-bold";
+            }
+        }
+        
+        function checkTextArea(id, minLength) {
+            const textarea = document.getElementById(id);
+            const feedback = document.getElementById(id + 'Feedback');
+            const text = textarea.value.trim();
+            
+            if (text.length >= minLength) {
+                feedback.textContent = "✅ Reflection submitted!";
+                feedback.className = "mt-2 text-green-700 font-bold";
+            } else {
+                feedback.textContent = "❌ Please write a bit more to share your thoughts.";
+                feedback.className = "mt-2 text-red-700 font-bold";
+            }
+        }
+        
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            const icon = document.getElementById(id + 'Icon');
+            
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                icon.textContent = "▼";
+            } else {
+                section.classList.add('hidden');
+                icon.textContent = "▶️";
+            }
+        }
+        
+        function updateSectionProgress(section, value) {
+            localStorage.setItem(`week1_${section}_progress`, value);
+            alert(`${section} progress updated to ${value}%`);
+        }
+
+        // Load markdown content
+        async function loadMarkdownContent() {
+            try {
+                const response = await fetch('content/interactive-lecture.md');
+                if (!response.ok) throw new Error('Content not found');
+                
+                const markdown = await response.text();
+                const html = parseMarkdown(markdown);
+                
+                document.getElementById('markdownContent').innerHTML = html;
+                
+                // Add event listeners for interactive elements
+                addInteractiveListeners();
+                
+            } catch (error) {
+                console.error('Error loading content:', error);
+                document.getElementById('markdownContent').innerHTML = 
+                    '<p class="text-red-600">Error loading content. Please try again.</p>';
+            }
+        }
+        
+        function addInteractiveListeners() {
+            // Multiple choice buttons
+            document.querySelectorAll('.mc-btn').forEach(btn => {
+                btn.onclick = function() {
+                    const questionId = btn.dataset.questionId;
+                    const feedback = document.getElementById(questionId + 'Feedback');
+                    const isCorrect = btn.dataset.correct === 'true';
+                    
+                    if (isCorrect) {
+                        feedback.textContent = "✅ Correct! Government is needed, but must be kept in check.";
+                        feedback.className = "mt-2 text-green-600 font-bold";
+                    } else {
+                        feedback.textContent = "❌ Not quite. Try again!";
+                        feedback.className = "mt-2 text-red-600 font-bold";
+                    }
+                };
+            });
+            
+            // True/False buttons
+            document.querySelectorAll('.tf-btn').forEach(btn => {
+                btn.onclick = function() {
+                    const questionId = btn.dataset.questionId;
+                    const feedback = document.getElementById(questionId + 'Feedback');
+                    const isCorrect = btn.dataset.answer === 'true';
+                    
+                    if (isCorrect) {
+                        feedback.textContent = "✅ Correct! Most societies need some form of government.";
+                        feedback.className = "mt-2 text-green-600 font-bold";
+                    } else {
+                        feedback.textContent = "❌ Not quite. Even in democracies, some government is necessary.";
+                        feedback.className = "mt-2 text-red-600 font-bold";
+                    }
+                };
+            });
+        }
+
+        // Mark activity as complete
+        function markComplete() {
+            localStorage.setItem('topic1_lecture_complete', 'true');
+            alert('Interactive Lecture marked as complete!');
+        }
+
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', loadMarkdownContent);
+    </script>
+</body>
+</html>

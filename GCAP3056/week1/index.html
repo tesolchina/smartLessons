@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP3056 Week 1: Foundation & Issue Discovery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5D5CDE',
+              'primary-light': '#7B7AE8',
+              'primary-dark': '#4A49C2'
+            }
+          }
+        }
+      }
+    </script>
+    <script src="js/watch-markdown-student.js"></script>
+</head>
+<body class="bg-white dark:bg-gray-900 min-h-screen">
+    <script>
+        // Initialize dark mode based on user preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    
+    <!-- Notification Container will be created by JS -->
+    <div class="max-w-6xl mx-auto py-8 px-4 md:px-0">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 mb-4">
+                <div class="bg-gradient-to-r from-primary to-primary-light text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Week 1
+                </div>
+                <div class="text-gray-400 text-sm">/</div>
+                <div class="text-gray-600 dark:text-gray-300 text-sm">
+                    Policy Advocacy Foundations
+                </div>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+                Foundation & Issue Discovery
+            </h1>
+            <p class="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
+                Build essential knowledge of Hong Kong's policy landscape and discover issues that resonate with your values and interests.
+            </p>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Learning Objectives
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Understand Hong Kong's policy framework and governance structure
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Identify key policy areas affecting daily life
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Develop skills in issue analysis and problem identification
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Practice writing clear, compelling policy asks
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Original HTML-Based Learning Activities -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">📋 Original Interactive Activities</h2>
+                <div class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+                    HTML-Based Content
+                </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">Choose from comprehensive interactive learning modules with embedded activities and assessments.</p>
+        </div>
+
+        <!-- Activity Grid -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            
+            <!-- Interactive Lecture -->
+            <button onclick="loadMarkdownContent('interactive-lecture.md')" 
+                    class="group bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 text-left border border-gray-200 dark:border-gray-700 hover:border-primary">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl">🎓</div>
+                    <div class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs">
+                        Interactive
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                    Interactive Lecture
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    Explore Hong Kong's policy framework through interactive content and real-world examples.
+                </p>
+                <div class="text-xs text-green-700 dark:text-green-300 text-center">
+                    Learn policy fundamentals and governance structure
+                </div>
+            </button>
+
+            <!-- Practice & Discussion -->
+            <button onclick="loadMarkdownContent('practice-discussion.md')" 
+                    class="group bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 text-left border border-gray-200 dark:border-gray-700 hover:border-primary">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl">✏️</div>
+                    <div class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs">
+                        Practice
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                    Practice & Discussion
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    Practice writing policy asks and engage in peer discussions about current issues.
+                </p>
+                <div class="text-xs text-blue-700 dark:text-blue-300 text-center">
+                    Draft policy asks, analyze current issues, and peer feedback
+                </div>
+            </button>
+
+            <!-- Reflect & Assess -->
+            <button onclick="loadMarkdownContent('reflect-assess.md')" 
+                    class="group bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 text-left border border-gray-200 dark:border-gray-700 hover:border-primary">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl">🤔</div>
+                    <div class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-xs">
+                        Reflect
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                    Reflect & Assess
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    Develop deeper insights through reflection activities and self-assessment tools.
+                </p>
+                <div class="text-xs text-purple-700 dark:text-purple-300 text-center">
+                    Reflect on learning and assess understanding
+                </div>
+            </button>
+
+        </div>
+
+        <!-- Content Display Area -->
+        <div class="mt-6">
+            <div id="contentArea" class="bg-white dark:bg-gray-800 rounded-lg p-6 min-h-60 shadow-sm text-center text-gray-400 dark:text-gray-500">
+                <div class="text-5xl mb-3">🏛️</div>
+                <h3 class="text-lg font-semibold mb-2">Welcome to Week 1!</h3>
+                <p>Start your policy advocacy journey by selecting an activity above.</p>
+                <div class="text-xs text-gray-300 mt-4">
+                    This week focuses on understanding Hong Kong's policy landscape and discovering issues that matter to you.
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col md:flex-row gap-3 justify-center mt-10">
+            <button onclick="saveProgress()"
+                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6a1 1 0 10-2 0v5.586l-1.293-1.293z"/>
+                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
+                </svg>
+                Save Progress
+            </button>
+            
+            <button onclick="resetContent()"
+                    class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"/>
+                </svg>
+                Reset
+            </button>
+            
+            <a href="../index.html"
+               class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                </svg>
+                Course Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/course-app.js"></script>
+    <script>
+        // Load markdown content into the content area
+        function loadMarkdownContent(filename) {
+            console.log('Loading markdown content:', filename);
+            
+            // Ensure we have the global markdown loader from watch-markdown-student.js
+            if (!window.markdownLoader) {
+                console.error('Markdown loader not available!');
+                return;
+            }
+            
+            // Load content into the main content area
+            window.markdownLoader.loadMarkdownContent(filename, 'contentArea');
+            
+            // Update content area styling
+            const contentArea = document.getElementById('contentArea');
+            if (contentArea) {
+                contentArea.classList.remove('text-center', 'text-gray-400', 'dark:text-gray-500');
+                contentArea.classList.add('text-left');
+                console.log('Updated content area styling');
+            } else {
+                console.error('Content area not found!');
+            }
+        }
+
+        // Initialize everything when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            if (typeof CourseApp !== 'undefined') {
+                window.app = new CourseApp();
+            }
+            
+            // Auto-load interactive lecture content on page load
+            setTimeout(() => {
+                loadMarkdownContent('interactive-lecture.md');
+            }, 500);
+        });
+
+        // Global functions for backward compatibility
+        function loadContent(url) {
+            if (window.app && window.app.loadContent) {
+                window.app.loadContent(url);
+            }
+        }
+
+        function resetContent() {
+            if (window.app && window.app.resetContentArea) {
+                window.app.resetContentArea();
+            }
+        }
+
+        function saveProgress() {
+            if (window.app && window.app.saveProgress) {
+                window.app.saveProgress();
+            }
+        }
+    </script>
+</body>
+</html>

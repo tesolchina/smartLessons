@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP3056 Week 1: Foundation & Issue Discovery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5D5CDE',
+              'primary-light': '#7B7AE8',
+              'primary-dark': '#4A49C2'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 min-h-screen">
+    <script>
+        // Initialize dark mode based on user preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    
+    <!-- Notification Container will be created by JS -->
+    <div class="max-w-6xl mx-auto py-8 px-4 md:px-0">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 mb-4">
+                <div class="bg-gradient-to-r from-primary to-primary-light text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Week 1
+                </div>
+                <div class="text-gray-400 text-sm">/</div>
+                <div class="text-gray-600 dark:text-gray-300 text-sm">
+                    Policy Advocacy Foundations
+                </div>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+                Foundation & Issue Discovery
+            </h1>
+            <p class="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
+                Build essential knowledge of Hong Kong's policy landscape through four key topics, each with interactive lectures, practice exercises, and reflection activities.
+            </p>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Learning Objectives
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Understand Hong Kong's policy framework and governance structure
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Identify key policy areas affecting daily life
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Develop skills in issue analysis and problem identification
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-blue-800 dark:text-blue-200">
+                        Practice writing clear, compelling policy asks
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topics Grid -->
+        <div class="space-y-8">
+            
+            <!-- Topic 1: Government Framework & Accountability -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="text-4xl">🏛️</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Topic 1: Government Framework & Accountability</h2>
+                        <p class="text-gray-600 dark:text-gray-300">Understanding the role of government and the importance of accountability</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4">
+                    <a href="topics/topic1-government-framework/interactive-lecture.html" 
+                       class="group bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 rounded-lg p-4 transition-colors border border-green-200 dark:border-green-800">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="text-2xl">🎓</div>
+                            <h3 class="font-semibold text-green-800 dark:text-green-200 group-hover:text-green-900 dark:group-hover:text-green-100">
+                                Interactive Lecture
+                            </h3>
+                        </div>
+                        <p class="text-sm text-green-700 dark:text-green-300">
+                            Learn about government as a "necessary evil" and democratic accountability
+                        </p>
+                    </a>
+                    
+                    <a href="topics/topic1-government-framework/practice-discussion.html" 
+                       class="group bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded-lg p-4 transition-colors border border-blue-200 dark:border-blue-800">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="text-2xl">✏️</div>
+                            <h3 class="font-semibold text-blue-800 dark:text-blue-200 group-hover:text-blue-900 dark:group-hover:text-blue-100">
+                                Practice & Discussion
+                            </h3>
+                        </div>
+                        <p class="text-sm text-blue-700 dark:text-blue-300">
+                            Analyze government scenarios and discuss accountability issues
+                        </p>
+                    </a>
+                    
+                    <a href="topics/topic1-government-framework/reflect-assess.html" 
+                       class="group bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 rounded-lg p-4 transition-colors border border-purple-200 dark:border-purple-800">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="text-2xl">🤔</div>
+                            <h3 class="font-semibold text-purple-800 dark:text-purple-200 group-hover:text-purple-900 dark:group-hover:text-purple-100">
+                                Reflect & Assess
+                            </h3>
+                        </div>
+                        <p class="text-sm text-purple-700 dark:text-purple-300">
+                            Self-assessment and reflection on government accountability
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Topic 2: Transparency & Access to Information (Placeholder) -->
+            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700 opacity-60">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="text-4xl">🔍</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-300">Topic 2: Transparency & Access to Information</h2>
+                        <p class="text-gray-500 dark:text-gray-400">Understanding information rights and transparency mechanisms</p>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <p class="text-gray-500 dark:text-gray-400 italic">Content coming soon...</p>
+                </div>
+            </div>
+
+            <!-- Topic 3: Public Participation & Letters to Editor (Placeholder) -->
+            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700 opacity-60">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="text-4xl">📝</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-300">Topic 3: Public Participation & Letters to Editor</h2>
+                        <p class="text-gray-500 dark:text-gray-400">Learning to engage in public discourse through letters and advocacy</p>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <p class="text-gray-500 dark:text-gray-400 italic">Content coming soon...</p>
+                </div>
+            </div>
+
+            <!-- Topic 4: Practical Advocacy Skills (Placeholder) -->
+            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700 opacity-60">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="text-4xl">🎯</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-300">Topic 4: Practical Advocacy Skills</h2>
+                        <p class="text-gray-500 dark:text-gray-400">Putting knowledge into practice with real advocacy strategies</p>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <p class="text-gray-500 dark:text-gray-400 italic">Content coming soon...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col md:flex-row gap-3 justify-center mt-10">
+            <button onclick="saveProgress()"
+                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6a1 1 0 10-2 0v5.586l-1.293-1.293z"/>
+                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
+                </svg>
+                Save Progress
+            </button>
+            
+            <a href="../index.html"
+               class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                </svg>
+                Course Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function saveProgress() {
+            // Save progress logic here
+            alert('Progress saved!');
+        }
+    </script>
+</body>
+</html>

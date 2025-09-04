@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexible Research Module + AI Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body, #app-root { height:100%; margin:0; padding:0; box-sizing:border-box; }
+    #app-root { height:100vh; display:flex; flex-direction:column; }
+    .split-top, .split-bottom { min-height:60px; }
+    .split-top { height: 80%; }
+    .split-bottom { height: 20%; }
+    .drag-divider {
+      height: 16px;
+      cursor: row-resize;
+      background: linear-gradient(90deg, #5D5CDE33 0%, #7B7AE833 100%);
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      user-select: none;
+      touch-action: none;
+    }
+    .drag-divider .handle {
+      width: 48px;
+      height: 6px;
+      border-radius: 3px;
+      background: #c7d2fe;
+      opacity: 0.85;
+      box-shadow: 0 1px 6px #5D5CDE33;
+      margin: auto;
+    }
+    iframe.no-border { border:none; }
+    @media (max-width: 640px) {
+      .split-top { height: 70% !important; }
+      .split-bottom { height: 30% !important; }
+    }
+  </style>
+</head>
+<body class="h-full w-full bg-gray-100">
+  <div id="app-root">
+
+    <!-- Top Pane: Interactive Module -->
+    <div id="splitTop" class="split-top transition-all duration-200 overflow-hidden flex-1 min-h-0">
+      <iframe
+        src="interactive.html"
+        class="w-full h-full no-border bg-white rounded-t-xl"
+        title="Interactive Research Module"
+        allowfullscreen></iframe>
+    </div>
+
+    <!-- Draggable Divider -->
+    <div id="dragDivider" class="drag-divider" tabindex="0" aria-label="Drag to resize">
+      <div class="handle"></div>
+    </div>
+
+    <!-- Bottom Pane: Simple Avatar Assistant -->
+    <div id="splitBottom" class="split-bottom transition-all duration-200 overflow-hidden min-h-[80px]">
+      <iframe
+        src="simpleAvatar01.html"
+        class="w-full h-full no-border bg-gradient-to-br from-indigo-200 via-purple-200 to-blue-200 rounded-b-xl"
+        title="AI Digital Sidekick"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Flexible vertical splitter logic
+    (function() {
+      const splitTop = document.getElementById('splitTop');
+      const splitBottom = document.getElementById('splitBottom');
+      const divider = document.getElementById('dragDivider');
+      const root = document.getElementById('app-root');
+
+      // Default ratio (top 80%, bottom 20%)
+      let ratio = 0.8;
+
+      function setHeights(r) {
+        // Clamp ratio to [0.16, 0.88] (min 12% avatar, min 12% interactive)
+        r = Math.max(0.12, Math.min(r, 0.88));
+        splitTop.style.height = `${(r*100).toFixed(2)}vh`;
+        splitBottom.style.height = `${((1-r)*100).toFixed(2)}vh`;
+      }
+
+      // Responsive: reset to default on resize if too small
+      function responsiveReset() {
+        if (window.innerWidth <= 640) {
+          setHeights(0.7);
+        } else {
+          setHeights(ratio);
+        }
+      }
+
+      // Drag logic
+      let isDragging = false;
+
+      function onDrag(e) {
+        let clientY;
+        if (e.type.startsWith("touch")) {
+          clientY = e.touches[0].clientY;
+        } else {
+          clientY = e.clientY;
+        }
+        const rect = root.getBoundingClientRect();
+        let y = clientY - rect.top;
+        // Subtract half divider
+        y = Math.max(64, Math.min(y, window.innerHeight - 64));
+        ratio = y / window.innerHeight;
+        setHeights(ratio);
+        document.body.style.cursor = "row-resize";
+        e.preventDefault();
+      }
+
+      function stopDrag() {
+        isDragging = false;
+        document.body.style.cursor = "";
+        window.removeEventListener('mousemove', onDrag);
+        window.removeEventListener('touchmove', onDrag);
+        window.removeEventListener('mouseup', stopDrag);
+        window.removeEventListener('touchend', stopDrag);
+      }
+
+      divider.addEventListener('mousedown', function(e){
+        isDragging = true;
+        window.addEventListener('mousemove', onDrag);
+        window.addEventListener('mouseup', stopDrag);
+        e.preventDefault();
+      });
+
+      divider.addEventListener('touchstart', function(e){
+        isDragging = true;
+        window.addEventListener('touchmove', onDrag, {passive:false});
+        window.addEventListener('touchend', stopDrag);
+        e.preventDefault();
+      });
+
+      // Keyboard accessibility: Up/Down arrow to move divider
+      divider.addEventListener('keydown', function(e){
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+          ratio = Math.min(ratio + 0.03, 0.88); // increase top
+          setHeights(ratio);
+          e.preventDefault();
+        } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+          ratio = Math.max(ratio - 0.03, 0.12); // decrease top
+          setHeights(ratio);
+          e.preventDefault();
+        }
+      });
+
+      // Set default
+      setHeights(ratio);
+
+      // Responsive
+      window.addEventListener('resize', responsiveReset);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice & Discussion: Policy Ask Writing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS (load before custom styles for best results) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto py-8 px-4">
+
+        <h2 class="text-2xl font-bold text-green-700 dark:text-green-200 mb-4">💬 Practice & Discussion: Crafting Your First Policy Ask</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+            Now it's time to put theory into practice! In this section, you'll draft your first "policy ask" and engage with your classmates' ideas through peer review and discussion.
+        </p>
+
+        <!-- Section 1: What Makes a Good Policy Ask -->
+        <div class="mb-8 bg-gray-50 dark:bg-gray-800 rounded-xl p-5 border">
+            <h3 class="font-semibold text-green-600 mb-2">1. Elements of an Effective Policy Ask</h3>
+            <p class="mb-3 text-gray-700 dark:text-gray-200">
+                A strong policy ask should be clear, specific, and actionable. Let's identify the key components:
+            </p>
+            
+            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mb-4">
+                <h4 class="font-medium text-green-800 dark:text-green-200 mb-2">Key Elements:</h4>
+                <ul class="list-disc list-inside space-y-1 text-green-700 dark:text-green-300">
+                    <li><strong>Who:</strong> Identify the specific decision-maker or body</li>
+                    <li><strong>What:</strong> State exactly what action you want them to take</li>
+                    <li><strong>Why:</strong> Provide compelling reasons and evidence</li>
+                    <li><strong>When:</strong> Include a timeframe or deadline if relevant</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2: Practice Exercise -->
+        <div class="mb-8 bg-gray-50 dark:bg-gray-800 rounded-xl p-5 border">
+            <h3 class="font-semibold text-green-600 mb-2">2. Your Turn: Draft a Policy Ask</h3>
+            <p class="mb-3 text-gray-700 dark:text-gray-200">
+                Choose one of the following Hong Kong policy issues and draft a 2-3 sentence policy ask:
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border">
+                    <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">🚇 Public Transport</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">MTR fare increases, accessibility for elderly/disabled passengers</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border">
+                    <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">🏠 Housing Crisis</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Waiting times for public housing, subdivided flats regulations</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border">
+                    <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">🌱 Environmental Protection</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Waste reduction, air quality, plastic bag levy</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border">
+                    <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">📱 Digital Privacy</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Data protection, cybersecurity, online privacy rights</p>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Policy Ask:</label>
+                <textarea id="policyAsk" placeholder="Example: The Legislative Council should pass legislation requiring all MTR stations to install platform screen doors by December 2025 to improve passenger safety and reduce delays caused by platform incidents." 
+                          class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" rows="4"></textarea>
+            </div>
+            
+            <button onclick="submitPolicyAsk()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                Submit for Peer Review
+            </button>
+        </div>
+
+        <!-- Section 3: Peer Review Activity -->
+        <div class="mb-8 bg-gray-50 dark:bg-gray-800 rounded-xl p-5 border">
+            <h3 class="font-semibold text-green-600 mb-2">3. Peer Review & Discussion</h3>
+            <p class="mb-3 text-gray-700 dark:text-gray-200">
+                Review your classmates' policy asks using the criteria below. Provide constructive feedback!
+            </p>
+            
+            <div class="space-y-4" id="peerReviewArea">
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border">
+                    <div class="flex items-start justify-between mb-2">
+                        <h4 class="font-medium text-gray-800 dark:text-gray-200">Student A's Policy Ask</h4>
+                        <span class="text-xs text-gray-500 bg-gray-100 dark:bg-gray-600 px-2 py-1 rounded">Housing</span>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3 italic">"The Housing Authority should reduce the waiting time for public housing applications to under 3 years by building more flats."</p>
+                    
+                    <div class="border-t pt-3">
+                        <h5 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Review Questions:</h5>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center">
+                                <input type="radio" name="clarity_a" value="clear" class="mr-2">
+                                <label>Clear and specific</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" name="clarity_a" value="unclear" class="mr-2">
+                                <label>Could be more specific</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More peer review items would be loaded dynamically -->
+            </div>
+        </div>
+
+        <!-- Section 4: Reflection -->
+        <div class="mb-8 bg-gray-50 dark:bg-gray-800 rounded-xl p-5 border">
+            <h3 class="font-semibold text-green-600 mb-2">4. Reflection: What Did You Learn?</h3>
+            <p class="mb-3 text-gray-700 dark:text-gray-200">
+                After reviewing your peers' work, reflect on your own policy ask:
+            </p>
+            
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">What would you change about your policy ask after seeing others' work?</label>
+                    <textarea placeholder="Consider clarity, specificity, feasibility..." 
+                              class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" rows="3"></textarea>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Which peer's policy ask impressed you most and why?</label>
+                    <textarea placeholder="What made it effective?" 
+                              class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" rows="2"></textarea>
+                </div>
+            </div>
+            
+            <button onclick="submitReflection()" class="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                Complete Practice Session
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function submitPolicyAsk() {
+            const ask = document.getElementById('policyAsk').value;
+            if (ask.trim()) {
+                alert('Policy ask submitted for peer review! In a real implementation, this would be shared with your classmates.');
+                // Update progress
+                if (window.parent && window.parent.updateSectionProgress) {
+                    window.parent.updateSectionProgress('practice', 50);
+                }
+            } else {
+                alert('Please write your policy ask before submitting.');
+            }
+        }
+        
+        function submitReflection() {
+            alert('Practice session completed! Great work on your first policy ask.');
+            // Update progress to 100%
+            if (window.parent && window.parent.updateSectionProgress) {
+                window.parent.updateSectionProgress('practice', 100);
+            }
+        }
+    </script>
+</body>
+</html>

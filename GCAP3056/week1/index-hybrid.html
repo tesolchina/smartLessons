@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GCAP3056 - Week 1: Government Accountability & Transparency (Hybrid)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .activity-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .activity-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(93, 92, 222, 0.15);
+        }
+        .hybrid-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .original-badge {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .comparison-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        .comparison-card:hover {
+            border-color: #5D5CDE;
+            box-shadow: 0 8px 16px rgba(93, 92, 222, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div class="max-w-7xl mx-auto py-8 px-4">
+        
+        <!-- Navigation -->
+        <nav class="mb-6">
+            <div class="flex items-center space-x-4 text-sm text-gray-600">
+                <a href="../intro.html" class="hover:text-primary">Home</a>
+                <span>›</span>
+                <span class="text-primary font-medium">Week 1 (Hybrid Demo)</span>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-primary to-primary-light text-white rounded-xl p-8 mb-8">
+            <h1 class="text-4xl font-bold mb-4">📊 Week 1: Government Accountability & Transparency</h1>
+            <p class="text-xl text-primary-light opacity-90 mb-6">
+                Explore the fundamental principles of democratic governance and citizen engagement
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Accountability</span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Transparency</span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Access to Information</span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Letters to the Editor</span>
+            </div>
+        </div>
+
+        <!-- Content Approach Comparison -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">🔄 Content Delivery Approaches</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                This week showcases two different approaches to interactive educational content: traditional hand-coded HTML and our new hybrid markdown-driven system.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Original Approach -->
+                <div class="comparison-card">
+                    <div class="flex items-center mb-4">
+                        <div class="original-badge text-white px-3 py-1 rounded-full text-sm font-medium mr-3">
+                            Original
+                        </div>
+                        <h3 class="text-lg font-semibold">Traditional Interactive HTML</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                        <li>✅ Full interactive functionality</li>
+                        <li>✅ Rich JavaScript behaviors</li>
+                        <li>✅ Complex question types</li>
+                        <li>❌ Content editing requires HTML knowledge</li>
+                        <li>❌ Harder to maintain and update</li>
+                    </ul>
+                    <div class="text-xs text-gray-500">
+                        Hand-coded HTML with embedded JavaScript for interactive elements
+                    </div>
+                </div>
+
+                <!-- Hybrid Approach -->
+                <div class="comparison-card">
+                    <div class="flex items-center mb-4">
+                        <div class="hybrid-badge text-white px-3 py-1 rounded-full text-sm font-medium mr-3">
+                            Hybrid
+                        </div>
+                        <h3 class="text-lg font-semibold">Markdown-Driven Content</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                        <li>✅ Easy content editing in markdown</li>
+                        <li>✅ Preserves interactive functionality</li>
+                        <li>✅ Dynamic content loading</li>
+                        <li>✅ File watching for development</li>
+                        <li>⚠️ Requires markdown parsing system</li>
+                    </ul>
+                    <div class="text-xs text-gray-500">
+                        Markdown content with dynamic loading and interactive element parsing
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Activities -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">📚 Learning Activities</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <!-- Interactive Lecture -->
+                <div class="activity-card text-white rounded-xl p-6 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-3">🗞️ Interactive Lecture</h3>
+                        <p class="mb-4 opacity-90">
+                            Explore accountability, transparency, and the power of citizen engagement through interactive content.
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <!-- Original Version -->
+                            <a href="interactive-lecture/index.html" class="block w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium">Original Version</span>
+                                    <span class="original-badge text-white px-2 py-1 rounded text-xs">Traditional</span>
+                                </div>
+                                <div class="text-sm opacity-75 mt-1">Hand-coded interactive HTML</div>
+                            </a>
+                            
+                            <!-- Hybrid Version -->
+                            <a href="interactive-lecture-hybrid/index.html" class="block w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium">Hybrid Version</span>
+                                    <span class="hybrid-badge text-white px-2 py-1 rounded text-xs">New</span>
+                                </div>
+                                <div class="text-sm opacity-75 mt-1">Markdown-driven with mode switching</div>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-4 text-sm opacity-75">
+                            Key Topics: Government as "necessary evil", Code on Access to Information, Simon's published letters
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practice & Discussion -->
+                <div class="activity-card text-white rounded-xl p-6 relative overflow-hidden" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-3">💬 Practice & Discussion</h3>
+                        <p class="mb-4 opacity-90">
+                            Engage with discussion questions and practice writing information requests.
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <!-- Original Version -->
+                            <a href="practice-discussion/index.html" class="block w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium">Original Version</span>
+                                    <span class="original-badge text-white px-2 py-1 rounded text-xs">Traditional</span>
+                                </div>
+                                <div class="text-sm opacity-75 mt-1">Basic discussion prompts</div>
+                            </a>
+                            
+                            <!-- Hybrid Version -->
+                            <a href="practice-discussion-hybrid/index.html" class="block w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium">Hybrid Version</span>
+                                    <span class="hybrid-badge text-white px-2 py-1 rounded text-xs">New</span>
+                                </div>
+                                <div class="text-sm opacity-75 mt-1">Rich activities with content switching</div>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-4 text-sm opacity-75">
+                            Activities: Quiz review, discussion prompts, information request practice, case study analysis
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reflect & Assess -->
+                <div class="activity-card text-white rounded-xl p-6 relative overflow-hidden" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-3">🎯 Reflect & Assess</h3>
+                        <p class="mb-4 opacity-90">
+                            Synthesize your learning and assess your understanding of key concepts.
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <!-- Original Version -->
+                            <a href="reflect-assess/index.html" class="block w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium">Original Version</span>
+                                    <span class="original-badge text-white px-2 py-1 rounded text-xs">Traditional</span>
+                                </div>
+                                <div class="text-sm opacity-75 mt-1">Video reflection activities</div>
+                            </a>
+                            
+                            <!-- Hybrid Version -->
+                            <a href="reflect-assess-hybrid/index.html" class="block w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium">Hybrid Version</span>
+                                    <span class="hybrid-badge text-white px-2 py-1 rounded text-xs">New</span>
+                                </div>
+                                <div class="text-sm opacity-75 mt-1">Comprehensive reflection & self-assessment</div>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-4 text-sm opacity-75">
+                            Activities: Learning reflection, knowledge assessment, self-rating, action planning
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Technical Implementation Details -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">⚙️ Technical Implementation</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Markdown Content System -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">📝 Markdown Content System</h3>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li><code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">/content/interactive-lecture.md</code></li>
+                        <li><code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">/content/practice-discussion.md</code></li>
+                        <li><code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">/content/reflect-assess.md</code></li>
+                    </ul>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
+                        Content files use special markdown syntax for interactive elements like multiple choice questions, fill-in-blanks, and text areas.
+                    </p>
+                </div>
+
+                <!-- Watch-Markdown System -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">👁️ Watch-Markdown System</h3>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li><code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">/js/watch-markdown.js</code></li>
+                        <li>Dynamic content loading with <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">loadContent()</code></li>
+                        <li>File watching for development</li>
+                        <li>Interactive element parsing</li>
+                    </ul>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
+                        JavaScript system that parses markdown into interactive HTML elements and enables real-time content updates.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Outcomes -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">🎯 Learning Outcomes</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">Knowledge & Understanding</h3>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li>✓ Define accountability and transparency in government</li>
+                        <li>✓ Understand the Hong Kong Code on Access to Information</li>
+                        <li>✓ Recognize the role of free press in democracy</li>
+                        <li>✓ Analyze the concept of government as "necessary evil"</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">Skills & Application</h3>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li>✓ Write formal information requests</li>
+                        <li>✓ Critically analyze government information policies</li>
+                        <li>✓ Plan civic engagement strategies</li>
+                        <li>✓ Evaluate transparency initiatives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="flex justify-between items-center pt-6 border-t border-gray-200 dark:border-gray-700">
+            <a href="../intro.html" class="flex items-center text-gray-600 hover:text-primary">
+                ← Back to Course Overview
+            </a>
+            <a href="../week4-5/index.html" class="flex items-center text-primary hover:text-primary-dark">
+                Next: Week 4-5 →
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

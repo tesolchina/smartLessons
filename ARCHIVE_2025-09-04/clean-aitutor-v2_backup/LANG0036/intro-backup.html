@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANG0036 Course Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#059669',
+                        'primary-light': '#10B981',
+                        'primary-dark': '#047857'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .week-card {
+            transition: all 0.3s ease;
+        }
+        .week-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.15);
+        }
+        .assessment-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .timeline-connector {
+            position: relative;
+        }
+        .timeline-connector::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(135deg, #059669, #10B981);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .week-node {
+            position: relative;
+            z-index: 10;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .zigzag-line {
+            stroke: #059669;
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 5,5;
+            animation: dash 2s linear infinite;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 overflow-x-auto">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="min-h-screen p-6">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">LANG0036 Course Hub</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Enhancing English through Global Citizenship</p>
+        </div>
+
+                <!-- Replace the Course Title, Instructor, and Course Focus sections with this updated version -->
+        <div class="max-w-6xl mx-auto mb-8">
+            <!-- Course Title -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm mb-6">
+                <h3 class="text-xl font-bold text-primary mb-3">Course Title</h3>
+                <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                    <span class="font-semibold">LANG0036</span> - Enhancing English through Global Citizenship
+                </p>
+                <div class="mt-4 grid md:grid-cols-3 gap-4">
+                    <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg text-center">
+                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 text-sm">Section 36 (Tuesday)</h4>
+                        <p class="text-xs text-blue-700 dark:text-blue-300">04:30 pm - 06:20 pm (OEM905)</p>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg text-center">
+                        <h4 class="font-semibold text-purple-800 dark:text-purple-200 text-sm">Section 37 (Thursday)</h4>
+                        <p class="text-xs text-purple-700 dark:text-purple-300">11:30 am - 01:20 pm (OEM905)</p>
+                    </div>
+                    <div class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg text-center">
+                        <h4 class="font-semibold text-orange-800 dark:text-orange-200 text-sm">Section 38 (Wednesday)</h4>
+                        <p class="text-xs text-orange-700 dark:text-orange-300">01:30 pm - 03:20 pm (OEM805)</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Instructor -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm mb-6">
+                <h3 class="text-xl font-bold text-primary mb-4">👨‍🏫 Instructor</h3>
+                <div class="text-center">
+                    <div class="bg-green-100 dark:bg-green-900/30 rounded-lg p-3 mb-2">
+                        <span class="text-green-600 dark:text-green-400 font-bold">Dr. Simon Wang</span>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">
+                        <span class="font-medium">Language Centre</span><br>
+                        <a href="mailto:simonwang@hkbu.edu.hk" class="text-primary hover:underline">simonwang@hkbu.edu.hk</a><br>
+                        <span class="text-xs text-gray-500">Office Hours: By appointment</span>
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Course Focus -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm mb-6">
+                <h3 class="text-xl font-bold text-primary mb-4">🎯 Course Focus</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>English enhancement through global citizenship themes</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Critical thinking and advocacy skills development</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>AI-assisted learning and multimodal communication</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <span class="text-primary mt-1">•</span>
+                            <span>Intercultural competence through global dialogues</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Important Course Information -->
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 border border-yellow-200 dark:border-yellow-800">
+                    <h4 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2 flex items-center">
+                        <span class="text-2xl mr-2">⚠️</span>
+                        Assessment Method
+                    </h4>
+                    <p class="text-yellow-700 dark:text-yellow-300 text-sm">
+                        <strong>Pass/Fail Course:</strong> This course uses a pass/fail grading system. 
+                        Focus on learning and improvement rather than grades.
+                    </p>
+                </div>
+                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+                    <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2 flex items-center">
+                        <span class="text-2xl mr-2">📖</span>
+                        Learning Approach
+                    </h4>
+                    <p class="text-blue-700 dark:text-blue-300 text-sm">
+                        <strong>Interactive Learning:</strong> Emphasis on in-class practice, discussion, 
+                        self-access materials, and small group meetings. Limited lecturing.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Doc Integration -->
+        <div class="max-w-6xl mx-auto mb-8">
+            <div class="text-center">
+                <button onclick="toggleGoogleDoc()" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors shadow-lg mb-4">
+                    <span id="googleDocToggleText">📝 Show Course Notes</span>
+                    <svg id="googleDocToggleIcon" class="ml-2 w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Google Doc Container (Hidden by default) -->
+            <div id="googleDocContainer" class="hidden">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe 
+                            src="https://docs.google.com/document/d/e/2PACX-1vTXGZsC0mI2fahv83j5XJ-BInwemzmAPvKApz1tr9zWzqvhsUWFGGpwWRFH_jl7iYlWMxKDfVSIcaUM/pub?embedded=true" 
+                            class="w-full h-[600px] border-0"
+                            frameborder="0"
+                            allowfullscreen
+                            loading="lazy"
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Toggle Section -->
+        <div class="max-w-6xl mx-auto mb-8">
+            <div class="text-center">
+                <button onclick="toggleRoadmap()" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors shadow-lg">
+                    <span id="roadmapToggleText">📅 Show Course Roadmap</span>
+                    <svg id="roadmapToggleIcon" class="ml-2 w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Course Roadmap Container (Hidden by default) -->
+        <div id="roadmapContainer" class="hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">📅 Course Roadmap</h2>
+                <!-- Color Legend -->
+                <div class="mt-4 flex justify-center flex-wrap gap-4 text-xs">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-green-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Global Dialogues</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-blue-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Writing & AI Tasks</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-purple-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Speaking & Presentations</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-orange-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Vocabulary Quizzes</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-red-500 rounded mr-2"></div>
+                        <span class="text-gray-600 dark:text-gray-300">Major Assessments</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- S-shaped Timeline Container -->
+            <div class="relative w-full max-w-7xl mx-auto">
+                <!-- Animated zigzag line using SVG -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 900">
+                    <path class="zigzag-line" d="M 100 100 L 300 100 L 500 200 L 700 200 L 900 300 L 700 400 L 500 400 L 300 500 L 100 500 L 300 600 L 500 600 L 700 700 L 900 700 L 700 800 L 500 800"></path>
+                </svg>
+
+                <!-- Week cards positioned in S-shape -->
+                <div class="relative z-10">
+                    <!-- Row 1: Left to Right -->
+                    <div class="flex justify-between items-start mb-20">
+                        <!-- Week 1 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in cursor-pointer hover:border-primary-light" style="animation-delay: 0.1s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">1</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Course Introduction</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                <strong>Theme 1: Sustainable Lifestyle</strong><br>
+                                📚 Course intro + Module 1: Fast Fashion
+                            </div>
+                            <div class="text-xs text-primary dark:text-primary-light font-medium">📝 Pre-course Video: Global Citizenship (2%)</div>
+                            <a href="https://smartlessons.hkbu.tech/LANG0036/week1/index.html" target="_blank" class="block mt-2 text-xs text-primary font-medium hover:underline">
+                                👉 Access Week 1 Materials
+                            </a>
+                        </div>
+
+                        <!-- Week 2 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.2s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">2</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Fast Fashion & Sustainable Consumption</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 1 (cont'd) + Module 2: Sustainable Consumption</div>
+                            <div class="text-xs text-primary dark:text-primary-light font-medium">📝 Pre-course Listening: What is global citizenship (3%)</div>
+                        </div>
+
+                        <!-- Week 3 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-green-500 fade-in" style="animation-delay: 0.3s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">3</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Group Formation</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 2 (cont'd) + Form pairs/groups for Multimodal Advocacy</div>
+                            <div class="text-xs text-green-600 dark:text-green-400 font-medium">🌍 Global Dialogues I: Fast Fashion (Fri. 21:00-23:00)</div>
+                        </div>
+
+                        <!-- Week 4 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-green-500 fade-in" style="animation-delay: 0.4s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">4</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Household Waste</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 3: Household Waste</div>
+                            <div class="text-xs text-green-600 dark:text-green-400 font-medium mb-1">🌍 Global Dialogues II: Sustainable Consumption</div>
+                            <div class="text-xs text-orange-600 dark:text-orange-400 font-medium">📝 Vocab Quiz I (HW)</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Right to Left -->
+                    <div class="flex justify-between items-start mb-20 flex-row-reverse">
+                        <!-- Week 5 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.5s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">5</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Climate Change</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                <strong>Theme 2: Global Concerns</strong><br>
+                                📚 Module 4: Climate Change and Environment
+                            </div>
+                            <div class="text-xs text-orange-600 dark:text-orange-400 mb-1">⚠️ PH: 1 Oct (Wed)</div>
+                            <div class="text-xs text-green-600 dark:text-green-400 font-medium">🌍 Global Dialogues III: Climate Change</div>
+                        </div>
+
+                        <!-- Week 6 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-blue-500 fade-in" style="animation-delay: 0.6s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">6</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Global Labor</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 5: Global Labor and Employment</div>
+                            <div class="text-xs text-orange-600 dark:text-orange-400 mb-1">⚠️ PH: 7 Oct (Tue)</div>
+                            <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">📝 Critical Dialogue Practice I (2.5%)</div>
+                        </div>
+
+                        <!-- Week 7 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-green-500 fade-in" style="animation-delay: 0.7s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">7</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Media & Technology</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Module 6: Media and Technology</div>
+                            <div class="text-xs text-green-600 dark:text-green-400 font-medium mb-1">🌍 Global Dialogues IV: Global Labor</div>
+                            <div class="text-xs text-orange-600 dark:text-orange-400 font-medium">📝 Vocab Quiz II (HW)</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Left to Right -->
+                    <div class="flex justify-between items-start mb-20">
+                        <!-- Week 8 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-red-500 fade-in" style="animation-delay: 0.8s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">8</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Major Assessment Week</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Mock Point-of-View Writing (1 hour)</div>
+                            <div class="text-xs text-red-600 dark:text-red-400 font-medium mb-1">📝 Listening/Reading Test (17%) - 40 mins</div>
+                            <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">📝 Critical Dialogue Practice II (2.5%) + AI Review</div>
+                        </div>
+
+                        <!-- Week 9 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 0.9s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">9</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Equality & Disparity</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                <strong>Theme 3: Equality and Disparity</strong><br>
+                                📚 Choose: Gender/Racial Equality OR Food Equity
+                            </div>
+                            <div class="text-xs text-orange-600 dark:text-orange-400 mb-1">⚠️ PH: 29 Oct (Wed)</div>
+                            <div class="text-xs text-orange-600 dark:text-orange-400 font-medium mb-1">📝 Vocab Quiz III (HW)</div>
+                            <div class="text-xs text-green-600 dark:text-green-400 font-medium">🌍 Global Dialogues V: Intercultural (Sat. 9:00-11:00)</div>
+                        </div>
+
+                        <!-- Week 10 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-red-500 fade-in" style="animation-delay: 1.0s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">10</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Point-of-View Writing</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Provide Critical Dialogue topics</div>
+                            <div class="text-xs text-red-600 dark:text-red-400 font-medium">📝 In-class Point-of-View Writing (10%) - 1 hour</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Right to Left -->
+                    <div class="flex justify-between items-start mb-20 flex-row-reverse">
+                        <!-- Week 11 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-primary fade-in" style="animation-delay: 1.1s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">11</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Communication & Culture</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">
+                                <strong>Theme 4: Communication and Culture</strong><br>
+                                📚 Choose: Intercultural Communication OR Educational Marginalization
+                            </div>
+                            <div class="text-xs text-green-600 dark:text-green-400 font-medium mb-1">🌍 Global Dialogues VI: Education in Indonesia (Sat. 9:00-11:00)</div>
+                            <div class="text-xs text-orange-600 dark:text-orange-400 font-medium">📝 Vocab Quiz IV (HW)</div>
+                        </div>
+
+                        <!-- Week 12 -->
+                        <div class="week-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-60 border-l-4 border-purple-500 fade-in" style="animation-delay: 1.2s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">12</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-sm">Critical Dialogue</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Critical Dialogue on Global Citizenship Issues</div>
+                            <div class="text-xs text-purple-600 dark:text-purple-400 font-medium mb-1">🎤 Critical Dialogue (15%): Speech (10%) + Questions (5%)</div>
+                            <div class="text-xs text-purple-600 dark:text-purple-400 font-medium">📝 Publish Multimodal Advocacy on Padlet (10%)</div>
+                        </div>
+                    </div>
+
+                    <!-- Final Week - Center aligned -->
+                    <div class="flex justify-center">
+                        <!-- Week 13 -->
+                        <div class="week-card bg-gradient-to-r from-yellow-100 to-yellow-50 dark:from-yellow-900 dark:to-yellow-800 rounded-lg shadow-lg p-4 w-80 border-l-4 border-yellow-500 fade-in" style="animation-delay: 1.3s">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm mr-3 ring-2 ring-yellow-300">13</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white">🎯 Final Presentations & Reflection</h3>
+                            </div>
+                            <div class="text-xs text-gray-700 dark:text-gray-300 mb-2">📚 Multimodal Advocacy Project Presentations</div>
+                            <div class="text-xs mb-1">
+                                <span class="text-purple-600 dark:text-purple-400 font-medium">🎨 Multimodal Advocacy Presentation (10%)</span>
+                            </div>
+                            <div class="text-xs mb-1">
+                                <span class="text-blue-600 dark:text-blue-400 font-medium">🤖 AI-assisted Review (10%)</span>
+                            </div>
+                            <div class="text-xs">
+                                <span class="text-green-600 dark:text-green-400 font-medium">📝 Global Dialogues Reflection (10%)</span>
+                            </div>
+                            <div class="text-center mt-2">
+                                <span class="assessment-badge bg-yellow-500 text-white text-xs px-3 py-1 rounded-full font-bold">FINAL WEEK</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assessment Overview -->
+        <div class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 max-w-6xl mx-auto border border-blue-200 dark:border-blue-800">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">📋 Assessment Overview</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-bold text-blue-800 dark:text-blue-200 mb-4">📚 Individual Assessments (80%)</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded text-sm">
+                            <span>Listening & Reading (incl. Global Dialogues)</span>
+                            <span class="font-medium text-blue-600">30%</span>
+                        </div>
+                        <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded text-sm">
+                            <span>Point-of-view Writing & AI Review</span>
+                            <span class="font-medium text-blue-600">20%</span>
+                        </div>
+                        <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded text-sm">
+                            <span>Critical Dialogue (Speech + Questions)</span>
+                            <span class="font-medium text-blue-600">20%</span>
+                        </div>
+                        <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded text-sm">
+                            <span>Participation</span>
+                            <span class="font-medium text-blue-600">10%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-purple-800 dark:text-purple-200 mb-4">👥 Group/Individual Project (20%)</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded text-sm">
+                            <span>Multimodal Advocacy Project</span>
+                            <span class="font-medium text-purple-600">20%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                        <h4 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2">🎯 Course Features</h4>
+                        <ul class="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
+                            <li>• <strong>Pass/Fail grading</strong> - Focus on learning, not grades</li>
+                            <li>• <strong>Self-access materials</strong> for independent study</li>
+                            <li>• <strong>Small group discussions</strong> - Interactive learning</li>
+                            <li>• <strong>AI-assisted learning</strong> - Technology partnership</li>
+                            <li>• <strong>Global dialogues</strong> - Intercultural competence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all week cards
+        document.querySelectorAll('.fade-in-up').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        // Google Doc toggle functionality
+        function toggleGoogleDoc() {
+            const container = document.getElementById('googleDocContainer');
+            const toggleText = document.getElementById('googleDocToggleText');
+            const toggleIcon = document.getElementById('googleDocToggleIcon');
+            
+            if (container.classList.contains('hidden')) {
+                // Show Google Doc
+                container.classList.remove('hidden');
+                toggleText.textContent = '📝 Hide Course Notes';
+                toggleIcon.style.transform = 'rotate(180deg)';
+                // Smooth scroll to Google Doc
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                // Hide Google Doc
+                container.classList.add('hidden');
+                toggleText.textContent = '📝 Show Course Notes';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Roadmap toggle functionality
+        function toggleRoadmap() {
+            const container = document.getElementById('roadmapContainer');
+            const toggleText = document.getElementById('roadmapToggleText');
+            const toggleIcon = document.getElementById('roadmapToggleIcon');
+            
+            if (container.classList.contains('hidden')) {
+                // Show roadmap
+                container.classList.remove('hidden');
+                toggleText.textContent = '📅 Hide Course Roadmap';
+                toggleIcon.style.transform = 'rotate(180deg)';
+                // Smooth scroll to roadmap
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                // Hide roadmap
+                container.classList.add('hidden');
+                toggleText.textContent = '📅 Show Course Roadmap';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>

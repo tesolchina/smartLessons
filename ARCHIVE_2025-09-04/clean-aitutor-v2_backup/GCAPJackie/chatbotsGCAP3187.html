@@ -1,0 +1,730 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP 3187 E-Sports Chatbot Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'bg-light': '#FFFFFF',
+                        'bg-dark': '#181818'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button.active {
+            background-color: #5D5CDE;
+            color: white;
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body class="bg-bg-light dark:bg-bg-dark text-gray-900 dark:text-gray-100 min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2">GCAP 3187 E-Sports Chatbot Hub</h1>
+            <p class="text-xl mb-4">Empowering Students to Bridge Generations through E-Sports with AI Assistance</p>
+            <div class="flex flex-wrap gap-4 text-sm">
+                <span>Instructor: Dr. Jackie Chan</span>
+                <span>|</span>
+                <span>Department of Education Studies, HKBU</span>
+                <span>|</span>
+                <span>AI consultant: Dr. Simon Wang, The Language Centre, HKBU</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-100 dark:bg-gray-800 py-4 sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#overview" class="text-primary hover:underline">Overview</a>
+                <span>|</span>
+                <a href="#chatbots" class="text-primary hover:underline">Chatbots</a>
+                <span>|</span>
+                <a href="#signup" class="text-primary hover:underline">Sign-Up Instructions</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Course Overview Section -->
+        <section id="overview" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-primary">Course and Assignment Overview</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                <p class="text-lg leading-relaxed">
+                    Welcome to the GCAP 3187 Chatbot Hub! This service-learning course at Hong Kong Baptist University 
+                    focuses on connecting the elderly with the internet through e-Sports. Students develop skills in 
+                    digital literacy, intergenerational communication, and collaboration to design training packages 
+                    and organize tournaments for the elderly. Our three AI chatbots assist with key assignments: 
+                    preparing initial meetings, conducting user/task analysis, and planning e-Sports activities. 
+                    Explore each tab below to learn how these tools can support your learning journey!
+                </p>
+                
+                <div class="mt-6 grid md:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h3 class="font-semibold text-primary mb-2">Course Aims</h3>
+                        <ul class="text-sm space-y-1">
+                            <li>• Enhance elderly social networks</li>
+                            <li>• Introduce e-Sports (Brawl Stars)</li>
+                            <li>• Organize collaborative tournaments</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h3 class="font-semibold text-primary mb-2">Key Skills</h3>
+                        <ul class="text-sm space-y-1">
+                            <li>• Digital literacy</li>
+                            <li>• Intergenerational communication</li>
+                            <li>• Collaboration &amp; andragogy</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h3 class="font-semibold text-primary mb-2">Target Group</h3>
+                        <ul class="text-sm space-y-1">
+                            <li>• Elderly participants (55-75 years)</li>
+                            <li>• Interdisciplinary students</li>
+                            <li>• Service-learning focus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbot Tabs Section -->
+        <section id="chatbots" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-primary">AI Chatbot Assistants</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap border-b border-gray-200 dark:border-gray-700 mb-6">
+                <button class="tab-button px-6 py-3 text-sm font-medium border-b-2 border-transparent hover:border-primary transition-colors active" onclick="switchTab('tab1')">
+                    Prepare Initial Meeting
+                </button>
+                <button class="tab-button px-6 py-3 text-sm font-medium border-b-2 border-transparent hover:border-primary transition-colors" onclick="switchTab('tab2')">
+                    User &amp; Task Analysis
+                </button>
+                <button class="tab-button px-6 py-3 text-sm font-medium border-b-2 border-transparent hover:border-primary transition-colors" onclick="switchTab('tab3')">
+                    Activity Plan Tutor
+                </button>
+            </div>
+
+            <!-- Tab 1: Initial Meeting Chatbot -->
+            <div id="tab1" class="tab-content active">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class="lg:w-2/3">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">Prepare Initial Meeting with Elderlies (E-Sports)</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-blue-50 dark:bg-blue-900 border-l-4 border-primary p-4 rounded">
+                                    <h4 class="font-semibold mb-2 text-primary">Welcome Message</h4>
+                                    <p class="text-sm italic">"YO~ I am here to help you with the initial meeting with the elderly. Please type ok to get started. When you complete your interaction with this chatbot, type 3Q3Q to end your conversation."</p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Meet Emily - Your Initial Meeting Guide</h4>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        Emily is a knowledgeable, patient, and caring social worker with extensive experience 
+                                        in geriatric care. She acts as a university-level tutor, guiding students to create their 
+                                        own structured plan for a 60-minute initial meeting with elderly participants aged 55-75.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Core Objective &amp; Methodology</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-3">
+                                        Emily helps students prepare a detailed plan for a preliminary meeting, focusing on gentle 
+                                        and respectful information gathering using the <strong>"Observation without Scrutiny" Model</strong>.
+                                    </p>
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Preparation &amp; Introduction (10 mins)</h5>
+                                            <p class="text-sm">Setting a positive, non-intrusive tone at the beginning</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Ice-breaking &amp; Rapport (10-20 mins)</h5>
+                                            <p class="text-sm">Simple, gentle games to build rapport and uncover learning needs</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Observation &amp; Engagement (10 mins)</h5>
+                                            <p class="text-sm">Natural interaction without making elderly feel studied</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Hands-on Experience (15 mins)</h5>
+                                            <p class="text-sm">Download Brawl Stars and observe their mobile device control</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">How to Interact with Emily</h4>
+                                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded">
+                                        <ul class="space-y-2 text-sm">
+                                            <li><strong>Starting:</strong> Type "ok" to begin guided planning with Socratic questioning</li>
+                                            <li><strong>Version Tracking:</strong> Emily tracks your latest outline version</li>
+                                            <li><strong>Summary:</strong> Type "_3Q3Q_" to get conversation summary and latest version</li>
+                                            <li><strong>Guidance:</strong> Emily provides frameworks and hints for independent learning</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Key Principles Emily Follows</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2">•</span>
+                                            <strong>From Plan to Practice:</strong> Bridges theory to real-world scenarios
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2">•</span>
+                                            <strong>Respect &amp; Privacy:</strong> Ensures boundaries and gentle interaction
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2">•</span>
+                                            <strong>Socratic Method:</strong> Asks guiding questions rather than providing answers
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2">•</span>
+                                            <strong>Safety First:</strong> Always prioritizes elderly participants' comfort
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-1/3">
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold mb-3 text-primary">How to Start Chatting</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: ok</code>
+                                        <p class="text-xs mt-1">Start guided planning session</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: _3Q3Q_</code>
+                                        <p class="text-xs mt-1">Get conversation summary and latest outline</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-3 text-primary">Demo Chat Session</h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "ok"
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Great! Let's start planning your initial meeting. What do you think might be a gentle, non-threatening way to introduce yourself and the purpose of the meeting to an elderly participant?"
+                                    </div>
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "Maybe introduce myself as a student who wants to learn about their experiences?"
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Excellent approach! That shows respect for their knowledge. How can you ensure they feel comfortable and not rushed during this initial conversation? What specific words might you use?"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: User Analysis Chatbot -->
+            <div id="tab2" class="tab-content">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class="lg:w-2/3">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">User &amp; Task Analysis Tutor (E-Sports)</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-green-50 dark:bg-green-900 border-l-4 border-primary p-4 rounded">
+                                    <h4 class="font-semibold mb-2 text-primary">Welcome Message</h4>
+                                    <p class="text-sm italic">"I am here to help you with user needs analysis. Please type _ok_ to get started. Type _outline_ to access and edit the outline."</p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Emily's Analysis Expertise</h4>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        Emily assists with needs assessment for the e-Sports training package by guiding 
+                                        user analysis (elderly needs/preferences) and task analysis (gaming skills). 
+                                        She helps create a structured <strong>250-word outline</strong> after meeting with elderly participants.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Core Objective: Two-Part Analysis</h4>
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">1. Student Observations</h5>
+                                            <p class="text-sm">Document observations during the meeting with elderly participants</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">2. Learning Needs Deduction</h5>
+                                            <p class="text-sm">Deduce elderly learning needs for playing Brawl Stars based on observations</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">The KSA Analysis Model</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-3">
+                                        Emily guides students to categorize learning needs using the powerful KSA framework:
+                                    </p>
+                                    <div class="grid md:grid-cols-3 gap-4">
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Knowledge</h5>
+                                            <p class="text-sm">What does the person need to <em>know</em>?</p>
+                                            <p class="text-xs text-gray-600 dark:text-gray-400">e.g., "What is a scam email?"</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Skills</h5>
+                                            <p class="text-sm">What do they need to be able to <em>do</em>?</p>
+                                            <p class="text-xs text-gray-600 dark:text-gray-400">e.g., "How to attach a photo to an email"</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Attitude</h5>
+                                            <p class="text-sm">What beliefs or feelings need addressing?</p>
+                                            <p class="text-xs text-gray-600 dark:text-gray-400">e.g., "I'm too old for this" belief</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Three-Step Methodology</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</span>
+                                            <div>
+                                                <h5 class="font-medium">From Observation to Inference</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Bridge objective data to meaningful interpretation</p>
+                                                <p class="text-xs italic">"You noted he held his phone very close. What might that imply about a potential need?"</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</span>
+                                            <div>
+                                                <h5 class="font-medium">Categorizing Learning Needs (KSA Model)</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Structure analysis using Knowledge, Skills, and Attitude categories</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</span>
+                                            <div>
+                                                <h5 class="font-medium">Synthesizing and Justifying</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Formulate prioritized learning needs with specific evidence</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Critical Boundaries</h4>
+                                    <div class="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-700 rounded p-3">
+                                        <ul class="space-y-1 text-sm">
+                                            <li>• Emily provides frameworks and questions, <strong>not</strong> the analysis itself</li>
+                                            <li>• Students must perform their own data interpretation</li>
+                                            <li>• Each identified need must be justified with specific evidence</li>
+                                            <li>• Academic assignment focus only</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-1/3">
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold mb-3 text-primary">How to Start Chatting</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: _ok_</code>
+                                        <p class="text-xs mt-1">Start analysis guidance with Socratic method</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: _outline_</code>
+                                        <p class="text-xs mt-1">Access and edit the working outline</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: _3Q3Q_</code>
+                                        <p class="text-xs mt-1">Get final version with conversation summary</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-3 text-primary">Demo Chat Session</h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "_ok_"
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Do you already have your observation notes and are ready to analyse them?"
+                                    </div>
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "Yes, I observed that she said 'I never know which button to press.'"
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Excellent observation! What might this statement suggest about her confidence or knowledge? Can you categorize this using the KSA model?"
+                                    </div>
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "It suggests a Knowledge need - understanding button functions, and maybe an Attitude need about confidence?"
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Perfect analysis! Now, what specific evidence supports each of these needs? How would you justify prioritizing them?"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Activity Planning Chatbot -->
+            <div id="tab3" class="tab-content">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class="lg:w-2/3">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">Activity Plan Tutor (E-Sports)</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-purple-50 dark:bg-purple-900 border-l-4 border-primary p-4 rounded">
+                                    <h4 class="font-semibold mb-2 text-primary">Welcome Message</h4>
+                                    <p class="text-sm italic">"I am here to help you with developing your series of 5 activity plans. Please type _ok_ to get started. Type _outline_ to access and edit the outline."</p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Emily's Creative Planning Approach</h4>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        Emily is an energetic and creative education expert specializing in innovative learning 
+                                        methodologies and service-learning. She helps students generate a comprehensive and engaging 
+                                        set of <strong>six activity plans (approximately two hours each)</strong> with clear connections 
+                                        to service-learning principles.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Core Objective: Comprehensive Training Design</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 mb-3">
+                                        Students must first outline <strong>ultimate learning objectives</strong> for the entire 
+                                        six-lesson series, then design each session with explicit links to these overarching goals 
+                                        and broader service-learning objectives.
+                                    </p>
+                                    <div class="grid md:grid-cols-3 gap-3">
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Sessions 1-2</h5>
+                                            <p class="text-sm">Game download, account setup, basic controls</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Sessions 3-4</h5>
+                                            <p class="text-sm">Character characteristics and strategic playing</p>
+                                        </div>
+                                        <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+                                            <h5 class="font-medium text-primary">Sessions 5-6</h5>
+                                            <p class="text-sm">Intergroup friendly matches, tournament simulation</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Required Activity Plan Components</h4>
+                                    <div class="space-y-3">
+                                        <div class="grid md:grid-cols-2 gap-3">
+                                            <div class="space-y-2 text-sm">
+                                                <div class="bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                                                    <strong>1. Date &amp; Time:</strong> Scheduled session details
+                                                </div>
+                                                <div class="bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                                                    <strong>2. Elderly's Prior Knowledge:</strong> Existing experience summary
+                                                </div>
+                                                <div class="bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                                                    <strong>3. Session Learning Objectives:</strong> Clear, measurable goals
+                                                </div>
+                                            </div>
+                                            <div class="space-y-2 text-sm">
+                                                <div class="bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                                                    <strong>4. Anticipated Problems &amp; Solutions:</strong> Issue preparation
+                                                </div>
+                                                <div class="bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                                                    <strong>5. Teaching Materials and Aids:</strong> All required resources
+                                                </div>
+                                                <div class="bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                                                    <strong>6. Detailed Activity Breakdown:</strong> Sub-activities with timing
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded p-3">
+                                            <h5 class="font-medium text-blue-800 dark:text-blue-200 mb-2">Activity Breakdown Details</h5>
+                                            <div class="grid md:grid-cols-5 gap-2 text-xs">
+                                                <div><strong>Stage:</strong> Sequence</div>
+                                                <div><strong>Procedure:</strong> Step-by-step</div>
+                                                <div><strong>Interaction:</strong> HKBU-elderly</div>
+                                                <div><strong>Time:</strong> Duration</div>
+                                                <div><strong>Purpose:</strong> Specific aims</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Guiding Principles &amp; Methodology</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</span>
+                                            <div>
+                                                <h5 class="font-medium">From Theory to Practice</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Bridge theoretical concepts to real-world applications with community partners</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</span>
+                                            <div>
+                                                <h5 class="font-medium">Purposeful Play &amp; Reflection Model</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Emphasize relevance, engagement, adaptability, and deep reflection</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</span>
+                                            <div>
+                                                <h5 class="font-medium">Synthesizing and Justifying Activities</h5>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Each activity must be justified with educational value and service-learning relevance</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Critical Constraints &amp; Boundaries</h4>
+                                    <div class="bg-orange-50 dark:bg-orange-900 border border-orange-200 dark:border-orange-700 rounded p-3">
+                                        <ul class="space-y-1 text-sm">
+                                            <li>• Emily provides frameworks and guiding questions, <strong>not</strong> complete plans</li>
+                                            <li>• Students must do their own planning work with Emily's guidance</li>
+                                            <li>• Each activity must justify its educational value and community relevance</li>
+                                            <li>• Focus on academic assignment/project development only</li>
+                                            <li>• Two-hour session timeframe must be realistic and well-structured</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-1/3">
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold mb-3 text-primary">How to Start Chatting</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: _ok_</code>
+                                        <p class="text-xs mt-1">Start guided planning with Socratic method</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: _outline_</code>
+                                        <p class="text-xs mt-1">Access and edit the activity outline template</p>
+                                    </div>
+                                    <div class="bg-white dark:bg-gray-600 p-2 rounded border">
+                                        <code class="text-xs">Type: _3Q3Q_</code>
+                                        <p class="text-xs mt-1">Get final version with conversation summary</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-3 text-primary">Demo Chat Session</h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "_ok_"
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Do you have a clear learning objective for this two-hour session, and are you ready to structure your activities and logistics into a plan?"
+                                    </div>
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "I want to teach elderly participants basic Brawl Stars controls in Session 1."
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Great start! Based on elderly learning needs, what is a concrete, measurable objective you want to achieve? How does this connect to your ultimate learning objectives for the entire series?"
+                                    </div>
+                                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded">
+                                        <strong>Student:</strong> "By the end of Session 1, participants will be able to move their character and use one attack button independently."
+                                    </div>
+                                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded">
+                                        <strong>Emily:</strong> "Excellent measurable objective! Now, considering the two-hour timeframe, what specific sub-activities would help achieve this? How will you ensure you can fit everything within the time limit?"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign-up Instructions Section -->
+        <section id="signup" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-primary">How to Sign Up and Access the Chatbots</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Step-by-Step Registration</h3>
+                        <ol class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                                <div>
+                                    <strong>Register an Account:</strong> Visit 
+                                    <a href="https://chat.hkbu.life/#/register" class="text-primary hover:underline">chat.hkbu.life/#/register</a>
+                                    and register as a <strong>student</strong> using your <strong>personal Gmail account</strong>
+                                    <div class="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-700 rounded p-2 mt-2">
+                                        <p class="text-xs text-yellow-700 dark:text-yellow-300">
+                                            <strong>Important:</strong> Do NOT use your HKBU email (we're migrating to SSO later)
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                                <div>
+                                    <strong>Student ID Format:</strong> Do NOT enter your full student ID. Instead, use:
+                                    <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded p-2 mt-2">
+                                        <p class="text-sm text-blue-700 dark:text-blue-300">
+                                            <strong>Format:</strong> [First Initial][Last Initial][Last 4 digits of Student ID]
+                                        </p>
+                                        <p class="text-xs text-blue-600 dark:text-blue-400 mt-1">
+                                            Example: If your name is John Smith and Student ID is 12345678, enter: JS5678
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                                <div>
+                                    <strong>Enroll in Course:</strong> After successful registration and login, click this enrollment link:
+                                    <div class="bg-gray-50 dark:bg-gray-700 p-2 rounded mt-2">
+                                        <a href="https://chat.hkbu.life/#/student/enroll/1b8c31e4-8f0e-4fcb-b3a7-7a7a84e4e422" class="text-primary hover:underline text-sm font-medium">
+                                            🔗 GCAP 3187 Course Enrollment Link
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                                <div>
+                                    <strong>Start Chatting:</strong> Once enrolled, you'll be able to access and chat with all three Emily chatbots for your GCAP 3187 assignments.
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Important Guidelines</h3>
+                        <div class="space-y-4">
+                            <div class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-red-800 dark:text-red-200 mb-2">Registration Requirements</h4>
+                                <ul class="text-sm text-red-700 dark:text-red-300 space-y-1">
+                                    <li>• Use personal Gmail account (NOT HKBU email)</li>
+                                    <li>• Use initials + last 4 digits format for Student ID</li>
+                                    <li>• Must enroll through the specific course link</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">AI Usage Declaration</h4>
+                                <p class="text-sm text-yellow-700 dark:text-yellow-300">
+                                    Remember to declare AI use in assignments per course guidelines. 
+                                    Acknowledge chatbot assistance in submissions using the template provided on Moodle.
+                                </p>
+                            </div>
+
+                            <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Academic Integrity</h4>
+                                <p class="text-sm text-blue-700 dark:text-blue-300">
+                                    Generative AI use must align with HKBU academic integrity guidelines. 
+                                    Chatbots are tools to support learning and brainstorming, but final 
+                                    assignment content must reflect your own work and critical thinking.
+                                </p>
+                            </div>
+
+                            <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2">Need Help?</h4>
+                                <p class="text-sm text-green-700 dark:text-green-300">
+                                    For technical issues, reach out during class sessions or contact 
+                                    Dr. Jackie Chan. For course-related queries, call 34115685.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    For course-related queries, email Dr. Jackie Chan at 
+                    <a href="mailto:chanwunw@hkbu.edu.hk" class="text-primary hover:underline">chanwunw@hkbu.edu.hk</a> 
+                    or call 34115685
+                </p>
+            </div>
+            <div class="text-xs text-gray-500 dark:text-gray-500">
+                <p>Last Updated: August 2025 | GCAP 3187 - Connecting the Elderly with the Internet -- E-Sports</p>
+                <p class="mt-1">Department of Education Studies, Hong Kong Baptist University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection and handling
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Tab switching functionality
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

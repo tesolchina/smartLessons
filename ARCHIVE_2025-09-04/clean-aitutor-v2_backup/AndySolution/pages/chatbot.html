@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body { height:100%; margin:0; padding:0; }
+    #panel-root { height:100%; display:flex; flex-direction:column; }
+  </style>
+</head>
+<body class="bg-white">
+  <div id="panel-root">
+    <div class="flex items-center justify-between px-3 py-2 border-b">
+      <div class="text-sm font-medium text-gray-700">Chatbot</div>
+      <div class="text-xs text-gray-400">HKBU GenAI</div>
+    </div>
+
+    <div id="messages" class="flex-1 overflow-y-auto p-3 space-y-2 bg-gray-50"></div>
+
+    <div class="p-3 border-t bg-white">
+      <div class="flex gap-2">
+        <input id="apiKeyInput" type="password" placeholder="API key (stored locally)" class="w-1/3 border rounded px-2 py-1 text-sm" />
+        <select id="modelSelect" class="w-1/4 border rounded px-2 py-1 text-sm">
+          <optgroup label="OpenAI-compatible (HKBU)">
+            <option value="gpt-5" data-version="2024-12-01-preview">gpt-5</option>
+            <option value="gpt-5-mini" data-version="2024-12-01-preview">gpt-5-mini</option>
+            <option value="gpt-4.1" data-version="2024-12-01-preview">gpt-4.1</option>
+            <option value="gpt-4.1-mini" data-version="2024-12-01-preview">gpt-4.1-mini</option>
+            <option value="o1" data-version="2024-12-01-preview">o1</option>
+            <option value="o3-mini" data-version="2024-12-01-preview">o3-mini</option>
+          </optgroup>
+          <optgroup label="DeepSeek">
+            <option value="deepseek-r1" data-version="2024-05-01-preview">deepseek-r1</option>
+            <option value="deepseek-v3" data-version="2024-05-01-preview">deepseek-v3</option>
+          </optgroup>
+          <optgroup label="Gemini (Vertex)">
+            <option value="gemini-2.5-pro" data-version="">gemini-2.5-pro</option>
+            <option value="gemini-2.5-flash" data-version="">gemini-2.5-flash</option>
+          </optgroup>
+          <optgroup label="Llama (Vertex)">
+            <option value="llama-4-maverick" data-version="20240723">llama-4-maverick</option>
+          </optgroup>
+          <optgroup label="Qwen (DashScope)">
+            <option value="qwen-max" data-version="v1">qwen-max</option>
+            <option value="qwen-plus" data-version="v1">qwen-plus</option>
+          </optgroup>
+          <optgroup label="Embeddings (HKBU)">
+            <option value="text-embedding-3-large" data-version="2024-05-01-preview">text-embedding-3-large (2024-05-01-preview)</option>
+            <option value="text-embedding-3-small" data-version="2024-05-01-preview">text-embedding-3-small (2024-05-01-preview)</option>
+            <option value="text-embedding-3-large" data-version="2024-02-15-preview">text-embedding-3-large (2024-02-15-preview)</option>
+            <option value="text-embedding-3-small" data-version="2024-02-15-preview">text-embedding-3-small (2024-02-15-preview)</option>
+            <option value="text-embedding-3-large" data-version="2024-02-01">text-embedding-3-large (2024-02-01)</option>
+            <option value="text-embedding-3-small" data-version="2024-02-01">text-embedding-3-small (2024-02-01)</option>
+            <option value="text-embedding-3-large" data-version="2023-12-01-preview">text-embedding-3-large (2023-12-01-preview)</option>
+            <option value="text-embedding-3-small" data-version="2023-12-01-preview">text-embedding-3-small (2023-12-01-preview)</option>
+          </optgroup>
+        </select>
+        <input id="versionInput" type="text" placeholder="API version" class="w-1/4 border rounded px-2 py-1 text-sm" />
+        <button id="saveBtn" class="px-3 py-1 bg-indigo-600 text-white rounded text-sm">Save</button>
+      </div>
+      <div class="flex gap-2 mt-2">
+        <textarea id="systemPromptInput" placeholder="System prompt (optional) - e.g., 'You are a helpful research assistant...'" class="flex-1 border rounded px-2 py-1 text-sm resize-none" rows="2"></textarea>
+        <button id="promptSaveBtn" class="px-3 py-1 bg-green-600 text-white rounded text-sm whitespace-nowrap">Save Prompt</button>
+      </div>
+      <div class="flex gap-2 mt-2">
+        <input id="userInput" type="text" placeholder="Type your message..." class="flex-1 border rounded px-3 py-2 text-sm" />
+        <button id="sendBtn" class="px-4 py-2 bg-indigo-600 text-white rounded text-sm">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { config } from '../src/services/config.js';
+    import { sendChatMessage, isAiConfigured } from '../src/services/aiService.js';
+
+    const messagesEl = document.getElementById('messages');
+    const apiKeyInput = document.getElementById('apiKeyInput');
+    const modelSelect = document.getElementById('modelSelect');
+    const versionInput = document.getElementById('versionInput');
+    const systemPromptInput = document.getElementById('systemPromptInput');
+    const userInput = document.getElementById('userInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const promptSaveBtn = document.getElementById('promptSaveBtn');
+
+    function addMessage(role, content) {
+      const wrap = document.createElement('div');
+      wrap.className = role === 'user' ? 'flex justify-end' : 'flex justify-start';
+      const bubble = document.createElement('div');
+      bubble.className = role === 'user' ? 'bg-indigo-600 text-white rounded px-3 py-2 text-sm max-w-[70%]' : 'bg-white border rounded px-3 py-2 text-sm max-w-[70%]';
+      bubble.textContent = content;
+      wrap.appendChild(bubble);
+      messagesEl.appendChild(wrap);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function loadConfigToInputs() {
+      apiKeyInput.value = config.getAiApiKey();
+      // try to match model in select; if not present, leave current selection
+      const savedModel = config.getAiModel();
+      const found = [...modelSelect.options].find(o => o.value === savedModel);
+      if (found) modelSelect.value = savedModel;
+      versionInput.value = config.getAiApiVersion();
+      systemPromptInput.value = config.getSystemPrompt() || '';
+    }
+
+    saveBtn.addEventListener('click', () => {
+      config.setAiApiKey(apiKeyInput.value.trim());
+      const sel = modelSelect.options[modelSelect.selectedIndex];
+      const selectedModel = sel?.value || '';
+      const selectedVersion = sel?.dataset?.version || '';
+      if (selectedModel) config.setAiModel(selectedModel);
+      // If the option has a data-version, use it; else keep what user typed
+      if (selectedVersion) {
+        config.setAiApiVersion(selectedVersion);
+        versionInput.value = selectedVersion;
+      } else if (versionInput.value.trim()) {
+        config.setAiApiVersion(versionInput.value.trim());
+      }
+      config.setAiEnabled(true);
+      addMessage('assistant', 'Settings saved.');
+    });
+
+    promptSaveBtn.addEventListener('click', () => {
+      const prompt = systemPromptInput.value.trim();
+      config.setSystemPrompt(prompt);
+      addMessage('assistant', prompt ? 'System prompt saved.' : 'System prompt cleared.');
+    });
+
+    // Auto-fill version when model changes (if option carries one)
+    modelSelect.addEventListener('change', () => {
+      const sel = modelSelect.options[modelSelect.selectedIndex];
+      const v = sel?.dataset?.version || '';
+      if (v) versionInput.value = v;
+    });
+
+    async function handleSend() {
+      const text = userInput.value.trim();
+      if (!text) return;
+      addMessage('user', text);
+      userInput.value = '';
+      const typingId = `t_${Date.now()}`;
+      const typing = document.createElement('div');
+      typing.id = typingId;
+      typing.className = 'text-xs text-gray-400 px-2';
+      typing.textContent = 'Thinking...';
+      messagesEl.appendChild(typing);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      if (!isAiConfigured()) {
+        typing.remove();
+        addMessage('assistant', 'AI not configured. Please set API key and model.');
+        return;
+      }
+
+      const res = await sendChatMessage([{ role: 'user', content: text }]);
+      typing.remove();
+      if (res.success) {
+        addMessage('assistant', res.response || '(empty)');
+      } else {
+        addMessage('assistant', `Error: ${res.error}`);
+      }
+    }
+
+    sendBtn.addEventListener('click', handleSend);
+    userInput.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } });
+    loadConfigToInputs();
+  </script>
+</body>
+</html>
+

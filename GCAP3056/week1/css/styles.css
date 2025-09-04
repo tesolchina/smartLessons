@@ -1,0 +1,343 @@
+/* ============================================
+   TEXT & COLOR ENHANCEMENTS
+   ============================================ */
+
+/* Strong text color for main content */
+body, .text-gray-700, .text-gray-800, .text-gray-900, .text-gray-500, .text-gray-600 {
+    color: #222 !important;
+    font-weight: 400;
+}
+
+.dark body, 
+.dark .text-gray-700, 
+.dark .text-gray-800, 
+.dark .text-gray-900,
+.dark .text-gray-500,
+.dark .text-gray-600 {
+    color: #f1f5f9 !important;
+}
+
+/* Feedback and status text */
+#govMcFeedback,
+#govTfFeedback,
+#transFb,
+#codeQuizFb,
+#ltrFb,
+.completion-status {
+    color: #222 !important;
+}
+.dark #govMcFeedback,
+.dark #govTfFeedback,
+.dark #transFb,
+.dark #codeQuizFb,
+.dark #ltrFb,
+.dark .completion-status {
+    color: #f1f5f9 !important;
+}
+
+/* MC/quiz button clarity */
+.gov-mc-btn,
+.trans-btn,
+.code-btn,
+.quiz-option {
+    color: #222 !important;
+    font-weight: 500;
+}
+.dark .gov-mc-btn,
+.dark .trans-btn,
+.dark .code-btn,
+.dark .quiz-option {
+    color: #f1f5f9 !important;
+}
+
+/* ============================================
+   MARKDOWN CONTENT ENHANCEMENTS
+   ============================================ */
+
+/* Header section styling */
+.header-section {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* Content section styling */
+.content-section {
+    border-left: 4px solid #3b82f6;
+    transition: all 0.3s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Interactive question containers */
+.mc-question, .tf-question, .fill-blank, .textarea-question, .checkbox-question {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.mc-question:hover, .tf-question:hover, .fill-blank:hover, .textarea-question:hover, .checkbox-question:hover {
+    border-left-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Button enhancements */
+.mc-option, .tf-option {
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mc-option:hover, .tf-option:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.mc-option::before, .tf-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.mc-option:hover::before, .tf-option:hover::before {
+    left: 100%;
+}
+
+/* Form input enhancements */
+.fill-input, .response-textarea {
+    transition: all 0.3s ease;
+}
+
+.fill-input:focus, .response-textarea:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Submit button styling */
+button[class*="bg-primary"] {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button[class*="bg-primary"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+button[class*="bg-primary"]:active {
+    transform: translateY(0);
+}
+
+/* Feedback styling enhancements */
+.mc-feedback, .tf-feedback, .fill-feedback, .textarea-feedback, .checkbox-feedback {
+    animation: slideIn 0.3s ease;
+    border-radius: 8px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toggle section enhancements */
+.toggle-section {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn {
+    transition: all 0.3s ease;
+}
+
+.toggle-content {
+    transition: all 0.3s ease;
+}
+
+/* Typography improvements */
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #1e40af;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: #1e3a8a;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Error state */
+.error {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Accessibility improvements */
+.mc-option:focus, .tf-option:focus, button:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .header-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header-section p {
+        font-size: 1rem;
+    }
+    
+    .tf-options {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tf-option {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   BULLET POINT ALIGNMENT
+   ============================================ */
+
+ul, ul.list-disc, ul.list-decimal {
+    margin-left: 0 !important;
+    padding-left: 1em !important;
+    list-style-position: outside !important;
+}
+li {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    margin-bottom: 0.5em !important;
+    color: inherit !important;
+}
+.dark ul li {
+    color: #f1f5f9 !important;
+}
+
+/* No faded bullets anywhere */
+ul li, ul.list-disc li, ul.list-decimal li {
+    color: inherit !important;
+}
+
+/* ============================================
+   PAGE WIDTH & LAYOUT
+   ============================================ */
+
+/* Max width for main containers */
+.max-w-4xl, .max-w-6xl {
+    max-width: 1400px !important;
+    width: 98% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (min-width: 1600px) {
+    .max-w-4xl, .max-w-6xl {
+        max-width: 1600px !important;
+        width: 95% !important;
+    }
+}
+
+/* Adjust for mobile/tablet */
+@media (max-width: 1023px) {
+    .max-w-4xl, .max-w-6xl {
+        width: 100% !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}
+
+/* Content area min-height for better visual balance */
+#contentArea {
+    min-height: 60vh;
+    transition: all 0.3s ease;
+    background: inherit;
+}
+
+/* ============================================
+   NOTIFICATION & FEEDBACK
+   ============================================ */
+
+.notification {
+    background: #fff;
+    color: #222;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+.dark .notification {
+    background: #222;
+    color: #f1f5f9;
+}
+
+/* ============================================
+   PRINT & ACCESSIBILITY
+   ============================================ */
+@media print {
+    .notification, #loadingIndicator, button { display: none !important; }
+    .max-w-4xl, .max-w-6xl { max-width: none !important; width: 100% !important; }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Accessibility: Focus ring for all buttons */
+button:focus, .section-btn:focus {
+    outline: 2px solid #5D5CDE;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   MISCELLANEOUS
+   ============================================ */
+
+/* Remove unwanted faded text for all gray variants */
+.text-gray-500, .text-gray-600, .text-gray-700 {
+    color: #222 !important;
+}
+.dark .text-gray-500, .dark .text-gray-600, .dark .text-gray-700 {
+    color: #f1f5f9 !important;
+}
+
+/* Ensure all list items are visible in dark mode */
+ul li {
+    color: inherit !important;
+}
+.dark ul li {
+    color: #f1f5f9 !important;
+}

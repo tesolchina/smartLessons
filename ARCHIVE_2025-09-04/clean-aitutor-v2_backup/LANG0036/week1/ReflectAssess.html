@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report & Reflection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <div class="p-6">
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Report & Reflection</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">Submit your report and receive feedback from your teacher via Moodle.</p>
+
+        <div class="space-y-6">
+            <!-- Placeholder for Reflection Questions -->
+            <div class="mb-6 bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h2 class="text-xl font-bold text-purple-800 dark:text-purple-200 mb-4">Reflection Questions</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    [Placeholder] This section will contain reflection questions. You can add:
+                </p>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>• Personal insight questions</li>
+                    <li>• Critical thinking prompts</li>
+                    <li>• Self-evaluation checklists</li>
+                    <li>• Journaling exercises</li>
+                </ul>
+                <div class="mt-4">
+                    <label for="reflectionResponse" class="block text-gray-700 dark:text-gray-300 mb-2">Your Reflection:</label>
+                    <textarea id="reflectionResponse" class="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300" 
+                              placeholder="Write your reflections here..."
+                              onchange="saveResponse('reflectionResponse', this.value)"></textarea>
+                </div>
+            </div>
+
+            <!-- Report Submission Instructions -->
+            <div class="mb-6 bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h2 class="text-xl font-bold text-purple-800 dark:text-purple-200 mb-4">Report Submission</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Follow these instructions to submit your report:
+                </p>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>• Download your generated report from the main page.</li>
+                    <li>• Log in to Moodle and navigate to the appropriate course and assignment.</li>
+                    <li>• Upload the report file as instructed.</li>
+                    <li>• Check Moodle for feedback from your teacher after submission.</li>
+                </ul>
+                <p class="text-gray-700 dark:text-gray-300 mt-4">
+                    [Placeholder] Add specific Moodle links or additional instructions if needed.
+                </p>
+            </div>
+
+            <!-- Completion Button -->
+            <div class="flex justify-end">
+                <button onclick="markComplete()" 
+                        class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg">
+                    Mark as Complete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveResponse(field, value) {
+            window.parent.postMessage({
+                type: 'saveResponse',
+                section: 'reflect',
+                response: { [field]: value }
+            }, '*');
+        }
+
+        function markComplete() {
+            window.parent.postMessage({
+                type: 'saveResponse',
+                section: 'reflect',
+                response: { completed: true }
+            }, '*');
+        }
+    </script>
+</body>
+</html>
