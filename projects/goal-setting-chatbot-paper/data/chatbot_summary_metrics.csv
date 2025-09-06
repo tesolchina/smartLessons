@@ -1,0 +1,11 @@
+Metric,Value
+Total Active Students,40.0
+Total Chat Rounds,534.0
+Total User Words,5564.0
+Average Logins per Student,1.1
+Average Chat Rounds per Student,13.35
+Average User Words per Student,139.1
+Average User Words per Chat,8.777
+Average AI Words per Response,206.12974999999997
+User-AI Word Correlation,0.5161686190018527
+Chat Rounds-Words Correlation,0.7146121850045638

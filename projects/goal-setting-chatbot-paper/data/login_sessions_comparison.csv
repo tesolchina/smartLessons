@@ -1,0 +1,3 @@
+Analysis_Method,Total_Login_Sessions,Average_Sessions_Per_Student,Students_With_Multiple_Sessions,Max_Sessions_One_Student
+Original Assumption,40,1.0,0,1
+Calculated from Timestamps,46,1.15,5,3

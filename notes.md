@@ -6,4 +6,6 @@ maybe I should set up google drive folder sync and load some doc from there
 
 I need very concise instructions 
 
-My next step is to work on the screening test project
+My next step is to work on the screening test project 
+
+Also need to set up email service to send email automatically what options do I have
