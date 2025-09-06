@@ -1,0 +1,1661 @@
+﻿housekeeping matters
+Screening test dev folder 
+ Test 1 and Test 2 folders
+
+
+There are five modules to work on 
+We need one teacher and one admin staff to be in charge of one module 
+
+
+* Testing UI for students   
+* Invigilation (and test admin)  
+* Test questions writing (deliverables in word doc)  
+* Test questions set up (import to the platform - from word doc to Markdown)  - UI for developers only  
+* Student answer export and grading - - UI for developers only  
+
+
+
+
+Email thread: Screening test update - accounts for test 1 trial: issues and bugs 
+
+
+Joshua 20250101-20250105
+Cissy 20250106-20250110
+Joanne 20250110-20250115
+Hermine 20250120-20250125
+Oscar 20250126-20250130
+Rhett 20250131-20250135
+Simon 20250136-20250140
+Ellie 20250141-20250145 
+Xiaoyong 20250146-20250150
+
+
+
+
+
+
+First upload to the platform: 18 July; I need the finalised test questions 3 days in advance- hopefully by 15 July.
+Testing: UI testing is ongoing; feedback should be added here; bugs to be fixed by 18 July    
+Piloting on student: depending on recruitment progress; should be done by 25 July (if not earlier) - further discussion and notes
+Second upload to the platform- by the end of July 
+Testing- First week of Aug
+Finalised version: 8 Aug
+
+
+
+
+Canva for Education  
+
+
+
+
+
+
+Markdown for testing plan 
+
+
+
+
+
+
+
+
+Thursday 10:30 am 
+
+
+Regina 
+Lucia 
+Cici 
+Andy 
+Karim 
+Barry 
+
+
+spreadsheet ?  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+During the test
+Student UI:
+1. Real-time performance summary (right-bottom bar)
+Currently, the completed or review-needed questions are color-coded. Can symbols (e.g. ticks/que marks) replace colors for students with color vision deficiency or weakness? Or, are there any alternatives to address this issue?
+2. Word count function: can it be added for the writing part? (it may be useful for the UEI/II tests)
+3. How does the test platform block or log unexpected web browser operations, such as accessing a dictionary during the test?
+4. Speaking – Can a waveform bar be displayed on the student interface during the speaking test to indicate that recording is in progress?
+ 
+ Teacher UI:
+1. Real-time performance summary
+Does the interface only display “in exam” or “closed” statuses, or can it show a percentage bar for exam completion progress?
+Does “closed” mean the test is completed, the browser is closed, or the test is submitted? 
+
+
+Are error messages displayed if a student encounters a technical problem?
+
+
+
+
+2. Does the teacher UI let teachers pause and resume exams for urgent washroom breaks?
+3. Will there be a log sheet for the exam summary and/or unexpected application failures?
+
+
+
+
+
+
+
+
+ 
+Technical issues
+1. Listening:  audio is supposed to play once only; however, it can be replayed when I attempted que 1 and que 3 (but not que 2).
+
+
+This is because the same audio file is used for two groups of questions; in the real test, this won’t happen as we only have one audio file for the whole listening test and it will be played once only 
+
+
+
+
+
+
+2. Listening: students can replay the recording by re-logging into the system.
+
+
+* This behavior will be logged- afterwards; if a student logs in twice- can this color be changed … blue → orange? (warn students in advance - should not refresh or exit without invigilator’s permission) 
+* … 
+* … 
+ 
+3. Speaking: the output quality is undesirable. Is it related to sampling rate/ frequency? 
+To be further tested 
+
+
+
+
+ 
+4. Speaking: Save function does not work - “Failed to upload” is displayed after clicking “save”.
+
+
+Fixed – 
+
+
+ 
+5. All 4 sections: After a student re-logs in, the platform resets the test timer to start anew, not resuming the prior time.
+
+
+
+
+
+
+4 minutes → 1 minute for prep and 3 minutes for speaking … (up to 3 minutes–) 
+30 seconds → (prep) 
+Cut off the audio file at 3 minutes- warn students in advance  
+
+
+Timer for recording – only 3 minutes … 
+
+
+
+
+Auto save?  
+
+
+
+
+MC – autosave 
+
+
+non-MC: Fill in the blank + Essay: student can save manually anytime during the test; when leaving a page, a warning will be issued to save – cannot leave the page unless saved … 
+
+
+Next Monday – 6 students testing 
+
+
+
+
+
+
+ 
+The above summarizes my feedback and concerns about the platform. I would be grateful for your comments on these points. Thank you.
+
+
+Note: Accounts used – from 20250101 to 2025014, and 2025089, 2025090 (please use other accounts for further testing. Thanks.)
+
+
+
+
+
+
+
+
+目前收到同事的反馈
+
+
+
+
+
+
+
+
+URL for testing will be available early next week (2 July) 
+
+
+
+
+
+
+Test timelines
+
+
+Establish a timeline for administering the tests; we need to know when the tests will be held, how many sessions, no of students, venues, etc; when we need to release the results; how much time we have to grade the tests 
+
+
+UI for test takers
+
+
+All four sections have been developed 
+
+
+River will present a few updates 
+
+
+URLs for online testing should be available this week (by 4 July) 
+
+
+
+
+* https://test-taker.hkbu.me/#/ (please enter 20250101 or replace the last two digits with 02, 03, ... 90) 
+* https://admin.hkbu.me/ (user name: simon@demo.com or rachel@demo.com password 666666) 
+
+
+
+
+Question about the listening part. If the recording can only be played once, how do we plan to solve technical issues, in case the student's headphones aren't properly plugged in? Can the invigilator reset their listening audio?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+invite students to test
+mid-July 
+
+
+Further discussion here 
+
+
+
+
+Student and invigilator UI for online testing  
+
+
+
+
+Run another trial session (if time permits) on the platform so the exam invigilators become more familiar with the procedures 
+Report bugs
+
+
+From Joanne-2nd round
+
+
+Account used: 20250110
+ 
+ 
+1. Reading instructions: Perhaps adding “:” after “reading section instructions” (same for the other 3 sections)
+-addressed-
+2. The timer will start when you click “continue”. Where can I find “continue”?
+ - addressed, changed with “Start Section”-
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+3. Listening instructions: Missing punctuations: commas, full stop -addressed-
+ 
+4. Listening:
+First audio: The podcast’s final section instructs, "You now have time to read questions 1–4."
+- But I can read que 5 -addressed-
+- Que: Is it a must for students to save their answers for each question before proceeding to the next /navigate between questions 1–4?
+Second audio – can only read que 5, but no ques 6-10?
+Que: Do students need to complete all blanks before they can read que 6?
+ 
+Bug for listening and writing (podcasts): Students can replay the audio after re-logging into the system with their answers saved.
+ 
+5. Writing -a. “reading and listening”?  -addressed-  b. Would it be better to show which two stakeholders are?-addressed-
+   
+ 
+ 
+ 
+ 
+6. Speaking: The bar with the que mark – what’s the function? -addressed, show as volume: 0.5- The output quality is undesirable.
+ 
+   
+ 
+ 
+ 
+7. Adding audio loading/progress bar (not just writing, listening as well) – perhaps it would be useful for students to know the duration of the audio and how much of the file is covered
+-addressed-
+   
+ 
+Suggestions: (not addressed yet)
+A. Would it be better to add this sentence in the instruction page?
+“You cannot return to any test section after submission. Please review all answers carefully before submitting each of the 4 sections, as changes are not allowed once submitted.”
+ 
+B. Could we implement a 5-minute warning prompt to alert students that the test is nearing its end? For example, a message like, “5 minutes remaining” or “Time is almost up for this section. Please prepare to submit.” (speaking – last 30s??)
+The sudden return to the main page when time expires can be jarring, especially under test stress. Students may perceive it as an error or application failure, causing confusion. A timed prompt would help students manage their time better and reduce stress.
+ 
+ 
+ 
+Account used: 20250111
+Bugs:
+1. Speaking: “start section” button does not work (colour: grey instead of blue)
+2. Writing section: On two separate computers running simultaneously, the following was observed:  In Chrome, after playing the audio at around 02:00, the application abruptly stopped and then the writing section closed (=section submitted). In contrast, in Firefox, the audio played fully.
+
+
+From Joanne- 1st round
+
+
+
+
+
+
+
+
+Fixed- to be further tested 
+Update- still have echo issue, but file can be successfully uploaded
+              It can be uploaded more than once, and the system started to have problems after uploading more than once (i.e. timer jumps 3 seconds per 1 second, keep recording despite having paused the stop buttom, little sharp sound)
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+During the test
+Student UI:
+1. Real-time performance summary (right-bottom bar) 
+Currently, the completed or review-needed questions are color-coded. Can symbols (e.g. ticks/que marks) replace colors for students with color vision deficiency or weakness? Or, are there any alternatives to address this issue?
+
+
+The concern is valid and acknowledged. Yet, fixing it would require additional time and may considered as low priority mainly because the relevant feature of tracking progress is not essential for taking the tests. Candidates with color vision deficiency can still complete the task without using the features. 
+
+
+
+
+2. Word count function: can it be added for the writing part? (it may be useful for the UEI/II tests)
+
+
+Word count feature added 
+
+
+
+
+3. How does the test platform block or log unexpected web browser operations, such as accessing a dictionary during the test?
+
+
+The test UI has got a blue bar at the top which is easy to recognize. Exam invigilators can walk around to check if the test takers are working on the test UI.  If a test taker refresh the browser, this operation will be logged and can be reviewed later. Therefore, test takers will be reminded not to refresh the browser and quit the test without first seeking permission from the exam invigilator. The exam invigilator should only authorize the test takers to refresh the browser, quit the test and log in again under circumstances when the test does not work and there is no way to move on. In such cases, the invigilator should prepare a written account with pictures taken on the screen and send the report to the General Office staff. Unauthorized and undocumented exit of the test would be considered as potential case of cheating subject to further investigation. 
+
+
+
+
+
+
+
+
+4. Speaking – Can a waveform bar be displayed on the student interface during the speaking test to indicate that recording is in progress?
+
+
+
+
+ 
+
+
+ Teacher UI:
+1. Real-time performance summary
+Does the interface only display “in exam” or “closed” statuses, or can it show a percentage bar for exam completion progress?
+Does “closed” mean the test is completed, the browser is closed, or the test is submitted? Are error messages displayed if a student encounters a technical problem?
+2. Does the teacher UI let teachers pause and resume exams for urgent washroom breaks?
+3. Will there be a log sheet for the exam summary and/or unexpected application failures?
+
+
+
+
+
+
+
+
+ 
+Technical issues
+1. Listening:  audio is supposed to play once only; however, it can be replayed when I attempted que 1 and que 3 (but not que 2).  
+
+
+This is no longer an issue when all the tasks are under the same group. 
+
+
+ 
+2. Listening: students can replay the recording by re-logging into the system.
+If a test taker refresh the browser, this operation will be logged and can be reviewed later. Therefore, test takers will be reminded not to refresh the browser and quit the test without first seeking permission from the exam invigilator. The exam invigilator should only authorize the test takers to refresh the browser, quit the test and log in again under circumstances when the test does not work and there is no way to move on. In such cases, the invigilator should prepare a written account with pictures taken on the screen and send the report to the General Office staff. Unauthorized and undocumented exit of the test would be considered as potential case of cheating subject to further investigation. 
+
+
+
+
+ 
+3. Speaking: the output quality is undesirable. Is it related to sampling rate/ frequency? 
+
+
+Issue has been addressed; please test again
+
+
+ 
+4. Speaking: Save function does not work - “Failed to upload” is displayed after clicking “save”.
+
+
+Fixed
+ 
+5. All 4 sections: After a student re-logs in, the platform resets the test timer to start anew, not resuming the prior time.
+ 
+Issue has been addressed; please test again
+
+
+
+
+
+
+The above summarizes my feedback and concerns about the platform. I would be grateful for your comments on these points. Thank you.
+
+
+Note: Accounts used – from 20250101 to 2025014, and 2025089, 2025090 (please use other accounts for further testing. Thanks.)
+
+
+
+
+
+
+
+
+
+
+
+
+From Simon- 1st round
+  
+
+
+
+First enter the code assigned to the test taker to login 
+
+
+  
+
+
+
+There is the check headset link on the top right corner 
+
+
+Please check … if you have not done so.  
+
+
+
+
+
+
+We should consider moving it to the more prominent position or set up a separate page 
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+20250136
+
+
+
+
+There are 4 sections in this test! - replace ! with . 
+
+
+Before you begin, please Check Headset first. Please seek help from the invigilator if needed. 
+
+
+You cannot return to any test section after submission.
+→ 
+You cannot return to a test section after submission. 
+
+
+
+
+The candidates should be able to look at the questions before the audio begins. During the audio playing, the candidate cannot browse the questions.  
+
+
+
+
+
+
+
+
+
+
+
+
+Missing title of the reading passage? 
+
+
+“What’s Your Type?”: The MBTI Trend in Job Hunting and Why It Might Backfire 
+
+
+
+
+Paragraph 3 is quite short- making the task a bit less challenging 
+Find a phrase that has a similar meaning to “gain advantage” in Paragraph 3.  
+
+
+
+
+
+
+Based on the information in paragraphs 4-8, determine whether the following statements are True (T) / False (F) / Not Given (NG).
+
+
+We may need a more precise explanation of NG referring to IELTS. 
+
+
+Provide clear instructions about click on the save button; after saving the save button will turn grey. 
+
+
+
+
+
+
+
+
+  
+
+
+
+Number the blanks 
+
+
+  
+
+
+
+Paragraph numbers incorrect 
+
+
+  
+
+Reminder is useful 
+Add a total number of question to the question number 
+
+
+Question 8 out of ___ 
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+After entering the listening section, you may spend some time browsing the questions and then press     to listen to the audio. The audio will NOT start playing automatically. 
+
+
+
+
+
+
+
+
+  
+
+
+
+When the section reaches the end; show no more question (instead of next question)
+
+
+
+
+  
+
+
+
+
+
+The audio recording would include one minute to read question 1-4 … 
+
+
+
+
+When reaching question 5, cannot return to question 1-4 
+
+
+Answer the following questions according to the dialog 1. 
+
+
+
+
+Reminder for listening section should maybe 2 minutes (as total length is only 10) - it is a bit distracting … 
+
+
+
+
+  
+
+
+
+The audio says question 5-10; but above only show Question 5 (we need to adjust the audio a bit; refer to question 5 with 6 fill in the blank tasks) 
+
+
+The amount of time for checking is not fixed … 
+
+
+
+
+You will hear TWO excerpts from the podcast. Each recording will be played ONCE only.
+→ 
+
+
+You will hear TWO excerpts from the podcast in one recording. This recording will be played ONCE only.
+
+
+
+
+  
+
+
+
+
+
+If candidates are expected to use ideas from the reading passage and listening test, we should provide scrape paper and allow students to take notes during reading and listening test and use these notes for the writing test. 
+
+
+
+
+
+
+
+
+After the listening task, you are asked to compile a report focusing on the disadvantages of using personality test results in job applications. You will listen to the full podcast. Make notes as you listen. You now have one minute to familiarize yourself with the task requirement before the recording.
+
+
+The student should start playing the audio right away as time will be provided during the audio to get familiar with the task. 
+
+
+
+
+The instructions are a bit confusing. 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+Here we can use the reminder function … (sth like you should begin your speaking in 15 seconds) … 
+
+
+
+
+  
+
+
+
+
+
+Trial on 21 July
+
+
+Karim
+
+
+
+
+Testing notes 
+-Logs-
+PC ST-1915: Computer not responding 
+PC ST-1906: Same
+PC ST-1905: Works (headset probably needs checking)
+Test Attempt 1 [KA0293]
+Reading: No issues
+Listening: Sound volume was higher in the right ear, which could affect the performance. When audio started, I could not move to other questions, although audio said that I could and gave some time to do so. Then, when the audio moved to the second dialog, the listening section "crashed" and I was taken to the main screen with the option to continue to the Writing section. I still had 6 minutes left according to the timer on the Listening section.
+Writing: The remaining 6 minutes of my Listening timer probably moved to the Writing section since to start it, I had to wait 6 minutes. It again crashed, and I was taken to the main screen with no option to start writing or go back to previous sections
+Attempt 2 [Account: 20250150]
+Reading 2: No issues
+Listening 2: No issues
+Writing 2: Sound only on one side, uncomfortable to listen to for 8 minutes. Crashed. Main screen. 
+Speaking 2: No issues. Probably would be better if speaking recording started as soon as 1 minute passed
+
+
+Andy
+ID
+	Category
+	Summary
+	Priority
+	CRITICAL-01
+	Writing Section
+	Page automatically exits and skips to the Speaking section after 3-4 minutes.
+	Highest
+	HIGH-01
+	Listening Section
+	Audio player refreshes mid-test, resetting the total time display to 00:00.
+	High
+	HIGH-02
+	Listening/Writing
+	Question navigation arrows stop working once audio starts playing.
+	High
+	MEDIUM-01
+	Listening Section
+	The exam flow and audio instructions are mismatched, creating a poor user experience.
+	Medium
+	LOW-01
+	General
+	Students cannot choose which section of the exam to start with.
+	Low
+	LOW-02
+	Reading Section
+	The system should auto-save and advance to the next question after an answer is given.
+	Low
+	LOW-03
+	General
+	Browser's native "Find" (Ctrl+F) and "Translate" functions are not disabled.
+	Low
+	LOW-04
+	Reading Section
+	UI text "Review Mark" is misleading.
+	Low
+	LOW-05
+	Speaking Section
+	The "vocal monitor" feature is perceived as useless.
+	Low
+	Detailed Description
+General Issues
+* 【Function Restriction】 (ID: LOW-03)
+   * Issue: Users can leverage the browser's Ctrl+F find command and the right-click context menu to translate text, which could compromise test integrity.
+   * Recommendation: Disable the Ctrl+F shortcut and the right-click menu during the exam session.
+* 【Feature Request】 (ID: LOW-01)
+   * Issue: The exam follows a fixed, linear path, forcing students to start at the beginning.
+   * Recommendation: Allow students the flexibility to choose their starting section (e.g., Reading, Listening, etc.) from the main starting page.
+Reading Section
+* 【UI Text Correction】 (ID: LOW-04)
+   * Issue: The button text "Review Mark" is misleading for users.
+   * Recommendation: Change the text to "Mark for Review" for better clarity.
+* 【UX Flow Optimization】 (ID: LOW-02)
+   * Issue: The current process requires users to manually save their answers and click to proceed to the next question.
+   * Recommendation: Implement an auto-save and auto-advance feature that takes the user to the next question immediately after they select an answer.
+Listening Section
+* 【Critical Bug - Player Malfunction】 (ID: HIGH-01)
+   * Issue: The audio player unexpectedly refreshes at approximately the 2:55 mark. While the playback timer continues to count up, the total duration of the track resets to 00:00. No errors are logged in the console.
+   * Impact: This severely disrupts the listening test, potentially making it impossible for users to complete.
+* 【Critical Bug - Navigation Failure】 (ID: HIGH-02)
+   * Issue: The arrow buttons for navigating between questions become unresponsive as soon as the audio begins playing.
+   * Workaround: The arrows start functioning again only after the user opens the "review questions" pop-up window and selects a question from there.
+* 【Flow & Design Flaw】 (ID: MEDIUM-01)
+   * Issue: The navigation bug allows users to read questions before the audio starts. This creates a mismatch with the audio instructions, such as "You will now have 30 seconds to answer the questions," as users have had ample time already and may not have enough time for fill-in-the-blank questions at the end.
+   * Recommendation:
+      1. Fix the navigation arrow bug as a top priority.
+      2. Consider redesigning the flow to auto-play the audio a few seconds after the page loads to ensure the user experience aligns with the test design.
+Writing Section
+* 【Critical Bug - Automatic Exit】 (ID: CRITICAL-01)
+   * Issue: After approximately 3-4 minutes of audio playback, the writing section terminates prematurely and the application automatically advances to the Speaking section. No errors are logged in the console.
+   * Impact: This is a show-stopping bug that prevents users from completing the writing portion of the exam.
+* 【Critical Bug - Navigation Failure】 (ID: HIGH-02)
+   * Issue: The same navigation arrow failure from the Listening section is present here (stops working once audio plays).
+   * Impact: The issue is more severe in this section because there is no "review questions" pop-up, leaving the user with no workaround to navigate between prompts.
+Speaking Section
+* 【Feature Review】 (ID: LOW-05)
+   * Issue: The UI includes a "vocal monitor" feature that is perceived by users as useless.
+   * Recommendation: Evaluate the necessity of this feature. Consider removing it to simplify the user interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Barry
+1. Listening Section
+   * Issue: Unable to enter the section; buttons are disabled.
+   * Account: JYN7024
+   * Console Output:  
+   2. Speaking Section (Suspected Error)
+   * Issue: Unknown error occurred.
+   * Account: 20250149
+   * Console Output:  
+      3. Writing Section
+      * Issue: Section abruptly ended and skipped to the next part while reading the question.
+      * Account: 20250149
+Disable the word error-checking function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Regina
+
+
+1. Reading(Account:TWN5881): 
+-It would be nice if students could choose to display each question individually or all of them together.
+-It would be nice to use a highlighter to mark sentences, especially when reading.
+
+
+2. Listening(Account:20250148): 
+-The listening recording said there was one minute to read the questions, but the actual time was not enough.
+-After the listening test begins, I cannot switch questions. I must use the review button to switch questions.
+-The recording got stuck at about 2min14s, and returned to normal about 5s later.
+-After starting to play the recording, the play button still displays the start
+  
+
+-The recording ended suddenly because there was not enough time. I didn’t know that the recording included time for us to read the questions, so I started recording only after I finished reading the questions.
+-I think the situation page can be separated from the actual test section. After the candidate clicks "Start Test", the test will enter the test section and start the timer to avoid conflicts between the timer and the recording time.
+34-
+3.Writing(Account:20250148):
+-Same recording with the listening.
+-The review mark function seems a bit redundant in this part
+  
+
+
+
+
+
+
+
+-I can translate the questions using the browser's translation.
+  
+
+
+
+4.Speaking(Account:20250148):
+-I can re-record and replay my own recordings. A bit strange.
+
+
+5.General Recommendations:
+-After each question is completed, provide a "next" button to switch
+
+
+
+
+Cici
+Description:
+When operating the system, users can directly enable translation functionality and use shortcut keys. However, several critical issues occur during section transitions:
+      1. System Freezing: The interface frequently freezes when switching between sections. After refreshing, the section restarts rather than resuming.
+      2. Question Navigation: Once listening begins, users cannot switch between questions.
+      3. Section Structure: The questions should be clearly divided into two distinct types:
+      * Multiple-choice questions
+      * Fill-in-the-blank questions
+      4. Premature Section Termination:
+      * The writing section ended when less than half the allocated time had elapsed
+      * The speaking section also terminated prematurely
+(Note: This occurred during normal operation without any unusual user actions)
+         5. Transition Delay:
+         * After skipping the writing section, there was an unexplained 10+ minute delay before the speaking section became accessible
+Reproduction Steps:
+         1. Enable translation functionality
+         2. Use shortcut keys to navigate
+         3. Attempt to switch between exam sections
+         4. Observe system behavior during listening questions
+         5. Monitor timing during writing and speaking sections
+Expected Behavior:
+         * Smooth transitions between sections without freezing
+         * Ability to navigate questions during listening
+         * Clear separation of question types
+         * Sections should run for full allocated time
+         * Reasonable transition times between sections
+Actual Behavior:
+         * System freezes during section transitions
+         * Forced section restarts after refresh
+         * Locked question navigation during listening
+         * Premature section terminations
+         * Excessive transition delays
+Priority: High (severely impacts user experience and exam functionality)
+  
+
+
+
+
+
+Trial on 22 July
+
+
+Trial on 23 July
+
+
+Rhett comments
+(not addressed yet)
+
+
+Reading: 
+         1. The instruction mentions 11 questions, which is neither the exact number of points (should be 15), nor intended number of questions according to questions types listed on the paper (technically there are 9, with sub-questions not counted separately). I understand that the number of questions is as such because of the design of the platform, but it might be confusing to students. I suggest not including the number of questions at all, and simply ask test takers to attempt all questions.
+         2. Cloze: Numbering of the cloze blanks in the paragraph does not match the blanks in answering. I also recommend using (i), (ii), etc. to indicate that these are all a part of the same question.
+
+
+Listening:
+         1. The biggest issue seems to be that once the audio is played, students are not able to move from question to question (unless they answer the question they are on and save it). Speaking for myself and Oscar, the design of the listening test has always been for the students to answer as they listen to the recording (following HKDSE or IELTS format). Requiring students to take notes would require a different design of the questions to ensure a suitable level of difficulty. While we cannot fix in the short term, I am wondering if the platform can accommodate the answer-while-listening  format?
+         2. Addressing Joanne's comment: Students being able to see beyond question 4 does not seem to be a concern. Picture a paper-based listening test paper: students have always been free to browse beyond what the audio is covering at the moment. If students are able to spare the time to read more, it reflects their ability.
+         3. Cloze: I also recommend using (i), (ii), etc. to indicate that these are all a part of the same question. In that case, they are not considered separate questions.
+
+
+Writing:
+         1. I tried the platform with 20250131 & 20250132. In the second attempt, when the time was up in Listening, it never got to Writing. It redirected me to Reading cover page, with no way of proceeding (the button "Continue Section" is grey.)
+         2. Is it possible to automatically start the audio recording when a student enters the listening and writing section? In this case, the preparation time before the audio can be consistent across all test takers. It also prevents students from reading the instructions too long before starting the audio clip.
+
+
+I am aware that the internal testing is soon, and the original intention is to have our students test out the difficulty of the test itself, not bugs and difficulties encountered on the platform. It would be challenging to effectively evaluate the difficulty of the test if students are struggling with technical issues of the platform. I am still thinking if it would be a better idea for us to conduct the internal test in a paper-based format first. To test the platform, we can always recruit a few new students to try.
+
+
+From Joshua
+Thanks to Simon for the provision of the logins, and Joanne, Rhett and Oscar's subsequent detailed comments. My comments are mainly on the instructions. Thank you for communicating with Mr Li to make this project a success!
+
+
+Good wishes,
+
+
+Joshua
+
+
+
+
+If there is note-taking, can we have a page just for listening and note-taking on paper? 👇
+When they finish note-taking, writing pads should appear. There should be two writing pads for two paragraphs.
+  
+
+
+
+Instructions are quite long. I think Rhett and Oscar have prepared an instruction clip which can be played here.  Important words should be in bold or highlighted.👇
+  
+
+The warning should be revised. E.g., 'Ensure you have answered ALL the questions. Once you exit, you CANNOT return to this section' 👇
+
+
+  
+
+
+
+Please say 'End of the Reading Passage'. What does 'mark for review' mean? They can return to the previous questions and it is just intuitive that they can revise at any time. 👇
+
+
+  
+
+
+
+Some questions are in italics whereas other questions are not. 👇
+   
+
+
+Can we have a more neutral test name instead of 'screening test for freshmen'? 👇
+English Proficiency Assessment
+Welcome to the English Proficiency Assessment. This test is designed to evaluate your academic English skills. Candidates who do not achieve a passing score will be required to take a remedial English course. The test consists of four sections, each focusing on a specific skill area.
+  
+
+
+
+
+
+
+
+From Kelly (student helper)
+Online test- tried by using 20250199 & 20250198
+(Not addressed yet)
+All sections:
+         1. The volume/waveform bar is not working once I pause and play it again. Not sure if it should be fixed as it can be addressed when I re-visit the Check Headset page. 
+
+
+Reading:
+         1. The situation is placed after the title of the article. It may be clearer if the situation is placed before the title to make the whole article more coherent
+  
+
+
+
+Listening
+         1. In dialog 1, by clicking “show all questions”, it shows there are only 4 questions, but the top shows there are 5 questions. (After finishing the 4 questions, the 5th question will appear, but would the display here cause confusion?)
+  
+
+         2. In cloze summary, the FAQ may not appear as the same format as the word doc of the question paper. It looks a bit messy.  
+  
+
+Writing
+            1. Students can only have one minute preparation time before the recording, but it seems that they can press the audio play button at any time when they finish preparing. The preparation time may not be well-restricted to only one minute.   
+
+
+Speaking
+               1. The duration is set to be 4 minutes, which might be too tight for students to have 1-minute preparation, record their 3-minute response and upload the audio.
+
+
+manual for students
+
+
+
+
+
+
+Online mock test  
+
+
+ 20250300 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UI for invigilators
+Invigilator platform also ready 
+URL for testing will be available by 4 July 
+
+
+We’ll need to set up test schedules 
+For each test session we need to provide a list of student names and ID (ID will be used to login to the testing platform) 
+
+
+We need to prepare the info in a specific file format 
+The files will be uploaded to the platform via a developer UI 
+
+
+
+
+
+
+Prepare lists of exam invigilators and candidates together with test schedules; we'll prepare user names for them to login
+
+
+
+
+
+
+
+
+Manual for invigilator
+
+
+Trouble-shooting 
+
+
+
+
+Allow students to logout and login again 
+
+
+When refreshing the browser, the student may login again 
+
+
+Under what circumstances should the invigilators allow students to refresh 
+               * … 
+               * … 
+
+
+
+
+
+
+
+
+Exam questions writing
+The format of the test questions are not yet finalised  
+(but our platform can only support certain types of tasks) 
+
+
+15 July - to get finalised test questions 
+
+
+
+
+How many set of test questions do we need?  
+
+
+How long will it take to write and validate one set of test questions? 
+
+
+What are the timeline for writing the test questions?  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For tests in UE1 - we should pilot the platform - use it in some sections ? 
+For tests in UE2 - we
+
+
+Listening Script
+Listening Excerpt 1
+Listening Component Situation During your research on MBTI and job hunting, you came across a podcast on whether job seekers should include their MBTI on their resume. Each recording will be played once only.
+Now listen to excerpt one and answer the questions.
+Today we're tackling something lots of you might be thinking about, especially early in your careers. It's this trend of considering, you know, personality tests like Myers-Briggs, the MBTI, and whether to put those results on your job applications. You take these tests, maybe for self-discovery, find them interesting, and then think, hey, maybe this helps me stand out, especially when the job market feels crowded. Exactly. So the big question we're diving into is, is that actually a good idea? Absolutely. Spoiler alert, it's, well, it's pretty nuanced. It definitely is. It touches on how we, you know, present ourselves professionally, how we communicate strengths, and maybe most importantly, what people doing the hiring actually care about. So maybe we should start with why someone, especially a recent grad, might even think about doing this. What's the perceived upside? Okay, yeah, let's unpack that. I mean, if you're just starting out, you want any edge you can get. You look around, see tons of applicants, maybe similar grades, similar majors, and you think, how do I show I'm different? Putting down, say, INTJ might feel like a quick way to signal, hey, I'm strategic. Or maybe ESFP to say, I'm good with people. Like a shorthand. 
+Exactly. It feels like a shortcut to communicating your work style or maybe how you approach problems. And there's this idea that it shows self-awareness, you know, that you've thought about yourself, your strengths, weaknesses. Employers often say they value that. 
+Right. It feels like you're being transparent, maybe even getting ahead of the game. Here's who I am. Here's how I tick.
+And you sometimes hear that in certain places, I think particularly in parts of Asia, it's becoming more common, almost expected sometimes, to include this kind of thing.
+Interesting. So from the job seeker's point of view, you can see the logic. It feels proactive, informative.
+ 
+Listening Excerpt 2
+Now listen to excerpt 2 and answer the questions.
+OK, so let's bring it back to the listener. If you're a recent graduate, you've maybe done the MBTI, found it insightful. What's the practical advice here? What should you actually do? 
+The general consensus, the sort of standard advice is this. While understanding your type can be super helpful for your own growth, for figuring out how you interact best with others, proactively putting that MBTI type or similar results on your resume or cover letter is probably not the best move. It's generally not recommended. 
+Generally not. Are there any situations where it might be OK? Like, what if a job ad specifically asks for it? That seems rare, but... 
+It is rare, but it could happen. If a job description explicitly asks for it, well, then you have a choice to make. You could provide it. But even then, I'd advise a bit of caution. Think about why they're asking. Is it a company that really understands and uses these tools appropriately, maybe for team building insights later? Or does it feel like a potentially crude filtering mechanism? 
+Fair enough. So even if asked, maybe pause and consider. But for the vast majority of applications. 
+For the vast majority, absolutely focus your energy elsewhere. 
+Right. Focus on the stuff we know employers do value. Clearly showing your skills, the hard skills, the soft skills. 
+Yes. And providing concrete evidence through your experiences. What did you achieve in your internships? What projects did you complete in school? Any volunteer work that demonstrates relevant qualities. 
+Use that resume, that cover letter to tell those stories. Show, don't just tell. 
+Exactly. And the cover letter and interview are really your prime opportunities to demonstrate things like your communication style, your problem-solving approach, how you collaborate. You can illustrate these things with specific examples. Here's a time I worked on a team project and we faced a challenge. That's much more powerful than just saying, I’m an ENFP.
+So you're conveying those underlying qualities, the things the personality type might hint at, but you're doing it through actual evidence of your behavior and accomplishments. 
+Precisely. Let your actions and experiences speak for themselves. That is the end of the recordings. You now have half a minute to check your answers.
+
+
+
+
+Writing Script
+Writing component situation.
+S
+Speaker 2
+0:08
+(After the reading and listening tasks)
+You are now asked to compile a report focusing on the disadvantages of using personality test results in job applications. You will listen to the full podcast, make notes as you listen before the recording starts, you have one minute to familiarize yourself with the task requirement.
+
+
+Speaker 1
+1:30
+you will now hear the full podcast. Make notes as you listen
+S
+Speaker 3
+1:37
+today, we're tackling something lots of you might be thinking about, especially early in your careers, it's this trend of considering, you know, personality tests like Myers, Briggs, the MBTI, and whether to put those results on your job applications. You
+S
+Speaker 4
+1:53
+take these tests, maybe for self discovery, find them interesting, and then think, hey, maybe this helps me stand out, especially when the job market feels crowded
+S
+Speaker 3
+2:01
+Exactly. So the big question we're diving into is, is that actually a good idea? And spoiler alert, it's well, it's pretty nuanced.
+S
+Speaker 4
+2:10
+It definitely is. It touches on how we, you know, present ourselves professionally, how we communicate strengths, and maybe most importantly, what people doing the hiring actually care about. So maybe we should start with why someone, especially a recent grad, might even think about doing this. What's the perceived upside?
+S
+Speaker 3
+2:26
+Okay, yeah, let's unpack that. I mean, if you're just starting out, you want any edge you can get. You look around, see tons of applicants, maybe similar grades, similar majors, and you think, how do I show I'm different? And putting down, say, INTJ might feel like a quick way to signal, hey, I'm strategic, or maybe ESFP to say I'm good with people, like a shorthand Exactly.
+S
+Speaker 4
+2:46
+It feels like a shortcut to communicating your work style, or maybe how you approach problems. And there's this idea that it shows self awareness. You know that you thought about yourself, your strengths, weaknesses. Employers often say they value that, right?
+S
+Speaker 3
+2:59
+It feels like you're being transparent, maybe even getting ahead of the game. Here's who I am, here's how I tick.
+S
+Speaker 4
+3:04
+And you sometimes hear that in certain places, I think, particularly in parts of Asia, it's becoming more common, almost expected, sometimes to include this kind of thing,
+S
+Speaker 3
+3:14
+interesting. So from the job seekers point of view, you can see the logic. It feels proactive, informative, but, and there's always a but, how does it look from the other side of the desk, the employer's perspective? Yeah,
+S
+Speaker 4
+3:27
+that's where things get tricky, because honestly, many hiring managers HR professionals, they're pretty
+S
+Speaker 3
+3:33
+skeptical, skeptical. How, like, they just don't care. Well,
+S
+Speaker 4
+3:36
+Some see it as maybe unprofessional, or at least not the best use of valuable resume space. Their main focus, overwhelmingly, is on skills. Can you actually do the job? What experience do you have? Internships, projects, actual competencies. So the
+S
+Speaker 3
+3:53
+personality label just doesn't carry much weight compared to, say, listing your proficiency in Python or your experience managing a project
+S
+Speaker 4
+4:00
+precisely because, think about it, those four letters are a huge oversimplification of who you are. Right? People are complex. Putting someone in a box based on a self reported test, it risks stereotyping.
+S
+Speaker 3
+4:13
+Yeah, I could see that, like assuming all introverts are bad in team settings, or all thinking types lack empathy, which just not true Exactly.
+S
+Speaker 4
+4:21
+And it's crucial to remember what these tests, like the MBTI were actually designed for. They're intended for self understanding, personal growth, maybe team development after hiring, not really for selection or recruitment.
+4:31
+So using it for hiring is kind of misapplying the tool.
+S
+Speaker 4
+4:34
+That's what many experts, including psychologists and even the official MBTI organization, would argue. They caution against using it for hiring decisions. There are questions about its reliability over time and its validity in actually predicting job performance. Does being an E or an I really tell you if someone will be a good accountant or engineer or marketer, the link is tenuous at best. It reminds
+S
+Speaker 3
+4:59
+me of that compared. Comparison you sometimes hear, yeah, like it's almost akin to putting your horoscope sign on your resume, interesting maybe, but not exactly a scientific basis for a hiring decision.
+S
+Speaker 4
+5:09
+That comparison does get made, yeah? Well, maybe a bit harsh. It highlights the lack of predictive power for job success in the eyes of many employers. And there's another risk, too, diversity. If you start filtering candidates based on perceived ideal personality types for certain roles, you can end up screening out people with different valuable perspectives. You might build a team where everyone thinks alike, and you lose that creative friction, that diversity of thought that often leads to innovation.
+S
+Speaker 3
+5:35
+That's a really important point. It's not just potentially unfair to the applicant, but it could actually harm the company by limiting its talent pool and perspectives.
+S
+Speaker 4
+5:44
+Definitely, it can lead to missed opportunities on both sides and potentially raise flags about, you know, unconscious bias creeping into the hiring process.
+S
+Speaker 3
+5:53
+Okay, so let's bring it back to the listener. If you're a recent graduate, you've maybe done the mbpi found it insightful. What's the practical advice here? What should you actually do?
+S
+Speaker 4
+6:04
+The general consensus, the sort of standard advice is this, while understanding your type can be super helpful for your own growth, for figuring out how you interact best with others, proactively putting that MBTI type or similar results on your resume or cover letter, probably not the best move. It's generally not recommended,
+S
+Speaker 3
+6:22
+generally not. Are there any situations where it might be okay, like, what if a job ad specifically asks for it? That seems rare, but it is
+S
+Speaker 4
+6:29
+rare, but it could happen if a job description explicitly asks for it. Well, then you have a choice to make. You could provide it, but even then, I'd advise a bit of caution. Think about why they're asking. Is it a company that really understands and uses these tools appropriately, maybe for team building insights later, or does it feel like a potentially crude filtering mechanism?
+S
+Speaker 3
+6:50
+Fair enough, so even if asked, maybe pause and consider but for the vast majority of
+S
+Speaker 4
+6:56
+applications, for the vast majority, absolutely, focus your energy elsewhere, right? Focus on
+S
+Speaker 3
+7:01
+the stuff we know employers do value, clearly showing your skills, the hard skills, the soft skills, yes,
+S
+Speaker 4
+7:07
+and providing concrete evidence through your experiences. What did you achieve in your internships? What projects did you complete in school? Any volunteer work that demonstrates relevant qualities. Use
+S
+Speaker 3
+7:16
+that resume, that cover letter, to tell those stories. Show. Don't just tell
+S
+Speaker 4
+7:21
+exactly, and the cover letter and interview are really your prime opportunities to demonstrate things like your communication style, your problem solving approach, how you collaborate. You can illustrate these things with specific examples. Here's a time I worked on a team project, and we faced a challenge that's much more powerful than just saying I'm an ENFP,
+S
+Speaker 3
+7:41
+so you're conveying those underlying qualities, the things the personality type might hint at, but you're doing it through actual evidence of your behavior and accomplishments
+S
+Speaker 4
+7:51
+precisely. Let your actions and experiences speak for themselves.
+S
+Speaker 1
+7:58
+This is the end of the recording. You now have 30 minutes to complete the writing component according to the instructions you.
+
+
+
+
+Exam questions set up
+
+
+
+
+
+
+
+
+
+
+Questions for colleagues 
+
+
+The texts below will be presented before the reading section begins. Please check and suggest any edits. We’ll update accordingly. 
+
+
+This section measures your ability to understand academic passages in English. You will read one passage. In an actual test you will have 60 minutes (1 hour) to read the passages and answer the questions.
+
+
+Most questions are worth 1 point but the last question in each set is worth more than 1 point. The directions indicate how many points you may receive.
+
+
+Some passages include a word or phrase that is underlined in blue. Click on the word or phrase to see a definition or an explanation.
+
+
+Within this section, you can go to the next question by clicking Next. You may skip questions and go back to them later. If you want to return to previous questions, click on Back. You can click on Review at any time and the review screen will show you which questions you have answered and which you have not answered. From this review screen, you may go directly to any question you have already seen in the Reading section.
+
+
+During this practice test, you may click the Pause icon at any time. This will stop the test until you decide to continue. You may continue the test in a few minutes or at any time during the period that your test is activated.
+
+
+You may now begin the Reading section. Again, in an actual test you will have 60 minutes (1 hour) to read the 3 passages and answer the questions. NOTE: Also in an actual test some test takers may receive 4 passages; those test takers will have 80 minutes (1 hour and 20 minutes) to answer the questions.
+
+
+
+
+
+
+Click on Continue to go on.
+
+
+Please confirm the duration of the reading section is 30 minutes.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test questions need to be imported via Markdown file 
+
+
+We only had one set of mock papers 
+
+We need to have more mock papers and real papers for students to test on our platform 
+
+
+
+
+https://poe.com/test2md02
+ 
+https://poe.com/test2md04
+
+
+From word to Markdown 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructions UI
+
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+Reading
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+i\ii\iii
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+Listening
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+Writing
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+Speaking
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+Null–not applicable 
+  
+
+  
+
+Logout–finish
+
+
+
+
+Student answer export and grading
+Export needs to be done via manual download 
+
+
+File format to be determined 
+
+
+Allocate manpower to grade the tests (listening and reading sections can be graded automatically; writing and speaking need to be assessed manually with some AI assistance) 
+Communicate with test takers
+
+
+
+
+
+
+
+
+Notify the students via email and possibly WhatsApp or phone to ensure they will come to the tests; the new students may not check their HKBU email regularly and their email boxes must have been overwhelmed with new messages (we could also send notifications via student organizations) 
+Orientation for test takers
+Set up a web page at the LC website to introduce this test and provide training manual (including an online mock test, if needed) for students to get familiar with the test UI

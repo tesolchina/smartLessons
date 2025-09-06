@@ -1,23 +1,24 @@
 # Daily Assistant
 
-**Purpose**: Exportable AI assistant tools, notes, and automation scripts
+**Purpose**: AI-powered daily task automation with clean operational structure
 
-**Status**: Ready for export to other contexts
+**Status**: Organized with project-based structure and operational tools
 
-## Contents:
+## 🏗️ Structure Overview
 
-### `/email_drafts/` - Communication Templates
-- Ready-to-send email drafts for LC management
-- Quick update requests (conference links, title updates)
-- Meeting scheduling templates
+### 📁 `/projects/` - Specific Projects
+- **`screening_test/`** - Current screening test development project
+- Each project contains its own documentation, testing, and deliverables
 
-### Project Management:
-- `projectNotes.md` - Master project notes and status updates  
-- `PROJECT_RESTART_SUMMARY.md` - Project restart documentation
+### 📁 `/operating/` - Daily Operational Tools
+- **`email_automation/`** - Email processing and automation tools
+- **`document_sync/`** - Google Drive and document synchronization
+- **`crawlers/`** - Web data extraction and parsing utilities
 
-### `/operating/` - Automation & Analysis Tools
-- `/crawlers/` - Web crawling and parsing scripts
-- `/existingWebpages/` - Current website analysis tools  
+### 📁 Root Documentation
+- `projectNotes.md` - Master project plans and objectives
+- `STRUCTURE.md` - Detailed directory organization guide
+- `quick_start_plan.md` - Quick setup instructions  
 - `/newWebsitePlanningScripts/` - Planning and organization scripts
 - Excel reports and automation utilities
 
