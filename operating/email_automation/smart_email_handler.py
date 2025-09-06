@@ -103,7 +103,10 @@ class SmartEmailHandler:
         if not email_info:
             return False
         
-        # Extract sender for reply
+        # Extract sender for reply - fix escape sequences
+        reply_subject_escaped = reply_subject.replace('"', '\\"')
+        reply_body_escaped = reply_body.replace('"', '\\"').replace('\\', '\\\\')
+        
         applescript_reply_archive = f'''
         tell application "Mail"
             set foundEmail to null
@@ -129,7 +132,7 @@ class SmartEmailHandler:
                 set senderEmail to (address of sender of foundEmail)
                 
                 -- Create new reply message
-                set newMessage to make new outgoing message with properties {{subject:"{reply_subject.replace('"', '\\"')}"}}
+                set newMessage to make new outgoing message with properties {{subject:"{reply_subject_escaped}"}}
                 
                 tell newMessage
                     make new to recipient at end of to recipients with properties {{address:senderEmail}}
@@ -144,7 +147,7 @@ class SmartEmailHandler:
         
         # Add body and send/archive
         applescript_reply_archive += f'''
-                    set content to "{reply_body.replace('"', '\\"').replace('\\', '\\\\')}"
+                    set content to "{reply_body_escaped}"
                 end tell
                 
                 -- Send the reply automatically
@@ -202,6 +205,10 @@ class SmartEmailHandler:
             bool: True if successful, False otherwise
         """
         
+        # Fix escape sequences for quick reply
+        reply_subject_escaped = reply_subject.replace('"', '\\"')
+        reply_body_escaped = reply_body.replace('"', '\\"').replace('\\', '\\\\')
+        
         applescript = f'''
         tell application "Mail"
             set latestEmail to null
@@ -233,11 +240,11 @@ class SmartEmailHandler:
             
             if latestEmail is not null then
                 -- Create reply
-                set newMessage to make new outgoing message with properties {{subject:"{reply_subject.replace('"', '\\"')}"}}
+                set newMessage to make new outgoing message with properties {{subject:"{reply_subject_escaped}"}}
                 
                 tell newMessage
                     make new to recipient at end of to recipients with properties {{address:senderEmail}}
-                    set content to "{reply_body.replace('"', '\\"').replace('\\', '\\\\')}"
+                    set content to "{reply_body_escaped}"
                 end tell
                 
                 -- Send reply
