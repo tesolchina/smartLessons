@@ -1,0 +1,23 @@
+Group 3,,,
+,SITE 1,SITE 2,SITE 3
+,,,
+EQS,2+,3+,1+
+BULDING HEIGHT ,14,4,9
+DECIBELS,71.95,68,67.2
+TRAFFIC COUNT,"Car:7
+Taxi:6
+Truck:9
+Motorbike:1
+Van:2","Car:4
+Taxi:5
+Truck:3
+Motorbike:2
+Van:4","Car:9
+Taxi:5
+Truck:6
+Motorbike:1
+Van:1"
+PEDESTRIAN COUNT ,88,61,22
+ALL TRAFFIC OPTIONS ,"Bus 62S, MTR tsuen wan and tuen ma line",MTR tsuen wan and tuen ma line,MTR tsuen wan and tuen ma line
+LANDUSE ,commerical ,"dining, transit, commercial",commerical
+HIGH OR LOW ORDER?,high,high,low

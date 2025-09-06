@@ -1,0 +1,50 @@
+{
+  "Team01": {
+    "folder_id": "1oY2fv5sh44xmgizL39hNZr27R4aZ-lvJ",
+    "document_id": "1wKIrdJvzfilLk0pCqVKB8Dddc1p-KKj3zTbMt3rdmyA",
+    "topic": "Project Topic TBD - Team 1",
+    "old_topic": "Data Governance Framework for Educational Institutions"
+  },
+  "Team02": {
+    "folder_id": "1uk8On55AM9t5Vm_HexqT0HCgfv4TVD6J",
+    "document_id": "1sf11qJc2HL1Thwboz_HC7DL5sI6cPNRZCml79A0iOv8",
+    "topic": "Project Topic TBD - Team 2",
+    "old_topic": "Student Privacy and Data Protection"
+  },
+  "Team03": {
+    "folder_id": "1obrxpaVxDl-_EcvXUXQAbQZ3sr8U27of",
+    "document_id": "1v09TIs9lVPjnqOpwWQfPx33At-og7jmwPtmYacxIdVg",
+    "topic": "Project Topic TBD - Team 3",
+    "old_topic": "Data Quality and Integrity Management"
+  },
+  "Team04": {
+    "folder_id": "1oCEc60AhLZmnQuf3PyjiNQSZ6uv4BmhL",
+    "document_id": "1xqJoU_oTBt5FDzcJivn-kukp2zovBxjiI77pf0Hgoo0",
+    "topic": "Project Topic TBD - Team 4",
+    "old_topic": "Ethical AI and Algorithmic Governance"
+  },
+  "Team05": {
+    "folder_id": "1kPFGKdMztHXtVZr2HmEp-edw5Pi6S9LH",
+    "document_id": "1frsAce8pUXEn5WoWutWSbYg-x8_sqoj8aiCA3ry_keE",
+    "topic": "Project Topic TBD - Team 5",
+    "old_topic": "Educational Data Security and Cybersecurity"
+  },
+  "Team06": {
+    "folder_id": "1yaYqDYMI6droDaaXB1DSFSAorBskbPGi",
+    "document_id": "15yp9dWFhjUUytQkFPiPfIhKfIsCboUKNwbS58izcUA0",
+    "topic": "Project Topic TBD - Team 6",
+    "old_topic": "Open Data Policies and Research Data Management"
+  },
+  "Team07": {
+    "folder_id": "1AvpZ6YUHu7bp-EyVfii0hj9Pg_7xYB3p",
+    "document_id": "1QGDN9PlzCartPC6Rzx38EWV-zgTj8sy8Ln81zZ0jvjA",
+    "topic": "Project Topic TBD - Team 7",
+    "old_topic": "Student Data Rights and Digital Consent"
+  },
+  "Team08": {
+    "folder_id": "18tofyeJJzP08Z2CB1-n51gKXiSxKPBuv",
+    "document_id": "1kTcDNWs9hU6y8qJ0wLBA1D2OM4SwuW5KwW54rrxqEmc",
+    "topic": "Project Topic TBD - Team 8",
+    "old_topic": "Learning Analytics and Predictive Model Governance"
+  }
+}

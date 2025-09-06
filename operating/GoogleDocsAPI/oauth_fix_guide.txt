@@ -1,0 +1,54 @@
+GOOGLE OAUTH CONSENT SCREEN CONFIGURATION GUIDE
+================================================
+
+ISSUE: "CourseDriveManage has not completed the Google verification process"
+SOLUTION: Configure OAuth consent screen properly
+
+STEP-BY-STEP CONFIGURATION:
+
+1. 🌐 Go to: https://console.cloud.google.com/apis/credentials/consent
+   
+2. 📝 OAuth Consent Screen Configuration:
+
+   USER TYPE:
+   ✅ Select: "External" (allows any Google account)
+   
+   APP INFORMATION:
+   - App name: CourseDriveManage
+   - User support email: simonwanghkteacher@gmail.com
+   - App logo: (optional - skip for now)
+   
+   AUTHORIZED DOMAINS:
+   - Leave empty for local development
+   
+   DEVELOPER CONTACT:
+   - Developer email: simonwanghkteacher@gmail.com
+
+3. 🔧 SCOPES Configuration:
+   Add these scopes:
+   - https://www.googleapis.com/auth/drive
+   - https://www.googleapis.com/auth/documents
+   - https://www.googleapis.com/auth/spreadsheets
+
+4. 👤 TEST USERS (Important!):
+   Add your email as a test user:
+   - simonwanghkteacher@gmail.com
+   
+   This allows you to use the app during development!
+
+5. 💾 SAVE and CONTINUE through all steps
+
+6. 🔄 PUBLISHING STATUS:
+   - Status should be "Testing"
+   - This is perfect for development use
+   - No need to submit for verification yet
+
+AFTER CONFIGURATION:
+- Your app will work for test users (including you)
+- No verification needed for testing phase
+- Can add up to 100 test users if needed
+
+IMPORTANT NOTES:
+- Don't submit for verification unless you plan to publish publicly
+- Testing status allows full functionality for approved test users
+- Your teacher email is automatically approved as the developer
