@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Template with Carousel</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .carousel-container { position: relative; max-width: 600px; margin: auto; overflow: hidden; border: 1px solid #ccc; }
+    .carousel-images { display: flex; transition: transform 0.5s ease-in-out; }
+    .carousel-images img { max-width: 100%; display: block; }
+    .carousel-button { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; }
+    .carousel-button.left { left: 10px; }
+    .carousel-button.right { right: 10px; }
+    .dots { text-align: center; margin-top: 10px; }
+    .dot { height: 10px; width: 10px; margin: 0 5px; background-color: #bbb; display: inline-block; border-radius: 50%; cursor: pointer; }
+    .dot.active { background-color: #717171; }
+    .tab { display: inline-block; padding: 10px 20px; cursor: pointer; background-color: #f0f0f0; border: 1px solid #ccc; }
+    .tab.active { background-color: #ddd; }
+    .tab-content { display: none; border: 1px solid #ccc; padding: 20px; margin-top: -1px; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <h1>Program Name: [Your Program Name]</h1>
+
+  <!-- Carousel Section -->
+  <h2>Banner:</h2>
+  <div class="carousel-container">
+    <div class="carousel-images">
+      <img src="https://source.unsplash.com/600x300/?nature" alt="Banner 1">
+      <img src="https://source.unsplash.com/600x300/?city" alt="Banner 2">
+      <img src="https://source.unsplash.com/600x300/?technology" alt="Banner 3">
+    </div>
+    <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
+  </div>
+  <div class="dots">
+    <span class="dot active" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
+
+  <!-- Tabs Section -->
+  <div>
+    <div class="tab active" onclick="showTab('onboarding')">Onboarding</div>
+    <div class="tab" onclick="showTab('storytelling')">Storytelling</div>
+  </div>
+
+  <!-- Tab Contents -->
+  <div id="onboarding" class="tab-content active">
+    <h2>Onboarding</h2>
+    <p>Welcome to [Program Name]. Here's everything you need to know to get started:</p>
+    <ul>
+      <li><strong>Audience:</strong> [Audience Details]</li>
+      <li><strong>Duration:</strong> [Duration]</li>
+      <li><strong>Additional Info:</strong> [Other Metadata]</li>
+    </ul>
+  </div>
+  <div id="storytelling" class="tab-content">
+    <h2>Storytelling</h2>
+    <p>Here are some stories and highlights from this program:</p>
+    <blockquote>"This program changed my life!" - [Visitor Name]</blockquote>
+    <blockquote>"An amazing experience!" - [Visitor Name]</blockquote>
+    <h3>Media:</h3>
+    <img src="https://source.unsplash.com/600x400/?people" alt="Story 1" style="max-width: 100%; height: auto;">
+  </div>
+
+  <script>
+    // Carousel functionality
+    let slideIndex = 0;
+    const slides = document.querySelector('.carousel-images');
+    const dots = document.querySelectorAll('.dot');
+
+    function updateCarousel() {
+      slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === slideIndex);
+      });
+    }
+
+    function moveCarousel(direction) {
+      slideIndex = (slideIndex + direction + dots.length) % dots.length;
+      updateCarousel();
+    }
+
+    function currentSlide(index) {
+      slideIndex = index;
+      updateCarousel();
+    }
+
+    // Tabs functionality
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+
+    // Auto carousel rotation
+    setInterval(() => {
+      moveCarousel(1);
+    }, 5000); // Change every 5 seconds
+  </script>
+
+</body>
+</html>
