@@ -1,4 +1,12 @@
-we need to find a folder on google slide that allow us to create slides 
+
+
+
+
+
+
+=====================ignore =================
+
+we need to find a folder on google slide that allow us to create slides
 
 we should place this folder under /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/operating and describe how it works 
 
