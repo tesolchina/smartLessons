@@ -1,6 +1,57 @@
 # Donald — Next steps for your Geography coursework visuals
 
-Hi Donald, here’s a quick update and what I need from you so we can lock the exact charts for your project.
+Hi Donald, here’s a quick update an## Choose your charts (tell me exactly what you want)
+**## What I'll deliver after your reply
+**EXPANDED DELIVERABLES:**
+- Final figure set (PNG) with figure numbers, clear titles, axis labels, and legible fonts
+- **NEW:** Choice between basic linear trends OR advanced polynomial curves (with R² values)
+- **NEW:** Multi-panel analysis charts and group comparisons
+- **NEW:** Distance zone analysis (Near/Medium/Far from Victoria Harbour)
+- Short, coursework-ready captions and a few bullet notes to support your "Describe → Explain → Anomalies → Link to theory" analysis flow
+
+## SUMMARY: Chart Inventory (12 total charts available)
+**Basic Trend Charts (7):** Linear trend lines
+1. Noise vs Distance
+2. EQS vs Distance  
+3. Traffic vs Distance
+4. Pedestrians vs Distance
+5. Building Height vs EQS
+6. Pedestrians by Site (bar chart)
+7. Correlation Heatmap
+
+**Advanced Trend Charts (2):** Polynomial curves + R² values
+8. Noise vs Distance (polynomial)
+9. EQS vs Distance (polynomial)
+
+**Analysis Charts (3):** Comparative and zone analysis
+10. Multi-Variable Panel (4 variables in one chart)
+11. Group Comparison Analysis
+12. Distance Zones Analysis (box plots)ATED with new advanced options!**
+
+For each hypothesis, pick 1 primary chart and (optionally) 1 supporting chart. I'll label, caption, and number them per your guide (HowtoA.md).
+
+### Chart Type Options:
+**Basic Charts:** Simple trend lines (linear)  
+**Advanced Charts:** Polynomial curves (curved trends) + R² correlation values  
+**Analysis Charts:** Group comparisons, distance zones, multi-variable overviews
+
+- Hypothesis 1 (Noise vs Distance)
+  - Primary Options:
+    - **BASIC:** Scatter of Noise (dB) vs Distance (m) with linear trendline — DEMO provided
+    - **ADVANCED:** Noise vs Distance with polynomial curve + R² value — NEW! 
+  - Supporting options:
+    - Noise vs Total Traffic (if you want to show a mechanism)
+    - Noise by Site (simple bar, grouped by Group/Site)
+    - **NEW:** Distance zones box plot (Near/Medium/Far noise levels)
+
+- Hypothesis 2 (EQS vs Distance)
+  - Primary Options:
+    - **BASIC:** Scatter of EQS vs Distance with linear trendline — DEMO provided
+    - **ADVANCED:** EQS vs Distance with polynomial curve + R² value — NEW!
+  - Supporting options:
+    - Building height (m) vs EQS (possible link between urban form and quality)
+    - EQS vs Noise (do higher-noise places score lower?)
+    - **NEW:** Distance zones box plot (Near/Medium/Far EQS levels)from you so we can lock the exact charts for your project.
 
 ## What’s done
 - Cleaned your Excel data into two tidy files for charting:
@@ -53,6 +104,36 @@ Hi Donald, here’s a quick update and what I need from you so we can lock the e
   ![Correlation Heatmap](figures/corr_heatmap.png)
   
   _Figure 7. Correlation heatmap across numeric variables (−1 to +1)._ 
+
+## NEW: Advanced Data Curves and Analysis Charts
+
+- **Polynomial Trend Analysis** (curved data lines instead of straight)
+
+  ![Noise Polynomial](figures/noise_vs_distance_polynomial.png)
+  
+  _Figure 8. Noise vs Distance with linear AND polynomial trend curves + R² value._
+
+  ![EQS Polynomial](figures/eqs_vs_distance_polynomial.png)
+  
+  _Figure 9. EQS vs Distance with linear AND polynomial trend curves + R² value._
+
+- **Multi-Variable Overview** (all 4 hypotheses in one chart)
+
+  ![Multi-Variable Analysis](figures/multi_variable_polynomial.png)
+  
+  _Figure 10. Four-panel view: Noise, EQS, Traffic, Pedestrians vs Distance (all with trend curves)._
+
+- **Group Comparison Analysis** 
+
+  ![Grouped Analysis](figures/grouped_analysis.png)
+  
+  _Figure 11. Average values by student group: Distance, Noise, EQS, Traffic patterns._
+
+- **Distance Zone Analysis** (Near/Medium/Far from harbour)
+
+  ![Distance Zones](figures/distance_zones_analysis.png)
+  
+  _Figure 12. Box plots showing data distribution in 3 distance zones from Victoria Harbour._
 
 ## Your draft — research question and hypotheses (verbatim)
 > Research Question: "How do the Urban Characteristics change with distance from Victoria Harbour?"
