@@ -1,0 +1,438 @@
+group,site,variable,value_raw,norm_variable,value_num,unit
+Group 1,Site 1,EQS,-2,eqs,-2.0,
+Group 1,Site 2,EQS,1,eqs,1.0,
+Group 1,Site 3,EQS,-1,eqs,-1.0,
+Group 1,Site 1,BULDING HEIGHT,11,bulding height,,
+Group 1,Site 2,BULDING HEIGHT,19,bulding height,,
+Group 1,Site 3,BULDING HEIGHT,15,bulding height,,
+Group 1,Site 1,DECIBELS,74.6,decibels_db,74.6,dB
+Group 1,Site 2,DECIBELS,75,decibels_db,75.0,dB
+Group 1,Site 3,DECIBELS,84,decibels_db,84.0,dB
+Group 1,Site 1,TRAFFIC COUNT,"Car: 7  
+Taxi: 4
+Truck: 3
+Motorcycle/motorbike: 0
+Van: 4
+Bus: 4",traffic_total,7.0,count_2min
+Group 1,Site 2,TRAFFIC COUNT,"Car: 9
+Taxi: 9
+Truck: 0
+Motorcycle/motorbike: 1
+Van: 3
+Bus: 3",traffic_total,9.0,count_2min
+Group 1,Site 3,TRAFFIC COUNT,"Car: 6
+Taxi: 9
+Truck: 0
+Motorcycle/motorbike: 3
+Van: 4
+Bus: 6",traffic_total,6.0,count_2min
+Group 1,Site 1,PEDESTRIAN COUNT,9,pedestrian_count,9.0,count
+Group 1,Site 2,PEDESTRIAN COUNT,10,pedestrian_count,10.0,count
+Group 1,Site 3,PEDESTRIAN COUNT,57,pedestrian_count,57.0,count
+Group 1,Site 1,ALL TRAFFIC OPTIONS,"Buses:
+Minibus: Route 8
+Citybus: Route H1S, H2
+MTR:
+Tsim Sha Tsui/East Tsim Sha Tsui: Tsuen Wan Line, Tuen Ma Line",traffic_total,8.0,count_2min
+Group 1,Site 2,ALL TRAFFIC OPTIONS,"MTR:
+Tsim Sha Tsui/East Tsim Sha Tsui: Tsuen Wan Line, Tuen Ma Line
+Taxi stands: 1",traffic_total,1.0,count_2min
+Group 1,Site 3,ALL TRAFFIC OPTIONS,"Buses:
+KMB: Route 9, 9A, 2, 6, 79, N291, N240, 270A, 24B, 281B, 87D, 88D, 35A, 41A, 270A, 271, 291B, 271P, 13X, 14X, 26X, 35X, 280X, 281X, 26, 98P, N281, 298D, N871, 298D, 203B, 234B, 289X, 30, 79B, 790, 796, N21, N21A, N80
+MTR:
+Tsim Sha Tsui/East Tsim Sha Tsui: Tsuen Wan Line, Tuen Ma Line
+Taxi stands: 1",traffic_total,9.0,count_2min
+Group 1,Site 1,LANDUSE,Retail,land_use,,
+Group 1,Site 2,LANDUSE,Retail,land_use,,
+Group 1,Site 3,LANDUSE,Retail,land_use,,
+Group 1,Site 1,HIGH OR LOW ORDER?,High,order_label,,
+Group 1,Site 2,HIGH OR LOW ORDER?,High,order_label,,
+Group 1,Site 3,HIGH OR LOW ORDER?,High,order_label,,
+Group 2,Site 1,EQS,-2,eqs,-2.0,
+Group 2,Site 2,EQS,-2,eqs,-2.0,
+Group 2,Site 3,EQS,2,eqs,2.0,
+Group 2,Site 1,BULDING HEIGHT,14,bulding height,,
+Group 2,Site 2,BULDING HEIGHT,15.25,bulding height,,
+Group 2,Site 3,BULDING HEIGHT,22.5,bulding height,,
+Group 2,Site 1,DECIBELS,71.6dBa,decibels_db,71.6,dB
+Group 2,Site 2,DECIBELS,73.6dBa,decibels_db,73.6,dB
+Group 2,Site 3,DECIBELS,71.6dBa,decibels_db,71.6,dB
+Group 2,Site 1,TRAFFIC COUNT,"Cars: 8
+Taxis: 1
+Trucks: 2
+Motorcycles: 1
+Vans: 2
+Buses: 1
+Total: 15",traffic_total,8.0,count_2min
+Group 2,Site 2,TRAFFIC COUNT,"Cars: 19
+Taxis: 8
+Trucks: 4
+Motorcycles: 1
+Vans: 0
+Buses: 0
+Total: 32",traffic_total,19.0,count_2min
+Group 2,Site 3,TRAFFIC COUNT,"Cars: 13
+Taxis: 8
+Trucks: 3
+Motorcycles: 3
+Vans: 0
+Buses: 0
+Total: 27",traffic_total,13.0,count_2min
+Group 2,Site 1,PEDESTRIAN COUNT,79,pedestrian_count,79.0,count
+Group 2,Site 2,PEDESTRIAN COUNT,88,pedestrian_count,88.0,count
+Group 2,Site 3,PEDESTRIAN COUNT,21,pedestrian_count,21.0,count
+Group 2,Site 1,ALL TRAFFIC OPTIONS,"GMB route 78,
+Peking Road -> Island Harbour View, 
+TST station (Tsuen Wan/Tuen Ma) Line",traffic_total,78.0,count_2min
+Group 2,Site 2,ALL TRAFFIC OPTIONS,"TST station
+(Tsuen Wan/Tuen Ma) Line",traffic_total,,count_2min
+Group 2,Site 3,ALL TRAFFIC OPTIONS,"TST station 
+(Tsuen Wan/Tuen Ma) Line",traffic_total,,count_2min
+Group 2,Site 1,LANDUSE,"Shops, stalls",land_use,,
+Group 2,Site 2,LANDUSE,"Jewellery shops, watch stores",land_use,,
+Group 2,Site 3,LANDUSE,"Medicine stores, restaurants, mall",land_use,,
+Group 2,Site 1,HIGH OR LOW ORDER?,Low,order_label,,
+Group 2,Site 2,HIGH OR LOW ORDER?,High,order_label,,
+Group 2,Site 3,HIGH OR LOW ORDER?,Low,order_label,,
+Group 3,Site 1,EQS,2+,eqs,2.0,
+Group 3,Site 2,EQS,3+,eqs,3.0,
+Group 3,Site 3,EQS,1+,eqs,1.0,
+Group 3,Site 1,BULDING HEIGHT,14,bulding height,,
+Group 3,Site 2,BULDING HEIGHT,4,bulding height,,
+Group 3,Site 3,BULDING HEIGHT,9,bulding height,,
+Group 3,Site 1,DECIBELS,71.95,decibels_db,71.95,dB
+Group 3,Site 2,DECIBELS,68,decibels_db,68.0,dB
+Group 3,Site 3,DECIBELS,67.2,decibels_db,67.2,dB
+Group 3,Site 1,TRAFFIC COUNT,"Car:7
+Taxi:6
+Truck:9
+Motorbike:1
+Van:2",traffic_total,7.0,count_2min
+Group 3,Site 2,TRAFFIC COUNT,"Car:4
+Taxi:5
+Truck:3
+Motorbike:2
+Van:4",traffic_total,4.0,count_2min
+Group 3,Site 3,TRAFFIC COUNT,"Car:9
+Taxi:5
+Truck:6
+Motorbike:1
+Van:1",traffic_total,9.0,count_2min
+Group 3,Site 1,PEDESTRIAN COUNT,88,pedestrian_count,88.0,count
+Group 3,Site 2,PEDESTRIAN COUNT,61,pedestrian_count,61.0,count
+Group 3,Site 3,PEDESTRIAN COUNT,22,pedestrian_count,22.0,count
+Group 3,Site 1,ALL TRAFFIC OPTIONS,"Bus 62S, MTR tsuen wan and tuen ma line",traffic_total,62.0,count_2min
+Group 3,Site 2,ALL TRAFFIC OPTIONS,MTR tsuen wan and tuen ma line,traffic_total,,count_2min
+Group 3,Site 3,ALL TRAFFIC OPTIONS,MTR tsuen wan and tuen ma line,traffic_total,,count_2min
+Group 3,Site 1,LANDUSE,commerical,land_use,,
+Group 3,Site 2,LANDUSE,"dining, transit, commercial",land_use,,
+Group 3,Site 3,LANDUSE,commerical,land_use,,
+Group 3,Site 1,HIGH OR LOW ORDER?,high,order_label,,
+Group 3,Site 2,HIGH OR LOW ORDER?,high,order_label,,
+Group 3,Site 3,HIGH OR LOW ORDER?,low,order_label,,
+Group 4,Site 1,EQS,3,eqs,3.0,
+Group 4,Site 2,EQS,1,eqs,1.0,
+Group 4,Site 3,EQS,-8,eqs,-8.0,
+Group 4,Site 1,BULDING HEIGHT,19,bulding height,,
+Group 4,Site 2,BULDING HEIGHT,24.5,bulding height,,
+Group 4,Site 3,BULDING HEIGHT,19.5,bulding height,,
+Group 4,Site 1,DECIBELS,71.2,decibels_db,71.2,dB
+Group 4,Site 2,DECIBELS,73.5,decibels_db,73.5,dB
+Group 4,Site 3,DECIBELS,66.4,decibels_db,66.4,dB
+Group 4,Site 1,TRAFFIC COUNT,23,traffic_total,23.0,count_2min
+Group 4,Site 2,TRAFFIC COUNT,7,traffic_total,7.0,count_2min
+Group 4,Site 3,TRAFFIC COUNT,5,traffic_total,5.0,count_2min
+Group 4,Site 1,PEDESTRIAN COUNT,27,pedestrian_count,27.0,count
+Group 4,Site 2,PEDESTRIAN COUNT,20,pedestrian_count,20.0,count
+Group 4,Site 3,PEDESTRIAN COUNT,14,pedestrian_count,14.0,count
+Group 4,Site 1,ALL TRAFFIC OPTIONS,2 taxi stands. 5 buses,traffic_total,2.0,count_2min
+Group 4,Site 2,ALL TRAFFIC OPTIONS,2 taxi stands. One mtr station-2 lines-one mtr station,traffic_total,2.0,count_2min
+Group 4,Site 3,ALL TRAFFIC OPTIONS,"1 tax stand, 3 buses",traffic_total,1.0,count_2min
+Group 4,Site 1,LANDUSE,"Retail stores, drug store, clothing stores, restaurants.",land_use,,
+Group 4,Site 2,LANDUSE,"Restaurants, clothing stores, residential area",land_use,,
+Group 4,Site 3,LANDUSE,"Retail store, residential area",land_use,,
+Group 4,Site 1,HIGH OR LOW ORDER?,Low order,order_label,,
+Group 4,Site 2,HIGH OR LOW ORDER?,Low order,order_label,,
+Group 4,Site 3,HIGH OR LOW ORDER?,Low order,order_label,,
+Group 5,Site 1,EQS,7,eqs,7.0,
+Group 5,Site 2,EQS,2,eqs,2.0,
+Group 5,Site 3,EQS,-2,eqs,-2.0,
+Group 5,Site 1,BULDING HEIGHT,12.5,bulding height,,
+Group 5,Site 2,BULDING HEIGHT,16,bulding height,,
+Group 5,Site 3,BULDING HEIGHT,13,bulding height,,
+Group 5,Site 1,DECIBELS,68.4,decibels_db,68.4,dB
+Group 5,Site 2,DECIBELS,79.25,decibels_db,79.25,dB
+Group 5,Site 3,DECIBELS,74.9,decibels_db,74.9,dB
+Group 5,Site 1,TRAFFIC COUNT,CAR:34 VAN:6 TAXI:17 TRUCK:2 MOTORBIKE:3,traffic_total,34.0,count_2min
+Group 5,Site 2,TRAFFIC COUNT,CAR:19 TAXI:9 TRUCK:3 MOTORBIKE:1 VAN:6,traffic_total,19.0,count_2min
+Group 5,Site 3,TRAFFIC COUNT,CAR:24 TAXI:12 TRUCK:1 MOTORBIKE:3 VAN:8,traffic_total,24.0,count_2min
+Group 5,Site 1,PEDESTRIAN COUNT,53,pedestrian_count,53.0,count
+Group 5,Site 2,PEDESTRIAN COUNT,47,pedestrian_count,47.0,count
+Group 5,Site 3,PEDESTRIAN COUNT,31,pedestrian_count,31.0,count
+Group 5,Site 1,ALL TRAFFIC OPTIONS,"A21, 1, 2, 6, 9, 26, 35A, 62S, 81C, 87D, 98D, 280X, 281A, N21, TAXI",traffic_total,21.0,count_2min
+Group 5,Site 2,ALL TRAFFIC OPTIONS,TAXI,traffic_total,,count_2min
+Group 5,Site 3,ALL TRAFFIC OPTIONS,TAXI,traffic_total,,count_2min
+Group 5,Site 1,LANDUSE,Commercial,land_use,,
+Group 5,Site 2,LANDUSE,Commercial,land_use,,
+Group 5,Site 3,LANDUSE,Commercial,land_use,,
+Group 5,Site 1,HIGH OR LOW ORDER?,High order,order_label,,
+Group 5,Site 2,HIGH OR LOW ORDER?,Low order,order_label,,
+Group 5,Site 3,HIGH OR LOW ORDER?,Low order,order_label,,
+Group 6,Site 1,EQS,12,eqs,12.0,
+Group 6,Site 2,EQS,-4,eqs,-4.0,
+Group 6,Site 3,EQS,-5,eqs,-5.0,
+Group 6,Site 1,BULDING HEIGHT,9.5,bulding height,,
+Group 6,Site 2,BULDING HEIGHT,7,bulding height,,
+Group 6,Site 3,BULDING HEIGHT,7.25,bulding height,,
+Group 6,Site 1,DECIBELS,67.85,decibels_db,67.85,dB
+Group 6,Site 2,DECIBELS,77.1,decibels_db,77.1,dB
+Group 6,Site 3,DECIBELS,70.25,decibels_db,70.25,dB
+Group 6,Site 1,TRAFFIC COUNT,"Car: 13
+Taxi: 0
+Truck: 0
+Motorbike: 3
+Van: 1
+Bus: 0",traffic_total,13.0,count_2min
+Group 6,Site 2,TRAFFIC COUNT,"Car: 3
+Taxi: 6
+Truck: 0
+Motorbike: 1
+Van: 4
+Bus: 3",traffic_total,3.0,count_2min
+Group 6,Site 3,TRAFFIC COUNT,"Car: 13
+Taxi: 0
+Truck: 0
+Motorbike: 3
+Van: 1
+Bus: 0",traffic_total,13.0,count_2min
+Group 6,Site 1,PEDESTRIAN COUNT,19,pedestrian_count,19.0,count
+Group 6,Site 2,PEDESTRIAN COUNT,25,pedestrian_count,25.0,count
+Group 6,Site 3,PEDESTRIAN COUNT,26,pedestrian_count,26.0,count
+Group 6,Site 1,ALL TRAFFIC OPTIONS,Taxi station x1,traffic_total,1.0,count_2min
+Group 6,Site 2,ALL TRAFFIC OPTIONS,"3 KMB bus stations:
+Bus lines: 35A, 35X, 41A, 81C, 87C, 87D, 87E, 98D, 98P, 268B, 280X, 281B, 281X, N216, N241, 3X, 36X, 242X, 252B, 259B, 259C, 260B, 261B, 7, 13X, 14X, 208, 230X, 234P, 281A, 296D, N271, N281
+Taxi station x1",traffic_total,3.0,count_2min
+Group 6,Site 3,ALL TRAFFIC OPTIONS,"3 KMB bus stations, 1 minibus station
+Bus lines: 26, 26x, 98D, 98P, 5C, 5P, 26X, 110, 5, 28, N271, 796P, 796X, A21, E21X
+Taxi station x1",traffic_total,3.0,count_2min
+Group 6,Site 1,LANDUSE,Recreational land use,land_use,,
+Group 6,Site 2,LANDUSE,Commercial land use,land_use,,
+Group 6,Site 3,LANDUSE,Commercial land use,land_use,,
+Group 6,Site 1,HIGH OR LOW ORDER?,/,order_label,,
+Group 6,Site 2,HIGH OR LOW ORDER?,Low order,order_label,,
+Group 6,Site 3,HIGH OR LOW ORDER?,Low order,order_label,,
+Group 7,Site 1,EQS,3,eqs,3.0,
+Group 7,Site 2,EQS,-1,eqs,-1.0,
+Group 7,Site 3,EQS,0,eqs,0.0,
+Group 7,Site 1,BULDING HEIGHT,18,bulding height,,
+Group 7,Site 2,BULDING HEIGHT,11,bulding height,,
+Group 7,Site 3,BULDING HEIGHT,21,bulding height,,
+Group 7,Site 1,DECIBELS,77,decibels_db,77.0,dB
+Group 7,Site 2,DECIBELS,74,decibels_db,74.0,dB
+Group 7,Site 3,DECIBELS,78,decibels_db,78.0,dB
+Group 7,Site 1,TRAFFIC COUNT,"Car: 13
+Taxi: 8
+Truck: 4
+Motorcycles: 0
+Van: 3
+Bus: 1",traffic_total,13.0,count_2min
+Group 7,Site 2,TRAFFIC COUNT,"Car: 24
+Taxi: 19
+Truck: 2
+Motorcycles: 2
+Van: 1
+Bus: 6",traffic_total,24.0,count_2min
+Group 7,Site 3,TRAFFIC COUNT,"Car: 20
+Taxi: 10
+Truck: 0
+Motorcycles: 0
+Van: 1
+Bus: 6",traffic_total,20.0,count_2min
+Group 7,Site 1,PEDESTRIAN COUNT,42,pedestrian_count,42.0,count
+Group 7,Site 2,PEDESTRIAN COUNT,34,pedestrian_count,34.0,count
+Group 7,Site 3,PEDESTRIAN COUNT,27,pedestrian_count,27.0,count
+Group 7,Site 1,ALL TRAFFIC OPTIONS,MTR: Yau Ma  Tei Station Tsuen Wan Line and Kwun Tong Line,traffic_total,,count_2min
+Group 7,Site 2,ALL TRAFFIC OPTIONS,Mini bus 26,traffic_total,26.0,count_2min
+Group 7,Site 3,ALL TRAFFIC OPTIONS,Mini bus 26 26H 26A 26X,traffic_total,26.0,count_2min
+Group 7,Site 1,LANDUSE,Retail,land_use,,
+Group 7,Site 2,LANDUSE,"Residential, retail",land_use,,
+Group 7,Site 3,LANDUSE,Retail,land_use,,
+Group 7,Site 1,HIGH OR LOW ORDER?,High,order_label,,
+Group 7,Site 2,HIGH OR LOW ORDER?,Low,order_label,,
+Group 7,Site 3,HIGH OR LOW ORDER?,High,order_label,,
+Group 8,Site 1,EQS,8,eqs,8.0,
+Group 8,Site 2,EQS,14,eqs,14.0,
+Group 8,Site 3,EQS,10,eqs,10.0,
+Group 8,Site 1,BULDING HEIGHT,14,bulding height,,
+Group 8,Site 2,BULDING HEIGHT,10,bulding height,,
+Group 8,Site 3,BULDING HEIGHT,11,bulding height,,
+Group 8,Site 1,DECIBELS,72,decibels_db,72.0,dB
+Group 8,Site 2,DECIBELS,66,decibels_db,66.0,dB
+Group 8,Site 3,DECIBELS,67,decibels_db,67.0,dB
+Group 8,Site 1,TRAFFIC COUNT,"Car: 5 
+Taxi: 3
+Truck: 1
+Motorcycle/motorbike: 0 
+Van: 2",traffic_total,5.0,count_2min
+Group 8,Site 2,TRAFFIC COUNT,"Car: 8 
+Taxi: 1
+Truck: 1
+Motorcycle/motorbike: 1 
+Van: 6",traffic_total,8.0,count_2min
+Group 8,Site 3,TRAFFIC COUNT,"Car: 8 
+Taxi: 3
+Truck: 2
+Motorcycle/motorbike: 1 
+Van: 7 
+Bus: 2",traffic_total,8.0,count_2min
+Group 8,Site 1,PEDESTRIAN COUNT,30,pedestrian_count,30.0,count
+Group 8,Site 2,PEDESTRIAN COUNT,25,pedestrian_count,25.0,count
+Group 8,Site 3,PEDESTRIAN COUNT,32,pedestrian_count,32.0,count
+Group 8,Site 1,ALL TRAFFIC OPTIONS,Taxi mtr jordan station,traffic_total,,count_2min
+Group 8,Site 2,ALL TRAFFIC OPTIONS,Taxi,traffic_total,,count_2min
+Group 8,Site 3,ALL TRAFFIC OPTIONS,"KMB routes 1, 1A, 2, 6, 6C, 7, 8, 81C, 87D,",traffic_total,1.0,count_2min
+Group 8,Site 1,LANDUSE,Restaurant,land_use,,
+Group 8,Site 2,LANDUSE,Shops,land_use,,
+Group 8,Site 3,LANDUSE,shops,land_use,,
+Group 8,Site 1,HIGH OR LOW ORDER?,Low,order_label,,
+Group 8,Site 2,HIGH OR LOW ORDER?,Low,order_label,,
+Group 8,Site 3,HIGH OR LOW ORDER?,Low,order_label,,
+Group 9,Site 1,EQS,-1,eqs,-1.0,
+Group 9,Site 2,EQS,0,eqs,0.0,
+Group 9,Site 3,EQS,-1,eqs,-1.0,
+Group 9,Site 1,BULDING HEIGHT,16.75,bulding height,,
+Group 9,Site 2,BULDING HEIGHT,12.5,bulding height,,
+Group 9,Site 3,BULDING HEIGHT,12.75,bulding height,,
+Group 9,Site 1,DECIBELS,70.5,decibels_db,70.5,dB
+Group 9,Site 2,DECIBELS,67,decibels_db,67.0,dB
+Group 9,Site 3,DECIBELS,77.5,decibels_db,77.5,dB
+Group 9,Site 1,TRAFFIC COUNT,19,traffic_total,19.0,count_2min
+Group 9,Site 2,TRAFFIC COUNT,37,traffic_total,37.0,count_2min
+Group 9,Site 3,TRAFFIC COUNT,22,traffic_total,22.0,count_2min
+Group 9,Site 1,PEDESTRIAN COUNT,23,pedestrian_count,23.0,count
+Group 9,Site 2,PEDESTRIAN COUNT,67,pedestrian_count,67.0,count
+Group 9,Site 3,PEDESTRIAN COUNT,34,pedestrian_count,34.0,count
+Group 9,Site 1,ALL TRAFFIC OPTIONS,Car: 5           Taxi: 8      Truck: 0 Moto/Bike:2 Bus: 4,traffic_total,5.0,count_2min
+Group 9,Site 2,ALL TRAFFIC OPTIONS,Car: 9                Taxi: 15          Truck: 3       Moto/Bike: 4   Bus: 6,traffic_total,9.0,count_2min
+Group 9,Site 3,ALL TRAFFIC OPTIONS,Car: 12                Taxi: 5          Truck: 1       Moto/Bike: 2   Bus: 2,traffic_total,12.0,count_2min
+Group 9,Site 1,LANDUSE,"Lego shop, Medicine, bakery shop, restaurant",land_use,,
+Group 9,Site 2,LANDUSE,"Boba tea, jewelry shops",land_use,,
+Group 9,Site 3,LANDUSE,"Restaurant, 24h gym service",land_use,,
+Group 9,Site 1,HIGH OR LOW ORDER?,High,order_label,,
+Group 9,Site 2,HIGH OR LOW ORDER?,High,order_label,,
+Group 9,Site 3,HIGH OR LOW ORDER?,High,order_label,,
+Group 10,Site 1,EQS,-8,eqs,-8.0,
+Group 10,Site 2,EQS,-17,eqs,-17.0,
+Group 10,Site 3,EQS,-3,eqs,-3.0,
+Group 10,Site 1,BULDING HEIGHT,15,bulding height,,
+Group 10,Site 2,BULDING HEIGHT,11,bulding height,,
+Group 10,Site 3,BULDING HEIGHT,17,bulding height,,
+Group 10,Site 1,DECIBELS,76.5,decibels_db,76.5,dB
+Group 10,Site 2,DECIBELS,77,decibels_db,77.0,dB
+Group 10,Site 3,DECIBELS,70,decibels_db,70.0,dB
+Group 10,Site 1,TRAFFIC COUNT,"Car 6
+Taxi 8
+Truck 1
+Motor Bike 1
+Van 1",traffic_total,6.0,count_2min
+Group 10,Site 2,TRAFFIC COUNT,"Car 12
+taxi 5
+truck
+Motorbike 1
+van 5",traffic_total,12.0,count_2min
+Group 10,Site 3,TRAFFIC COUNT,"Car 5
+Taxi 2
+Truck 0
+Motorcycle 1
+Van 0",traffic_total,5.0,count_2min
+Group 10,Site 1,PEDESTRIAN COUNT,54,pedestrian_count,54.0,count
+Group 10,Site 2,PEDESTRIAN COUNT,19,pedestrian_count,19.0,count
+Group 10,Site 3,PEDESTRIAN COUNT,13,pedestrian_count,13.0,count
+Group 10,Site 1,ALL TRAFFIC OPTIONS,"Mtr: Jordan,Yau Ma Tei Station
+Taxi
+KMB 1, 1A, 2, 6, 7, 9 (Get off at Jordan Road / Nathan Road).",traffic_total,1.0,count_2min
+Group 10,Site 2,ALL TRAFFIC OPTIONS,"Walking
+MTR Jordan
+taxi",traffic_total,,count_2min
+Group 10,Site 3,ALL TRAFFIC OPTIONS,"MTR (Jordan station Exit B2 and C2)
+Buses (KMB/Citybus)
+Minibuses (Green and Red)
+Taxi / Tide-Hailing",traffic_total,2.0,count_2min
+Group 10,Site 1,LANDUSE,Retail,land_use,,
+Group 10,Site 2,LANDUSE,"Retail, residential",land_use,,
+Group 10,Site 3,LANDUSE,"Resident, retail",land_use,,
+Group 10,Site 1,HIGH OR LOW ORDER?,High,order_label,,
+Group 10,Site 2,HIGH OR LOW ORDER?,Low,order_label,,
+Group 10,Site 3,HIGH OR LOW ORDER?,Low,order_label,,
+Group 11,Site 1,EQS,-5,eqs,-5.0,
+Group 11,Site 2,EQS,-10,eqs,-10.0,
+Group 11,Site 3,EQS,9,eqs,9.0,
+Group 11,Site 1,Building Height,Avg 7 stories,building_height_m,21.0,meters
+Group 11,Site 2,Building Height,Avg 6-7 stories,building_height_m,19.5,meters
+Group 11,Site 3,Building Height,Avg 12-13,building_height_m,12.5,meters
+Group 11,Site 1,DECIBELS,Avg 69,decibels_db,69.0,dB
+Group 11,Site 2,DECIBELS,AVG 68,decibels_db,68.0,dB
+Group 11,Site 3,DECIBELS,AVG 70,decibels_db,70.0,dB
+Group 11,Site 1,TRAFFIC COUNT,24 in 2 minutes,traffic_total,24.0,count_2min
+Group 11,Site 2,TRAFFIC COUNT,10 in 2 minutes,traffic_total,10.0,count_2min
+Group 11,Site 3,TRAFFIC COUNT,15 in 2 minutes,traffic_total,15.0,count_2min
+Group 11,Site 1,PEDESTRIAN COUNT,75 in 2 minutes,pedestrian_count,75.0,count
+Group 11,Site 2,PEDESTRIAN COUNT,118 in 2 minutes,pedestrian_count,118.0,count
+Group 11,Site 3,PEDESTRIAN COUNT,68 in 2 minutes,pedestrian_count,68.0,count
+Group 11,Site 1,ALL TRAFFIC OPTIONS,"Cars, Taxi, Truck, Van, Bus",traffic_total,,count_2min
+Group 11,Site 2,ALL TRAFFIC OPTIONS,"Cars, Taxi, Van",traffic_total,,count_2min
+Group 11,Site 3,ALL TRAFFIC OPTIONS,"Car, Taxi, Truck, Van",traffic_total,,count_2min
+Group 11,Site 1,LANDUSE,Restaurants and shops,land_use,,
+Group 11,Site 2,LANDUSE,"Food stalls, fruit and meat market and 1 restaurant",land_use,,
+Group 11,Site 3,LANDUSE,"Cafe, restaurant, convenient store",land_use,,
+Group 11,Site 1,HIGH OR LOW ORDER?,Low,order_label,,
+Group 11,Site 2,HIGH OR LOW ORDER?,low,order_label,,
+Group 11,Site 3,HIGH OR LOW ORDER?,low-mid,order_label,,
+Group 12,Site 1,EQS,1,eqs,1.0,
+Group 12,Site 2,EQS,-1,eqs,-1.0,
+Group 12,Site 3,EQS,-1,eqs,-1.0,
+Group 12,Site 1,BULDING HEIGHT,16,bulding height,,
+Group 12,Site 2,BULDING HEIGHT,14,bulding height,,
+Group 12,Site 3,BULDING HEIGHT,8,bulding height,,
+Group 12,Site 1,DECIBELS,69.5,decibels_db,69.5,dB
+Group 12,Site 2,DECIBELS,70,decibels_db,70.0,dB
+Group 12,Site 3,DECIBELS,73.5,decibels_db,73.5,dB
+Group 12,Site 1,TRAFFIC COUNT,Car: 4 taxi: 2 truck: 1 van: 1 motorbike: 0,traffic_total,4.0,count_2min
+Group 12,Site 2,TRAFFIC COUNT,Car: 3 truck: 2 van: 3 taxi:1 motorbike: 0,traffic_total,3.0,count_2min
+Group 12,Site 3,TRAFFIC COUNT,Car: 3 truck: 1 van: 1 taxi:6 motorbike: 0,traffic_total,3.0,count_2min
+Group 12,Site 1,PEDESTRIAN COUNT,12,pedestrian_count,12.0,count
+Group 12,Site 2,PEDESTRIAN COUNT,11,pedestrian_count,11.0,count
+Group 12,Site 3,PEDESTRIAN COUNT,54,pedestrian_count,54.0,count
+Group 12,Site 1,ALL TRAFFIC OPTIONS,No bus stop/taxi station/mtr,traffic_total,,count_2min
+Group 12,Site 2,ALL TRAFFIC OPTIONS,No bus stop/taxi station/mtr,traffic_total,,count_2min
+Group 12,Site 3,ALL TRAFFIC OPTIONS,No bus stop/taxi station/mtr,traffic_total,,count_2min
+Group 12,Site 1,LANDUSE,Retail,land_use,,
+Group 12,Site 2,LANDUSE,"Retail, residential buildings",land_use,,
+Group 12,Site 3,LANDUSE,Retail,land_use,,
+Group 12,Site 1,HIGH OR LOW ORDER?,Low-mid,order_label,,
+Group 12,Site 2,HIGH OR LOW ORDER?,Low,order_label,,
+Group 12,Site 3,HIGH OR LOW ORDER?,Low,order_label,,
+Group 13,Site 1,EQS,6,eqs,6.0,
+Group 13,Site 2,EQS,12,eqs,12.0,
+Group 13,Site 3,EQS,-8,eqs,-8.0,
+Group 13,Site 1,BULDING HEIGHT,16,bulding height,,
+Group 13,Site 2,BULDING HEIGHT,10,bulding height,,
+Group 13,Site 3,BULDING HEIGHT,12,bulding height,,
+Group 13,Site 1,DECIBELS,58.15,decibels_db,58.15,dB
+Group 13,Site 2,DECIBELS,59.35,decibels_db,59.35,dB
+Group 13,Site 3,DECIBELS,66.7,decibels_db,66.7,dB
+Group 13,Site 1,TRAFFIC COUNT,Car:6 Taxi:7 Truck:0 Motocycle:2 Van:2 Bus:0,traffic_total,6.0,count_2min
+Group 13,Site 2,TRAFFIC COUNT,Car:0. Taxi:0. Truck:0. Motocycle:0  Van:0. Bus:0.,traffic_total,0.0,count_2min
+Group 13,Site 3,TRAFFIC COUNT,Car:11. Truck:5. Van:4. Bus:3. Taxi:8. Motorbike:1,traffic_total,11.0,count_2min
+Group 13,Site 1,PEDESTRIAN COUNT,9,pedestrian_count,9.0,count
+Group 13,Site 2,PEDESTRIAN COUNT,10,pedestrian_count,10.0,count
+Group 13,Site 3,PEDESTRIAN COUNT,34,pedestrian_count,34.0,count
+Group 13,Site 1,ALL TRAFFIC OPTIONS,Buses: 57M.  Mini-bus: 26H     Mtr: Jordan.,traffic_total,57.0,count_2min
+Group 13,Site 2,ALL TRAFFIC OPTIONS,"Buses：790,795,795P,795Y,796P.                                     Mtr:Jordan/Yau Ma Tei",traffic_total,790.0,count_2min
+Group 13,Site 3,ALL TRAFFIC OPTIONS,Mtr: Yau Ma Tei,traffic_total,,count_2min
+Group 13,Site 1,LANDUSE,Hospital,land_use,,
+Group 13,Site 2,LANDUSE,School/church,land_use,,
+Group 13,Site 3,LANDUSE,Retail/factory,land_use,,
+Group 13,Site 1,HIGH OR LOW ORDER?,HIGH,order_label,,
+Group 13,Site 2,HIGH OR LOW ORDER?,LOW,order_label,,
+Group 13,Site 3,HIGH OR LOW ORDER?,LOW,order_label,,

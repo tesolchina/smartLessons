@@ -1,0 +1,15 @@
+# Video Assessment Rubrics
+
+## Assessment Task: Participation (10%)
+
+### Pre-course Video (2%)
+
+In the 2-minute Pre-course Video, students are expected to introduce themselves and share their understanding of global citizenship. This activity serves as a pre-course speaking test.
+
+| Criteria                                                | 1 (Limited)                                                                                        | 2 (Basic)                                                                                                  | 3 (Developing)                                                                                 | 4 (Proficient)                                                                          | 5 (Excellent)                                                                                                                     |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **A. Content**                                    | - Ideas are irrelevant or off-topic;``- No connection to global citizenship or module theme | - Ideas are vaguely related;``- Minimal link to global citizenship or module theme                  | - Ideas are relevant but basic;``- Some connection to theme and citizenship             | - Ideas are relevant and solid;``- Clear link to theme and citizenship           | - Ideas are insightful and theme-specific;``- Strong and thorough global citizenship focus                                 |
+| **B. Lexical and grammatical range and accuracy** | - Vocabulary is limited, repetitive, or off-topic;``- No module-specific terms              | - Basic vocabulary with some repetition;``- Minimal use of module terms                             | - Adequate vocabulary with some module terms;``- Occasional inaccuracies                | - Varied vocabulary with accurate module terms;``- Minor errors                  | - Rich, precise vocabulary with masterful use of module terms;``- Error-free                                               |
+| **C. Fluency, coherence and pronunciation**       | - Speech incoherent, with excessive pauses;``- Pronunciation unintelligible                 | - Speech is halting with long pauses;``- Pronunciation disjointed, unclear, hindering understanding | - Speech is generally smooth with minor pauses;``- Pronunciation clear with some errors | - Speech flows well with minimal hesitation;``- Pronunciation clear and accurate | - Speech is fluent and natural;``- Ideas seamlessly linked;``- Pronunciation clear, accurate, and enhances delivery |
+
+*Source: 0306 EEGC (25-26) Rubrics*
