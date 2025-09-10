@@ -8,7 +8,7 @@ I've got Zoom scripts from week 1 /Users/simonwang/Documents/Usage/VibeCoding/Da
 
 https://gamma.app/docs/GCAP-3056-Taking-a-Stand-xztj8pkoylxq8pe?mode=doc got some slides from previous semesters
 
-https://docs.google.com/viewer?embedded=true&url=https%3A%2F%2Fwww.legco.gov.hk%2Fyr20-21%2Fchinese%2Fpanels%2Fed%2Fpapers%2Fedcb4-1616-1-c.pdf
+https://docs.google.com/viewer?embedded=true&url=https%3A%2F%2Fwww.legco.gov.hk%2Fyr20-21%2Fchinese%2Fpanels%2Fed%2Fpapers%2Fedcb4-1616-1-c.pdf 
 
 this is a sample report to the Legco (need to be OCR-ed later)
 
@@ -27,6 +27,8 @@ here is the note https://docs.google.com/document/d/1fqrraqaRkANg9r0jArxvx7_W2xo
 then we need to create a google form for group leader to fill out to provide a topic preference and group membership, name, major, gmail address, student ID this google form should be linked to a folder to be created
 
 give me instructions to set up google form API
+
+have we got google form already 
 
 /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/operating/GoogleDocsAPI should leverage and update codes here
 

@@ -1,0 +1,532 @@
+{
+  "ai_analysis": {
+    "total_mentions": 74,
+    "categories": {
+      "ai_competency_development": 22,
+      "ai_assisted_learning": 11,
+      "ai_assessment": 28,
+      "ai_training_development": 1,
+      "ai_tools_integration": 0,
+      "ai_policy_strategy": 12
+    },
+    "detailed_mentions": {
+      "ai_competency_development": [
+        {
+          "line_number": 48,
+          "keyword": "AI",
+          "context": "The LC’s mission, along with its objectives, and strategic direction, is crystally clear: educating HKBU students to become competent language users and effective communicators with three competencies: cognitive competence, interpersonal/cross-cultural competence, and intrapersonal competence. The center has been very successful in carrying out its mission and accomplishing its objectives with the right strategic direction. Based on my observation, a key reason for the centers’ success is that it has a strong and effective leadership team and highly energetic staff fully dedicated to the fulfilment of their mission and objectives. The center’s success should also be attributed to the excellent and efficient work of the various committees within the center created to assist in carrying out the different aspects of its mission. Of these committees, the Program Management Committee (PMC) and the Curriculum Committees of the four sections deserve special mention because they oversee the development and management of the academic programs and curriculums. In other words, these committees help establish and ensure the quality of the curricula and courses that the center offers. Furthermore, the LC has established Key Performance Indicators (KPIs) in its assessment, which are closely aligned with the University’s Institutional Strategic Plan. The KPIs cover 5 areas: Cognitive and communicative competency and teaching effectiveness; Interpersonal and cross-cultural competency; Intrapersonal competency; Innovative pedagogies including AI-assisted language learning and Staff development. In short, the LC is truly praiseworthy for 1) the successful accomplishment of its mission of helping HKBU students in their development as competent language users and 2) the effective provision of its academic services to the University.",
+          "source": "table"
+        },
+        {
+          "line_number": 48,
+          "keyword": "AI-assisted",
+          "context": "The LC’s mission, along with its objectives, and strategic direction, is crystally clear: educating HKBU students to become competent language users and effective communicators with three competencies: cognitive competence, interpersonal/cross-cultural competence, and intrapersonal competence. The center has been very successful in carrying out its mission and accomplishing its objectives with the right strategic direction. Based on my observation, a key reason for the centers’ success is that it has a strong and effective leadership team and highly energetic staff fully dedicated to the fulfilment of their mission and objectives. The center’s success should also be attributed to the excellent and efficient work of the various committees within the center created to assist in carrying out the different aspects of its mission. Of these committees, the Program Management Committee (PMC) and the Curriculum Committees of the four sections deserve special mention because they oversee the development and management of the academic programs and curriculums. In other words, these committees help establish and ensure the quality of the curricula and courses that the center offers. Furthermore, the LC has established Key Performance Indicators (KPIs) in its assessment, which are closely aligned with the University’s Institutional Strategic Plan. The KPIs cover 5 areas: Cognitive and communicative competency and teaching effectiveness; Interpersonal and cross-cultural competency; Intrapersonal competency; Innovative pedagogies including AI-assisted language learning and Staff development. In short, the LC is truly praiseworthy for 1) the successful accomplishment of its mission of helping HKBU students in their development as competent language users and 2) the effective provision of its academic services to the University.",
+          "source": "table"
+        },
+        {
+          "line_number": 51,
+          "keyword": "AI",
+          "context": "1. Given HKBU’s language policy shift from trilingualism (i.e., English, Cantonese, and Chinese/Putonghua) to multilingualism, it is suggested that the University make it a requirement for students to learn one other language (such as French, German, Japanese, or Spanish) in addition to the required 3 hours of Chinese offered by the LC. \n2. Due to the concern about the decline in students’ language proficiency, it is also recommended that the University adopt a minimum IELTS/ TOEFL score as a graduation requirement. These two recommendations, if adopted, should help address the concern of declining language proficiency at HKBU. As discussed with and confirmed by the VPTL, IELTS or TOEFL test will be used as an indicator of students’ proficiency in English – i.e. an IELTS score of 6.5 or a TOEFL ibt score of 79. It should be noted that this will not be a graduation requirement. \n3. I understand that the LC’s PILO (Program Intended Learning Outcome) 5 clearly states as an objective to “enhance linguistic and communication strategies through technologies for effective human-human and human-AI interaction across varied academic and professional settings.” However, due to the increasing importance of AI literacy for today’s college graduates, it is recommended that the LC’s PILOs and CILOS list explicitly AI competency as a required competency that is part of the Cognitive and Communicative Competency (the first of the three competencies that the LC aims to help students develop). AI competency and TLAs aligning with this competency have been incorporated into the syllabi of all English LEP course",
+          "source": "table"
+        },
+        {
+          "line_number": 51,
+          "keyword": "AI competency",
+          "context": "1. Given HKBU’s language policy shift from trilingualism (i.e., English, Cantonese, and Chinese/Putonghua) to multilingualism, it is suggested that the University make it a requirement for students to learn one other language (such as French, German, Japanese, or Spanish) in addition to the required 3 hours of Chinese offered by the LC. \n2. Due to the concern about the decline in students’ language proficiency, it is also recommended that the University adopt a minimum IELTS/ TOEFL score as a graduation requirement. These two recommendations, if adopted, should help address the concern of declining language proficiency at HKBU. As discussed with and confirmed by the VPTL, IELTS or TOEFL test will be used as an indicator of students’ proficiency in English – i.e. an IELTS score of 6.5 or a TOEFL ibt score of 79. It should be noted that this will not be a graduation requirement. \n3. I understand that the LC’s PILO (Program Intended Learning Outcome) 5 clearly states as an objective to “enhance linguistic and communication strategies through technologies for effective human-human and human-AI interaction across varied academic and professional settings.” However, due to the increasing importance of AI literacy for today’s college graduates, it is recommended that the LC’s PILOs and CILOS list explicitly AI competency as a required competency that is part of the Cognitive and Communicative Competency (the first of the three competencies that the LC aims to help students develop). AI competency and TLAs aligning with this competency have been incorporated into the syllabi of all English LEP course",
+          "source": "table"
+        },
+        {
+          "line_number": 51,
+          "keyword": "AI literacy",
+          "context": "1. Given HKBU’s language policy shift from trilingualism (i.e., English, Cantonese, and Chinese/Putonghua) to multilingualism, it is suggested that the University make it a requirement for students to learn one other language (such as French, German, Japanese, or Spanish) in addition to the required 3 hours of Chinese offered by the LC. \n2. Due to the concern about the decline in students’ language proficiency, it is also recommended that the University adopt a minimum IELTS/ TOEFL score as a graduation requirement. These two recommendations, if adopted, should help address the concern of declining language proficiency at HKBU. As discussed with and confirmed by the VPTL, IELTS or TOEFL test will be used as an indicator of students’ proficiency in English – i.e. an IELTS score of 6.5 or a TOEFL ibt score of 79. It should be noted that this will not be a graduation requirement. \n3. I understand that the LC’s PILO (Program Intended Learning Outcome) 5 clearly states as an objective to “enhance linguistic and communication strategies through technologies for effective human-human and human-AI interaction across varied academic and professional settings.” However, due to the increasing importance of AI literacy for today’s college graduates, it is recommended that the LC’s PILOs and CILOS list explicitly AI competency as a required competency that is part of the Cognitive and Communicative Competency (the first of the three competencies that the LC aims to help students develop). AI competency and TLAs aligning with this competency have been incorporated into the syllabi of all English LEP course",
+          "source": "table"
+        },
+        {
+          "line_number": 51,
+          "keyword": "human-AI interaction",
+          "context": "1. Given HKBU’s language policy shift from trilingualism (i.e., English, Cantonese, and Chinese/Putonghua) to multilingualism, it is suggested that the University make it a requirement for students to learn one other language (such as French, German, Japanese, or Spanish) in addition to the required 3 hours of Chinese offered by the LC. \n2. Due to the concern about the decline in students’ language proficiency, it is also recommended that the University adopt a minimum IELTS/ TOEFL score as a graduation requirement. These two recommendations, if adopted, should help address the concern of declining language proficiency at HKBU. As discussed with and confirmed by the VPTL, IELTS or TOEFL test will be used as an indicator of students’ proficiency in English – i.e. an IELTS score of 6.5 or a TOEFL ibt score of 79. It should be noted that this will not be a graduation requirement. \n3. I understand that the LC’s PILO (Program Intended Learning Outcome) 5 clearly states as an objective to “enhance linguistic and communication strategies through technologies for effective human-human and human-AI interaction across varied academic and professional settings.” However, due to the increasing importance of AI literacy for today’s college graduates, it is recommended that the LC’s PILOs and CILOS list explicitly AI competency as a required competency that is part of the Cognitive and Communicative Competency (the first of the three competencies that the LC aims to help students develop). AI competency and TLAs aligning with this competency have been incorporated into the syllabi of all English LEP course",
+          "source": "table"
+        },
+        {
+          "line_number": 56,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 56,
+          "keyword": "AI competency",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 56,
+          "keyword": "e-tools",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 57,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 57,
+          "keyword": "AI competency",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 57,
+          "keyword": "e-tools",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 58,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 58,
+          "keyword": "AI competency",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 58,
+          "keyword": "e-tools",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 59,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 59,
+          "keyword": "AI competency",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 59,
+          "keyword": "e-tools",
+          "context": "We appreciate Prof. Liu’s insightful suggestions on our language programmes and curriculum. We welcome the recommendation of making learning a foreign language a requirement, as multilingualism is a key component of the University’s Graduate Attributes. Our current model is to make foreign language learning a critical part of their intercultural and exchange experiences. Annually over 2,000 students enroll in LC credit-bearing foreign language courses. As an incentive in AY 2025–26, a new policy will refund students who take supplementary foreign-language courses and meet the attendance requirement.\n\nRegarding the recommendation on English proficiency, as approved by the Senate, from AY 2025/26, the percentage of students achieving a minimum IELTS score of 6.5 or a TOEFL iBT score of 79 before they graduate will be used as a key indicator of our students’ English proficiency.\n\nWe appreciate the suggestion to include AI competency within Cognitive and Communicative Competency. All LC credit-bearing courses have been updated (some pending procedural approval) to include the development of AI competency and the ability to use technological tools for independent language learning as a course-intended learning outcome (CILO). Additionally, e-tools, including AI, have been actively integrated into classroom activities to enhance student learning experience.",
+          "source": "table"
+        },
+        {
+          "line_number": 108,
+          "keyword": "AI",
+          "context": "The LC has been outstanding in promoting  professional development for all its teaching staff. First, to ensure successful staff development, the center conducts systematic annual performance review (APR) for all its staff. Second, it has a Research and Teaching Team created specifically for organizing and promoting research and teaching development. Third, the LC has provided a variety of opportunities and supports for development, including regular Teaching Development Seminars and other training activities. For example, just in the 2023-2024 school year, 16 staff development seminars were held (12 English seminars and 4 Chinese/Putonghua seminars). Furthermore,  all LC lecturers are required to attend and report on at least one international conference on applied linguistics, language teaching, and learning/education or a related area that they have attended during the year. Furthermore, the LC has encouraged its staff to apply for the Teaching Development Grant (TDG) and the LC staff members have received five such grants as well as eight other research/teaching related internal and external grants. Particularly worth mentioning is that two of the five TDG grants are for developing AI-based language teaching and assessment tools.  Additionally, during this (2024-2025) academic year, a two-day conference on research and teaching was held. There have also been biweekly scholarship bulletins published to help promote research development. All these various development activities have helped effectively and significantly enhance the teaching staff’s professional knowledge and skills.",
+          "source": "table"
+        },
+        {
+          "line_number": 108,
+          "keyword": "AI-based",
+          "context": "The LC has been outstanding in promoting  professional development for all its teaching staff. First, to ensure successful staff development, the center conducts systematic annual performance review (APR) for all its staff. Second, it has a Research and Teaching Team created specifically for organizing and promoting research and teaching development. Third, the LC has provided a variety of opportunities and supports for development, including regular Teaching Development Seminars and other training activities. For example, just in the 2023-2024 school year, 16 staff development seminars were held (12 English seminars and 4 Chinese/Putonghua seminars). Furthermore,  all LC lecturers are required to attend and report on at least one international conference on applied linguistics, language teaching, and learning/education or a related area that they have attended during the year. Furthermore, the LC has encouraged its staff to apply for the Teaching Development Grant (TDG) and the LC staff members have received five such grants as well as eight other research/teaching related internal and external grants. Particularly worth mentioning is that two of the five TDG grants are for developing AI-based language teaching and assessment tools.  Additionally, during this (2024-2025) academic year, a two-day conference on research and teaching was held. There have also been biweekly scholarship bulletins published to help promote research development. All these various development activities have helped effectively and significantly enhance the teaching staff’s professional knowledge and skills.",
+          "source": "table"
+        },
+        {
+          "line_number": 148,
+          "keyword": "AI",
+          "context": "The ACP made the following four suggestions: 1) “the number of credit hours in English be increased to be in line with that of other comparable universities in Hong Kong”; 2) “the quotas for Level 1000 foreign language courses be increased”; 3) “the Writing Enhancement Course be enhanced to focus more specifically on the language skills that students need help with and be better tailored to student groups based on their sub-scores in HKDSE English or their equivalents”; 4) “more language for specific purpose courses be offered in particular in the context of workplace in Mainland China.” Regarding Suggestion 1, the LC fully agrees with it, believing that HKBU students should take a total of 12 units of English spread over their four years of study. However, to increase required English credit hours will first need to a restructuring of the GE University Core curriculum. The LC is planning to seek the QAC’s support in reviewing and revamping the English curriculum so as to make the increase possible. Concerning Suggestion 2, the Foreign Languages section is now offering more 1000-level courses and also offer them on Saturdays to accommodate students’ schedule. As for Suggestion 3, The English section has revamped and renamed the course as “Nurturing Global Citizenship in English.” Based on students’ needs and requests, this revamped course places an emphasis on multimodal communication skills needed by today’s students, and it now includes many more interactive learning activities. The most prominent change in the course is arguably that it currently provides a context-enriched environment where students can practice language skills through making advocacy claims. Furthermore, the course is under constant renewal, and new linguistic elements are likely to be added in the future. Regarding Suggestion 4, the Chinese, English, and Putonghua sections are developing new practical Chinese, Putonghua and English courses on workplace communication will be designed and offered.",
+          "source": "table"
+        },
+        {
+          "line_number": 150,
+          "keyword": "AI",
+          "context": "It is recommended that the LC continue the following 3 in-progress tasks in its response to the ACP’s suggestions. 1) Follow through its plan to gain approval to restructure its English curriculum and increase the total of required English credit hours to twelve, 2) if necessary, make further adjustments of the days and time the 1000-level foreign language courses are offered and/or increase the number of sections of such courses offered to ensure that students have no difficulty in registering in these courses, 3) complete, as soon as possible, the revamping of the Writing Enhancement course and the developing of new courses for workplaces. The Writing Enhancement course will be replaced by Enhancing English through Global Citizenship with a focus on communicative skills in English and proficiency. New workshops on CV/Cover Letter and Job Interviews have been launched and new courses on workplace communication will be developed in the future to meet the needs of different students.",
+          "source": "table"
+        }
+      ],
+      "ai_assisted_learning": [
+        {
+          "line_number": 7,
+          "keyword": "AI",
+          "context": "The Department is encouraged to maintain a close relationship with its DAA. The DAA should visit the Department and submit a Report on the progress of the Department in its follow-up to the recommendations and suggestions of the ACP during the third year after the preceding ACP Visit. Upon the endorsement of the Faculty Board, the QAC will consider the DAA’s report and the Department’s response to the Report.",
+          "source": "paragraph"
+        },
+        {
+          "line_number": 33,
+          "keyword": "AI",
+          "context": "*Special consideration may be given to disciplines such as Chinese Medicine to benchmark against institutions on the Mainland or in Greater China region leading in the field.",
+          "source": "paragraph"
+        },
+        {
+          "line_number": 50,
+          "keyword": "AI",
+          "context": "There is no truly equivalent unit of the LC in a US university because the LC at HKBU performs a large variety of academic functions and services that are usually provided by several different units at a US university. Specifically, some of the LC’s English courses, such as UE1 and UE2 (which are equivalents of the US English Composition 1 and 2), are taught in the US by the English Department while its foreign language and Chinese courses are typically offered by the Department of Modern Languages in the US. Additionally, many of the LC’s LEP courses are usually offered by the unit in a US university named variously as English Language Institute or, like the LC, Language Center. The main point to note here is that the LC, in spite of  being charged with such a diverse range of academic functions and services, has successfully accomplished its mission and objectives and also ensured that  the quality, scope, standard of the academic services it provides are in line with, if not exceeding, those provided by the corresponding units in a typical US university.",
+          "source": "table"
+        },
+        {
+          "line_number": 69,
+          "keyword": "AI",
+          "context": "The ACP made the following two recommendations: 1) “LC strike a balance with more full-time staff hired for the monitoring of its course quality and the coordination of its teaching for consistent practices, particularly for foreign language courses” and 2) “the teaching load of staff of LC be reviewed to ensure its comparability with that of the rest of the University.” Following the ACP recommendation for hiring more full-time teaching staff to  monitor and ensure the quality of courses, especially for those offered for foreign language courses, the LC has hired four full-time lecturers to oversee French, German, Japanese and Spanish language courses. Regarding the ACP’s suggestion for reviewing and lowering the average teaching load of the LC teaching staff, the center has been hoping and waiting for the Faculty of Arts to conduct this important review (for some time) and now for the VP of T&L office since the LC became a teaching unit directly under the VP of T&L office in July of 2024.",
+          "source": "table"
+        },
+        {
+          "line_number": 76,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s thoughtful recommendation regarding the teaching load and manpower. At the LC, teaching hours are set at 238 per semester, a model established back in 2009 to ensure teachers’ commitment to student learning. We recognise the importance of balancing teaching quality with staff well-being, and we will relate this issue to senior management. Within the LC, LEP resources will be further optimised for higher efficiency. We welcome the continuation of the VPTL Office’s review to ensure sustainability of course and service offerings in the LC.",
+          "source": "table"
+        },
+        {
+          "line_number": 77,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s thoughtful recommendation regarding the teaching load and manpower. At the LC, teaching hours are set at 238 per semester, a model established back in 2009 to ensure teachers’ commitment to student learning. We recognise the importance of balancing teaching quality with staff well-being, and we will relate this issue to senior management. Within the LC, LEP resources will be further optimised for higher efficiency. We welcome the continuation of the VPTL Office’s review to ensure sustainability of course and service offerings in the LC.",
+          "source": "table"
+        },
+        {
+          "line_number": 78,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s thoughtful recommendation regarding the teaching load and manpower. At the LC, teaching hours are set at 238 per semester, a model established back in 2009 to ensure teachers’ commitment to student learning. We recognise the importance of balancing teaching quality with staff well-being, and we will relate this issue to senior management. Within the LC, LEP resources will be further optimised for higher efficiency. We welcome the continuation of the VPTL Office’s review to ensure sustainability of course and service offerings in the LC.",
+          "source": "table"
+        },
+        {
+          "line_number": 79,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s thoughtful recommendation regarding the teaching load and manpower. At the LC, teaching hours are set at 238 per semester, a model established back in 2009 to ensure teachers’ commitment to student learning. We recognise the importance of balancing teaching quality with staff well-being, and we will relate this issue to senior management. Within the LC, LEP resources will be further optimised for higher efficiency. We welcome the continuation of the VPTL Office’s review to ensure sustainability of course and service offerings in the LC.",
+          "source": "table"
+        },
+        {
+          "line_number": 129,
+          "keyword": "AI",
+          "context": "The ACP made only high commendations praising the LC’s staff for their tremendous achievements, i.e., the ACP  made no recommendation or suggestion in this regard.",
+          "source": "table"
+        },
+        {
+          "line_number": 238,
+          "keyword": "AI",
+          "context": "The impact of the LC’s work on the community is praiseworthy.  The center offers several courses where students learn to understand and to work with the wider Hong Kong community to explore ways to address social problems in the community. Particularly worth mentioning is the General Education (GE) courses offered by LC (viz., GCAP3056 Taking a Stand: Engaging in Public Discourse through Advanced Research and Writing) because this course had produced significant impact on society through students’ sharing their views on social issues in public media, specifically in the form of  letters to the editor in South China Morning Post as already noted above. Also worth mentioning is the fact that the Chinese section selects/gives several arts/creative writing-related prizes, which have had very positive influence on the community.",
+          "source": "table"
+        },
+        {
+          "line_number": 255,
+          "keyword": "AI",
+          "context": "Again, thanks to the LC’s success in its international effort, the ACP made no recommendation or suggestion.",
+          "source": "table"
+        }
+      ],
+      "ai_assessment": [
+        {
+          "line_number": 111,
+          "keyword": "AI",
+          "context": "While the University and the LC have offered various opportunities and assistance to the teaching staff regarding the use of AI in language learning and teaching, it is recommended that more hands-on training on  AI use in language teaching and assessment be provided, including workshops and research on how to assess students’ assignments produced with AI-assistance.",
+          "source": "table"
+        },
+        {
+          "line_number": 116,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 116,
+          "keyword": "AI training",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 116,
+          "keyword": "AI workshops",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 116,
+          "keyword": "AI Task Force",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 117,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 117,
+          "keyword": "AI training",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 117,
+          "keyword": "AI workshops",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 117,
+          "keyword": "AI Task Force",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 118,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 118,
+          "keyword": "AI training",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 118,
+          "keyword": "AI workshops",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 118,
+          "keyword": "AI Task Force",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 119,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 119,
+          "keyword": "AI training",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 119,
+          "keyword": "AI workshops",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 119,
+          "keyword": "AI Task Force",
+          "context": "We appreciate Prof. Liu’s generous comments and constructive suggestions to enhance AI training and assessment. To address this, we will implement the following key initiatives: (1) to introduce more hands-on AI workshops for teachers in AY 2025-2026; (2) to actively share effective AI strategies for teaching and assessment among LC colleagues through our ongoing Teaching Development Seminars and scholarship bulletins; (3) to form an AI Task Force to develop long-term policies. In addition to these internal efforts, we will continue to encourage colleagues to attend the AI training workshops offered by CHTL.",
+          "source": "table"
+        },
+        {
+          "line_number": 187,
+          "keyword": "AI",
+          "context": "The LC has in place a comprehensive quality assurance framework along with an excellent assessment system to ensure the upholding of high academic standards to help students attain achievements to their fullest ability and potential. Specifically, both internal (self-developed) and external tests including standardized tests, such as IELTS, are used to measure students’ learning achievements. The results of the students’ performance assessments in the LC are highly commendable with its CFQ ratings being among the highest at the University. Here are three specific examples from the 2023-2024 academic year that demonstrate the LC’s high academic standards and student achievements: 1)    students’ average IELTS score was 7.32 (out of 9); 2) the passing rate of COPA (Computerized Oral Proficiency Assessment) was above 85%; and 3) the CFQ rating of learning for the UC and MCCP (Advanced English for research postgraduate students) courses were 4.51 and 4.83 respectively.   Furthermore, in addition to coursework, various academic learning activities and opportunities are provided for students to demonstrate their achievements in language learning, such as student publications, speech and writing competitions, reading clubs, and drama performances. Students’ achievements are numerous, such as publications in various venues including newspapers (e.g., letters to the editor in South China Morning Post and the many awards and prizes they have won.",
+          "source": "table"
+        },
+        {
+          "line_number": 210,
+          "keyword": "AI",
+          "context": "Due to the increasing use of AI in learning, it is recommended that the LC and its programs consider updating their assessment practice to include mechanisms and criteria for evaluating students’ assignments that are completed with AI-assistance. \nGiven the pending removal of Putonghua as a graduation requirement, it is recommended that the Putonghua section consider enhancing their course offerings to make their courses more appealing to students by including contents and activities that students will find helpful and useful in their future careers.",
+          "source": "table"
+        },
+        {
+          "line_number": 215,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 215,
+          "keyword": "AI-assisted",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 216,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 216,
+          "keyword": "AI-assisted",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 217,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 217,
+          "keyword": "AI-assisted",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 218,
+          "keyword": "AI",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 218,
+          "keyword": "AI-assisted",
+          "context": "We appreciate Prof. Liu’s recommendations.\nOn incorporating AI-assisted assessment\nWe agree with the recommendation and will continue to integrate AI-assisted learning elements into our courses. Most core courses have integrated AI-assisted assessment practices to facilitate teachers’ evaluation of learning outcomes and student learning. \n\nOn making Putonghua (PTH) course more appealing\nWe are pleased to report that all credit-bearing PTH courses have been revamped to ensure currency in content, innovativeness in pedagogical approaches and authenticity in assessment. To further enhance our offerings, two new courses have been introduced:\n(experiential learning) LANG 2017 Putonghua Performing Arts Appreciation, \n(enquiry-based) LANG3016 Advanced-Plus Putonghua",
+          "source": "table"
+        },
+        {
+          "line_number": 223,
+          "keyword": "digital",
+          "context": "Although research/publication is not a criterion for the performance assessment of the LC’s teaching staff, the staff members are actively engaged in research and scholarly activities as evidenced by the many research grants that they have received and the numerous research and creative publications they have produced as mentioned in the “Achievement” section above. Furthermore, the LC regularly holds research conferences, symposia, and seminars. For example, in 2024, the LC successfully organized two international conferences: one held in June with the title name: “Engagement in the Digital Age: International Conference on Language Teaching and Learning,” which drew 214 participants from 37 different universities as well as 32 LC presentations (English 17, Chinese 8, and Putonghua 4, Foreign Languages 3), and the other held in April with the title “The 17th Inner-institutional Symposium on Chinese Teaching in Tertiary Education” with 64 attendees in mixed mode.",
+          "source": "table"
+        }
+      ],
+      "ai_training_development": [
+        {
+          "line_number": 254,
+          "keyword": "AI",
+          "context": "The LC is highly successful and creative in its effort for internationalization. Specifically, it operates a Language Exchange Program and an Intercultural Immersive Exchange (IIE) Program as well as offers a Cultural Exchange Hybrid Course and two new courses that aim to help HKBU students  develop understandings of global citizenship (one course is titled “The World and Our Stories: Speak English with Friends around the World” and the other is entitled “Nurturing Global Citizenship through English.” The Language Exchange program pairs HKBU students with students from many different countries or with on-campus international students for lesson exchanges (i.e., to learn and teach target languages). From AY2021 to 2024, a total of 516 students participated in the Language Exchange  program and rated the program highly, with an average of 4.3/5 for its effectiveness in promoting culture exchange, and 4.4/5 for its ability to improve students’ understanding of another culture. The Intercultural Immersive Exchange (IIE) Program is designed to help students practice global citizenship and develop their sustainable thinking by exploring sustainable development goals (SDGs) through subsidized summer exchanges to various countries across the world. 87 students have participated in this program, with 40 of them having gone to Asian countries, 12 to North America, and 35 to Europe.  The Cultural Exchange Hybrid course is an innovative supplementary course designed to assist HKBU’s outgoing and incoming exchange students as well as local students wishing to interact more easily with international students on exchange programs in Hong Kong.",
+          "source": "table"
+        }
+      ],
+      "ai_tools_integration": [],
+      "ai_policy_strategy": [
+        {
+          "line_number": 46,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 66,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 86,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 106,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 126,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 145,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 165,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 185,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 205,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 221,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 236,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        },
+        {
+          "line_number": 252,
+          "keyword": "AI",
+          "context": "Benchmarking of the policy/practice/standard against overseas* institutions leading in the field",
+          "source": "table"
+        }
+      ]
+    }
+  },
+  "document_connections": [
+    {
+      "theme": "assessment_quality",
+      "daa_keywords": [
+        "assessment",
+        "quality assurance",
+        "standard"
+      ],
+      "lang_ed_keywords": [
+        "assessment",
+        "quality assurance",
+        "evaluation",
+        "standard"
+      ],
+      "connection_strength": 3
+    },
+    {
+      "theme": "curriculum_development",
+      "daa_keywords": [
+        "curriculum"
+      ],
+      "lang_ed_keywords": [
+        "curriculum"
+      ],
+      "connection_strength": 1
+    },
+    {
+      "theme": "community_engagement",
+      "daa_keywords": [
+        "community"
+      ],
+      "lang_ed_keywords": [
+        "community",
+        "engagement"
+      ],
+      "connection_strength": 1
+    },
+    {
+      "theme": "technology_innovation",
+      "daa_keywords": [
+        "AI"
+      ],
+      "lang_ed_keywords": [
+        "AI",
+        "technology",
+        "digital"
+      ],
+      "connection_strength": 1
+    },
+    {
+      "theme": "international_programs",
+      "daa_keywords": [
+        "international"
+      ],
+      "lang_ed_keywords": [
+        "exchange",
+        "intercultural"
+      ],
+      "connection_strength": 0
+    }
+  ],
+  "recommendations": []
+}
