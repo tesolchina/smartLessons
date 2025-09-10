@@ -1,0 +1,99 @@
+# CONTENT-BASED SPEAKER SEPARATION PLAN
+
+## 1. SPEAKER ATTRIBUTION BREAKDOWN
+
+### Simon Wang Sections (Primary Instructor)
+- **Chunk 1**: Complete chunk (100%)
+  - Course administration
+  - Course structure
+  - Learning management system
+  - Group formation
+
+- **Chunk 3**: Complete chunk (100%)
+  - VS Code setup
+  - Python environment
+  - Technical instructions
+  - Course logistics
+
+- **Chunk 4**: Complete chunk (100%)
+  - Software setup details
+  - GitHub Copilot instructions
+  - Classroom management
+  - Technical support
+
+### Talia Sections (Questionnaire Expert)
+- **Chunk 2**: Majority portion (~70%)
+  - Survey question design
+  - Attitude measurement methodology
+  - Policy perception questions
+  - Ordinal scales explanation
+
+### Mixed Sections Requiring Separation
+- **Chunk 2**: Contains both speakers
+  - Talia: Survey methodology content
+  - Simon: Administrative interruption (~30%)
+  - Clear transition point at "Sorry to interrupt..."
+
+## 2. QUESTIONNAIRE METHODOLOGY CONTENT
+
+### Primary Questionnaire Content (Attribute to Talia)
+Located primarily in Chunk 2:
+- Survey question design principles
+- Attitude measurement techniques
+- Policy perception question methodology
+- Ordinal scale explanations
+- CSV file data structure discussion
+
+### Related References (Context Only)
+- Brief mentions in Chunks 3 & 4 about questionnaire data, but in technical context (keep with Simon)
+
+## 3. TRANSITION POINTS
+
+### Natural Speaker Transitions
+1. **Start → Chunk 1**: Simon Wang (Course Introduction)
+2. **Chunk 1 → Chunk 2**: Transition to Talia (Survey Methodology)
+3. **Within Chunk 2**: 
+   - Talia → Simon ("Sorry to interrupt...")
+   - Simon → Talia ("Okay. So later in the CSV file...")
+4. **Chunk 2 → Chunk 3**: Return to Simon (Technical Setup)
+5. **Chunks 3 & 4**: Continuous Simon Wang content
+
+## 4. FINAL RECOMMENDATIONS
+
+### Confidence Assessment
+- **HIGH CONFIDENCE** in overall separation
+- Clear content distinction between:
+  - Technical/administrative content (Simon)
+  - Survey methodology content (Talia)
+
+### Manual Review Requirements
+- **Priority Review**: Chunk 2 transitions
+  - Verify clean break points
+  - Ensure context maintenance during switches
+
+### Implementation Approach
+
+1. **Initial Separation**
+   - Create two base transcripts (Simon & Talia)
+   - Use chunk boundaries as primary division points
+
+2. **Chunk 2 Processing**
+   - Carefully separate based on identified transition points
+   - Maintain context during speaker switches
+   - Ensure smooth flow between segments
+
+3. **Quality Control**
+   - Review all transitions for natural flow
+   - Verify technical content stays with Simon
+   - Confirm questionnaire methodology stays with Talia
+
+4. **Final Documentation**
+   - Mark clear speaker changes in transcript
+   - Add context notes where needed
+   - Include timestamps at transition points
+
+### Additional Notes
+- Maintain all technical setup and course administration under Simon
+- Keep all survey methodology content under Talia
+- Preserve classroom management elements with Simon
+- Ensure references to each other's content remain contextually appropriate

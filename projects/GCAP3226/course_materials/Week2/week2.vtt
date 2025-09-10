@@ -1,0 +1,1658 @@
+WEBVTT
+
+1
+00:00:00.710 --> 00:00:06.729
+Simon Wang: Alright, so for the first two weeks, we're going to record, our lecture on Zoom.
+
+2
+00:00:06.910 --> 00:00:22.010
+Simon Wang: And, you should be able to refer to the Zoom recording. And again, this is the second week of our course, GCAP 3226, and please come to the Zoom, including those who are watching this video, you can
+
+3
+00:00:22.060 --> 00:00:30.400
+Simon Wang: come to the… our, Moodle classroom, and, you should be able to, find the…
+
+4
+00:00:30.490 --> 00:00:33.670
+Simon Wang: Week 1 video, and also transcripts.
+
+5
+00:00:33.840 --> 00:00:51.120
+Simon Wang: just to catch up, you know, I know some of you were not here last week, so if you want to catch up, you want to know more about this course, what we're trying to do, you can just, well, I mean, you probably don't want to watch the whole video, but there's actually transcripts available you can take a look as well.
+
+6
+00:00:51.300 --> 00:00:55.200
+Simon Wang: Now, please go to, week 2 notes.
+
+7
+00:00:55.760 --> 00:01:02.849
+Simon Wang: So, as you can see, we've got in-class and after-class discussion, and then we have week two notes.
+
+8
+00:01:03.020 --> 00:01:21.130
+Simon Wang: So, just a little bit of recap. I think I have already talked about this, but, the basic course objectives are here. I don't want to necessarily repeat myself. You can refer to the, week one video, week one scripts, and also the bullet points here.
+
+9
+00:01:21.520 --> 00:01:27.670
+Simon Wang: And then we have got a, course hub and,
+
+10
+00:01:27.940 --> 00:01:41.449
+Simon Wang: You know, there's a course overview, there's a link to the Google Docs and everything. Again, it's for your reference. We can update here, but mainly, if you just want more direct access to the materials, you can come back to Moodle.
+
+11
+00:01:41.490 --> 00:01:48.170
+Simon Wang: We don't want to kind of overwhelm you with all the different, information, so we go back to the Moodle…
+
+12
+00:01:48.370 --> 00:01:49.520
+Simon Wang: notes.
+
+13
+00:01:50.670 --> 00:01:57.210
+Simon Wang: I don't, I don't necessarily… yeah, okay, so, so maybe we can show the roadmap.
+
+14
+00:01:58.210 --> 00:02:13.929
+Simon Wang: Right, so we have a roadmap. Again, right now, we are in week two, and because it's during the shopping period, we're not going to ask you to form the groups or select the topics or anything yet, so we're just going to give you a taste
+
+15
+00:02:13.930 --> 00:02:22.079
+Simon Wang: of, what we're trying to do, because, the AI tool, using AI to write programming codes, that's kind of one of the highlights
+
+16
+00:02:22.080 --> 00:02:38.730
+Simon Wang: Of this course. And also, it can be a little bit overwhelming and scary, so it's like, we want to eat the frog first, so to speak. So today, it won't be, like, a full 3-hour session, you know, maybe for some of you from computer science major, it's just,
+
+17
+00:02:38.730 --> 00:02:57.779
+Simon Wang: like, a breeze. It's, very, very, straightforward for you. But in that case, please do help, all the other, your fellow students, okay? So, help them a little bit, and help us. And then starting from, week three and four, we will start, looking at some of the case studies that we're going to
+
+18
+00:02:57.890 --> 00:03:15.260
+Simon Wang: focus on in this course, and we're also going to, form groups, and we will invite you to start, picking some projects and start working in this course. And we do hope that in each group, there will be, you know, students from different backgrounds, so we can work together.
+
+19
+00:03:15.390 --> 00:03:29.600
+Simon Wang: All right? So, yeah, so the rest of the roadmap, you can just take a look, and this is actually the first time we run this course, so we are still kind of finalize things a bit, so there might be some changes
+
+20
+00:03:29.840 --> 00:03:41.389
+Simon Wang: over the course, so… but, in general, I think the rule of thumb is that we try to support you, especially when you are not from a math or computer science background.
+
+21
+00:03:41.390 --> 00:03:53.750
+Simon Wang: So, if you feel like there's a little bit difficult or challenging at this stage, do not worry too much, because we're here to help you, and we want to ensure that this course is
+
+22
+00:03:53.750 --> 00:04:01.070
+Simon Wang: Friendly, to everybody, you know, not just for… for students from… from science background, okay?
+
+23
+00:04:01.170 --> 00:04:19.970
+Simon Wang: So, with that, let's move on. You can look at… there's also assessment information from last week, which we will not repeat, but you can check out. We are going to offer more information and instruction about the instruction… about the assessment in due course.
+
+24
+00:04:20.110 --> 00:04:31.170
+Simon Wang: Now, we're going to get into the actual hands-on parts of today's work, so, if you can, come to this Moodle
+
+25
+00:04:31.450 --> 00:04:43.059
+Simon Wang: page, the notes, you should be able to download the week 2 materials. It's a zip file, so once you download it, you can unzip it, you should be able to get a folder.
+
+26
+00:04:43.650 --> 00:04:49.439
+Simon Wang: And as you can… once you download it, please go ahead and download it.
+
+27
+00:04:49.980 --> 00:04:58.670
+Simon Wang: For those of you who are getting a tablet computer, like an iPad, I'm not sure whether… is this going to work on…
+
+28
+00:04:58.940 --> 00:04:59.850
+Simon Wang: Hi, Pat.
+
+29
+00:05:01.510 --> 00:05:20.959
+Simon Wang: Yeah, so, I think for those of you who are using a tablet computer, I would encourage you to get a mobile computer next week, but, for now, I mean, you can still just kind of tag along and look at what we're doing, and maybe go to some…
+
+30
+00:05:21.230 --> 00:05:33.079
+Simon Wang: Go to one of the students with a mobile computer, so you know how things will work, and then you can go home, and with your mobile computer, or go to a computer lab, you should be able to get things done fairly quickly.
+
+31
+00:05:33.350 --> 00:05:43.779
+Simon Wang: So again, going back to the ZIP package, there will be a CSV file, so this is the data, okay? So,
+
+32
+00:05:43.970 --> 00:05:49.699
+Simon Wang: CSV is very similar to spreadsheet, but it's simpler, okay?
+
+33
+00:05:50.170 --> 00:05:55.780
+Simon Wang: So you can think of it as a spreadsheet. When you open it, it will be a spreadsheet, okay?
+
+34
+00:05:56.040 --> 00:06:00.390
+Simon Wang: And then there will be another fire, it's the Jupyter Notebook.
+
+35
+00:06:00.680 --> 00:06:12.320
+Simon Wang: Now, Jupyter Notebook, you would consider this as some codes, okay? And, this is a file that you can write some codes, and the codes can be run.
+
+36
+00:06:12.500 --> 00:06:17.130
+Simon Wang: right there, okay? So, there will be,
+
+37
+00:06:17.320 --> 00:06:21.249
+Simon Wang: You know, of course, behind the scenes, there will be some other program running.
+
+38
+00:06:21.600 --> 00:06:26.540
+Simon Wang: And then there will be… yeah, I think that's mainly the two files.
+
+39
+00:06:26.710 --> 00:06:37.560
+Simon Wang: And in order to run the Jupyter Notebook, you can't just open the Jupyter Notebook, like, on your Word or Notepad or anything, so you have to install a software
+
+40
+00:06:37.660 --> 00:06:43.180
+Simon Wang: It's called, VS Code. But, there will be more instruction that the Talia will provide you.
+
+41
+00:06:43.380 --> 00:06:45.649
+Simon Wang: So, do you want to go down a bit?
+
+42
+00:06:46.090 --> 00:06:51.210
+Simon Wang: So again, what we're trying to do today is to introduce some analytical tools
+
+43
+00:06:51.310 --> 00:06:59.580
+Simon Wang: including GitHub, Copiler that can help you write the codes, alright? Because, you know.
+
+44
+00:06:59.640 --> 00:07:16.149
+Simon Wang: I don't think we can run this course without AI, basically. If we talk about, like, two years ago, like, even one year ago, AI is not really that good at programming or writing program calls. We can't really run this course, you know, or we can only run this course for students who have already done some programming.
+
+45
+00:07:16.460 --> 00:07:31.600
+Simon Wang: But now with AI, we can basically teach this course even to students who have zero programming background, okay? So, yeah, so I think that's kind of the introduction. Maybe, Tayle, do you want to start getting into the details?
+
+46
+00:07:40.990 --> 00:07:42.929
+Simon Wang: Okay, so good morning, everyone.
+
+47
+00:07:43.760 --> 00:07:54.110
+Simon Wang: In the zip file you downloaded, actually there is a PDF file, which contains, some of the content shows here in this, like, interactive
+
+48
+00:07:54.330 --> 00:07:55.300
+Simon Wang: Panel.
+
+49
+00:07:59.580 --> 00:08:10.570
+Simon Wang: So this is the slides that I made for this relative technical part of today's course. So it's called Data Visualization with GitHub Copilot.
+
+50
+00:08:12.820 --> 00:08:14.440
+Simon Wang: I will skip this recap.
+
+51
+00:08:17.350 --> 00:08:24.329
+Simon Wang: And only mention that this will be part of the analytical tools for our data-informed policymaking in Hong Kong.
+
+52
+00:08:26.110 --> 00:08:39.029
+Simon Wang: So in today's task, we will focus on data visualization, and first of all, I would like to give you a context of the problem, or the data that we will visualize.
+
+53
+00:08:39.280 --> 00:08:47.820
+Simon Wang: So, I do not want to, do the data visualization for visualization, so hopefully this will be a,
+
+54
+00:08:48.190 --> 00:08:51.409
+Simon Wang: Comprehensive context for the visualization task.
+
+55
+00:08:52.150 --> 00:08:56.279
+Simon Wang: So if you click the link, here on this PDF.
+
+56
+00:08:56.570 --> 00:09:01.890
+Simon Wang: It will lead you to this… questionnaire.
+
+57
+00:09:02.740 --> 00:09:09.109
+Simon Wang: About this, people's… this is the, survey.
+
+58
+00:09:09.240 --> 00:09:12.369
+Simon Wang: for the, Hong Kong, Manipet.
+
+59
+00:09:12.650 --> 00:09:16.590
+Simon Wang: Municipal solid waste charging policies of it.
+
+60
+00:09:16.900 --> 00:09:25.009
+Simon Wang: So I think most of you have heard about this policy, right? So last year, finally, it is postponed again, so it is not implemented.
+
+61
+00:09:25.410 --> 00:09:29.750
+Simon Wang: And actually, there is a very long story for this policy.
+
+62
+00:09:29.850 --> 00:09:34.629
+Simon Wang: Because at the very beginning, it can date back to 2005.
+
+63
+00:09:35.550 --> 00:09:39.420
+Simon Wang: I think it's when… about the time that you were born… you were born.
+
+64
+00:09:40.260 --> 00:09:44.360
+Simon Wang: See, around 20 years ago, Hong Kong government.
+
+65
+00:09:44.680 --> 00:09:49.520
+Simon Wang: Published this policy framework for municipal solid waste management.
+
+66
+00:09:50.470 --> 00:09:56.289
+Simon Wang: So even 20 years ago, this policy framework was already published.
+
+67
+00:09:56.680 --> 00:10:02.680
+Simon Wang: But after 20 years, this policy is still not implemented, due to many,
+
+68
+00:10:02.820 --> 00:10:07.209
+Simon Wang: Practical issues, and also very, also many controversials.
+
+69
+00:10:08.650 --> 00:10:17.950
+Simon Wang: So here, this study focused on some potential influencing factors of this, of the level of support for this policy.
+
+70
+00:10:20.680 --> 00:10:22.659
+Simon Wang: So here shows the description.
+
+71
+00:10:23.130 --> 00:10:30.190
+Simon Wang: The aim of this survey is to understand Hong Kong residents' awareness attitudes.
+
+72
+00:10:30.350 --> 00:10:35.800
+Simon Wang: And daily waste management behaviors related to this waste charging policy.
+
+73
+00:10:36.130 --> 00:10:39.609
+Simon Wang: So that's the overall aim of the survey.
+
+74
+00:10:41.890 --> 00:10:52.550
+Simon Wang: And later, we will look at the data that's collected based on this survey, and do the data visualization for specific questions.
+
+75
+00:10:54.370 --> 00:10:58.109
+Simon Wang: So this questionnaire is divided into four sections.
+
+76
+00:10:58.780 --> 00:11:01.909
+Simon Wang: First, the assessment of the policy support.
+
+77
+00:11:02.830 --> 00:11:06.689
+Simon Wang: So this is, like, the, our response variable.
+
+78
+00:11:06.990 --> 00:11:15.180
+Simon Wang: Because we want to explore the potential influencing factors of the level of support to this policy.
+
+79
+00:11:15.880 --> 00:11:31.399
+Simon Wang: So we want to know what kind of factors will, affect, for example, the following exploratory variables, like the household waste disposal and recycling habits.
+
+80
+00:11:31.800 --> 00:11:40.409
+Simon Wang: Say, whether the, household who, which deposed a lot of garbages will tend to,
+
+81
+00:11:40.690 --> 00:11:44.390
+Simon Wang: To be more against this policy.
+
+82
+00:11:44.860 --> 00:11:48.759
+Simon Wang: Because overall, the policy says that the more waste
+
+83
+00:11:48.870 --> 00:11:53.930
+Simon Wang: The household produce, or the, say, the restaurant owners produce.
+
+84
+00:11:54.300 --> 00:11:57.400
+Simon Wang: The higher amount of money they should pay.
+
+85
+00:11:57.870 --> 00:11:59.969
+Simon Wang: The polluter pay principle.
+
+86
+00:12:00.160 --> 00:12:09.250
+Simon Wang: So maybe, the level of support to this policy may have certain relationship with the amount of waste disposal.
+
+87
+00:12:10.940 --> 00:12:16.600
+Simon Wang: Or… The recycling habits may also affect the level of support.
+
+88
+00:12:17.060 --> 00:12:22.400
+Simon Wang: Say, for those who have already, get used to recycled waste.
+
+89
+00:12:22.660 --> 00:12:30.629
+Simon Wang: They may have a higher recycling frequency, or they pay more effort on recycling items.
+
+90
+00:12:30.960 --> 00:12:37.989
+Simon Wang: Then if that is the case, it is likely that the level of support for this policy will be higher.
+
+91
+00:12:39.770 --> 00:12:44.449
+Simon Wang: So these are the, potential influencing factors,
+
+92
+00:12:44.980 --> 00:12:48.490
+Simon Wang: Of this level of support for this policy.
+
+93
+00:12:49.690 --> 00:13:00.409
+Simon Wang: Similarly, the demographic information, for example, maybe the level of education will also affect their level of support.
+
+94
+00:13:00.790 --> 00:13:02.379
+Simon Wang: or the age.
+
+95
+00:13:02.620 --> 00:13:16.570
+Simon Wang: They, with, more senior people may tend to, more against this policy, so these are all potential factors that will influence the level of
+
+96
+00:13:16.700 --> 00:13:18.450
+Simon Wang: The policy support.
+
+97
+00:13:19.960 --> 00:13:25.990
+Simon Wang: So then, let's dive into, how these questions are set in this questionnaire.
+
+98
+00:13:29.480 --> 00:13:33.360
+Simon Wang: So the first section is this assessment of policy support.
+
+99
+00:13:33.860 --> 00:13:37.270
+Simon Wang: So before asking the, questions.
+
+100
+00:13:37.610 --> 00:13:43.999
+Simon Wang: Firstly, here shows a very brief introduction to this municipal solid waste charging policy.
+
+101
+00:13:44.560 --> 00:13:47.549
+Simon Wang: So it's based on this polluter pace principle.
+
+102
+00:13:48.250 --> 00:13:56.149
+Simon Wang: And requiring all household and non-household pharmacists in Hong Kong to pay according to the quality of waste disposed.
+
+103
+00:13:56.870 --> 00:14:02.480
+Simon Wang: So the more waste disposed, the higher the cost of purchasing designated bags or tags.
+
+104
+00:14:02.960 --> 00:14:04.529
+Simon Wang: So that's the principle.
+
+105
+00:14:04.670 --> 00:14:11.909
+Simon Wang: And the purpose is to reduce the amount of waste and promote the recycling behavior.
+
+106
+00:14:13.600 --> 00:14:17.370
+Simon Wang: And here also shows some basic information.
+
+107
+00:14:17.710 --> 00:14:21.909
+Simon Wang: Like, according to the Environmental Protection Department's estimate.
+
+108
+00:14:22.540 --> 00:14:26.179
+Simon Wang: 3 to 4 person households using one
+
+109
+00:14:26.480 --> 00:14:31.740
+Simon Wang: 10L, or 15L designated garbage bag per day.
+
+110
+00:14:32.200 --> 00:14:37.920
+Simon Wang: Would incur a monthly waste charging fee of approximately $30 to $53.
+
+111
+00:14:38.260 --> 00:14:44.079
+Simon Wang: So that's the basic background information of what this policy is.
+
+112
+00:14:47.320 --> 00:14:49.610
+Simon Wang: So then we can go to the questions.
+
+113
+00:14:50.460 --> 00:14:56.139
+Simon Wang: So, first of all, this is the key, measurement, we focus.
+
+114
+00:14:56.670 --> 00:15:00.739
+Simon Wang: To how much extent the respondents support this policy?
+
+115
+00:15:04.620 --> 00:15:23.850
+Simon Wang: And starting from the second question to the fifth question, it's actually the, preserved, like, fairness or preserved responsiveness to public opinion from different, measuring the attitude of the respondents from different, aspects.
+
+116
+00:15:25.660 --> 00:15:30.590
+Simon Wang: For example, for this second question, according to the polluter-pays Principle.
+
+117
+00:15:31.100 --> 00:15:35.160
+Simon Wang: Do you think charging by the amount of garbage can fairly
+
+118
+00:15:35.820 --> 00:15:39.470
+Simon Wang: Reflect the environmental burden of different families.
+
+119
+00:15:41.680 --> 00:15:45.900
+Simon Wang: So this question measure the perceived fairness of this policy.
+
+120
+00:15:46.300 --> 00:15:53.249
+Simon Wang: And I think it's reasonable to assume that if people tend to believe that this policy is fair.
+
+121
+00:15:53.430 --> 00:16:00.300
+Simon Wang: Then, it's likely that They will support, they will, like, more support this policy.
+
+122
+00:16:01.350 --> 00:16:04.110
+Simon Wang: So this is one possible influencing factor.
+
+123
+00:16:07.790 --> 00:16:14.010
+Simon Wang: Another perspective is, Do you think the government has fully considered the opinions
+
+124
+00:16:14.520 --> 00:16:17.480
+Simon Wang: Of citizens from different social classes.
+
+125
+00:16:17.910 --> 00:16:21.520
+Simon Wang: When formulating this garbage charging policy.
+
+126
+00:16:22.940 --> 00:16:25.449
+Simon Wang: So this is another aspect.
+
+127
+00:16:25.630 --> 00:16:30.449
+Simon Wang: It's the responsiveness to the public opinion when making this policy.
+
+128
+00:16:30.920 --> 00:16:31.860
+Simon Wang: So…
+
+129
+00:16:32.440 --> 00:16:45.929
+Simon Wang: I think, again, it's very likely that if the respondents believe that the government has fully considered the opinions of citizens, then it's likely that they will support this policy.
+
+130
+00:16:50.800 --> 00:16:53.730
+Simon Wang: And another possible perspective is.
+
+131
+00:16:53.920 --> 00:17:00.709
+Simon Wang: How helpful do you think the waste charging policy will be in reducing the total waste volume?
+
+132
+00:17:02.730 --> 00:17:09.470
+Simon Wang: So this question measures the helpfulness, or perceived helpfulness, of this policy.
+
+133
+00:17:09.750 --> 00:17:14.030
+Simon Wang: to… To reduce the total waste volume.
+
+134
+00:17:15.810 --> 00:17:21.629
+Simon Wang: So, if the, respondents believe that this policy is helpful.
+
+135
+00:17:21.880 --> 00:17:27.419
+Simon Wang: To reduce the waste, then it is likely that there will support for this policy.
+
+136
+00:17:31.700 --> 00:17:38.530
+Simon Wang: And the last question in this section is, how severe do you think Hong Kong's current waste management issues are?
+
+137
+00:17:39.730 --> 00:17:47.369
+Simon Wang: So this measures the perceived severity of the waste management situation in Hong Kong.
+
+138
+00:17:48.200 --> 00:18:00.030
+Simon Wang: So, supposedly, if the respondents feel that the waste management issue in Hong Kong is already severe enough, then it's likely that they will support this policy.
+
+139
+00:18:04.980 --> 00:18:07.010
+Simon Wang: Sorry to interrupt, I don't know.
+
+140
+00:18:07.240 --> 00:18:12.860
+Simon Wang: Because we have a couple of students just join us. Just want to make sure that we're on the same page.
+
+141
+00:18:13.020 --> 00:18:16.919
+Simon Wang: If you can go to our Week 2 notes in Moodle.
+
+142
+00:18:17.970 --> 00:18:21.190
+Simon Wang: And then, I actually replied.
+
+143
+00:18:23.530 --> 00:18:28.399
+Simon Wang: To share a, maybe I have to refresh.
+
+144
+00:18:28.580 --> 00:18:29.739
+Simon Wang: Just refresh.
+
+145
+00:18:31.480 --> 00:18:41.849
+Simon Wang: So, there's actually a link to the Google Form, right? So, so you should be able to access, you only take a quick look. The idea is that,
+
+146
+00:18:42.090 --> 00:18:58.670
+Simon Wang: as we explained earlier, today we're going to teach you how to use some… writing some Python codes to analyze the data, right? But for illustration purpose, we need to have some data to write the code, and the codes can…
+
+147
+00:18:58.670 --> 00:19:05.759
+Simon Wang: Perform, you know, can take the data as input, and then there will be output, which would become the charts and graphs and everything.
+
+148
+00:19:05.970 --> 00:19:20.209
+Simon Wang: All right, so now what Dr. Wu is doing is to explain the context, right? So we know what the data looks like. If you want to look at the data, you can just go to that download zip file… the zip file, go to that folder, you will find a CSV.
+
+149
+00:19:20.280 --> 00:19:27.450
+Simon Wang: Okay? So the CSV file is the… the data, is the responses to that questionnaire.
+
+150
+00:19:27.710 --> 00:19:36.820
+Simon Wang: Okay? The whole journey would be, you want to do some project, you want to do some research, you want to gauge the people's opinions, so you run a questionnaire.
+
+151
+00:19:36.890 --> 00:19:55.989
+Simon Wang: All right, so when people fill in the questionnaire, they will become, like, a CSV file. There's data, you know, quantitative data. And you can't just make sense of data, right? It's all just numbers, you know, rows and cells. So we have to write a program that can do the kind of tedious work.
+
+152
+00:19:55.990 --> 00:20:06.629
+Simon Wang: to turn the data into something that makes more sense to humans, which is graphs and charts and everything. So that's what we're trying to do today, okay? I hope that makes sense.
+
+153
+00:20:06.790 --> 00:20:22.420
+Simon Wang: And again, if you are on a tablet computer, like an iPad, you can just probably listen a little bit, get to know what's going on, and when you go home, you can run the code very quickly on your own computer, right? Thanks.
+
+154
+00:20:23.410 --> 00:20:24.300
+Simon Wang: Okay.
+
+155
+00:20:28.790 --> 00:20:34.530
+Simon Wang: So later in the CSV file, you will see the, support info.
+
+156
+00:20:34.640 --> 00:20:43.939
+Simon Wang: So that question refers to this first question, and you will see that 1, 2, 3, 4, 5, which represents for different options.
+
+157
+00:20:44.630 --> 00:20:51.340
+Simon Wang: Because this type of questions is, has an ordinal sense, so it…
+
+158
+00:20:51.660 --> 00:21:05.820
+Simon Wang: starts from the strongly opposed to strongly support. So this contains the order in these options, so it is reasonable to use 1, 2, 3, 4, 5 to code these options.
+
+159
+00:21:05.900 --> 00:21:18.579
+Simon Wang: That's the reason later in the CSV file, you did not… you will not see the… the exact wordings, like, strongly oppose, oppose. Instead, you will see numbers, like, from 1, 2, 3, 4, 5.
+
+160
+00:21:18.930 --> 00:21:19.590
+Simon Wang: Okay.
+
+161
+00:21:20.700 --> 00:21:27.909
+Simon Wang: And… So for this study, you can actually observe that it measures
+
+162
+00:21:28.040 --> 00:21:35.780
+Simon Wang: Or it explores the potential influencing factors of the level of support from a conceptual perspective.
+
+163
+00:21:37.040 --> 00:21:44.680
+Simon Wang: So, people preserve the fairness, or perceived the responsiveness to the public opinion.
+
+164
+00:21:44.880 --> 00:21:48.459
+Simon Wang: These are all from the conceptual perspective.
+
+165
+00:21:48.710 --> 00:21:52.390
+Simon Wang: Rather than a practical perspective.
+
+166
+00:21:53.230 --> 00:21:59.890
+Simon Wang: So during the discussion for this, whether we should really implement this policy.
+
+167
+00:22:00.150 --> 00:22:04.319
+Simon Wang: There are actually many, practical controversials.
+
+168
+00:22:04.390 --> 00:22:23.380
+Simon Wang: Like, I think one of the most commonly seen discussion or mentioned difficulty of implementing this policy is about the number of recycling facilities in community is not enough.
+
+169
+00:22:23.980 --> 00:22:30.960
+Simon Wang: Right? Because… If the recycling facility are not enough, then…
+
+170
+00:22:31.070 --> 00:22:37.650
+Simon Wang: Even if people want to reduce the waste, want to do recycle, then there's no enough support.
+
+171
+00:22:38.730 --> 00:22:48.259
+Simon Wang: I'm not sure whether you have observed this, you want to recycle some items, and you bring them to the recycle bin, but it turns out that the recycle bin is already full.
+
+172
+00:22:49.390 --> 00:22:55.950
+Simon Wang: So these may imply that the overall, either the amount of the recycling facilities is not enough.
+
+173
+00:22:56.200 --> 00:23:03.349
+Simon Wang: Or, the manpower to, timely empty those bins is not enough.
+
+174
+00:23:04.570 --> 00:23:07.769
+Simon Wang: But then the question is, do we have such data?
+
+175
+00:23:09.620 --> 00:23:12.190
+Simon Wang: Do we have such data to measure?
+
+176
+00:23:12.590 --> 00:23:16.940
+Simon Wang: The existing utility rate for the recycling facilities.
+
+177
+00:23:18.330 --> 00:23:28.649
+Simon Wang: So suppose if we have such data, say we found that only 30% of the existing recycling bins
+
+178
+00:23:28.870 --> 00:23:32.250
+Simon Wang: are used. The utility rate is really low.
+
+179
+00:23:32.700 --> 00:23:38.589
+Simon Wang: Then this would not be a controversial anymore, because Data shows us that.
+
+180
+00:23:38.980 --> 00:23:40.809
+Simon Wang: There's enough facility.
+
+181
+00:23:41.490 --> 00:23:49.090
+Simon Wang: Then the focus of the government should be to promote or to encourage people to do the recycling.
+
+182
+00:23:49.250 --> 00:23:50.000
+Simon Wang: Right.
+
+183
+00:23:50.220 --> 00:23:54.239
+Simon Wang: Then this is… the… the facility itself is not an issue.
+
+184
+00:23:55.120 --> 00:24:01.239
+Simon Wang: But if it turns out that data shows that 90% of the facility is used.
+
+185
+00:24:01.440 --> 00:24:03.740
+Simon Wang: Or even sometimes is overused.
+
+186
+00:24:04.300 --> 00:24:16.739
+Simon Wang: Then the resources need to be put in either to increase the amount of recycling facilities, or to the manpower to timely empty those existing recycling bins.
+
+187
+00:24:17.780 --> 00:24:31.380
+Simon Wang: So this, decision will be, will be based on the data, and whether we have such data, whether the government has collected such data, whether we can access such kind of data.
+
+188
+00:24:31.460 --> 00:24:42.939
+Simon Wang: So these might be the problems that we… we can try to, inquire those officers, or try to… try to find on the internet, try to… try to search for.
+
+189
+00:24:44.750 --> 00:24:48.500
+Simon Wang: And even when we step back, thinking of
+
+190
+00:24:48.640 --> 00:24:54.280
+Simon Wang: At the planning stage of putting those recycling facilities in the community.
+
+191
+00:24:55.370 --> 00:24:58.890
+Simon Wang: How exactly did the government make the decision?
+
+192
+00:25:01.050 --> 00:25:04.420
+Simon Wang: Say we have 18 districts in Hong Kong.
+
+193
+00:25:04.660 --> 00:25:10.600
+Simon Wang: With different number of population, with different demographic features.
+
+194
+00:25:11.050 --> 00:25:15.309
+Simon Wang: And when those recycling facilities were put
+
+195
+00:25:15.660 --> 00:25:18.649
+Simon Wang: Or were planned to put in different districts.
+
+196
+00:25:19.130 --> 00:25:22.819
+Simon Wang: What kind of information is used to make such decision?
+
+197
+00:25:24.150 --> 00:25:26.490
+Simon Wang: Do they consider the population?
+
+198
+00:25:27.170 --> 00:25:32.140
+Simon Wang: Do they consider the average age of the resident in that area?
+
+199
+00:25:32.480 --> 00:25:35.709
+Simon Wang: Or do they even consider the education level?
+
+200
+00:25:36.730 --> 00:25:45.440
+Simon Wang: What kind of factors do they consider when they make the decision to put certain amount of facilities in those communities?
+
+201
+00:25:46.400 --> 00:25:52.980
+Simon Wang: So that will be… that will be, another question that, I think you can think of.
+
+202
+00:25:54.340 --> 00:25:59.649
+Simon Wang: And if we go one step further, To what extent?
+
+203
+00:26:00.210 --> 00:26:03.070
+Simon Wang: The recycling for citizens is enough.
+
+204
+00:26:04.590 --> 00:26:15.059
+Simon Wang: So how can the government set the evaluation mechanisms to dynamically evaluate the usage of these facilities?
+
+205
+00:26:16.140 --> 00:26:20.200
+Simon Wang: I think this is also a question that we can't think of.
+
+206
+00:26:20.520 --> 00:26:27.670
+Simon Wang: When we… when we consider about the level of support for the policy from the practical perspective.
+
+207
+00:26:28.990 --> 00:26:38.110
+Simon Wang: So for this specific questionnaire, it focused on the influencing factors of level of support, From the conceptual level.
+
+208
+00:26:39.220 --> 00:26:47.040
+Simon Wang: And maybe later in your group project, you may consider this problem from a more practical perspective.
+
+209
+00:26:49.920 --> 00:26:52.110
+Simon Wang: Okay, so this is the first section.
+
+210
+00:26:53.890 --> 00:27:00.379
+Simon Wang: And for the second section, it's about the household waste disposal and recycling habits.
+
+211
+00:27:00.790 --> 00:27:05.260
+Simon Wang: So the number of bags, The household dispose of daily.
+
+212
+00:27:05.980 --> 00:27:09.500
+Simon Wang: And the frequency of the recycling behavior.
+
+213
+00:27:10.200 --> 00:27:15.729
+Simon Wang: The time and effort that is typically taken to recycle the items.
+
+214
+00:27:17.210 --> 00:27:21.519
+Simon Wang: And the last question is whether you have seen this food waste recycling bins.
+
+215
+00:27:27.660 --> 00:27:33.669
+Simon Wang: So, as mentioned, these are all potential influencing factors of the level of support.
+
+216
+00:27:34.000 --> 00:27:37.089
+Simon Wang: Oh, except for this fourth question. This is just a…
+
+217
+00:27:37.260 --> 00:27:41.809
+Simon Wang: Like a, collecting information about the,
+
+218
+00:27:42.090 --> 00:27:46.809
+Simon Wang: The scene frequency of this waste… food waste recycle bin.
+
+219
+00:27:48.500 --> 00:27:53.810
+Simon Wang: And if the respondents had seen this food waste recycling bin before.
+
+220
+00:27:53.960 --> 00:28:01.020
+Simon Wang: Then, the next question will be asked is, have you ever used the food waste recycling bins?
+
+221
+00:28:03.590 --> 00:28:09.339
+Simon Wang: Okay, the third part is about the, some, some knowledge of the recycling.
+
+222
+00:28:10.030 --> 00:28:14.249
+Simon Wang: I think the assumption behind these three questions is
+
+223
+00:28:14.590 --> 00:28:19.920
+Simon Wang: If the person really cares about the environment, or…
+
+224
+00:28:20.100 --> 00:28:31.820
+Simon Wang: He has much knowledge about the recycling, then possibly they will have a higher support level for the waste charging policy.
+
+225
+00:28:34.500 --> 00:28:44.750
+Simon Wang: I will quickly fill some… options here. So these are, overall, this section tests the knowledge.
+
+226
+00:28:46.630 --> 00:28:53.030
+Simon Wang: And… The fourth section is actually a re-evaluation of the policy support.
+
+227
+00:28:54.090 --> 00:28:58.069
+Simon Wang: So here, the designer of this questionnaire
+
+228
+00:28:58.220 --> 00:29:02.519
+Simon Wang: Shows two pieces of information regarding this policy.
+
+229
+00:29:02.960 --> 00:29:06.299
+Simon Wang: And see whether this information will affect
+
+230
+00:29:06.670 --> 00:29:09.110
+Simon Wang: The level of support for the respondents.
+
+231
+00:29:10.150 --> 00:29:16.630
+Simon Wang: So the four… first key information is that, actually, Hong Kong's landfills are nearing capacity.
+
+232
+00:29:18.050 --> 00:29:26.450
+Simon Wang: So it says, based on the current daily waste intake, both landfills are projected to reach full capacity by next year.
+
+233
+00:29:28.050 --> 00:29:30.479
+Simon Wang: So this works like a warning.
+
+234
+00:29:31.010 --> 00:29:37.739
+Simon Wang: Like, the severity of Hong Kong's waste management is actually quite high. It's very severe now.
+
+235
+00:29:38.040 --> 00:29:39.750
+Simon Wang: We're facing this situation.
+
+236
+00:29:41.420 --> 00:29:48.480
+Simon Wang: And the second piece of information shows a successful case of a nearby country, the South Korean.
+
+237
+00:29:49.130 --> 00:29:53.679
+Simon Wang: Which implemented this waste charging policy in 1995,
+
+238
+00:29:54.150 --> 00:29:59.270
+Simon Wang: And it turns out that after, over… 30 years.
+
+239
+00:29:59.720 --> 00:30:04.359
+Simon Wang: The, recycling rate has reached 60%.
+
+240
+00:30:06.430 --> 00:30:14.759
+Simon Wang: So the designer would like to test whether receiving these two pieces of information Made to some extent.
+
+241
+00:30:15.030 --> 00:30:16.020
+Simon Wang: change.
+
+242
+00:30:16.640 --> 00:30:19.499
+Simon Wang: The level of support of the respondents.
+
+243
+00:30:20.290 --> 00:30:26.569
+Simon Wang: So, if it turns out that this kind of, information might be helpful to improve.
+
+244
+00:30:26.730 --> 00:30:34.309
+Simon Wang: The level of support, then maybe later in promotion of such policy, we may use the same strategy.
+
+245
+00:30:40.480 --> 00:30:54.190
+Simon Wang: So later, you will, really, visualize the data, so before the showing up of these two pieces of information, naturally, what is, on average, the, support rate.
+
+246
+00:30:54.480 --> 00:30:56.430
+Simon Wang: For this policy.
+
+247
+00:30:56.990 --> 00:31:04.160
+Simon Wang: And then there's another, variable, which captures the level of supportness after.
+
+248
+00:31:04.570 --> 00:31:07.089
+Simon Wang: The respondents received this information.
+
+249
+00:31:07.360 --> 00:31:12.809
+Simon Wang: And hopefully you… you will be curious about whether there's any change.
+
+250
+00:31:13.230 --> 00:31:16.639
+Simon Wang: Of the support nets after showing this information.
+
+251
+00:31:19.810 --> 00:31:23.199
+Simon Wang: And the last section is the demographic information.
+
+252
+00:31:23.880 --> 00:31:27.000
+Simon Wang: These are quite,
+
+253
+00:31:27.440 --> 00:31:34.690
+Simon Wang: commonly seen? Are you a permanent resident? What is the highest education level? Household size?
+
+254
+00:31:34.840 --> 00:31:36.749
+Simon Wang: Which districts you leave.
+
+255
+00:31:36.930 --> 00:31:46.650
+Simon Wang: What's the type of housing do you leave, and age, interval, and also the household monthly income range, something like that.
+
+256
+00:31:47.250 --> 00:31:51.290
+Simon Wang: So again, these are all potential influencing factors.
+
+257
+00:31:51.670 --> 00:31:56.430
+Simon Wang: To the level of support for this, garbage charging policy.
+
+258
+00:31:57.700 --> 00:32:01.649
+Simon Wang: So this is the overall structure of this questionnaire.
+
+259
+00:32:01.850 --> 00:32:05.500
+Simon Wang: And as mentioned, today, the focus is to do visualization.
+
+260
+00:32:06.710 --> 00:32:12.650
+Simon Wang: To really test the association between this potential influencing factors.
+
+261
+00:32:12.770 --> 00:32:27.089
+Simon Wang: to the response, we will put this… we have to use certain model, as mentioned, the regression model, to capture their relationships. But that will be the focus of our case study.
+
+262
+00:32:27.240 --> 00:32:32.709
+Simon Wang: For today, we will use the questions in this questionnaire to do the data visualization.
+
+263
+00:32:38.330 --> 00:32:44.710
+Simon Wang: So later, I think… I'm not sure how many of you have installed VS Code.
+
+264
+00:32:45.040 --> 00:32:46.670
+Simon Wang: Do you mind raising your hand?
+
+265
+00:32:48.600 --> 00:33:00.709
+Simon Wang: Not many. I think during the break, you can still do it. Just follow the reference book, which I screenshot yesterday, sent you by email.
+
+266
+00:33:00.750 --> 00:33:10.480
+Simon Wang: So, from there, we can, download the… this is the code editor, which is called VS Code, that we will use to write, write Python code.
+
+267
+00:33:11.000 --> 00:33:14.269
+Simon Wang: So here shows the interface of this VS Code.
+
+268
+00:33:15.290 --> 00:33:27.310
+Simon Wang: because there are, I would say, many panels in this interface, so I think it's still useful to briefly talk about the structures.
+
+269
+00:33:27.860 --> 00:33:32.470
+Simon Wang: Overall, on the left-hand side, here is the activity bar.
+
+270
+00:33:32.950 --> 00:33:39.680
+Simon Wang: The most, commonly used one should be this, so you see these blocks?
+
+271
+00:33:40.630 --> 00:33:48.740
+Simon Wang: So this shows the extensions you need to install to open the Jupyter Notebook file we provided.
+
+272
+00:33:49.620 --> 00:33:53.749
+Simon Wang: And… Next to it is a sidebar.
+
+273
+00:33:54.370 --> 00:34:02.649
+Simon Wang: Which shows the folder you opened, and the scripts, or the notebook files in the directory.
+
+274
+00:34:04.480 --> 00:34:09.640
+Simon Wang: And for these editor panels, we basically type our code.
+
+275
+00:34:10.010 --> 00:34:14.659
+Simon Wang: Here, so this is the, editing, panel.
+
+276
+00:34:15.969 --> 00:34:26.129
+Simon Wang: And if we want to run the code, actually for Jupyter Notebook, this run button is not here, but just next to the code, on the left-hand side.
+
+277
+00:34:26.380 --> 00:34:30.729
+Simon Wang: So after you install it, you will see that small button.
+
+278
+00:34:33.460 --> 00:34:38.120
+Simon Wang: And for the bottom panel, it's called the output and terminal panel.
+
+279
+00:34:38.370 --> 00:34:43.069
+Simon Wang: And I think at the very beginning stage, we don't even have to open this panel.
+
+280
+00:34:44.420 --> 00:34:52.940
+Simon Wang: And here contains a co-pilot symbol. So if it looks like this, it means that your AI programming assistant is there for you.
+
+281
+00:34:54.500 --> 00:34:57.899
+Simon Wang: So as long as you, install the,
+
+282
+00:34:58.030 --> 00:35:05.490
+Simon Wang: AI co- sorry, the GitHub Copilot extension, you will be able to see this… this icon.
+
+283
+00:35:07.000 --> 00:35:10.080
+Simon Wang: So this is the VS Code interface.
+
+284
+00:35:13.150 --> 00:35:18.340
+Simon Wang: And what we will use, To write code, it's called the Egyptian Notebook.
+
+285
+00:35:19.900 --> 00:35:25.100
+Simon Wang: So this notebook is an interactive tool that lets you write and run codes
+
+286
+00:35:25.890 --> 00:35:29.689
+Simon Wang: View results immediately, and also add notes.
+
+287
+00:35:31.370 --> 00:35:38.970
+Simon Wang: So here shows the interface of a web version of Jupyter Notebook, so we will use a local version.
+
+288
+00:35:39.070 --> 00:35:42.029
+Simon Wang: But here shows the, a web version.
+
+289
+00:35:42.330 --> 00:35:46.030
+Simon Wang: Basically, there are, two types of cells.
+
+290
+00:35:46.260 --> 00:35:48.360
+Simon Wang: So as a cell, I mean, cell.
+
+291
+00:35:48.900 --> 00:35:52.439
+Simon Wang: So for this type of cell, it's, cold cell.
+
+292
+00:35:52.720 --> 00:35:55.049
+Simon Wang: Where we input our code.
+
+293
+00:35:55.570 --> 00:36:01.819
+Simon Wang: And there are also a type of, cell called markdown, where we can add the notes.
+
+294
+00:36:03.940 --> 00:36:07.180
+Simon Wang: the reason we choose to use Jupyter Notebook is that
+
+295
+00:36:07.360 --> 00:36:17.579
+Simon Wang: The, results of the code can be immediately shown up just right, after the code, so it's quite, friendly.
+
+296
+00:36:18.130 --> 00:36:23.649
+Simon Wang: Say I have many code for my visualization, and after I run it.
+
+297
+00:36:23.840 --> 00:36:28.769
+Simon Wang: Then the corresponding figures will… will be… show up immediately.
+
+298
+00:36:29.170 --> 00:36:33.090
+Simon Wang: op… Below this, code cell.
+
+299
+00:36:36.750 --> 00:36:47.520
+Simon Wang: And here shows the, specific, instruction, but I think this part is, needed after you install the, the VS Code, Python.
+
+300
+00:36:47.940 --> 00:36:52.099
+Simon Wang: So maybe I skip this for, At this moment.
+
+301
+00:36:53.610 --> 00:37:01.550
+Simon Wang: And I think maybe later we have the break first, and during this break, as mentioned, you could,
+
+302
+00:37:01.910 --> 00:37:10.560
+Simon Wang: go ahead to download Python VS Code, and also install the relevant extension from here.
+
+303
+00:37:10.850 --> 00:37:13.619
+Simon Wang: And then we will go to this, this scene.
+
+304
+00:37:14.230 --> 00:37:18.429
+Simon Wang: So, I think after the break, I will continue from… from here.
+
+305
+00:37:21.260 --> 00:37:28.760
+Simon Wang: Alright, so let's take a short break, and if you have any questions about the setup, you can reply to our Week 2 notes.
+
+306
+00:37:28.880 --> 00:37:38.299
+Simon Wang: And I will be monitoring, you know, any reply, but of course, you know, you can raise your hand. I mean, for people who are watching the video, or, you know, you need any help.
+
+307
+00:37:38.510 --> 00:37:45.609
+Simon Wang: And starting from next week, once we, after the Agile period, I'm going to set up a WhatsApp group.
+
+308
+00:37:45.780 --> 00:37:50.650
+Simon Wang: So you guys can join the group, and we can have further discussion, alright?
+
+309
+00:37:50.940 --> 00:37:58.770
+Simon Wang: Right, so there's a little bit of technical details here, so I hope you can be patient if this is new to you.
+
+310
+00:37:58.950 --> 00:38:06.950
+Simon Wang: I think, all this, software and interface has been designed to be human-friendly.
+
+311
+00:38:07.080 --> 00:38:25.350
+Simon Wang: Alright, so there's actually a lot of codes and a lot of magic running behind the scenes. So when we write a program with AI assistance, there's different levels of abstraction that we can decide, you know. At the highest level, you can treat all this as black box.
+
+312
+00:38:25.800 --> 00:38:29.670
+Simon Wang: In other words, all you care about is the input and output.
+
+313
+00:38:29.830 --> 00:38:34.379
+Simon Wang: What happened in between? You don't really have to… have to worry much about.
+
+314
+00:38:34.520 --> 00:38:53.899
+Simon Wang: And I think that's probably good enough for students taking this course, especially those with no programming background. You just follow the instruction, and you need to do a bit copy and pasting, you send the instruction to AI, the AI will generate codes, you copy and paste back to the Jupyter Notebook VS Code, and it will run.
+
+315
+00:38:54.170 --> 00:39:03.949
+Simon Wang: Alright, if it doesn't run, there may be some errors, there's some warning, you copy those errors and warning to AI again, and AI will tell you what to do, and you do it.
+
+316
+00:39:04.200 --> 00:39:10.660
+Simon Wang: Okay, and why do you want to do that? And how the codes actually work? You don't have to worry about that at this stage.
+
+317
+00:39:10.790 --> 00:39:28.089
+Simon Wang: I mean, at some point, if you feel like you want to learn more, you want to become a more advanced learner of programming, then you can look into the codes. You can figure out, oh, actually, this code is calling this function, that code is taking some data from somewhere, and, you know, there's all the details you can learn.
+
+318
+00:39:28.090 --> 00:39:31.510
+Simon Wang: But at this stage, for our purpose, for our cause.
+
+319
+00:39:31.510 --> 00:39:43.070
+Simon Wang: you don't have to worry about all those technical details. So I hope that can give you kind of a peace of mind, you know, in terms of if you are from a non-programming background.
+
+320
+00:39:43.070 --> 00:39:56.159
+Simon Wang: But at the same time, I also hope this experience would give you the opportunity to actually open the door for you, right? So maybe later on in your work, in your life, there's some other problems that need programming to help.
+
+321
+00:39:56.160 --> 00:40:15.039
+Simon Wang: then it can help, you see what I mean? So the next time when people talk to you about VS Code, Python, or Jupyter Notebook, it's not just all, like, a foreign language or Greek to you, you see what I mean? So I think that's really important. So I think, you know, I don't want to preach, but I think it's really important to
+
+322
+00:40:15.040 --> 00:40:18.609
+Simon Wang: Get out of our comfort zone and try new things, right?
+
+323
+00:40:20.360 --> 00:40:24.390
+Simon Wang: Let's take a short break, and we'll come back to do the hands-on thing.
+
+324
+00:48:03.250 --> 00:48:12.159
+Simon Wang: Let's check the progress. Raise your hand if you already got your VS Code installed on your computer. That seems to be a very important step. Raise your hand.
+
+325
+00:48:12.590 --> 00:48:13.450
+Simon Wang: Okay?
+
+326
+00:48:14.020 --> 00:48:18.770
+Simon Wang: Now, raise your hand if you got that zip file downloaded from Moodle.
+
+327
+00:48:18.930 --> 00:48:23.640
+Simon Wang: and, open it on unzipit, Yeah?
+
+328
+00:48:24.260 --> 00:48:32.439
+Simon Wang: Okay? Now, what you need to do, if you haven't done, is to go to VS Code and open that folder.
+
+329
+00:48:33.120 --> 00:48:36.149
+Simon Wang: Where you, you unzip the zip file from.
+
+330
+00:48:36.370 --> 00:48:44.909
+Simon Wang: Okay? Because once you download the zip file, it must be somewhere, right? It could be on your desktop, it could be one of the folders.
+
+331
+00:48:45.090 --> 00:48:57.119
+Simon Wang: for the… for the course, you probably have a folder for this course. So, you unzip that file into your course folder, so there will be a folder for this specific, activity.
+
+332
+00:48:57.300 --> 00:49:03.230
+Simon Wang: And in that folder, you should find a, one CSV, one file.
+
+333
+00:49:03.540 --> 00:49:09.229
+Simon Wang: end with CSV, that's the data file. Another file that ends with IP… IP…
+
+334
+00:49:09.820 --> 00:49:12.719
+Simon Wang: Why something? Which is a Jupyter Notebook.
+
+335
+00:49:12.940 --> 00:49:19.839
+Simon Wang: And then there's another, I think it's a PDF or something. So basically, you… you have to use VS Code to open
+
+336
+00:49:20.300 --> 00:49:21.760
+Simon Wang: That folder.
+
+337
+00:49:22.030 --> 00:49:30.029
+Simon Wang: And, on the left-hand side, you will see a panel where you can see the folder, alright?
+
+338
+00:49:30.300 --> 00:49:32.120
+Simon Wang: And, and also the files.
+
+339
+00:49:32.240 --> 00:49:40.290
+Simon Wang: Now, once you are at that stage, you are in business, okay? So you can open the Jupyter Notebook file.
+
+340
+00:49:40.450 --> 00:49:42.399
+Simon Wang: In the VS Code.
+
+341
+00:49:42.590 --> 00:49:45.160
+Simon Wang: So you can start doing the coding.
+
+342
+00:49:45.340 --> 00:49:56.040
+Simon Wang: Alright? Now, I mean, if you are a good programmer, you're an experienced programmer, you can even just write the code by yourself. You don't need AI. But for beginners.
+
+343
+00:49:56.210 --> 00:50:01.199
+Simon Wang: then you can get some help from AI. So how do you get help from AI? Well.
+
+344
+00:50:01.330 --> 00:50:05.549
+Simon Wang: you can actually go to Poe, you can go to Grok, go to DeepSeek.
+
+345
+00:50:05.880 --> 00:50:19.869
+Simon Wang: you can do that as well. But the Copilot is more integrated, right? So that's why you want to start using Copilot. Now, in VS Code, you need to install an extension called GitHub Copilot.
+
+346
+00:50:20.800 --> 00:50:32.440
+Simon Wang: So you can access Copilot. That's your friend, okay? It can help you solve all the problems related to programming for this course, so make sure that you install the extension GitHub Copilot.
+
+347
+00:50:33.220 --> 00:50:40.529
+Simon Wang: We do need to register, right? Sign up for a GitHub account, do we? Okay, so once you,
+
+348
+00:50:41.060 --> 00:50:45.049
+Simon Wang: Once you have your extension of the GitHub compiler ready.
+
+349
+00:50:45.310 --> 00:50:54.579
+Simon Wang: when you try to fire it up and start using Copilot, then Copilot would ask you to log in to GitHub, right, because it's a GitHub service.
+
+350
+00:50:54.800 --> 00:51:01.729
+Simon Wang: So then, this is a very important moment now, okay? Once you join the GitHub, you join a community of programmers.
+
+351
+00:51:02.160 --> 00:51:11.370
+Simon Wang: Alright? So, and, next time when you talk to people, you say, I have a GitHub account, alright? That's something you should be proud of.
+
+352
+00:51:11.690 --> 00:51:21.790
+Simon Wang: And you can start making friends on GitHub. There's so many very interesting open source, projects and things that's going on in GitHub.
+
+353
+00:51:21.890 --> 00:51:33.489
+Simon Wang: Right? So maybe you are running into some really interesting project, and you can… you can, right, do a… a build-up, do a follow-up on that project, you see. GitHub is a… is an amazing community, okay?
+
+354
+00:51:33.850 --> 00:51:37.640
+Simon Wang: And now, once, once you're on GitHub.
+
+355
+00:51:37.780 --> 00:51:41.510
+Simon Wang: Once you have the account, you should have access to Copilot.
+
+356
+00:51:41.670 --> 00:52:01.490
+Simon Wang: All right? And at some point, you may want to, apply for the GitHub education. Because you are a university student, you are entitled to the education benefits of GitHub, so you can do that later. Because for this particular project, the free account should give you all the resources, all the tokens, and everything you need.
+
+357
+00:52:01.660 --> 00:52:12.280
+Simon Wang: Okay, so you don't have to worry. So I think we have kind of just explained to you how you can reach the stage, you have a co-pilot next to you to start writing codes.
+
+358
+00:52:13.280 --> 00:52:17.009
+Simon Wang: If you have… need some help to get to that step.
+
+359
+00:52:17.330 --> 00:52:28.699
+Simon Wang: just let us know, okay? So, we want to make sure that everybody is on the same page, everybody can have access to compiler. You know, you need to install VS Code, open the folder.
+
+360
+00:52:28.950 --> 00:52:36.209
+Simon Wang: install the GitHub Copilot extension, apply… join the GitHub, get a GitHub account.
+
+361
+00:52:36.380 --> 00:52:40.220
+Simon Wang: Login, and you're… then we're in business, okay?
+
+362
+00:52:45.100 --> 00:52:50.610
+Simon Wang: It's better to have, maybe I'll share my screen, too, so I can…
+
+363
+00:52:55.520 --> 00:52:56.889
+Simon Wang: Wait, that's selfish.
+
+364
+00:53:05.280 --> 00:53:06.410
+Simon Wang: Oh, no.
+
+365
+00:53:06.910 --> 00:53:07.663
+Simon Wang: Oh, the
+
+366
+00:53:39.290 --> 00:53:40.669
+Simon Wang: But we also need to watch it.
+
+367
+00:53:51.080 --> 00:53:51.850
+Simon Wang: Oh, gosh.
+
+368
+00:56:22.440 --> 00:56:26.530
+Simon Wang: So, for those of you who,
+
+369
+00:56:26.850 --> 00:56:30.210
+Simon Wang: Need some help, you can look at the screen here.
+
+370
+00:56:30.470 --> 00:56:33.039
+Simon Wang: So, of course, I'm using Mac.
+
+371
+00:56:33.230 --> 00:56:36.940
+Simon Wang: If you are using a window space, it's a little bit different.
+
+372
+00:56:37.180 --> 00:56:43.140
+Simon Wang: So basically, what, what you can do is… go to…
+
+373
+00:56:44.320 --> 00:56:47.209
+Simon Wang: code, right? Go to VS Code.
+
+374
+00:56:47.440 --> 00:56:50.570
+Simon Wang: And, VS Code is actually just called Code.
+
+375
+00:56:55.020 --> 00:56:58.460
+Simon Wang: Let me see if I can make it a bit bigger.
+
+376
+00:57:00.520 --> 00:57:10.570
+Simon Wang: Alright, so, you are in… you are in VS Code, you will be able to see codes here. You just open the folder, right? So you open the folder.
+
+377
+00:57:10.910 --> 00:57:14.049
+Simon Wang: And it is the folder where you have unzipped.
+
+378
+00:57:14.460 --> 00:57:22.449
+Simon Wang: the zip file we provided is called Week 2 Data Visualization GitHub Compiler. Now, you open it.
+
+379
+00:57:23.900 --> 00:57:33.399
+Simon Wang: And once you open it, You can see there's, 3 files, One is the CSV,
+
+380
+00:57:34.410 --> 00:57:40.499
+Simon Wang: The week 2 CSV, that's the… that's the spreadsheet, okay? That's all the… all the data we got from the questionnaire.
+
+381
+00:57:41.070 --> 00:57:50.150
+Simon Wang: And there's also the PDF, So the PDF is the slides that, Dr. Wu just, presented?
+
+382
+00:57:51.590 --> 00:57:59.559
+Simon Wang: And then there's the IPYMB, the extension. So this is the… Jupy the notebook.
+
+383
+00:57:59.680 --> 00:58:03.730
+Simon Wang: Where you want to, work on.
+
+384
+00:58:04.080 --> 00:58:06.650
+Simon Wang: So, I hope you are here.
+
+385
+00:58:07.500 --> 00:58:13.080
+Simon Wang: Now, once you are here, Then you want to, open up
+
+386
+00:58:13.360 --> 00:58:20.140
+Simon Wang: The sidebar, so there's a side window here, that's the, Co-pilot.
+
+387
+00:58:20.330 --> 00:58:22.319
+Simon Wang: That's the GitHub copiler.
+
+388
+00:58:22.620 --> 00:58:24.200
+Simon Wang: Now, in order to…
+
+389
+00:58:24.490 --> 00:58:33.459
+Simon Wang: fire up this GitHub compiler thing, you will have to install the extension. So where do you install an extension? You come here.
+
+390
+00:58:34.550 --> 00:58:35.529
+Simon Wang: Oh, sorry.
+
+391
+00:58:37.860 --> 00:58:40.900
+Simon Wang: Right, so, so, so you come here, you see there's,
+
+392
+00:58:41.890 --> 00:58:48.029
+Simon Wang: 3 square, and one, also square, but, move… rotate a little bit.
+
+393
+00:58:48.400 --> 00:58:55.780
+Simon Wang: So that's the extension, right? So it's like, extension is like a piece of puzzle added to your… to your picture, right?
+
+394
+00:58:56.320 --> 00:58:58.250
+Simon Wang: So, there's many extensions.
+
+395
+00:58:58.430 --> 00:59:05.150
+Simon Wang: And you need to find an extension which is… the, GitHub Copilot, okay?
+
+396
+00:59:06.580 --> 00:59:15.020
+Simon Wang: And once you install it, you can open up here, and you can start Get some help from…
+
+397
+00:59:15.390 --> 00:59:16.660
+Simon Wang: from Copilot.
+
+398
+00:59:16.910 --> 00:59:23.640
+Simon Wang: Now, in Copilot, there are 3 options. There's Agent, there's Ask, there's Edit.
+
+399
+00:59:23.870 --> 00:59:26.289
+Simon Wang: The agent mode is more advanced.
+
+400
+00:59:26.800 --> 00:59:29.729
+Simon Wang: It's a very recent, feature.
+
+401
+00:59:29.960 --> 00:59:33.159
+Simon Wang: So, I would encourage you to go for Ask.
+
+402
+00:59:33.450 --> 00:59:42.440
+Simon Wang: Because Agent Mode can be a bit confusing for beginners, so let's… let's worry about… let's try Agent Mode later. Agent mode is actually very…
+
+403
+00:59:43.560 --> 00:59:56.020
+Simon Wang: it's, it's, it's amazing, you know, HMO is amazing. But for beginners, let's, let's start with the ask mode, because you will have more control. HMO is like, they will take over.
+
+404
+00:59:56.200 --> 01:00:12.710
+Simon Wang: the HMO will take over and do everything for you. All you have to do, just continue, continue, and they will do everything for you. But for our purpose, let's still do a little bit of copy and paste, all right? So I hope this has helped you a bit more, but do raise your hand,
+
+405
+01:00:13.090 --> 01:00:23.479
+Simon Wang: you have questions. You know, if you have no idea what's going on, that's… that's normal, okay? Don't… don't worry, that's normal. Just… just raise your hand, and we'll help you.
+
+406
+01:00:25.570 --> 01:00:31.949
+Simon Wang: And for the computer science majors, do you want to stand up so you can get… you can offer some help?
+
+407
+01:13:52.630 --> 01:13:54.879
+Simon Wang: Alright, anyone needs help? Yeah.
+
+408
+01:13:55.150 --> 01:14:01.120
+Simon Wang: So if… if there's a need to run something like a PEEP,
+
+409
+01:14:01.380 --> 01:14:09.460
+Simon Wang: or, you know, those are what we call command line. I would recommend you to go to the…
+
+410
+01:14:10.200 --> 01:14:15.780
+Simon Wang: VS Code, because VS Code has got its own command line, right? So if you go to the…
+
+411
+01:14:16.160 --> 01:14:23.090
+Simon Wang: top right corner, You see there's this icon, this… This button here.
+
+412
+01:14:23.520 --> 01:14:25.560
+Simon Wang: That's how you open the command line.
+
+413
+01:14:25.910 --> 01:14:27.590
+Simon Wang: Open the terminal, okay?
+
+414
+01:14:28.130 --> 01:14:32.290
+Simon Wang: So you need to learn how to open the terminal, and then you can start running some command.
+

@@ -1,0 +1,265 @@
+CONTENT-BASED SPEAKER SEPARATION ANALYSIS
+============================================================
+
+ANALYSIS OVERVIEW:
+- Total chunks analyzed: 4
+- High-confidence Talia sections: 4
+- Mixed/uncertain sections: 0
+- Simon-attributed sections: 0
+
+CHUNK 1:
+**PRIMARY_ATTRIBUTION:** SIMON_WANG
+
+**CONTENT_BREAKDOWN:**
+- 100% Simon Wang content
+- 0% Talia content
+
+**KEY_INDICATORS:**
+Simon Wang indicators:
+- Course administration ("first two weeks", "Zoom recording")
+- Direct references to course code ("GCAP 3226")
+- Discussion of course structure and roadmap
+- References to Moodle and course materials
+- Discussion of group formation and assessment
+- Use of instructor-style language ("we're here to help you")
+- References to "this course" and "first time we run this course"
+- Discussion of course logistics and technical setup
+
+**QUESTIONNAIRE_RELEVANCE:** NONE
+- No discussion of survey methodology or questionnaire design
+- Content is purely focused on course administration and setup
+
+**RECOMMENDED_SPEAKER_TRANSITIONS:**
+No transitions needed - this should be a continuous segment by Simon Wang as it's entirely focused on course administration and setup.
+
+**CONFIDENCE_LEVEL:** HIGH
+
+Reasoning:
+- The content is exclusively focused on course administration, logistics, and setup
+- The speaking style is clearly that of the main instructor
+- Multiple references to course structure and teaching approach
+- Discussion of course materials and learning management system
+- Mentions of this being the first time running the course
+- Instructor-style reassurances about difficulty level and support
+- No content that aligns with Talia's expertise in questionnaire methodology
+
+This is unambiguously content that should be delivered by the main course instructor (Simon Wang) rather than a guest speaker on questionnaire methodology.
+--------------------------------------------------
+
+CHUNK 2:
+**PRIMARY_ATTRIBUTION:** MIXED
+
+**CONTENT_BREAKDOWN:**
+- Talia: ~70% (First half discussing questionnaire methodology and survey design)
+- Simon Wang: ~30% (Administrative interruption and course logistics)
+
+**KEY_INDICATORS:**
+Talia's sections:
+- Detailed explanation of survey question design
+- Analysis of attitude measurement methodology
+- Discussion of policy perception questions
+- Technical explanation of ordinal scales
+- Academic research methodology
+
+Simon Wang's sections:
+- "Sorry to interrupt..."
+- References to "our Week 2 notes in Moodle"
+- Course logistics about accessing materials
+- Explanation of course objectives ("today we're going to teach you...")
+- References to students joining late
+
+**QUESTIONNAIRE_RELEVANCE:** HIGH
+The majority of the content directly discusses questionnaire design and methodology
+
+**RECOMMENDED_SPEAKER_TRANSITIONS:**
+1. Clear transition at "Sorry to interrupt..." - switches from Talia to Simon
+2. Brief reference to "Dr. Wu" (Talia) during Simon's section
+3. Returns to Talia at "Okay. So later in the CSV file..."
+
+**CONFIDENCE_LEVEL:** HIGH
+The content shows clear distinctions between:
+- Talia's academic presentation of survey methodology
+- Simon's administrative and instructional interruption
+- The transitions are natural and clearly marked by changes in topic and presentation style
+
+The chunk demonstrates a natural flow between speakers, with Talia providing the technical content and Simon handling class management and context-setting for students who joined late.
+--------------------------------------------------
+
+CHUNK 3:
+**PRIMARY_ATTRIBUTION:** SIMON_WANG
+
+**CONTENT_BREAKDOWN:**
+- 100% Simon Wang content
+- 0% Talia content
+
+**KEY_INDICATORS:**
+Simon Wang indicators:
+- Technical setup instructions for VS Code and Python
+- Course administration ("starting from next week...")
+- Direct teaching style ("For today, we will use...")
+- References to course materials and setup ("reference book, which I screenshot yesterday")
+- Discussion of programming tools and interfaces
+- Mentions of future course organization ("I'm going to set up a WhatsApp group")
+
+**QUESTIONNAIRE_RELEVANCE:** LOW
+- Only brief mention of questionnaire at the beginning as context for data visualization exercise
+- Focus is primarily on technical setup and programming environment
+
+**RECOMMENDED_SPEAKER_TRANSITIONS:**
+No transitions needed - this should be entirely Simon Wang's section as it focuses on:
+1. Technical setup instructions
+2. Course logistics
+3. Programming environment introduction
+4. Basic software interface explanation
+
+**CONFIDENCE_LEVEL:** HIGH
+
+Reasoning:
+- Content is heavily focused on technical setup and course administration
+- Teaching style is instructional and focused on practical implementation
+- No detailed discussion of questionnaire methodology or survey research
+- Clear instructor voice discussing course logistics and technical requirements
+- Multiple references to course organization and future plans
+- Focus on programming tools and environment setup rather than research methodology
+
+This chunk shows clear characteristics of being an instructor-led technical setup section, making it firmly Simon Wang's content rather than Talia's research-focused material.
+--------------------------------------------------
+
+CHUNK 4:
+**PRIMARY_ATTRIBUTION:** SIMON_WANG
+
+**CONTENT_BREAKDOWN:**
+- 100% Simon Wang content
+- 0% Talia content
+
+**KEY_INDICATORS:**
+Simon Wang indicators:
+- Technical instruction about software setup (VS Code, GitHub Copilot)
+- Direct teaching style with classroom management ("raise your hand")
+- References to helping students ("we'll help you")
+- Technical terminology and explanations (extensions, command line, terminal)
+- Classroom interaction ("computer science majors, do you want to stand up")
+- Reassuring teaching tone ("that's normal, okay? Don't worry")
+
+**QUESTIONNAIRE_RELEVANCE:** LOW
+- Only brief mention of questionnaire data ("CSV... all the data we got from the questionnaire") but not discussing methodology
+
+**RECOMMENDED_SPEAKER_TRANSITIONS:**
+No transitions needed - this is clearly a technical instruction segment that should be delivered entirely by the main instructor
+
+**CONFIDENCE_LEVEL:** HIGH
+
+Reasoning:
+- The entire chunk focuses on technical setup and classroom instruction
+- Uses direct teaching style characteristic of a main instructor
+- Contains classroom management elements
+- Explains technical tools and software
+- Shows ongoing relationship with students (not guest speaker style)
+- References to previous content ("Dr. Wu just presented") suggesting this is the main instructor following up
+- Teaching style is informal and supportive, characteristic of regular instructor rather than guest presenter
+
+This content is clearly meant for the main instructor (Simon Wang) as it deals with technical setup, classroom management, and course logistics rather than questionnaire methodology or research content that would be Talia's expertise.
+--------------------------------------------------
+
+
+FINAL CONTENT-BASED SYNTHESIS:
+========================================
+# CONTENT-BASED SPEAKER SEPARATION PLAN
+
+## 1. SPEAKER ATTRIBUTION BREAKDOWN
+
+### Simon Wang Sections (Primary Instructor)
+- **Chunk 1**: Complete chunk (100%)
+  - Course administration
+  - Course structure
+  - Learning management system
+  - Group formation
+
+- **Chunk 3**: Complete chunk (100%)
+  - VS Code setup
+  - Python environment
+  - Technical instructions
+  - Course logistics
+
+- **Chunk 4**: Complete chunk (100%)
+  - Software setup details
+  - GitHub Copilot instructions
+  - Classroom management
+  - Technical support
+
+### Talia Sections (Questionnaire Expert)
+- **Chunk 2**: Majority portion (~70%)
+  - Survey question design
+  - Attitude measurement methodology
+  - Policy perception questions
+  - Ordinal scales explanation
+
+### Mixed Sections Requiring Separation
+- **Chunk 2**: Contains both speakers
+  - Talia: Survey methodology content
+  - Simon: Administrative interruption (~30%)
+  - Clear transition point at "Sorry to interrupt..."
+
+## 2. QUESTIONNAIRE METHODOLOGY CONTENT
+
+### Primary Questionnaire Content (Attribute to Talia)
+Located primarily in Chunk 2:
+- Survey question design principles
+- Attitude measurement techniques
+- Policy perception question methodology
+- Ordinal scale explanations
+- CSV file data structure discussion
+
+### Related References (Context Only)
+- Brief mentions in Chunks 3 & 4 about questionnaire data, but in technical context (keep with Simon)
+
+## 3. TRANSITION POINTS
+
+### Natural Speaker Transitions
+1. **Start → Chunk 1**: Simon Wang (Course Introduction)
+2. **Chunk 1 → Chunk 2**: Transition to Talia (Survey Methodology)
+3. **Within Chunk 2**: 
+   - Talia → Simon ("Sorry to interrupt...")
+   - Simon → Talia ("Okay. So later in the CSV file...")
+4. **Chunk 2 → Chunk 3**: Return to Simon (Technical Setup)
+5. **Chunks 3 & 4**: Continuous Simon Wang content
+
+## 4. FINAL RECOMMENDATIONS
+
+### Confidence Assessment
+- **HIGH CONFIDENCE** in overall separation
+- Clear content distinction between:
+  - Technical/administrative content (Simon)
+  - Survey methodology content (Talia)
+
+### Manual Review Requirements
+- **Priority Review**: Chunk 2 transitions
+  - Verify clean break points
+  - Ensure context maintenance during switches
+
+### Implementation Approach
+
+1. **Initial Separation**
+   - Create two base transcripts (Simon & Talia)
+   - Use chunk boundaries as primary division points
+
+2. **Chunk 2 Processing**
+   - Carefully separate based on identified transition points
+   - Maintain context during speaker switches
+   - Ensure smooth flow between segments
+
+3. **Quality Control**
+   - Review all transitions for natural flow
+   - Verify technical content stays with Simon
+   - Confirm questionnaire methodology stays with Talia
+
+4. **Final Documentation**
+   - Mark clear speaker changes in transcript
+   - Add context notes where needed
+   - Include timestamps at transition points
+
+### Additional Notes
+- Maintain all technical setup and course administration under Simon
+- Keep all survey methodology content under Talia
+- Preserve classroom management elements with Simon
+- Ensure references to each other's content remain contextually appropriate

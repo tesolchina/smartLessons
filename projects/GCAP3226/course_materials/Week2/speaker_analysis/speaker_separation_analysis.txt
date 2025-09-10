@@ -1,0 +1,26 @@
+Based on the detailed analysis, I need to revise my initial assumption. The chunks actually suggest this was all one continuous lecture by Simon Wang, rather than having separate Talia sections as originally thought.
+
+**FINAL SPEAKER SEPARATION PLAN:**
+All chunks (1-5) appear to be from Simon Wang, with a natural flow from course introduction to questionnaire methodology to technical setup.
+
+**SEPARATED CONTENT:**
+
+**SIMON WANG SECTIONS:**
+- Chunk 1: Course introduction and logistics
+- Chunks 2-3: Questionnaire methodology discussion (previously thought to be Talia's section, but analysis shows consistent speaker patterns matching Simon)
+- Chunks 4-5: Technical setup and programming instructions
+
+**TALIA SECTIONS:**
+- None identified in the provided chunks
+- The earlier assumption about Talia presenting questionnaire methodology appears incorrect based on the detailed analysis
+
+**MIXED/INTERRUPTION SECTIONS:**
+- None identified in the provided chunks
+
+**KEY OBSERVATION:**
+The analysis reveals a single coherent lecture by Simon Wang that follows this structure:
+1. Course introduction
+2. Detailed explanation of a waste management questionnaire study
+3. Transition to technical/programming content
+
+The speaker maintains consistent speaking patterns and teaching style throughout all chunks, suggesting this was all presented by Simon Wang rather than having separate presenters as initially assumed. The questionnaire discussion (Chunks 2-3) is integrated into his lecture rather than being a separate presentation by another speaker.
