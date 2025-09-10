@@ -1,0 +1,16 @@
+{
+  "total_letters_analyzed": 2,
+  "analysis_period": "2019-2020",
+  "citizenship_distribution": {
+    "civic_duty": 2
+  },
+  "yearly_distribution": {
+    "2020": 1,
+    "2019": 1
+  },
+  "issue_distribution": {
+    "POLITICS": 2
+  },
+  "average_word_count": 275.0,
+  "generated_timestamp": "2025-09-10T07:14:25.011815"
+}

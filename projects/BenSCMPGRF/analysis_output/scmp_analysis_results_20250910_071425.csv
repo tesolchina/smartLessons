@@ -1,0 +1,3 @@
+letter_id,date,year,word_count,primary_citizenship_type,citizenship_confidence,main_claim,primary_issue_category,urgency_level
+2020_001,2020-07-01,2020,250,civic_duty,HIGH,Government should increase housing supply,POLITICS,immediate
+2019_045,2019-06-15,2019,300,civic_duty,HIGH,Government should increase housing supply,POLITICS,immediate

@@ -1,0 +1,156 @@
+
+<!doctype html>
+<html lang="en"> 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>writing_section_review</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6;
+    }
+    img { max-width: 100%; height: auto; display: block; margin: 0.5rem 0 1rem; }
+    code, pre { background: #f6f8fa; padding: 2px 4px; border-radius: 4px; }
+    blockquote { border-left: 4px solid #ddd; margin: 0.5rem 0; padding: 0.5rem 1rem; color: #555; }
+    h1, h2, h3 { line-height: 1.25; }
+  </style>
+  <meta name="generator" content="export_md_inline.py" />
+  <meta name="x-single-file" content="true" />
+  <base href="." />
+  <meta name="color-scheme" content="light dark" />
+  <style media="print"> body { color: black; } </style>
+  <script>/* noop */</script>
+</head>
+<body>
+<h1>Writing Section Review - Platform Testing Notes</h1>
+<p><strong>Date:</strong> 9 September 2025<br />
+<strong>Tester:</strong> simon001<br />
+<strong>Section:</strong> Writing Section - Personality Test Topic<br />
+<strong>Test Environment:</strong> Platform UI Testing</p>
+<hr />
+<h2>📝 Content Structure Issues</h2>
+<h3>Major Content Problems</h3>
+<h4>1. <strong>Inconsistent Task Instructions</strong></h4>
+<ul>
+<li><strong>Problem:</strong> Two different versions of the writing prompt appear:</li>
+<li>Version A: "Should personality test results be used in the hiring process?" </li>
+<li>Version B: "Personality test results should not be used in job applications"</li>
+<li><strong>Impact:</strong> Creates confusion about the actual stance students should take</li>
+<li><strong>Recommendation:</strong> Standardize to one clear prompt with explicit direction (argue FOR or AGAINST)</li>
+</ul>
+<h4>2. <strong>Missing Section Labels</strong></h4>
+<ul>
+<li><strong>Current:</strong> "Situation:" label only</li>
+<li><strong>Needed:</strong> Add "Instructions:" label to separate contextual setup from task requirements</li>
+<li><strong>Benefit:</strong> Clearer information hierarchy for students</li>
+</ul>
+<h4>3. <strong>Incomplete Audio Information</strong></h4>
+<ul>
+<li><strong>Missing:</strong> Duration of the full podcast</li>
+<li><strong>Current:</strong> "You will listen to the full podcast" (no time specified)</li>
+<li><strong>Recommendation:</strong> Add podcast duration (e.g., "You will listen to the 8-minute podcast")</li>
+<li><strong>Rationale:</strong> Helps students manage their time effectively</li>
+</ul>
+<h4>4. <strong>Unusual Rubric Exposure</strong></h4>
+<ul>
+<li><strong>Issue:</strong> Detailed marking criteria (5+5+5 marks breakdown) visible to students during test</li>
+<li><strong>Industry Standard:</strong> Rubrics typically kept internal for examiner use</li>
+<li><strong>Action Required:</strong> Flag this for exam writing team (Rhett) - policy decision needed</li>
+<li><strong>Options:</strong> </li>
+<li>Remove detailed rubric entirely</li>
+<li>Provide simplified version focusing on expectations, not marks</li>
+</ul>
+<hr />
+<h2>🎨 Design &amp; User Experience Issues</h2>
+<h3>Interface Problems</h3>
+<h4>1. <strong>Plain and Cluttered Instructions Page</strong></h4>
+<ul>
+<li><strong>Current State:</strong> Dense text blocks, poor visual hierarchy</li>
+<li><strong>Issues:</strong></li>
+<li>No visual separation between different instruction types</li>
+<li>Wall of text format reduces readability</li>
+<li>Important elements not highlighted</li>
+</ul>
+<h4>2. <strong>Audio Player Placement</strong></h4>
+<ul>
+<li><strong>Current:</strong> Audio player positioned at bottom of page</li>
+<li><strong>Problem:</strong> Not prominent enough for critical listening task</li>
+<li><strong>Recommendation:</strong> </li>
+<li>Move to more prominent position (top-right or center)</li>
+<li>Consider sticky/floating player that remains visible during scrolling</li>
+<li>Add visual emphasis (border, highlighting)</li>
+</ul>
+<h4>3. <strong>Right Panel Underutilization</strong></h4>
+<ul>
+<li><strong>Current:</strong> Instructions cramped on left side</li>
+<li><strong>Opportunity:</strong> Use right panel for:</li>
+<li>Timer display</li>
+<li>Task checklist/progress</li>
+<li>Key reminders</li>
+<li>Audio controls</li>
+</ul>
+<hr />
+<h2>🔧 Recommended Improvements</h2>
+<h3>Content Fixes (High Priority)</h3>
+<ol>
+<li><strong>Standardize Writing Prompt:</strong> Choose one version and ensure consistency</li>
+<li><strong>Add Missing Labels:</strong> Include "Instructions:" section header</li>
+<li><strong>Specify Audio Duration:</strong> Add podcast length information</li>
+<li><strong>Review Rubric Policy:</strong> Consult with exam team on student-facing criteria</li>
+</ol>
+<h3>Design Enhancements (Medium Priority)</h3>
+<ol>
+<li>
+<p><strong>Restructure Instructions Layout:</strong>
+   - Use clear section breaks
+   - Implement visual hierarchy (headings, bullet points, spacing)
+   - Highlight key requirements</p>
+</li>
+<li>
+<p><strong>Improve Audio Integration:</strong>
+   - Reposition player for better visibility
+   - Add progress indicator
+   - Include replay functionality if permitted</p>
+</li>
+<li>
+<p><strong>Optimize Page Layout:</strong>
+   - Utilize right panel for supplementary information
+   - Implement responsive design elements
+   - Add professional styling elements</p>
+</li>
+</ol>
+<hr />
+<h2>📋 Action Items</h2>
+<h3>For Development Team:</h3>
+<ul>
+<li>[ ] Fix inconsistent writing prompts</li>
+<li>[ ] Add section labels to instruction structure</li>
+<li>[ ] Include podcast duration information</li>
+<li>[ ] Reposition audio player interface</li>
+</ul>
+<h3>For Exam Team (Rhett):</h3>
+<ul>
+<li>[ ] <strong>Policy Decision Required:</strong> Student-facing rubrics - keep detailed version or simplify?</li>
+<li>[ ] Review writing prompt versions for final standardization</li>
+<li>[ ] Confirm audio duration specifications</li>
+</ul>
+<h3>For UI/UX Team:</h3>
+<ul>
+<li>[ ] Redesign instructions page layout</li>
+<li>[ ] Implement professional styling</li>
+<li>[ ] Optimize right panel usage</li>
+<li>[ ] Test audio player prominence</li>
+</ul>
+<hr />
+<h2>🎯 Testing Context</h2>
+<p><strong>Account Used:</strong> simon001<br />
+<strong>Test Focus:</strong> Writing section functionality and user experience<br />
+<strong>Key Finding:</strong> Content consistency and interface design need attention before production deployment</p>
+<p><strong>Screenshots Referenced:</strong> 
+- Interface layout issues documented
+- Audio player positioning captured</p>
+<hr />
+<p><em>Note: This review focuses on the writing section specifically. Similar content and design review recommended for other test sections.</em></p>
+</body>
+</html>

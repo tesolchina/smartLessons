@@ -1,0 +1,114 @@
+[
+  {
+    "letter_id": "2020_001",
+    "date": "2020-07-01",
+    "year": "2020",
+    "word_count": 250,
+    "analysis_timestamp": "2025-09-10T07:14:25.011793",
+    "citizenship_classification": {
+      "primary_type": "civic_duty",
+      "confidence": "HIGH",
+      "key_phrases": [
+        "citizens should",
+        "our responsibility"
+      ],
+      "secondary_elements": [
+        "democratic_participation"
+      ],
+      "political_references": [
+        "government policy",
+        "Legislative Council"
+      ]
+    },
+    "argumentation_structure": {
+      "main_claim": "Government should increase housing supply",
+      "evidence_types": [
+        "statistics",
+        "personal_experience"
+      ],
+      "linguistic_features": [
+        "inclusive_pronouns",
+        "modal_verbs"
+      ],
+      "rhetorical_strategies": [
+        "problem_solution"
+      ]
+    },
+    "temporal_analysis": {
+      "explicit_events": [
+        "National Security Law"
+      ],
+      "implicit_markers": [
+        "increased caution in language"
+      ],
+      "discourse_shifts": [
+        "less direct criticism"
+      ]
+    },
+    "issue_classification": {
+      "primary_category": "POLITICS",
+      "sub_issues": [
+        "electoral reform",
+        "democratic participation"
+      ],
+      "urgency_level": "immediate",
+      "target_audience": "government"
+    }
+  },
+  {
+    "letter_id": "2019_045",
+    "date": "2019-06-15",
+    "year": "2019",
+    "word_count": 300,
+    "analysis_timestamp": "2025-09-10T07:14:25.011804",
+    "citizenship_classification": {
+      "primary_type": "civic_duty",
+      "confidence": "HIGH",
+      "key_phrases": [
+        "citizens should",
+        "our responsibility"
+      ],
+      "secondary_elements": [
+        "democratic_participation"
+      ],
+      "political_references": [
+        "government policy",
+        "Legislative Council"
+      ]
+    },
+    "argumentation_structure": {
+      "main_claim": "Government should increase housing supply",
+      "evidence_types": [
+        "statistics",
+        "personal_experience"
+      ],
+      "linguistic_features": [
+        "inclusive_pronouns",
+        "modal_verbs"
+      ],
+      "rhetorical_strategies": [
+        "problem_solution"
+      ]
+    },
+    "temporal_analysis": {
+      "explicit_events": [
+        "National Security Law"
+      ],
+      "implicit_markers": [
+        "increased caution in language"
+      ],
+      "discourse_shifts": [
+        "less direct criticism"
+      ]
+    },
+    "issue_classification": {
+      "primary_category": "POLITICS",
+      "sub_issues": [
+        "electoral reform",
+        "democratic participation"
+      ],
+      "urgency_level": "immediate",
+      "target_audience": "government"
+    }
+  }
+]
