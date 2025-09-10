@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- saved from url=(0188)https://li.protechts.net/index.html?ts=1757463414578&r_id=AAY%2BZ1YxVp1bep9U1Z2j5g%3D%3D&app_id=PXdOjV695v&uc=scraping&d_id=895d09d7db323be475b72f0dfb746cf9ef5fd9416051c860bc0ed57d350a99fa -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script>
+        function getDecodedQueryParams(queryString) {
+            var params = {};
+            var query = queryString.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                try {
+                    var pair = vars[i].split('=');
+                    params[pair[0]] = decodeURIComponent(pair[1]);
+                } catch(e) {
+                    // ignore
+                }
+            }
+            return params;
+        }
+        var params = getDecodedQueryParams(window.location.search);
+        var appId = params['app_id'];
+        window._pxParam2 = params['d_id'];
+        window._pxParam3 = params['r_id'];
+        window._pxParam4 = params['uc'];
+        window._pxParam5 = params['pt'];
+
+        // Local sensor injection
+        var s = document.createElement('script');
+        s.src = 'https://client.protechts.net/' + appId + '/main.min.js';
+        document.head.appendChild(s);
+    </script><script src="./main.min.js"></script>
+</head>
+<body>
+
+<div><span style="position: absolute; left: -9999px; font-size: 72px; font-style: normal; font-weight: normal; letter-spacing: normal; line-break: auto; line-height: normal; text-transform: none; text-align: left; text-decoration: none; text-shadow: none; white-space: normal; word-break: normal; word-spacing: normal; font-family: test-font;">mmmmmmmmmmlli</span><span style="position: absolute; left: -9999px; font-size: 72px; font-style: normal; font-weight: normal; letter-spacing: normal; line-break: auto; line-height: normal; text-transform: none; text-align: left; text-decoration: none; text-shadow: none; white-space: normal; word-break: normal; word-spacing: normal; font-family: &quot;Arial Rounded MT Bold&quot;;">mmmmmmmmmmlli</span></div></body></html>

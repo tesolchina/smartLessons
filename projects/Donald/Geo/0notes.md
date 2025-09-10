@@ -1,16 +1,17 @@
-Donald is a 15 year old student in an interantional school in HK working on his Geography IGCSE project 
-
+Donald is a 15 year old student in an interantional school in HK working on his Geography IGCSE project
 
 ~/Documents/Usage/VibeCoding/DailyAssistant/projects/Donald/Geo
 
-~/Documents/Usage/VibeCoding/DailyAssistant/projects/Donald/Geo/data/YR 10 DATA.xlsx 
+~/Documents/Usage/VibeCoding/DailyAssistant/projects/Donald/Geo/data/YR 10 DATA.xlsx
+
+
+我需要data curve 和bar chart From Donald - please update Note for Donald and generate some sample data curve and bar chart 
 
 ~~we have more data here please update /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/Donald/Geo/Explore_and_visualize_data.md~~
 
 ~~also take into account his draft /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/Donald/Geo/draft8Sept.docx and guide /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/Donald/Geo/HowtoA.md~~
 
-
-~~he's got some dataset and needs help to generate some graphs~~ 
+~~he's got some dataset and needs help to generate some graphs~~
 
 ~~but he does not indicate clearly what graphs or charts he wants~~
 
