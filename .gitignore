@@ -17,3 +17,8 @@ venv/
 # Logs
 *.log
 logs/
+# Large media files
+*.mov
+*.pptx
+*.ppt
+*.mp4
