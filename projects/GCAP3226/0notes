@@ -3,6 +3,20 @@
  
 
  
+We have a folder https://drive.google.com/drive/u/0/folders/1XgV9YSG6vUI8YInABHr3IUV1v9B3pLon
+you can access the folder using scripts here /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/operating/GoogleDocsAPI
+
+we also have a course planning docs https://docs.google.com/document/d/19LYdvuVJLaZ-MMm31jVc4hXo6tCrcWMk-Np4LiDUib8/edit?tab=t.0
+
+there is an intro HTML here /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/GCAP3226/course_materials/intro.html which includes a tentative road map 
+
+we have week 3 materials here /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/GCAP3226/course_materials/Week3
+
+now we need to set up scripts from /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/modules/openRouterAI to read data from the google docs and send to LLM via openrouter and write the info back 
+
+
+===========ignore=============
+
 
 ## ✅ WEEK 2 LECTURE MATERIALS COMPLETED!
 - ~~Rename Week2_Materials_Guide.md to week2LectureNote.md~~ ✅ **COMPLETED**
