@@ -1,12 +1,13 @@
 # Email Automation System
 
-A comprehensive, organized email workflow system for Mac Mail.app automation.
+A comprehensive, organized email workflow system for Mac Mail.app automation with modern draft-first workflow.
 
 ## 📁 Directory Structure
 
 ```
 email_automation/
 ├── email_workflow.py          # 🎯 MAIN UNIFIED WORKFLOW TOOL
+├── generic_email_system.py    # ✨ NEW: Draft-first email system
 ├── core_tools/                # 🔧 General-purpose email tools
 ├── specialized_scripts/       # 🎯 Task-specific scripts (archived)
 ├── documentation/             # 📚 Guides and documentation  
@@ -16,6 +17,24 @@ email_automation/
 ```
 
 ## 🚀 Quick Start
+
+### ✨ NEW: Generic Email System (Recommended)
+
+**Two-Step Draft-First Process:**
+
+```bash
+# Step 1: Create draft for review
+python3 generic_email_system.py --draft "draft_name" --recipient "email@example.com" --subject "Subject" --content "Content"
+
+# Step 2: Review and send
+python3 generic_email_system.py --send "draft_name"
+```
+
+**Features:**
+- 📝 Markdown draft creation for review
+- 🔗 Clickable links (no # symbols in final email)
+- 📋 Clean rich text formatting
+- 📊 Automatic logging and status tracking
 
 ### Primary Tool: Email Workflow System
 

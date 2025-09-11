@@ -17,3 +17,24 @@ venv/
 # Logs
 *.log
 logs/
+# Large media files
+*.mov
+*.pptx
+*.ppt
+*.mp4
+*.mp3
+*.wav
+*.avi
+*.mkv
+*.wmv
+
+# Large document files
+*.pdf
+*.docx
+*.doc
+
+# Archive files
+*.zip
+*.rar
+*.tar
+*.gz

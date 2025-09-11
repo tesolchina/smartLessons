@@ -1,0 +1,518 @@
+{
+  "last_updated": "2025-09-10T21:09:56.031004",
+  "documents": {
+    "PMC/Afternoon_Edit_Plan.json": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/Afternoon_Edit_Plan.json",
+      "relative_path": "PMC/Afternoon_Edit_Plan.json",
+      "folder": "LC_admin",
+      "type": ".json",
+      "size": 8519,
+      "modified": "2025-09-10T20:43:39.846167",
+      "category": "Data_Export",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/enhanced_05_community_impact_internationalisation.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/enhanced_05_community_impact_internationalisation.md",
+      "relative_path": "PMC/enhanced_05_community_impact_internationalisation.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 8848,
+      "modified": "2025-09-10T20:23:37.331450",
+      "category": "Enhanced_Analysis",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/Innovation_Officer_Edit_Recommendations.json": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/Innovation_Officer_Edit_Recommendations.json",
+      "relative_path": "PMC/Innovation_Officer_Edit_Recommendations.json",
+      "folder": "LC_admin",
+      "type": ".json",
+      "size": 8077,
+      "modified": "2025-09-10T20:39:35.105455",
+      "category": "AI_Innovation",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/AI_Innovation_Analysis_Report.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/AI_Innovation_Analysis_Report.md",
+      "relative_path": "PMC/AI_Innovation_Analysis_Report.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 5141,
+      "modified": "2025-09-10T20:13:22.590440",
+      "category": "AI_Innovation",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/Word_Document_Edit_Session_Guide.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/Word_Document_Edit_Session_Guide.md",
+      "relative_path": "PMC/Word_Document_Edit_Session_Guide.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 2883,
+      "modified": "2025-09-10T20:47:30.117192",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/enhanced_03_teaching_learning.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/enhanced_03_teaching_learning.md",
+      "relative_path": "PMC/enhanced_03_teaching_learning.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 13975,
+      "modified": "2025-09-10T20:23:36.949476",
+      "category": "Enhanced_Analysis",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/02_staffing.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/02_staffing.md",
+      "relative_path": "PMC/02_staffing.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 5113,
+      "modified": "2025-09-10T19:59:22.477908",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/enhanced_04_research_scholarly_activities.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/enhanced_04_research_scholarly_activities.md",
+      "relative_path": "PMC/enhanced_04_research_scholarly_activities.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 6681,
+      "modified": "2025-09-10T20:23:37.059853",
+      "category": "Enhanced_Analysis",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/05_community_impact_internationalisation.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/05_community_impact_internationalisation.md",
+      "relative_path": "PMC/05_community_impact_internationalisation.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 4900,
+      "modified": "2025-09-10T20:01:26.546605",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/enhanced_02_staffing.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/enhanced_02_staffing.md",
+      "relative_path": "PMC/enhanced_02_staffing.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 9061,
+      "modified": "2025-09-10T20:23:36.833097",
+      "category": "Enhanced_Analysis",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/01_scope_strategic_direction.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/01_scope_strategic_direction.md",
+      "relative_path": "PMC/01_scope_strategic_direction.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 3572,
+      "modified": "2025-09-10T19:58:46.105124",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/extracted_content.txt": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/extracted_content.txt",
+      "relative_path": "PMC/extracted_content.txt",
+      "folder": "LC_admin",
+      "type": ".txt",
+      "size": 60934,
+      "modified": "2025-09-10T19:58:03.746378",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/03_teaching_learning.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/03_teaching_learning.md",
+      "relative_path": "PMC/03_teaching_learning.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 10027,
+      "modified": "2025-09-10T20:00:30.308926",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/04_research_scholarly_activities.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/04_research_scholarly_activities.md",
+      "relative_path": "PMC/04_research_scholarly_activities.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 2733,
+      "modified": "2025-09-10T20:00:52.379785",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/Afternoon_Edit_Session_Guide.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/Afternoon_Edit_Session_Guide.md",
+      "relative_path": "PMC/Afternoon_Edit_Session_Guide.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 5697,
+      "modified": "2025-09-10T20:43:39.841950",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "PMC/Document_Connection_Analysis_Table.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/Document_Connection_Analysis_Table.md",
+      "relative_path": "PMC/Document_Connection_Analysis_Table.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 4061,
+      "modified": "2025-09-10T20:13:22.590574",
+      "category": "Markdown_Analysis",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/enhanced_01_scope_strategic_direction.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/enhanced_01_scope_strategic_direction.md",
+      "relative_path": "PMC/enhanced_01_scope_strategic_direction.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 7520,
+      "modified": "2025-09-10T20:23:36.732369",
+      "category": "Enhanced_Analysis",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/Innovation_Officer_Edit_Guide.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/Innovation_Officer_Edit_Guide.md",
+      "relative_path": "PMC/Innovation_Officer_Edit_Guide.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 6826,
+      "modified": "2025-09-10T20:39:35.105630",
+      "category": "AI_Innovation",
+      "ai_relevant": true,
+      "status": "tracked"
+    },
+    "PMC/LC DAA Report_response_20251009-simon-edit.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/PMC/LC DAA Report_response_20251009-simon-edit.docx",
+      "relative_path": "PMC/LC DAA Report_response_20251009-simon-edit.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 92105,
+      "modified": "2025-09-10T20:59:57.209362",
+      "category": "DAA_Report",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/Language Education Paper Clean 20250409.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/Language Education Paper Clean 20250409.docx",
+      "relative_path": "Departmental_meeting/Language Education Paper Clean 20250409.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 122430,
+      "modified": "2025-09-10T19:59:54.067699",
+      "category": "Language_Education_Paper",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/1. 2nd Departmental Meeting Minutes with Attendance.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/1. 2nd Departmental Meeting Minutes with Attendance.docx",
+      "relative_path": "Departmental_meeting/1. 2nd Departmental Meeting Minutes with Attendance.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 114396,
+      "modified": "2025-09-10T19:59:29.951921",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/1st Departmental Meeting AY 2025-26 Agenda.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/1st Departmental Meeting AY 2025-26 Agenda.docx",
+      "relative_path": "Departmental_meeting/1st Departmental Meeting AY 2025-26 Agenda.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 37092,
+      "modified": "2025-09-10T19:58:42.265221",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/Language Education Paper (Section 5 Table - Version approved by the LEB).docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/Language Education Paper (Section 5 Table - Version approved by the LEB).docx",
+      "relative_path": "Departmental_meeting/Language Education Paper (Section 5 Table - Version approved by the LEB).docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 20647,
+      "modified": "2025-09-10T20:00:01.464167",
+      "category": "Language_Education_Paper",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/6. LC Updated KPI/LC KPIs for Performance Review_revised version 5-9-2025.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/6. LC Updated KPI/LC KPIs for Performance Review_revised version 5-9-2025.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/6. LC Updated KPI/LC KPIs for Performance Review_revised version 5-9-2025.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 44764,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/2. LE Paper/Language Education Paper Clean 20250409.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/2. LE Paper/Language Education Paper Clean 20250409.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/2. LE Paper/Language Education Paper Clean 20250409.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 122430,
+      "modified": "2025-09-10T12:01:00",
+      "category": "Language_Education_Paper",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/2. LE Paper/Language Education Paper (Section 5 Table - Version approved by the LEB).docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/2. LE Paper/Language Education Paper (Section 5 Table - Version approved by the LEB).docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/2. LE Paper/Language Education Paper (Section 5 Table - Version approved by the LEB).docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 20647,
+      "modified": "2025-09-10T12:01:00",
+      "category": "Language_Education_Paper",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/QA report_AY202425_General.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/QA report_AY202425_General.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/QA report_AY202425_General.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 95647,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Putonghua/QA Plan_AY202526_PTH.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Putonghua/QA Plan_AY202526_PTH.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Putonghua/QA Plan_AY202526_PTH.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 93926,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Putonghua/QA Report_AY202425_PTH.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Putonghua/QA Report_AY202425_PTH.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Putonghua/QA Report_AY202425_PTH.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 90291,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Plan_ENG_ADRI_2025-26 2.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Plan_ENG_ADRI_2025-26 2.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Plan_ENG_ADRI_2025-26 2.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 19439642,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Report_AY202425_English LEP 3 Aug 2025.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Report_AY202425_English LEP 3 Aug 2025.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Report_AY202425_English LEP 3 Aug 2025.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 80041,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Report_ENG_ADRI_2024-25.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Report_ENG_ADRI_2024-25.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/English/Section Report_ENG_ADRI_2024-25.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 19458632,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Chinese/Section Report_CHI _ADRI_2024-25(1-9-2025).docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Chinese/Section Report_CHI _ADRI_2024-25(1-9-2025).docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Chinese/Section Report_CHI _ADRI_2024-25(1-9-2025).docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 50143,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Chinese/Section Plan_CHI _ADRI_2025-26.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Chinese/Section Plan_CHI _ADRI_2025-26.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Chinese/Section Plan_CHI _ADRI_2025-26.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 43609,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/ADRI_Section Plan_2024.25_self-funded.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/ADRI_Section Plan_2024.25_self-funded.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/ADRI_Section Plan_2024.25_self-funded.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 51918,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/Section Plan_Outreach and Development _ADRI_2024-25.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/Section Plan_Outreach and Development _ADRI_2024-25.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/Section Plan_Outreach and Development _ADRI_2024-25.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 40835,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/Section Report_Outreach and Development _ADRI_2024-25.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/Section Report_Outreach and Development _ADRI_2024-25.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Outreach/Section Report_Outreach and Development _ADRI_2024-25.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 47021,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Foreign Languages/ADRI_LC_FL Section Plan for AY202526.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Foreign Languages/ADRI_LC_FL Section Plan for AY202526.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Foreign Languages/ADRI_LC_FL Section Plan for AY202526.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 86710,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Foreign Languages/ADRI_LC_FL Section Report_2024.25.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Foreign Languages/ADRI_LC_FL Section Report_2024.25.docx",
+      "relative_path": "Departmental_meeting/departmentalMeetingItems/7. LC Annual report and Section Reports/Foreign Languages/ADRI_LC_FL Section Report_2024.25.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 60106,
+      "modified": "2025-09-10T12:01:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/TDLEGReportPlan/TDLEG22-25 LE Report 20250625.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/TDLEGReportPlan/TDLEG22-25 LE Report 20250625.docx",
+      "relative_path": "Departmental_meeting/TDLEGReportPlan/TDLEG22-25 LE Report 20250625.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 653047,
+      "modified": "2025-09-10T12:00:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "Departmental_meeting/TDLEGReportPlan/TDLEG25-28 LE Plan 20250625.docx": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/Departmental_meeting/TDLEGReportPlan/TDLEG25-28 LE Plan 20250625.docx",
+      "relative_path": "Departmental_meeting/TDLEGReportPlan/TDLEG25-28 LE Plan 20250625.docx",
+      "folder": "LC_admin",
+      "type": ".docx",
+      "size": 211849,
+      "modified": "2025-09-10T12:00:00",
+      "category": "General",
+      "ai_relevant": false,
+      "status": "tracked"
+    },
+    "0notes.md": {
+      "full_path": "/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LC_admin/0notes.md",
+      "relative_path": "0notes.md",
+      "folder": "LC_admin",
+      "type": ".md",
+      "size": 9000,
+      "modified": "2025-09-10T21:06:58.833859",
+      "category": "Markdown_Analysis",
+      "ai_relevant": false,
+      "status": "tracked"
+    }
+  },
+  "edit_history": [
+    {
+      "timestamp": "2025-09-10T21:09:56.030580",
+      "document": "LC DAA Report_response_20251009.docx",
+      "description": "Attempted Word document paragraph insertions",
+      "outcome": "1 edit completed out of 3 recommended",
+      "time_spent": "afternoon session",
+      "innovation_officer_role": true
+    }
+  ],
+  "innovation_initiatives": {
+    "ai_competency_integration": {
+      "status": "in_progress",
+      "target_documents": [
+        "DAA_Report",
+        "Language_Education_Paper"
+      ],
+      "completed_actions": 1,
+      "planned_actions": 3,
+      "timeline": "AY 2025-26",
+      "priority": "HIGH"
+    },
+    "ai_assessment_pilot": {
+      "status": "planned",
+      "target": "50% course participation",
+      "timeline": "End of AY 2025-26",
+      "priority": "CRITICAL"
+    },
+    "faculty_ai_training": {
+      "status": "planned",
+      "format": "Monthly workshops",
+      "topics": [
+        "AI tool evaluation",
+        "Assessment methods",
+        "Ethical usage"
+      ],
+      "priority": "HIGH"
+    },
+    "ai_research_stream": {
+      "status": "planned",
+      "target": "3 publications annually",
+      "collaboration": "Computer Science, Education faculties",
+      "priority": "MEDIUM"
+    }
+  },
+  "summary": {
+    "total_documents": 42,
+    "ai_relevant_count": 9,
+    "total_edit_attempts": 1,
+    "active_initiatives": 4
+  }
+}
