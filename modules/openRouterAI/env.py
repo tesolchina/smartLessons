@@ -38,7 +38,19 @@ _load_dotenv_if_present()
 
 def get_openrouter_api_key() -> str:
     key = os.environ.get("OPENROUTER_API_KEY", "").strip()
-    return key
+    if key:
+        return key
+    # Fallback: key.txt in same directory
+    key_path = Path(__file__).resolve().parent / 'key.txt'
+    if key_path.exists():
+        try:
+            with key_path.open('r', encoding='utf-8') as f:
+                first = f.readline().strip()
+                if first and not first.startswith('#'):
+                    return first
+        except Exception:
+            pass
+    return ""
 
 
 def get_openrouter_base_url() -> str:
