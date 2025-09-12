@@ -14,3 +14,11 @@ Recommended Next Steps:
 4. Mark fully migrated scripts with a header comment and optionally remove them after stable extraction.
 
 Reference: docs/MOVED_SCRIPTS_INDEX.md (full mapping list).
+
+<!-- AUTO_TOOL_INDEX:START -->
+Auto-generated high-level index for specialized scripts (UTC 2025-09-12T06:44:46Z).
+This directory holds project-origin scripts not yet generalized.
+
+_No Python scripts detected._
+
+<!-- AUTO_TOOL_INDEX:END -->
