@@ -1,0 +1,698 @@
+[
+  {
+    "email": "mailbox@afcd.gov.hk",
+    "department": "Agriculture, Fisheries and Conservation Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/afcd.html",
+    "found_at": "2025-09-11T16:31:04.683320"
+  },
+  {
+    "email": "aio@judiciary.gov.hk",
+    "department": "All registries and administrative offices of courts and tribunals for which the Judiciary Administrator has responsibility",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/judiciary.html",
+    "found_at": "2025-09-11T16:31:05.736702"
+  },
+  {
+    "email": "archsd@archsd.gov.hk",
+    "department": "Architectural Services Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/archsd.html",
+    "found_at": "2025-09-11T16:31:06.790819"
+  },
+  {
+    "email": "cyychui@aud.gov.hk",
+    "department": "Audit Commission",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/aud.html",
+    "found_at": "2025-09-11T16:31:07.832282"
+  },
+  {
+    "email": "ads@ams.gov.hk",
+    "department": "Auxiliary Medical Service",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/ams.html",
+    "found_at": "2025-09-11T16:31:08.881433"
+  },
+  {
+    "email": "enquiry@bd.gov.hk",
+    "department": "Buildings Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/bd.html",
+    "found_at": "2025-09-11T16:31:09.926892"
+  },
+  {
+    "email": "access-to-info@censtatd.gov.hk",
+    "department": "Census and Statistics Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/censtatd.html",
+    "found_at": "2025-09-11T16:31:10.985038"
+  },
+  {
+    "email": "ceo@ceo.gov.hk",
+    "department": "Chief Executive's Office",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/ceo.html",
+    "found_at": "2025-09-11T16:31:12.037624"
+  },
+  {
+    "email": "casenq@cas.gov.hk",
+    "department": "Civil Aid Service",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/cas.html",
+    "found_at": "2025-09-11T16:31:13.149101"
+  },
+  {
+    "email": "enquiry@cad.gov.hk",
+    "department": "Civil Aviation Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/cad.html",
+    "found_at": "2025-09-11T16:31:14.278136"
+  },
+  {
+    "email": "amychiu@cedd.gov.hk",
+    "department": "Civil Engineering and Development Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/cedd.html",
+    "found_at": "2025-09-11T16:31:15.317525"
+  },
+  {
+    "email": "aio@csb.gov.hk",
+    "department": "Civil Service Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/csb.html",
+    "found_at": "2025-09-11T16:31:16.363858"
+  },
+  {
+    "email": "aio@cedb.gov.hk",
+    "department": "Commerce and Economic Development Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/cedb.html",
+    "found_at": "2025-09-11T16:31:17.429814"
+  },
+  {
+    "email": "glorialee@cr.gov.hk",
+    "department": "Companies Registry",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/cr.html",
+    "found_at": "2025-09-11T16:31:18.572378"
+  },
+  {
+    "email": "cmabenq@cmab.gov.hk",
+    "department": "Constitutional and Mainland Affairs Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/cmab.html",
+    "found_at": "2025-09-11T16:31:19.620896"
+  },
+  {
+    "email": "email@csd.gov.hk",
+    "department": "Correctional Services Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/csd.html",
+    "found_at": "2025-09-11T16:31:20.705907"
+  },
+  {
+    "email": "cstbenq@cstb.gov.hk",
+    "department": "Culture, Sports and Tourism Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/cstb.html",
+    "found_at": "2025-09-11T16:31:21.752691"
+  },
+  {
+    "email": "customsenquiry@customs.gov.hk",
+    "department": "Customs and Excise Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/customs.html",
+    "found_at": "2025-09-11T16:31:22.795538"
+  },
+  {
+    "email": "access-to-info@dh.gov.hk",
+    "department": "Department of Health",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/dh.html",
+    "found_at": "2025-09-11T16:31:23.838061"
+  },
+  {
+    "email": "dojinfo@doj.gov.hk",
+    "department": "Department of Justice",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/doj.html",
+    "found_at": "2025-09-11T16:31:24.887020"
+  },
+  {
+    "email": "enquiry@dsd.gov.hk",
+    "department": "Drainage Services Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/dsd.html",
+    "found_at": "2025-09-11T16:31:25.940643"
+  },
+  {
+    "email": "edbinfo@edb.gov.hk",
+    "department": "Education Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/edb.html",
+    "found_at": "2025-09-11T16:31:26.979685"
+  },
+  {
+    "email": "access@emsd.gov.hk",
+    "department": "Electrical and Mechanical Services Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/emsd.html",
+    "found_at": "2025-09-11T16:31:28.041128"
+  },
+  {
+    "email": "css@erb.org",
+    "department": "Employees Retraining Board",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/erb.html",
+    "found_at": "2025-09-11T16:31:29.086487"
+  },
+  {
+    "email": "fbenq@eeb.gov.hk",
+    "department": "Environment and Ecology Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/eeb.html",
+    "found_at": "2025-09-11T16:31:30.261162"
+  },
+  {
+    "email": "enquiry@epd.gov.hk",
+    "department": "Environment and Ecology Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/eeb.html",
+    "found_at": "2025-09-11T16:31:30.261253"
+  },
+  {
+    "email": "enquiry@epd.gov.hk",
+    "department": "Environmental Protection Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/epd.html",
+    "found_at": "2025-09-11T16:31:31.372235"
+  },
+  {
+    "email": "angelakylam@fstb.gov.hk",
+    "department": "Financial Services and the Treasury Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/fstb.html",
+    "found_at": "2025-09-11T16:31:32.419958"
+  },
+  {
+    "email": "enq@fstb.gov.hk",
+    "department": "Financial Services and the Treasury Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/fstb.html",
+    "found_at": "2025-09-11T16:31:32.420013"
+  },
+  {
+    "email": "aio_fsd@hkfsd.gov.hk",
+    "department": "Fire Services Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkfsd.html",
+    "found_at": "2025-09-11T16:31:33.464138"
+  },
+  {
+    "email": "access_to_information@fehd.gov.hk",
+    "department": "Food and Environmental Hygiene Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/fehd.html",
+    "found_at": "2025-09-11T16:31:34.505760"
+  },
+  {
+    "email": "cclchan@gfs.gov.hk",
+    "department": "Government Flying Service",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/gfs.html",
+    "found_at": "2025-09-11T16:31:35.632026"
+  },
+  {
+    "email": "glabinfo@govtlab.gov.hk",
+    "department": "Government Laboratory",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/govtlab.html",
+    "found_at": "2025-09-11T16:31:36.700938"
+  },
+  {
+    "email": "aio@gld.gov.hk",
+    "department": "Government Logistics Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/gld.html",
+    "found_at": "2025-09-11T16:31:37.754351"
+  },
+  {
+    "email": "enquiry@gpa.gov.hk",
+    "department": "Government Property Agency",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/gpa.html",
+    "found_at": "2025-09-11T16:31:38.806757"
+  },
+  {
+    "email": "enquiry@healthbureau.gov.hk",
+    "department": "Health Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hhb.html",
+    "found_at": "2025-09-11T16:31:39.854702"
+  },
+  {
+    "email": "hyd@hyd.gov.hk",
+    "department": "Highways Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hyd.html",
+    "found_at": "2025-09-11T16:31:40.895137"
+  },
+  {
+    "email": "hadgen@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024220"
+  },
+  {
+    "email": "docw@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024279"
+  },
+  {
+    "email": "dowc@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024288"
+  },
+  {
+    "email": "doe@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024294"
+  },
+  {
+    "email": "dos@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024301"
+  },
+  {
+    "email": "dois@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024308"
+  },
+  {
+    "email": "doytm@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024316"
+  },
+  {
+    "email": "dossp@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024323"
+  },
+  {
+    "email": "dokc@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024329"
+  },
+  {
+    "email": "dowts@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024335"
+  },
+  {
+    "email": "dokt@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024341"
+  },
+  {
+    "email": "dokwt@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024347"
+  },
+  {
+    "email": "don@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024354"
+  },
+  {
+    "email": "dosk@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024360"
+  },
+  {
+    "email": "dost@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024366"
+  },
+  {
+    "email": "dotp@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024372"
+  },
+  {
+    "email": "dotm@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024379"
+  },
+  {
+    "email": "dotw@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024385"
+  },
+  {
+    "email": "doyl@had.gov.hk",
+    "department": "Home Affairs Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/had.html",
+    "found_at": "2025-09-11T16:31:42.024391"
+  },
+  {
+    "email": "chipingau@hyab.gov.hk",
+    "department": "Home and Youth Affairs Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hyab.html",
+    "found_at": "2025-09-11T16:31:43.077766"
+  },
+  {
+    "email": "code@housingauthority.gov.hk",
+    "department": "Hong Kong Housing Authority",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/housingauthority.html",
+    "found_at": "2025-09-11T16:31:45.173269"
+  },
+  {
+    "email": "publicenquiry@hkma.gov.hk",
+    "department": "Hong Kong Monetary Authority",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkma.html",
+    "found_at": "2025-09-11T16:31:46.256156"
+  },
+  {
+    "email": "dsec@hko.gov.hk",
+    "department": "Hong Kong Observatory",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hko.html",
+    "found_at": "2025-09-11T16:31:47.305209"
+  },
+  {
+    "email": "seo-support@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364835"
+  },
+  {
+    "email": "seo-ops@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364903"
+  },
+  {
+    "email": "seo-crm@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364916"
+  },
+  {
+    "email": "sw-swic@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364924"
+  },
+  {
+    "email": "seo-hq-p@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364931"
+  },
+  {
+    "email": "policecollege@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364940"
+  },
+  {
+    "email": "seo-p-g-is@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364948"
+  },
+  {
+    "email": "seo-a-sq@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364956"
+  },
+  {
+    "email": "seo-g-d@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364964"
+  },
+  {
+    "email": "finance@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364972"
+  },
+  {
+    "email": "seo-p-d@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364979"
+  },
+  {
+    "email": "rseo-hki@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364987"
+  },
+  {
+    "email": "rseo-ke@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.364995"
+  },
+  {
+    "email": "rseo-kw@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.365003"
+  },
+  {
+    "email": "rseo-ntn@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.365012"
+  },
+  {
+    "email": "rseo-nts@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.365020"
+  },
+  {
+    "email": "rseo-mar@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.365028"
+  },
+  {
+    "email": "eo-mowdist@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.365037"
+  },
+  {
+    "email": "eo-mpdist@police.gov.hk",
+    "department": "Hong Kong Police Force",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hkpf_majorformat.html",
+    "found_at": "2025-09-11T16:31:48.365046"
+  },
+  {
+    "email": "rm@immd.gov.hk",
+    "department": "Immigration Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/immd.html",
+    "found_at": "2025-09-11T16:31:49.408034"
+  },
+  {
+    "email": "general@icac.org.hk",
+    "department": "Independent Commission Against Corruption",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/icac.html",
+    "found_at": "2025-09-11T16:31:50.448470"
+  },
+  {
+    "email": "gracehtng@isd.gov.hk",
+    "department": "Information Services Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/isd.html",
+    "found_at": "2025-09-11T16:31:51.495577"
+  },
+  {
+    "email": "taxinfo@ird.gov.hk",
+    "department": "Inland Revenue Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/ird.html",
+    "found_at": "2025-09-11T16:31:52.544950"
+  },
+  {
+    "email": "enquiry@itib.gov.hk",
+    "department": "Innovation, Technology and Industry Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/itib.html",
+    "found_at": "2025-09-11T16:31:53.691233"
+  },
+  {
+    "email": "enquiry@digitalpolicy.gov.hk",
+    "department": "Innovation, Technology and Industry Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/itib.html",
+    "found_at": "2025-09-11T16:31:53.691390"
+  },
+  {
+    "email": "enquiry@itc.gov.hk",
+    "department": "Innovation and Technology Commission",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/itc.html",
+    "found_at": "2025-09-11T16:31:54.741057"
+  },
+  {
+    "email": "marietang@ipd.gov.hk",
+    "department": "Intellectual Property Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/ipd.html",
+    "found_at": "2025-09-11T16:31:55.812975"
+  },
+  {
+    "email": "enq@investhk.gov.hk",
+    "department": "Invest Hong Kong",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/investhk.html",
+    "found_at": "2025-09-11T16:31:57.003478"
+  },
+  {
+    "email": "enquiry@jsscs.gov.hk",
+    "department": "Joint Secretariat for the Advisory Bodies on Civil Service and Judicial\r\n                Salaries and Conditions of Service",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/jsscs.html",
+    "found_at": "2025-09-11T16:31:58.088016"
+  },
+  {
+    "email": "ads-a-2@labour.gov.hk",
+    "department": "Labour Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/labour.html",
+    "found_at": "2025-09-11T16:31:59.133367"
+  },
+  {
+    "email": "enquiry@lwb.gov.hk",
+    "department": "Labour and Welfare Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/lwb.html",
+    "found_at": "2025-09-11T16:32:00.214424"
+  },
+  {
+    "email": "csa@landreg.gov.hk",
+    "department": "Land Registry",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/landreg.html",
+    "found_at": "2025-09-11T16:32:01.400870"
+  },
+  {
+    "email": "ds@landsd.gov.hk",
+    "department": "Lands Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/landsd.html",
+    "found_at": "2025-09-11T16:32:02.551985"
+  },
+  {
+    "email": "ladinfo@lad.gov.hk",
+    "department": "Legal Aid Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/lad.html",
+    "found_at": "2025-09-11T16:32:03.598381"
+  },
+  {
+    "email": "eog2@lcsd.gov.hk",
+    "department": "Leisure and Cultural Services Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/lcsd.html",
+    "found_at": "2025-09-11T16:32:04.641705"
+  },
+  {
+    "email": "mdenquiry@mardep.gov.hk",
+    "department": "Marine Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/mardep.html",
+    "found_at": "2025-09-11T16:32:05.688872"
+  },
+  {
+    "email": "aio@ofca.gov.hk",
+    "department": "Office of the Communications Authority",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/ofca.html",
+    "found_at": "2025-09-11T16:32:06.738112"
+  },
+  {
+    "email": "admwing@cso.gov.hk",
+    "department": "Offices of the Chief Secretary for Administration and the Financial Secretary",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/admwing.html",
+    "found_at": "2025-09-11T16:32:07.822334"
+  },
+  {
+    "email": "ekllam@oro.gov.hk",
+    "department": "Official Receiver's Office",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/oro.html",
+    "found_at": "2025-09-11T16:32:08.869287"
+  },
+  {
+    "email": "enquire@pland.gov.hk",
+    "department": "Planning Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/pland.html",
+    "found_at": "2025-09-11T16:32:09.913030"
+  },
+  {
+    "email": "access_to_information@hkpo.gov.hk",
+    "department": "Post Office",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/hongkongpost.html",
+    "found_at": "2025-09-11T16:32:10.959301"
+  },
+  {
+    "email": "access_to_info@pcpd.org.hk",
+    "department": "Privacy Commissioner for Personal Data",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/pcpd.html",
+    "found_at": "2025-09-11T16:32:12.010809"
+  },
+  {
+    "email": "aio@rthk.hk",
+    "department": "Radio Television Hong Kong",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/rthk.html",
+    "found_at": "2025-09-11T16:32:13.106471"
+  },
+  {
+    "email": "enquiries@rvd.gov.hk",
+    "department": "Rating and Valuation Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/rvd.html",
+    "found_at": "2025-09-11T16:32:14.146719"
+  },
+  {
+    "email": "reoenq@reo.gov.hk",
+    "department": "Registration and Electoral Office",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/reo.html",
+    "found_at": "2025-09-11T16:32:15.192580"
+  },
+  {
+    "email": "enquiry@ciocsoffice.gov.hk",
+    "department": "Secretariat, Commissioner on Interception of Communications and\r\n                Surveillance",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/sciocs.html",
+    "found_at": "2025-09-11T16:32:16.260753"
+  },
+  {
+    "email": "psc@psc.gov.hk",
+    "department": "Secretariat of the Public Service Commission",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/psc.html",
+    "found_at": "2025-09-11T16:32:17.313297"
+  },
+  {
+    "email": "aioreq@sb.gov.hk",
+    "department": "Security Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/sb.html",
+    "found_at": "2025-09-11T16:32:18.357869"
+  },
+  {
+    "email": "daioenq@swd.gov.hk",
+    "department": "Social Welfare Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/swd.html",
+    "found_at": "2025-09-11T16:32:19.397876"
+  },
+  {
+    "email": "enquiry@tid.gov.hk",
+    "department": "Trade and Industry Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/tid.html",
+    "found_at": "2025-09-11T16:32:20.439958"
+  },
+  {
+    "email": "enquiry@tlb.gov.hk",
+    "department": "Transport and Logistics Bureau",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/tlb.html",
+    "found_at": "2025-09-11T16:32:21.515950"
+  },
+  {
+    "email": "tdenq@td.gov.hk",
+    "department": "Transport Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/td.html",
+    "found_at": "2025-09-11T16:32:22.692107"
+  },
+  {
+    "email": "info@try.gov.hk",
+    "department": "Treasury",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/try.html",
+    "found_at": "2025-09-11T16:32:23.780353"
+  },
+  {
+    "email": "pollywong@ugc.edu.hk",
+    "department": "University Grants Committee Secretariat",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/ugcs.html",
+    "found_at": "2025-09-11T16:32:24.840288"
+  },
+  {
+    "email": "wsdinfo@wsd.gov.hk",
+    "department": "Water Supplies Department",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/wsd.html",
+    "found_at": "2025-09-11T16:32:25.915441"
+  },
+  {
+    "email": "aio@wfsfaa.gov.hk",
+    "department": "Working Family and Student Financial Assistance Agency",
+    "source_url": "https://www.access.gov.hk/en/howtomakeinfo/wfsfaa.html",
+    "found_at": "2025-09-11T16:32:26.974638"
+  }
+]

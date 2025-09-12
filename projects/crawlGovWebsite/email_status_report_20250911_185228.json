@@ -1,0 +1,630 @@
+{
+  "execution_start": "2025-09-11T18:49:23.591595",
+  "total_departments": 77,
+  "results": [
+    {
+      "department": "Agriculture, Fisheries and Conservation Department",
+      "email": "mailbox@afcd.gov.hk",
+      "timestamp": "2025-09-11T18:49:23.591709",
+      "duration_seconds": 0.409518,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "All registries and administrative offices of courts and tribunals for which the Judiciary Administrator has responsibility",
+      "email": "aio@judiciary.gov.hk",
+      "timestamp": "2025-09-11T18:49:26.004255",
+      "duration_seconds": 0.37795,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Architectural Services Department",
+      "email": "archsd@archsd.gov.hk",
+      "timestamp": "2025-09-11T18:49:28.386468",
+      "duration_seconds": 0.380015,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Audit Commission",
+      "email": "cyychui@aud.gov.hk",
+      "timestamp": "2025-09-11T18:49:30.771626",
+      "duration_seconds": 0.380782,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Auxiliary Medical Service",
+      "email": "ads@ams.gov.hk",
+      "timestamp": "2025-09-11T18:49:33.157087",
+      "duration_seconds": 0.38166,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Buildings Department",
+      "email": "enquiry@bd.gov.hk",
+      "timestamp": "2025-09-11T18:49:35.539271",
+      "duration_seconds": 0.34502,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Census and Statistics Department",
+      "email": "access-to-info@censtatd.gov.hk",
+      "timestamp": "2025-09-11T18:49:37.887397",
+      "duration_seconds": 0.389273,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Chief Executive's Office",
+      "email": "ceo@ceo.gov.hk",
+      "timestamp": "2025-09-11T18:49:40.282016",
+      "duration_seconds": 0.387488,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Civil Aid Service",
+      "email": "casenq@cas.gov.hk",
+      "timestamp": "2025-09-11T18:49:42.674754",
+      "duration_seconds": 0.382157,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Civil Aviation Department",
+      "email": "enquiry@cad.gov.hk",
+      "timestamp": "2025-09-11T18:49:45.062123",
+      "duration_seconds": 0.382714,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Civil Engineering and Development Department",
+      "email": "amychiu@cedd.gov.hk",
+      "timestamp": "2025-09-11T18:49:47.450082",
+      "duration_seconds": 0.386462,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Civil Service Bureau",
+      "email": "aio@csb.gov.hk",
+      "timestamp": "2025-09-11T18:49:49.839710",
+      "duration_seconds": 0.393468,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Commerce and Economic Development Bureau",
+      "email": "aio@cedb.gov.hk",
+      "timestamp": "2025-09-11T18:49:52.237323",
+      "duration_seconds": 0.337342,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Companies Registry",
+      "email": "glorialee@cr.gov.hk",
+      "timestamp": "2025-09-11T18:49:54.577929",
+      "duration_seconds": 0.388708,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Constitutional and Mainland Affairs Bureau",
+      "email": "cmabenq@cmab.gov.hk",
+      "timestamp": "2025-09-11T18:49:56.971769",
+      "duration_seconds": 0.387842,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Correctional Services Department",
+      "email": "email@csd.gov.hk",
+      "timestamp": "2025-09-11T18:49:59.364992",
+      "duration_seconds": 0.400273,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Culture, Sports and Tourism Bureau",
+      "email": "cstbenq@cstb.gov.hk",
+      "timestamp": "2025-09-11T18:50:01.770524",
+      "duration_seconds": 0.399246,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Customs and Excise Department",
+      "email": "customsenquiry@customs.gov.hk",
+      "timestamp": "2025-09-11T18:50:04.172632",
+      "duration_seconds": 0.391649,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Department of Health",
+      "email": "access-to-info@dh.gov.hk",
+      "timestamp": "2025-09-11T18:50:06.565254",
+      "duration_seconds": 0.389337,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Department of Justice",
+      "email": "dojinfo@doj.gov.hk",
+      "timestamp": "2025-09-11T18:50:08.959877",
+      "duration_seconds": 0.401198,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Drainage Services Department",
+      "email": "enquiry@dsd.gov.hk",
+      "timestamp": "2025-09-11T18:50:11.362036",
+      "duration_seconds": 0.423274,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Education Bureau",
+      "email": "edbinfo@edb.gov.hk",
+      "timestamp": "2025-09-11T18:50:13.788276",
+      "duration_seconds": 0.401175,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Electrical and Mechanical Services Department",
+      "email": "access@emsd.gov.hk",
+      "timestamp": "2025-09-11T18:50:16.194780",
+      "duration_seconds": 0.402304,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Employees Retraining Board",
+      "email": "css@erb.org",
+      "timestamp": "2025-09-11T18:50:18.602263",
+      "duration_seconds": 0.377483,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Environment and Ecology Bureau",
+      "email": "fbenq@eeb.gov.hk",
+      "timestamp": "2025-09-11T18:50:20.983195",
+      "duration_seconds": 0.391917,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Environmental Protection Department",
+      "email": "enquiry@epd.gov.hk",
+      "timestamp": "2025-09-11T18:50:23.377836",
+      "duration_seconds": 0.39628,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Financial Services and the Treasury Bureau",
+      "email": "angelakylam@fstb.gov.hk",
+      "timestamp": "2025-09-11T18:50:25.778747",
+      "duration_seconds": 0.396638,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Fire Services Department",
+      "email": "aio_fsd@hkfsd.gov.hk",
+      "timestamp": "2025-09-11T18:50:28.178879",
+      "duration_seconds": 0.39458,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Food and Environmental Hygiene Department",
+      "email": "access_to_information@fehd.gov.hk",
+      "timestamp": "2025-09-11T18:50:30.578715",
+      "duration_seconds": 0.406241,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Government Flying Service",
+      "email": "cclchan@gfs.gov.hk",
+      "timestamp": "2025-09-11T18:50:32.988906",
+      "duration_seconds": 0.397271,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Government Laboratory",
+      "email": "glabinfo@govtlab.gov.hk",
+      "timestamp": "2025-09-11T18:50:35.389070",
+      "duration_seconds": 0.399519,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Government Logistics Department",
+      "email": "aio@gld.gov.hk",
+      "timestamp": "2025-09-11T18:50:37.789272",
+      "duration_seconds": 0.404017,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Government Property Agency",
+      "email": "enquiry@gpa.gov.hk",
+      "timestamp": "2025-09-11T18:50:40.198531",
+      "duration_seconds": 0.404182,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Health Bureau",
+      "email": "enquiry@healthbureau.gov.hk",
+      "timestamp": "2025-09-11T18:50:42.606201",
+      "duration_seconds": 0.402548,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Highways Department",
+      "email": "hyd@hyd.gov.hk",
+      "timestamp": "2025-09-11T18:50:45.012144",
+      "duration_seconds": 0.407402,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Home Affairs Department",
+      "email": "hadgen@had.gov.hk",
+      "timestamp": "2025-09-11T18:50:47.423565",
+      "duration_seconds": 0.412437,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Home and Youth Affairs Bureau",
+      "email": "chipingau@hyab.gov.hk",
+      "timestamp": "2025-09-11T18:50:49.837634",
+      "duration_seconds": 0.402858,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Hong Kong Housing Authority",
+      "email": "code@housingauthority.gov.hk",
+      "timestamp": "2025-09-11T18:50:52.245718",
+      "duration_seconds": 0.402667,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Hong Kong Monetary Authority",
+      "email": "publicenquiry@hkma.gov.hk",
+      "timestamp": "2025-09-11T18:50:54.649246",
+      "duration_seconds": 0.397893,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Hong Kong Observatory",
+      "email": "dsec@hko.gov.hk",
+      "timestamp": "2025-09-11T18:50:57.052384",
+      "duration_seconds": 0.417149,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Hong Kong Police Force",
+      "email": "seo-support@police.gov.hk",
+      "timestamp": "2025-09-11T18:50:59.472622",
+      "duration_seconds": 0.421721,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Immigration Department",
+      "email": "rm@immd.gov.hk",
+      "timestamp": "2025-09-11T18:51:01.899592",
+      "duration_seconds": 0.431237,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Independent Commission Against Corruption",
+      "email": "general@icac.org.hk",
+      "timestamp": "2025-09-11T18:51:04.335579",
+      "duration_seconds": 0.3705,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Information Services Department",
+      "email": "gracehtng@isd.gov.hk",
+      "timestamp": "2025-09-11T18:51:06.706576",
+      "duration_seconds": 0.398864,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Inland Revenue Department",
+      "email": "taxinfo@ird.gov.hk",
+      "timestamp": "2025-09-11T18:51:09.110623",
+      "duration_seconds": 0.392016,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Innovation and Technology Commission",
+      "email": "enquiry@itc.gov.hk",
+      "timestamp": "2025-09-11T18:51:11.507940",
+      "duration_seconds": 0.398664,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Innovation, Technology and Industry Bureau",
+      "email": "enquiry@itib.gov.hk",
+      "timestamp": "2025-09-11T18:51:13.909015",
+      "duration_seconds": 0.41143,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Intellectual Property Department",
+      "email": "marietang@ipd.gov.hk",
+      "timestamp": "2025-09-11T18:51:16.321180",
+      "duration_seconds": 0.395144,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Invest Hong Kong",
+      "email": "enq@investhk.gov.hk",
+      "timestamp": "2025-09-11T18:51:18.721020",
+      "duration_seconds": 0.415392,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Joint Secretariat for the Advisory Bodies on Civil Service and Judicial\r\n                Salaries and Conditions of Service",
+      "email": "enquiry@jsscs.gov.hk",
+      "timestamp": "2025-09-11T18:51:21.141714",
+      "duration_seconds": 0.41108,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Labour Department",
+      "email": "ads-a-2@labour.gov.hk",
+      "timestamp": "2025-09-11T18:51:23.554517",
+      "duration_seconds": 0.392932,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Labour and Welfare Bureau",
+      "email": "enquiry@lwb.gov.hk",
+      "timestamp": "2025-09-11T18:51:25.949197",
+      "duration_seconds": 0.421816,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Land Registry",
+      "email": "csa@landreg.gov.hk",
+      "timestamp": "2025-09-11T18:51:28.374926",
+      "duration_seconds": 0.380994,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Lands Department",
+      "email": "ds@landsd.gov.hk",
+      "timestamp": "2025-09-11T18:51:30.759954",
+      "duration_seconds": 0.433194,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Legal Aid Department",
+      "email": "ladinfo@lad.gov.hk",
+      "timestamp": "2025-09-11T18:51:33.198410",
+      "duration_seconds": 0.411856,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Leisure and Cultural Services Department",
+      "email": "eog2@lcsd.gov.hk",
+      "timestamp": "2025-09-11T18:51:35.613150",
+      "duration_seconds": 0.414354,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Marine Department",
+      "email": "mdenquiry@mardep.gov.hk",
+      "timestamp": "2025-09-11T18:51:38.032880",
+      "duration_seconds": 0.404371,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Office of the Communications Authority",
+      "email": "aio@ofca.gov.hk",
+      "timestamp": "2025-09-11T18:51:40.439057",
+      "duration_seconds": 0.420461,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Offices of the Chief Secretary for Administration and the Financial Secretary",
+      "email": "admwing@cso.gov.hk",
+      "timestamp": "2025-09-11T18:51:42.862535",
+      "duration_seconds": 0.414188,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Official Receiver's Office",
+      "email": "ekllam@oro.gov.hk",
+      "timestamp": "2025-09-11T18:51:45.282048",
+      "duration_seconds": 0.405374,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Planning Department",
+      "email": "enquire@pland.gov.hk",
+      "timestamp": "2025-09-11T18:51:47.688203",
+      "duration_seconds": 0.422033,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Post Office",
+      "email": "access_to_information@hkpo.gov.hk",
+      "timestamp": "2025-09-11T18:51:50.113497",
+      "duration_seconds": 0.418329,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Privacy Commissioner for Personal Data",
+      "email": "access_to_info@pcpd.org.hk",
+      "timestamp": "2025-09-11T18:51:52.534286",
+      "duration_seconds": 0.407757,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Radio Television Hong Kong",
+      "email": "aio@rthk.hk",
+      "timestamp": "2025-09-11T18:51:54.947296",
+      "duration_seconds": 0.413155,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Rating and Valuation Department",
+      "email": "enquiries@rvd.gov.hk",
+      "timestamp": "2025-09-11T18:51:57.365680",
+      "duration_seconds": 0.404909,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Registration and Electoral Office",
+      "email": "reoenq@reo.gov.hk",
+      "timestamp": "2025-09-11T18:51:59.771226",
+      "duration_seconds": 0.416214,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Secretariat of the Public Service Commission",
+      "email": "psc@psc.gov.hk",
+      "timestamp": "2025-09-11T18:52:02.188295",
+      "duration_seconds": 0.409442,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Secretariat, Commissioner on Interception of Communications and\r\n                Surveillance",
+      "email": "enquiry@ciocsoffice.gov.hk",
+      "timestamp": "2025-09-11T18:52:04.601773",
+      "duration_seconds": 0.414183,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Security Bureau",
+      "email": "aioreq@sb.gov.hk",
+      "timestamp": "2025-09-11T18:52:07.021184",
+      "duration_seconds": 0.420005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Social Welfare Department",
+      "email": "daioenq@swd.gov.hk",
+      "timestamp": "2025-09-11T18:52:09.446414",
+      "duration_seconds": 0.413838,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Trade and Industry Department",
+      "email": "enquiry@tid.gov.hk",
+      "timestamp": "2025-09-11T18:52:11.864855",
+      "duration_seconds": 0.417269,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Transport Department",
+      "email": "tdenq@td.gov.hk",
+      "timestamp": "2025-09-11T18:52:14.283864",
+      "duration_seconds": 0.409479,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Transport and Logistics Bureau",
+      "email": "enquiry@tlb.gov.hk",
+      "timestamp": "2025-09-11T18:52:16.695786",
+      "duration_seconds": 0.412147,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Treasury",
+      "email": "info@try.gov.hk",
+      "timestamp": "2025-09-11T18:52:19.112498",
+      "duration_seconds": 0.403782,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "University Grants Committee Secretariat",
+      "email": "pollywong@ugc.edu.hk",
+      "timestamp": "2025-09-11T18:52:21.521506",
+      "duration_seconds": 0.415166,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Water Supplies Department",
+      "email": "wsdinfo@wsd.gov.hk",
+      "timestamp": "2025-09-11T18:52:23.941334",
+      "duration_seconds": 0.410276,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "department": "Working Family and Student Financial Assistance Agency",
+      "email": "aio@wfsfaa.gov.hk",
+      "timestamp": "2025-09-11T18:52:26.356214",
+      "duration_seconds": 0.401503,
+      "status": "SUCCESS",
+      "error": null
+    }
+  ],
+  "summary": {
+    "successful": 77,
+    "failed": 0,
+    "timeout": 0,
+    "error": 0
+  },
+  "execution_end": "2025-09-11T18:52:28.762585",
+  "total_duration_minutes": 3.0861831666666664
+}
