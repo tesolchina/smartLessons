@@ -1,6 +1,0 @@
-# LANG 2077 Canva CLI Setup Requirements
-
-selenium==4.15.0
-webdriver-manager==4.0.1
-requests==2.31.0
-python-dotenv==1.0.0

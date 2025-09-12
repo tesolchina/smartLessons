@@ -1,0 +1,30 @@
+[project]
+name = "dailyassistant"
+version = "0.1.0"
+description = "DailyAssistant automation toolkit (Google Docs/Slides/Drive, email workflows, OpenRouter LLM helpers, PDF utilities)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Proprietary"}
+authors = [ { name = "DailyAssistant" } ]
+dependencies = []
+
+[project.optional-dependencies]
+google = ["google-api-python-client", "google-auth", "google-auth-oauthlib"]
+email = ["beautifulsoup4"]
+pdf = ["markdown", "pdfminer.six"]
+openrouter = []
+all = ["google-api-python-client", "google-auth", "google-auth-oauthlib", "beautifulsoup4", "markdown", "pdfminer.six"]
+
+[project.scripts]
+da = "dailyassistant.cli:main"
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["tools", "dailyassistant"]
+
+[tool.setuptools.package-dir]
+tools = "tools"
+dailyassistant = "dailyassistant"
