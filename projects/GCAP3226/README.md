@@ -79,15 +79,40 @@ GCAP3226/
 - Budget: HKD 70,000
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `GCAP3226` at 2025-09-12T07:02:46Z UTC.
+Auto-generated index for project `GCAP3226` at 2025-09-12T07:04:39Z UTC.
 <!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs GCAP3226`
 
 ## Tool Access
 - Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)
+- Tools directory (absolute at generation time): `/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools`
 - Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`
 - CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)
 - Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
+
+### Install & Use
+1. Editable install (recommended while developing):
+   ````bash
+   pip install -e /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant
+   ````
+2. Run a tool script directly (without install):
+   ````bash
+   python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_tool_indexes.py
+   ````
+3. Via package module after install:
+   ````bash
+   python -m dailyassistant.cli.generate_tool_indexes
+   ````
+4. Via CLI (if entry point installed):
+   ````bash
+   da tool-index
+   ````
+5. Ad-hoc PYTHONPATH (no install):
+   ````bash
+   PYTHONPATH=/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_project_indexes.py --dirs GCAP3226
+   ````
+
+### Programmatic Path Detection
 - Programmatic path detection snippet:
 
 ```python
@@ -103,7 +128,7 @@ TOOLS_DIR = REPO_ROOT / 'tools'
 | `IMPORTANT_LINKS.md` | .md | 2375 |
 | `PROJECT_SETUP_CHECKLIST.md` | .md | 3398 |
 | `PY_SCRIPTS_MOVED.md` | .md | 202 |
-| `README.md` | .md | 42407 |
+| `README.md` | .md | 43057 |
 | `SETUP_REPORT.md` | .md | 1982 |
 | `budget_planning/budget_breakdown.md` | .md | 3782 |
 | `chatbots/README.md` | .md | 6481 |

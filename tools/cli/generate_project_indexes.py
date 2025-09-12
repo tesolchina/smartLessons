@@ -85,15 +85,29 @@ def process_project(name: str) -> bool:
     files = collect_files(pdir)
     timestamp = _dt.datetime.utcnow().isoformat(timespec='seconds') + 'Z'
     table = build_table(files)
+    abs_tools_path = (REPO_ROOT / 'tools').as_posix()
     content = (
     f"Auto-generated index for project `{name}` at {timestamp} UTC.\n"
     "<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->\n"
     "Regenerate with: `python tools/cli/generate_project_indexes.py --dirs " + name + "`\n\n"
     "## Tool Access\n"
     "- Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)\n"
+        f"- Tools directory (absolute at generation time): `{abs_tools_path}`\n"
     "- Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`\n"
     "- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)\n"
     "- Environment variable (optional): `export DAILYASSISTANT_ROOT=\u0060git rev-parse --show-toplevel\u0060`\n"
+        "\n### Install & Use\n"
+        "1. Editable install (recommended while developing):\n"
+        f"   ````bash\n   pip install -e {REPO_ROOT.as_posix()}\n   ````\n"
+        "2. Run a tool script directly (without install):\n"
+        f"   ````bash\n   python {abs_tools_path}/cli/generate_tool_indexes.py\n   ````\n"
+        "3. Via package module after install:\n"
+        "   ````bash\n   python -m dailyassistant.cli.generate_tool_indexes\n   ````\n"
+        "4. Via CLI (if entry point installed):\n"
+        "   ````bash\n   da tool-index\n   ````\n"
+        "5. Ad-hoc PYTHONPATH (no install):\n"
+        f"   ````bash\n   PYTHONPATH={REPO_ROOT.as_posix()} python {abs_tools_path}/cli/generate_project_indexes.py --dirs {name}\n   ````\n"
+        "\n### Programmatic Path Detection\n"
     "- Programmatic path detection snippet:\n\n"
     "```python\nfrom pathlib import Path\nPROJECT_DIR = Path(__file__).resolve().parent\nREPO_ROOT = PROJECT_DIR.parent  # contains 'tools' and 'projects'\nTOOLS_DIR = REPO_ROOT / 'tools'\n```\n\n"
     f"{table}\n"

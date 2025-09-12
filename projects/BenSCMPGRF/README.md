@@ -4,15 +4,40 @@
 
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `BenSCMPGRF` at 2025-09-12T07:02:45Z UTC.
+Auto-generated index for project `BenSCMPGRF` at 2025-09-12T07:04:39Z UTC.
 <!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs BenSCMPGRF`
 
 ## Tool Access
 - Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)
+- Tools directory (absolute at generation time): `/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools`
 - Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`
 - CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)
 - Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
+
+### Install & Use
+1. Editable install (recommended while developing):
+   ````bash
+   pip install -e /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant
+   ````
+2. Run a tool script directly (without install):
+   ````bash
+   python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_tool_indexes.py
+   ````
+3. Via package module after install:
+   ````bash
+   python -m dailyassistant.cli.generate_tool_indexes
+   ````
+4. Via CLI (if entry point installed):
+   ````bash
+   da tool-index
+   ````
+5. Ad-hoc PYTHONPATH (no install):
+   ````bash
+   PYTHONPATH=/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_project_indexes.py --dirs BenSCMPGRF
+   ````
+
+### Programmatic Path Detection
 - Programmatic path detection snippet:
 
 ```python
@@ -119,7 +144,7 @@ TOOLS_DIR = REPO_ROOT / 'tools'
 | `LLM_Analysis_Project_Plan.md` | .md | 7997 |
 | `NovEvent/note.md` | .md | 10464 |
 | `PY_SCRIPTS_MOVED.md` | .md | 206 |
-| `README.md` | .md | 11939 |
+| `README.md` | .md | 12618 |
 | `SHARE_WITH_BEN.md` | .md | 4331 |
 | `TASK_COMPLETION_SUMMARY.md` | .md | 2399 |
 | `analysis_output/scmp_analysis_results_20250910_071425.csv` | .csv | 342 |
