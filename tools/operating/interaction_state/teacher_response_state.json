@@ -1,0 +1,89 @@
+{
+  "document_id": "1polOm2WKjwlAGe_YGsffkIJ2a1mGXDMm0IFoKb7ZNoA",
+  "version": 1,
+  "tabs": {
+    "membership and admin": {
+      "teacher_hash_replied": "sha256:5eb4842d16c860070fcf16ec3f8eb4580bb8c7b7118f850a2c82d119900abe03",
+      "last_reply_iso": "2025-09-11T01:32:40Z",
+      "teacher_last_replied_text": "This is a tab where we discuss housekeeping manner"
+    },
+    "argumentative research paper": {
+      "teacher_hash_replied": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+      "last_reply_iso": "2025-09-11T01:32:52Z",
+      "teacher_last_replied_text": "(Write here – add content)\n\n(Write here – add content)"
+    },
+    "crtical review of existing solutions": {
+      "teacher_hash_replied": "sha256:2edac22de23b03c5c5178c77354db227354ded70fb36807c2f158c66f0644cd3",
+      "last_reply_iso": "2025-09-11T01:33:50Z",
+      "teacher_last_replied_text": "We identify flaws in the system; sometimes we need to hypothesize about the flaws and raise questions for the gov and collect data to test the hypothesis"
+    },
+    "recommendations": {
+      "teacher_hash_replied": "sha256:06f3531560536187cace168e5fd058a5eb0c1f561ba54df4c4f827eda5f3fb8c",
+      "last_reply_iso": "2025-09-11T01:34:12Z",
+      "teacher_last_replied_text": "Here we make recommendations \nThe proposed changes should be feasible with impact that is measurable"
+    },
+    "submit to legco and further engagement": {
+      "teacher_hash_replied": "sha256:e79e5a94a28122ee7226cfb1121cac0dac16c444b612f74beca395ac0f205ecb",
+      "last_reply_iso": "2025-09-11T01:34:43Z",
+      "teacher_last_replied_text": "We need to identify a specific panel in Legco that is most relevant to our projects and submit the report to the panel"
+    },
+    "reflective learning journals": {
+      "teacher_hash_replied": "sha256:0bf8864ca2ebc529f79e32b0171efd6c1fe418ffb4c544b1c8f17239153909fc",
+      "last_reply_iso": "2025-09-11T01:35:09Z",
+      "teacher_last_replied_text": "Each week students may write some notes to reflect on what they have learned on different themes or topics \nRefer to teachers’ notes and Moodle forum"
+    },
+    "member 1": {
+      "teacher_hash_replied": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+      "last_reply_iso": "2025-09-10T23:51:56Z"
+    },
+    "member 2": {
+      "teacher_hash_replied": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+      "last_reply_iso": "2025-09-10T23:51:57Z"
+    },
+    "member 3": {
+      "teacher_hash_replied": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+      "last_reply_iso": "2025-09-11T01:35:18Z",
+      "teacher_last_replied_text": "(Write here – add content)\n\n(Write here – add content)"
+    },
+    "member 4": {
+      "teacher_hash_replied": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+      "last_reply_iso": "2025-09-11T01:35:26Z",
+      "teacher_last_replied_text": "(Write here – add content)\n\n(Write here – add content)"
+    },
+    "member 5": {
+      "teacher_hash_replied": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+      "last_reply_iso": "2025-09-11T01:35:52Z",
+      "teacher_last_replied_text": "(Write here – add content)\n\n(Write here – add content)"
+    },
+    "community engagement": {
+      "teacher_hash_replied": "sha256:f3b06b4f8f8a173532b52d490bf597bfacaf49d64f723e106662557086eb5742",
+      "last_reply_iso": "2025-09-11T01:36:02Z",
+      "teacher_last_replied_text": "Let’s try to get everything done by week 10"
+    },
+    "writing for the public": {
+      "teacher_hash_replied": "sha256:2e9d1b3538249cd1683e8d53d9bef8299c50df37c3f145bb82fad657a1bb0d2d",
+      "last_reply_iso": "2025-09-11T01:36:31Z",
+      "teacher_last_replied_text": "Attempts to publish SCMP letters and circulate a report among lawmakers of a specific panel \nEither is sufficient for this course"
+    },
+    "engage the government": {
+      "teacher_hash_replied": "sha256:2d810a04aa106659f42b43538cc0f1a5248ba962acde5400867938b7cc928341",
+      "last_reply_iso": "2025-09-11T01:36:42Z",
+      "teacher_last_replied_text": "Requests of info sent to the gov and descriptive account of the process are expected"
+    },
+    "infographic and presentation": {
+      "teacher_hash_replied": "sha256:52523777e8a4f85986296ba8ac5de9aa5ce42151412043cf55f2f05077a8f370",
+      "last_reply_iso": "2025-09-11T01:36:53Z",
+      "teacher_last_replied_text": "Prepare an infographic similar to a slide that can be used for a presentation to the lawmakers"
+    },
+    "collecting publicly available info": {
+      "teacher_hash_replied": "sha256:2fed60135636dd94e6bd17dcec5349e741c24a5839037db9eab1668747b5eb5c",
+      "teacher_last_replied_text": "Here we gather publicly available info from media and government website \nWe should try Google site search",
+      "last_reply_iso": "2025-09-11T01:33:04Z"
+    },
+    "request info from the gov": {
+      "teacher_hash_replied": "sha256:2087a1b16414c7f72b6680e7a813d7540554f1bd61f21c6e6bc06612f773b04b",
+      "teacher_last_replied_text": "Here we draft and send requests of into to the government staff",
+      "last_reply_iso": "2025-09-11T01:33:40Z"
+    }
+  }
+}

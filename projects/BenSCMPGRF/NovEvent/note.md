@@ -1,3 +1,19 @@
+there are many folders projects under /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects
+
+I wonder if we can separate project data from tools /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/operating 
+
+the tools can be updated and called from a separate place from the project folder
+
+when I work on a project I just need to open one folder here 
+
+any suggestions how this might work 
+
+the tool folder will be synced to github but the project folders can be synced via Google drive
+
+
+
+
+
 Letters to the Editor Symposium and Exhibition November 17th
 
 ~~Got this email from mail.app inbox~~
@@ -19,9 +35,9 @@ please send this to LLM and ask it for a plan and append to the doc using script
 update the note here and draft an email reply and place it as a reply in mac mail app
 
 ok take a look at email here /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/BenSCMPGRF/NovEvent/Letters to the Editor Symposium and Exhibition November 17th .eml and draft a proper personal reply as Simon reply to both Ben and Pui ying
-link should be encapsulated 
+link should be encapsulated
 
-acknowledge the email reply is generated with AI assistance 
+acknowledge the email reply is generated with AI assistance
 
 write a script to place it in draft box of mail.app of mac
 
@@ -69,6 +85,7 @@ Best,
 Notes: Replace bracketed placeholders before sending. After sending, mark this section as completed.
 
 ---
+
 ### Personalized Reply (Simon → Ben & Pui Yin)
 
 Subject: Re: Letters to the Editor Symposium and Exhibition – Aligning Tasks & Next Steps
@@ -76,9 +93,10 @@ Subject: Re: Letters to the Editor Symposium and Exhibition – Aligning Tasks &
 Hi Ben, hi Pui Yin,
 
 Thanks Ben for the detailed breakdown – really helpful, and the structure looks solid. I’ve set up the shared planning Google Doc and added an initial execution plan (timeline, workstreams, risks, and immediate next actions). We can iterate quickly there:
-<https://docs.google.com/document/d/1zNXRwDW05Ok_UrPk053pr3NX0hd949Tq28VjJuebhBk/edit>
+[https://docs.google.com/document/d/1zNXRwDW05Ok_UrPk053pr3NX0hd949Tq28VjJuebhBk/edit](https://docs.google.com/document/d/1zNXRwDW05Ok_UrPk053pr3NX0hd949Tq28VjJuebhBk/edit)
 
 Quick reflections + proposed confirmations:
+
 1. Intro segment (20 min): I suggest we storyboard this by early October – I can draft an outline once we have provisional exhibition title + confirmed roundtable participants.
 2. GCAP student sharing: I’ll start a shortlist outreach thread – Ben, once you hear back from any early confirmations let me know so we avoid duplicate nudges.
 3. Round table: Once letters + explanations start coming in, I can help cluster themes to tighten moderation flow.
@@ -86,6 +104,7 @@ Quick reflections + proposed confirmations:
 5. Registration: Pui Yin – if you prefer Qualtrics, I can assist with field design (thinking: name, affiliation, role, optional interest tags for follow‑up network formation).
 
 Task Alignment (echoing + minor refinements):
+
 - Participant outreach & letter selection narrative – Ben (I can help structure any follow-up template if useful).
 - Exhibition + symposium title – Trio (suggest we add 3–5 candidate titles to the doc this week and vote).
 - Poster workflow – Ben + library (loop me in for final messaging polish if needed).
@@ -97,6 +116,7 @@ Task Alignment (echoing + minor refinements):
 - Exhibition mounting – Library (we’ll support on captions consistency / sequencing once mockups exist).
 
 Immediate Next Micro-Actions (next 7 days):
+
 1. Draft & shortlist exhibition/symposium title candidates.
 2. Create outreach template for participant letter selection (with word/character guidance for their explanation snippet).
 3. Start GCAP student invite list + message draft.
@@ -104,6 +124,7 @@ Immediate Next Micro-Actions (next 7 days):
 5. Confirm preferred registration platform (Google Form vs Qualtrics) – to avoid late pivot.
 
 Open Clarifications:
+
 - Do we want a post-event brief or media summary prepared in advance (skeleton)?
 - Any preference for whether the exhibition narrative is chronological, thematic, or hybrid?
 - Should we consider a quiet capture (photo/interview) slot before or after the round table?
@@ -114,7 +135,9 @@ Best,
 Simon
 
 ---
+
 ### AppleScript: Create Draft in Mail.app
+
 Save as `create_symposium_reply.scpt` or run via `osascript`.
 
 ```applescript
@@ -132,6 +155,7 @@ end tell
 ```
 
 Run via Terminal (optional):
+
 ```bash
 osascript create_symposium_reply.scpt
 ```
@@ -139,4 +163,5 @@ osascript create_symposium_reply.scpt
 After running, verify draft in Mail.app, adjust any wording, then send.
 
 ---
+
 Meta: Reply + script added 2025-09-12.

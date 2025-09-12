@@ -1,0 +1,506 @@
+{
+  "document_id": "1polOm2WKjwlAGe_YGsffkIJ2a1mGXDMm0IFoKb7ZNoA",
+  "version": 1,
+  "tabs": {
+    "argumentative research paper": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "collecting publicly available info": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:57e2edbb86930386be66ce992b8285d7ced00868c3b6fce8dd178a61b95cb8c7",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "request info from the gov": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:94f02191cc72506a8334b8f3ade9adbfc5a0d05696d2bb62ddfd61d7c5869a7f",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "crtical review of existing solutions": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "recommendations": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:6e9cabe5f25a3f9dda71b71e4f71cab8dc98ae6b6fa248286ea1d0b68bde042d",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "submit to legco and further engagement": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "reflective learning journals": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "member 1": {
+      "zones": {
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "member 2": {
+      "zones": {
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "member 3": {
+      "zones": {
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "member 4": {
+      "zones": {
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "member 5": {
+      "zones": {
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "community engagement": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:b57b107a04faac299082bb14da3605511c012a0d428a034d118dcd9c429b5645",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "writing for the public": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "engage the government": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:5e823dd0eb99daa450d7d341b797b3e571e9ec271c62bc5533c7ee5b4505043f",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "infographic and presentation": {
+      "zones": {
+        "STUDENT_WORKSPACE": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "MESSAGES_TO_INSTRUCTOR": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "INSTRUCTOR_FEEDBACK": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI_SUPPORT_COMMENTS": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "STUDENT": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8560d0a600c60803b45aa7113ee60a553fd89a72fe18b93979c3545df151a088",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    },
+    "membership and admin": {
+      "zones": {
+        "STUDENT": {
+          "hash": "sha256:cc53e83a22d02fcf2af59c8a157543b578e77f6e37149b7859b8387776a1f81a",
+          "last_ai_comment_iso": null
+        },
+        "TEACHER": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        },
+        "AI": {
+          "hash": "sha256:8b7f63d51f2a13994026f61e0d263bccace92a739df700f70f4509664e172bd1",
+          "last_ai_comment_iso": null
+        }
+      }
+    }
+  }
+}

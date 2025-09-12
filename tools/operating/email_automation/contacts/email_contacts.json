@@ -1,0 +1,30 @@
+{
+  "colleagues": [
+    {
+      "name": "Nancy Mak",
+      "email": "nancymak@hkbu.edu.hk",
+      "department": "Language Centre",
+      "added": "2025-09-06"
+    },
+    {
+      "name": "Joshua Chan",
+      "email": "joshuachan@hkbu.edu.hk",
+      "department": "Language Centre",
+      "added": "2025-09-06"
+    }
+  ],
+  "students": [
+    {
+      "name": "Example Student",
+      "email": "student@example.com",
+      "course": "LANG2077",
+      "added": "2025-09-06"
+    }
+  ],
+  "recent": [],
+  "system_info": {
+    "created": "2025-09-06",
+    "version": "2.0",
+    "last_updated": "2025-09-06"
+  }
+}
