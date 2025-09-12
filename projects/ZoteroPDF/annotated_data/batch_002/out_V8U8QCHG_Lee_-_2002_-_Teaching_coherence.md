@@ -13,6 +13,8 @@ key_findings:
 - Students felt that the teaching of coherence had enhanced their awareness of what
   effective writing should entail
 methodology: qualitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_V8U8QCHG_Lee_-_2002_-_Teaching_coherence.md

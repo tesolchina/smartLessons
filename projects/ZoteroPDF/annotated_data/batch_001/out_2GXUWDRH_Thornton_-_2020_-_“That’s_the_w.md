@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - This thesis investigates the intertextual practices of a group of Australian first-year

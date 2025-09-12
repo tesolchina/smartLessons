@@ -16,6 +16,8 @@ key_findings:
   Language Learning that embraces 'anytime' and 'anywhere' learning and involves a
   seamless integration of personal, social, formal, and informal learnings
 methodology: qualitative
+pedagogical_confidence: 0.81
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do university students experience using smartphones for English language learning?

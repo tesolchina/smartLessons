@@ -14,6 +14,8 @@ key_findings:
 - The ICT application is unbalanced across different ESOL skills and various types
   of ICT tools have been used in different ways to promote students' critical thinking
 methodology: quantitative
+pedagogical_confidence: 0.66
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Whether the application of ICT tools could help improve students' critical thinking

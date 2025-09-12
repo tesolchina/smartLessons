@@ -14,6 +14,8 @@ key_findings:
   counterparts when observing learners' perceptions and engagement, regardless of
   whether the instructors were NESTs or NNESTs.
 methodology: quantitative
+pedagogical_confidence: 0.85
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How do social presence and AI instructors' credibility affect learner engagement?

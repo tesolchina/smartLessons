@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_YZSTXMMQ_Arndt_-_2022_-_A_specialized_vo.md

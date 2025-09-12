@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2009
 research_questions: []
 source_file: out_8RZUURMH_Belcher_et_al_-_2009_-_CRITICAL.md

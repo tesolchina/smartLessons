@@ -14,6 +14,8 @@ key_findings:
 - Professors in social sciences, arts, and humanities assign more writing than those
   in sciences, math, and engineering
 methodology: quantitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2007
 research_questions:
 - What writing tasks are required of graduate students across the curriculum?

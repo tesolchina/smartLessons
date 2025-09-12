@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.7
+pedagogical_implications: true
 publication_year: 2004
 research_questions: []
 source_file: out_PCQ9M9J2_Tajino_et_al_-_2005_-_Beyond_ne.md

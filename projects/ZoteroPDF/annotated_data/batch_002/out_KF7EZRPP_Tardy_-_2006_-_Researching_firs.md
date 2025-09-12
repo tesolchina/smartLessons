@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.84
+pedagogical_implications: true
 publication_year: 2006
 research_questions: []
 source_file: out_KF7EZRPP_Tardy_-_2006_-_Researching_firs.md

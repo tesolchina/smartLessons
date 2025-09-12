@@ -19,6 +19,8 @@ key_findings:
 - '''Designed talk'' plays the most important role and can significantly influence
   learning achievement'
 methodology: quantitative
+pedagogical_confidence: 0.84
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_XC56Q45U_Hwang_et_al_-_2024_-_Facilitati.md

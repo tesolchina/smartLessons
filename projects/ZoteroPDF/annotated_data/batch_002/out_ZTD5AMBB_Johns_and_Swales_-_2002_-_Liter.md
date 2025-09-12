@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_ZTD5AMBB_Johns_and_Swales_-_2002_-_Liter.md

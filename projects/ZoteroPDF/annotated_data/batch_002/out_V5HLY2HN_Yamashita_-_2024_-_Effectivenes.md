@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Effectiveness and inclusiveness of human-delivered synchronous written corrective

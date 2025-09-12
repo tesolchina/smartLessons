@@ -15,6 +15,8 @@ key_findings:
 - The significant influence of teachers' social connections and professional backgrounds
   on their emotional experiences
 methodology: qualitative
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_6NFXXV4Q_Exploring_EFL_teachers’_emotion.md

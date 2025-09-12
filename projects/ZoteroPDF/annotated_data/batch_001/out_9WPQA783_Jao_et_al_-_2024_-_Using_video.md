@@ -16,6 +16,8 @@ key_findings:
   were ranked as the two most useful processes which supported students as they improved
   their English-speaking ability through repeatedly listening, echoing, and imitating.
 methodology: mixed
+pedagogical_confidence: 0.76
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - While previous studies have focused on the outcomes of using dubbing apps to foster

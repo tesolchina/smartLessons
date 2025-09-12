@@ -13,6 +13,8 @@ key_findings:
 - Students who experienced a practicum in an inclusive setting developed greater teacher
   efficacy in classroom management than those with no practicum
 methodology: quantitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: 2013
 research_questions:
 - How important is practicum to pre-service teacher development for inclusive teaching?

@@ -15,6 +15,8 @@ key_findings:
   regarding its accuracy. Participants were highly satisfied with ChatGPT, favoring
   it for paraphrasing to enhance professionalism in writing.
 methodology: mixed
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do six Iranian graduate ESL students from STEM fields engage with ChatGPT when

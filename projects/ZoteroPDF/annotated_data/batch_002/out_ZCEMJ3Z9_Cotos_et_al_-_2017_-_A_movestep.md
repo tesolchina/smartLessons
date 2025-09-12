@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: 2017
 research_questions: []
 source_file: out_ZCEMJ3Z9_Cotos_et_al_-_2017_-_A_movestep.md

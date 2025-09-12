@@ -15,6 +15,8 @@ key_findings:
 - Ġabra's shortcomings include incompleteness, lack of pronunciation feature, lack
   of sentence examples, and dependency on internet access
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_ISY5YZ24_Żammit_-_2024_-_Application_of.md

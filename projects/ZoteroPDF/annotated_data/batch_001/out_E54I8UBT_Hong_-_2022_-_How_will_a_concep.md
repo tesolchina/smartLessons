@@ -12,6 +12,8 @@ key_findings:
   disciplines, and pedagogies/instructional approaches consistent with constructivist
   teaching in an authentic learning context.
 methodology: qualitative
+pedagogical_confidence: 0.47
+pedagogical_implications: true
 publication_year: 2022
 research_questions:
 - How will the conceptualization of GCE function as a curriculum innovation at secondary

@@ -17,6 +17,8 @@ key_findings:
   attention during classroom hours, extra financial burden for parents and teachers
   and less classes during the regular teaching hours.
 methodology: qualitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_MVDCMM45_Subedi_-_Shadow_Education_A_Rol.md

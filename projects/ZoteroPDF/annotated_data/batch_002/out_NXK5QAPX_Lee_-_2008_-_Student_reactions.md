@@ -17,6 +17,8 @@ key_findings:
 - The teachers' feedback, which was mostly teacher-centred, made students passive
   and dependent on teachers
 methodology: mixed
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_NXK5QAPX_Lee_-_2008_-_Student_reactions.md

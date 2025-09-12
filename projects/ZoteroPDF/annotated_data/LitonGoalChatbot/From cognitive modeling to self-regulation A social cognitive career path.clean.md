@@ -12,6 +12,8 @@ key_findings:
   and respond to feedback adaptively attain mastery more quickly and are more motivated
   to sustain their learning efforts
 methodology: empirical
+pedagogical_confidence: 0.35
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: From cognitive modeling to self-regulation A social cognitive career

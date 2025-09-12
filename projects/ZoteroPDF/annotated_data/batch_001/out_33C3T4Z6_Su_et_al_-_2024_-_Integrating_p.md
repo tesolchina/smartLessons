@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.72
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_33C3T4Z6_Su_et_al_-_2024_-_Integrating_p.md

@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_4G59ZW5V_Chan_-_2024_-_Generative_AI_in.md

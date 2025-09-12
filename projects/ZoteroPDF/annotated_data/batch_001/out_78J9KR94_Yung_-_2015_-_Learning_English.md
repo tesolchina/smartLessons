@@ -13,6 +13,8 @@ key_findings:
   increase their English proficiency due to its excessive focus on examination skills
   instead of the use of English as a language of global communication.
 methodology: qualitative
+pedagogical_confidence: 0.49
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What are the learning experiences and reflections of Chinese learners who have received

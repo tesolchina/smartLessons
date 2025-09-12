@@ -20,6 +20,8 @@ key_findings:
 - Students' metacognitive knowledge, familiarity with group members, and leadership
   play a critical role in shaping learner engagement
 methodology: qualitative
+pedagogical_confidence: 0.59
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How do peer interactions influence the engagement of university students in collaborative

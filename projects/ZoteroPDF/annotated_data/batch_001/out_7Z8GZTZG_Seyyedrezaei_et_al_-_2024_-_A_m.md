@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.67
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - To examine the overall effectiveness of the applications of educational technology

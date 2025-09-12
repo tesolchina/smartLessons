@@ -18,6 +18,8 @@ key_findings:
   perceived as a high contributor to both language and cultural knowledge acquisition.
 - Variety was another highly appreciated aspect.
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do learners perceive their overall experience in the course?

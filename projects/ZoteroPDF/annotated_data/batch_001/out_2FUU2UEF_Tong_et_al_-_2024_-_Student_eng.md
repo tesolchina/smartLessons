@@ -16,6 +16,8 @@ key_findings:
   of class group chats
 - Individual differences were observed, and English was frequently used in chats
 methodology: mixed
+pedagogical_confidence: 0.56
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_2FUU2UEF_Tong_et_al_-_2024_-_Student_eng.md

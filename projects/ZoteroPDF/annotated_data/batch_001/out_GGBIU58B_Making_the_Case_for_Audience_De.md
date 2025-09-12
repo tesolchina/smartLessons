@@ -12,6 +12,8 @@ key_findings:
 - Negative impact when chatbot's language and interaction patterns do not align with
   users' rapport expectations
 methodology: qualitative
+pedagogical_confidence: 0.82
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_GGBIU58B_Making_the_Case_for_Audience_De.md

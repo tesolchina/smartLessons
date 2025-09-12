@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: 1999
 research_questions: []
 source_file: out_W7LC3BPN_Boud_et_al_-_1999_-_Peer_Learni.md

@@ -16,6 +16,8 @@ key_findings:
   system design, and (2) the importance of embedding culture, humor and empathy functions
   were not taken into consideration in the AI dialogue system.
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - This study aims to examine the use of AI dialogue systems to enhance EFL university

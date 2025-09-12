@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.37
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_IT5PQ5CR_A_critical_review_of_corpus-bas.md

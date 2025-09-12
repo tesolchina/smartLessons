@@ -14,6 +14,8 @@ key_findings:
 - Doctoral students engage in iterative, highly interactive processes with the generative
   AI-powered assisting tool
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do doctoral students interact with a generative AI-powered assisting tool during

@@ -17,6 +17,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_LDUK38PV_Zhang_et_al_-_2022_-_StoryBuddy.md

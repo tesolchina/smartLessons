@@ -13,6 +13,8 @@ key_findings:
 - Pedagogical translanguaging can be associated with a reduction in students' anxiety
   and teachers' anxiety
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What is the possible relationship between pedagogical translanguaging and the perception

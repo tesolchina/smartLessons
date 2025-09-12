@@ -13,6 +13,8 @@ key_findings:
   filmic modes and using popular visuals, but their performance in conveying ideational
   and textual meaning needs improvement
 methodology: qualitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_ZIBTUF82_Preparing-learners-for-digitall.md

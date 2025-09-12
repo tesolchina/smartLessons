@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.77
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_ZT7DZVIJ_Graham_-_2019_-_Changing_How_Wr.md

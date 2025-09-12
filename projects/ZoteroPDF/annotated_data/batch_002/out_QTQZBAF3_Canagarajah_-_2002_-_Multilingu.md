@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 2002
 research_questions: []
 source_file: out_QTQZBAF3_Canagarajah_-_2002_-_Multilingu.md

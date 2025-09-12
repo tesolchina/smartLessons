@@ -15,6 +15,8 @@ key_findings:
 - All words had a high correlation with content words across all dimensions, but their
   relationships with function words were weak and varied across tasks
 methodology: quantitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: 2023
 research_questions: []
 source_file: out_TEQ72R6R_Plakans_et_al_-_2024_-_June_202.md

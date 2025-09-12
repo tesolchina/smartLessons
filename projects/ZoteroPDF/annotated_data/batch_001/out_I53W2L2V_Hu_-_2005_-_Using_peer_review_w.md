@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.54
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_I53W2L2V_Hu_-_2005_-_Using_peer_review_w.md

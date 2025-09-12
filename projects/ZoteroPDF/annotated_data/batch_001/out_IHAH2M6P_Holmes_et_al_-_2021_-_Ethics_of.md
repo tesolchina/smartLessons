@@ -19,6 +19,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.41
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_IHAH2M6P_Holmes_et_al_-_2021_-_Ethics_of.md

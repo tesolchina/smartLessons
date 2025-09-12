@@ -11,6 +11,8 @@ has_results: true
 key_findings:
 - The use of the mind mapping MALL app enhanced EFL vocabulary learning
 methodology: quantitative
+pedagogical_confidence: 0.88
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - To examine changes in vocabulary learning outcomes, and the perspectives the participants

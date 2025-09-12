@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: 2009
 research_questions: []
 source_file: out_CH8HC5X7_Jeon_-_Reflecting_Critical_Peda.md

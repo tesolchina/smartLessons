@@ -13,6 +13,8 @@ key_findings:
 - Many by-products perceived by students as unplanned outcomes of writing courses
   reflect the same values that universities define as central to higher education
 methodology: mixed
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - To explore students' perceptions of non-writing outcomes of their academic writing

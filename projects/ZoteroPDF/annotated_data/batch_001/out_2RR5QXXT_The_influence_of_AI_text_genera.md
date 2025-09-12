@@ -15,6 +15,8 @@ key_findings:
 - Concerns relating to reliability, accuracy, and potential ethical implications of
   its application in higher education
 methodology: mixed
+pedagogical_confidence: 0.5
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - The influence of generative artificial intelligence (GAI), specifically AI text

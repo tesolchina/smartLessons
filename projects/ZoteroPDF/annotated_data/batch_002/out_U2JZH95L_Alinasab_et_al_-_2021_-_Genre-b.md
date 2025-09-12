@@ -15,6 +15,8 @@ key_findings:
 - Moves in introduction and discussion sections included the highest number of genre-based
   revisions
 methodology: qualitative
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: 2020
 research_questions: []
 source_file: out_U2JZH95L_Alinasab_et_al_-_2021_-_Genre-b.md

@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2006
 research_questions: []
 source_file: out_URM34RTJ_[Heidi_Byrnes]_Advanced_languag.md

@@ -15,6 +15,8 @@ key_findings:
 - Student teachers paired with in-service teachers slightly outperformed those with
   ChatGPT on the final teaching design proposal
 methodology: quantitative
+pedagogical_confidence: 0.79
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the effects of Human-Human and Human-Machine collaborative learning approaches

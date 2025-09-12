@@ -16,6 +16,8 @@ key_findings:
   audiences' affective engagement, and increasing attention to communicative language
   choices in this course.
 methodology: mixed
+pedagogical_confidence: 0.5
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_LNVR834T_Asadnia_and_Atai_-_2022_-_Exami.md

@@ -15,6 +15,8 @@ key_findings:
 - the intervention impact differentially on different sub-groups, benefiting able
   writers more than weaker writers
 methodology: mixed
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: 2012
 research_questions: []
 source_file: out_HGILLWUQ_Jones_et_al_-_2013_-_Grammar_fo.md

@@ -14,6 +14,8 @@ key_findings:
 - Participants explained how different challenges against rule abstraction were resolved,
   and why some remained unresolved
 methodology: qualitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_GGW3H6BG_Rastgou_-_2024_-_Cyclical_inter.md

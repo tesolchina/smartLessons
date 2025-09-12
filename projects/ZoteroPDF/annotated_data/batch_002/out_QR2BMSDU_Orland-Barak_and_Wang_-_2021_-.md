@@ -10,6 +10,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_QR2BMSDU_Orland-Barak_and_Wang_-_2021_-.md

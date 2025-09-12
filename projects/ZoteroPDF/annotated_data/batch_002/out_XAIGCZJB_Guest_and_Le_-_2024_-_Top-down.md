@@ -14,6 +14,8 @@ key_findings:
 - that the judicious application of either approach was more often performed unconsciously
   than as a result of any conscious methodological application
 methodology: qualitative
+pedagogical_confidence: 0.62
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_XAIGCZJB_Guest_and_Le_-_2024_-_Top-down.md

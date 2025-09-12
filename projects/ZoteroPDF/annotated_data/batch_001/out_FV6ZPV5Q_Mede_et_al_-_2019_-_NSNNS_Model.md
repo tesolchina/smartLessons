@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - whether NESTs and NNESTs differ in terms of strategies used while developing learners'

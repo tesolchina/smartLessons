@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: 2019
 research_questions: []
 source_file: out_3EKCQV7J_Perrotta_and_Selwyn_-_2020_-_De.md

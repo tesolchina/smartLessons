@@ -14,6 +14,8 @@ key_findings:
   teachers' Global Englishes awareness, with the AI chatbot task exerting a stronger
   effect on ELF confidence and intention.
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How can technology, specifically AI chatbots in 3D metaverse environments, enhance

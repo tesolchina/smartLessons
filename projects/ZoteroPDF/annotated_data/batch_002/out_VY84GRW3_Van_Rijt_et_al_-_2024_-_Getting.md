@@ -13,6 +13,8 @@ key_findings:
 - Linguistic manipulations are more difficult to process than rules of thumb, as measured
   by response times, correct classifications, and perceived difficulty ratings
 methodology: quantitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - Whether linguistic manipulations impose a higher cognitive load on Dutch student

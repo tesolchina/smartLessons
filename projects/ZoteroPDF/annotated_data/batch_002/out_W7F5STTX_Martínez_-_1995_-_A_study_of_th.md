@@ -13,6 +13,8 @@ key_findings:
   a higher number and wider variety of strategies than secondary school students,
   (d) the majority of the teachers were not aware of their students' use of strategies
 methodology: quantitative
+pedagogical_confidence: 0.38
+pedagogical_implications: true
 publication_year: 1995
 research_questions:
 - What are the types and range of language learning strategies used by Spanish secondary

@@ -18,6 +18,8 @@ key_findings:
 - Students' engagement in these forethought processes is connected to their beliefs
   about the subject domain, prior experiences, and subject domain and context
 methodology: qualitative
+pedagogical_confidence: 0.38
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: Beyond goal setting and planning An examination of college students’

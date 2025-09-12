@@ -18,6 +18,8 @@ key_findings:
   predicted learning outcomes
 - Teaching presence was found to negatively predict learning outcomes
 methodology: quantitative
+pedagogical_confidence: 0.46
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How are learners' perceived AI presences related to their language learning?

@@ -12,6 +12,8 @@ key_findings:
   intensified learners' FLA
 - AI chatbots are promising for significantly improving linguistic output gains
 methodology: quantitative
+pedagogical_confidence: 0.6
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_2SQTR9MI_Shazly_-_Effects_of_artificial.md

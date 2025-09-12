@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2009
 research_questions: []
 source_file: out_E6VCYD7F_Boulton_-_2009_-_Testing_the_li.md

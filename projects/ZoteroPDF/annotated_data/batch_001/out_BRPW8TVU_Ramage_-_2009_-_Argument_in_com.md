@@ -12,6 +12,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_BRPW8TVU_Ramage_-_2009_-_Argument_in_com.md

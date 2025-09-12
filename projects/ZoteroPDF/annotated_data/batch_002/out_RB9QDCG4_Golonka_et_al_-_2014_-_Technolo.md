@@ -13,6 +13,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: review
+pedagogical_confidence: 0.5
+pedagogical_implications: true
 publication_year: 2014
 research_questions: []
 source_file: out_RB9QDCG4_Golonka_et_al_-_2014_-_Technolo.md

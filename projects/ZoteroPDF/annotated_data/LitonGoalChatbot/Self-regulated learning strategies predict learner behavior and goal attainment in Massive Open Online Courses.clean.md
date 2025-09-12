@@ -15,6 +15,8 @@ key_findings:
 - Learners with stronger SRL skills were more likely to revisit previously studied
   course materials
 methodology: quantitative
+pedagogical_confidence: 0.71
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - Which SRL strategies predict attainment of personal course goals?

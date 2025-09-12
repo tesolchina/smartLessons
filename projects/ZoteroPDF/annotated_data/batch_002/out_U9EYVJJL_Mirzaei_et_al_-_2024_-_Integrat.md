@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.86
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_U9EYVJJL_Mirzaei_et_al_-_2024_-_Integrat.md

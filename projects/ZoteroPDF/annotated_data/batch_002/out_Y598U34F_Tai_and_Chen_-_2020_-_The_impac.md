@@ -12,6 +12,8 @@ key_findings:
 - Google Assistant significantly promoted EFL learners' willingness to communicate,
   enhanced communicative confidence, and reduced speaking anxiety
 methodology: quantitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2020
 research_questions:
 - What is the impact of Google Assistant on adolescent EFL learners' willingness to

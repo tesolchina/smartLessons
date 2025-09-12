@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What learning obstacles learners would encounter in a context-rich environment with

@@ -11,6 +11,8 @@ key_findings:
 - Global citizenship is being included into higher education through scales of measurement,
   studying abroad, faculty and student perceptions, coursework, and university programs.
 methodology: empirical
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How is global citizenship being studied, measured, and operationalized in higher

@@ -11,6 +11,8 @@ key_findings:
 - Non-native teachers at this school showed certain conflict when adopting ELF approach
   and preferred applying the rules of standard English.
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2018
 research_questions:
 - What are the non-native teachers' perspectives on teaching English as a Lingua Franca

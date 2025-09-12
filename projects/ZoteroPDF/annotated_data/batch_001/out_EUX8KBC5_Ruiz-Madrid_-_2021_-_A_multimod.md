@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_EUX8KBC5_Ruiz-Madrid_-_2021_-_A_multimod.md

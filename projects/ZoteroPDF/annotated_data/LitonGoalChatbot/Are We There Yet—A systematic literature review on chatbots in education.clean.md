@@ -18,6 +18,8 @@ key_findings:
   potential of chatbots for mentoring students, and 3. Exploring and leveraging adaptation
   capabilities of chatbots.'
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - We address five research questions that, together, allow us to explore the current

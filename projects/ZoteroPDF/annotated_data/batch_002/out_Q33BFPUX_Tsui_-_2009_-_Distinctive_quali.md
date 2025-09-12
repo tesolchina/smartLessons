@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.37
+pedagogical_implications: true
 publication_year: 2009
 research_questions: []
 source_file: out_Q33BFPUX_Tsui_-_2009_-_Distinctive_quali.md

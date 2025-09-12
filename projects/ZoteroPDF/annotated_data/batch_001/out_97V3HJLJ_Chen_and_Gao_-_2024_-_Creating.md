@@ -14,6 +14,8 @@ key_findings:
   better practice
 - Online community peer feedback practice could help students find their own voices
 methodology: qualitative
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do learners practice and perceive community-based feedback giving in academic

@@ -14,6 +14,8 @@ key_findings:
   by encouraging good interactions with students and allow learners to be more engaged
   and achieve better academic objectives
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: The impact of educatinoal chatbot on student learning experience.clean.md

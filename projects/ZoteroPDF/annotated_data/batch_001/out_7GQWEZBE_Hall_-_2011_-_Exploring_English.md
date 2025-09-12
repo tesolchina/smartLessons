@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_7GQWEZBE_Hall_-_2011_-_Exploring_English.md

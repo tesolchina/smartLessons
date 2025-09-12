@@ -13,6 +13,8 @@ key_findings:
 - Students taught using the PYCTO multilingual methodology significantly outperformed
   those taught with the traditional monolingual approach in both 1st and 2nd grades.
 methodology: quantitative
+pedagogical_confidence: 0.41
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do multilingual teaching methods compare to traditional monolingual approaches

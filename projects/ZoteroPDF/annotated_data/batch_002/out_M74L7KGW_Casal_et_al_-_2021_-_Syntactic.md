@@ -15,6 +15,8 @@ key_findings:
 - Important disciplinary and part-genre based differences in the use of syntactically
   complex structures
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_M74L7KGW_Casal_et_al_-_2021_-_Syntactic.md

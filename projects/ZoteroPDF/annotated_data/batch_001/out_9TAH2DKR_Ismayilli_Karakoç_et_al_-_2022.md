@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.43
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_9TAH2DKR_Ismayilli_Karakoç_et_al_-_2022.md

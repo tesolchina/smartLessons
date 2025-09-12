@@ -13,6 +13,8 @@ key_findings:
   dynamics
 - There are concerns around pace and user experience
 methodology: mixed
+pedagogical_confidence: 0.91
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How might the use of Google Classroom influence future pedagogies at the tertiary

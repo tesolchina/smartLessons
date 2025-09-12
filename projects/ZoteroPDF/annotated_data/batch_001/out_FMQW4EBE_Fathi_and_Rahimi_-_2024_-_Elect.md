@@ -12,6 +12,8 @@ key_findings:
 - Electronic writing portfolio instruction developed EFL students' writing performance
 - Electronic writing portfolio group outperformed conventional writing portfolio group
 methodology: mixed
+pedagogical_confidence: 0.49
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_FMQW4EBE_Fathi_and_Rahimi_-_2024_-_Elect.md

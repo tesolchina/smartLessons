@@ -19,6 +19,8 @@ key_findings:
 - There is a lack of ready-made materials for teaching specialized English and a need
   for more institutional guidance and support for EHE teachers
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_KPTXXYZZ_Gozdawa-Gołębiowski_et_al_-_202.md

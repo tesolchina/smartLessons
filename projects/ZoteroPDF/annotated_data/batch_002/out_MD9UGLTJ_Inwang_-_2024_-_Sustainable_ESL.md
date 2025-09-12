@@ -13,6 +13,8 @@ key_findings:
   are accessible and practicable for experienced ESL teachers in comparable contexts
   across both sub-Saharan Africa and the wider Global South.
 methodology: qualitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_MD9UGLTJ_Inwang_-_2024_-_Sustainable_ESL.md

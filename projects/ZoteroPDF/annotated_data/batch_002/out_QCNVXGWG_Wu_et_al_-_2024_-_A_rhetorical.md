@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.38
+pedagogical_implications: true
 publication_year: 2023
 research_questions: []
 source_file: out_QCNVXGWG_Wu_et_al_-_2024_-_A_rhetorical.md

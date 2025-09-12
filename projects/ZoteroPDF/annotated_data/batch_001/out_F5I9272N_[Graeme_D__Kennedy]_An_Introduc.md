@@ -9,6 +9,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_F5I9272N_[Graeme_D__Kennedy]_An_Introduc.md

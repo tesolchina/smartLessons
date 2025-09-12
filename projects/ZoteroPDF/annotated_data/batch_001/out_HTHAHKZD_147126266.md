@@ -11,6 +11,8 @@ key_findings:
 - Overall, there has been a continual decline in average reading ability of college-aged
   students. Reading is a basic skill for learning and academic success.
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2006
 research_questions:
 - What is the relationship between reading comprehension skills as measured by the

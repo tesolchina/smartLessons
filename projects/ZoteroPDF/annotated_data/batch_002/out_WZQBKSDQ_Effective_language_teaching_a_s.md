@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2011
 research_questions: []
 source_file: out_WZQBKSDQ_Effective_language_teaching_a_s.md

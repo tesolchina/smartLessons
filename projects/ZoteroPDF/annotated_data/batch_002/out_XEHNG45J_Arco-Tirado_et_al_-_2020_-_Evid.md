@@ -14,6 +14,8 @@ key_findings:
   of the experimental group in the total academic course, as well as in the fall and
   spring semesters.
 methodology: quantitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: 2020
 research_questions:
 - What is the impact of a peer-tutoring program on academic performance among first-year

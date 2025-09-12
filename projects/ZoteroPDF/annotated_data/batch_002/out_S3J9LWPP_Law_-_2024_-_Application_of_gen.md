@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.65
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_S3J9LWPP_Law_-_2024_-_Application_of_gen.md

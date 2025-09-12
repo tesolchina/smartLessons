@@ -12,6 +12,8 @@ key_findings:
   variety, i.e. standard Turkish, and that acquiring this variety would make them
   become more prestigious.
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How are the relationships between standard and non-standard varieties of the Turkish

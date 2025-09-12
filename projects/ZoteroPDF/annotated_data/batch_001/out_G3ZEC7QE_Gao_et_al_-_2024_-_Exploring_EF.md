@@ -19,6 +19,8 @@ key_findings:
 - No significant correlation was observed between university teachers' beliefs in
   integrating LLMs in language education.
 methodology: quantitative
+pedagogical_confidence: 0.72
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_G3ZEC7QE_Gao_et_al_-_2024_-_Exploring_EF.md

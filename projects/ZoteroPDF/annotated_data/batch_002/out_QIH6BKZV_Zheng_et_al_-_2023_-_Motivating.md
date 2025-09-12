@@ -15,6 +15,8 @@ key_findings:
   peers, tasks, and examinations all play an important role in motivating or demotivating
   students.
 methodology: qualitative
+pedagogical_confidence: 0.73
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - Can the implementation of CLIL pedagogy be as effective and motivating in a program

@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.5
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_WA7QANFB_Tai_-_2024_-_A_Translanguaging.md

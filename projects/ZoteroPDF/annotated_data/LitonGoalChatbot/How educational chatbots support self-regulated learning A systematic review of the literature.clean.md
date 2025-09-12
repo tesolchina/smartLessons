@@ -17,6 +17,8 @@ key_findings:
   confirming the potential of this technology to support SRL
 - In some studies the chatbot interventions showed non-significant and mixed effects
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - Whether and how educational chatbots developed so far have (1) promoted learning

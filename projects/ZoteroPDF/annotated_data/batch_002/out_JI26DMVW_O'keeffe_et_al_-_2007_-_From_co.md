@@ -9,6 +9,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2007
 research_questions: []
 source_file: out_JI26DMVW_O'keeffe_et_al_-_2007_-_From_co.md

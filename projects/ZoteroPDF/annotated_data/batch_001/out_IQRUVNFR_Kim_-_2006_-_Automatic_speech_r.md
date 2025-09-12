@@ -12,6 +12,8 @@ key_findings:
   that ASR technology is still not as accurate as human analysis, the software may
   be very useful for student practice with aspects of pronunciation.
 methodology: quantitative
+pedagogical_confidence: 0.35
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_IQRUVNFR_Kim_-_2006_-_Automatic_speech_r.md

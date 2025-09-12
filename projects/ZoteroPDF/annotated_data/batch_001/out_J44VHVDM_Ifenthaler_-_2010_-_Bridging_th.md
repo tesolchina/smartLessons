@@ -13,6 +13,8 @@ key_findings:
 - The form of the automatically created model-based feedback did not influence the
   type of representation
 methodology: quantitative
+pedagogical_confidence: 0.37
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_J44VHVDM_Ifenthaler_-_2010_-_Bridging_th.md

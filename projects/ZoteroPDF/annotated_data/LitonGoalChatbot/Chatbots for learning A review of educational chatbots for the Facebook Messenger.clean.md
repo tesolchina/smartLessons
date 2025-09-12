@@ -14,6 +14,8 @@ key_findings:
 - The findings provide tips for teachers to integrate chatbots into classroom practice
   and advice what types of chatbots they can try out
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: Chatbots for learning A review of educational chatbots for the Facebook

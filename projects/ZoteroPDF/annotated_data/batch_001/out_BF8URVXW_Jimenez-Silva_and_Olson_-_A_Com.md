@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_BF8URVXW_Jimenez-Silva_and_Olson_-_A_Com.md

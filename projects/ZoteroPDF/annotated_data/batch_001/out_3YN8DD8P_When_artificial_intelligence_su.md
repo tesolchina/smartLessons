@@ -15,6 +15,8 @@ key_findings:
   performance, when social support, psychological wellbeing, loneliness, and sense
   of belonging are considered it has a net negative effect on achievement.
 methodology: quantitative
+pedagogical_confidence: 0.78
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - There may be unintended consequences beyond these concerns for students. That is,

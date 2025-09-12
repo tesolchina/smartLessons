@@ -11,6 +11,8 @@ key_findings:
 - Children internalize English through conversational interactions with the teachers
   while carrying out activities designed to improve the four skills
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 2007
 research_questions: []
 source_file: out_V2EM6PXK_Fleta_-_2007_-_The_role_of_inte.md

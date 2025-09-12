@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.46
+pedagogical_implications: true
 publication_year: 2023
 research_questions: []
 source_file: out_CAZW3CLV_Chan_-_2024_-_Strengthening_the.md

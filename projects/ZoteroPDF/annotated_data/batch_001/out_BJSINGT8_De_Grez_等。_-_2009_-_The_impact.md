@@ -11,6 +11,8 @@ key_findings:
   as self-efficacy and goal orientation, next to the topic of the oral presentation
   on the acquisition of oral presentation skills.
 methodology: quantitative
+pedagogical_confidence: 0.76
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_BJSINGT8_De_Grez_等。_-_2009_-_The_impact.md

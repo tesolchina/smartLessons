@@ -15,6 +15,8 @@ key_findings:
   a sense of community, and helping learners reconceptualize the platform are critical
   for enhancing learners' engagement with peer feedback
 methodology: qualitative
+pedagogical_confidence: 0.88
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do language learners engage with written peer feedback on an educational social

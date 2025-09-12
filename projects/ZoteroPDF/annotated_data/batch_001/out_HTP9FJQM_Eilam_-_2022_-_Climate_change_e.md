@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2022
 research_questions: []
 source_file: out_HTP9FJQM_Eilam_-_2022_-_Climate_change_e.md

@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_3IUZHB5J_Biber_-_2006_-_Stance_in_spoken.md

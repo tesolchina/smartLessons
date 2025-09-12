@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: 2007
 research_questions: []
 source_file: out_GPQ4Q5V8_Gilquin_et_al_-_2007_-_Learner.md

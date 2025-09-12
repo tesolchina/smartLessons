@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.43
+pedagogical_implications: true
 publication_year: 2020
 research_questions: []
 source_file: out_ELR6F6KD_Cordero_et_al_-_2020_-_The_role.md

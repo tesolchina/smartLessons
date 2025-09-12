@@ -14,6 +14,8 @@ key_findings:
 - The examination of intersemiotic relations reveals how speech and visuals interplay
   effectively to transmit meaning and engage the audience
 methodology: qualitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_RAW4BBJK_Beltrán-Palanques_and_Querol-Ju.md

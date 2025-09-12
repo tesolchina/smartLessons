@@ -15,6 +15,8 @@ key_findings:
 - A significant correlation was identified between students' English proficiency and
   the coherence/cohesion dimension in their written texts
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How does task-based language teaching influence pragmatic dimensions in Chinese

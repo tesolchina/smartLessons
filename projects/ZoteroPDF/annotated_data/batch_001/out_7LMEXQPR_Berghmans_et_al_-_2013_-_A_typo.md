@@ -14,6 +14,8 @@ key_findings:
 - Results showed that peer tutors used a variety of strategies but were mainly inclined
   to adopt answering and direct strategies.
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 2012
 research_questions:
 - This study aims to explore a typology of approaches to peer tutoring by unraveling

@@ -13,6 +13,8 @@ key_findings:
 - Positive feedback given in the form of emojis generated a positive/approach emotion
   in EFL learners
 methodology: quantitative
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How does emoji feedback affect the learning effectiveness of EFL learners?

@@ -16,6 +16,8 @@ key_findings:
 - Some evidence of PSTs' autonomy in investigating, analyzing, and reflecting on pragmatic
   issues, offering a promising approach to enhancing teacher training in pragmatics
 methodology: mixed
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Whether a data-driven learning approach in a telecollaborative setting can effectively

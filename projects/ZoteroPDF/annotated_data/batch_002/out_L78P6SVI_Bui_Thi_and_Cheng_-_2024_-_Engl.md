@@ -14,6 +14,8 @@ key_findings:
   expected an ESP course prioritizing speaking and listening skills to mitigate the
   lack of exposure to English due to the COVID-19 pandemic.
 methodology: mixed
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the English language needs and problems encountered by F&B staff at a 5-star

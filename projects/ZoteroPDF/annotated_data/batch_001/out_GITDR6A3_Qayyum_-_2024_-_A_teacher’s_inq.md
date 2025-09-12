@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_GITDR6A3_Qayyum_-_2024_-_A_teacher’s_inq.md

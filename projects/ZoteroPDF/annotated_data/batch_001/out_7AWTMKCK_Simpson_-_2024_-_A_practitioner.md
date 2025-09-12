@@ -12,6 +12,8 @@ key_findings:
   for professional development, tailored courses, and transferability to other ESP
   genres
 methodology: qualitative
+pedagogical_confidence: 0.45
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_7AWTMKCK_Simpson_-_2024_-_A_practitioner.md

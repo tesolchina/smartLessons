@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.41
+pedagogical_implications: true
 publication_year: 2020
 research_questions:
 - To analyze the self-perception of future teachers of childhood education and primary

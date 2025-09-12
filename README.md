@@ -1,4 +1,5 @@
-# Daily Assistant
+# Daily Assistant  
+[![CI](https://github.com/tesolchina/DailyAssistant/actions/workflows/ci.yml/badge.svg)](https://github.com/tesolchina/DailyAssistant/actions/workflows/ci.yml) ![Coverage](https://img.shields.io/badge/coverage-pending-lightgrey) ![Lint](https://img.shields.io/badge/lint-ruff-informational)
 
 **Purpose**: AI-powered daily task automation with clean operational structure
 
@@ -37,3 +38,27 @@
 
 ## Usage:
 Copy entire `3_dailyAssistant/` folder to any project for instant AI assistance capabilities.
+
+## 🧪 Testing
+This repository now includes initial automated tests (pytest) for the ZoteroPDF RAG components.
+
+Install dependencies (ensure environment active):
+```bash
+pip install -e .
+```
+
+Run all tests:
+```bash
+pytest -q
+```
+
+Run a specific test:
+```bash
+pytest tests/test_index.py::test_index_creation_and_search -q
+```
+
+Notes:
+- Tests generate synthetic annotated markdown docs (no external data required).
+- FAISS in-memory index built per test session.
+- No network calls to OpenRouter (LLM) are performed; generation is mocked where needed.
+- Future: add evaluation harness + regression query suite.

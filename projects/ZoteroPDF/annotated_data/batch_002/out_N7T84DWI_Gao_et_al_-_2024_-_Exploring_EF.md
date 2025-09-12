@@ -16,6 +16,8 @@ key_findings:
 - Previous experiences with large language models, frequency of use, and self-evaluation
   on stages of integration play vital roles in shaping teachers' beliefs
 methodology: quantitative
+pedagogical_confidence: 0.72
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the beliefs of EFL university teachers in China regarding the integration

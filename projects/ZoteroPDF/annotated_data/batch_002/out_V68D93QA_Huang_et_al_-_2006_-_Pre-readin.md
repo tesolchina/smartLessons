@@ -13,6 +13,8 @@ key_findings:
 - Students disliking Case Study had lower general academic motivation and EFL reading
   comprehension than those disliking Self-Appraisal
 methodology: quantitative
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 2006
 research_questions:
 - Do students with different preferences for pre-reading materials differ in motivational

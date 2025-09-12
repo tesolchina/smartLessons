@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.54
+pedagogical_implications: true
 publication_year: 2023
 research_questions: []
 source_file: out_SW5IG35M_Farrokhnia_et_al_-_2023_-_A_SWO.md

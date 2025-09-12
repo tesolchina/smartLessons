@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.47
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_3JKLUWQN_Yang_et_al_-_2021_-_Human-cente.md

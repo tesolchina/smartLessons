@@ -20,6 +20,8 @@ key_findings:
 - students who highly perceived the system's usefulness for goal-setting exhibited
   significantly gr
 methodology: quantitative
+pedagogical_confidence: 0.81
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: LLM based chatbot+ goals 重要Towards a large-language-model-based chatbot

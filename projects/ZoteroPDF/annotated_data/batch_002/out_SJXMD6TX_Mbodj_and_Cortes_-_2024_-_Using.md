@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_SJXMD6TX_Mbodj_and_Cortes_-_2024_-_Using.md

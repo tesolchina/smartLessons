@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_9XG3ER5R_Farren_-_2019_-_‘Transformative.md

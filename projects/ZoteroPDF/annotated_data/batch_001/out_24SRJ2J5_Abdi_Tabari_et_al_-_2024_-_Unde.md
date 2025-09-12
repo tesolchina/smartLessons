@@ -17,6 +17,8 @@ key_findings:
   varying patterns and magnitudes of CALF growth, but no specific sequence was found
   to be superior overall.
 methodology: quantitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - This study aimed to explore the impact of task sequencing on the development of

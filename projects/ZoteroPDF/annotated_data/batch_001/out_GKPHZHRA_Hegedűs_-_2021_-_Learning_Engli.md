@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_GKPHZHRA_Hegedűs_-_2021_-_Learning_Engli.md

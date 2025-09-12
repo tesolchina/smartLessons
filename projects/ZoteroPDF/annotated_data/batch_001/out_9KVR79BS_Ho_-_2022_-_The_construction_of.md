@@ -18,6 +18,8 @@ key_findings:
   genre norms and conventions as well as the distinction between knowledge inside
   and outside of the classroom
 methodology: qualitative
+pedagogical_confidence: 0.89
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_9KVR79BS_Ho_-_2022_-_The_construction_of.md

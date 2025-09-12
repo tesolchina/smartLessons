@@ -15,6 +15,8 @@ key_findings:
 - Participants in the mentoring program performed better in their studies than students
   who did not participate in terms of average grade and number of courses passed.
 methodology: quantitative
+pedagogical_confidence: 0.55
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - Is any mentoring style better than no mentoring at all?

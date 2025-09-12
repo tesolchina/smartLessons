@@ -15,6 +15,8 @@ key_findings:
 - Students exhibit a spectrum of perspectives on the impact of generative AI on their
   learning
 methodology: qualitative
+pedagogical_confidence: 0.6
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do students use generative AI in their learning?

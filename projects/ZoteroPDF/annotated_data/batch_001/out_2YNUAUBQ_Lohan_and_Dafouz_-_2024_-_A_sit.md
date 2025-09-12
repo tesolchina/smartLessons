@@ -19,6 +19,8 @@ key_findings:
   of the language of instruction, underscores their crucial role in this private business
   university
 methodology: qualitative
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_2YNUAUBQ_Lohan_and_Dafouz_-_2024_-_A_sit.md

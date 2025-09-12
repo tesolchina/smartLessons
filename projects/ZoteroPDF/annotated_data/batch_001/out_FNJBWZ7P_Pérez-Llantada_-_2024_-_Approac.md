@@ -15,6 +15,8 @@ key_findings:
   content to reach broad audiences, but L1 transfer could negatively influence digital
   genre composing
 methodology: qualitative
+pedagogical_confidence: 0.45
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_FNJBWZ7P_Pérez-Llantada_-_2024_-_Approac.md

@@ -19,6 +19,8 @@ key_findings:
 - The greatest need for scaffolding of cognitive presence occurs in the final phase
   of the course
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2017
 research_questions:
 - What scaffolding strategies are needed to design online tutoring?

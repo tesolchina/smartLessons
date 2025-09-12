@@ -16,6 +16,8 @@ key_findings:
   achievements, communication skills, responsibilities, patience, empathy, sympathy,
   and strengthened their social skills both for tutors and tutees.
 methodology: qualitative
+pedagogical_confidence: 0.64
+pedagogical_implications: true
 publication_year: 2020
 research_questions:
 - This study attempts to investigate the use of peer tutoring and assess the effectiveness

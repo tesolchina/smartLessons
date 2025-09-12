@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.71
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do task complexity (operationalised as pre-task planning time and intentional

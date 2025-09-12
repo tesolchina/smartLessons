@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_THKSZ8D4_Oltra-Massuet_-_2018_-_Organizi.md

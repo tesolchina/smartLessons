@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: 2000
 research_questions: []
 source_file: out_8U97K24N_[John_Read]_Assessing_Vocabular.md

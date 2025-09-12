@@ -16,6 +16,8 @@ key_findings:
 - Bilingual academic language proficiency involves the translation of meaning systems,
   not just labels.
 methodology: qualitative
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: 2002
 research_questions:
 - How do Chinese immigrant students perceive the goals of L2 development, L1 maintenance,

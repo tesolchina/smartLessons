@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: 2023
 research_questions: []
 source_file: out_3FPBG2JY_Mollick_and_Mollick_-_2023_-_As.md

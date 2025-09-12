@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.45
+pedagogical_implications: true
 publication_year: 2020
 research_questions:
 - Investigating the Iranian EFL learners' attitudes towards the implementation of

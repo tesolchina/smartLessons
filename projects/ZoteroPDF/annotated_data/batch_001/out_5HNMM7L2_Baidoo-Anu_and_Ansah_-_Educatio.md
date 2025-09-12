@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_5HNMM7L2_Baidoo-Anu_and_Ansah_-_Educatio.md

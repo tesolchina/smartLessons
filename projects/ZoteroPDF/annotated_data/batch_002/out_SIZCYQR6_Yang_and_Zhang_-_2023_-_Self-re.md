@@ -14,6 +14,8 @@ key_findings:
 - Skilled and less-skilled self-regulators displayed different degrees of engagement
   across cognitive, behavioural and affective dimensions
 methodology: qualitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_SIZCYQR6_Yang_and_Zhang_-_2023_-_Self-re.md

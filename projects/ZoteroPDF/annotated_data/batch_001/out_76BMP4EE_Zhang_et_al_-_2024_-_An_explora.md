@@ -15,6 +15,8 @@ key_findings:
 - The patterns of chat between students and the teacher were somewhat different from
   those observed among students
 methodology: quantitative
+pedagogical_confidence: 0.63
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do the functions of text-chat interaction in an SCMC setting change over time?

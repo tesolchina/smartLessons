@@ -14,6 +14,8 @@ key_findings:
 - Concerns about accuracy, privacy, ethical issues, and the impact on personal development,
   career prospects, and societal values were also expressed
 methodology: quantitative
+pedagogical_confidence: 0.68
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - University students' perceptions of generative AI technologies, such as ChatGPT,

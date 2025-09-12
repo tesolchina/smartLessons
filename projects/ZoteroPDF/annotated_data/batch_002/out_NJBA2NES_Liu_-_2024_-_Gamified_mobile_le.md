@@ -15,6 +15,8 @@ key_findings:
   Take Action and Group Organization dimensions when compared with the Collaborative
   Learning Group.
 methodology: quantitative
+pedagogical_confidence: 0.51
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - This study developed a realistic, interactive English blockade-running game that

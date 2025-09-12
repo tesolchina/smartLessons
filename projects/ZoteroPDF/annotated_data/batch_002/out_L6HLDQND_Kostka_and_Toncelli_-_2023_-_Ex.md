@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.41
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_L6HLDQND_Kostka_and_Toncelli_-_2023_-_Ex.md

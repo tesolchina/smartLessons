@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_UFH5STSN_Liddicoat_and_Scarino_-_2013_-.md

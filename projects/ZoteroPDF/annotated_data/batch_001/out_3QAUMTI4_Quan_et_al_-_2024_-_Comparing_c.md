@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.62
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Whether the PIC method has any advantages over the traditional KWIC method

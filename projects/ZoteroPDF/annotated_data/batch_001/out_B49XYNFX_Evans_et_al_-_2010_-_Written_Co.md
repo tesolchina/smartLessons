@@ -13,6 +13,8 @@ key_findings:
 - WCF is commonly practiced in L2 pedagogy by experienced and well-educated L2 practitioners
   for sound pedagogical reasons.
 methodology: quantitative
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - To what extent do current L2 writing teachers provide WCF?

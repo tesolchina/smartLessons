@@ -9,6 +9,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2002
 research_questions: []
 source_file: out_WEL8NKJ8_Flowerdew_-_2002_-_Academic_dis.md

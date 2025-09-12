@@ -13,6 +13,8 @@ key_findings:
 - Among the six types of motivational beliefs, growth mindset was the strongest predictor
   of perceived actual classroom technology use practices
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_C844B3RV_Gan_et_al_-_2024_-_Pre-service.md

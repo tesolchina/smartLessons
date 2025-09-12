@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.88
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_RHPU325A_Liu_and_Chen_-_2022_-_A_phraseo.md

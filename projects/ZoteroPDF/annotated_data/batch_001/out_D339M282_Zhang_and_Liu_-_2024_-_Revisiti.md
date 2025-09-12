@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.63
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_D339M282_Zhang_and_Liu_-_2024_-_Revisiti.md

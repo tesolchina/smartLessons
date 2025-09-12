@@ -175,9 +175,14 @@ class AcademicIndexer:
         # Save FAISS index
         faiss.write_index(self.index, str(index_dir / "faiss.index"))
         
-        # Save embeddings model
+        # Save embeddings model - store as dict to avoid pickle class reference issues
+        model_data = {
+            'vocabulary': self.embeddings_model.vocabulary,
+            'idf_weights': self.embeddings_model.idf_weights,
+            'doc_count': self.embeddings_model.doc_count
+        }
         with open(index_dir / "embeddings_model.pkl", 'wb') as f:
-            pickle.dump(self.embeddings_model, f)
+            pickle.dump(model_data, f)
         
         # Save document metadata
         with open(index_dir / "documents.json", 'w') as f:
@@ -193,9 +198,20 @@ class AcademicIndexer:
             # Load FAISS index
             self.index = faiss.read_index(str(index_dir / "faiss.index"))
             
-            # Load embeddings model
+            # Load embeddings model data and reconstruct
             with open(index_dir / "embeddings_model.pkl", 'rb') as f:
-                self.embeddings_model = pickle.load(f)
+                model_data = pickle.load(f)
+            
+            # Reconstruct the embeddings model
+            self.embeddings_model = SimpleEmbedding()
+            if isinstance(model_data, dict):
+                # New format - load from dict
+                self.embeddings_model.vocabulary = model_data['vocabulary']
+                self.embeddings_model.idf_weights = model_data['idf_weights']
+                self.embeddings_model.doc_count = model_data.get('doc_count', 0)
+            else:
+                # Old format - try to use the pickled object directly
+                self.embeddings_model = model_data
             
             # Load document metadata
             with open(index_dir / "documents.json", 'r') as f:

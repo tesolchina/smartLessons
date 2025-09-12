@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.74
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_DRYF3FMA_Fu_et_al_-_2024_-_A_review_of_A.md

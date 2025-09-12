@@ -13,6 +13,8 @@ key_findings:
 - The dominant determinant of use behavior was behavioral intention, followed by personal
   innovativeness.
 methodology: quantitative
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: 2023
 research_questions:
 - What are the predictors of adoption and use of ChatGPT among higher education students?

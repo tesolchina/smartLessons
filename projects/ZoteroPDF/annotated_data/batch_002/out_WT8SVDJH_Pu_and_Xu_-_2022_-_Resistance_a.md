@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_WT8SVDJH_Pu_and_Xu_-_2022_-_Resistance_a.md

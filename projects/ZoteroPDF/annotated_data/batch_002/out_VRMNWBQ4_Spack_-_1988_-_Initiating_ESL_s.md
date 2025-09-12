@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.75
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_VRMNWBQ4_Spack_-_1988_-_Initiating_ESL_s.md

@@ -15,6 +15,8 @@ key_findings:
   mostly linguistic features associated with 'personalized framing' elements
 - Patterns of variation are also present across levels of instruction
 methodology: quantitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: 2007
 research_questions:
 - How do teachers talk differently from students in general?

@@ -15,6 +15,8 @@ key_findings:
 - Explaining materials to other students provided a deeper cognitive process resulting
   in deeper learning
 methodology: qualitative
+pedagogical_confidence: 0.61
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_X4SKHIJD_Davari_Torshizi_and_Bahraman_-.md

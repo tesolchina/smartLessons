@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.41
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - To what extent EFL students perceived a VCA as a human-like language partner and

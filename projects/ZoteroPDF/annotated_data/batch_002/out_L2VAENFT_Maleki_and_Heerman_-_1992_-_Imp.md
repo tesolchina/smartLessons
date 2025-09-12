@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: 1992
 research_questions: []
 source_file: out_L2VAENFT_Maleki_and_Heerman_-_1992_-_Imp.md

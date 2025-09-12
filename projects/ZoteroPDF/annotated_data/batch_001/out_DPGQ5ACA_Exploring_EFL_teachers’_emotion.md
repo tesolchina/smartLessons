@@ -15,6 +15,8 @@ key_findings:
 - Teachers' social connections and professional backgrounds significantly influence
   this emotional interplay
 methodology: qualitative
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How do EFL teachers' emotional experiences and adaptive expertise develop in the

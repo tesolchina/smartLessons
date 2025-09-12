@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 2008
 research_questions: []
 source_file: out_R79X7LTI_Morgan_-_2009_-_Fostering_trans.md

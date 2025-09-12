@@ -9,6 +9,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.39
+pedagogical_implications: true
 publication_year: 1993
 research_questions: []
 source_file: out_WPJAQBST_Bathia_-_1993_-_Analysing_Genre.md

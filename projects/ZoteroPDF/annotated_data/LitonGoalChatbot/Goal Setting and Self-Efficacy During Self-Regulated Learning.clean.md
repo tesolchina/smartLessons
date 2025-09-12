@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: 1990
 research_questions: []
 source_file: Goal Setting and Self-Efficacy During Self-Regulated Learning.clean.md

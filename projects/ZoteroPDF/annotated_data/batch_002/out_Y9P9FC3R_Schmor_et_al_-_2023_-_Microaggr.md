@@ -16,6 +16,8 @@ key_findings:
 - The article proposes a typology of plurilingual microaffirmations and advances the
   trioethnographic method as a critical practice.
 methodology: qualitative
+pedagogical_confidence: 0.53
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How have the authors' lived experiences informed their plurilingual teaching practices?

@@ -12,6 +12,8 @@ has_results: true
 key_findings:
 - Students produced longer texts for DMC tasks compared to traditional writing tasks.
 methodology: quantitative
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - To compare students' linguistic performance on traditional monomodal writing and

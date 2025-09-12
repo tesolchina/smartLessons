@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_ZL4N9BRM_Urmeneta_and_Romero_-_2024_-_Cr.md

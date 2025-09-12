@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_UPRGRPB8_Picavet_et_al_-_2023_-_Storytel.md

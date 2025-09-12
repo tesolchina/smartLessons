@@ -14,6 +14,8 @@ key_findings:
 - Doctoral students engage in iterative, highly interactive processes with the GAI-powered
   assisting tool during academic writing
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the strategies doctoral students employ when collaborating with a GAI-powered

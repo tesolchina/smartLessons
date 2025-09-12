@@ -12,6 +12,8 @@ key_findings:
   for pronunciation, speaking, motivation, vocabulary, and reading, as well as technological
   affordances such as ease of use and accessibility.
 methodology: qualitative
+pedagogical_confidence: 0.58
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the perceived learning outcomes of WhatsApp-supported pedagogy in large

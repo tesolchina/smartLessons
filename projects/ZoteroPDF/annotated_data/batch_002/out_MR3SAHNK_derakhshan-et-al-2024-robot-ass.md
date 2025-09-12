@@ -17,6 +17,8 @@ key_findings:
 - The moderating effect of the participants' age was significant as RALL was found
   to be more effective for elementary school students (7-12 years old).
 methodology: quantitative
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_MR3SAHNK_derakhshan-et-al-2024-robot-ass.md

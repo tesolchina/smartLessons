@@ -30,6 +30,8 @@ class AcademicRAG:
             model: OpenRouter model to use for generation
         """
         self.model = model
+        self.temperature = 0.3
+        self.max_tokens = 1500
         self.indexer = AcademicIndexer()
         self.indexer.load_index(index_dir)
         
@@ -87,70 +89,68 @@ Content: {content_preview}
         
         return "\n".join(sources)
     
-    def query(self, question: str, top_k: int = 3, min_score: float = 0.1) -> Dict[str, Any]:
-        """
-        Query the RAG system
+    def query(self, question: str, top_k: int = 3, filter_pedagogical: bool = False) -> dict:
+        """Query the RAG system with optional pedagogical filtering"""
+        results = self.indexer.search(question, k=top_k)
         
-        Args:
-            question: User's question
-            top_k: Number of documents to retrieve
-            min_score: Minimum relevance score
+        # Apply pedagogical filter if requested
+        if filter_pedagogical:
+            filtered_results = []
+            for result in results:
+                # Check if document has pedagogical implications flag
+                metadata = result["document"]["metadata"]
+                if metadata.get('pedagogical_implications', False):
+                    filtered_results.append(result)
             
-        Returns:
-            Dict with answer, sources, and metadata
-        """
-        logger.info(f"Processing query: {question}")
+            # Use filtered results if we have enough, otherwise fall back to all
+            if len(filtered_results) >= 2:
+                results = filtered_results[:top_k]
         
-        # Step 1: Retrieve relevant documents
-        search_results = self.indexer.search(question, k=top_k, min_score=min_score)
+        # Format context
+        context = "\n\n".join([
+            f"[Source {i+1}] {result['document']['metadata']['title']} (Score: {result['score']:.3f})\n{result['document']['content']}"
+            for i, result in enumerate(results)
+        ])
         
-        if not search_results:
-            return {
-                "answer": "I couldn't find relevant academic sources to answer your question. Please try rephrasing your query or using different keywords.",
-                "sources": [],
-                "query": question,
-                "model_used": self.model
-            }
+        # Create prompt with pedagogical emphasis if filtered
+        base_prompt = """You are an expert academic research assistant. Based on the provided academic sources, answer the user's question with scholarly rigor.
+
+Instructions:
+1. Provide a comprehensive answer based on the sources
+2. Cite specific papers when referencing findings  
+3. If multiple perspectives exist, present them fairly
+4. Mention if the sources are insufficient to fully answer the question
+5. Use academic language appropriate for research"""
         
-        logger.info(f"Found {len(search_results)} relevant documents")
+        if filter_pedagogical and any(r["document"]["metadata"].get('pedagogical_implications') for r in results):
+            base_prompt += "\n\nIMPORTANT: Focus on pedagogical implications and practical applications for teaching."
         
-        # Step 2: Format sources
-        formatted_sources = self.format_sources(search_results)
-        
-        # Step 3: Generate answer using LLM
-        prompt = self.rag_prompt_template.format(
-            sources=formatted_sources,
-            question=question
-        )
-        
+        prompt = f"""{base_prompt}\n        \nContext from academic papers:\n{context}\n\nQuestion: {question}\n\nPlease provide a comprehensive answer based on the retrieved academic sources."""
+
         try:
             payload = {
                 "model": self.model,
                 "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.3,  # Slightly creative but focused
-                "max_tokens": 1000
+                "temperature": self.temperature,
+                "max_tokens": self.max_tokens
             }
             
             response = post_chat_completions(payload)
-            answer = response["choices"][0]["message"]["content"].strip()
-            
-            logger.info("✅ Generated response successfully")
             
             return {
-                "answer": answer,
-                "sources": search_results,
-                "query": question,
-                "model_used": self.model,
-                "source_count": len(search_results)
+                "question": question,
+                "answer": response["choices"][0]["message"]["content"],
+                "sources": self.format_sources(results),
+                "num_sources": len(results),
+                "pedagogical_filtered": filter_pedagogical
             }
-            
         except Exception as e:
-            logger.error(f"Failed to generate answer: {e}")
             return {
-                "answer": f"I found relevant sources but encountered an error generating the response: {e}",
-                "sources": search_results,
-                "query": question,
-                "model_used": self.model
+                "question": question,
+                "answer": f"Error generating response: {str(e)}",
+                "sources": self.format_sources(results),
+                "num_sources": len(results),
+                "pedagogical_filtered": filter_pedagogical
             }
     
     def interactive_query(self):

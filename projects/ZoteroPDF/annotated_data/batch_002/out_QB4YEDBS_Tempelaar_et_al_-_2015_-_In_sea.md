@@ -16,6 +16,8 @@ key_findings:
 - If timely feedback is crucial, both use-intensity related track data from e-tutorial
   systems, and learning dispositions, are valuable sources for feedback generation.
 methodology: empirical
+pedagogical_confidence: 0.78
+pedagogical_implications: true
 publication_year: 2014
 research_questions:
 - What is the predictive power of learning dispositions, outcomes of continuous formative

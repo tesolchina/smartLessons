@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.49
+pedagogical_implications: true
 publication_year: 2006
 research_questions: []
 source_file: out_LFLUKEFM_Halleck_and_Connor_-_2006_-_Rhe.md

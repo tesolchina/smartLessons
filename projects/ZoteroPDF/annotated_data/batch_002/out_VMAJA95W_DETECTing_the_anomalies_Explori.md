@@ -12,6 +12,8 @@ key_findings:
 - Using DETECT improved students' confidence in analyzing human-written and AI-generated
   texts, which enhanced their recognition and appreciation of their own writing voice
 methodology: qualitative
+pedagogical_confidence: 0.53
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - (1) explore the nuances that differentiate human expression from the algorithmic

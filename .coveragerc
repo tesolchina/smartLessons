@@ -1,0 +1,8 @@
+[run]
+branch = True
+source = projects/ZoteroPDF/scripts, projects/ZoteroPDF/openRouterAI
+omit = */__init__.py, */tests/*
+
+[report]
+skip_empty = True
+show_missing = True

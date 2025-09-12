@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.79
+pedagogical_implications: true
 publication_year: 2005
 research_questions: []
 source_file: out_XAY7IZRE_Boud_and_Lee_-_2005_-_‘Peer_lea.md

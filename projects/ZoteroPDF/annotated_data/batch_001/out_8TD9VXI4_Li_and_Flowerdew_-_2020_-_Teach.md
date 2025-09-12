@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2020
 research_questions:
 - What does the literature tell us about the contexts and pedagogical strategies of

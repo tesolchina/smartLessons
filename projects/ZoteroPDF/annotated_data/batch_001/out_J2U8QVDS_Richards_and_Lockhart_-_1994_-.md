@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 1996
 research_questions: []
 source_file: out_J2U8QVDS_Richards_and_Lockhart_-_1994_-.md

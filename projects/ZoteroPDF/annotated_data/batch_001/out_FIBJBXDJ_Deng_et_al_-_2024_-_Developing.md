@@ -14,6 +14,8 @@ key_findings:
 - These two groups of Chinese freshmen developed awareness of text structure, academic
   language, and academic norms in collaborative academic reading
 methodology: qualitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do Chinese first-year university students acquire and develop genre awareness

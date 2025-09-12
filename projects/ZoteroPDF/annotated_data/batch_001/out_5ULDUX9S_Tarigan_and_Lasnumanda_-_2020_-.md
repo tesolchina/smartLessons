@@ -16,6 +16,8 @@ key_findings:
 - EFL learners suffered from self-regulation learning strategy and it relates to teaching
   pedagogy
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_5ULDUX9S_Tarigan_and_Lasnumanda_-_2020_-.md

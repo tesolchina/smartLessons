@@ -15,6 +15,8 @@ key_findings:
 - 'Two topics directly linked to educational implications: demands for changes in
   learning and assessment methods, and the use of GenAI in higher education'
 methodology: quantitative
+pedagogical_confidence: 0.39
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the public sentiments towards GenAI and education?

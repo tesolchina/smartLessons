@@ -18,6 +18,8 @@ key_findings:
   their English academic writing skills, but held mixed opinions about the enjoyment
   of collaborating on the platform
 methodology: mixed
+pedagogical_confidence: 0.56
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_4R4GIGKW_Hoang_and_Hoang_-_2024_-_Enhanc.md

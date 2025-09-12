@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.46
+pedagogical_implications: true
 publication_year: 2018
 research_questions: []
 source_file: out_XAVHPT7T_Bamber_et_al_-_2018_-_(Dis-)_Lo.md

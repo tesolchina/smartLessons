@@ -18,6 +18,8 @@ key_findings:
   language knowledge and skills) and affective (i.e. self-efficacy, motivation, and
   learning attitudes) domains.
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_63W62AT6_Zhang_and_Zou_-_2024_-_Self-reg.md

@@ -12,6 +12,8 @@ key_findings:
   toward thinking that academic conventions are not permanent and unyielding but are
   avenues to develop more effective expression and critical insight.
 methodology: action_research
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_YFN3JAMI_Du_-_2022_-_Adopting_critical-p.md

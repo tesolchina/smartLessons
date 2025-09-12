@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.79
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_SZ3CZGQT_Bowen_and_Watson_-_2024_-_Teach.md

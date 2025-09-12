@@ -14,6 +14,8 @@ key_findings:
   application of genre conventions, enhancing development of rhetorical, formal, and
   procedural aspects of genre knowledge
 methodology: mixed
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: 2017
 research_questions:
 - Whether and how direct corpus uses afforded by RWT impact novice native and non-native

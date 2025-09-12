@@ -12,6 +12,8 @@ key_findings:
   allowing practitioners to conduct robust investigations and contribute to the field
   as equally-valued theorisers and meaning-makers in EAP.
 methodology: qualitative
+pedagogical_confidence: 0.43
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - In what ways might professionals engage in research? How does research aid development?

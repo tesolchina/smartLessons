@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2014
 research_questions: []
 source_file: out_JWZ372QV_Pawlak_et_al_-_2014_-_Classroom.md

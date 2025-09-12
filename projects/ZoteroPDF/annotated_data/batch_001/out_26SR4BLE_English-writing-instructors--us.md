@@ -13,6 +13,8 @@ key_findings:
 - Most instructors reported teaching traditional, monomodal genres, while digital
   multimodal genres were rare
 methodology: mixed
+pedagogical_confidence: 0.9
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - the genre-based theories that inform writing instructors' pedagogies

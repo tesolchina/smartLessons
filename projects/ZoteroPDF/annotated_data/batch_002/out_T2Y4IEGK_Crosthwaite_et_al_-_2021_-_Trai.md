@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_T2Y4IEGK_Crosthwaite_et_al_-_2021_-_Trai.md

@@ -12,6 +12,8 @@ has_results: true
 key_findings:
 - Key finding 1 if clearly stated
 methodology: empirical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Research question 1 if clearly stated

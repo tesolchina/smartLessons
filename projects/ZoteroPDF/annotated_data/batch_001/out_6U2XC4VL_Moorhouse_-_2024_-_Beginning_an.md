@@ -13,6 +13,8 @@ key_findings:
 - Beginning teachers were not ready to use GAI tools in their professional work and
   had little knowledge about them
 methodology: qualitative
+pedagogical_confidence: 0.43
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_6U2XC4VL_Moorhouse_-_2024_-_Beginning_an.md

@@ -15,6 +15,8 @@ key_findings:
 - Chatbot-written suspicion range was 14-23%
 - Patterns of downgrading for student-written texts were identified
 methodology: mixed
+pedagogical_confidence: 0.93
+pedagogical_implications: true
 publication_year: 2023
 research_questions:
 - How do AI chatbots impact university teachers' assessment practices?

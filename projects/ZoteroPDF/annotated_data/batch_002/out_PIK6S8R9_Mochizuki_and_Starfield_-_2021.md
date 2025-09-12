@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_PIK6S8R9_Mochizuki_and_Starfield_-_2021.md

@@ -15,6 +15,8 @@ key_findings:
   1) knowledge of English language; 2) knowledge of corpus technology; 3) pedagogical
   knowledge; 4) contextual knowledge; and 5) learning and practice.'
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_2FJZKLGY_Ma_et_al_-_2024_-_Teacher_paths.md

@@ -9,6 +9,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_5H2VPLSB_Skrabut_-_80_Ways_to_Use_ChatGP.md

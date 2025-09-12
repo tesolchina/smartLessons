@@ -10,6 +10,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_PZ7M8ZIE_Khedkar_and_Nair_-_Transformati.md

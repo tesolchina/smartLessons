@@ -14,6 +14,8 @@ key_findings:
   while delayed feedback produces greater change with tasks involving deliberative
   and effortful processing.
 methodology: quantitative
+pedagogical_confidence: 0.39
+pedagogical_implications: true
 publication_year: 2000
 research_questions: []
 source_file: out_7Y7XPPUZ_King_et_al_2000_Public_speaking.md

@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 2006
 research_questions: []
 source_file: out_TFB66I5X_[Wendy_S__Enelow,_Arnold_G__Bol.md

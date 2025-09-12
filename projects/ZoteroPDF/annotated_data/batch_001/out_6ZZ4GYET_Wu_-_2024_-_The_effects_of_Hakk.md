@@ -16,6 +16,8 @@ key_findings:
   be inferior to that of kindergarteners in the non-immersion program when the initial
   differences in learning interests were controlled
 methodology: quantitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the effects of two types of Hakka-Chinese bilingual programs (immersion

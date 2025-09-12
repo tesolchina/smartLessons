@@ -15,6 +15,8 @@ key_findings:
 - The number of meaning definitions of AVL lemmas and their frequency are positively
   correlated in a non-linear way
 methodology: quantitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What is the relationship between the number of meaning senses of AVL lemmas and

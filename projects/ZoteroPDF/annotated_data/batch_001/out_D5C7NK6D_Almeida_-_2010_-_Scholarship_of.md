@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.66
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_D5C7NK6D_Almeida_-_2010_-_Scholarship_of.md

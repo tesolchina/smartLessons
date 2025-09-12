@@ -16,6 +16,8 @@ key_findings:
 - Model-text awareness, a dimension of cognitive engagement, was moderately associated
   with learners' overall text quality.
 methodology: mixed
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do learners engage with MTFI emotionally, cognitively, and behaviorally, and

@@ -15,6 +15,8 @@ key_findings:
 - The formative assessments offered insights into student learning and allowed them
   to leverage multilingualism in a co-learning environment
 methodology: qualitative
+pedagogical_confidence: 0.7
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How was translanguaging incorporated into formative assessments in a Chinese immersion

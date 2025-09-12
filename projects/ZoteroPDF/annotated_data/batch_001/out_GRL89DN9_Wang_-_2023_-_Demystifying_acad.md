@@ -17,6 +17,8 @@ key_findings:
   genre's intertextual operation, and eventually interpreted the results' potential
   in informing EAP writing pedagogy.
 methodology: qualitative
+pedagogical_confidence: 0.69
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_GRL89DN9_Wang_-_2023_-_Demystifying_acad.md

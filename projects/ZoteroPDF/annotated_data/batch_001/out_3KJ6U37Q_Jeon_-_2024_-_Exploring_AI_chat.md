@@ -11,6 +11,8 @@ key_findings:
 - Qualitative analysis revealed the presence of pedagogical, technological, and social
   affordances of chatbots in the EFL classroom
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do the affordances of chatbots affect psychological aspects in language learners,

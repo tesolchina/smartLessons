@@ -12,6 +12,8 @@ key_findings:
   improved production of the target forms, even though they did not perceive the activities
   as useful for learning language.
 methodology: quantitative
+pedagogical_confidence: 0.38
+pedagogical_implications: true
 publication_year: 2004
 research_questions: []
 source_file: out_F4M9BUSW_McDonough_-_2004_-_Learner-lear.md

@@ -13,6 +13,8 @@ key_findings:
 - Learners' self-reports reveal that many appreciated the approach for enhancing their
   awareness of genre features and of ways to enact criticality
 methodology: quantitative
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_CWILEDPI_Dugartsyrenova_-_2024_-_Facilit.md

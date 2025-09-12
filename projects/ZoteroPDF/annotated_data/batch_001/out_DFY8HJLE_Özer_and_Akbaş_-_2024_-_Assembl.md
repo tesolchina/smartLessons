@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_DFY8HJLE_Özer_and_Akbaş_-_2024_-_Assembl.md

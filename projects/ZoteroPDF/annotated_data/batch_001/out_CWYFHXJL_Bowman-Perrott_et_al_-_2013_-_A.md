@@ -15,6 +15,8 @@ has_results: true
 key_findings:
 - Peer tutoring can produce moderate to large academic benefits
 methodology: quantitative
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: 2013
 research_questions:
 - What are the academic benefits of peer tutoring?

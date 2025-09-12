@@ -15,6 +15,8 @@ key_findings:
   learning through purpose-driven mediation of texts, concepts, and communication
   in the context of law
 methodology: qualitative
+pedagogical_confidence: 0.56
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How does intralinguistic communicative mediation in an English for Specific Purposes

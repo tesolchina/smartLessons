@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.92
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_WMXW6SUW_Bazerman_and_Russell_-_2003_-_W.md

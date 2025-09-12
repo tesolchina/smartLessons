@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_BPLDZL2B_Miller_-_2002_-_Towards_a_model.md

@@ -17,6 +17,8 @@ key_findings:
   supporting various language dimensions including reading, writing, vocabulary, and
   grammar.
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - This study investigates the factors influencing ChatGPT acceptance in self-directed

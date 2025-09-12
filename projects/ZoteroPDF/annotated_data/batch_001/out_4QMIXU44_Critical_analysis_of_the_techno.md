@@ -13,6 +13,8 @@ key_findings:
 - 'The findings revealed four technological affordances: accessibility, personalization,
   automation, and int'
 methodology: systematic_review
+pedagogical_confidence: 0.64
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - to explore the utility and availability from the technological affordances perspective

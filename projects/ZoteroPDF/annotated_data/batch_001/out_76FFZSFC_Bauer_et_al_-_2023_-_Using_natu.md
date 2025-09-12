@@ -16,6 +16,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.75
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_76FFZSFC_Bauer_et_al_-_2023_-_Using_natu.md

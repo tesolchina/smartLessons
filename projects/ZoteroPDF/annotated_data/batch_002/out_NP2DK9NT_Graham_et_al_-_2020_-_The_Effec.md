@@ -16,6 +16,8 @@ key_findings:
 - Writing-to-learn effects were equally effective for elementary, middle, and high
   school students
 methodology: quantitative
+pedagogical_confidence: 0.56
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_NP2DK9NT_Graham_et_al_-_2020_-_The_Effec.md

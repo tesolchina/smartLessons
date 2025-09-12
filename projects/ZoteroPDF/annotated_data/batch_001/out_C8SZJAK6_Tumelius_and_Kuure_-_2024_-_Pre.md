@@ -14,6 +14,8 @@ key_findings:
   to emerging needs; and 3) attending to pupils'' engagement with the designed activities
   and revising the design during action if necessary.'
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_C8SZJAK6_Tumelius_and_Kuure_-_2024_-_Pre.md

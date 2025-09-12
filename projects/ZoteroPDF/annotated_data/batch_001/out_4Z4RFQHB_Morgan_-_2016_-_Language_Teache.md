@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_4Z4RFQHB_Morgan_-_2016_-_Language_Teache.md

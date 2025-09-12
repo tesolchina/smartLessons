@@ -8,6 +8,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_SAE3N45J_Appleby_-_2009_-_The_spatial_po.md

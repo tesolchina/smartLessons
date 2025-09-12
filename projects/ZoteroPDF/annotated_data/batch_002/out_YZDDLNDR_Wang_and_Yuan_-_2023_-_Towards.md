@@ -13,6 +13,8 @@ key_findings:
 - facilitating disciplinary socialization
 - empathizing with students in the EMI learning process
 methodology: qualitative
+pedagogical_confidence: 0.71
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_YZDDLNDR_Wang_and_Yuan_-_2023_-_Towards.md

@@ -13,6 +13,8 @@ key_findings:
 - Students in the Clicker Group had significantly more positive perceptions than those
   in the Non-Clicker Group for most measures
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_G5HS27FA_Sénécal_et_al_-_2024_-_Make_Wor.md

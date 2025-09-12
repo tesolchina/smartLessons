@@ -20,6 +20,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_ITFT4ZHF_Jenkins_-_2006_-_Current_perspe.md

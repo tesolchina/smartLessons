@@ -12,6 +12,8 @@ key_findings:
 - The integrated approach helped enhance the students' genre knowledge and improve
   their genre-based writing skills
 methodology: quantitative
+pedagogical_confidence: 0.53
+pedagogical_implications: true
 publication_year: 2020
 research_questions: []
 source_file: out_V6K626RF_Dong_and_Lu_-_2020_-_Promoting.md

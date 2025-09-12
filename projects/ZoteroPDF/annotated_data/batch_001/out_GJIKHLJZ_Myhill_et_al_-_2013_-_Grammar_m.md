@@ -14,6 +14,8 @@ key_findings:
 - Limitations in teachers' grammatical content knowledge can generate student misconceptions
 - Teachers' applied knowledge is more significant than declarative knowledge
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2013
 research_questions: []
 source_file: out_GJIKHLJZ_Myhill_et_al_-_2013_-_Grammar_m.md

@@ -12,6 +12,8 @@ key_findings:
   while the TR+DCR only resulted in immediate enhancement. The TR+ICR resulted in
   gains in OPT and had some advantage over the TR+DCR and TR.
 methodology: quantitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Whether repetitions of a wiki-mediated collaborative writing task with the intervention

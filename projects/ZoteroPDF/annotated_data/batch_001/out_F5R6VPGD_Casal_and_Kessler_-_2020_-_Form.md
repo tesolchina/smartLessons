@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.44
+pedagogical_implications: true
 publication_year: 2020
 research_questions: []
 source_file: out_F5R6VPGD_Casal_and_Kessler_-_2020_-_Form.md

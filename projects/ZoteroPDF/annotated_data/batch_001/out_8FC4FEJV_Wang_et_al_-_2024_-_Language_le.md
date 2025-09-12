@@ -14,6 +14,8 @@ key_findings:
   learner-as-recipient), Paradigm Two (AI/teacher-codirected, learner-as-collaborator),
   and Paradigm Three (AI/teacher/learner-codirected)'
 methodology: qualitative
+pedagogical_confidence: 0.93
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_8FC4FEJV_Wang_et_al_-_2024_-_Language_le.md

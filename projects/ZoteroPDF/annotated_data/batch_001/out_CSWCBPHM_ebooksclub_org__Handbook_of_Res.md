@@ -10,6 +10,8 @@ has_results: true
 key_findings:
 - 'null'
 methodology: 'null'
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - 'null'

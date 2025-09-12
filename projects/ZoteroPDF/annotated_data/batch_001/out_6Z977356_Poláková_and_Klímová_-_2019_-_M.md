@@ -16,6 +16,8 @@ key_findings:
 - Using the app was more enjoyable for students than the traditional teaching methods
 - Using the app contributed to collaborative learning
 methodology: quantitative
+pedagogical_confidence: 0.39
+pedagogical_implications: true
 publication_year: 2019
 research_questions:
 - If the students using mobile devices in the class got higher scores in tests than

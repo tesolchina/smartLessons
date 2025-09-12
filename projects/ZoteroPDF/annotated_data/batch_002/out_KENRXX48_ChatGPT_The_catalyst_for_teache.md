@@ -11,6 +11,8 @@ key_findings:
 - The application of a well-structured and staged ChatGPT-based instruction would
   possibly lead to enhanced L2 grit
 methodology: quantitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_KENRXX48_ChatGPT_The_catalyst_for_teache.md

@@ -11,6 +11,8 @@ key_findings:
 - The Praat-aided group made significantly larger progress than the control group
   in enhancing their tone perception and production skills during the training
 methodology: quantitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Whether digital visual and audio feedback in learners' own voices improves their

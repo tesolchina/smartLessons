@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.86
+pedagogical_implications: true
 publication_year: 2002
 research_questions: []
 source_file: out_GRN2BR5G_Sara_Cushing_Weigle-Assessing_W.md

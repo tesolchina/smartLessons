@@ -22,6 +22,8 @@ key_findings:
   the teacher commentary videos could be used for different elements or stages of
   the writing process.
 methodology: quantitative
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_VG8MNCZS_Silva_-_2012_-_Camtasia_in_the.md

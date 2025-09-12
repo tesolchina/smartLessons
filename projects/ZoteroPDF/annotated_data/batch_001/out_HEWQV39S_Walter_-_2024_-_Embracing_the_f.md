@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.82
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_HEWQV39S_Walter_-_2024_-_Embracing_the_f.md

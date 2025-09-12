@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: 2014
 research_questions: []
 source_file: out_9EZ8WV9J_Sandra_Podesta,_Andrea_Paxton-2.md

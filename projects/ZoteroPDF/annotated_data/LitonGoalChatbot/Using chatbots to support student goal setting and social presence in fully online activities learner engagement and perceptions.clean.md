@@ -14,6 +14,8 @@ key_findings:
 - Positive learner experiences with both chatbots regarding perceived usefulness and
   ease of use
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: Using chatbots to support student goal setting and social presence in

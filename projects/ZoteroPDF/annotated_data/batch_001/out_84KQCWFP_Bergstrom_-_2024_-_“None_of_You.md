@@ -12,6 +12,8 @@ key_findings:
   to perform writing tasks when they interact with one another as group members and
   when they interact individually with instructors.
 methodology: qualitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How are multilingual language learners (MLLs) socialized into collaborative writing

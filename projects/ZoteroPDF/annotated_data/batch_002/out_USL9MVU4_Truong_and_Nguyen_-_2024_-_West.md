@@ -14,6 +14,8 @@ key_findings:
   of writing, and in turn, of situated possibilities for learning and teaching EFL
   writing.
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_USL9MVU4_Truong_and_Nguyen_-_2024_-_West.md

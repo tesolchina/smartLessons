@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.49
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_X9I39GK7_Murphy_and_Rodriguez-Manzanares.md

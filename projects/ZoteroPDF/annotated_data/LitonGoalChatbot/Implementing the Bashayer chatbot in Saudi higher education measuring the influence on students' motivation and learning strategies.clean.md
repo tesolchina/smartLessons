@@ -15,6 +15,8 @@ key_findings:
 - Participants also practiced more cognitive and metacognitive learning strategies
   while utilizing the chatbot compared to the control group
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How does the implementation of the Bashayer chatbot influence postgraduate students'

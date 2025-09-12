@@ -11,6 +11,8 @@ key_findings:
 - The telecollaborative video-based group outperformed the face-to-face group in compliment
   responses.
 methodology: quantitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do telecollaborative video-based practice and face-to-face practice influence

@@ -14,6 +14,8 @@ key_findings:
   However, a small to medium effect was found on comprehension scores for simultaneously
   attending to a grammatical form ('la').
 methodology: quantitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - The current replication study aims to examine the effects of learners' attention

@@ -15,6 +15,8 @@ key_findings:
 - TED-Ed animations are comparable to written science texts in terms of specialized
   vocabulary coverage, and may be useful for EST vocabulary learning
 methodology: quantitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_VN75FQX9_Liu_-_2023_-_Specialized_vocabu.md

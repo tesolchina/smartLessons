@@ -12,6 +12,8 @@ key_findings:
   anxiety, and the two technology-enhanced language learning groups achieved more
   convergent performances compared to the non-TELL group.
 methodology: quantitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the effects of technology-enhanced learning on reducing EFL learners' public

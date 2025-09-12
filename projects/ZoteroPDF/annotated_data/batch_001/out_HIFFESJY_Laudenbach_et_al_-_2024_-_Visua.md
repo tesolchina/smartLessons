@@ -16,6 +16,8 @@ key_findings:
 - significant increases in student self-efficacy and beliefs about the importance
   of content in successful writing
 methodology: quantitative
+pedagogical_confidence: 0.43
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_HIFFESJY_Laudenbach_et_al_-_2024_-_Visua.md

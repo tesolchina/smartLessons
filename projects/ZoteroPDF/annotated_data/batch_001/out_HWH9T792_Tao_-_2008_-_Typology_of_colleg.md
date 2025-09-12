@@ -11,6 +11,8 @@ key_findings:
 - Two distinct groups of students, the skeptics and the optimists, were identified
   based on their perceptions of e-learning issues.
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2007
 research_questions:
 - What are the distinct groups of students based on their perceptions of institutional

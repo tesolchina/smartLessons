@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: case_study
+pedagogical_confidence: 0.61
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_M7LA8TAA_Sowers_and_Meyers_-_2021_-_Inte.md

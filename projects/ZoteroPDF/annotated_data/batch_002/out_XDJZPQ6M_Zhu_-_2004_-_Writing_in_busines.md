@@ -16,6 +16,8 @@ key_findings:
 - Performing the disciplinary genres required strong analytical, problem-solving,
   persuasive, rhetorical, and teamwork skills
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 2002
 research_questions: []
 source_file: out_XDJZPQ6M_Zhu_-_2004_-_Writing_in_busines.md

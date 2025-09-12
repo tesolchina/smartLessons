@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.91
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_MDCX9P96_Dao_et_al_-_2024_-_Synchronous.md

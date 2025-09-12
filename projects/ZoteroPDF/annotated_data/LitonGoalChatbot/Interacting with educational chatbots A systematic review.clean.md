@@ -22,6 +22,8 @@ key_findings:
 - Challenges and limitations include inadequate or insufficient dataset training and
   a lack of reliance on usability heuristics
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2022
 research_questions: []
 source_file: Interacting with educational chatbots A systematic review.clean.md

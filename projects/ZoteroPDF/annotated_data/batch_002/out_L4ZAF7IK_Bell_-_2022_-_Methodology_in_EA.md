@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.57
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_L4ZAF7IK_Bell_-_2022_-_Methodology_in_EA.md

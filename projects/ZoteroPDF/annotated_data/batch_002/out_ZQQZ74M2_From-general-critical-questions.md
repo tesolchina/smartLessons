@@ -12,6 +12,8 @@ key_findings:
 - Students' oral critique skills improved over time, whereas substantial enhancements
   in the targeted goal of their critique essay writing did not materialize
 methodology: action_research
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_ZQQZ74M2_From-general-critical-questions.md

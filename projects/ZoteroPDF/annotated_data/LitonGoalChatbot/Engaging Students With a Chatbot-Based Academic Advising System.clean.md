@@ -14,6 +14,8 @@ has_results: true
 key_findings:
 - Students learn the system fast and find it helpful
 methodology: empirical
+pedagogical_confidence: 0.82
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: Engaging Students With a Chatbot-Based Academic Advising System.clean.md

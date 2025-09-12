@@ -14,6 +14,8 @@ key_findings:
 - Micro-level, discipline-specific technicalities are embedded within and signified
   by macro-level pedagogical intentions
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_ZQLDMTD3_Pedagogical-intentions-behind-t.md

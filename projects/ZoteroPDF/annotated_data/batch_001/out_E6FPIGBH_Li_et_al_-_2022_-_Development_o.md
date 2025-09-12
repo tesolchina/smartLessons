@@ -15,6 +15,8 @@ key_findings:
   The upper-intermediate group showed greater progress in employing complex nominal
   types.
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How does syntactic complexity evolve in argumentative L2 writing by Chinese first-year

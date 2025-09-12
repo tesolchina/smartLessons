@@ -13,6 +13,8 @@ key_findings:
   number of evaluation criteria
 - Students are highly motivated to learn this type of skills
 methodology: quantitative
+pedagogical_confidence: 0.67
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_R2H2ADA4_Grez_et_al_2014_The_differentia.md

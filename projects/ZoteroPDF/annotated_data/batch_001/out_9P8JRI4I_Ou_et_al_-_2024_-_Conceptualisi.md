@@ -14,6 +14,8 @@ key_findings:
 - Students demonstrated a discerning approach in evaluating GAI-generated suggestions
   and sociolinguistic impacts, indicating a growing criticality in L2 writing practices.
 methodology: mixed
+pedagogical_confidence: 0.68
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How can L2 doctoral students develop critical skills for employing GAI tools ethically

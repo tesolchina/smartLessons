@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_VYAIVLTJ_Yung_-_2020_-_Comparing_the_eff.md

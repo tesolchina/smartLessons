@@ -14,6 +14,8 @@ key_findings:
 - 'Four groups of teachers were identified: the skeptics, the optimists, the mild-promising
   group, and the outlier.'
 methodology: quantitative
+pedagogical_confidence: 0.86
+pedagogical_implications: true
 publication_year: 2006
 research_questions:
 - What are teachers' perceptions on key distance education issues?

@@ -13,6 +13,8 @@ key_findings:
   support) and areas for improvement (e.g., lectures' communication gaps and cultural
   sensitivity) of the program
 methodology: mixed
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_9RR7QXSG_Thumvichit_and_Laoriandee_-_202.md

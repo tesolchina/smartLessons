@@ -12,6 +12,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_TXKERWRW_Morrison_et_al_-_2021_-_English.md

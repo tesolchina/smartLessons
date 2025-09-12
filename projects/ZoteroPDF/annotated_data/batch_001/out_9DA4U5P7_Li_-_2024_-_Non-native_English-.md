@@ -17,6 +17,8 @@ key_findings:
   systems that address the cognitive, linguistic, and affective dimensions of students'
   academic writing endeavours
 methodology: qualitative
+pedagogical_confidence: 0.56
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_9DA4U5P7_Li_-_2024_-_Non-native_English-.md

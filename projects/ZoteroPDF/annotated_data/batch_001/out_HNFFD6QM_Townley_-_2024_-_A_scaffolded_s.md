@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: action_research
+pedagogical_confidence: 0.61
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_HNFFD6QM_Townley_-_2024_-_A_scaffolded_s.md

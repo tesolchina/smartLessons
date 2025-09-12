@@ -15,6 +15,8 @@ key_findings:
 - L1 writing feedback literacy has an indirect effect on L2 writing performance via
   L2 writing feedback literacy and L2 feedback engagement
 methodology: quantitative
+pedagogical_confidence: 0.46
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How do L1 and L2 writing feedback literacies contribute to L2 feedback engagement

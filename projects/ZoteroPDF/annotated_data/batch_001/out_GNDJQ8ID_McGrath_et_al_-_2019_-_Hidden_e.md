@@ -17,6 +17,8 @@ key_findings:
   and what they expect from students, their assumptions about students' prior learning
   and genre-based strategies to adapt their practice to students' needs
 methodology: qualitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: 2019
 research_questions: []
 source_file: out_GNDJQ8ID_McGrath_et_al_-_2019_-_Hidden_e.md

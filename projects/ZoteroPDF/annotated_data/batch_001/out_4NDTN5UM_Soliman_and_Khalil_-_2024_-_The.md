@@ -16,6 +16,8 @@ key_findings:
   is important, yet they struggle to find appropriate approaches and materials for
   it
 methodology: mixed
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_4NDTN5UM_Soliman_and_Khalil_-_2024_-_The.md

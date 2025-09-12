@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.68
+pedagogical_implications: true
 publication_year: 2014
 research_questions:
 - How do the tutor and the L2 students interact with each other during the tutorial,

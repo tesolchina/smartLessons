@@ -14,6 +14,8 @@ key_findings:
   the two groups in terms of the use of some syntactic measures, such as the length
   of sentences and the use of complex nominals.
 methodology: quantitative
+pedagogical_confidence: 0.89
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - This study explored the characteristics of accepted conference abstracts (CAs) written

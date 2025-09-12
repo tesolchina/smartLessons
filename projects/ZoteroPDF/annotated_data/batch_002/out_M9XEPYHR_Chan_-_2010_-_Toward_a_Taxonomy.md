@@ -13,6 +13,8 @@ key_findings:
   ordering of adverbials, and independent clauses as subjects; and those from the
   discourse level included periphrastic-topic constructions.
 methodology: quantitative
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_M9XEPYHR_Chan_-_2010_-_Toward_a_Taxonomy.md

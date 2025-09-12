@@ -15,6 +15,8 @@ key_findings:
 - Speaking and writing abilities were the most commonly studied language skills
 - The findings mostly pointed to the benefits of the flipped classroom method
 methodology: quantitative
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 2019
 research_questions: []
 source_file: out_Q3K6Z6NR_Turan_and_Akdag-Cimen_-_2020_-.md

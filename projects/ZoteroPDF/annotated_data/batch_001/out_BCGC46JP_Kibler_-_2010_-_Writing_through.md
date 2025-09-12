@@ -17,6 +17,8 @@ key_findings:
 - There are limits to students expertise, however, as well as the pedagogical circumstances
   under which the L1 can be most productively used.
 methodology: qualitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2010
 research_questions:
 - How do students use their first language(s) to broker L2 interactions with a monolingual

@@ -15,6 +15,8 @@ key_findings:
   literacy and addresses specific concerns that L2 writers face to leverage generative
   AI's linguistic and rhetorical resources critically
 methodology: qualitative
+pedagogical_confidence: 0.46
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_92MY5TFH_Wang_&_Wang_Investigating_L2_wr.md

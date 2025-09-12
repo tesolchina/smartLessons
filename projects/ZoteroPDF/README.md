@@ -1,6 +1,41 @@
-# ZoteroMDsMineru3
+# ZoteroMDsMineru3 - Academic RAG System
 
-A project for processing and organizing Zotero references into Markdown format using MinERU processing.
+A project for processing and organizing Zotero references with advanced RAG (Retrieval-Augmented Generation) capabilities and citation analysis tools.
+
+## Features
+
+- **Academic Search**: Query a corpus of research papers with natural language
+- **Citation Review**: Analyze manuscript citations and improve citation quality
+- **Interactive Interface**: Streamlit-based web interfaces for easy use
+- **Export Capabilities**: Save search results and citations
+- **Advanced Caching**: Multi-layer caching for improved performance
+- **Pedagogical Focus**: Specialized filtering for education-related content
+
+## Quick Start
+
+### 1. Search Academic Papers
+```bash
+streamlit run app.py
+```
+
+### 2. Review Manuscript Citations
+```bash
+streamlit run citation_app.py
+```
+
+### 3. Command Line Citation Analysis
+```bash
+python scripts/citation_reviewer.py \
+    --manuscript my_paper.md \
+    --references faiss_index \
+    --output citation_review.md
+```
+
+## System Documentation
+
+- **[Citation Review Guide](CITATION_REVIEW_GUIDE.md)** - Complete guide for manuscript citation analysis
+- **[SPRINTS.md](docs/SPRINTS.md)** - Development sprints and implementation phases
+- **[PROJECT_PLAN.md](docs/PROJECT_PLAN.md)** - Comprehensive project planning
 
 ## Project Structure
 

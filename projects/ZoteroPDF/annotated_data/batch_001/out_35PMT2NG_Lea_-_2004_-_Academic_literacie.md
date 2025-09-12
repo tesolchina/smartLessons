@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2004
 research_questions: []
 source_file: out_35PMT2NG_Lea_-_2004_-_Academic_literacie.md

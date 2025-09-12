@@ -12,6 +12,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: mixed
+pedagogical_confidence: 0.92
+pedagogical_implications: true
 publication_year: 2010
 research_questions: []
 source_file: out_MK4WPVZE_Pecheone_and_Kahl_-_Through_a_L.md

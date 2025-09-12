@@ -1,0 +1,9 @@
+{
+  "name": "🎓 Learning Assistant",
+  "styleClass": "from-indigo-500 to-purple-600",
+  "welcomePrompt": "Welcome to HKBU Chat Assistant!",
+  "systemPrompt": "You are a helpful AI learning assistant at HKBU.",
+  "reportGenerationInstructions": "Generate a summary of the key learning points discussed.",
+  "model": "gpt-4.1-mini",
+  "teacherEmail": ["21253153@life.hkbu.edu.hk", "zhang_kt@hkbu.edu.hk"]
+}

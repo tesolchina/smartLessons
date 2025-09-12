@@ -15,6 +15,8 @@ key_findings:
 - the integration of AI literacy with traditional EAP skills was found to meet students'
   academic needs effectively
 methodology: mixed
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_MV4IN64M_Artificial_Intelligence_for_Aca.md

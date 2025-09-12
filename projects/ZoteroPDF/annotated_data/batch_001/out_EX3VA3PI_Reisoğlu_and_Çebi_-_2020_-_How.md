@@ -18,6 +18,8 @@ key_findings:
   in which pre-service teachers collaborate on digital issues regardless of their
   previous experience
 methodology: qualitative
+pedagogical_confidence: 0.48
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How can the digital competences of pre-service teachers be developed?

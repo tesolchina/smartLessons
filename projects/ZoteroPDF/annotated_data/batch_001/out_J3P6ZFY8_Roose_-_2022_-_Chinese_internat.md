@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.45
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_J3P6ZFY8_Roose_-_2022_-_Chinese_internat.md

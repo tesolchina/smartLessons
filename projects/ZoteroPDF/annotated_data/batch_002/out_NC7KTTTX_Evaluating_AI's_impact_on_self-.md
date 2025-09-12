@@ -18,6 +18,8 @@ key_findings:
 - Pedagogical values are possible when major SRL phases are fully practiced, even
   without highly autonomous AI
 methodology: systematic_review
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_NC7KTTTX_Evaluating_AI's_impact_on_self-.md

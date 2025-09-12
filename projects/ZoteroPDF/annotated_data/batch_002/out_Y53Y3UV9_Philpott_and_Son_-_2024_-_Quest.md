@@ -14,6 +14,8 @@ key_findings:
 - 'Three aspects that could hinder intrinsic motivation: difficulty, time, and quest
   choice'
 methodology: mixed
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_Y53Y3UV9_Philpott_and_Son_-_2024_-_Quest.md

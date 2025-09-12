@@ -13,6 +13,8 @@ key_findings:
   are variously shaped by relations of power influenced by the linguistic market and
   their respective disciplinary communities.
 methodology: qualitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_MIL4GDBB_Sharma_and_Hussein_-_2021_-_Dis.md

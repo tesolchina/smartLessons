@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_M7G5L9IW_Boud_Cohen_Sampson_Peer_Learnin.md

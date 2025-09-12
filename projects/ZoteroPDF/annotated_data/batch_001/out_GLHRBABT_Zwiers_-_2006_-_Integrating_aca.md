@@ -11,6 +11,8 @@ key_findings:
 - Multi-modal scaffolds for both thinking and language, designed to help students
   succeed on a motivating assessment task, developed cognitive and communication skills.
 methodology: qualitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2006
 research_questions:
 - What types of instructional activities appear to develop historical thinking skills

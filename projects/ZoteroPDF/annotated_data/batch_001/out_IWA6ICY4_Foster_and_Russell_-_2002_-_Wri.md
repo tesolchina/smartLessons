@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: comparative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2002
 research_questions: []
 source_file: out_IWA6ICY4_Foster_and_Russell_-_2002_-_Wri.md

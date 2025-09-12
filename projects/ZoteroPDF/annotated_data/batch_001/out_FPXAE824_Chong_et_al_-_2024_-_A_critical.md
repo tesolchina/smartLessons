@@ -16,6 +16,8 @@ key_findings:
 - There are few opportunities for instructor-learner and learner-learner interaction
 - There are few learner-centred, for
 methodology: quantitative
+pedagogical_confidence: 0.68
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the design features of LMOOCs?

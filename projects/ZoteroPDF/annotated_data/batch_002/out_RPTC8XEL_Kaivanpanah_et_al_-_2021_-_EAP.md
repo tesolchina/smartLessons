@@ -19,6 +19,8 @@ key_findings:
 - Seven major challenges (students, materials, EAP teachers, administrative issues,
   curriculum and syllabus, testing, and content knowledge)
 methodology: mixed
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_RPTC8XEL_Kaivanpanah_et_al_-_2021_-_EAP.md

@@ -11,6 +11,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 2016
 research_questions: []
 source_file: out_BEKEQ3DA_Steven_A_Beebe,_Susan_J_Beebe,.md

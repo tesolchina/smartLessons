@@ -16,6 +16,8 @@ key_findings:
   learning
 - Students appreciated the personalized recommendations and flexibility of SRLbot
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How do generative AI-based (SRLbot) and rule-based AI chatbots (Nemobot) impact

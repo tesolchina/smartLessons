@@ -13,6 +13,8 @@ key_findings:
 - University placements can enable or disable the formation of students' professional
   selves
 methodology: qualitative
+pedagogical_confidence: 0.63
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Can universities offer equitable and inclusive careers education?

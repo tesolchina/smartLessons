@@ -12,6 +12,8 @@ key_findings:
 - Differential effects of SRL models based on students' developmental stages or educational
   levels
 methodology: theoretical
+pedagogical_confidence: 0.47
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: A review of self-regulated learning Six models and four directions for

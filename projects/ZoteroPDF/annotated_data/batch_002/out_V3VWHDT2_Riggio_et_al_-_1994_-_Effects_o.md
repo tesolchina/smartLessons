@@ -15,6 +15,8 @@ key_findings:
 - All students using Reciprocal Peer Tutoring exhibited significantly higher cognitive
   gains than did comparison students who were not using RPT strategies
 methodology: quantitative
+pedagogical_confidence: 0.29
+pedagogical_implications: true
 publication_year: 1994
 research_questions:
 - What are the effects of student academic ability on the cognitive gains achieved

@@ -15,6 +15,8 @@ key_findings:
 - The affordance of knowledge internalization and construction was mentioned with
   the highest frequency in the interview.
 methodology: mixed
+pedagogical_confidence: 0.5
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the potential new affordances of WeChat for Chinese cultural knowledge

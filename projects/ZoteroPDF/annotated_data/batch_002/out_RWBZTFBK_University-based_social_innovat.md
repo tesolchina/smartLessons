@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.68
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_RWBZTFBK_University-based_social_innovat.md

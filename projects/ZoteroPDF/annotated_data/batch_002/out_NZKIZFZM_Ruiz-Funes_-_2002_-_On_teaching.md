@@ -9,6 +9,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.43
+pedagogical_implications: true
 publication_year: 2002
 research_questions: []
 source_file: out_NZKIZFZM_Ruiz-Funes_-_2002_-_On_teaching.md

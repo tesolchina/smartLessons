@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.5
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_3888B4DF_Shvidko_-_2018_-_Writing_confer.md

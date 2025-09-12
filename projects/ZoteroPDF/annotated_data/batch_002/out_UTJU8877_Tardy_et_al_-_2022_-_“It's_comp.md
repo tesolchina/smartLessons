@@ -21,6 +21,8 @@ key_findings:
   in interaction with teachers' practice and should be supported by robust and on-going
   teacher training and support.
 methodology: qualitative
+pedagogical_confidence: 0.89
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_UTJU8877_Tardy_et_al_-_2022_-_“It's_comp.md

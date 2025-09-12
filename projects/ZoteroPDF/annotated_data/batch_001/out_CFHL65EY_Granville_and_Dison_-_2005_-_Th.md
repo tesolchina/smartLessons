@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_CFHL65EY_Granville_and_Dison_-_2005_-_Th.md

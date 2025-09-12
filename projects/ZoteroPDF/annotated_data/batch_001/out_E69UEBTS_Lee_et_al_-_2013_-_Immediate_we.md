@@ -14,6 +14,8 @@ key_findings:
 - The treatment group which received both the system feedback and teacher feedback
   outperformed the control group which received teacher feedback only.
 methodology: quantitative
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 2013
 research_questions:
 - How does immediate web-based essay critiquing system feedback and teacher follow-up

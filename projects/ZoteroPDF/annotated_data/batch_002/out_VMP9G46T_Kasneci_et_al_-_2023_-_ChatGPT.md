@@ -31,6 +31,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.68
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_VMP9G46T_Kasneci_et_al_-_2023_-_ChatGPT.md

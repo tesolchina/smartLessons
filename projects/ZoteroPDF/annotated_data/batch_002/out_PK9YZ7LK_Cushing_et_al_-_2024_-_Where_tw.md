@@ -13,6 +13,8 @@ key_findings:
 - Both mainstream and complementary schools in England hierarchise standardised and
   non-standardised language varieties, delegitimising the non-standardised varieties
 methodology: qualitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_PK9YZ7LK_Cushing_et_al_-_2024_-_Where_tw.md

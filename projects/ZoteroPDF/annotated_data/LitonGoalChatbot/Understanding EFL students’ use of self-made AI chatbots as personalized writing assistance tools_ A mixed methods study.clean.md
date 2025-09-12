@@ -15,6 +15,8 @@ key_findings:
   resulting in clearer writing goals, increased writing confidence, reinforced writing
   beliefs, and a more positive attitude towards writing
 methodology: mixed
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: Understanding EFL students’ use of self-made AI chatbots as personalized

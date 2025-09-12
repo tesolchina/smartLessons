@@ -20,6 +20,8 @@ key_findings:
 - Developed a comprehensive taxonomy of six categories of emotion regulation strategies
   tailored to the context of digital collaborative academic reading
 methodology: mixed
+pedagogical_confidence: 0.35
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_CT7I89ND_Su_and_Guo_-_2024_-_Unpacking_E.md

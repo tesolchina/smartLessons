@@ -11,6 +11,8 @@ key_findings:
   education, transformative capabilities, crossing boundaries, and social learning'
 - Institutional challenges and trends in innovation to support flexible pedagogy
 methodology: qualitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What are new pedagogical ideas for flexible learning?

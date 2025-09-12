@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.82
+pedagogical_implications: true
 publication_year: 2014
 research_questions: []
 source_file: out_MLY9F5B6_Morrison_-_challenges_of_freshm.md

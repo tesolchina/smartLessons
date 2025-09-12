@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.61
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_3HVXPQWJ_Cardona_and_Rodriguez_-_Designi.md

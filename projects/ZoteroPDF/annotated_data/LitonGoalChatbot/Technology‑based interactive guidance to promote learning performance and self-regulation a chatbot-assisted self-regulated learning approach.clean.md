@@ -14,6 +14,8 @@ key_findings:
   performance, motivation, self-regulation, reflection, and meta-cognition tendency
   more than the conventional self-regulated learning approach.
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How does chatbot-assisted self-regulated learning compare to conventional self-regulated

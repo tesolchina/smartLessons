@@ -12,6 +12,8 @@ key_findings:
 - Artificial Intelligence Literacy (AIL) plays a pivotal role in influencing educators'
   acceptance of AI technologies
 methodology: empirical
+pedagogical_confidence: 0.39
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the multifaceted factors that influence teacher education students in Information-Based

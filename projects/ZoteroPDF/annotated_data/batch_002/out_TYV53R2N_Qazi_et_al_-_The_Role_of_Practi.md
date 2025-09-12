@@ -13,6 +13,8 @@ key_findings:
 - The NDIE Practicum played a significant role in enhancing student teachers' practical
   classroom skills in the year 2007-2008.
 methodology: quantitative
+pedagogical_confidence: 0.87
+pedagogical_implications: true
 publication_year: 2012
 research_questions:
 - What is the role of Notre Dame Institute of Education (NDIE) Practicum in enhancing

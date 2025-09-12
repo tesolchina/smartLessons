@@ -14,6 +14,8 @@ key_findings:
 - The Presentation Trainer's feedback has a significant effect on learners' motivation,
   confidence, self-awareness, and performance.
 methodology: quantitative
+pedagogical_confidence: 0.41
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - Can the Presentation Trainer tool provide effective real-time feedback for developing

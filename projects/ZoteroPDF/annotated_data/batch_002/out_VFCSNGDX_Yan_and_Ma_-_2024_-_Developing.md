@@ -13,6 +13,8 @@ key_findings:
   and diversity of reporting verb usage in citations, as well as in the complexity
   of expressing rhetorical functions of citations
 methodology: mixed
+pedagogical_confidence: 0.51
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_VFCSNGDX_Yan_and_Ma_-_2024_-_Developing.md

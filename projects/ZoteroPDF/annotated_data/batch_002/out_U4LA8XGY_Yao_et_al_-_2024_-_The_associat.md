@@ -18,6 +18,8 @@ key_findings:
 - The ideal L2 writing self was a significant predictor of English writing performance
   for female students.
 methodology: quantitative
+pedagogical_confidence: 0.47
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What are the relationships among growth mindsets, the ideal L2 writing self, and

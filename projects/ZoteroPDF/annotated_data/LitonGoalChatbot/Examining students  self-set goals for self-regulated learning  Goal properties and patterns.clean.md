@@ -15,6 +15,8 @@ key_findings:
   in their self-set goals
 - Improvements in goal quality were either inconsistent or non-existent
 methodology: quantitative
+pedagogical_confidence: 0.32
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What are the characteristics of students' self-set goals?

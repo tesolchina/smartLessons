@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: 2005
 research_questions: []
 source_file: out_LQNQ7573_Phelps_-_2005_-_The_Potential_o.md

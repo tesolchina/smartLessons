@@ -12,6 +12,8 @@ key_findings:
   affected by their L1, L2 as well as their inadequacy in the lexis and grammar of
   the target language.
 methodology: quantitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: 2008
 research_questions: []
 source_file: out_F5IITN9U_Fan_-_2009_-_An_exploratory_stu.md

@@ -16,6 +16,8 @@ key_findings:
 - Digital device and Internet were the basis for equipping smart classroom
 - Technology equipment plus advanced technology could lead to the success of learning
 methodology: quantitative
+pedagogical_confidence: 0.75
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How to match technologies, pedagogies and smart classroom to improve student's achievements

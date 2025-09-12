@@ -12,6 +12,8 @@ key_findings:
 - The students perceived the corpus approach as beneficial to the development of L2
   writing skill and increased confidence toward L2 writing.
 methodology: quantitative
+pedagogical_confidence: 0.45
+pedagogical_implications: true
 publication_year: 2004
 research_questions:
 - What are ESL students' corpus use behavior and perceptions of the strengths and

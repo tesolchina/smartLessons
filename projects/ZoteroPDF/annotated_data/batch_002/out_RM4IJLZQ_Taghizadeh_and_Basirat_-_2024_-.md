@@ -14,6 +14,8 @@ key_findings:
 - The advances in online information technologies could provide great opportunities
   for language teaching and learning
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are pre-service EFL teachers' attitudes and perceived challenges of teaching

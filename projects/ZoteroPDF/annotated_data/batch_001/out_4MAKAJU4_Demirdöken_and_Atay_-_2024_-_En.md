@@ -14,6 +14,8 @@ key_findings:
 - Student pilots overall perceived the simulation-based training as an innovative
   and effective method
 methodology: mixed
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_4MAKAJU4_Demirdöken_and_Atay_-_2024_-_En.md

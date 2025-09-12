@@ -16,6 +16,8 @@ key_findings:
 - The AR filter helped to alleviate the learners' speaking anxiety and embarrassment
   related to interacting with the teacher for corrective feedback.
 methodology: mixed
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - To investigate the effectiveness of using an augmented reality (AR) filter app during

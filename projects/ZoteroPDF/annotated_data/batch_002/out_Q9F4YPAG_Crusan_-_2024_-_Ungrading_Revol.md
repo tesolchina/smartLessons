@@ -9,6 +9,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_Q9F4YPAG_Crusan_-_2024_-_Ungrading_Revol.md

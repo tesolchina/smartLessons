@@ -15,6 +15,8 @@ key_findings:
 - Students setting learning goals with the WBPAS demonstrated significantly better
   SRL than students setting learning goals with the paper-based portfolio
 methodology: quantitative
+pedagogical_confidence: 0.54
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - The purpose of the present study was to construct goal-setting mechanisms in a web-based

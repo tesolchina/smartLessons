@@ -15,6 +15,8 @@ key_findings:
 - Routine AE is characterized by a higher degree of information condensation and is
   marked by a planned, procedural, and intensive use of standard phraseology
 methodology: quantitative
+pedagogical_confidence: 0.41
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_CDEF799G_A_corpus-based_multi-dimensiona.md

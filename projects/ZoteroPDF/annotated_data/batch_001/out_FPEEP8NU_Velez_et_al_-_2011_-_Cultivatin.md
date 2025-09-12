@@ -15,6 +15,8 @@ key_findings:
   peer teaching environment facilitated student interaction which allowed students
   to assume the role of active participants.
 methodology: qualitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What is the impact of peer teaching on both the students and the classroom environment?

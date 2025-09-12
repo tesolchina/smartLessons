@@ -12,6 +12,8 @@ has_results: true
 key_findings:
 - Task complexity was found to impact the variety of cohesive devices employed.
 methodology: quantitative
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: 2023
 research_questions:
 - What are the effects of task complexity and task repetition on the use of cohesive

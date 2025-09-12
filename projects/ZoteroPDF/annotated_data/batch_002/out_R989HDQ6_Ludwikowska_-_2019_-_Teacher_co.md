@@ -14,6 +14,8 @@ key_findings:
 - The inventory with 66 items and four factors explained 47.279 percent of the total
   variance and indicated a strong factor model.
 methodology: quantitative
+pedagogical_confidence: 0.44
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What are the future-oriented competences required for the teaching profession in

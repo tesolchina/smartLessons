@@ -15,6 +15,8 @@ key_findings:
   cognitive engagement, self-efficacy for writing, positive emotions, and negative
   emotions, compared with the non-equipped AI group.
 methodology: quantitative
+pedagogical_confidence: 0.7
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - The present study was conducted to examine the efficacy of a group format of an

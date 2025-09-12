@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2023
 research_questions: []
 source_file: out_24II5VXW_2023_-_How_do_we_respond_to_gen.md

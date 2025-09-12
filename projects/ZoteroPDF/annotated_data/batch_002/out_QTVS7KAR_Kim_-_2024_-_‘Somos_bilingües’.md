@@ -13,6 +13,8 @@ key_findings:
 - The teachers intentionally integrated translanguaging strategies into their teaching
   through translanguaging design.
 methodology: qualitative
+pedagogical_confidence: 0.56
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What adjustments did the teachers make to their teaching and curriculum to support

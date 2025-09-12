@@ -14,6 +14,8 @@ key_findings:
 - importance of interdisciplinary collaboration between ESAP course developers and
   discipline teachers
 methodology: qualitative
+pedagogical_confidence: 0.54
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_HILVDH2T_Yung_and_Fong_-_2024_-_Revampin.md

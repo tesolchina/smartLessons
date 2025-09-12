@@ -13,6 +13,8 @@ key_findings:
   filmic modes and using popular visuals, but their performance in conveying ideational
   and textual meaning needs improvement
 methodology: qualitative
+pedagogical_confidence: 0.3
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_5ITTA93H_Huang_and_Xia_-_2024_-_Preparin.md

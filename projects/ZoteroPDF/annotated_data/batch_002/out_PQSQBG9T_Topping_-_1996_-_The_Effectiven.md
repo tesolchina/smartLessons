@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: 1996
 research_questions: []
 source_file: out_PQSQBG9T_Topping_-_1996_-_The_Effectiven.md

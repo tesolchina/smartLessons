@@ -15,6 +15,8 @@ key_findings:
   size and controlled productive knowledge, with the difference in vocabulary size
   being statistically significant.
 methodology: quantitative
+pedagogical_confidence: 0.46
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_5GB9RDMD_Moskovsky_et_al_-_2015_-_Bottom.md

@@ -14,6 +14,8 @@ key_findings:
 - The time students spent on self-study activities had a more significant positive
   effect than did private tutoring.
 methodology: quantitative
+pedagogical_confidence: 0.51
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What is the effectiveness of English private tutoring (EPT) on the academic performance

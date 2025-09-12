@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: 2012
 research_questions: []
 source_file: out_G4XR2XK6_[Ken_Hyland;_Carmen_Sancho_Guin.md

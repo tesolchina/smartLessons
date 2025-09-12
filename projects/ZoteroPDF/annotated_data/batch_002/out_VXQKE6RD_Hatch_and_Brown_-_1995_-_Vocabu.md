@@ -10,6 +10,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.34
+pedagogical_implications: true
 publication_year: 1995
 research_questions: []
 source_file: out_VXQKE6RD_Hatch_and_Brown_-_1995_-_Vocabu.md

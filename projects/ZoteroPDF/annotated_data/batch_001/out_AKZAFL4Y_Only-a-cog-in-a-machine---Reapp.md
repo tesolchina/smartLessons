@@ -15,6 +15,8 @@ key_findings:
 - The safe researcher' of trendy topics
 - The service provider' seeking promotion
 methodology: qualitative
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_AKZAFL4Y_Only-a-cog-in-a-machine---Reapp.md

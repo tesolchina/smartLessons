@@ -9,6 +9,8 @@ has_methodology: false
 has_results: false
 key_findings: []
 methodology: null
+pedagogical_confidence: 0.33
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_MDKBDTJ9_180205e.md

@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.81
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What set the direction for change?

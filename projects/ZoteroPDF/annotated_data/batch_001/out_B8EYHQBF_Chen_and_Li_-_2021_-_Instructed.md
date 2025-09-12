@@ -16,6 +16,8 @@ key_findings:
   of use, which consequently mediated his planning for writing and resulted in the
   development of performance
 methodology: qualitative
+pedagogical_confidence: 0.59
+pedagogical_implications: true
 publication_year: 2021
 research_questions: []
 source_file: out_B8EYHQBF_Chen_and_Li_-_2021_-_Instructed.md

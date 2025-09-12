@@ -12,6 +12,8 @@ key_findings:
 - The trend towards blended learning in higher education was an important outcome
   of the study.
 methodology: qualitative
+pedagogical_confidence: 0.93
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - What are the differences and similarities between the approaches of instructors

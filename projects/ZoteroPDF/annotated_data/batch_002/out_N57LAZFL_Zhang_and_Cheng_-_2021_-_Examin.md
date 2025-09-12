@@ -15,6 +15,8 @@ key_findings:
 - The comparison group did not statistically significantly improve their writing accuracy,
   syntactic complexity, or fluency.
 methodology: mixed
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_N57LAZFL_Zhang_and_Cheng_-_2021_-_Examin.md

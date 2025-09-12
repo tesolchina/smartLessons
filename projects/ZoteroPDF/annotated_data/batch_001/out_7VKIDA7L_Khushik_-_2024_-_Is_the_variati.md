@@ -12,6 +12,8 @@ key_findings:
   learners due to variations in their native language and the effects of pedagogical
   methods on syntactic complexity features.
 methodology: quantitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - Is the variation in syntactic complexity features observed in argumentative essays

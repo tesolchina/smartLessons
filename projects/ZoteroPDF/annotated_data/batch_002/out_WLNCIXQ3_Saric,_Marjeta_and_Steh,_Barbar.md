@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.61
+pedagogical_implications: true
 publication_year: 2017
 research_questions: []
 source_file: out_WLNCIXQ3_Saric,_Marjeta_and_Steh,_Barbar.md

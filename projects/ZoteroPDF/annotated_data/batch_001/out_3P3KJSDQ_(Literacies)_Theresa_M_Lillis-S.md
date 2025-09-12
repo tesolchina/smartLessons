@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.56
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_3P3KJSDQ_(Literacies)_Theresa_M_Lillis-S.md

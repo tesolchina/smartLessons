@@ -15,6 +15,8 @@ key_findings:
   session, showing improvement in all gesture types among which beats were significantly
   increased
 methodology: quantitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - Whether classroom gesture instruction could boost L2 learners' gesture use in academic

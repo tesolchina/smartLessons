@@ -12,6 +12,8 @@ key_findings:
 - L2 grit is most determined by two dimensions of readiness for online learning, and
   to a lesser extent by motivation, self-directed learning, autonomy, and curiosity
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the most important predictors of L2 grit in the online language learning

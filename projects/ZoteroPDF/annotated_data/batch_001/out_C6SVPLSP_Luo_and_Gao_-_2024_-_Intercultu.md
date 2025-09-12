@@ -12,6 +12,8 @@ key_findings:
 - Students demonstrated developing intercultural competences including interest in
   other cultures and knowledge about their own and others' cultures
 methodology: qualitative
+pedagogical_confidence: 0.36
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_C6SVPLSP_Luo_and_Gao_-_2024_-_Intercultu.md

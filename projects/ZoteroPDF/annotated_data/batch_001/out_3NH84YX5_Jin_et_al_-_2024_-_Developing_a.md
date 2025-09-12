@@ -15,6 +15,8 @@ key_findings:
 - Fewer students in Cycle 2 perceived cognitive overload challenges than their peers
   in Cycle 1
 methodology: quantitative
+pedagogical_confidence: 0.44
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_3NH84YX5_Jin_et_al_-_2024_-_Developing_a.md

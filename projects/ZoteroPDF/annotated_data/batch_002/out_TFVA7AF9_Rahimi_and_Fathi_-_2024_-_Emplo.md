@@ -13,6 +13,8 @@ key_findings:
   willingness to communicate, with the e-tandem group outperforming the conventional
   group on speaking skills
 methodology: mixed
+pedagogical_confidence: 0.44
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_TFVA7AF9_Rahimi_and_Fathi_-_2024_-_Emplo.md

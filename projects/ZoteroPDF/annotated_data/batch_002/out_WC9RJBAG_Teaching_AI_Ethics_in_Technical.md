@@ -15,6 +15,8 @@ key_findings:
   framework (consisting of institutional, course, and instruction levels) that can
   be aligned to include AI ethics literacy in course and program objectives and outcomes.
 methodology: qualitative
+pedagogical_confidence: 0.7
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_WC9RJBAG_Teaching_AI_Ethics_in_Technical.md

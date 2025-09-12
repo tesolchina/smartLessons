@@ -13,6 +13,8 @@ key_findings:
   is associated with significantly higher posttests scores, compared with learning
   using a VR headset or standard 2D pictures
 methodology: quantitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_S3IZ6ME2_Papin_and_Kaplan-Rakowski_-_202.md

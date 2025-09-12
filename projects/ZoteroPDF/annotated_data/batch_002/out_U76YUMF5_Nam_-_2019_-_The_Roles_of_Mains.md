@@ -12,6 +12,8 @@ key_findings:
 - Findings suggest the longer supplementary education has existed a place, the more
   likely it indeed is supplementary to formal education.
 methodology: qualitative
+pedagogical_confidence: 0.27
+pedagogical_implications: true
 publication_year: 2019
 research_questions:
 - Does student motive for studying the language differ from what teachers and tutors

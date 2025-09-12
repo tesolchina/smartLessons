@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.42
+pedagogical_implications: true
 publication_year: 2005
 research_questions: []
 source_file: out_DTTLD6EG_Robinson_et_al_-_2005_-_Peer_an.md

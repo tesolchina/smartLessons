@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: qualitative
+pedagogical_confidence: 0.63
+pedagogical_implications: true
 publication_year: 2009
 research_questions: []
 source_file: out_TB3Q8D7X_Gray_-_2009_-_From_principles_t.md

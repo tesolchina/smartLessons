@@ -16,6 +16,8 @@ key_findings:
 - high quality of GoalPlanMentor's feedback in providing clear directions for improvement
 - students perceived GoalPlanMentor to be useful in setting their goals and plans
 methodology: quantitative
+pedagogical_confidence: 0.81
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: 港大作者的新文章 重要Towards a large-language-model-based chatbot system to automatically.clean.md

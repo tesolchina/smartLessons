@@ -16,6 +16,8 @@ key_findings:
   to individual action toward institutional targets, and institutional and societal
   change.
 methodology: empirical
+pedagogical_confidence: 0.46
+pedagogical_implications: true
 publication_year: 2003
 research_questions: []
 source_file: out_5SIJ68YI_Nagda_et_al_-_2003_-_Transforma.md

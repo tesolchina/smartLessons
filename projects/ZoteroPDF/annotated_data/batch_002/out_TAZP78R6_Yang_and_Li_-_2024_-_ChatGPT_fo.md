@@ -22,6 +22,8 @@ key_findings:
   eye on questionnaire surveys, interviews, log data and written texts.
 - Benefits and challenges were summarized from the selected studies.
 methodology: mixed
+pedagogical_confidence: 0.71
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_TAZP78R6_Yang_and_Li_-_2024_-_ChatGPT_fo.md

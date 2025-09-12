@@ -17,6 +17,8 @@ key_findings:
 - Teacher self-efficacy and motivation operated as an affective filter between teachers'
   beliefs and practice.
 methodology: qualitative
+pedagogical_confidence: 0.85
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How do EFL teachers transform and integrate professional learning into their classroom

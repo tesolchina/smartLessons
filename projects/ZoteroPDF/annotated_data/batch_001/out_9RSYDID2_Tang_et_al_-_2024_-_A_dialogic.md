@@ -14,6 +14,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.47
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_9RSYDID2_Tang_et_al_-_2024_-_A_dialogic.md

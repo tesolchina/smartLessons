@@ -16,6 +16,8 @@ key_findings:
 - Distinction between imitation and plagiarism
 - Range of strategies recommended for going beyond imitation to achieve innovation
 methodology: qualitative
+pedagogical_confidence: 0.26
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - How is imitation recommended as a writing pedagogy in a sample of books on Chinese

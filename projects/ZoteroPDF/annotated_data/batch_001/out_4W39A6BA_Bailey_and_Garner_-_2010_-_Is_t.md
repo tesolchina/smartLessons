@@ -15,6 +15,8 @@ key_findings:
   are not having the intended effect, and innovative practices and procedures have
   created new problems for teachers.
 methodology: qualitative
+pedagogical_confidence: 0.31
+pedagogical_implications: true
 publication_year: 2010
 research_questions:
 - What are teachers' perceptions and beliefs about the purposes of written feedback

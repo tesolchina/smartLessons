@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: empirical
+pedagogical_confidence: 0.28
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_Q7A5PZHC_Dang_and_Wang_-_2024_-_Ethical.md

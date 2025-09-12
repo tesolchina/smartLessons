@@ -16,6 +16,8 @@ key_findings:
   anxiety students in reducing their foreign language anxiety and improving their
   English vocabulary learning compared to onsite instruction.
 methodology: quantitative
+pedagogical_confidence: 0.53
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How can an online simulation game reduce EFL primary school students' foreign language

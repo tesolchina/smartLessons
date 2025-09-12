@@ -10,6 +10,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.45
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_I797D9AN_Zhang_and_Su_-_2022_-_“We_defin.md

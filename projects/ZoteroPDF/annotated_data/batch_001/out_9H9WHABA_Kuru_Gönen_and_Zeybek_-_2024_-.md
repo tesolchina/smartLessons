@@ -13,6 +13,8 @@ key_findings:
   as improvement in teaching skills, expanding perspective on effective mobile technology
   integration, and being up to date as a teacher
 methodology: qualitative
+pedagogical_confidence: 0.61
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_9H9WHABA_Kuru_Gönen_and_Zeybek_-_2024_-.md

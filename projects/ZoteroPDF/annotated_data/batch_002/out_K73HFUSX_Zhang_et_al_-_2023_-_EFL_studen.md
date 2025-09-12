@@ -15,6 +15,8 @@ key_findings:
 - The findings showed both initial engagement differences and extensive gains in engagement
   across all three learners despite challenges in proficiency and self-efficacy.
 methodology: mixed
+pedagogical_confidence: 0.25
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_K73HFUSX_Zhang_et_al_-_2023_-_EFL_studen.md

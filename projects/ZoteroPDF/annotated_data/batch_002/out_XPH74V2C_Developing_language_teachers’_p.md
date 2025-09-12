@@ -17,6 +17,8 @@ key_findings:
   professional generative AI competence, though there was less evidence of development
   in their capacity to guide students to use generative AI tools effectively and responsibly.
 methodology: mixed
+pedagogical_confidence: 0.55
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - What are the effects of explicit training on using generative AI tools for language

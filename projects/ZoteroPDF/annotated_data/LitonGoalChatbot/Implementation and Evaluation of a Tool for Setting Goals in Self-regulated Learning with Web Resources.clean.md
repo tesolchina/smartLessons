@@ -11,6 +11,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2009
 research_questions: []
 source_file: Implementation and Evaluation of a Tool for Setting Goals in Self-regulated

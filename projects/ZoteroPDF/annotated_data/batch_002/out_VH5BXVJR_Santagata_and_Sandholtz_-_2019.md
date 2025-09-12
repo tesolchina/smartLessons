@@ -17,6 +17,8 @@ key_findings:
   on the CVA. Similarly, several of the PACT high performers scored below the whole
   group CVA average.
 methodology: quantitative
+pedagogical_confidence: 0.74
+pedagogical_implications: true
 publication_year: null
 research_questions:
 - This exploratory study examines the relationship between preservice teachers' performance

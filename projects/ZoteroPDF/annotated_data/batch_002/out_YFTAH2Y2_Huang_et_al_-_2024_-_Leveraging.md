@@ -17,6 +17,8 @@ key_findings:
   address EMI university instructors' needs, given their expertise in ESP, disciplinary
   literacy, and cross-disciplinary collaboration
 methodology: quantitative
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_YFTAH2Y2_Huang_et_al_-_2024_-_Leveraging.md

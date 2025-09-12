@@ -13,6 +13,8 @@ key_findings:
   students' critical thinking, learning autonomy, motivation, collaborative and communicative
   skills.
 methodology: qualitative
+pedagogical_confidence: 0.65
+pedagogical_implications: true
 publication_year: 2016
 research_questions:
 - To identify studies where students are engaged as partners in teaching in higher

@@ -18,6 +18,8 @@ key_findings:
 - The adopted explicit functional pedagogical approach was found to be effective,
   especially in boosting cohesion and coherence and lexical resources scores
 methodology: quantitative
+pedagogical_confidence: 0.74
+pedagogical_implications: true
 publication_year: null
 research_questions: []
 source_file: out_4Q4WC3UP_Saadatara_et_al_-_2023_-_Bundle.md

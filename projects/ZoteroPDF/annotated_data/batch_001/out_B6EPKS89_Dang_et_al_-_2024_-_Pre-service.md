@@ -15,6 +15,8 @@ key_findings:
 - The six belief changes identified are then discussed in terms of levels (from no
   to significant change) and the underlying motives
 methodology: qualitative
+pedagogical_confidence: 0.92
+pedagogical_implications: true
 publication_year: 2024
 research_questions: []
 source_file: out_B6EPKS89_Dang_et_al_-_2024_-_Pre-service.md

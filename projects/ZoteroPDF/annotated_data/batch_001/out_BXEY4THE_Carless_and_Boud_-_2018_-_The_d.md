@@ -10,6 +10,8 @@ has_methodology: true
 has_results: false
 key_findings: []
 methodology: theoretical
+pedagogical_confidence: 0.4
+pedagogical_implications: true
 publication_year: 2018
 research_questions: []
 source_file: out_BXEY4THE_Carless_and_Boud_-_2018_-_The_d.md

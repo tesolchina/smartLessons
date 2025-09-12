@@ -12,6 +12,8 @@ key_findings:
   factors play crucial roles in the rate and extent to which students overcome transitional
   challenges.
 methodology: mixed
+pedagogical_confidence: 0.54
+pedagogical_implications: true
 publication_year: 2023
 research_questions:
 - What is the relationship between students' English proficiency, academic performance,

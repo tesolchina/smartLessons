@@ -9,6 +9,8 @@ has_methodology: true
 has_results: true
 key_findings: []
 methodology: quantitative
+pedagogical_confidence: 0.76
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How may dual-subtitled viewing be optimised to foster second/foreign language learning

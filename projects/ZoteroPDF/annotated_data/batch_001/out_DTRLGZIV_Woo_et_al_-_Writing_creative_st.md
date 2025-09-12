@@ -13,6 +13,8 @@ key_findings:
 - AI can be leveraged to enhance secondary school students' creative writing through
   the use of natural language generation tools
 methodology: empirical
+pedagogical_confidence: 1.0
+pedagogical_implications: true
 publication_year: 2024
 research_questions:
 - How can AI be integrated into classrooms to facilitate students' learning effectively?
