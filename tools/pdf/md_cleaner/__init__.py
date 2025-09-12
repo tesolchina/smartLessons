@@ -1,0 +1,1 @@
+"""PDF → Markdown cleaning suite."""

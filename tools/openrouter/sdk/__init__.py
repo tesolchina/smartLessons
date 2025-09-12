@@ -1,3 +1,4 @@
+"""OpenRouter lightweight SDK."""
 """OpenRouter environment helpers."""
 
 from .env import (

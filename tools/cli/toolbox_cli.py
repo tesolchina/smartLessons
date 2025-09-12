@@ -13,14 +13,13 @@ Examples:
 from __future__ import annotations
 
 import argparse
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def run_slides_append(args):
-    from operating.GoogleDocsAPI.slides_to_md_append_and_ai_comments import main as run
+    from tools.google.docs.api.slides_to_md_append_and_ai_comments import main as run
     return run([
         '--pdf', args.pdf,
         '--doc-id', args.doc_id,
@@ -29,7 +28,7 @@ def run_slides_append(args):
 
 
 def run_slides_clean(args):
-    from operating.GoogleDocsAPI.slides_md_cleaner_append import main as run
+    from tools.google.docs.api.slides_md_cleaner_append import main as run
     return run([
         '--pdf', args.pdf,
         '--doc-id', args.doc_id,
@@ -38,11 +37,11 @@ def run_slides_clean(args):
 
 
 def run_audit_dups(args):
-    from operating.duplicate_functions_audit import main as run
+    from tools.operating.duplicate_functions_audit import main as run  # still in legacy location
     return run()
 
 def run_pdf_to_clean_md(args):
-    from operating.pdf_md_cleaner.run import main as run
+    from tools.pdf.md_cleaner.run import main as run
     argv = [
         '--input', args.input,
         '--model', args.model,
