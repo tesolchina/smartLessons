@@ -1,0 +1,24 @@
+# LANG2077
+
+(Initial project README created by index generator)
+
+
+<!-- AUTO_PROJECT_INDEX:START -->
+Auto-generated index for project `LANG2077` at 2025-09-12T06:49:50Z UTC.
+Regenerate with: `python tools/cli/generate_project_indexes.py --dirs LANG2077`
+
+| File | Type | Size (bytes) |
+|------|------|-------------|
+| `CANVA_CLI_SETUP_GUIDE.md` | .md | 0 |
+| `CourseDocs/LC_mascot/assets/ji1300475985_isspa29_130759_1.pdf` | .pdf | 391596 |
+| `LANG2077_Slides_Outline.md` | .md | 3523 |
+| `PY_SCRIPTS_MOVED.md` | .md | 201 |
+| `notesUpdate.md` | .md | 966 |
+| `requirements.txt` | .txt | 0 |
+| `service_learning_20250906_114508_01_Re Departmental Meeting - New Service L.md` | .md | 3936 |
+| `service_learning_20250906_114508_02_Departmental Meeting - Sep 8 240pm OEE.md` | .md | 1304 |
+| `service_learning_20250906_114508_03_Re Departmental Meeting - New Service L.md` | .md | 3716 |
+| `service_learning_20250906_114508_SUMMARY.md` | .md | 453 |
+| `sharingOutreach/Notes.md` | .md | 1096 |
+
+<!-- AUTO_PROJECT_INDEX:END -->

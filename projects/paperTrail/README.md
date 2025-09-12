@@ -239,3 +239,21 @@ cp paperTrail/templates/decision_record_template.md paperTrail/decisions/$(date 
 ---
 
 *The Paper Trail system transforms scattered activities into structured knowledge and actionable insights.*
+
+<!-- AUTO_PROJECT_INDEX:START -->
+Auto-generated index for project `paperTrail` at 2025-09-12T06:49:51Z UTC.
+Regenerate with: `python tools/cli/generate_project_indexes.py --dirs paperTrail`
+
+| File | Type | Size (bytes) |
+|------|------|-------------|
+| `HOW_IT_WORKS.md` | .md | 8307 |
+| `MASTER_ACTIVITY_TRAIL.md` | .md | 7865 |
+| `PY_SCRIPTS_MOVED.md` | .md | 206 |
+| `README.md` | .md | 8123 |
+| `daily_logs/2025-09-06_sample_daily_log.md` | .md | 1721 |
+| `integrations/INTEGRATION_COMPLETE.md` | .md | 5307 |
+| `integrations/OBSIDIAN_VSCODE_SOLUTIONS.md` | .md | 6489 |
+| `templates/daily_log_template.md` | .md | 1784 |
+| `templates/decision_record_template.md` | .md | 2545 |
+
+<!-- AUTO_PROJECT_INDEX:END -->
