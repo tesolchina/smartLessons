@@ -4,7 +4,7 @@
 
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `BenSCMPGRF` at 2025-09-12T07:04:39Z UTC.
+Auto-generated index for project `BenSCMPGRF` at 2025-09-12T07:05:57Z UTC.
 <!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs BenSCMPGRF`
 
@@ -16,23 +16,33 @@ Regenerate with: `python tools/cli/generate_project_indexes.py --dirs BenSCMPGRF
 - Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
 
 ### Install & Use
-1. Editable install (recommended while developing):
+1. Install latest main directly from Git (no clone needed):
    ````bash
-   pip install -e /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant
+   pip install git+https://github.com/tesolchina/DailyAssistant.git
    ````
-2. Run a tool script directly (without install):
+2. Install specific tag/ref:
+   ````bash
+   pip install git+https://github.com/tesolchina/DailyAssistant.git@<tag_or_commit>
+   ````
+3. Editable install after cloning (development):
+   ````bash
+   git clone https://github.com/tesolchina/DailyAssistant.git dailyassistant-src
+   cd dailyassistant-src
+   pip install -e .
+   ````
+4. Run a tool script directly (no install):
    ````bash
    python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_tool_indexes.py
    ````
-3. Via package module after install:
+5. Via package module (after install):
    ````bash
    python -m dailyassistant.cli.generate_tool_indexes
    ````
-4. Via CLI (if entry point installed):
+6. Via CLI entry point (if defined in pyproject):
    ````bash
    da tool-index
    ````
-5. Ad-hoc PYTHONPATH (no install):
+7. Ad-hoc PYTHONPATH (quick test, no install):
    ````bash
    PYTHONPATH=/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_project_indexes.py --dirs BenSCMPGRF
    ````
@@ -144,7 +154,7 @@ TOOLS_DIR = REPO_ROOT / 'tools'
 | `LLM_Analysis_Project_Plan.md` | .md | 7997 |
 | `NovEvent/note.md` | .md | 10464 |
 | `PY_SCRIPTS_MOVED.md` | .md | 206 |
-| `README.md` | .md | 12618 |
+| `README.md` | .md | 13545 |
 | `SHARE_WITH_BEN.md` | .md | 4331 |
 | `TASK_COMPLETION_SUMMARY.md` | .md | 2399 |
 | `analysis_output/scmp_analysis_results_20250910_071425.csv` | .csv | 342 |

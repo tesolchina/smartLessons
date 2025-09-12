@@ -86,6 +86,7 @@ def process_project(name: str) -> bool:
     timestamp = _dt.datetime.utcnow().isoformat(timespec='seconds') + 'Z'
     table = build_table(files)
     abs_tools_path = (REPO_ROOT / 'tools').as_posix()
+    repo_git_url = "https://github.com/tesolchina/DailyAssistant.git"
     content = (
     f"Auto-generated index for project `{name}` at {timestamp} UTC.\n"
     "<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->\n"
@@ -97,15 +98,19 @@ def process_project(name: str) -> bool:
     "- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)\n"
     "- Environment variable (optional): `export DAILYASSISTANT_ROOT=\u0060git rev-parse --show-toplevel\u0060`\n"
         "\n### Install & Use\n"
-        "1. Editable install (recommended while developing):\n"
-        f"   ````bash\n   pip install -e {REPO_ROOT.as_posix()}\n   ````\n"
-        "2. Run a tool script directly (without install):\n"
+        "1. Install latest main directly from Git (no clone needed):\n"
+        f"   ````bash\n   pip install git+{repo_git_url}\n   ````\n"
+        "2. Install specific tag/ref:\n"
+        f"   ````bash\n   pip install git+{repo_git_url}@<tag_or_commit>\n   ````\n"
+        "3. Editable install after cloning (development):\n"
+        f"   ````bash\n   git clone {repo_git_url} dailyassistant-src\n   cd dailyassistant-src\n   pip install -e .\n   ````\n"
+        "4. Run a tool script directly (no install):\n"
         f"   ````bash\n   python {abs_tools_path}/cli/generate_tool_indexes.py\n   ````\n"
-        "3. Via package module after install:\n"
+        "5. Via package module (after install):\n"
         "   ````bash\n   python -m dailyassistant.cli.generate_tool_indexes\n   ````\n"
-        "4. Via CLI (if entry point installed):\n"
+        "6. Via CLI entry point (if defined in pyproject):\n"
         "   ````bash\n   da tool-index\n   ````\n"
-        "5. Ad-hoc PYTHONPATH (no install):\n"
+        "7. Ad-hoc PYTHONPATH (quick test, no install):\n"
         f"   ````bash\n   PYTHONPATH={REPO_ROOT.as_posix()} python {abs_tools_path}/cli/generate_project_indexes.py --dirs {name}\n   ````\n"
         "\n### Programmatic Path Detection\n"
     "- Programmatic path detection snippet:\n\n"

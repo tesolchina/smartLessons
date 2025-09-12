@@ -241,7 +241,7 @@ cp paperTrail/templates/decision_record_template.md paperTrail/decisions/$(date 
 *The Paper Trail system transforms scattered activities into structured knowledge and actionable insights.*
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `paperTrail` at 2025-09-12T07:04:39Z UTC.
+Auto-generated index for project `paperTrail` at 2025-09-12T07:05:57Z UTC.
 <!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs paperTrail`
 
@@ -253,23 +253,33 @@ Regenerate with: `python tools/cli/generate_project_indexes.py --dirs paperTrail
 - Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
 
 ### Install & Use
-1. Editable install (recommended while developing):
+1. Install latest main directly from Git (no clone needed):
    ````bash
-   pip install -e /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant
+   pip install git+https://github.com/tesolchina/DailyAssistant.git
    ````
-2. Run a tool script directly (without install):
+2. Install specific tag/ref:
+   ````bash
+   pip install git+https://github.com/tesolchina/DailyAssistant.git@<tag_or_commit>
+   ````
+3. Editable install after cloning (development):
+   ````bash
+   git clone https://github.com/tesolchina/DailyAssistant.git dailyassistant-src
+   cd dailyassistant-src
+   pip install -e .
+   ````
+4. Run a tool script directly (no install):
    ````bash
    python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_tool_indexes.py
    ````
-3. Via package module after install:
+5. Via package module (after install):
    ````bash
    python -m dailyassistant.cli.generate_tool_indexes
    ````
-4. Via CLI (if entry point installed):
+6. Via CLI entry point (if defined in pyproject):
    ````bash
    da tool-index
    ````
-5. Ad-hoc PYTHONPATH (no install):
+7. Ad-hoc PYTHONPATH (quick test, no install):
    ````bash
    PYTHONPATH=/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant python /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/cli/generate_project_indexes.py --dirs paperTrail
    ````
@@ -289,7 +299,7 @@ TOOLS_DIR = REPO_ROOT / 'tools'
 | `HOW_IT_WORKS.md` | .md | 8307 |
 | `MASTER_ACTIVITY_TRAIL.md` | .md | 7865 |
 | `PY_SCRIPTS_MOVED.md` | .md | 206 |
-| `README.md` | .md | 9491 |
+| `README.md` | .md | 10418 |
 | `daily_logs/2025-09-06_sample_daily_log.md` | .md | 1721 |
 | `integrations/INTEGRATION_COMPLETE.md` | .md | 5307 |
 | `integrations/OBSIDIAN_VSCODE_SOLUTIONS.md` | .md | 6489 |
