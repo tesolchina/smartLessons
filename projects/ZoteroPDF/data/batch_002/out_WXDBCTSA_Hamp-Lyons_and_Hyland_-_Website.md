@@ -1,0 +1,21 @@
+# Journal of English for Academic Purposes
+
+Website: http://www.elsevier.com/locate/jeap
+
+# Editors
+
+# Liz Hamp-Lyons
+
+Centre for Research in English Language Learning and Assessment [CRELLA], University of Bedfordshire,
+
+# Ken Hyland
+
+Centre for Academic and Professional Literacies   
+Institute of Education   
+University of London, UK Editorial Offices: Liz Hamp-Lyons, Honorary Professor, Centre for Research in Language Learning and Assessment, University of Bedfordshire, Putteridge Bury, Bedfordshire LU2 8LE, UK; Ken Hyland, Director, Centre for Academic and Professional Literacies, Institute of Education, University of London, 20 Bedford Way, London WC1H 0AL, UK.   
+Orders, claims, and product enquiries: Please contact the Customer Support Department at the Regional Sales Office nearest you: St. Louis: Elsevier, Customer Service Department, 11830 Westline Industrial Drive, St. Louis, MO 63146, USA; phone: (877) 8397126 [toll free within the USA]; $( + 1 )$ (314) 4537076 [outside the USA]; fax: $( + 1 )$ (314) 5235153; e-mail: JournalCustomerService-usa@elsevier.com Amsterdam: Elsevier, Customer Service Department, PO Box 211, 1000 AE Amsterdam, The Netherlands; phone: (+31) 20 4853757; fax: $( + 3 1$ ) 20 4853432; e-mail: nlinfo-f@elsevier.com   
+Tokyo: Elsevier, Customer Service Department, 4F Higashi-Azabu, 1 Chome Bldg, 1-9-15 Higashi-Azabi, Minato-ku, Tokyo 106-0044, Japan; phone: $( + 8 1 )$ (3) 5561 5037; fax: $( + 8 1$ ) (3) 5561 5047; e-mail: jp.info@elsevier.com   
+Singapore: Elsevier, Customer Service Department, 3 Killiney Road, # 08-01 Winsland House I, Singapore 239519; phone: $+ 6 5$ ) 63490222; fax: $( + 6 5 )$ 67331510; e-mail: asiainfo@elsevier.com   
+Advertising information. Advertising orders and enquiries can be sent to: USA, Canada and South America: Mr Tino DeCarlo, The Advertising Department, Elsevier Inc., 360 Park Avenue South, New York, NY 10010-1710, USA; phone: (+1) (212) 633 3815; fax: $( + 1 )$ (212) 633 3820; e-mail: t.decarlo@elsevier.com. Europe and ROW: James Kenney, Print Operations Co-ordinator, Elsevier, 84 Theobalds Road, London, WC1X 8RR; Tel.: (0) 20 7611 4117; Fax: (0) 20 7611 4463; e-mail: j.kenney@elsevier.com
+
+<html><body><table><tr><td>Bury, Bediordsnire LOz oLE UK</td><td>Oniversity o1 London, OK k.hyland@ioe.ac.uk</td></tr><tr><td colspan="2">Review Editor</td></tr><tr><td colspan="2">Christine Pearson Casanave, Temple University, Japan (casanave@redshift.com)</td></tr><tr><td colspan="2">Editorial Board</td></tr><tr><td>Dwight Atkinson</td><td>Hilary Nesi</td></tr><tr><td>Purdue University, USA</td><td>Coventry University, UK</td></tr><tr><td>Sarah Benesch</td><td>Jill Northcott</td></tr><tr><td>College of Staten Island,</td><td>Edinburgh University, UK</td></tr><tr><td>City University of New York, USA.</td><td>Brian Paltridge</td></tr><tr><td>Marina Bondi</td><td>University of Sydney, Australia</td></tr><tr><td>University of Modena and Reggio Emilia, Italy</td><td>John Read</td></tr><tr><td>Kate Cadman</td><td>The University of Auckland, New Zealand</td></tr><tr><td>University of Adelaide, Australia.</td><td>Sima Sengupta</td></tr><tr><td>David Crabbe</td><td>Independent Consultant, India</td></tr><tr><td>Victoria University of Wellington, New Zealand</td><td>John Swales</td></tr><tr><td>Averil Coxhead Victoria University of Wellington, New Zealand</td><td>University of Michigan, USA</td></tr><tr><td></td><td>Christine Tardy</td></tr><tr><td>Dan Douglas Iowa State University, USA</td><td>DePaul University, USA</td></tr><tr><td>Lynne Flowerdew</td><td>Svetlana Tchigaeva</td></tr><tr><td>Hong Kong University of Science and Technology, HKSAR China</td><td>The University of Hong Kong</td></tr><tr><td>Hugh Gosden</td><td>Paul Thompson</td></tr><tr><td>Independent Consultant, Portugal.</td><td>University of Reading, UK</td></tr><tr><td>Fiona Hyland</td><td>Polly Tse</td></tr><tr><td>University of London, UK</td><td>Hong Kong University of Science and Technology, HKSAR China</td></tr><tr><td>Ann Johns</td><td>Paige Ware</td></tr><tr><td>San Diego State University, USA</td><td>Southern Methodist University, USA.</td></tr><tr><td>Alison Love</td><td>Robyn Woodward-Kron</td></tr><tr><td>University of Lesotho, Lesotho</td><td>University of Melbourne, Australia.</td></tr></table></body></html>

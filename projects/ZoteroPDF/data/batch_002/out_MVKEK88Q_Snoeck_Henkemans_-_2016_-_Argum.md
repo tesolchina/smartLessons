@@ -1,0 +1,196 @@
+# Argumentative Patterns in Over-the-Counter Medicine Advertisements
+
+A. Francisca Snoeck Henkemans1
+
+Published online: 19 September 2015 $©$ The Author(s) 2015. This article is published with open access at Springerlink.com
+
+Abstract In this paper, an argumentative pattern that is prototypical for the communicative practice of over-the-counter medicine advertisements will be discussed. First, a basic argumentative pattern for this type of advertisement will be identified. In addition, an overview of various types of extensions of this basic pattern will be presented. Finally, it will be made clear how combinations of the basic pattern and specific extensions can be analysed as the result of strategic choices made by the advertisers concerning the type of arguments that are advanced, the argumentation structure and the presentation of their arguments.
+
+Keywords Argumentative pattern $\cdot$ Pragmatic argumentation $\cdot$ Over-the-counter medicine advertisement $\cdot$ Strategic choice
+
+# 1 Introduction
+
+Until now, in the research undertaken by argumentation theorists on the argumentative characteristics of drug advertisements, the focus has been on prescription drug advertisements (Goodnight 2008; Rubinelli et al. 2008; van Poppel and Rubinelli 2011; Wierda and Visser 2014). Apart from medicines only available on prescription, there are also medicines that are available to consumers without prescription, the so called ‘over-the-counter medicines’. In this paper, I will discuss an argumentative pattern that can be shown to be prototypical for the communicative practice of over-the-counter (OTC) medicine advertisements.1
+
+Just as in prescription drug advertisements, in over-the-counter medicine advertisements pragmatic argumentation plays a central role. In this type of argumentation the standpoint that a certain action should be carried out is defended by pointing out that the action leads to a desirable result.2 By claiming that their medicinal product will have a beneficial effect on a particular health condition, advertisers try to convince consumers that they should buy the product. Since claims concerning the efficacy of the medicinal product play such a key role in the attempt to convince the consumer that the product is worth buying, there are a number of advertising guidelines that aim to regulate the presentation of such claims as well as the support that should be given for them. For advertising OTC medicines, different regulations apply than for prescription medicines. In the UK (and in some other countries) traditional herbal medicines are included in the regulations for over-thecounter medicines. Traditional herbal medicines then require a traditional medicines registration instead of a so-called ‘marketing authorisation.’ In addition to the general requirements for over-the-counter medicines, there are still a number of other specific requirements these traditional herbal medicines need to fulfil.
+
+By taking into account the institutional point of over-the-counter medicine advertisements as well as the advertising regulations imposing constraints on the argumentation that can be advanced, I shall identify a basic argumentative pattern for this type of advertisements. In addition, I shall provide a non-exhaustive overview of various types of extensions of this basic pattern that may be expected to occur in practice. Next, I shall show how the basic pattern and its extensions can be analysed as the result of strategic choices made by the advertisers concerning the type of argumentation that is advanced, the argumentation structure and the presentation of the argumentation.
+
+# 2 The Use of Pragmatic Argumentation as an Institutional Requirement
+
+Over-the-counter medicine advertisements seem to have the same institutional point as prescription drug advertisements. Wierda and Visser (2014) analyse direct-toconsumer prescription drug advertisements as a hybrid genre of communicative activity in which promotion and consultation are combined. In their view, the institutional point of this type of ad is twofold: on the one hand, it is an attempt to persuade the patient–consumer to use the medical product; on the other hand, it is a legally required effort to provide information enabling patient–consumers to make an informed choice on whether to use the advertised product or not. Although the regulations are less stringent than those for prescription medicine advertising, the guidelines for over-the-counter medicine consumer advertising still aim to enable consumers to make an appropriate and informed choice and to protect their health and safety as much as possible.3 Since in the case of over-the-counter medicines there is no supervision by a physician, it is indeed all the more important that consumers are able to make an informed choice.
+
+In what follows I shall discuss some examples of regulations and guidelines that apply to over-the-counter medicine advertisements. I shall show in what kind of ways they may have an influence on the emergence of prototypical argumentative patterns in this type of advertisement. As a frame of reference, I shall use the Medicines advertising codes for over-the-counter medicines developed by the Proprietary Association of Great Britain (2013).4
+
+In view of the institutional aim of getting consumers to use a certain medicinal product by enabling them to make an informed choice on whether the product is suitable for them, it stands to reason that the main standpoint in OTC-medicines advertisements always concerns a recommended action: ‘‘Consumers for whom it is suitable (i.e. who suffer from a particular condition and for whom this is not contraindicated) should use product X.’’5
+
+According to the advertising code, an over-the-counter medicine ad must always include the product’s therapeutic indication (rule 20 and 57). This means that some beneficial effect on the consumer’s health (for instance that the product relieves dry coughs) must always be presented in the ad.6 Since we may take it that the main reason for consumers to use a certain medicinal product is that the product will have some beneficial effect on their health, it can be expected that the main argument in this type of advertisement is a pragmatic argument by means of which it is argued that the action recommended in the standpoint will lead to the desired result.
+
+Underlying this type of argument is the so-called ‘positive version’ of the pragmatic argument scheme, a subtype of causal argumentation. The pragmadialectical characterization of this scheme is as follows:
+
+1 Action X should be carried out, because   
+1.1 Action X will lead to positive result Y, and   
+1.1’ If an action of type X [such as X] leads to a positive result of type Y [such as   
+Y], then that action should be carried out (van Eemeren 2016b)
+
+The following three critical questions are associated with this version of pragmatic argumentation (van Eemeren 2016b):
+
+1. Do actions of type X lead to results of type Y?   
+2. Is result Y really positive (i.e. desirable)?   
+3. Does action X not have any major negative (i.e. undesirable) side-effects?
+
+This list of critical questions may have to be expanded if the circumstances in which the argumentation occurs call for it (van Eemeren 2016b). In the context of medicine advertisements, just as in many other contexts, two further questions are relevant:
+
+4. Are there are any other actions that need to be taken together with action $\mathrm { X }$ to achieve result Y?   
+5. Could result Y not better be achieved by other actions?
+
+Question 4 is relevant, since the effectiveness of a medicine is often dependent on other factors, such as a healthy life style, so that other actions may indeed be required in order for the positive result to occur. Question 5 needs to be added because of the context of advertising: typically, consumers have a choice between several similar products, so that in making the decision on whether to use a certain product or not, comparing other ways of achieving the beneficial result is almost always a relevant issue.7
+
+Questions 1, 2 and 4 can be used to criticize premise 1.1, since they either question the causal relation between X and Y, or the desirability of result Y. Questions 3 and 5 can be seen as ways of criticizing the bridging premise $1 . 1 \dot { }$ , since they refer to possible ‘‘rebutting’’ circumstances which would make this premise less acceptable.
+
+In addition to pointing at the positive result by means of the main (pragmatic) argument, the guidelines also allow advertisers to mention other, non-therapeutic effects (for instance cosmetic effects) or other benefits (for instance ease of use) as direct support for the main standpoint. However, the medicinal benefits should always be presented as the primary reason for purchasing the medicine (rule 34).
+
+# 3 Argumentative Patterns in Over-the-Counter Medicine Advertisements
+
+From the discussion of the regulations for over-the-counter medicine advertisements it has become clear that the goal of persuading the consumer to use the product in a responsible way minimally requires the use of pragmatic argumentation as a main argument for the standpoint that consumers for whom the medicinal product is suitable should use it.8 The specific standpoint in combination with the pragmatic argument in which a beneficial health effect is claimed can therefore be seen as a basic argumentative pattern in over-the-counter medicine advertisements. This basic pattern can be further extended by the arguer in order to deal with anticipated critical reactions to his main argumentation.9
+
+In an OTC-advertisement, the arguer can advance different types of subarguments for all the premises of the pragmatic argument, thereby dealing with the relevant critical questions for this type of argumentation. As a result, the basic pattern may be extended in a number of ways. In combination with the main argumentation, such extensions can be seen as prototypical argumentative patterns in over-the-counter medicine ads.10
+
+In Fig. 1 an overview is provided of the basic argumentative pattern of over-thecounter medicine advertisements and some extensions of this pattern in which the relevant regulations have been taken into account.
+
+In principle, the advertiser is not obliged to support premise 1.1, the claim that the medicinal product will indeed have the predicted beneficial effect, in the advertisement itself: it is sufficient if all claims made in the advertisement can be substantiated if the advertiser is required to do so by the authorities concerned. If an over-the-counter medicine has received a Market Authorisation, this means that evidence has been provided of the medicine’s effectiveness.11
+
+# Basic pattern: main argument is a pragmatic argument
+
+1 Consumers for whom it is suitable [i.e. who suffer from a relevant condition and for whom it is not contra-indicated] should use medicinal product X.   
+1.1 Using medicinal product X will have beneficial effect Y on the consumer’s health.   
+1.1’ If using a medicinal product of type $\mathrm { X }$ will have a beneficial effect of type Y on the consumer’s health, then the consumer should use product X.
+
+# Possible extensions: supporting arguments as attempts to deal with the critical questions for pragmatic argumentation:
+
+# A Support for premise 1.1:
+
+1.1.1a Achieving effect Y is a means of realising the desirable effect of preventing or diminishing a health risk.   
+[pragmatic argument]
+
+# And/Or:
+
+1.1.1b That using X will produce effect Y has been clinically proven. [science based authority argument; not allowed in the case of traditional herbal medicine]   
+Or: 1.1.1b That using X will produce effect Y is based upon a long-standing use as a traditional remedy. [argument from the authority of tradition; must be used in the case of traditional herbal medicine]   
+Or: 1.1.1b That using X will produce effect Y is a claim by (group of) Expert(s) G. [argument from expert opinion, not allowed in the UK, but allowed in, for instance, Canada]   
+Or: 1.1.1b That using X will produce effect Y is a claim by endorser E based on his experience. [experience-based authority argument]   
+Or: 1.1.1b Product X is a licensed/authorised medicine. [legal/competent authority argument]   
+Or: 1.1.1b Active ingredient I of product X produces the beneficial effect Y. [causal ingredient argument]   
+Or: 1.1.1b Product X influences physiological process $\mathrm { P }$ in such a way that beneficial effect Y is produced. [causal physiological process argument]
+
+# B Support for bridging premise 1.1’:
+
+1.1’.1 X has no known side effects/ X has a good safety profile. Or: 1.1’.1 There is no better way than $\mathrm { X }$ to achieve the beneficial effect. 1.1’.1.1 X is more effective than competing types of medication. [not allowed in the UK, but allowed in, for instance, Canada] Or: 1.1’.1.1 Unlike competing products, X has (non-therapeutic) advantage A/X does not have negative side-effect S/ X does not contain (non-active) ingredient I.
+
+Fig. 1 Basic argumentative pattern of OTC-medicines advertisement and extensions
+
+Even if an over-the-counter medicine has obtained a Market Authorisation, advertisers may still anticipate that potential consumers have doubts about whether using the product will indeed produce the beneficial health results. They may then decide to provide further support for premise 1.1. This means that they anticipate the first critical question for pragmatic argumentation: ‘‘Do actions of type $X$ lead to results of type Y?’’12
+
+To make it clear that this question can be answered positively, advertisers could, of course, refer to the scientific evidence for the efficacy that they have had to provide in order to get their medication authorised. Doing so, however, may make the argumentation too technical for a lay audience. An alternative is to use an argument from scientific authority by just pointing out that the effect has been scientifically or clinically proven, without going into the details of the scientific evidence. In the case of traditional herbal medicine products, using this type of authority argument is not allowed (rule 20). Instead, it should be made clear that that the efficacy of the product is based on the authority of tradition, by adding the statement ‘‘exclusively based upon long-standing use as a traditional remedy’’.13
+
+In support of premise 1.1, advertisers may also choose to make use of other types of authority argumentation. A reason for doing so might be that they anticipate that a scientific authority argument may not be convincing to everyone. Consumers might be somewhat distrustful of advertisers claiming that the effectiveness of their product is scientifically or clinically proven.14 If such doubt is anticipated by the advertiser, a better option might be to make use of other types of authority argumentation, such as the argument from expert opinion. By referring to the opinion of others instead of making claims themselves, advertisers may think to be more convincing.
+
+In some countries, such as Canada, using an argument from expert opinion is allowed in OTC-medicines advertising. The UK’s advertising code, however, forbids advertisers to refer directly or indirectly to recommendations by scientists or health professionals (rule 45). It is only acceptable to state that a particular health professional recommends the use of a specific ingredient, formulation or preparation but not a particular brand (rule 46). It is also allowed to state that a medicine is ‘licensed’ or ‘authorised’ as long as it is not suggested that it ‘‘has been specifically endorsed or approved’’ by authorities such as the Department of Health or the Medicines and Healthcare products Regulatory Agency (rule 19). The UK guidelines also forbid recommendations by celebrities (rule 47). The only endorsements that are allowed are testimonials, or experience-based authority arguments, by users of the product who are neither health professionals nor celebrities (rule 50, 52).
+
+Apart from authority arguments, causal arguments may also be used to support the efficacy of medicinal products. In the context of over-the-counter medicine advertisements, this will often be a subtype of causal argumentation in which it is claimed that specific ingredients that are present in the product cause the product’s beneficial effect. Another subtype of causal argumentation that is used in over-the-counter medicine advertisements refers to the physiological process involved in producing the health benefits. An example is the argument given for the standpoint that a certain kind of gel helps to get rid of warts: ‘‘it helps to kill the virus within the wart.’’
+
+Apart from critical question 1 concerning the efficacy of the medicinal product, in advertisements other critical questions may be anticipated as well. A first example is critical question 2: Is the result the action is claimed to produce indeed desirable? Sometimes it is not immediately evident to the consumer that a particular condition that can be remedied by the health product is problematic, so that the advertiser first needs to convince the consumer that it is desirable to do something about it in order to prevent a serious health risk (as in premise 1.1.1a in Fig. 1).
+
+Further critical questions may be raised with respect to the bridging premise: ‘‘If an action of type X leads to a positive result of type Y, then that action should be carried out.’’ In the first place, doubt may be cast on this premise by raising critical question 3: Does action X not also have major negative side-effects? According to the guidelines, it is unacceptable to claim that a product is ‘‘side-effect-free’’ (rule 26). It is also forbidden to state without qualification that a product is ‘‘safe’’. It is allowed however, to state that there are ‘‘no known side effects’’ or that a product has a ‘‘good safety profile’’ (rule 26).
+
+Another question that might be brought to bear on the bridging premise is critical question 5: Could result Y not be achieved more easily by other actions, such as using a different type of medication. The UK guidelines forbid advertisers to suggest that a product’s effects are better than or equally good as those of another identifiable product that is claimed to have similar effects (rule 39). Comparisons with other products are acceptable, however, if they just refer to qualities such as product palatability, speed of action, or duration of action (rule 37).
+
+As we have seen, the extrinsic institutional constraints imposed by the advertising regulations on OTC-medicines advertisements influence what kind of argumentative patterns are to be expected. The institutional aim in combination with the regulations requires arguers to advance pragmatic argumentation in direct support of their prescriptive standpoint. As a result, it is likely that the critical questions that are relevant for pragmatic argumentation in the specific context concerned will be anticipated by the advertiser. This is because we may take it that advertisers will want to make the strongest case by dealing as adequately as possible with doubts that they expect their antagonists to have concerning their argumentation.15 In this attempt, they have to take account of the specific institutional constraints.
+
+In some cases, advertisers are institutionally obliged to deal with a particular critical question, and sometimes even to do so in a particular way. The requirement that traditional herbal medicines should include the information that the product’s indication is exclusively based upon long-standing use as a traditional remedy is a case in point. Although this requirement aims to prevent advertisers from unwarrantedly claiming that the effectiveness of the medicine has been demonstrated, it is likely that the long-standing use will function for many consumers as an argument in support of the efficacy of the medication.
+
+As has become clear, the UK advertising code also includes rules which forbid the use of particular types of argument altogether, thus restricting the ways in which advertisers may deal with anticipated critical questions. Celebrity endorsements, for instance, are not allowed to be used anywhere in the advertising material (rule 47). Other rules forbid a particular type of argument to be used in support of particular standpoints or sub-standpoints. The argument can then still be used in other places in the advertisement. An example is the argument from expert opinion: it is not allowed to use this type of argument in direct support of the standpoint that consumers should use a particular brand of medicine. It is allowed, however, to refer to an endorsement by an expert in support of the standpoint that a particular ingredient should be used or that a certain treatment type is to be recommended (rule 45).
+
+Finally, there are regulations which only allow dealing with particular critical questions if the advertiser meets specific presentational requirements. A case in point is the critical question ‘‘Does X not also have negative side-effects?’’ According to the guidelines, it is not allowed to make any absolute claims (such as that product $\mathrm { X }$ is side-effect free or safe) in anticipation of this question. Only qualified claims (such as that product X has no known side-effects) are permitted.
+
+# 4 The Argumentative Patterns Resulting from Strategic Maneuvering Within Institutional Constraints
+
+The guidelines are designed to protect the public from misleading advertising by ensuring that the advertising is balanced and responsible. We may therefore take it that the guidelines will be chiefly geared towards preventing ways of promoting medicinal products in which the advertisers’ aim to be effective overrules their aim to maintain reasonableness. In other words, in general the regulations will pertain to strategic moves that advertisers consider to be particularly effective, but that do not allow the consumer to make a well-balanced decision. In trying to be as effective as possible, advertisers may be expected to push the limits of what is allowed according to the regulations. One general strategy that they are likely to apply in trying to make the strongest case possible, is to look for the closest alternative or ‘second-best’ option to the kind of argumentative move that is ruled out.
+
+Which option is the closest alternative, depends on the kind of constraint imposed by the advertising rules. If the rules forbid the use of a particular (sub-) type of argument, advertisers could look for another argument that is based on a similar type of relation between argument and standpoint that is allowed. An example is the use of celebrity endorsements. If making use of this type of authority is not allowed, then the use of another type of endorsement, such as an experience-based authority argument in which a non-celebrity is quoted, could be the best alternative for an advertiser who wishes to refer to an external authority.
+
+If a certain type of argument is forbidden only when it supports a particular standpoint or sub-standpoint, but not forbidden altogether, the second best option could be to use the same type of argument somewhere else in the argumentation structure, for instance in support of another premise or at a more subordinate level of the argumentation. Take the rule that it is not allowed in advertisements for traditional herbal medicines to use an argument from scientific authority for the efficacy of the medication. In such a case advertisers may choose to refer to scientific studies in support of the safety of the herbal medicine instead.
+
+If, finally, a certain formulation of an argument is not allowed, advertisers may be expected to opt for a formulation that closely approximates the forbidden formulation. In general, formulations that promise too much, that is, express exaggerated claims that cannot be substantiated, are not allowed in medicine advertisements. An example of what would be considered to be an exaggerated claim is given in rule 17 of the advertising guidelines, according to which it is not allowed to claim or imply that a product’s effects are guaranteed. For this reason, it is not allowed to use formulations such as ‘‘gets rid of pain’’. In the guidelines, a number of acceptable alternative formulations have already been listed. As acceptable alternatives for ‘‘gets rid of pain’’, modally qualified alternatives such as ‘‘can get rid of pain’’ or alternative formulations in which the focus is on the purpose of the medicine, not on its effect, such as ‘‘to get rid of pain’’ or ‘‘for getting rid of pain’’ are offered. When such alternative formulations are taken literally, it is indeed not claimed that using the product is a sufficient guarantee that the desired result will be produced. However, as communication theorists such as Geis (1982) and Jacobs (1995) have pointed out, in the context concerned ordinary arguers are likely to interpret the weaker claims ‘‘can get rid of pain’’ or ‘‘to get rid of pain’’ as implicating the stronger claim ‘‘gets rid of pain’’.
+
+Another type of formulations constrained by the guidelines are superiority claims by means of which the advertiser claims that the advertised product is more effective than other products. Since a great many conditions need to be fulfilled for such claims to be legitimate, advertisers may choose to use top parity claims instead, that is, claims such as ‘‘nothing is proven to work better’’ or ‘‘there is nothing more effective’’. Here, again, these claims may be read as superiority claims by the audience.
+
+In cases where no concrete alternative formulations are provided, advertisers will search for such second best options themselves. One kind of technique that seems to be used regularly to suggest that a certain qualification is warranted without claiming this explicitly is to mention a precondition for the qualification or a consequence of the qualification. An example of referring to a precondition is the claim that the effectiveness of a medication has been clinically ‘‘tested’’, instead of clinically ‘‘proven’’. An example of emphasizing the consequence is calling a product ‘‘trusted’’, instead of ‘‘safe.’’ Claiming that a product has been ‘‘tried and trusted’’ is a way of suggesting that it is safe by mentioning both a precondition and a consequence.
+
+Inspired by the views of Jacobs (1995) on pragmatically ambiguous advertising claims, Wierda (2015) has called similar strategic maneuvers ‘‘misusing ambiguity concerning an answer to a critical question’’.16 According to Wierda’s analysis, it is characteristic for these maneuvers that a claim is put forward that taken literally is too weak to provide a satisfactory answer to a critical question. By implicitly making the stronger interpretation of the ambiguous advertising claim more relevant for the readers, advertisers invite readers to interpret the claim in the stronger sense. They thereby wrongly give the impression that the critical question can be answered satisfactorily (Wierda 2015, Ch. 4). This is exactly what seems to be at stake in the examples I discussed just now. Since such maneuvers hinder the dialectical testing process, they can be considered fallacious. In the experimental part of her dissertation, however, Wierda shows that such unreasonable ambiguous anticipation maneuvers are in practice equally effective as their reasonable equivalents in which a satisfactory answer to a critical question is indeed provided (2015, Ch. 6).
+
+# 5 Exemplary Analysis of a Prototypical Pattern of an OTC-Medicine Advertisement
+
+To illustrate what a prototypical argumentative pattern of an advertisement for an OTC-medicine might like look in practice, and to analyze some of the strategic choices made by the advertiser in an attempt to make the strongest case within the constraints of the advertising guidelines, I will take a look at the following advertisement for the acid reducer Zantac, which can be found on the internet:
+
+# Prevent and relieve heartburn with Zantac- - No pill relieves heartburn faster!TM\*
+
+Zantac is a nonprescription acid reducer for the prevention and relief of heartburn associated with acid indigestion and sour stomach brought on by eating or drinking certain foods and beverages. The active ingredient in Zantac, ranitidine, has been prescribed by doctors for years to treat millions of patients safely and effectively.
+
+Zantac products work fast to prevent heartburn when taken 30 to $6 0 ~ \mathrm { { m i n } }$ before a meal or to provide quick relief for tough heartburn symptoms once they’ve started. Zantac begins to work in as little as $3 0 ~ \mathrm { { m i n } }$ and provides heartburn relief for up to $^ { 1 2 \mathrm { ~ h ~ } }$ , day or night.\*\*
+
+If you choose Zantac, you’ll be happy to know that Zantac has been a trusted name in heartburn relief for more than two decades. In fact, it is the #1 doctor recommended H2 brand.
+
+\*Does not include chewables.   
+\*\*Clinically proven to relieve heartburn in 30 to $6 0 ~ \mathrm { { m i n } }$ and to last up $^ { 1 2 \mathrm { ~ h ~ } }$ . (https://www.zantacotc.com/heartburn-relief.html)
+
+In Fig. 2, an overview of the argumentation structure of this advertisement is provided.
+
+From the reconstruction it becomes clear that the pragmatic argument that is a constitutive part of the basic pattern of OTC-medicine advertisements is in this Zantac advertisement extended by further support for both premise 1.1 and missing premise (1.1’). In order to defend the efficacy of the medication (premise 1.1), the advertiser has chosen to use a causal ingredient argument in its support (premise 1.1.1).
+
+The choice of this type of argument could be seen as a strategic alternative for the ruled out option: by claiming that the ingredient is effective and safe, the advertiser implies that the product is too, without having to claim the latter explicitly.17 At the same time, the fact that the focus is now on the active ingredient, instead of on the product itself, makes it possible to add the health-professional endorsement that the ingredient has been prescribed by doctors for years. This type of endorsement would not have been allowed in direct support of the effectiveness of the brand Zantac itself.18
+
+The formulations used in the presentation of the causal ingredient argument, in particular the phrase ‘‘ranitidine has been prescribed by doctors (…) to treat millions of patients safely and effectively’’ can also be seen as a strategic alternative. They allow the advertiser to avoid making the absolute claim that the active ingredient is effective: that the ingredient has been prescribed to treat patients effectively, does not necessarily mean that this aim was achieved.
+
+In support of the missing premise (1.1’), both the lack of side-effects of Zantac and the claim that there is no better alternative for this medicine are defended. In the formulations of the arguments supporting the missing premise, similar strategic choices have been made as in the support for premise 1.1. Again, the advertiser has avoided making any absolute safety claims, this time by using the construction ‘‘prescribed to treat patients safely’’ that I just discussed. Furthermore, by calling Zantac a ‘‘trusted name in heartburn relief’’ it is not outrightly claimed that the product is safe, but this is certainly suggested.
+
+That there is no better alternative for Zantac, is not defended by means of a superiority claim, but by means of the top parity claim that no heartburn pill relieves heartburn faster. As a second independent argument for the fact that there is no better alternative, the advertiser advances the argument that Zantac is the #1 doctor recommended H2 brand. At first sight, this argument seems to violate the rule that
+
+Main argumentation
+
+1 (Consumers who suffer from heartburn should use Zantac)   
+1.1 Using Zantac will have the beneficial effect of preventing and relieving heartburn (1.1’) (If using Zantac has the beneficial effect of preventing and relieving heartburn, consumers suffering from heartburn should use it)
+
+Supporting arguments
+
+1.1.1 Zantac’s active ingredient Ranitidine prevents and relieves heartburn 1.1.1.1a Ranitidine has been prescribed by doctors for years to treat millions of patients with heartburn effectively   
+(1.1’).1a (Zantac has no known side-effects) (1.1’).1a.1a Zantac’s active ingredient Ranitidine has been prescribed by doctors for years to treat millions of patients safely (1.1’).1a.1b Zantac has been a trusted name in heartburn relief for more than two decades   
+(1.1’).1b (There is no better way than Zantac to relieve heartburn) (1.1’).1b.1 No other heartburn pill relieves heartburn faster (1.1’).1b.1.1 Zantac relieves heartburn in 30 to 60 minutes while lasting up to 12 hours ((1.1’).1b.1.1’) (This is faster than or just as fast as other heartburn medications) (1.1’).1b.1.1.1 That Zantac relieves heartburn in 30 to 60 minutes and lasts up to 12 hours has been clinically proven (1.1’).1b.2 Zantac is the #1 doctor recommended H2 brand [H2 blocker $=$ acid reducer]
+
+no recommendations for the product by health professionals may be included in the advertisement. In combination with the #1, however, this claim could be read as a sales claim, a type of claim which is allowed under certain conditions (rule 29). Also, it is allowed to use health professional endorsements in support of a particular type of treatment, so the advertiser might get away with saying that it is the most doctor recommended $H 2$ -brand (rule 45).
+
+# 6 Conclusion
+
+In this paper, I have shown that an explanation can be provided for the emergence of prototypical argumentative patterns in OTC-medicine advertisements by taking the institutional preconditions for strategic maneuvering of this activity type into account. The pattern prototypically consists of a prescriptive standpoint supported by pragmatic argumentation as a main argument. Typically there will be extensions in the form of further supporting arguments, which pertain to the critical questions associated with pragmatic argumentation. For those critical questions that are the most relevant in the context at hand, guidelines are provided by the authorities that pose specific restrictions on how these issues may be dealt with. As we have seen, on the basis of these restrictions it can in certain cases be explained why certain types of support will necessarily be present in advertisements for particular types of medicinal products, why specific formulations of responses to critical questions have been chosen, and why certain types of support do not occur.
+
+I have analyzed the prototypical argumentative patterns in OTC-medicine ads as the result of a combination of the advertisers’ attempt at complying with the institutional guidelines and trying to make the strongest case possible. As I have argued, by searching for second best alternative ways of convincing their audience in cases where their preferred options are ruled out by the guidelines, advertisers make strategic choices with respect to the types of argument they use to deal with expected critical questions, the position in the argumentation structure they give these arguments and the way in which they formulate their arguments.
+
+The resulting argumentative patterns may be in accordance with the advertising code, but that is not to say that the argumentation occurring in them can be automatically regarded as reasonable in every respect. As I have shown, in particular the kinds of techniques used in the presentation of the arguments can be such that they create an obstacle for consumers to arrive at an objective decision on whether or not to use the medicine that is advertised. Since such presentational maneuvers hinder the dialectical testing procedure, they can be considered as fallacious.
+
+Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0 International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.
+
+# References
+
+Geis, M.L. 1982. The language of television advertising. New York: Academic Press.   
+Goodnight, G.T. 2008. Strategic maneuvering in direct to consumer drug advertising: A study in argumentation theory and new institutional theory. Argumentation 22: 359–371.   
+Health Canada. 2006. Consumer advertising guidelines for marketed health products (for nonprescription drugs including natural health products. http://www.hc-sc.gc.ca/dhp-mps/advert-publicit/pol/guideldir_consom_consum-eng.php.   
+Jacobs, S. 1995. Implicatures and deception in the arguments of commercial advertising. In Special fields and cases: Proceedings of the third ISSA conference on argumentation, vol. IV, ed. F.H. van Eemeren, R. Grootendorst, J.A. Blair, and C.A. Willard, 579–592. Amsterdam: Sic Sat.   
+Keuringsraad KOAG/KAG. 2013. Code voor de publieksreclame voor geneesmiddelen. http://www. koagkag.nl/Leidraad/Code-voor-de-publieksreclame-voor-geneesmiddelen.   
+PAGB Medicines Advertising codes. 2009 edition, updated July 2013. http://www.pagbadvertisingcode. com/_common/pdf/PAGBAdvertisingCodes.pdf.   
+Rubinelli, S., K. Nakamoto, and P.J. Schulz. 2008. The rabbit in the hat: Dubious argumentation and the persuasive effects of direct-to-consumer advertising of prescription medicines. Communication and Medicine 5(1): 49–58.   
+van Eemeren, F.H. 2016a. Bingo! In Reflections on theoretical issues in argumentation theory, ed. F.H. van Eemeren, and B. Garssen. Dordrecht/Heidelberg/New York/London: Springer.   
+van Eemeren, F.H. 2016b. Identifying argumentative patterns. A vital step in the methodical development of pragma-dialectics. Argumentation, 30(1) (In this issue).   
+van Eemeren, F.H. & Garssen, B. 2014. Argumentative patterns in discourse. In Virtues of argumentation. Proceedings of the 10th OSSA conference at the University of Windsor, May 2013, ed. D. Mohammed and M. Lewinski. Windsor, ON: OSSA. (CD-rom).   
+van Poppel, L., and S. Rubinelli. 2011. ‘Try the smarter way’. On the claimed efficacy of advertised medicines. In Keeping in touch with pragma-dialectics, ed. E.T. Feteris, B. Garssen, and F. Snoeck Henkemans, 153–164. Amsterdam: John Benjamins.   
+Wierda, R. 2015. Experience-based authority argumentation in direct-to-consumer medical advertisements. An analytical and experimental study concerning the strategic anticipation of critical questions. Dissertation University of Amsterdam.   
+Wierda, R., and J. Visser. 2014. Direct-to-consumer advertisements for prescription drugs as an argumentative activity type. In Argumentation and health, ed. S. Rubinelli, and A.F. Snoeck Henkemans, 81–96. John Benjamins: Amsterdam/Philadelphia.

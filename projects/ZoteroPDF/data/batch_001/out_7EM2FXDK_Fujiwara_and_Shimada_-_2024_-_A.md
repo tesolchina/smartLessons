@@ -1,0 +1,242 @@
+# Acquisition of overt and covert and: support for the semantic subset principle
+
+Yoshiki Fujiwara & Hiroyuki Shimada
+
+To cite this article: Yoshiki Fujiwara & Hiroyuki Shimada (2024) Acquisition of overt and covert and: support for the semantic subset principle, Language Acquisition, 31:1, 22-36, DOI: 10.1080/10489223.2023.2165081
+
+To link to this article: https://doi.org/10.1080/10489223.2023.2165081
+
+# Acquisition of overt and covert and: support for the semantic subset principle
+
+Yoshiki Fujiwaraa and Hiroyuki Shimadab
+
+a University of Connecticut; b Hokuriku University
+
+# ABSTRACT
+
+The goal of this paper is to tease apart two approaches to the source of children’s consistent scope assignment in negative sentences containing logical connectives; the Semantic Subset Principle and the Semantic Subset Maxim. Previous developmental work has observed that four- to six-year-old children across languages have difficulty with disjunctive interpretations in these sentences and assign conjunctive interpretations. The results of our experiment however show that Japanese children can access the disjunctive interpretations when conjunctions are elided. This finding supports the idea that children are guided by the Semantic Subset Principle when determining the default value of any parameter associated with a logical connective.
+
+# ARTICLE HISTORY
+
+Received 28 December 2020   
+Accepted 3 November 2022
+
+# 1. Introduction
+
+Logical connectives (i.e., “and”, “or”) interact with negation resulting in different scope assignments across languages (e.g., Szabolcsi 2002). In English, for example, logical connectives typically take scope under negation, as in (1).
+
+(1) a. John did not eat the pepper or the carrot. $( \mathrm { N E G } > o r )$ ) $\mathbf { N E G } > o r )$ ): It is not the case that John ate the pepper or the carrot. b. John did not eat both the pepper and the carrot. (NEG $>$ and) (NEG $>$ and): It is not the case that John ate both the pepper and the carrot.
+
+The $\left( \mathrm { N E G } > o r \right)$ reading in (1a) is true only when John ate neither the pepper nor the carrot, while the (NEG $>$ and) reading in (1b) is true in the situations where John ate one or the other, or neither. Languages of this type include German, Greek, Romanian, Bulgarian, and Korean (Szabolcsi 2002, Geçkin, Thornton & Crain 2017). In contrast, logical connectives in Japanese must take scope over negation, as shown in (2).
+
+(2) a. John-wa piiman ka ninjin-o tabe-nak-atta. John-TOP pepper or carrot-ACC eat-NEG-PAST “John did not eat the pepper or the carrot.” $( o r > \mathrm { N E G } ) / ^ { * } ( \mathrm { N E G } > o r )$ $O r > \mathrm { N E G } )$ ): It is either the pepper or the carrot that John did not eat. b. John-wa piiman-mo ninjin-mo tabe-nak-atta. John-TOP pepper-also carrot-also eat-NEG-PAST “John did not eat the pepper and the carrot.” $( a n d > \mathrm { N E G } ) / \ ^ { * } ( \mathrm { N E G } > a n d )$ $[ a n d > \mathbf { N E G } ]$ ): It is both the pepper and the carrot that John did not eat.
+
+(2a) has only the $( o r > \mathrm { N E G } )$ interpretation, which is true in the circumstance where John ate one or the other, or neither. (2b) yields only the $( a n d > \mathrm { N E G } )$ interpretation, which is true when John ate neither the pepper nor the carrot. In other words, the disjunction and the conjunction in Japanese behave as positive polarity items (PPI) like some in English. Logical connectives in other languages such as Hungarian, Italian, Mandarin, Russian, Serbo-Croatian, Slovak, and Polish share this PPI property (Szabolcsi 2002, Jing, Crain, & Hsu 2005).
+
+Following a suggestion by Szabolcsi (2002), Goro (2007) proposes that the crosslinguistic variation in scope relations between connectives and negation results from two lexical parameters, called disjunction parameter and conjunction parameter (see also Crain 2012). These parameters have either the $+ \mathrm { P P I }$ value, which forces a connective to take scope over negation, or the -PPI value, which does not. In English-type languages, both disjunctions and conjunctions are assigned the -PPI values, and thus they can take scope under negation, which is indeed the most salient reading in English. In Japanese-type languages, both disjunctions and conjunctions have the $+ \mathrm { P P I }$ value and must take scope over negation. Turkish, according to Geçkin, Crain & Thornton (2016), is an example of a language with discordant PPI values for different logical connectives (see, also, Geçkin, Thornton & Crain 2017).
+
+Notice that the $( o r > \mathrm { N E G } )$ and $( \mathrm { N E G } > a n d )$ ) interpretations have equivalent truth conditions (cf. $2 \mathrm { a } I$ 1b). These interpretations are often called disjunctive interpretations since their truth conditions can be expressed as the disjunction of two negated propositions (i.e., John did not eat the pepper OR John did not eat the carrot). Conversely, the $\left( \mathrm { N E G } > o r \right)$ and $( a n d > \mathrm { N E G } )$ interpretations (cf. 1a/2b) are called conjunctive interpretations since their truth conditions can be expressed as the conjunction of the two negated propositions (i.e., John did not eat the pepper AND John did not eat the carrot).
+
+Interestingly, it has been observed across languages that children around age 4-6 years have difficulty with the disjunctive interpretations (i.e., $o r > \mathrm { N E G } / \mathrm { N E G } > a n d )$ , and a strong tendency to assign conjunctive interpretations (i.e., $\mathrm { N E G } > o r / a n d > \mathrm { N E G } )$ , in sentences like (1) and (2) (see Crain 2012 and Goro 2016 for review).1 In other words, children consistently show nonadult-like performance on $+ \mathrm { P P I }$ disjunctions (cf. 2a) and -PPI conjunctions (cf. 1b). For instance, Goro & Akiba (2004) found that 3- to 6-year-old Japanese-speaking children incorrectly assigned the $\left( \mathrm { N E G } > o r \right)$ ) reading to a sentence like (2a). Using Truth Value Judgment Task (TVJT; Crain & Thornton 1998), they designed the circumstance where the speaker of (2a) knows that only one of the disjuncts is true but does not know which one. This method is called the Uncertainty Mode (Goro 2017), which provides the speaker with a motivation for using the disjunction. Using the same or similar methods, a number of studies have replicated children’s incorrect scope assignment to a sentence like (2a) in other languages (see Jing, Crain & Hsu 2005 for Mandarin; Pagliarini, Crain & Guasti 2018 for Italian; and Verbuk 2007 for Russian). Crain et al. (2013) investigated the interpretation of negated conjunctions like (1b) in English, and they found that unlike adult English speakers, 3- to 5-year-old children assigned the $( a n d > \mathrm { N E G } ,$ ) interpretation to sentences like (1b) (see also Notley, Zhou & Crain 2016).
+
+This study investigates the source of children’s consistent scope assignment. In particular, we compare two approaches here. One is to attribute it to children’s failure of setting the target values of the disjunction parameter and the conjunction parameter (e.g., Goro 2007, Crain 2012). This parametric approach is based on the Semantic Subset Principle (Goro 2007, Crain 2012, cf. Crain, Ni & Conway 1994). The other one is to attribute it to children’s initial preference of strong interpretations in potentially scope-ambiguous sentences. This approach underlies the Semantic Subset Maxim (Notley et al. 2012; Notley, Zhou & Crain 2016), which is a non-parametric reformulation of the Semantic Subset Principle. We call the former SSP approach, and the latter SSM approach. Crucially, the two approaches make different predictions. In brief, the SSP approach predicts that children should be able to access the disjunctive interpretation when the values of logical connectives are overruled by other syntactic factors, whereas the SSM approach predicts that such syntactic workarounds would not work since children’s dispreference of the disjunctive interpretation comes from adherence to a general learning mechanism in a sentence containing two (or more) scope-bearing elements. The goal of this paper is to tease apart the two approaches by investigating children’s interpretation of elided conjunctions in Japanese.
+
+The organization of this paper is as follows. Section 2 introduces the two approaches to children’s consistent scope assignment and demonstrates that they make different predictions for children’s interpretation of elided conjunctions in Japanese. Section 3 presents an experiment carried out to test these predictions. The results show that 4- to 6-year-old children can access a disjunctive interpretation when a conjunction is elided under negation. This in turn supports the SSP approach to children’s consistent scope assignment. Section 4 concludes this paper.
+
+# 2. Two approaches to children’s consistent scope assignment
+
+This section introduces two possible explanations for children’s difficulty in assigning a disjunctive interpretation (i.e., or $>$ NEG, NEG $>$ and). The first approach attributes it to children’s initial failure to set the parameters associated with logical connectives to their adult values (Goro 2007, Crain 2012). In particular, this approach supposes that children initially select the -PPI value of the disjunction parameter and the $+ \mathrm { P P I }$ value of the conjunction parameter as the default values, as summarized in Table 1, which leads them to assign the conjunctive interpretations (i.e. NEG $>$ or, and $>$ NEG).
+
+These default settings of these parameters follow from the Semantic Subset Principle (SSP), which guides children to adopt a parameter value that generates a subset truth condition (Goro 2007, Crain 2012). To illustrate the essence of the SSP, consider the truth conditions of disjunctive and conjunctive interpretations of simple negative sentences. Returning to (1) and (2), the disjunctive interpretations are true in the following three situations: John ate the pepper but not the carrot; John ate the carrot but not the pepper; John ate neither the pepper nor the carrot. In contrast, the conjunctive interpretations are true only in the third situation: John ate neither the pepper nor the carrot. Therefore, the truth conditions of the conjunctive interpretations constitute a subset of the one of the disjunctive interpretations. In other words, the conjunctive interpretations entail the disjunctive interpretations. This asymmetric entailment relationship potentially gives rise to a learnability problem. If children initially adopt the parameter values that generate the “superset” interpretations (i.e., disjunctive interpretation), then there is no positive evidence that forces children to shift them. Under this learnability consideration, the SSP is motivated to guide children to adopt the value that generates the “subset” interpretation (i.e., conjunctive interpretation) as a default, that is, the -PPI value for disjunctions and the $+ \mathrm { P P I }$ value for conjunctions. The SSP approach thus attributes children’s consistent scope assignment to the default setting of the disjunction and conjunction parameters.
+
+Notley et al. (2012), Notley, Thornton & Crain (2012), and Notley, Zhou & Crain (2016) however pursue a different approach to explain children’s consistent scope assignment without relying on the parametric account. They assume that “within any given language, a sentence S containing two logical operators will always have two available interpretations (Notley et al. 2012: 490-491),” and languages differ in which interpretation is preferred. This means that, for example, the unavailable interpretations in (2) are just strongly dispreferred but theoretically possible. Based on this assumption, they argue that “the child’s task is to determine which of these interpretations is preferred in the local language (Notley et al. 2012: 491).” They then propose the Semantic Subset Maxim (SSM) in order to avoid the semantic learnability problem that would arise when children initially adopt superset interpretations. The SSM “enjoins children to initially favour the scope relationship that makes the sentence true in the narrowest range of circumstances, the subset reading” (Notley et al. 2012: 491).
+
+Table 1. The target and default values for logical connectives in English and Japanese.   
+
+<html><body><table><tr><td></td><td></td><td colspan="3">Adult</td><td colspan="2">Child</td></tr><tr><td></td><td></td><td> Scope</td><td>Target</td><td>Interpretation</td><td> Initial</td><td>Interpretation</td></tr><tr><td>English</td><td>OR</td><td>NEG &gt; or</td><td>-PPI</td><td>Conj</td><td>-PPI</td><td>Conj</td></tr><tr><td></td><td>AND</td><td>NEG &gt; and</td><td>-PPI</td><td>Disj</td><td>+PPI</td><td>Conj</td></tr><tr><td> Japanese</td><td>OR</td><td>or &gt; NEG</td><td>+PPI</td><td>Disj</td><td>-PPI</td><td>Conj</td></tr><tr><td></td><td>AND</td><td>and &gt; NEG</td><td>+PPI</td><td>Conj</td><td>+PPI</td><td>Conj</td></tr></table></body></html>
+
+Let us then consider how children’s consistent scope assignment is accounted for under the SSM approach. Consider first English cases like (1), where sentences are ambiguous in that logical connectives can take scope either over or under negation. In such ambiguous sentences, the SSM enjoins children to initially prefer the subset interpretations, namely, conjunctive interpretations (i.e., $\mathrm { N E G } > o r ,$ , and $>$ NEG). The SSM approach thus provides an account for Crain et al.’s (2013) and Notley et al.’s (2016) findings that children prefer the subset $[ a n d > \mathrm { N E G } ,$ ) interpretation in sentences like (1b) unlike adult English speakers.
+
+Consider then Japanese cases like (2), where negated connective readings (i.e., $\mathrm { N E G } > o r / \mathrm { N E G } > a n d )$ are not possible for adult Japanese speakers. Since the SSM determines children’s initial preference of subset interpretations in scope-ambiguous sentences, it is crucial under the SSM approach to children’s consistent scope assignment in Japanese to assume that the negated connective readings in Japanese are just strongly disprefered but theoretically possible. In other words, Goro’s (2007) parametric account for the unavailability of the negated connective readings in Japanese cannot be taken under the SSM approach. With this assumption, the SSM approach can account for Goro & Akiba’s (2004) observation that unlike adults, children consistently assign the subset (NEG $>$ or) interpretation (i.e., conjunctive interpretation) to a sentence like (2a); the SSM enjoins children to initially prefer the subset $\left( \mathrm { N E G } > o r \right)$ ) interpretation in a sentence like (2a).
+
+The SSM is thus considered as the non-parametric formulation of the SSP (Crain, Ni & Conway 1994). Under the SSM approach, children’s consistent scope assignment is attributed to the default preference of subset interpretations (e.g., conjunctive interpretations) rather than the default settings of parameter values.
+
+Crucially, the two approaches make different predictions. On the one hand, under the SSP approach, children do not have a problem with accessing disjunctive interpretations per se. They just initially adopt a parameter value that generates a subset truth condition (i.e., the -PPI for disjunctions and the $+ \mathrm { P P I }$ for conjunctions). It is thus predicted that if there is a case where the $\pm \mathrm { P P I }$ value of logical connectives is overruled by other syntactic factors, then children should be able to access the disjunctive interpretations. On the other hand, under the SSM approach, where Goro’s (2007) parameter approach to logical connectives cannot be taken, such syntactic workarounds should not override children’s disfavor of disjunctive interpretations since children’s consistent scope assignment comes from the default preference of subset interpretations themselves (e.g., conjunctive interpretations).2 We test this prediction by investigating elided conjunctions in Japanese.
+
+To illustrate the idea concretely, consider the relation between PPIs and ellipsis. It has been observed that polarity sensitivities of PPIs, as well as NPIs, are canceled under ellipsis, as in (3) (Sag 1976; Johnson 2001; Saito 2007; Funakoshi 2013; Merchant 2013).
+
+(3) a. John didn’t see anyone, but Mary did see anyone. (cf. \*but Mary saw anyone) b. John saw someone, but Mary didn’t see someone. (cf. #but Mary didn’t see someone)
+
+(3a), which contains the elided NPI anyone, is grammatical without negation in the second conjunct. In (3b), the elided PPI someone is interpreted under negation, behaving like ‘anyone’. The same effect is observed with argument ellipsis in Japanese. Argument ellipsis is a phenomenon where only an argument undergoes ellipsis (e.g., Oku 1998, Kim 1999, Saito 2007, Sakamoto 2019). (4) exemplifies argument ellipsis of an object.
+
+(4) John-wa kinoo san-satu-no hon-o kat-ta. Kyoo-wa $e$ kaw-anak-atta. John-TOP yesterday three-CL-GEN book-ACC buy-PAST today-TOP buy-NEG-PAST “John bought three books yesterday. He didn’t buy $e$ today.” Quantificational: He didn’t buy three books today. Definite noun: He didn’t buy them (the books he bought yesterday) today. Indefinite noun: He didn’t buy (any) books today.
+
+Although the null object in (4) is three-ways ambiguous, only the quantificational interpretation has been considered a hallmark of ellipsis in the literature (Takahashi 2008). Other interpretations can be yielded by postulating a null pronoun pro, which can be interpreted either definitely (Kuroda 1965) or indefinitely (Hoji 1998). Importantly, as shown in (5), argument ellipsis of the object containing Japanese PPI dareka “someone” cancels its polarity sensitivity.
+
+(5) John-wa [ kono kurasu-no dareka-no nooto]-o karite-iru kedo, John-TOP this class-GEN someone-GEN notebook-ACC borrow-PRES but “John is borrowing [someone’s notebook in this class], but…” Mary-wa [ kono kurasu-no dareka-no nooto]-o karite-ina-i. Mary-TOP borrow-NEG-PRES lit. “Mary is not borrowing anyone’s notebook in this class.”
+
+The elided PPI dareka “someone” can thus be interpreted under negation and behaves as “anyone.” This effect cannot be obtained with the pro analysis (Saito 2007, Funakoshi 2013).
+
+Crucially, the PPI property of Japanese conjunction is also cancelled under argument ellipsis. In (6a), the overt conjunctive phrase must take scope over negation, as we have seen in Section 1, whereas its elided counterpart in (6b) takes scope under negation and yields a disjunctive interpretation. This means that (6b) is true in the situation where Mary ate either the pepper or the carrot, or neither.
+
+(6) “John ate the pepper and the carrot, but…” a. Mary-wa piiman-mo ninzin-mo tabe-nak-atta. Mary-TOP pepper-also carrot-also eat-NEG-PAST “Mary didn’t eat the pepper and the carrot.” $( a n d > \mathrm { N E G } ) / \ ^ { * } ( \mathrm { N E G } > a n d )$ b. Mary-wa piiman-mo ninzin-mo tabe-nak-atta. “Mary didn’t eat the pepper and the carrot.” OK(NEG $>$ and)
+
+Note that such disjunctive interpretations cannot be derived with pro (Funakoshi 2013, Sakamoto 2015). The interpretation obtained with the pro analysis is that Mary did not eat them or Mary did not eat anything, which is truth-conditionally the same as the $( a n d > \mathrm { N E G } )$ interpretation. Therefore, (6b) is ambiguous at least between such (and $>$ NEG)-like interpretations and the ( $\mathrm { N E G } ~ > ~ a n _ { \ l }$ d) interpretation, but the latter is generated only under argument ellipsis. As a theoretical explanation for this effect, I assume that the deletion operation in argument ellipsis deletes PPI features, which results in cancelling polarity sensitivities of the PPIs (see Funakoshi 2013).3
+
+Keeping this in mind, consider the prediction under the SSP approach. The SSP determines children’s initial value of the conjunction parameter, that is, the $+ \mathrm { P P I }$ value. Crucially, however, it does not prevent other linguistic factors such as ellipsis from cancelling the PPI property of conjunctions (i.e. children’s initial setting). Thus, it is predicted under the SSP approach that if children have knowledge of ellipsis, then they should be able to access the disjunctive interpretation (i.e. NEG $>$ and) when the PPI property of conjunctions is canceled by ellipsis.4
+
+In contrast, the SSM approach makes a different prediction. Recall that it is assumed under the SSM approach that a sentence containing two (or more) scope-bearing elements is always ambiguous. This means that both the conjunctive interpretation (i.e., and $>$ NEG) and the disjunctive interpretation (i.e., NEG $>$ and) are theoretically available in (6a) and (6b) because these sentences contain two logical operators, negation and conjunction, whether it is phonologically overt or covert. The SSM guides children to initially prefer subset interpretations (i.e., conjunctive interpretation) to superset interpretations (i.e., disjunctive interpretation). Therefore, children should refuse to access disjunctive interpretations in both (6a) and (6b), as guided by the SSM.
+
+Notice that the predictions under the two approaches presuppose that Japanese-speaking children have knowledge of argument ellipsis. Although several previous studies observe that children around age 4-5 have already acquired argument ellipsis (Sugisaki 2007, Otaki 2014), there are some studies suggesting that children analyze a null object sentence intransitively or with pro (Matsuo 2007, Otaki & Yusa 2009). Therefore, to test the predictions, we need to see whether children can assign an ellipsis analysis to an object gap. This will be one component of the experiment in the following section.
+
+# 3. Experiment
+
+The purpose of this experiment is to test whether Japanese children can access the (NEG $>$ and) interpretation (i.e., disjunctive interpretation) with elided conjunctions. Recall that the PPI conjunction can be interpreted under negation when it undergoes argument ellipsis. Thus, on the one hand, under the SSP approach, children who have knowledge of argument ellipsis should be able to access the disjunctive interpretation. Under the SSM approach, on the other hand, children should refuse to access the disjunctive interpretation.
+
+As we have seen in Section 1, previous studies revealed that 3- to 6-year-old children incorrectly allow an overt disjunction to take scope under clause-mate negation in languages like Japanese. It is thus expected that children consistently access the conjunctive interpretation (i.e., $N E G > o r$ ) in negative sentences with a disjunction whether or not it is elided (see An 2014; Gao et al. 2019, 2021). The contrast between overt and covert disjunction thus cannot be used to tease apart the SSP and the SSM, and hence we focus on ellipsis of conjunction rather than disjunction in this study.
+
+# 3.1. Design and participants
+
+Thirty Japanese-speaking children (age 4;9-6;4/ M 5;5) participated in this experiment. The child participants were recruited from kindergartens in Tokyo and Kanagawa prefectures. We also tested 13 adult speakers of Japanese who were undergraduate students.
+
+We used the TVJT with question-answer pairs. In this task, a participant was told a story illustrated on a laptop computer with PowerPoint animation. After each story, an experimenter asked a puppet a question, and the participant was asked to judge whether the answer by the puppet matched the story or not. Unlike previous studies, we did not employ the Uncertainty Mode of the TVJT in our experiment since our test sentences can be felicitously used without it (see fn 5).
+
+An example of the target question-answer pairs is illustrated in (7). (7Q) is an affirmative question that contains a conjunctive object. The negative answer in (7a) involves an overt conjunction, which must take scope over negation because of its PPI property. (7a) thus means that the elephant ate neither the pepper nor the carrot (i.e., conjunctive interpretation).
+
+(7) Q: Zoo-wa piiman-mo ninzin-mo tabe-ta kana? elephant-TOP pepper-also carrot-also eat-PAST Q “Did the elephant eat the pepper and the carrot?” a. A: Uun, zoo-wa piiman-mo ninzin-mo tabe-nak-atta yo. disagree elephant-TOP pepper-also carrot-also eat-NEG-PAST PRT lit. “Disagree, the elephant did not eat the pepper and the carrot.” Meaning: “The elephant ate neither the pepper nor the carrot.” $( a n d > \mathrm { N E G } ) / { ^ { * } } ( \mathrm { N E G } > a n d )$ b. A: Uun, zoo-wa piiman-mo ninzin-mo tabe-nak-atta yo. $\mathrm { O K } _ { \left( \mathrm { N E G } \right. } > a n d )$ Meaning: (i) “The elephant ate neither the pepper nor the carrot.” $( a n d > \mathbf { N E G } )$ ) (ii) “It is not the case that the elephant ate both the pepper and the carrot.” (NEG $>$ and)
+
+In (7b), on the other hand, the conjunctive object is elided under argument ellipsis. Since the elided conjunction loses its PPI property, it can take scope under negation. (7b) thus means that it is not the case that the elephant ate both the pepper and the carrot (i.e., disjunctive interpretation). A sample story of (7) is as follows. An elephant and a rabbit try to eat carrots and peppers. First, the rabbit eats a carrot and a pepper, and then the elephant eats a carrot. He also tries to eat a pepper, but he cannot. Figure 1 is the outcome of this story (the colored vegetables indicate what they have eaten).
+
+![](img/29d7ccd7c6ad66cabd8f60b24e8fead9688a9a6cff4b566ff2faf6a3891633b6.jpg)  
+Figure 1. The outcome of the story for (7a) and (7b).
+
+In this situation, the conjunctive interpretation (i.e., and $>$ NEG) is false, whereas the disjunctive interpretation (i.e., NEG $>$ and) is true.5
+
+Control question-answer pairs like (8) were also tested to investigate children’s knowledge of argument ellipsis. The object in (8Q) contains a numeral quantifier, and thus argument ellipsis of the object yields a quantificational interpretation, as in (8A). Other interpretations are possible if children apply the pro analysis to the null object.
+
+(8) Q: Zoo-wa mit-tu-no koppu-o kat-ta kana? elephant-TOP three-CL-GEN cup-ACC buy-PAST Q “Did the elephant buy three cups?” A: Uun, zoo-wa kaw-anak-atta yo. Disagree elephant-TOP buy-NEG-PAST PRT lit. “Disagree, the elephant did not buy.” Quantificational: The elephant did not buy three cups. definite/indefinite pro: The elephant did not buy them/cups.
+
+A sample story of (8) is as follows. A pig and an elephant go to a store to buy cups. The pig buys three cups, and the elephant buys two cups. The elephant tries to buy another cup, but he cannot because three cups are too heavy for him. Figure 2 is the outcome of this story. In this situation, the
+
+![](img/e09142ccf192b39a6a51d0542eb5f493de4b3674ce9b7d052f6b108942381d91.jpg)  
+Figure 2. The outcome of the story for (8) and (9).
+
+5 One may wonder whether (7b) with the disjunctive interpretation is pragmatically felicitous in the situation where the outcome of the eating event can be seen. It is known that some sentences with disjunctive interpretations are used to express a speaker’s uncertainty about what actually happened. Thus, for example, (i) with the disjunctive interpretation (i.e., NEG $>$ and) is infelicitous with regular intonation when the speaker knows what exactly the elephant ate and did not eat.
+
+(i) The elephant didn’t eat both the pepper and the carrot.
+
+In order to make the use of (i) with the disjunctive interpretation felicitous, the speaker must be uncertain about what the elephant did not eat. Other sentences with disjunctive interpretations however do not require such a pragmatic context. (ii) is felicitous even when the speaker knows what exactly the elephant ate and did not eat.
+
+(ii) It is not the case that the elephant ate both the pepper and the carrot. ( ${ \tt N E G } >$ and)
+
+Similarly, as one of the reviewers pointed out, the VP-ellipsis counterpart of (i) does not call for the pragmatic requirement. The answer in (iii) is pragmatically felicitous even when the answerer is certain about what the elephant ate and did not eat.
+
+(iii) Did the elephant eat both the pepper and the carrot? – No, he didn’t eat both the pepper and the carrot.
+
+Like (iii), the disjunctive interpretation in (7b) does not require such a pragmatic context. A full discussion of the contrast between disjunctive interpretations with and without the pragmatic requirement is beyond the scope of this paper. What is important here is that (7b) with the disjunctive interpretation is not infelicitous in the situation where the puppet can see the outcome of the eating event.
+
+quantificational interpretation is true, whereas other interpretations are false since the elephant at least buys the two cups.6 We also tested an affirmative version of (9A) with the same situation, which reverses the truth value of each interpretation.
+
+(9) Q: “Did the elephant buy three cups?” $\left( = 8 \mathrm { Q } \right)$ A: Zoo-wa kat-ta yo. elephant-TOP buy-PAST PRT lit. “The elephant bought.” Quantificational: The elephant bought three cups. definite/indefinite pro: The elephant bought them/cups.
+
+The quantificational interpretation in (9), obtained by argument ellipsis, is here false, and other interpretations are true. Recall that the purpose of this experiment is to see whether Japanese children can interpret the elided conjunction in (7b) under negation or not. Testing control question-answer pairs like (8) and (9) thus lets us focus on children who already have knowledge of argument ellipsis. The truth-conditions of the test items are summarized in Table 2.
+
+We created three items for each of the aforementioned four types of question-answer pairs (i.e., (7a), (7b), (8) and (9)). Of the 12 items, 6 were target items $\left( 7 \mathbf { a } / 7 \mathbf { b } \right)$ and 6 were control items (8/9). Three different verbs were used: eat, buy, and carry. The order of the twelve items was pseudo-randomized.
+
+# 3.2. Results
+
+Let us first see the overall result of the test sentences by children and adults. As shown in Figure 3, adult participants performed as expected on the control and target question-answer pairs. In the control trials, they accepted the negative control sentences (8) and rejected the affirmative control sentences (9) at the rate of $1 0 0 \%$ . This shows that they accessed the quantificational interpretations in the control trials all the time. In the target trials, they rejected the overt conjunction sentences (7a) but accepted the covert conjunction sentences $( 7 \mathrm { b } )$ at the rate of $1 0 0 \%$ . This contrast indicates that they
+
+Table 2. The truth conditions of the test items.   
+
+<html><body><table><tr><td></td><td>(7a): Overt Conjunction</td><td>(7b): Covert Conjunction</td></tr><tr><td>Conjunctive interpretation (and &gt; NEG)</td><td>False</td><td>False</td></tr><tr><td>Disjunctive interpretation (NEG &gt; and)</td><td>(*)True</td><td>True</td></tr><tr><td></td><td>(8): Numeral with Negation</td><td>(9): Numeral in Affirmative</td></tr><tr><td>Quantificational interpretation (with argument ellipsis)</td><td>True</td><td>False</td></tr><tr><td>Definite/Indefinite pro</td><td> False</td><td>True</td></tr></table></body></html>
+
+6 This judgment can be confirmed with an overt counterpart of each interpretation of (8).
+
+(i) a. Zoo-wa mit-tu-no koppu-o kaw-anak-atta. “The elephant did not buy three cups.” b. Zoo-wa sorera(-no koppu)-o kaw-anak-atta. “The elephant did not buy those (cups).” c. Zoo-wa koppu-o kawa-anak-atta. “The elephant did not buy cups.”   
+(ia) is true in the relevant situation, whereas (ib) and (ic) are false.
+
+![](img/b5e6f17a174b11407bab8e3e547c9f5564529838fbe6670b81ad11b67ffbcbe1.jpg)  
+Figure 3. Overall acceptance rates by children and adults.
+
+consistently accessed the conjunctive interpretation (i.e., and $>$ NEG) in (7a) but the disjunctive interpretation (i.e., NEG $>$ and) in (7b). Children’s performances are generally in line with the adults. They accepted the affirmative control sentences (9) at the rate of $1 0 \%$ and the negative control sentences (8) at the rate of $7 4 . 4 \%$ . This suggests that children mostly accessed the quantificational interpretations in the control trials applying argument ellipsis to the null objects. Like adults, children also showed the contrast between overt and covert conjunctions. They accepted the target trials with an overt conjunction (7a) at the rate of $1 8 . 9 \%$ and the ones with a covert conjunction (7b) at the rate of $6 0 \%$ . This contrast is significant by a Wilcoxon signed rank test $Z = 3 . 6 5$ , two-tailed $p = . 0 0 0 3 )$ .
+
+Let us now look at the result of the target trials focusing on children who were able to apply argument ellipsis to null objects. There were 22 children (age $4 ; 9 - 6 ; 4 / \mathrm { ~ M ~ } 5 ; 6 )$ ) who accessed the quantificational interpretations in the control trials at least 5 times out of 6. Figure 4 shows their performances on the target trials and as a comparison, the performances of the rest 8 children (age 4;11-5;6/ M 5;2) who failed this criterion. The 22 children accepted the test sentences with an overt conjunction at $2 2 . 7 \%$ , whereas they accepted the ones with a covert conjunction at the rate of $7 5 . 8 \%$ . This contrast is significant by a Wilcoxon signed rank test $Z = 3 . 4 9$ , two-tailed $\textstyle p = . 0 0 0 5 )$ . We also found a significant contrast in the acceptance rate of (7b) between the screened child group and the adult group (Mann-Whitney $\mathrm { U }$ test: $Z = - 2 . 4 2$ , $\begin{array} { r } { p = . 0 1 5 5 , } \end{array}$ ). The acceptance rate of (7a) was not statistically significant between the two group (Mann-Whitney U test: $\mathrm { Z } = 1 . 3 1 , p = . 1 9 0 2 \rangle$ . In contrast, the rest 8 children, who did not meet the criterion, mostly rejected the target trials. Their acceptance rate of the overt conjunction items was $8 . 3 \%$ , and the one of the covert conjunction items $1 6 . 7 \%$ . We infer that they did not apply argument ellipsis to the covert conjunction sentences as they did not to the control trials, which led them to answer false.7
+
+![](img/8d6de600379dc9efdd46da3d6171966cf5b075a05e0081540d9d2578df841718.jpg)  
+Figure 4. Acceptance rates of the target trials by children who know argument ellipsis and those who do not.
+
+The result suggests that (i) the children who had knowledge of argument ellipsis were able to access the disjunctive interpretations (i.e., NEG $>$ and) when the conjunction was elided, and (ii) their performance of (7b) did not reach the adult level.8 As for (ii), we speculate that the complexity of the target items (containing negation, conjunction, and ellipsis in a sentence at the same time) may have burdened children’s processing and lowered children’s acceptance rate of (7b). What is more important is (i). As predicted under the SSP approach, argument ellipsis of the conjunction enabled the children to access the disjunctive interpretations cancelling the PPI property of the conjunction. This syntactic effect would not be expected if superset interpretations (i.e., disjunctive interpretations) themselves are dispreferred in accordance with the SSM.
+
+# 4. Conclusion
+
+In our experiment, we found that children assigned conjunctive interpretations to overt conjunction sentences and disjunctive interpretations to covert conjunction sentences. This suggests that children know that Japanese conjunction does not take scope under negation when it is overt, while it can take scope under negation when it is covert. This finding supports the parametric approach to children’s consistent scope assignment, which adopts the SSP that guides children to select the $+ \mathrm { P P I }$ value of the conjunction parameter and the -PPI value of the disjunction parameter as a default. The result of our experiment indicates that they know that (i) Japanese conjunction carries a PPI feature that forces the item to take scope over negation, as claimed by Goro (2007), and that (ii) the PPI feature of conjunction can be deleted via ellipsis. This means that children possess sophisticated knowledge of conjunction in Japanese and how it interacts with the syntax of ellipsis. Simultaneously, the observed differences in how children assign scope to overt versus covert conjunction is not expected under the SSM approach (i.e., a non-parametric formulation of the SSP) since, under this approach, children’s consistency in scope assignment comes from the default preference for subset interpretations (e.g., conjunctive interpretations) themselves. The result of our study thus favors the SSP approach to children’s consistent scope assignment over the SSM approach.
+
+It should, however, be noted that the SSP/SSM is criticized by Musolino, Laity-D’Agostino & Piantadosi (2019) as lacking precision as a scientific theory. They point out that both the parametric and the non-parametric formulations of the SSP have been vaguely used to account for a wide range of phenomena in the literature. Note however that the current study contributes to the clarification of the characterization of the SSP. In this study, we argue that the SSP should be specific to the determination of parameter values, by showing that only the parametric formulation of the SSP can capture children’s scope assignment to sentences containing logical connectives and negation. This means that the SSP should not be taken as a general learning mechanism that can be used in (potentially) scopeambiguous sentences (Goro 2015). The current study thus provides support for the SSP while further clarifying its characterization.
+
+# Acknowledgments
+
+We would like to express our gratitude to William Snyder, Diane Lillo-Martin, Jeffley Lidz, Kamil Ud Deen, and Tetuya Sano for helpful feedback and discussion. We also thank the audience at GALA 14, LAWNE 2019 at MIT, and the members of Acqui Lab at the University of Connecticut for their insightful comments and questions. We are also grateful to Wataru Sugiura for helping us conduct our experiment. We would also like to acknowledge the children and the teachers at Iwasaki Gakuen Shin-Yokohama Nursery School, Muraoka Nursery School, Fuchuu Aoi Kindergarten, and Matsugaoka Nursery School.
+
+# Disclosure statement
+
+No potential conflict of interest was reported by the authors.
+
+# References
+
+An, Shasha. 2014. The acquisition of constraints in child Mandarin. Ph.D. dissertation, Macquarie University.   
+Crain, Stephen. 2012. The emergence of meaning. Cambridge: Cambridge University Press.   
+Crain, Stephen, Takuya Goro, Anna Notley & Peng Zhou. 2013. A parametric account of scope in child language. In Stavroula Stavrakaki, Martina Lalioti and Polyxeni Konstantinopoulou (eds.), Advances in Language Acquisition, 63–71. Cambridge: Cambridge Scholars Publishing.   
+Crain, Stephen, & Rosalind Thornton. 1998. Investigations in universal grammar: A guide to experiments on the acquisition of syntax and semantics. Cambridge, MA: MIT Press.   
+Crain, Stephen, Weijia Ni & Laula Conway. 1994. Learning, parsing and modularity. In Charles Clifton Jr., Lyn Frazier and Keith Rayner (eds.), Perspectives on sentence processing, 443–468. Hillsdale, NJ: Lawrence Erlbaum.   
+Funakoshi, Kenshi. 2013. Disjunction and object drop in Japanese. In Stefan Huber (ed.), Proceedings of the 4th Annual Tampa Workshop in Linguistics, 11-20. Tampa: Tampa Papers in Linguistics.   
+Gao, Na, Rosalind Thornton, Peng Zhou & Stephen Crain. 2019. The interpretation of disjunction in VP ellipsis in Mandarin Chinese. In Tania Ionin and Matthew Rispoli (eds.), Three streams of generative language acquisition research, 107–124. Amsterdam: John Benjamins Publishing Company.   
+Gao, Na, Peng Zhou, Rosalind Thornton & Stephen Crain. 2021. The interpretation of disjunction in VP ellipsis: The case of Mandarin Chinese. First Language 41(6). 737–759.   
+Geçkin, Vasfiye, Stephen Crain & Rosalind Thornton. 2016. The interpretation of logical connectives in Turkish. Journal of Child Language 43(4). 784–810.   
+Geçkin, Vasfiye, Rosalind Thornton & Stephen Crain. 2017. Children’s interpretation of disjunction in negative sentences: A comparison of Turkish and German. Language Acquisition 25(2). 197–212.   
+Goro, Takuya. 2007. Language-specific constraints on scope interpretation in first language acquisition. Ph.D. dissertation, University of Maryland at College Park.   
+Goro, Takuya. 2015. Acquisition of scope. In Mineharu Nakayama (ed.), Handbook of Japanese psycholinguistics, 149–180. Berlin: De Gruyter Mouton.   
+Goro, Takuya. 2016. Logical connectives. In Jeffrey Lidz, William Snyder & Joe Pater (eds.), The Oxford handbook of developmental linguistics, 547–564. Oxford: Oxford University Press.   
+Goro, Takuya. 2017. Negation, uncertainty, and the Truth Value Judgment Task. In Mineharu Nakayama & Yi-ching Su (eds.), Studies in Chinese and Japanese Language Acquisition: In Honor of Stephen Crain, 41–61. Amsterdam: John Benjamins Publishing.   
+Hoji, Hajime. 1998. Null object and sloppy identity in Japanese. Linguistic Inquiry 29(1). 127–152.   
+Jing, Chunyuan, Stephen Crain & Ching-Fen Hsu. 2005. The interpretation of focus in Chinese: Child vs. adult language. In Yukio Otsu (ed.), Proceedings of the SixthTokyo Conference on Psycholinguistics, 165–190. Tokyo: Hituzi Syobo.   
+Johnson, Kyle. 2001. What VP ellipsis can do, and what it can’t, but not why. In R.K. Baltin & Chris Collins (eds.), The Handbook of Contemporary Syntactic Theory, 439–479. NJ: Blackwell Publishers Ltd.   
+Kim, Soowon. 1999. Sloppy/strict identity, empty objects, and NP ellipsis. Journal of East Asian Linguistics 8(4). 255–284.   
+Kuroda, S.Y. 1965. Generative grammatical studies in the Japanese language. Ph.D. dissertation, Massachusetts Institute of Technology.   
+Matsuo, Ayumi. 2007. Differing interpretations of empty categories in English and Japanese VP ellipsis contexts. Language Acquisition 14(1). 3–29.   
+Merchant, Jason. 2013. Polarity items under ellipsis. In Lisa Lai-Shen Cheng & Norbert Corver (eds.), Diagnosing syntax, 440–462. Oxford: Oxford University Press.   
+Musolino, Julien, Kelsey Laity-D’Agostino & Steve Piantadosi. 2019. Why we should abandon the semantic subset principle. Language Learning and Development 15(1). 32–46.   
+Notley, Anna, Rosalind Thornton, & Stephen Crain. 2012. English-speakingchildren’s interpretation of disjunction in the scope of ‘not every’. Biolinguistics 6(1). 32–69.   
+Notley, Anna, Peng Zhou, & Stephen Crain. 2016. Children’s interpretation of conjunction in the scope of negation in English and Mandarin: New evidence for the Semantic Subset Maxim. Applied Psycholinguistics 37(4). 867–900.   
+Notley, Anna, Peng Zhou & Stephen Crain. 2016. Children's Interpretation of Conjunction in the Scope of Negation in English and Mandarin: New Evidence for the Semantic Subset Maxim. Applied Psycholinguistics 37(4). 867–900.   
+Notley, Anna, Peng Zhou, Britta Jensen & Stephen Crain. 2012. Children’s interpretation of disjunction in the scope of ‘before’: A comparison of English and Mandarin. Journal of Child Language 39(3). 482–522.   
+Oku, Satoshi. 1998. A theory of selection and reconstruction in the minimalist perspective. Ph.D. dissertation, University of Connecticut.   
+Otaki, Koichi. 2014. Ellipsis of arguments: Its acquisition and theoretical implications. Ph.D. dissertation, University of Connecticut.   
+Otaki, Koichi & Noriaki Yusa. 2009. The Sloppy-Identity Interpretation in Child Japanese: Its Acquisition and Implications. In Yukio Otsu (ed.), The Proceedings of the TenthTokyo Conference on Psycholinguistics, 193–214. Tokyo: Hituzi Syobo.   
+Pagliarini, Elena, Stephen Crain & Maria Teresa Guasti. 2018. The compositionality of logical connectives in child Italian. Journal of Psycholinguistic Research 47(6), 1243–77.   
+Paris, Scott G. 1973. Comprehension of language connectives and propositional logical relationships. Journal of Experimental Child Psychology 16(2). 278–291.   
+Sag, Ivan A. 1976. Deletion and logical form. Ph.D. dissertation, MIT.   
+Saito, Mamoru. 2007. Notes on East Asian argument ellipsis. Language Research 43. 203–227.   
+Sakamoto, Yuta. 2015. Disjunction as a new diagnostic for (argument) ellipsis. In Thuy Bui & Deniz Ozildiz (eds.), Proceedings of the Annual Meeting of 45th North East Linguistic Society, 15–28. Amherst, MA: GLSA.   
+Sakamoto, Yuta. 2019. Overtly empty but covertly complex. Linguistic Inquiry 50(1). 105–136.   
+Shimada, Hiroyuki & Takuya Goro. 2021. On the source of children’s conjunctive interpretation of disjunction: Scope, strengthening, or both? Language Acquisition 28(2). 98–130.   
+Singh, Raj, Ken Wexler, Andrea Astle-Rahim, Deepthi Kamawar & Danny Fox. 2016. Children interpret disjunction as conjunction: Consequences for theories of implicature and child development. Natural Language Semantics 24(4). 305–352.   
+Sugisaki, Koji. 2007. The configurationality parameter in the Minimalist Program: A view from Child Japanese. In Heather Caunt-Nulton, Samantha Kulatilake & I-hao Woo (eds.), Proceedings of the 31st Annual Boston University Conference on Language Development, 597–608. Somerville, MA: Cascadilla Press.   
+Szabolcsi, Anna. 2002. Hungarian disjunctions and positive polarity. In István Kenesei and Péter Siptár (eds.), Approaches to Hungarian, Vol. 8, 217–241. Budapest: Akademiai Kiado.   
+Takahashi, Daiko. 2008. Quantificational null objects and argument ellipsis. Linguistic Inquiry 39(2). 307–326.   
+Verbuk, Anna. 2007. The acquisition of the Russian or. In Erin Brainbridge & Brian Agbayani (eds.), Proceedings of the Thirty-Fourth Western Conference on Linguistics (WECOL 2006), 443–455. Fresno: Department of Linguistics, California State University Fresno.z
+
+# Appendix: Test items
+
+Control question-answer pairs: affirmative answers like (9) and negative answers like (8)
+
+(i) Q: X-wa mi-ttu-no ringo-o tabe-ta kana? X-TOP three-CL-GEN apple-ACC eat-PAST Q “Did X eat three apples?” A1:X-wa tabe-ta yo. A2: Uun, X-wa tabe-nak-atta yo. X-TOP eat-PAST PRT Disagree X-TOP eat-NEG-PAST PRT lit. “X ate.” lit. “Disagree, X didn’t eat.”   
+(ii) Q: X-wa mi-ttu-no koppu-o kat-ta kana? X-TOP three-CL-GEN cup-ACC buy-PAST Q “Did X buy three cups?” A1:X-wa kat-ta yo. A2: Uun, X-wa kaw-nak-atta yo. X-TOP buy-PAST PRT Disagree X-TOP buy-NEG-PAST PRT lit. “X bought.” lit. “Disagree, X didn’t buy.”   
+(iii) Q: X-wa mi-ttu-no juusu-o hakon-da kana? X-TOP three-CL-GEN juice-ACC carry-PAST Q “Did X carry three bottles of juice?” A1:X-wa hakon-da yo. A2: Uun, X-wa hakob-anak-atta yo. X-TOP carry-PAST PRT Disagree X-TOP carry-NEG-PAST PRT lit. “X carried.” lit. “Disagree, X didn’t carry.”
+
+Target question-answer pairs: answers with an overt conjunction like (7a) and with an elided conjunction like (7b)
+
+(i) Q: X-wa piiman-mo ninjin-mo tabe-ta kana? X-TOP pepper-also carrot-also eat-PAST Q “Did X eat the pepper and the carrot?” A1:Uun, X-wa piiman-mo ninjin-mo tabe-nak-atta yo. Disagree X-TOP pepper-also carrot-also eat-NEG-PAST PRT lit. “Disagree, X didn’t eat the pepper and the carrot.” A2:Uun, X-wa tabe-nak-atta yo. Disagree X-TOP eat-NEG-PAST PRT lit. “Disagree, X didn’t eat.”   
+(ii) Q: X-wa kyabetu-mo daikon-mo kat-ta kana? X-TOP cabbage-also radish-also buy-PAST Q “Did X buy the cabbage and the radish?” A1:Uun, X-wa kaybetu-mo daikon-mo kaw-anak-atta yo. Disagree X-TOP cabbage-also radish-also buy-NEG-PAST PRT lit. “Disagree, X didn’t buy the cabbage and the radish.”
+
+A2:Uun, X-wa kaw-anak-atta yo. Disagree X-TOP buy-NEG-PAST PRT lit. “Disagree, X didn’t buy.” (iii) Q: X-wa suika-mo itigo-mo hakon-da kana? X-TOP watermelon-also strawberry-also carry-PAST Q “Did X carry the watermelon and the strawberry?” A1:Uun, X-wa suika-mo itigo-mo hakob-anak-atta yo. Disagree X-TOP watermelon-also strawberry-also carry-NEG-PAST PRT lit. “Disagree, X didn’t carry the watermelon and the strawberry.” A2:Uun, X-wa hakob-anak-atta yo. Disagree X-TOP carry-NEG-PAST PRT lit. “Disagree, X didn’t carry.”

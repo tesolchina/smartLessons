@@ -1,0 +1,31 @@
+# Foreword
+
+Jens Jungblut & Sarah O’Shea
+
+To cite this article: Jens Jungblut & Sarah O’Shea (2024) Foreword, Studies in Higher Education, 49:5, 809-810, DOI: 10.1080/03075079.2024.2332061
+
+To link to this article: https://doi.org/10.1080/03075079.2024.2332061
+
+# EDITORIAL
+
+# Foreword
+
+The availability of artificial Intelligence (AI) and accessible tools such as natural language processing (NLP) models and AI-driven text generators have initiated much discussion both within societies generally and across the higher education sector in particular.1 AI is being described by many as a core technology for the digital future and research on AI as well as teaching of skills necessary to further develop and work with AI are increasingly prominently featured in contemporary political discussions. In these discussions, AI is framed as both a relevant tool for future economic development but also a potential instrument to solve some of humanities grand social challenges (Ulnicane 2022). While many earlier debates have portrayed questions related to AI in largely technical terms, recent academic as well as policy debates increasingly focus on the technology’s major social, political, and cultural implications (Ulnicane and Erkkilä 2023). The public launch of OpenAI’s ChatGPT in November 2022 followed by other competing software solutions were a catalyst for the debate regarding AI in general and AI-driven text generators in particular. These debates have only increased as these tools are becoming more available to a wider audience, enabling a much broader group of users to experiment with the new technology. At the same time, this accessibility has accelerated the use of the technology way beyond the reaction speed of institutions, many of whom are still struggling to draft policies to regulate usage.
+
+In higher education, AI and AI-driven text generators impact across all domains: teaching, research, and even administration. AI can be applied in a myriad of ways such as used to translate between languages, code data, write scripts in programming languages, formulate or improve text, and many other tasks. Thus, administrative staff, faculty, leadership, and students must learn how to work with this new technology, including using it responsibly and productively, whilst also regulating more problematic usages. Given the relevance of this new technology and the so far limited research on its broad and complex impacts on higher education, we were very happy when the coordinating authors of this special issue approached us with their suggestion for this issue. We were back then and still are convinced that more research on this topic is needed; research that not only focuses on the potential of AI but equally the risks that higher education sectors globally face following the rise of AI. Thus, we see this special issue as a starting point for an increased research focus on the multiple and varied effects that AI and related tools will have on higher education.
+
+Given the potentially fundamental and dramatic changes that this new technology may initiate, this special issue adopts a targeted examination of this field. As AI-driven text generators, such as ChatGPT, appear to be the most visible and most discussed AI tool with already disruptive effects on teaching and examination, we think it is fitting that the coordinating authors chose to focus on this area. An AI-driven text generator is a piece of software that employs AI, specifically neural networks and NLP models, to produce text-based responses to questions. These responses can include relatively complex natural language queries and different types of content such as blog posts, news items, student papers, or even scientific articles. All these written texts are currently being generated with these tools. The key challenge is that the produced texts are often very close to or even indistinguishable from human writing (Kim et al. 2020). This creates obvious challenges regarding questions of authorship, originality of work, and finding the right balance between technological support for academic work on the one hand and academic malpractice on the other side. Thus, the question that this special issue focuses on, whether AI-driven text generators are a threat, an opportunity, or an asset to higher education, is equally timely and highly relevant not only for day-to-day work in the sector but also for future higher education research. This special issue successfully brings together different perspectives on the use of AI-driven text generators in higher education with a clear focus on students and learning. Moreover, the empirical examples come from a variety of national higher education systems highlighting the global nature of this topic. All in all, we hope that this issue can be a catalyst for more research on the impact that AI and related tools have on higher education and its primary processes as there remains so much we do not know and with the continual evolvement of these tools, the need to continually update our knowledge is even more imperative.
+
+# Note
+
+1. See e.g. Danny Oppenheimer’s piece in Times Higher Education: https://www.timeshighereducation.com/ campus/chatgpt-has-arrived-and-nothing-has-changed.
+
+# References
+
+Kim, J., S. Shin, K. Bae, S. Oh, E. Park, and A. P. del Pobil. 2020. “Can AI Be a Content Generator? Effects of Content Generators and Information Delivery Methods on the Psychology of Content Consumers.” Telematics and Informatics 55:101452. https://doi.org/10.1016/j.tele.2020.101452.   
+Ulnicane, I. 2022. “Emerging Technology for Economic Competitiveness or Societal Challenges? Framing Purpose in Artificial Intelligence Policy.” Global Public Policy and Governance 2 (3): 326–45. https://doi.org/10.1007/s43508- 022-00049-8.   
+Ulnicane, I., and T. Erkkilä. 2023. “Politics and Policy of Artificial Intelligence.” Review of Policy Research 40 (5): 612–25. https://doi.org/10.1111/ropr.12574.
+
+Jens Jungblut University of Oslo, Norway jungblut@uio.no
+
+Sarah O’Shea Charles Sturt University, Australia

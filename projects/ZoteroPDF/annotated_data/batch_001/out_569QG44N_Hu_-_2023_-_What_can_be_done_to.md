@@ -1,0 +1,36 @@
+---
+authors: []
+category: research
+confidence_score: 0.8
+document_type: journal
+has_abstract: true
+has_methodology: true
+has_results: true
+key_findings:
+- Seeking reviews from inexperienced researchers or members of lower-income countries
+  and creating non-profit peer reviewer communities may not be sustainable solutions
+- More promising strategies include journal-based incentives or policies such as requiring
+  editorial board members to review manuscripts, accepting submissions only from authors
+  who have reviewed for the journal, and waiving charges for publishing reviewers'
+  work
+methodology: theoretical
+publication_year: null
+research_questions:
+- What can be done to make peer review a more sustainable practice?
+source_file: out_569QG44N_Hu_-_2023_-_What_can_be_done_to.md
+subject_area: Library and Information Science
+tags:
+- peer review
+- journal publishing
+- academic publishing
+- sustainability
+title: Strategies to Improve Peer Review Sustainability
+---
+
+# What can be done to make peer review a more sustainable practice?
+
+In a Career Feature article recently published in Nature Dance (2023) discusses the deplorable state of peer review, as most clearly seen in the painstaking struggles that journal editors are having to find willing reviewers for their journals. Dance also describes some incentives and strategies that are expected to help salvage the sinking ship of peer review. She certainly drives home the unsustainability of the current per review practices. While I agree that nowadays peer reviewers are excruciatingly difficult to recruit and glacially slow in their response, I do not concur with the asesment of peer review as contributing marginally to publications quality, an opinion held by many, including one informant quoted in Dance's article. As a journal editor, I have an intimate knowledge and a profound appreciation of how peer reviews have improved the quality of papers published in our journal. In the words of Ken Hyland, founding Co-Editor-in-Chief of JEAP,I now of no paper, including allof my own, that has not en improved by per review (2016, p. A1).
+
+My agreement about the need to rethink per review practices notwithstanding, I argue that some of the strategies suggested in Dance's article, such as seeking reviews from inexperienced researchers or members of lower-income countries and creating non-profit peer reviewer communtie, would be as unsustainbleas the current practices if they are intittionalied or practiced on a lare cale. They are more scesul n dering the chllgth in addessing t ffiel. Inded, they ae likly o crat mor ues than they solve. In my opinion, more promising strategie consist of journal-based incentives or policies such as requiring all editorial board members to review a certain number of manuscripts every year, accepting submissons only from authors who have reviewed manuscripts for a journal in the previous year, and waiving charges for publishing reviewers works or making them open-acces. These strategies link peer review service to authors' own publishing opportunities or widely recognized prestige measures and are therefore more likely to be effctive. Academics, for their own part, need to abide by the ethical principl of reciprocity and review as many manuscripts as the reviews they have received.
+
+# References

@@ -1,0 +1,17 @@
+# HONG KONG BAPTIST UNIVERSITY
+
+Pay structures for academic and teaching Staff (effective from 1 July 2018)
+
+# Academic staff
+
+<html><body><table><tr><td>Reference pay point</td><td>(HK$)</td><td colspan="4">(HK$)</td></tr><tr><td></td><td></td><td colspan="4">(Min 149,060)</td></tr><tr><td></td><td></td><td></td><td></td><td>Professor</td><td>Chair Professor</td></tr><tr><td>22</td><td>144,735</td><td></td><td></td><td>144,735</td><td></td></tr><tr><td>21</td><td>140,290</td><td></td><td></td><td></td><td></td></tr><tr><td>20</td><td>135,845</td><td></td><td></td><td></td><td></td></tr><tr><td>19</td><td>131,370</td><td></td><td></td><td></td><td></td></tr><tr><td>18</td><td>126,895</td><td></td><td></td><td>(124,040)</td><td></td></tr><tr><td>17</td><td>122,435</td><td></td><td>Associate</td><td></td><td></td></tr><tr><td>16</td><td>117,945</td><td></td><td>Professor</td><td></td><td></td></tr><tr><td>15</td><td>112,300</td><td></td><td>112,300</td><td></td><td></td></tr><tr><td>14</td><td>107,805</td><td></td><td></td><td></td><td></td></tr><tr><td>13</td><td>103,345</td><td></td><td></td><td>103,345</td><td></td></tr><tr><td>12</td><td>98,840</td><td>Assistant</td><td>(96,550)</td><td></td><td></td></tr><tr><td>11</td><td>94,330</td><td>Professor</td><td></td><td></td><td></td></tr><tr><td>10</td><td>89,820</td><td>89,820</td><td></td><td></td><td></td></tr><tr><td>9</td><td>85,320</td><td></td><td></td><td></td><td></td></tr><tr><td>8</td><td>80,800</td><td></td><td>80,800</td><td></td><td></td></tr><tr><td>7</td><td>76,275</td><td>(73,980)</td><td></td><td></td><td></td></tr><tr><td>6</td><td>71,725</td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td>67,230</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td>62,675</td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td>58,135</td><td>58,135</td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></body></html>
+
+# Lecturer staff
+
+<html><body><table><tr><td>Rank</td><td>Minimum (HK$)</td><td>Mid-point (HK$)</td><td>Maximum (HK$)</td></tr><tr><td>Principal Lecturer</td><td>83,465</td><td>97,375</td><td>111,280</td></tr><tr><td>Senior Lecturer</td><td>64,200</td><td>76,930</td><td>89,660</td></tr><tr><td>Lecturer I</td><td>47,175</td><td>60,940</td><td>74,700</td></tr><tr><td>Lecturer II</td><td>35,030</td><td>40,300</td><td>45,565</td></tr><tr><td>Assistant Lecturer</td><td>27,705</td><td>31,000</td><td>34,295</td></tr></table></body></html>
+
+# Instructor staff
+
+<html><body><table><tr><td>Rank</td><td>Minimum (HK$)</td><td>Mid-point (HK$)</td><td>Maximum (HK$)</td></tr><tr><td>Senior Instructor</td><td>58,675</td><td>67,970</td><td>77,265</td></tr><tr><td>Instructor I</td><td>47,175</td><td>57,725</td><td>68,275</td></tr><tr><td>Instructor II</td><td>27,705</td><td>36,635</td><td>45,565</td></tr></table></body></html>
+
+Notes: (1) The above pay points/ranges are for reference only. Staff could be offered a salary level above or below the stated maximum/minimum salary levels in response to market situation and/or any other special circumstances. (2) Staff could be offered a salary level between reference pay points.

@@ -1,0 +1,104 @@
+# Sensitive Information
+*.key
+key.txt
+*.secret
+.env
+.env.local
+.env.production
+.env.staging
+**/key.txt
+**/keys/
+**/*key*
+**/*secret*
+**/*password*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.out
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.pytest_cache/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# FAISS Index files (optional - comment out if you want to track them)
+# faiss_index/
+# *.index
+# embeddings_model.pkl
+
+# Large data files (adjust as needed)
+# data/
+# *.pdf
+# *.docx
+
+# API Keys and credentials
+openRouterAI/key.txt
+**/api_key*
+**/credentials*
+config/secrets*
+
+# Model files (if large)
+*.model
+*.bin
+*.safetensors
+
+# Backup files
+*.bak
+*.backup
+*~
