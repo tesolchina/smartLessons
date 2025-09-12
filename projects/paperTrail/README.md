@@ -241,15 +241,30 @@ cp paperTrail/templates/decision_record_template.md paperTrail/decisions/$(date 
 *The Paper Trail system transforms scattered activities into structured knowledge and actionable insights.*
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `paperTrail` at 2025-09-12T06:49:51Z UTC.
+Auto-generated index for project `paperTrail` at 2025-09-12T07:02:46Z UTC.
+<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs paperTrail`
+
+## Tool Access
+- Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)
+- Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`
+- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)
+- Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
+- Programmatic path detection snippet:
+
+```python
+from pathlib import Path
+PROJECT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = PROJECT_DIR.parent  # contains 'tools' and 'projects'
+TOOLS_DIR = REPO_ROOT / 'tools'
+```
 
 | File | Type | Size (bytes) |
 |------|------|-------------|
 | `HOW_IT_WORKS.md` | .md | 8307 |
 | `MASTER_ACTIVITY_TRAIL.md` | .md | 7865 |
 | `PY_SCRIPTS_MOVED.md` | .md | 206 |
-| `README.md` | .md | 8123 |
+| `README.md` | .md | 8842 |
 | `daily_logs/2025-09-06_sample_daily_log.md` | .md | 1721 |
 | `integrations/INTEGRATION_COMPLETE.md` | .md | 5307 |
 | `integrations/OBSIDIAN_VSCODE_SOLUTIONS.md` | .md | 6489 |

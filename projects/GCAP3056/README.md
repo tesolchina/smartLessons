@@ -4,8 +4,23 @@
 
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `GCAP3056` at 2025-09-12T06:49:51Z UTC.
+Auto-generated index for project `GCAP3056` at 2025-09-12T07:02:46Z UTC.
+<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs GCAP3056`
+
+## Tool Access
+- Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)
+- Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`
+- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)
+- Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
+- Programmatic path detection snippet:
+
+```python
+from pathlib import Path
+PROJECT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = PROJECT_DIR.parent  # contains 'tools' and 'projects'
+TOOLS_DIR = REPO_ROOT / 'tools'
+```
 
 | File | Type | Size (bytes) |
 |------|------|-------------|
@@ -13,6 +28,7 @@ Regenerate with: `python tools/cli/generate_project_indexes.py --dirs GCAP3056`
 | `Emergency_Alert_System_Project_Roadmap.md` | .md | 8596 |
 | `GCAP3056_Semester_Overview.md` | .md | 4385 |
 | `PY_SCRIPTS_MOVED.md` | .md | 201 |
+| `README.md` | .md | 7967 |
 | `SCMP_Letters/An_integrated_health_app_will_benefit_patients_SCMP_analysis.md` | .md | 6279 |
 | `SCMP_Letters/Boost_STEM_teaching_with_full_access_to_simulations_SCMP_analysis.md` | .md | 6382 |
 | `SCMP_Letters/GCAP_3056_-_Emergency_Alert_System_Course_Overview_analysis_template.md` | .md | 3606 |

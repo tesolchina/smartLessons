@@ -86,9 +86,17 @@ def process_project(name: str) -> bool:
     timestamp = _dt.datetime.utcnow().isoformat(timespec='seconds') + 'Z'
     table = build_table(files)
     content = (
-        f"Auto-generated index for project `{name}` at {timestamp} UTC.\n"
-        "Regenerate with: `python tools/cli/generate_project_indexes.py --dirs " + name + "`\n\n"
-        f"{table}\n"
+    f"Auto-generated index for project `{name}` at {timestamp} UTC.\n"
+    "<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->\n"
+    "Regenerate with: `python tools/cli/generate_project_indexes.py --dirs " + name + "`\n\n"
+    "## Tool Access\n"
+    "- Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)\n"
+    "- Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`\n"
+    "- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)\n"
+    "- Environment variable (optional): `export DAILYASSISTANT_ROOT=\u0060git rev-parse --show-toplevel\u0060`\n"
+    "- Programmatic path detection snippet:\n\n"
+    "```python\nfrom pathlib import Path\nPROJECT_DIR = Path(__file__).resolve().parent\nREPO_ROOT = PROJECT_DIR.parent  # contains 'tools' and 'projects'\nTOOLS_DIR = REPO_ROOT / 'tools'\n```\n\n"
+    f"{table}\n"
     )
     inject(pdir / 'README.md', content)
     return True

@@ -39,14 +39,29 @@ This is a comprehensive research project focused on developing and evaluating an
 This project is part of the DailyAssistant system for academic research management.
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `goal-setting-chatbot-paper` at 2025-09-12T06:49:51Z UTC.
+Auto-generated index for project `goal-setting-chatbot-paper` at 2025-09-12T07:02:46Z UTC.
+<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs goal-setting-chatbot-paper`
+
+## Tool Access
+- Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)
+- Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`
+- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)
+- Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
+- Programmatic path detection snippet:
+
+```python
+from pathlib import Path
+PROJECT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = PROJECT_DIR.parent  # contains 'tools' and 'projects'
+TOOLS_DIR = REPO_ROOT / 'tools'
+```
 
 | File | Type | Size (bytes) |
 |------|------|-------------|
 | `PROJECT_NOTES.md` | .md | 6630 |
 | `PY_SCRIPTS_MOVED.md` | .md | 237 |
-| `README.md` | .md | 1476 |
+| `README.md` | .md | 16371 |
 | `data/chatbot_summary_metrics.csv` | .csv | 370 |
 | `data/chatbot_usage_analysis_detailed.csv` | .csv | 3776 |
 | `data/corrected_single_session_analysis.csv` | .csv | 5675 |

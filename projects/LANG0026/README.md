@@ -4,8 +4,23 @@
 
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `LANG0026` at 2025-09-12T06:49:50Z UTC.
+Auto-generated index for project `LANG0026` at 2025-09-12T07:02:45Z UTC.
+<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs LANG0026`
+
+## Tool Access
+- Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)
+- Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`
+- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)
+- Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
+- Programmatic path detection snippet:
+
+```python
+from pathlib import Path
+PROJECT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = PROJECT_DIR.parent  # contains 'tools' and 'projects'
+TOOLS_DIR = REPO_ROOT / 'tools'
+```
 
 | File | Type | Size (bytes) |
 |------|------|-------------|
@@ -15,6 +30,7 @@ Regenerate with: `python tools/cli/generate_project_indexes.py --dirs LANG0026`
 | `AImodule/researchLit/Brit J Educational Tech - 2024 - Guo - Using AI‐supported peer review to enhance feedback literacy  An investigation of.md` | .md | 100905 |
 | `AImodule/researchLit/Brit J Educational Tech - 2024 - Guo - Using AI‐supported peer review to enhance feedback literacy  An investigation of.pdf` | .pdf | 3345114 |
 | `PY_SCRIPTS_MOVED.md` | .md | 201 |
+| `README.md` | .md | 3022 |
 | `Transcript for Pre-course Listening Test.pdf` | .pdf | 87452 |
 | `assessments/01_pre_course_video.md` | .md | 1765 |
 | `assessments/02_pre_course_listening.md` | .md | 1740 |

@@ -42,14 +42,29 @@ This folder contains all materials related to the screening test development pro
 *Created: September 6, 2025*
 
 <!-- AUTO_PROJECT_INDEX:START -->
-Auto-generated index for project `screening_test` at 2025-09-12T06:49:50Z UTC.
+Auto-generated index for project `screening_test` at 2025-09-12T07:02:45Z UTC.
+<!-- DAILYASSISTANT_TOOLS_PATH=../tools -->
 Regenerate with: `python tools/cli/generate_project_indexes.py --dirs screening_test`
+
+## Tool Access
+- Tools directory (relative): `../tools` (packaged import: `import dailyassistant` after editable install)
+- Root quick start: see `../README.md` and `../QUICK_START_GUIDE.md`
+- CLI (if installed): run `da --help` or regenerate indexes with `da index projects` (future)
+- Environment variable (optional): `export DAILYASSISTANT_ROOT=`git rev-parse --show-toplevel``
+- Programmatic path detection snippet:
+
+```python
+from pathlib import Path
+PROJECT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = PROJECT_DIR.parent  # contains 'tools' and 'projects'
+TOOLS_DIR = REPO_ROOT / 'tools'
+```
 
 | File | Type | Size (bytes) |
 |------|------|-------------|
 | `MERGE_NOTE_SCREENING_DIR.md` | .md | 91 |
 | `PY_SCRIPTS_MOVED.md` | .md | 211 |
-| `README.md` | .md | 1581 |
+| `README.md` | .md | 8506 |
 | `emails/README.md` | .md | 2766 |
 | `emails/communication_002_River-Testing-Instructions.md` | .md | 1283 |
 | `emails/email_001_Departmental-Meeting-Screening-Test.md` | .md | 990 |
