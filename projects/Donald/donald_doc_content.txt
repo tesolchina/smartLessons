@@ -1,0 +1,36 @@
+🚨 COPILOT MESSAGE - 2025-09-13 08:23:12 🚨
+
+DONALD - IF YOU CAN SEE THIS, THE API IS WORKING!
+
+Your deadline is September 17th (4 days away).
+Check your workspace files for completed analysis and charts.
+
+
+🚨 URGENT MESSAGE FROM COPILOT - 2025-09-13 08:21:57 🚨
+
+Donald, this message should appear at the beginning of your document!
+
+If you can see this, the API is working correctly.
+
+Deadline Date: 		
+17/9/25(first draft)	?/?/? （final draft)WORD COUNT: 		≈2000
+Bibliography Format: 	MLA9
+Structure:
+Front Cover	
+Intro 
+Maps
+Hypothesis 
+Methodology
+Data
+Presentation
+Analysis
+Conculusion 
+Evaluation
+
+Relevant requirement in Grok
+Data link
+Link To “how to get an A pdf”
+
+
+
+
