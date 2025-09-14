@@ -44,3 +44,6 @@ node_modules/
 .pytest_cache/
 *.tmp
 .vscode/settings.json
+external/smartLessons/
+# Large files excluded
+projects/ZoteroPDF/faiss_index/
