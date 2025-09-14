@@ -1,0 +1,43 @@
+{
+  "corpus_info": {
+    "name": "SCMP Letters Research Corpus - Complete",
+    "extraction_timestamp": "2025-09-14T19:36:51.919700",
+    "extraction_method": "fetch_webpage with proper letter separation",
+    "source": "South China Morning Post - Letters to the Editor",
+    "url": "https://www.scmp.com/comment/letters"
+  },
+  "statistics": {
+    "total_letters": 2,
+    "total_words": 288,
+    "average_letter_length_chars": 887,
+    "average_letter_length_words": 144,
+    "unique_authors": 1,
+    "letters_with_known_authors": 1,
+    "content_length_range": {
+      "min": 359,
+      "max": 1416
+    }
+  },
+  "letters": [
+    {
+      "id": "letter_001_Hong_Kong_must_step_up_patriot",
+      "title": "Hong Kong must step up patriotic education of adults",
+      "author": "Unknown",
+      "content_length": 1416,
+      "word_count": 232,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324985/chinas-victory-day-parade-reminder-need-global-cooperation",
+      "json_file": "json/letter_001_Hong_Kong_must_step_up_patriot.json",
+      "md_file": "markdown/letter_001_Hong_Kong_must_step_up_patriot.md"
+    },
+    {
+      "id": "letter_002_Shevaun_Gallwey",
+      "title": "Suspected water procurement fraud not the biggest scandal",
+      "author": "Shevaun Gallwey, Sha Tin",
+      "content_length": 359,
+      "word_count": 56,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324985/chinas-victory-day-parade-reminder-need-global-cooperation",
+      "json_file": "json/letter_002_Shevaun_Gallwey.json",
+      "md_file": "markdown/letter_002_Shevaun_Gallwey.md"
+    }
+  ]
+}

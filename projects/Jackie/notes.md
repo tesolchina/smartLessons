@@ -2,12 +2,14 @@
 
 ~~I need an html file that embed the chatbot above using iFrame~~
 
-
-
 /Users/simonwang/Documents/Usage/ObSync/Vault4sync/syllabus of GCAP 3187.md
 
 take a look at the syllabus here
 
-we need an intro page on the chatbot above that iFrame 
+we need an intro page on the chatbot above that iFrame
 
 we should explain that students should input their own email address so a report can be mailed to them
+
+https://github.com/tesolchina/smartLessons/tree/main/GCAPJackie
+
+we need to upload the relevant files to the folder above and get back a link for students to access

@@ -1,0 +1,26 @@
+{
+  "extraction_timestamp": "2025-09-14T19:27:08.651261",
+  "total_letters": 3,
+  "source_page": "Letters | China's Victory Day parade a reminder of the need for global cooperation",
+  "note": "This is a manual extraction demonstrating the proper structure of individual letters",
+  "letters": [
+    {
+      "id": "letter_001_Muhammad_Fakhrul_Islam_Babu",
+      "title": "China's Victory Day parade a reminder of the need for global cooperation",
+      "author": "Muhammad Fakhrul Islam Babu, president, China Bangladesh Friendship Centre",
+      "content_length": 2599
+    },
+    {
+      "id": "letter_002_A_Chan",
+      "title": "Hong Kong must step up patriotic education of adults",
+      "author": "A. Chan, Guangzhou",
+      "content_length": 1401
+    },
+    {
+      "id": "letter_003_Shevaun_Gallwey",
+      "title": "Suspected water procurement fraud not the biggest scandal",
+      "author": "Shevaun Gallwey, Sha Tin",
+      "content_length": 359
+    }
+  ]
+}

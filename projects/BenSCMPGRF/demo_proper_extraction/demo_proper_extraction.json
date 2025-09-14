@@ -1,0 +1,43 @@
+{
+  "demo_extraction": {
+    "timestamp": "2025-09-14T19:32:59.058313",
+    "note": "This demonstrates proper extraction of individual letters from SCMP pages",
+    "source_pages": 2,
+    "total_letters_extracted": 4,
+    "average_letters_per_page": 2.0
+  },
+  "letters": [
+    {
+      "title": "Hong Kong must step up patriotic education of adults",
+      "content": "The national military parade on September 3 reminded us that the peace we currently enjoy came at a high price and that our motherland has now grown into a strong power capable of protecting its people from any kind of aggression. On September 3, some Hong Kong schools organised commemoration events to pay tribute to the Chinese people who resisted Japanese aggression 80 years ago.\nI noticed when I browsed Facebook, Instagram and WeChat that, while a raft of my mainland friends shared news about or the live stream or video clips of the parade on WeChat, relatively few Hong Kong friends did the same on Facebook or Instagram.\nWhen patriotic education is discussed, much attention is given to students with a view to cultivating a strong sense of belonging in the next generation. However, adults are unfortunately left out of the picture.\nUnlike on the mainland, where people grow up learning the national language, history and culture, many adults in Hong Kong did not have the privilege of receiving such education. Also on the mainland, patriotism is part of corporate culture. Companies often take the initiative to hold patriotic and commemorative events. There is also a Unified Front Work Department which is responsible for promoting solidarity among the people.\nHong Kong society needs to devise strategies to ensure adults in the city have sufficient access to patriotic education.\nA. Chan, Guangzhou",
+      "author": "Unknown",
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324985/chinas-victory-day-parade-reminder-need-global-cooperation",
+      "content_length": 1416,
+      "word_count": 232
+    },
+    {
+      "title": "Suspected water procurement fraud not the biggest scandal",
+      "content": "With regard to the water procurement scandal that has provoked much discussion in recent weeks, is the scandal a distraction from the bigger outrage? Why doesn't the government simply equip offices with water filters on every floor? This would be a far more environmentally friendly and economical solution than having giant containers of water carted around.",
+      "author": "Shevaun Gallwey, Sha Tin",
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324985/chinas-victory-day-parade-reminder-need-global-cooperation",
+      "content_length": 359,
+      "word_count": 56
+    },
+    {
+      "title": "City must invest in teacher well-being",
+      "content": "The Education Bureau's \"Start the New School Year Full of Energy\" initiative and the 4Rs Mental Health Charter – rest, relaxation, relationship and resilience – deserve recognition. These resources highlight the importance of supporting students' well-being as they face the transitions and stresses of a new academic year. They also send a welcome signal that mental health is now firmly on Hong Kong's education agenda.\nYet, for the 4Rs Charter to move from posters into practice, one critical prerequisite must not be overlooked: the well-being of teachers themselves. The research is clear. As Professor Marc Brackett of Yale University, who studies social and emotional learning (SEL), recently noted: \"If SEL doesn't live in the adults, it dies in the curriculum.\" Studies consistently show that teacher well-being and classroom climate are linked. When teachers regulate their emotions, model healthy coping and co-regulate with students, emotional safety spreads. When teacher well-being is ignored, even the most evidence-based curricula falter.\nOur frontline experience at Just Feel echoes this. Through our Compassionate School Programme, we support partner schools in cultivating compassionate school cultures. The starting point is always the adults. Teachers are first invited to practise self-compassion, strengthen their own regulation skills and experience being empathised with before guiding students. Without this foundation, efforts to build resilience and empathy in children remain superficial.\nInternational frameworks reinforce this message. The Organisation for Economic Co-operation and Development's Teaching Compass places teacher well-being – physical, socio-emotional and cognitive – as the very anchor of teacher agency and professional competence. Crucially, it links the well-being of teachers to the same shared future vision as that of students: well-being for individuals, society and the planet. In other words, caring for teachers is inseparable from preparing the next generation to thrive.\nTo make the 4Rs Charter a lived reality, Hong Kong must therefore complement student-focused campaigns with a systemic, preventive and whole-school commitment to educators. This means allocating time for teacher reflection and self-care, embedding compassionate communication and social-emotional learning into professional development, and ensuring that school leaders actively prioritise staff well-being.\nBy investing in teachers as whole human beings, we lay the groundwork for resilient classrooms and compassionate school communities. In doing so, the 4Rs Charter will not only support students in adjusting to a new school year, but also shape a generation ready to meet the future with compassion.",
+      "author": "Raymond Yang Sze-ngai, co-founder and executive director, Just Feel",
+      "source_url": "https://www.scmp.com/opinion/letters/article/3325282/hong-kong-lawmakers-rejection-same-sex-partnership-bill-was-step-backwards",
+      "content_length": 2736,
+      "word_count": 391
+    },
+    {
+      "title": "Rights of workers should not be sacrificed",
+      "content": "As a concerned resident, I am writing to urge immediate action to safeguard the rights of workers in Hong Kong. The policy of importing labour, particularly amid a rising unemployment rate, appears to be exacerbating the exploitation of local workers. The practice of suppressing wages and extending working hours for workers to maximise profits must be curbed. It is imperative to ensure the livelihoods and well-being of our workforce are not sacrificed so that Hong Kong can be a good home for all.",
+      "author": "Lawrence Choi, Tuen Mun",
+      "source_url": "https://www.scmp.com/opinion/letters/article/3325282/hong-kong-lawmakers-rejection-same-sex-partnership-bill-was-step-backwards",
+      "content_length": 501,
+      "word_count": 83
+    }
+  ]
+}

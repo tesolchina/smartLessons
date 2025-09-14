@@ -1,0 +1,17 @@
+{
+  "corpus_info": {
+    "name": "SCMP Letters Research Corpus - Enhanced",
+    "extraction_timestamp": "2025-09-14T21:46:11.385616",
+    "extraction_method": "fetch_webpage with enhanced content processing",
+    "source": "South China Morning Post - Letters to the Editor",
+    "url": "https://www.scmp.com/comment/letters"
+  },
+  "statistics": {
+    "total_letters": 6,
+    "total_words": 1356,
+    "average_letter_length_chars": 1498,
+    "average_letter_length_words": 226,
+    "unique_authors": 3,
+    "letters_with_known_authors": 3
+  }
+}

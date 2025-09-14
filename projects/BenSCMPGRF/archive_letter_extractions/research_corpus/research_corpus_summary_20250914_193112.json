@@ -1,0 +1,267 @@
+{
+  "corpus_info": {
+    "name": "SCMP Letters Research Corpus",
+    "extraction_timestamp": "2025-09-14T19:31:12.196950",
+    "total_letters": 25,
+    "source": "South China Morning Post - Letters to the Editor",
+    "extraction_method": "Automated web scraping with proper content separation"
+  },
+  "statistics": {
+    "total_letters": 25,
+    "total_word_count": 4158,
+    "average_letter_length": 1074,
+    "unique_authors": 1
+  },
+  "letters": [
+    {
+      "id": "letter_001_From_Nepal_to_Bangladesh_Gen_Z",
+      "title": "From Nepal to Bangladesh, Gen Z’s passion must be paired with perspective",
+      "author": "Unknown",
+      "content_length": 1061,
+      "word_count": 161,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3325287/nepal-bangladesh-gen-zs-passion-must-be-paired-perspective?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_001_From_Nepal_to_Bangladesh_Gen_Z.json",
+      "md_file": "markdown/letter_001_From_Nepal_to_Bangladesh_Gen_Z.md"
+    },
+    {
+      "id": "letter_002_Hong_Kong_lawmakers_rejection_",
+      "title": "Hong Kong lawmakers’ rejection of same-sex partnership bill was a step backwards",
+      "author": "Unknown",
+      "content_length": 1569,
+      "word_count": 248,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3325282/hong-kong-lawmakers-rejection-same-sex-partnership-bill-was-step-backwards?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_002_Hong_Kong_lawmakers_rejection_.json",
+      "md_file": "markdown/letter_002_Hong_Kong_lawmakers_rejection_.md"
+    },
+    {
+      "id": "letter_003_Hong_Kong_is_no_Cappadocia_but",
+      "title": "Hong Kong is no Cappadocia, but balloon fest should have been better handled",
+      "author": "Unknown",
+      "content_length": 1323,
+      "word_count": 195,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3325177/hong-kong-no-cappadocia-balloon-fest-should-have-been-better-handled?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_003_Hong_Kong_is_no_Cappadocia_but.json",
+      "md_file": "markdown/letter_003_Hong_Kong_is_no_Cappadocia_but.md"
+    },
+    {
+      "id": "letter_004_Chinas_Victory_Day_parade_a_re",
+      "title": "China’s Victory Day parade a reminder of the need for global cooperation",
+      "author": "Unknown",
+      "content_length": 857,
+      "word_count": 122,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324985/chinas-victory-day-parade-reminder-need-global-cooperation?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_004_Chinas_Victory_Day_parade_a_re.json",
+      "md_file": "markdown/letter_004_Chinas_Victory_Day_parade_a_re.md"
+    },
+    {
+      "id": "letter_005_Hong_Kong_needs_more_open_and_",
+      "title": "Hong Kong needs more open and empathetic conversations on suicide",
+      "author": "Unknown",
+      "content_length": 950,
+      "word_count": 149,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324868/hong-kong-needs-more-open-and-empathetic-conversations-suicide?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_005_Hong_Kong_needs_more_open_and_.json",
+      "md_file": "markdown/letter_005_Hong_Kong_needs_more_open_and_.md"
+    },
+    {
+      "id": "letter_006_What_the_US_should_take_away_f",
+      "title": "What the US should take away from China’s Victory Day parade",
+      "author": "Unknown",
+      "content_length": 1400,
+      "word_count": 205,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324733/what-us-should-take-away-chinas-victory-day-parade?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_006_What_the_US_should_take_away_f.json",
+      "md_file": "markdown/letter_006_What_the_US_should_take_away_f.md"
+    },
+    {
+      "id": "letter_007_Why_you_should_think_twice_bef",
+      "title": "Why you should think twice before you bet on a horse in Hong Kong",
+      "author": "Unknown",
+      "content_length": 762,
+      "word_count": 119,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324507/why-you-should-think-twice-you-bet-horse-hong-kong?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_007_Why_you_should_think_twice_bef.json",
+      "md_file": "markdown/letter_007_Why_you_should_think_twice_bef.md"
+    },
+    {
+      "id": "letter_008_The_China-India_message_from_T",
+      "title": "The China-India message from Tianjin: perpetual hostility is unsustainable",
+      "author": "Unknown",
+      "content_length": 1131,
+      "word_count": 169,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324431/china-india-message-tianjin-perpetual-hostility-unsustainable?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_008_The_China-India_message_from_T.json",
+      "md_file": "markdown/letter_008_The_China-India_message_from_T.md"
+    },
+    {
+      "id": "letter_009_If_the_world_is_going_to_keep_",
+      "title": "If the world is going to keep using coal, let’s make it sustainable",
+      "author": "Unknown",
+      "content_length": 1260,
+      "word_count": 198,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324449/if-world-going-keep-using-coal-lets-make-it-sustainable?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_009_If_the_world_is_going_to_keep_.json",
+      "md_file": "markdown/letter_009_If_the_world_is_going_to_keep_.md"
+    },
+    {
+      "id": "letter_010_Does_Hong_Kong_need_a_Good_Sam",
+      "title": "Does Hong Kong need a Good Samaritan law?",
+      "author": "Unknown",
+      "content_length": 1215,
+      "word_count": 187,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324314/does-hong-kong-need-good-samaritan-law?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_010_Does_Hong_Kong_need_a_Good_Sam.json",
+      "md_file": "markdown/letter_010_Does_Hong_Kong_need_a_Good_Sam.md"
+    },
+    {
+      "id": "letter_011_After_showcasing_football_star",
+      "title": "After showcasing football stars, Hong Kong must focus on the local game",
+      "author": "Unknown",
+      "content_length": 649,
+      "word_count": 107,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324133/after-showcasing-football-stars-hong-kong-must-focus-local-game?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_011_After_showcasing_football_star.json",
+      "md_file": "markdown/letter_011_After_showcasing_football_star.md"
+    },
+    {
+      "id": "letter_012_On_August_15",
+      "title": "Victory Day marking Japan’s surrender a chance to learn from history",
+      "author": "On August 15, 1945, Japanese emperor Hirohito announced Japan’s surrender.",
+      "content_length": 517,
+      "word_count": 75,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3324012/victory-day-marking-japans-surrender-chance-learn-history?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_012_On_August_15.json",
+      "md_file": "markdown/letter_012_On_August_15.md"
+    },
+    {
+      "id": "letter_013_Decision_of_tribunal_in_Hong_K",
+      "title": "Decision of tribunal in Hong Kong against solicitor is irreproachable",
+      "author": "Unknown",
+      "content_length": 1088,
+      "word_count": 175,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323901/decision-tribunal-hong-kong-against-solicitor-irreproachable?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_013_Decision_of_tribunal_in_Hong_K.json",
+      "md_file": "markdown/letter_013_Decision_of_tribunal_in_Hong_K.md"
+    },
+    {
+      "id": "letter_014_Students_from_the_mainland_sho",
+      "title": "Students from the mainland shouldn’t expect an easy ride in Hong Kong",
+      "author": "Unknown",
+      "content_length": 1473,
+      "word_count": 230,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323658/students-mainland-shouldnt-expect-easy-ride-hong-kong?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_014_Students_from_the_mainland_sho.json",
+      "md_file": "markdown/letter_014_Students_from_the_mainland_sho.md"
+    },
+    {
+      "id": "letter_015_Create_a_Hong_Kong_where_every",
+      "title": "Create a Hong Kong where everyone feels valued",
+      "author": "Unknown",
+      "content_length": 810,
+      "word_count": 115,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323605/create-hong-kong-where-everyone-feels-valued?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_015_Create_a_Hong_Kong_where_every.json",
+      "md_file": "markdown/letter_015_Create_a_Hong_Kong_where_every.md"
+    },
+    {
+      "id": "letter_016_Is_fear_of_Covid-19_holding_ba",
+      "title": "Is fear of Covid-19 holding back Hong Kong’s economic recovery?",
+      "author": "Unknown",
+      "content_length": 764,
+      "word_count": 117,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323601/fear-covid-19-holding-back-hong-kongs-economic-recovery?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_016_Is_fear_of_Covid-19_holding_ba.json",
+      "md_file": "markdown/letter_016_Is_fear_of_Covid-19_holding_ba.md"
+    },
+    {
+      "id": "letter_017_Stop_counting_tourists_start_v",
+      "title": "Stop counting tourists, start valuing communities in Hong Kong",
+      "author": "Unknown",
+      "content_length": 1330,
+      "word_count": 213,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323471/stop-counting-tourists-start-valuing-communities-hong-kong?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_017_Stop_counting_tourists_start_v.json",
+      "md_file": "markdown/letter_017_Stop_counting_tourists_start_v.md"
+    },
+    {
+      "id": "letter_018_Hong_Kong_must_cook_up_labour_",
+      "title": "Hong Kong must cook up labour solution that revives its culinary reputation",
+      "author": "Unknown",
+      "content_length": 1216,
+      "word_count": 196,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323302/hong-kong-must-cook-labour-solution-revives-its-culinary-reputation?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_018_Hong_Kong_must_cook_up_labour_.json",
+      "md_file": "markdown/letter_018_Hong_Kong_must_cook_up_labour_.md"
+    },
+    {
+      "id": "letter_019_What_Japanese_leaders_choices_",
+      "title": "What Japanese leader’s choices on war surrender anniversary reveal",
+      "author": "Unknown",
+      "content_length": 1497,
+      "word_count": 244,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323158/what-japanese-leaders-choices-war-surrender-anniversary-reveal?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_019_What_Japanese_leaders_choices_.json",
+      "md_file": "markdown/letter_019_What_Japanese_leaders_choices_.md"
+    },
+    {
+      "id": "letter_020_Does_recycling_in_Hong_Kong_ha",
+      "title": "Does recycling in Hong Kong have to be a financial burden?",
+      "author": "Unknown",
+      "content_length": 867,
+      "word_count": 148,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3323050/does-recycling-hong-kong-have-be-financial-burden?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_020_Does_recycling_in_Hong_Kong_ha.json",
+      "md_file": "markdown/letter_020_Does_recycling_in_Hong_Kong_ha.md"
+    },
+    {
+      "id": "letter_021_As_the_seriousness_of_extreme_",
+      "title": "As the seriousness of extreme weather sinks in, Hongkongers must act",
+      "author": "Unknown",
+      "content_length": 1148,
+      "word_count": 171,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3322782/seriousness-extreme-weather-sinks-hongkongers-must-act?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_021_As_the_seriousness_of_extreme_.json",
+      "md_file": "markdown/letter_021_As_the_seriousness_of_extreme_.md"
+    },
+    {
+      "id": "letter_022_Hong_Kong_should_explore_the_p",
+      "title": "Hong Kong should explore the potential for visual impairment-friendly travel",
+      "author": "Unknown",
+      "content_length": 1155,
+      "word_count": 171,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3322779/hong-kong-should-explore-potential-visual-impairment-friendly-travel?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_022_Hong_Kong_should_explore_the_p.json",
+      "md_file": "markdown/letter_022_Hong_Kong_should_explore_the_p.md"
+    },
+    {
+      "id": "letter_023_Lets_not_agree_to_disagree_Pro",
+      "title": "Let’s not agree to disagree. Productive disagreement is what world needs",
+      "author": "Unknown",
+      "content_length": 821,
+      "word_count": 142,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3322772/lets-not-agree-disagree-productive-disagreement-what-world-needs?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_023_Lets_not_agree_to_disagree_Pro.json",
+      "md_file": "markdown/letter_023_Lets_not_agree_to_disagree_Pro.md"
+    },
+    {
+      "id": "letter_024_Do_Trump_and_Putin_remember_ho",
+      "title": "Do Trump and Putin remember how Alaska was peacefully sold in 1867?",
+      "author": "Unknown",
+      "content_length": 1109,
+      "word_count": 168,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3322639/do-trump-and-putin-remember-how-alaska-was-peacefully-sold-1867?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_024_Do_Trump_and_Putin_remember_ho.json",
+      "md_file": "markdown/letter_024_Do_Trump_and_Putin_remember_ho.md"
+    },
+    {
+      "id": "letter_025_Worrying_gaps_in_Hong_Kongs_la",
+      "title": "Worrying gaps in Hong Kong’s law enforcement and gatekeeping",
+      "author": "Unknown",
+      "content_length": 880,
+      "word_count": 133,
+      "source_url": "https://www.scmp.com/opinion/letters/article/3322472/worrying-gaps-hong-kongs-law-enforcement-and-gatekeeping?module=top_story&pgtype=subsection",
+      "json_file": "json/letter_025_Worrying_gaps_in_Hong_Kongs_la.json",
+      "md_file": "markdown/letter_025_Worrying_gaps_in_Hong_Kongs_la.md"
+    }
+  ]
+}

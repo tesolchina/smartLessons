@@ -38,3 +38,9 @@ logs/
 *.rar
 *.tar
 *.gz
+
+# Auto-sync exclusions
+node_modules/
+.pytest_cache/
+*.tmp
+.vscode/settings.json

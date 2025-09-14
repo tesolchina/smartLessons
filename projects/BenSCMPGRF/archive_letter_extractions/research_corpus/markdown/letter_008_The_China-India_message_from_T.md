@@ -1,0 +1,20 @@
+# The China-India message from Tianjin: perpetual hostility is unsustainable
+
+**Author:** Unknown
+
+**Source:** https://www.scmp.com/opinion/letters/article/3324431/china-india-message-tianjin-perpetual-hostility-unsustainable?module=top_story&pgtype=subsection
+
+**Main Page Title:** Letters|The China-India message from Tianjin: perpetual hostility is unsustainable
+
+**Word Count:** 169
+
+---
+
+Readers discuss the Xi-Modi meeting, and restrictions on mobiles on the dashboards of Hong Kong taxis
+Modi’s first visit to China since 2018 carried strategic weight. Months of quiet diplomacy prepared the ground. The leaders discussed border tensions, trade and connectivity. Modi pointed to concrete shifts: relative peace along the Himalayan frontier, the resumption of the politically charged Kailash Mansarovar pilgrimage, and plans to restart direct commercial flights – small steps, but telling ones.
+Xi’s language was careful but deliberate, implicitly reflecting Beijing’s own strategic reality: persistent hostility with India weakens China’s regional posture at a time of slowing growth and a costly rivalry with Washington.
+US President Donald Trump’s decision to impose tariffs of up to 50 per cent on Indian goods jolted New Delhi. US protectionism revealed how transactional the partnership is. Beijing seized the moment: its envoy in New Delhi alluded to Washington as a “bully”, offering rhetorical solidarity and subtle leverage for India in its delicate balancing act between the United States, Russia and China.
+
+---
+
+*Corpus ID: letter_008_The_China-India_message_from_T | Character Count: 1131 | Extracted: 2025-09-14T19:31:12.196118*

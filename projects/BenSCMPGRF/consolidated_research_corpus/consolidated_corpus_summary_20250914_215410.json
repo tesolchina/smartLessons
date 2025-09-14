@@ -1,0 +1,28 @@
+{
+  "corpus_info": {
+    "name": "SCMP Letters - Consolidated Research Corpus",
+    "consolidation_timestamp": "2025-09-14T21:54:10.517484",
+    "consolidation_method": "High-quality letters from multiple extraction attempts",
+    "source": "South China Morning Post - Letters to the Editor",
+    "sources_consolidated": [
+      "enhanced_research_corpus",
+      "final_research_corpus",
+      "individual_letters_manual"
+    ],
+    "url": "https://www.scmp.com/comment/letters"
+  },
+  "statistics": {
+    "total_letters": 7,
+    "total_words": 1724,
+    "average_letter_length_chars": 1655,
+    "average_letter_length_words": 246,
+    "unique_authors": 4,
+    "letters_with_known_authors": 4,
+    "duplicates_removed": 4
+  },
+  "source_breakdown": {
+    "enhanced_research_corpus": 6,
+    "final_research_corpus": 0,
+    "individual_letters_manual": 1
+  }
+}

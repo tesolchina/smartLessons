@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- Category -->
+  <question type="category">
+    <category>
+      <text>$course$/SustainableConsumptionQuiz</text>
+    </category>
+  </question>
+
+  <!-- Description -->
+  <question type="description">
+    <name>
+      <text><![CDATA[Intro and Video]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>Watch the video below and answer all questions.<br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ibjUpk9Iagk" title="The history of chocolate" frameborder="0" allowfullscreen></iframe></p>
+      ]]></text>
+    </questiontext>
+  </question>
+
+  <!-- Q1: Multichoice -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[Chocolate in Mesoamerica Q1]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[How was chocolate first consumed in Mesoamerica?]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100"><text><![CDATA[As a bitter, frothy drink mixed with cornmeal and chili peppers]]></text></answer>
+    <answer fraction="0"><text><![CDATA[As a sweet dessert bar]]></text></answer>
+    <answer fraction="0"><text><![CDATA[As a medicine only]]></text></answer>
+    <answer fraction="0"><text><![CDATA[As a powder mixed with milk]]></text></answer>
+  </question>
+
+  <!-- Q2: True/False -->
+  <question type="truefalse">
+    <name>
+      <text><![CDATA[Cacao as Currency Q2]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Cacao beans were used as currency by the Aztecs.]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <answer>1</answer> <!-- 1=True, 0=False -->
+  </question>
+
+  <!-- Q3: Multichoice -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[Chocolate's European Popularity Q3]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[When chocolate was first introduced to Europe, it was initially considered suitable as a medicine for ailments, but quickly became a popular ______ once sweetened.]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0"><text><![CDATA[currency]]></text></answer>
+    <answer fraction="100"><text><![CDATA[delicacy]]></text></answer>
+    <answer fraction="0"><text><![CDATA[medicine]]></text></answer>
+    <answer fraction="0"><text><![CDATA[spice]]></text></answer>
+  </question>
+
+  <!-- Q4: Matching -->
+  <question type="matching">
+    <name>
+      <text><![CDATA[Profit Distribution Q4]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Match each stakeholder to their share of a HK$25 chocolate bar.]]></text>
+    </questiontext>
+    <subquestion>
+      <text><![CDATA[Chocolate retailers]]></text>
+      <answer><![CDATA[HK$12.1 (48.4%)]]></answer>
+    </subquestion>
+    <subquestion>
+      <text><![CDATA[Chocolate manufacturers]]></text>
+      <answer><![CDATA[HK$8.8 (35.2%)]]></answer>
+    </subquestion>
+    <subquestion>
+      <text><![CDATA[Cocoa traders]]></text>
+      <answer><![CDATA[HK$2.15 (8.6%)]]></answer>
+    </subquestion>
+    <subquestion>
+      <text><![CDATA[Cocoa farmers]]></text>
+      <answer><![CDATA[HK$1.65 (6.6%)]]></answer>
+    </subquestion>
+  </question>
+
+  <!-- Q5: Numerical -->
+  <question type="numerical">
+    <name>
+      <text><![CDATA[Child Labour in Cocoa Industry Q5]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[According to the video, over how many million children are estimated to be affected by child labour in West Africa's cocoa plantations?]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <answer fraction="100">
+      <text>2</text>
+      <tolerance>0</tolerance>
+    </answer>
+  </question>
+
+  <!-- Q6: Short Answer -->
+  <question type="shortanswer">
+    <name>
+      <text><![CDATA[Impact of Inflation Q6]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[According to the lesson, what effect does inflation have on cocoa farmers' real purchasing power?]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <answer fraction="100"><text><![CDATA[Reduces it]]></text></answer>
+    <answer fraction="100"><text><![CDATA[Decreases it]]></text></answer>
+    <answer fraction="100"><text><![CDATA[Lowers it]]></text></answer>
+  </question>
+
+  <!-- Q7: Multichoice -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[Sustainable Consumption Definition Q7]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[What does 'sustainable consumption' mean?]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100"><text><![CDATA[Using resources in a way that meets current needs without harming future generations]]></text></answer>
+    <answer fraction="0"><text><![CDATA[Consuming as much as possible]]></text></answer>
+    <answer fraction="0"><text><![CDATA[Avoiding all products from developing countries]]></text></answer>
+    <answer fraction="0"><text><![CDATA[Only buying luxury goods]]></text></answer>
+  </question>
+
+  <!-- Q8: Matching (order steps) -->
+  <question type="matching">
+    <name>
+      <text><![CDATA[Stages of Chocolate Production Q8]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Match each chocolate-making stage with its correct order (1 = first stage).]]></text>
+    </questiontext>
+    <subquestion><text><![CDATA[Harvesting pods]]></text><answer><![CDATA[1]]></answer></subquestion>
+    <subquestion><text><![CDATA[Fermenting beans]]></text><answer><![CDATA[2]]></answer></subquestion>
+    <subquestion><text><![CDATA[Drying beans]]></text><answer><![CDATA[3]]></answer></subquestion>
+    <subquestion><text><![CDATA[Roasting]]></text><answer><![CDATA[4]]></answer></subquestion>
+    <subquestion><text><![CDATA[Grinding]]></text><answer><![CDATA[5]]></answer></subquestion>
+    <subquestion><text><![CDATA[Conching]]></text><answer><![CDATA[6]]></answer></subquestion>
+    <subquestion><text><![CDATA[Tempering]]></text><answer><![CDATA[7]]></answer></subquestion>
+    <subquestion><text><![CDATA[Moulding]]></text><answer><![CDATA[8]]></answer></subquestion>
+  </question>
+
+  <!-- Q9: Essay -->
+  <question type="essay">
+    <name>
+      <text><![CDATA[Nestlé and Sustainability Q9]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Based on Nestlé’s webpage and Kwarteng’s article, discuss whether corporate sustainability plans truly address the poverty of cocoa farmers. Write 150 words.]]></text>
+    </questiontext>
+    <defaultgrade>4</defaultgrade>
+  </question>
+
+  <!-- Q10: Essay -->
+  <question type="essay">
+    <name>
+      <text><![CDATA[Speech Outline Q10]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        Prepare an outline for a speech on the following topic:<br>
+        <b>Describe a way sustainable consumption can enhance global citizenship.</b><br>
+        <i>Guiding Questions:</i>
+        <ul>
+          <li>What is the practice, and why is it important globally?</li>
+          <li>How can people adopt it in their daily lives?</li>
+          <li>Explain its impact on resource availability.</li>
+        </ul>
+      ]]></text>
+    </questiontext>
+    <defaultgrade>5</defaultgrade>
+  </question>
+
+  <!-- Q11: Essay -->
+  <question type="essay">
+    <name>
+      <text><![CDATA[Transcript Writing Q11]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Using the Otter.ai transcript provided, rewrite and polish it to make it suitable for classroom use. Ensure grammar, clarity, and structure are improved while keeping the meaning intact.]]></text>
+    </questiontext>
+    <defaultgrade>5</defaultgrade>
+  </question>
+</quiz>
