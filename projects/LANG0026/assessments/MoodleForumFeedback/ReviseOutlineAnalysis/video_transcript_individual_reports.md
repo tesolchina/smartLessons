@@ -1,9 +1,9 @@
 # Individual Student Reports - Video Transcript Forum
-**Generated:** 2025-09-15 05:42:45
+**Generated:** 2025-09-15 05:52:20
 **Total Participants:** 21
 
 ## CAO Wing Yan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here 
@@ -36,7 +36,7 @@ hi I will complete my reply before 13/9
 ---
 
 ## CHEN Hiu Shuen
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here 
@@ -59,7 +59,7 @@ hi I will complete my reply before 13/9
 ---
 
 ## CHENG Chui Ling
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: section 36 reply here 
@@ -92,7 +92,7 @@ hi I will complete my reply before 13/9
 ---
 
 ## DUAN Runyan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here 
@@ -115,7 +115,7 @@ Here's my unedited video transcript: Hello guys, my name is duanrunyan,and you c
 ---
 
 ## FAN Ching Yin George
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: week 2 pre-course video assessment and reflection 
@@ -148,7 +148,7 @@ Raw transcripts - step 1 “My name is fan ching yin. You can call me George, an
 ---
 
 ## FANG Ke
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here 
@@ -181,7 +181,7 @@ Step 1 Hello everyone! My name is Fang Ke, but you can call me Jennie. Today ,I 
 ---
 
 ## FU Jinwen
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: week 2 pre-course video assessment and reflection 
@@ -204,7 +204,7 @@ I think there are significant problems with the content of my video. First of al
 ---
 
 ## GONG Fanshu
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: section 38 reply here 
@@ -227,7 +227,7 @@ I think there are significant problems with the content of my video. First of al
 ---
 
 ## GUO Jiru
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here 
@@ -250,7 +250,7 @@ I think there are significant problems with the content of my video. First of al
 ---
 
 ## JIN Zijie
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: section 36 reply here 
@@ -273,7 +273,7 @@ Step1:Raw Transcript Here is my unedited video transcript: Hi, my name is Jin zi
 ---
 
 ## LEE Tsz Yan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Re: section 37 reply here 
@@ -296,7 +296,7 @@ Step1: Raw Transrcipt Hi, I'm Lee Tsz Yan, you can call me Alissa, I'm are visua
 ---
 
 ## LIU Weijia
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here 
@@ -329,7 +329,7 @@ Step 1: Raw Transcript Here's my unedited video transcript: Hi everyone, I’m L
 ---
 
 ## LIU Xinyi
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here 
@@ -362,7 +362,7 @@ From Valentina (LIU XINYI 25285548) Step 1：Raw Transcript Here’s my unedited
 ---
 
 ## PENG Yafei
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here 
@@ -395,7 +395,7 @@ From Valentina (LIU XINYI 25285548) Step 1：Raw Transcript Here’s my unedited
 ---
 
 ## SZE Chun Hei
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: Re: section 38 reply here 
@@ -418,7 +418,7 @@ Step 1. Raw outline I am Sze Chun Hei from faculty of arts and social sciences. 
 ---
 
 ## WANG Junrui
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: Re: section 38 reply here 
@@ -441,7 +441,7 @@ Here's a sample reply template that students can adapt: --- ### Step 1: Raw Tran
 ---
 
 ## WONG Cho Yi
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 3
 
 ### Post 1: Re: section 36 reply here 
@@ -484,7 +484,7 @@ Here's a sample reply template that students can adapt: --- ### Step 1: Raw Tran
 ---
 
 ## WONG Yu Ying
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here 
@@ -507,7 +507,7 @@ Hello, my name is Wong Yu Ying, you can call me Avery.I'm a student of Visual Ar
 ---
 
 ## XIE Kai Wing
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Re: section 37 reply here 
@@ -530,7 +530,7 @@ Step 1: Raw Transcript (Provided) Hello everyone, I’m Xie Kai Wing and my stud
 ---
 
 ## ZHANG Zimu
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 2
 
 ### Post 1: section 38 reply here 
@@ -563,7 +563,7 @@ Okay, when I first saw this question, my immediate reaction was that I really di
 ---
 
 ## ZHAO Mohan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here 

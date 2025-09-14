@@ -15,10 +15,10 @@ from datetime import datetime
 import os
 
 class DualForumAnalyzer:
-    def __init__(self, video_transcript_json: str, revise_outline_json: str, student_list_excel: str):
+    def __init__(self, video_transcript_json: str, revise_outline_json: str, student_list_csv: str):
         self.video_transcript_json = video_transcript_json
         self.revise_outline_json = revise_outline_json
-        self.student_list_excel = student_list_excel
+        self.student_list_csv = student_list_csv
         
         # Data storage
         self.video_posts = []
@@ -47,11 +47,11 @@ class DualForumAnalyzer:
         print(f"✅ Revise Outline Forum: {len(self.outline_posts)} posts")
         
         # Load student enrollment data
-        df = pd.read_excel(self.student_list_excel)
+        df = pd.read_csv(self.student_list_csv)
         for _, row in df.iterrows():
-            student_id = str(row.iloc[0]).strip()
-            full_name = str(row.iloc[1]).strip()
-            section = str(row.iloc[2]).strip()
+            student_id = str(row['Student No.']).strip()
+            full_name = str(row['Student Name']).strip()
+            section = str(row['Section Code']).strip()
             self.enrolled_students[full_name] = {
                 'id': student_id,
                 'section': section,
@@ -487,25 +487,25 @@ def main():
     print("🚀 Starting Comprehensive Dual Forum Analysis")
     print("=" * 60)
     
-    # File paths
-    video_json = "discussion-video-transcript.json"
-    outline_json = "Revise-outline.json"
-    student_excel = "../0036students.xls"
+    # File paths (relative to parent directory when run from tools/)
+    video_json = "../discussion-video-transcript.json"
+    outline_json = "../Revise-outline.json"
+    student_csv = "../../0036students.csv"
     
     # Create analyzer
-    analyzer = DualForumAnalyzer(video_json, outline_json, student_excel)
+    analyzer = DualForumAnalyzer(video_json, outline_json, student_csv)
     
     # Load all data
     analyzer.load_all_data()
     
-    # Generate reports for both subfolders
+    # Generate reports for both subfolders (in parent directory)
     print("\n📊 Generating Video Transcript Analysis...")
-    analyzer.generate_individual_reports("VideoTranscriptAnalysis")
-    analyzer.generate_overall_reports("VideoTranscriptAnalysis")
+    analyzer.generate_individual_reports("../VideoTranscriptAnalysis")
+    analyzer.generate_overall_reports("../VideoTranscriptAnalysis")
     
     print("\n📊 Generating Revise Outline Analysis...")
-    analyzer.generate_individual_reports("ReviseOutlineAnalysis")
-    analyzer.generate_overall_reports("ReviseOutlineAnalysis")
+    analyzer.generate_individual_reports("../ReviseOutlineAnalysis")
+    analyzer.generate_overall_reports("../ReviseOutlineAnalysis")
     
     print("\n🎉 Analysis complete! Check the subfolder reports.")
 

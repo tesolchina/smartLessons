@@ -1,9 +1,9 @@
 # Individual Student Reports - Revise Outline Forum
-**Generated:** 2025-09-15 05:42:45
+**Generated:** 2025-09-15 05:52:20
 **Total Participants:** 30
 
 ## CAO Wing Yan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here
@@ -37,7 +37,7 @@
 ---
 
 ## CHEN Hiu Shuen
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here
@@ -61,7 +61,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## CHEN Xin
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: section 38 reply here
@@ -85,7 +85,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## CHENG Chui Ling
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: section 36 reply here
@@ -109,7 +109,7 @@ Topic:&nbsp; It is often said that the internet has reduced privacy and increase
 ---
 
 ## DING Dianyang
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: section 37 reply here
@@ -133,7 +133,7 @@ i think the issues can't overweigh the benefits that the internet brings us. we 
 ---
 
 ## DUAN Runyan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here
@@ -157,7 +157,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## FAN Ching Yin George
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: section 36 reply here
@@ -181,7 +181,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## FANG Ke
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here
@@ -215,7 +215,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## FU Jinwen
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: section 36 reply here
@@ -239,7 +239,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## GONG Fanshu
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: section 38 reply here
@@ -263,7 +263,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## JIN Zijie
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: section 36 reply here
@@ -297,7 +297,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## KE Shengwen
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Re: section 37 reply here
@@ -321,7 +321,7 @@ STUDENT: KE Shengwen DATE: September 11, 2025 1. ORIGINAL OUTLINE My first outli
 ---
 
 ## KEUNG Ho Yuet
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here
@@ -345,7 +345,7 @@ STUDENT: Keiki Keung DATE: September 9, 2025 * Thesis: internet's benefit outwei
 ---
 
 ## LEE Tsz Yan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Re: Week 2 revising your outline on Internet 
@@ -369,7 +369,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## LIU Haipei
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: Re: section 38 reply here
@@ -393,7 +393,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## LIU Weijia
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: section 36 reply here
@@ -417,7 +417,7 @@ Sample Forum Reply - Outline Revision TOPIC: Internet benefits vs risks essay qu
 ---
 
 ## LIU Xinyi
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here
@@ -465,7 +465,7 @@ Thesis Statement: While the internet presents serious risks to privacy and secur
 ---
 
 ## PENG Yafei
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here
@@ -499,7 +499,7 @@ Thesis Statement: While the internet presents serious risks to privacy and secur
 ---
 
 ## SHU Chuhan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Week 2 revising your outline on Internet 
@@ -523,7 +523,7 @@ Introduction: The internet powers modern life with instant access to information
 ---
 
 ## SZE Chun Hei
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: Re: section 38 reply here
@@ -547,7 +547,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## TSANG Hui Ching
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Re: section 37 reply here
@@ -571,7 +571,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## WONG Cho Yi
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here
@@ -605,7 +605,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## WONG Yu Ying
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here
@@ -629,7 +629,7 @@ topic: "Internet benefits vs risks essay question: It is often said that the int
 ---
 
 ## WU Zhiqiu
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 1
 
 ### Post 1: Re: section 36 reply here
@@ -653,7 +653,7 @@ First of all,I agree with that the internet is beneficial to our lives.For examp
 ---
 
 ## YU Wenxi
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Re: Week 2 revising your outline on Internet 
@@ -677,7 +677,7 @@ Body 1 Internet now take an essential part in our daily life . Internet often gi
 ---
 
 ## ZHANG Suwen
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 1
 
 ### Post 1: Re: section 38 reply here
@@ -701,7 +701,7 @@ Outline Revision TOPIC: Internet benefits vs risks essay question: It is often s
 ---
 
 ## ZHANG Zimu
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 38
 **Total Posts:** 2
 
 ### Post 1: section 38 reply here
@@ -735,7 +735,7 @@ Outline Revision TOPIC: Internet benefits vs risks essay question: It is often s
 ---
 
 ## ZHAO Mohan
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 36
 **Total Posts:** 2
 
 ### Post 1: Re: section 36 reply here
@@ -769,7 +769,7 @@ TOPIC: Internet benefits vs risks essay question: It is often said that the inte
 ---
 
 ## ZHENG Yuqing
-**Section:** NOT IN ENROLLMENT LIST
+**Section:** 37
 **Total Posts:** 1
 
 ### Post 1: Re: section 37 reply here

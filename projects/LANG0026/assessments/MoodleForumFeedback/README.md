@@ -7,6 +7,18 @@
 
 This directory contains analysis of two separate Moodle forum discussions with comprehensive student participation tracking and section-based reporting.
 
+### 🛠️ tools/
+**Python Analysis Scripts**  
+All Python analysis tools are organized in this folder:
+- `dual_forum_analyzer.py` - Main comprehensive analysis system
+- `csv_student_viewer.py` - Student enrollment data viewer  
+- `nested_reply_analyzer.py` - Video transcript nested reply analysis
+- `complete_forum_transcript_report.py` - Full transcript reporter
+- `transcript_analyzer.py` - Original video transcript analyzer
+- `enhanced_section_reporter.py` - Section-based reporting
+- `section_organizer.py` - Student list cross-reference tool
+- `README.md` - Detailed documentation for all tools
+
 ### 🎥 VideoTranscriptAnalysis/
 **Forum Topic:** Student Video Transcript Submission and Analysis  
 **Assignment Components:**
@@ -72,11 +84,19 @@ This directory contains analysis of two separate Moodle forum discussions with c
 
 ## 🛠️ Analysis Tools
 
-- `dual_forum_analyzer.py` - Comprehensive analysis system for both forums
-- Individual analyzer scripts for specific forum analysis
-- Section-based reporting with enrollment cross-reference
-- HTML content cleaning and text processing
-- Automated content type classification
+All Python analysis scripts are located in the `tools/` directory. See `tools/README.md` for detailed documentation.
+
+### Quick Usage
+```bash
+# For comprehensive analysis of both forums:
+cd tools && python3 dual_forum_analyzer.py
+
+# For video transcript specific analysis:  
+cd tools && python3 nested_reply_analyzer.py
+
+# For student enrollment overview:
+cd tools && python3 csv_student_viewer.py
+```
 
 ## 📋 Usage Notes
 
