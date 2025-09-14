@@ -26,12 +26,10 @@ All Python analysis tools are organized in this folder:
 - Step 2: Error Analysis (pronunciation, grammar, technical issues)
 - Step 3: Self-Assessment (content, language, fluency analysis)
 
-**Key Files:**
+**Essential Files:**
 - `discussion-video-transcript.json` - Raw forum data
-- `video_transcript_individual_reports.md` - Individual student analysis
-- `comprehensive_overall_report.md` - Section-based statistics
-- `nested_reply_analyzer.py` - Corrected analysis handling nested replies
-- `complete_forum_transcript_report.md` - Full transcript content
+- `video_transcript_individual_reports.md` - Individual student analysis with sections
+- `comprehensive_overall_report.md` - Section-based statistics and participation
 
 ### 📝 ReviseOutlineAnalysis/
 **Forum Topic:** Essay Outline Revision with First Principle Thinking  
@@ -41,10 +39,10 @@ All Python analysis tools are organized in this folder:
 - Revised Outline with improvements
 - Self-Reflection on learning process
 
-**Key Files:**
+**Essential Files:**
 - `Revise-outline.json` - Raw forum data
-- `revise_outline_individual_reports.md` - Individual student analysis
-- `comprehensive_overall_report.md` - Section-based statistics
+- `revise_outline_individual_reports.md` - Individual student analysis with sections
+- `comprehensive_overall_report.md` - Section-based statistics and participation
 
 ## 📊 Analysis Framework
 
@@ -88,14 +86,17 @@ All Python analysis scripts are located in the `tools/` directory. See `tools/RE
 
 ### Quick Usage
 ```bash
+# Navigate to tools directory first:
+cd tools
+
 # For comprehensive analysis of both forums:
-cd tools && python3 dual_forum_analyzer.py
+python3 dual_forum_analyzer.py
 
 # For video transcript specific analysis:  
-cd tools && python3 nested_reply_analyzer.py
+python3 nested_reply_analyzer.py
 
 # For student enrollment overview:
-cd tools && python3 csv_student_viewer.py
+python3 csv_student_viewer.py
 ```
 
 ## 📋 Usage Notes

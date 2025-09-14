@@ -1,0 +1,111 @@
+{
+  "analysis_config": {
+    "name": "Video Transcript Forum Analysis",
+    "description": "Analysis configuration for LANG0026 video transcript submission forum",
+    "version": "1.0"
+  },
+  "data_sources": {
+    "forum_json": "../discussion-video-transcript.json",
+    "student_csv": "../../0036students.csv",
+    "output_directory": "../VideoTranscriptAnalysis"
+  },
+  "json_structure": {
+    "posts_path": "[0]",
+    "post_fields": {
+      "id": "id",
+      "user": "userfullname",
+      "parent": "parent",
+      "subject": "subject",
+      "message": "message",
+      "created": "created",
+      "wordcount": "wordcount"
+    },
+    "instructor_names": ["Dr. WANG Simon H"]
+  },
+  "student_csv_structure": {
+    "student_name_column": "Student Name",
+    "section_column": "Section Code",
+    "student_id_column": "Student No."
+  },
+  "content_classification": {
+    "assignment_components": [
+      {
+        "name": "Raw Transcript",
+        "emoji": "📝",
+        "indicators": [
+          "raw transcript",
+          "unedited video transcript", 
+          "step 1",
+          "my name is",
+          "hello everyone",
+          "hi everyone",
+          "describe myself",
+          "three words"
+        ],
+        "min_length": 150,
+        "required": true
+      },
+      {
+        "name": "Error Analysis",
+        "emoji": "🔍",
+        "indicators": [
+          "step 2",
+          "error analysis",
+          "pronunciation issues",
+          "transcription errors",
+          "unidiomatic expressions",
+          "technical issues",
+          "grammar",
+          "areas for improvement"
+        ],
+        "min_length": 50,
+        "required": true
+      },
+      {
+        "name": "Self-Assessment",
+        "emoji": "📊",
+        "indicators": [
+          "step 3",
+          "self-assessment",
+          "content analysis",
+          "language analysis",
+          "fluency and delivery",
+          "connection between questions",
+          "thematic focus rating"
+        ],
+        "min_length": 100,
+        "required": true
+      }
+    ],
+    "exclusion_patterns": [
+      "[name]",
+      "adaptable, empathetic, and curious",
+      "sample reply template"
+    ]
+  },
+  "analysis_criteria": {
+    "completion_threshold": {
+      "complete": 3,
+      "partial": 1
+    },
+    "quality_metrics": [
+      "content_coherence",
+      "language_quality", 
+      "fluency_indicators"
+    ]
+  },
+  "report_generation": {
+    "individual_report": {
+      "filename": "video_transcript_individual_reports.md",
+      "title": "Individual Student Reports - Video Transcript Forum",
+      "include_full_content": true,
+      "content_preview_length": 1000
+    },
+    "overall_report": {
+      "filename": "comprehensive_overall_report.md",
+      "title": "Comprehensive Forum Analysis Report",
+      "include_section_breakdown": true,
+      "include_participation_stats": true
+    }
+  }
+}

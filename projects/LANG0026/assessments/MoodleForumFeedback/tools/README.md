@@ -1,119 +1,248 @@
-# Analysis Tools for LANG0026 Forum Data
-**Course:** LANG0026 - Language and Global Citizenship  
-**Purpose:** Python analysis scripts for Moodle forum data processing
+# Generic Forum Analysis System
 
-## 🛠️ Main Analysis Tools
+A flexible, configuration-driven system for analyzing Moodle forum submissions.
 
-### **dual_forum_analyzer.py**
-**Primary comprehensive analysis system**
-- **Purpose:** Analyzes both Video Transcript and Revise Outline forums simultaneously
-- **Input:** `discussion-video-transcript.json`, `Revise-outline.json`, `0036students.csv`
-- **Output:** Individual and overall reports for both forums with section breakdown
-- **Features:** 
-  - Cross-reference with student enrollment data
-  - Section-based participation analysis
-  - Content type classification for both forum types
-  - Completion tracking and statistics
-- **Usage:** `python3 dual_forum_analyzer.py`
+## Overview
 
-### **csv_student_viewer.py**  
-**Student enrollment data viewer**
-- **Purpose:** View and analyze student enrollment CSV data
-- **Input:** `0036students.csv`
-- **Output:** Console display of enrollment statistics
-- **Features:**
-  - Student count by section
-  - Program distribution analysis
-  - Data quality check
-  - Sample record display
-- **Usage:** `python3 csv_student_viewer.py`
+This system processes JSON exports from Moodle forums and generates comprehensive analysis reports based on configurable instruction files. It can handle any forum structure and assignment type by defining appropriate configuration files.
 
-## 📝 Video Transcript Analysis Tools
+## Files
 
-### **nested_reply_analyzer.py**
-**Corrected video transcript analysis**
-- **Purpose:** Properly handles nested forum replies for video transcript assignments
-- **Critical Fix:** Addresses nested reply structure where students post multi-step assignments
-- **Input:** `discussion-video-transcript.json`
-- **Components Analyzed:**
-  - Step 1: Raw Transcript
-  - Step 2: Error Analysis  
-  - Step 3: Self-Assessment
-- **Usage:** `python3 nested_reply_analyzer.py`
+### Core Analysis Tools
+- **`generic_forum_analyzer.py`** - Main analysis engine that processes any JSON forum export based on configuration files
+- **`config_generator.py`** - Interactive tool to create new configuration files for different forum types
+- **`csv_student_viewer.py`** - Utility to view and explore student enrollment data
 
-### **complete_forum_transcript_report.py**
-**Full transcript content reporter**
-- **Purpose:** Generates comprehensive report with ALL student forum replies
-- **Output:** Complete transcript content for every post
-- **Features:** Full text preservation, content type identification
-- **Usage:** `python3 complete_forum_transcript_report.py`
+### Configuration Files
+- **`config_video_transcript.json`** - Configuration for video transcript submission analysis
+- **`config_revise_outline.json`** - Configuration for essay outline revision analysis
 
-### **transcript_analyzer.py**
-**Original video transcript analyzer**
-- **Purpose:** Initial analysis system (before nested reply correction)
-- **Status:** Legacy - use `nested_reply_analyzer.py` instead
-- **Note:** Kept for reference and comparison
+### Legacy Tools (Deprecated)
+- **`dual_forum_analyzer.py`** - Original hardcoded dual-forum analyzer (superseded by generic system)
 
-### **enhanced_section_reporter.py**
-**Section-based video transcript reporting**
-- **Purpose:** Organize video transcript analysis by student sections
-- **Input:** Video transcript data + student enrollment list
-- **Output:** Section-organized reports with cross-reference validation
-- **Usage:** `python3 enhanced_section_reporter.py`
+## Quick Start
 
-### **section_organizer.py**
-**Student list cross-reference tool**
-- **Purpose:** Cross-reference forum participants with official enrollment
-- **Features:** Identify missing students, section organization
-- **Usage:** `python3 section_organizer.py`
-
-## 🔧 Usage Instructions
-
-### Quick Start
+### 1. Validate Configuration
 ```bash
-# For comprehensive analysis of both forums:
-python3 tools/dual_forum_analyzer.py
-
-# For video transcript specific analysis:
-python3 tools/nested_reply_analyzer.py
-
-# For student enrollment overview:
-python3 tools/csv_student_viewer.py
+python3 generic_forum_analyzer.py --validate config_video_transcript.json
 ```
 
-### File Dependencies
-All scripts expect to be run from the main MoodleForumFeedback directory:
-```
-MoodleForumFeedback/
-├── discussion-video-transcript.json
-├── Revise-outline.json  
-├── ../0036students.csv
-└── tools/ (Python scripts)
+### 2. Run Analysis
+```bash
+python3 generic_forum_analyzer.py config_video_transcript.json
 ```
 
-### Analysis Workflow
-1. **Data Preparation:** Ensure JSON files and CSV student list are in place
-2. **Primary Analysis:** Run `dual_forum_analyzer.py` for comprehensive reports
-3. **Specific Analysis:** Use individual tools for focused analysis
-4. **Results:** Check generated reports in analysis subfolders
+### 3. List Available Configurations
+```bash
+python3 generic_forum_analyzer.py --list-configs
+```
 
-## 📊 Technical Notes
+## Creating New Configurations
 
-### Content Type Classification
-- **Video Transcript:** Raw Transcript, Error Analysis, Self-Assessment
-- **Outline Revision:** Original Outline, Revision Planning, Revised Outline, Self-Reflection
+### Option 1: Interactive Generator (Recommended)
+```bash
+python3 config_generator.py
+```
 
-### Cross-Reference Validation
-- Student names matched between forum posts and enrollment data
-- Section assignment validation and participation tracking
-- Missing student identification for follow-up
+The generator will walk you through:
+- Basic configuration setup
+- Data source paths
+- JSON structure mapping
+- Assignment component definitions
+- Content classification rules
+- Analysis criteria
+- Report generation settings
 
-### Data Processing
-- HTML tag removal from forum content
-- Nested reply aggregation for complete submissions
-- Timestamp conversion and formatting
-- Word count analysis and content length validation
+### Option 2: Manual Configuration
 
----
-**Maintenance:** Update file paths in scripts if directory structure changes  
-**Contact:** Scripts documented for LANG0026 course analysis workflow
+Create a JSON file following this structure:
+
+```json
+{
+  "analysis_config": {
+    "name": "Your Analysis Name",
+    "description": "Description of the forum analysis",
+    "version": "1.0"
+  },
+  "data_sources": {
+    "forum_json": "../path/to/forum.json",
+    "student_csv": "../path/to/students.csv",
+    "output_directory": "../OutputFolder"
+  },
+  "json_structure": {
+    "posts_path": "[0]",
+    "post_fields": {
+      "id": "id",
+      "user": "userfullname",
+      "parent": "parent",
+      "subject": "subject",
+      "message": "message",
+      "created": "created",
+      "wordcount": "wordcount"
+    },
+    "instructor_names": ["Instructor Name"]
+  },
+  "content_classification": {
+    "assignment_components": [
+      {
+        "name": "Component Name",
+        "emoji": "📄",
+        "indicators": ["keyword1", "keyword2"],
+        "min_length": 50,
+        "required": true
+      }
+    ],
+    "exclusion_patterns": ["template", "example"]
+  },
+  "analysis_criteria": {
+    "completion_threshold": {
+      "complete": 3,
+      "partial": 1
+    },
+    "quality_metrics": [
+      "content_completeness",
+      "language_quality",
+      "assignment_adherence"
+    ]
+  },
+  "report_generation": {
+    "individual_report": {
+      "filename": "individual_reports.md",
+      "title": "Individual Student Reports",
+      "include_full_content": true,
+      "content_preview_length": 1000
+    },
+    "overall_report": {
+      "filename": "comprehensive_overall_report.md",
+      "title": "Comprehensive Analysis Report",
+      "include_section_breakdown": true,
+      "include_participation_stats": true
+    }
+  }
+}
+```
+
+## Configuration Sections Explained
+
+### `analysis_config`
+Basic metadata about the analysis type.
+
+### `data_sources`
+- **`forum_json`**: Path to Moodle forum JSON export
+- **`student_csv`**: Path to student enrollment CSV (optional)
+- **`output_directory`**: Where to save analysis reports
+
+### `json_structure`
+Maps your JSON structure to the analyzer:
+- **`posts_path`**: JSONPath to posts array (usually `"[0]"` for nested exports)
+- **`post_fields`**: Field name mappings for post data
+- **`instructor_names`**: List of instructor names to exclude from student analysis
+
+### `content_classification`
+Defines how to identify assignment components:
+- **`assignment_components`**: List of assignment parts with:
+  - `name`: Component name
+  - `emoji`: Display emoji
+  - `indicators`: Keywords/phrases that indicate this component
+  - `min_length`: Minimum text length
+  - `required`: Whether component is required for completion
+- **`exclusion_patterns`**: Patterns that indicate template/example content
+
+### `analysis_criteria`
+- **`completion_threshold`**: Number of components needed for complete/partial classification
+- **`quality_metrics`**: Types of quality assessment performed
+
+### `report_generation`
+Output format configuration for individual and overall reports.
+
+## Output Reports
+
+The system generates two types of reports:
+
+### Individual Student Reports
+- Detailed analysis for each student
+- Component-by-component breakdown
+- Content quality assessment
+- Full submission content (configurable)
+
+### Comprehensive Overall Report
+- Participation statistics
+- Section-based breakdown (if student CSV provided)
+- Completion rate analysis
+- Missing student identification
+
+## Data Requirements
+
+### Forum JSON Structure
+The system expects Moodle forum JSON exports with nested reply structure. Each post should have:
+- Unique ID
+- User name
+- Parent post reference (for replies)
+- Subject and message content
+- Creation timestamp
+- Word count
+
+### Student CSV Structure (Optional)
+If provided, should include:
+- Student names (for cross-referencing)
+- Section codes (for section-based reporting)
+- Student IDs (for identification)
+
+## Examples
+
+### Video Transcript Analysis
+Analyzes 3-component video transcript submissions:
+1. Raw Transcript
+2. Error Analysis  
+3. Self-Assessment
+
+### Essay Outline Revision
+Analyzes 4-component outline revision process:
+1. Original Outline
+2. Revision Planning
+3. Revised Outline
+4. Self-Reflection
+
+## Migration from Legacy System
+
+If you have existing `dual_forum_analyzer.py` usage, the new system provides:
+- Same analysis quality with improved flexibility
+- Configuration-based setup instead of hardcoded rules
+- Better extensibility for new forum types
+- Maintained compatibility with existing data sources
+
+## Troubleshooting
+
+### Configuration Validation Errors
+- Use `--validate` flag to check configuration syntax
+- Ensure all file paths are correct and relative to tools directory
+- Verify JSON structure matches your actual forum export
+
+### Missing Data
+- Check that JSON file contains expected structure
+- Verify student CSV encoding (UTF-8 recommended)
+- Ensure instructor names match exactly in configuration
+
+### Analysis Issues
+- Review content classification indicators
+- Adjust minimum length thresholds
+- Check exclusion patterns for false positives
+
+## Command Reference
+
+```bash
+# List available configurations
+python3 generic_forum_analyzer.py --list-configs
+
+# Validate configuration
+python3 generic_forum_analyzer.py --validate CONFIG_FILE
+
+# Run analysis
+python3 generic_forum_analyzer.py CONFIG_FILE
+
+# Create new configuration
+python3 config_generator.py
+
+# View student data
+python3 csv_student_viewer.py
+```

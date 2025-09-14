@@ -1,0 +1,121 @@
+{
+  "analysis_config": {
+    "name": "Revise Outline Forum Analysis", 
+    "description": "Analysis configuration for LANG0026 essay outline revision forum",
+    "version": "1.0"
+  },
+  "data_sources": {
+    "forum_json": "../Revise-outline.json",
+    "student_csv": "../../0036students.csv",
+    "output_directory": "../ReviseOutlineAnalysis"
+  },
+  "json_structure": {
+    "posts_path": "[0]",
+    "post_fields": {
+      "id": "id",
+      "user": "userfullname", 
+      "parent": "parent",
+      "subject": "subject",
+      "message": "message",
+      "created": "created",
+      "wordcount": "wordcount"
+    },
+    "instructor_names": ["Dr. WANG Simon H"]
+  },
+  "student_csv_structure": {
+    "student_name_column": "Student Name",
+    "section_column": "Section Code", 
+    "student_id_column": "Student No."
+  },
+  "content_classification": {
+    "assignment_components": [
+      {
+        "name": "Original Outline",
+        "emoji": "📋",
+        "indicators": [
+          "original outline",
+          "first outline", 
+          "my first",
+          "basic outline",
+          "thesis:",
+          "body 1:",
+          "body 2:"
+        ],
+        "min_length": 50,
+        "required": true
+      },
+      {
+        "name": "Revision Planning",
+        "emoji": "🔧", 
+        "indicators": [
+          "revision planning",
+          "planning notes",
+          "revision strategy",
+          "what i learned",
+          "feedback points",
+          "ai feedback",
+          "lesson insights"
+        ],
+        "min_length": 30,
+        "required": true
+      },
+      {
+        "name": "Revised Outline",
+        "emoji": "📝",
+        "indicators": [
+          "revised outline",
+          "new outline",
+          "improved outline", 
+          "final outline",
+          "better outline"
+        ],
+        "min_length": 100,
+        "required": true
+      },
+      {
+        "name": "Self-Reflection",
+        "emoji": "🤔",
+        "indicators": [
+          "self-reflection",
+          "what i improved",
+          "still need work",
+          "areas for improvement", 
+          "understanding gained",
+          "improvements made"
+        ],
+        "min_length": 50,
+        "required": true
+      }
+    ],
+    "exclusion_patterns": [
+      "sample forum reply",
+      "template",
+      "example"
+    ]
+  },
+  "analysis_criteria": {
+    "completion_threshold": {
+      "complete": 4,
+      "partial": 2
+    },
+    "quality_metrics": [
+      "outline_completeness",
+      "reflection_depth",
+      "revision_quality"
+    ]
+  },
+  "report_generation": {
+    "individual_report": {
+      "filename": "revise_outline_individual_reports.md",
+      "title": "Individual Student Reports - Revise Outline Forum",
+      "include_full_content": true,
+      "content_preview_length": 1000
+    },
+    "overall_report": {
+      "filename": "comprehensive_overall_report.md", 
+      "title": "Comprehensive Forum Analysis Report",
+      "include_section_breakdown": true,
+      "include_participation_stats": true
+    }
+  }
+}
