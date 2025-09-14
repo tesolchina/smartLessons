@@ -1,0 +1,273 @@
+[
+  {
+    "organization_id": "63b4bbff-2176-4cfd-bd6d-8dab2dcc2377",
+    "organization_name": "hk-aw",
+    "organization_title": "Administration Wing, Chief Secretary for Administration's Office",
+    "num_datasets": 5,
+    "datasets": [
+      {
+        "dataset_id": "5363179b-4779-41a6-96bd-8cb33da5b03a",
+        "dataset_name": "hk-aw-jp-jp",
+        "dataset_title": "Justices of the Peace (JP) List",
+        "dataset_notes": "Justices of the Peace (JP) List",
+        "num_resources": 4,
+        "organization_name": "hk-aw",
+        "organization_title": "Administration Wing, Chief Secretary for Administration's Office",
+        "metadata_modified": "2025-09-09T16:30:19.348949",
+        "url": null
+      },
+      {
+        "dataset_id": "712ae4fe-f39c-42c0-8599-4f3f1ed15dad",
+        "dataset_name": "hk-aw-drf-approved-drf-grants",
+        "dataset_title": "Disaster Relief Fund Approved Grants",
+        "dataset_notes": "Disaster Relief Fund Approved Grants",
+        "num_resources": 6,
+        "organization_name": "hk-aw",
+        "organization_title": "Administration Wing, Chief Secretary for Administration's Office",
+        "metadata_modified": "2025-07-08T16:30:28.113310",
+        "url": null
+      },
+      {
+        "dataset_id": "805b8cb1-548d-4cbb-8326-f42eb4992001",
+        "dataset_name": "hk-aw-honours-honours",
+        "dataset_title": "List of Recipients of Hong Kong Special Administrative Region Honours and Awards",
+        "dataset_notes": "List of Recipients of Hong Kong Special Administrative Region Honours and Awards",
+        "num_resources": 2,
+        "organization_name": "hk-aw",
+        "organization_title": "Administration Wing, Chief Secretary for Administration's Office",
+        "metadata_modified": "2025-06-30T16:30:30.952476",
+        "url": null
+      },
+      {
+        "dataset_id": "52c29048-c662-4c29-83c1-21569d278166",
+        "dataset_name": "hk-aw-grs-destruction-of-records-in-the-government",
+        "dataset_title": "Destruction of Records in the Government",
+        "dataset_notes": "This dataset provides the information of records approved for destruction in all bureaux and departments since 2015",
+        "num_resources": 3,
+        "organization_name": "hk-aw",
+        "organization_title": "Administration Wing, Chief Secretary for Administration's Office",
+        "metadata_modified": "2025-06-04T16:30:44.998991",
+        "url": null
+      },
+      {
+        "dataset_id": "576cf92d-9761-4d7c-aec3-29a1c56cd128",
+        "dataset_name": "hk-aw-grs-total-quantity-of-grs-archival-stock",
+        "dataset_title": "Government Records Service' Archival Stock",
+        "dataset_notes": "This dataset provides the details of the total number of archival records and total quantity of archival records (in linear metres) since 2014",
+        "num_resources": 1,
+        "organization_name": "hk-aw",
+        "organization_title": "Administration Wing, Chief Secretary for Administration's Office",
+        "metadata_modified": "2025-06-04T16:30:40.320621",
+        "url": null
+      }
+    ]
+  },
+  {
+    "organization_id": "0eaccf1a-1abf-435c-876a-c75280d45db9",
+    "organization_name": "hk-afcd",
+    "organization_title": "Agriculture, Fisheries and Conservation Department",
+    "num_datasets": 5,
+    "datasets": [
+      {
+        "dataset_id": "5f0b1109-6f6f-41e9-93b0-e3f615d3a917",
+        "dataset_name": "hk-afcd-afcdlist-spending-data-head-22",
+        "dataset_title": "Spending data of Head 22 - Agriculture, Fisheries and Conservation Department",
+        "dataset_notes": "Spending data of Head 22 - Agriculture, Fisheries and Conservation Department",
+        "num_resources": 1,
+        "organization_name": "hk-afcd",
+        "organization_title": "Agriculture, Fisheries and Conservation Department",
+        "metadata_modified": "2025-08-04T16:30:18.682800",
+        "url": null
+      },
+      {
+        "dataset_id": "f5f8764b-da1e-4fa6-b3cb-77e3e429ce3c",
+        "dataset_name": "hk-afcd-afcdlist-agrienjoyfarmcsdi",
+        "dataset_title": "Information on \"Agri enJoy\" farms",
+        "dataset_notes": "Location of \"Agri enJoy\" farms",
+        "num_resources": 1,
+        "organization_name": "hk-afcd",
+        "organization_title": "Agriculture, Fisheries and Conservation Department",
+        "metadata_modified": "2025-06-10T16:30:28.135683",
+        "url": null
+      },
+      {
+        "dataset_id": "5b1d4ed3-b4d0-49c2-a246-510a27e5905c",
+        "dataset_name": "hk-afcd-afcdlist-cropfarms",
+        "dataset_title": "Information on Registered Crop Farms",
+        "dataset_notes": "Location and Size of Crop Farms",
+        "num_resources": 1,
+        "organization_name": "hk-afcd",
+        "organization_title": "Agriculture, Fisheries and Conservation Department",
+        "metadata_modified": "2025-06-10T16:30:26.763523",
+        "url": null
+      },
+      {
+        "dataset_id": "6f3fa656-31b3-4e4a-9df9-ee94f16a4c88",
+        "dataset_name": "hk-afcd-afcdlist-livestockfarms",
+        "dataset_title": "Information on Licensed Livestock Farms",
+        "dataset_notes": "Information on Licensed Livestock Farms, including the type and location of the livestock farms",
+        "num_resources": 1,
+        "organization_name": "hk-afcd",
+        "organization_title": "Agriculture, Fisheries and Conservation Department",
+        "metadata_modified": "2025-06-10T16:30:25.271838",
+        "url": null
+      },
+      {
+        "dataset_id": "d9b2ace4-50e4-46c9-84a5-12c56baaf7f9",
+        "dataset_name": "hk-afcd-afcdlist-cpinfoboardcsdi",
+        "dataset_title": "Information boards in Country Parks",
+        "dataset_notes": "Information boards in Country Parks",
+        "num_resources": 1,
+        "organization_name": "hk-afcd",
+        "organization_title": "Agriculture, Fisheries and Conservation Department",
+        "metadata_modified": "2025-04-17T16:30:39.843811",
+        "url": null
+      }
+    ]
+  },
+  {
+    "organization_id": "ebe2e138-7ea8-43ef-be36-553be99c5d86",
+    "organization_name": "aahk",
+    "organization_title": "Airport Authority Hong Kong",
+    "num_datasets": 1,
+    "datasets": [
+      {
+        "dataset_id": "67342bae-3fc4-470b-895b-cd707f8f9ab9",
+        "dataset_name": "aahk-team1-flight-info",
+        "dataset_title": "Flight Information",
+        "dataset_notes": "Flight Information",
+        "num_resources": 1,
+        "organization_name": "aahk",
+        "organization_title": "Airport Authority Hong Kong",
+        "metadata_modified": "2021-07-02T03:33:14.581271",
+        "url": null
+      }
+    ]
+  },
+  {
+    "organization_id": "c976c606-bede-4414-b415-b63a1515e407",
+    "organization_name": "hk-archsd",
+    "organization_title": "Architectural Services Department",
+    "num_datasets": 5,
+    "datasets": [
+      {
+        "dataset_id": "bb5b0eb6-e9e5-4e38-88d8-9ee25b6c7ca8",
+        "dataset_name": "hk-archsd-archsddata-beampluscsdi",
+        "dataset_title": "Hong Kong Green Building Council (HKGBC) BEAM Plus Assessment Final Grading for Capital Projects",
+        "dataset_notes": "Information of the Hong Kong Green Building Council (HKGBC) BEAM Plus assessment final grading of capital projects (exclude minor works projects) under the purview of Architectural Services Department (including project name, rating, overall score, etc.)(CSDI Portal)",
+        "num_resources": 1,
+        "organization_name": "hk-archsd",
+        "organization_title": "Architectural Services Department",
+        "metadata_modified": "2024-12-23T16:30:19.767470",
+        "url": null
+      },
+      {
+        "dataset_id": "0dcb3698-4d0a-4ef3-8e1c-02813d05d484",
+        "dataset_name": "hk-archsd-archsddata-govbnf",
+        "dataset_title": "Government buildings and facilities maintained by ArchSD",
+        "dataset_notes": "This dataset provides information of government buildings and facilities maintained by ArchSD in FGDB format for releasing to CSDI portal. Please observe the relevant terms and conditions of the CSDI portal when using the information contained in this dataset.",
+        "num_resources": 2,
+        "organization_name": "hk-archsd",
+        "organization_title": "Architectural Services Department",
+        "metadata_modified": "2023-02-16T16:31:45.224589",
+        "url": null
+      },
+      {
+        "dataset_id": "7b968266-04e5-415a-9029-09057550ad56",
+        "dataset_name": "hk-archsd-archsddata-treess",
+        "dataset_title": "Trees on SIMAR Slopes Maintained by ArchSD",
+        "dataset_notes": "This dataset provides information of the trees on Registered Man-made Slopes maintained by ArchSD in FGDB format for releasing to CSDI portal. Please observe the relevant terms and conditions of the CSDI portal when using the information contained in this dataset.",
+        "num_resources": 2,
+        "organization_name": "hk-archsd",
+        "organization_title": "Architectural Services Department",
+        "metadata_modified": "2023-02-16T16:31:44.543176",
+        "url": null
+      },
+      {
+        "dataset_id": "5fa796b0-1410-4310-ae2f-bbdf5ba16e46",
+        "dataset_name": "hk-archsd-archsddata-beampluspl",
+        "dataset_title": "Hong Kong Green Building Council (HKGBC) BEAM Plus Assessment Final Grading for Completed Capital Works Projects managed by the Architectural Services Department",
+        "dataset_notes": "This dataset provides the final grading, assessment version, overall score and project completion year of BEAM Plus certification for new completed capital works projects managed by the Architectural Services Department.",
+        "num_resources": 3,
+        "organization_name": "hk-archsd",
+        "organization_title": "Architectural Services Department",
+        "metadata_modified": "2023-02-16T16:31:43.730758",
+        "url": null
+      },
+      {
+        "dataset_id": "c9640ed1-6818-4bd3-9ed8-ce2220f53f6b",
+        "dataset_name": "hk-archsd-archsddata-acgca",
+        "dataset_title": "Awarded Contractors under Green Contractor Awards",
+        "dataset_notes": "This dataset provides the details of awarded contractors under the Green Contractor Award of the Architectural Services Department (including award type, awarded contractor name and the project awarded)",
+        "num_resources": 3,
+        "organization_name": "hk-archsd",
+        "organization_title": "Architectural Services Department",
+        "metadata_modified": "2023-02-16T16:31:40.263685",
+        "url": null
+      }
+    ]
+  },
+  {
+    "organization_id": "75e232d1-3ce8-4232-a873-dc9d2425573a",
+    "organization_name": "hk-aud",
+    "organization_title": "Audit Commission",
+    "num_datasets": 5,
+    "datasets": [
+      {
+        "dataset_id": "c89dc16e-69cc-4ced-a851-656073ba371d",
+        "dataset_name": "hk-aud-tab-approved-estimate",
+        "dataset_title": "Audit Commission approved Estimates of Expenditure",
+        "dataset_notes": "Audit Commission approved Estimates of Expenditure",
+        "num_resources": 1,
+        "organization_name": "hk-aud",
+        "organization_title": "Audit Commission",
+        "metadata_modified": "2025-06-12T16:30:34.963617",
+        "url": null
+      },
+      {
+        "dataset_id": "00a019dc-f808-474c-b3ac-2c2f0d583f52",
+        "dataset_name": "hk-aud-tab-vfm-by-subjects",
+        "dataset_title": "Director of Audit’s Reports on value for money audits grouped by subjects",
+        "dataset_notes": "Director of Audit’s Reports on value for money audits grouped by subjects",
+        "num_resources": 1,
+        "organization_name": "hk-aud",
+        "organization_title": "Audit Commission",
+        "metadata_modified": "2025-06-12T16:30:33.545820",
+        "url": null
+      },
+      {
+        "dataset_id": "575e122c-9010-488c-91ed-5f4baad5c2ec",
+        "dataset_name": "hk-aud-tab-performance-indicators",
+        "dataset_title": "Performance indicators of Regularity Audits (RA) and Value for Money Audits (VFM) of Audit Commission",
+        "dataset_notes": "Performance indicators of Regularity Audits (RA) and Value for Money Audits (VFM) of Audit Commission",
+        "num_resources": 1,
+        "organization_name": "hk-aud",
+        "organization_title": "Audit Commission",
+        "metadata_modified": "2025-06-12T16:30:31.713464",
+        "url": null
+      },
+      {
+        "dataset_id": "a302e01e-35eb-48ca-908f-c663b8ccf2b6",
+        "dataset_name": "hk-aud-tab-vfm-by-auditees",
+        "dataset_title": "Director of Audit’s Reports on value for money audits grouped by auditees",
+        "dataset_notes": "Director of Audit’s Reports on value for money audits grouped by auditees",
+        "num_resources": 1,
+        "organization_name": "hk-aud",
+        "organization_title": "Audit Commission",
+        "metadata_modified": "2025-06-12T16:30:30.115349",
+        "url": null
+      },
+      {
+        "dataset_id": "55211b42-009d-47e5-8f5d-bd0daf36b4ca",
+        "dataset_name": "hk-aud-tab-accounts-certified",
+        "dataset_title": "Accounts certified by Audit Commission",
+        "dataset_notes": "Accounts certified by Audit Commission",
+        "num_resources": 1,
+        "organization_name": "hk-aud",
+        "organization_title": "Audit Commission",
+        "metadata_modified": "2025-06-12T16:30:28.354926",
+        "url": null
+      }
+    ]
+  }
+]

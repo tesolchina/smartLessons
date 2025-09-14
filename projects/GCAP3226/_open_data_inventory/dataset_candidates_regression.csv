@@ -1,0 +1,6 @@
+topic,dataset_title,provider,resource_url,target,features,model_notes
+transport,Journey time by corridor (example),Transport Department,,journey_time,"hour_of_day,day_of_week,route_id,incident_flag",OLS/GLS; panel extension optional
+air_quality,Air quality AQHI/PM2.5 by station,EPD,,pm25,"hour,station,temp,humidity,lag1,lag2",OLS with lags; or ARIMA/GLM
+housing,Public housing waiting time,Housing Authority,,waiting_time_months,"district,year,family_size",OLS; or survival analysis extension
+health,Vaccination uptake by age group,Health Bureau,https://www.healthbureau.gov.hk/download/opendata/COVID19/vaccination-rates-over-time-by-age.csv,uptake_rate,"age_group,day,policy_phase",OLS/GLS; time series dummies
+water,Water quality indicators by district,WSD,https://www.wsd.gov.hk/datagovhk/tc-data/water-quality-control-2017-2018-c.csv,ecoli_count,"district,month",Poisson/NegBin for counts

@@ -1,5 +1,24 @@
 # RAG System Implementation Sprints
 
+<!-- Dev Log entry added on 2025-09-13 -->
+
+## Dev Log — 2025-09-13
+- Fixed FAISS index loading by changing embeddings pickle format to a stable dict (avoids __main__ class refs)
+- Rebuilt index (1975 docs); verified search result structure and metadata access
+- Streamlit apps running:
+  - Main RAG UI at :8501 (app.py)
+  - Citation Review UI at :8502 (citation_app.py)
+- Added citation review system (CLI + Streamlit) to analyze manuscript citations and suggest improvements
+- Improved docs: project README and `CITATION_REVIEW_GUIDE.md` with usage examples
+- Next up: hierarchical chunking, evaluation harness, and UI improvements for upload/paste handling
+
+## Dev Log — 2025-09-13 (evening)
+- Addressed Streamlit run-path issues; confirmed both apps launch with explicit paths
+- Fixed embeddings pickle compatibility (use dict with vocabulary/idf_weights/doc_count)
+- Rebuilt FAISS index and verified metadata structure access in RAG pipeline
+- Added `projects/ZoteroPDF/CITATION_REVIEW_GUIDE.md` and updated `projects/ZoteroPDF/README.md`
+- Known issue: citation_app upload/paste UX—add clearer state, success/error messages next session
+
 ## Overview
 
 Building a RAG system for academic MD files processing using open-source tools.
@@ -627,5 +646,3 @@ if doc.metadata.get('pedagogical_implications'):
 1. Create mock function: `def fake_post_chat(payload): return {"choices":[{"message":{"content":"Mock answer"}}]}`.
 2. Monkeypatch in pytest: `monkeypatch.setattr('scripts.rag.post_chat_completions', fake_post_chat)`.
 3. Assert answer contains expected stub and source count matches requested `top_k`.
-
----

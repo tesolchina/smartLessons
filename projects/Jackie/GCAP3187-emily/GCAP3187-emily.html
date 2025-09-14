@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GCAP3187 Emily — Intro & Chat</title>
+  <meta name="description" content="Intro and embedded chatbot for GCAP3187 Emily" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f9fc;
+      --fg: #1f2937;
+      --muted: #4b5563;
+      --accent: #2563eb; /* blue-600 */
+      --panel: #ffffff;
+      --border: #e5e7eb;
+      --ok: #16a34a;
+      --warn: #d97706;
+    }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+    header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+    header h1 { font-size: 24px; margin: 0; font-weight: 700; }
+    .sub { color: var(--muted); margin-top: 0; }
+
+    .tabs { display: inline-flex; gap: 8px; margin: 14px 0 18px; background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 6px; }
+    .tab-btn { border: 1px solid transparent; background: transparent; color: var(--fg); padding: 8px 12px; border-radius: 8px; cursor: pointer; font: inherit; }
+    .tab-btn[aria-selected="true"] { background: #eff6ff; border-color: var(--accent); color: var(--accent); }
+
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 12px 0; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+    .card h2 { font-size: 18px; margin: 0 0 10px; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .step { background: #fbfdff; border: 1px dashed var(--border); border-radius: 10px; padding: 12px; }
+    .step strong { color: var(--ok); }
+
+    .note { color: var(--muted); font-size: 14px; }
+    .warn { color: var(--warn); }
+
+    .chat-wrap { height: 70vh; min-height: 420px; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    iframe { width: 100%; height: 100%; border: 0; background: #fff; }
+
+    .toolbar { display: flex; gap: 10px; align-items: center; margin: 8px 0 12px; }
+    .btn { color: #fff; background: var(--accent); border: 1px solid var(--accent); padding: 8px 12px; border-radius: 10px; text-decoration: none; cursor: pointer; }
+    .btn:hover { filter: brightness(0.95); }
+    .btn.secondary { color: var(--fg); background: transparent; border-color: var(--border); }
+    .btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hidden { display: none !important; }
+    @media (max-width: 720px) { .chat-wrap { height: 65vh; } }
+  </style>
+  <script>
+    // Load config.json to populate naming/links without editing HTML.
+    async function loadConfig() {
+      try {
+        const res = await fetch('config.json', { cache: 'no-store' });
+        if (!res.ok) return;
+        const cfg = await res.json();
+        const titleEl = document.querySelector('title');
+        if (cfg.botName && titleEl) titleEl.textContent = `${cfg.botName} — Intro & Chat`;
+        const h1 = document.getElementById('botTitle');
+        if (h1 && cfg.botName) h1.textContent = cfg.botName;
+        const openBtn = document.getElementById('openNewTab');
+        if (openBtn && cfg.chatbotUrl) openBtn.href = cfg.chatbotUrl;
+        const frame = document.getElementById('chatFrame');
+        if (frame && cfg.chatbotUrl) frame.src = cfg.chatbotUrl;
+        // Support either top-level contactEmail or nested contact.email
+        const contactP = document.getElementById('contactEmailP');
+        const contactEmail = (cfg.contactEmail) || (cfg.contact && cfg.contact.email);
+        if (contactP && contactEmail) {
+          contactP.textContent = `Contact: ${contactEmail}`;
+          contactP.classList.remove('hidden');
+        }
+      } catch (e) { console.warn('Config not loaded:', e); }
+    }
+    document.addEventListener('DOMContentLoaded', loadConfig);
+  </script>
+  <!-- Optional: place a favicon or branding later -->
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="botTitle">GCAP3187 Emily</h1>
+    </header>
+    <p class="sub">Read the quick intro, then switch to the Chatbot tab to start. Use your own email to receive your session report.</p>
+
+    <nav class="tabs" role="tablist" aria-label="Chatbot Tabs">
+      <button id="tab-intro" class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-intro">Intro</button>
+      <button id="tab-chat" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-chat">Chatbot</button>
+    </nav>
+
+    <section id="panel-intro" role="tabpanel" aria-labelledby="tab-intro">
+      <section class="card">
+        <h2>What is this?</h2>
+        <p>This chatbot helps you practise course concepts and receive a short personalised report by email after your session.</p>
+        <ul>
+          <li>Ask questions about weekly topics, practise explaining ideas, and get feedback.</li>
+          <li>At the end, a summary can be emailed to you.</li>
+        </ul>
+        <p id="contactEmailP" class="note hidden"></p>
+      </section>
+
+      <section class="card">
+        <h2>Before you start</h2>
+        <div class="steps">
+          <div class="step">
+            <strong>1) Use your own email address</strong>
+            <p>When the chatbot asks for your email, enter <em>your own</em> address (preferably your institutional email). The report will be mailed there. Do not enter someone else’s email.</p>
+          </div>
+          <div class="step">
+            <strong>2) Keep it respectful and academic</strong>
+            <p>Use clear language and cite course ideas where relevant. Avoid sharing sensitive personal data.</p>
+          </div>
+          <div class="step">
+            <strong>3) Technical note</strong>
+            <p>If your browser blocks embedded pages, use the “Open in new tab” option in the Chatbot panel.</p>
+          </div>
+        </div>
+        <p class="note">By proceeding, you agree to use your own email and communicate respectfully. If you prefer not to provide an email, you can still read the chat, but the report will not be sent.</p>
+      </section>
+
+      <section class="card">
+        <h2>Syllabus & learning focus</h2>
+        <p>Key topics and outcomes will guide what the chatbot asks you. If available, review the syllabus summary before chatting.</p>
+        <ul>
+          <li>Weekly themes and learning outcomes</li>
+          <li>Expected writing and reflection formats</li>
+          <li>Assessment and participation expectations</li>
+        </ul>
+        <p class="note">(We can add a link or summary here if the syllabus is provided in this project.)</p>
+      </section>
+    </section>
+
+    <section id="panel-chat" class="hidden" role="tabpanel" aria-labelledby="tab-chat">
+      <div class="toolbar">
+        <a id="openNewTab" class="btn" href="https://textbot.hkbu.tech/chat/GCAP3187-emily" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+        <button class="btn secondary" type="button" id="reloadBtn">Reload</button>
+        <span class="note">If the embedded chat is blocked by your browser, use “Open in new tab”.</span>
+      </div>
+      <div class="chat-wrap">
+        <iframe
+          id="chatFrame"
+          src="https://textbot.hkbu.tech/chat/GCAP3187-emily"
+          title="Chatbot"
+          allow="clipboard-read; clipboard-write; geolocation *; microphone; camera; autoplay; encrypted-media; fullscreen"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"
+        ></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const introTab = document.getElementById('tab-intro');
+    const chatTab = document.getElementById('tab-chat');
+    const introPanel = document.getElementById('panel-intro');
+    const chatPanel = document.getElementById('panel-chat');
+    const reloadBtn = document.getElementById('reloadBtn');
+    const chatFrame = document.getElementById('chatFrame');
+
+    function show(panel) {
+      const isIntro = panel === 'intro';
+      introPanel.classList.toggle('hidden', !isIntro);
+      chatPanel.classList.toggle('hidden', isIntro);
+      introTab.setAttribute('aria-selected', String(isIntro));
+      chatTab.setAttribute('aria-selected', String(!isIntro));
+    }
+    introTab.addEventListener('click', () => show('intro'));
+    chatTab.addEventListener('click', () => show('chat'));
+    reloadBtn.addEventListener('click', () => { if (chatFrame) chatFrame.src = chatFrame.src; });
+    show('intro');
+  </script>
+</body>
+</html>

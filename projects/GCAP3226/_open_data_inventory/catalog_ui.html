@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>data.gov.hk Catalog Browser</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'PingFang HK', 'Noto Sans CJK TC', 'Source Han Sans TC', sans-serif; margin: 1rem 2rem; }
+    header { display:flex; align-items:baseline; gap:1rem; flex-wrap: wrap; }
+    h1 { font-size: 1.4rem; margin: 0.2rem 0; }
+  .controls { display:flex; gap:0.75rem; flex-wrap: wrap; align-items:center; margin-top:0.5rem; }
+  select, input[type="text"] { padding: 0.4rem 0.6rem; font-size: 0.95rem; }
+  select[multiple] { min-width: 14rem; min-height: 2.2rem; }
+    .count { color:#555; font-size:0.9rem; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    th, td { border-bottom:1px solid #eee; padding: 0.6rem; text-align: left; vertical-align: top; }
+    th { background:#fafafa; position: sticky; top: 0; z-index: 1; }
+    tr:hover { background: #fcfcfc; }
+    .title { font-weight: 600; }
+    .meta { color:#666; font-size:0.9rem; }
+    .desc { display:none; color:#333; line-height:1.35; }
+    .toggle { color:#0b5ed7; cursor:pointer; user-select:none; }
+    .tag { display:inline-block; background:#eef3ff; color:#0b5ed7; padding:0.1rem 0.4rem; margin:0 0.25rem 0.25rem 0; border-radius:0.25rem; font-size:0.8rem; }
+    .pager { margin-top: 0.75rem; display:flex; gap:0.5rem; align-items:center; }
+    .pager button { padding:0.3rem 0.6rem; }
+  </style>
+  <script>
+    const state = {
+      all: [],
+      filtered: [],
+      page: 1,
+      pageSize: 50,
+    };
+
+    function uniqueSorted(arr) { return Array.from(new Set(arr)).sort((a,b)=>a.localeCompare(b)); }
+
+    function getMultiSelectValues(sel) {
+      const vals = [];
+      for (const opt of sel.options) if (opt.selected && opt.value) vals.push(opt.value);
+      return vals;
+    }
+
+    function applyFilters() {
+      const selOrg = document.getElementById('org').value;
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      const selFmt = getMultiSelectValues(document.getElementById('fmt'));
+      const selLic = document.getElementById('lic').value;
+      const tagQ = document.getElementById('tag').value.trim().toLowerCase();
+      const grpQ = document.getElementById('grp').value.trim().toLowerCase();
+      state.filtered = state.all.filter(d => {
+        const orgOK = !selOrg || d.organization === selOrg;
+        const text = `${d.title || ''} ${d.notes || ''} ${(d.tags||[]).join(' ')} ${(d.groups||[]).join(' ')}`.toLowerCase();
+        const qOK = !q || text.includes(q);
+        const fmtOK = selFmt.length === 0 || (d.formats||[]).some(f => selFmt.includes((f||'').toUpperCase()));
+        const licOK = !selLic || (d.license_id||'') === selLic;
+        const tagOK = !tagQ || (d.tags||[]).some(t => (t||'').toLowerCase().includes(tagQ));
+        const grpOK = !grpQ || (d.groups||[]).some(g => (g||'').toLowerCase().includes(grpQ));
+        return orgOK && qOK && fmtOK && licOK && tagOK && grpOK;
+      });
+      state.page = 1;
+      render();
+    }
+
+    function render() {
+      const total = state.filtered.length;
+      document.getElementById('count').textContent = `${total} datasets`;
+      const tbody = document.querySelector('#tbl tbody');
+      tbody.innerHTML = '';
+
+      const start = (state.page - 1) * state.pageSize;
+      const rows = state.filtered.slice(start, start + state.pageSize);
+      for (const d of rows) {
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        const title = document.createElement('div');
+        title.className = 'title';
+        const link = document.createElement('a');
+        link.href = d.package_url || '#';
+        link.target = '_blank';
+        link.textContent = d.title || d.name || '(untitled)';
+        title.appendChild(link);
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        const formats = (d.formats||[]).slice(0,8).join(', ');
+        meta.textContent = `${d.organization || '(unknown org)'} • formats: ${formats}${d.metadata_modified ? ' • updated: ' + d.metadata_modified.substring(0,10) : ''}`;
+
+        const toggle = document.createElement('div');
+        toggle.className = 'toggle';
+        toggle.textContent = 'Show description ▸';
+
+        const desc = document.createElement('div');
+        desc.className = 'desc';
+        desc.innerHTML = (d.notes || '').trim() || '<em>No description</em>';
+
+        toggle.addEventListener('click', ()=>{
+          const isOpen = desc.style.display === 'block';
+          desc.style.display = isOpen ? 'none' : 'block';
+          toggle.textContent = isOpen ? 'Show description ▸' : 'Hide description ▾';
+        });
+
+        const tags = document.createElement('div');
+        for (const t of (d.tags||[]).slice(0,10)) {
+          const span = document.createElement('span');
+          span.className = 'tag';
+          span.textContent = t;
+          tags.appendChild(span);
+        }
+
+        td.appendChild(title);
+        td.appendChild(meta);
+        td.appendChild(toggle);
+        td.appendChild(desc);
+        if (tags.children.length) td.appendChild(tags);
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+      }
+
+      // Pager
+      const pages = Math.max(1, Math.ceil(total / state.pageSize));
+      document.getElementById('page').textContent = `${state.page} / ${pages}`;
+      document.getElementById('prev').disabled = state.page <= 1;
+      document.getElementById('next').disabled = state.page >= pages;
+    }
+
+    async function init() {
+      const res = await fetch('datasets_catalog.json');
+      const data = await res.json();
+      state.all = (data.datasets || []).map(d => ({
+        ...d,
+        organization: d.organization || '',
+        title: d.title || d.name || '',
+        notes: d.notes || '',
+      }));
+      state.filtered = state.all.slice();
+
+      // Populate org dropdown
+      const orgs = uniqueSorted(state.all.map(d=>d.organization).filter(Boolean));
+      const sel = document.getElementById('org');
+      const opt0 = document.createElement('option');
+      opt0.value=''; opt0.textContent='All organizations';
+      sel.appendChild(opt0);
+      for (const o of orgs) {
+        const opt = document.createElement('option');
+        opt.value = o; opt.textContent = o;
+        sel.appendChild(opt);
+      }
+
+      // Populate formats multi-select
+      const fmtSet = new Set();
+      for (const d of state.all) for (const f of (d.formats||[])) if (f) fmtSet.add(String(f).toUpperCase());
+      const fmts = Array.from(fmtSet).sort((a,b)=>a.localeCompare(b));
+      const fmtSel = document.getElementById('fmt');
+      for (const f of fmts) { const o = document.createElement('option'); o.value=f; o.textContent=f; fmtSel.appendChild(o); }
+
+      // Populate licenses dropdown
+      const licSet = new Set(state.all.map(d=>d.license_id||'').filter(Boolean));
+      const lics = Array.from(licSet).sort((a,b)=>a.localeCompare(b));
+      const licSel = document.getElementById('lic');
+      const lic0 = document.createElement('option'); lic0.value=''; lic0.textContent='All licenses'; licSel.appendChild(lic0);
+      for (const l of lics) { const o = document.createElement('option'); o.value=l; o.textContent=l; licSel.appendChild(o); }
+
+      render();
+    }
+
+    function onPrev(){ if (state.page>1){ state.page--; render(); } }
+    function onNext(){ const pages=Math.max(1, Math.ceil(state.filtered.length/state.pageSize)); if (state.page<pages){ state.page++; render(); } }
+    function onReset(){
+      document.getElementById('org').value='';
+      document.getElementById('q').value='';
+      const fmtSel = document.getElementById('fmt');
+      for (const opt of fmtSel.options) opt.selected = false;
+      document.getElementById('lic').value='';
+      document.getElementById('tag').value='';
+      document.getElementById('grp').value='';
+      state.page = 1;
+      applyFilters();
+    }
+  </script>
+</head>
+<body onload="init()">
+  <header>
+    <h1>data.gov.hk Catalog Browser</h1>
+    <span class="count" id="count"></span>
+  </header>
+  <div class="controls">
+    <select id="org" onchange="applyFilters()"></select>
+    <input type="text" id="q" placeholder="Search title, description, tags…" oninput="applyFilters()" />
+    <select id="fmt" multiple onchange="applyFilters()" title="Formats (multi-select)"></select>
+    <select id="lic" onchange="applyFilters()"></select>
+    <input type="text" id="tag" placeholder="Tag contains…" oninput="applyFilters()" />
+    <input type="text" id="grp" placeholder="Group contains…" oninput="applyFilters()" />
+    <button onclick="onReset()">Reset</button>
+  </div>
+
+  <table id="tbl">
+    <thead>
+      <tr>
+        <th>Dataset</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div class="pager">
+    <button id="prev" onclick="onPrev()">Prev</button>
+    <span id="page">1 / 1</span>
+    <button id="next" onclick="onNext()">Next</button>
+  </div>
+</body>
+</html>

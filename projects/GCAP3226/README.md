@@ -67,6 +67,7 @@ GCAP3226/
 ## 🔗 Quick Links
 
 - [Course Materials](./course_materials/)
+- [Project Progress Report](./PROGRESS_REPORT.md)
 - [Chatbot Development](./chatbots/)
 - [Budget Planning](./budget_planning/)
 - [Google Drive Setup](./google_drive_sync/)

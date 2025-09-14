@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GCAP3187 Emily Chatbot — Intro & Chat</title>
+  <meta name="description" content="Intro and embedded chatbot for GCAP3187 Emily" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b0c0f;
+      --fg: #e7e7ea;
+      --muted: #a2a6af;
+      --accent: #74b0ff;
+      --panel: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.12);
+      --ok: #42d392;
+      --warn: #ffcc66;
+    }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+    header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+    header h1 { font-size: 22px; margin: 0; }
+    .sub { color: var(--muted); margin-top: 0; }
+
+    .tabs {
+      display: inline-flex; gap: 8px; margin: 14px 0 18px;
+      background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 6px;
+    }
+    .tab-btn {
+      border: 1px solid transparent; background: transparent; color: var(--fg);
+      padding: 8px 12px; border-radius: 8px; cursor: pointer; font: inherit;
+    }
+    .tab-btn[aria-selected="true"] { background: rgba(116,176,255,0.12); border-color: var(--accent); color: var(--accent); }
+
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 12px 0; }
+    .card h2 { font-size: 18px; margin: 0 0 10px; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .step { background: transparent; border: 1px dashed var(--border); border-radius: 10px; padding: 12px; }
+    .step strong { color: var(--ok); }
+
+    .note { color: var(--muted); font-size: 14px; }
+    .warn { color: var(--warn); }
+
+    .chat-wrap { height: 70vh; min-height: 420px; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    iframe { width: 100%; height: 100%; border: 0; background: #fff; }
+
+    .toolbar { display: flex; gap: 10px; align-items: center; margin: 8px 0 12px; }
+    .btn { color: var(--fg); background: transparent; border: 1px solid var(--border); padding: 8px 12px; border-radius: 10px; text-decoration: none; cursor: pointer; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 720px) {
+      .chat-wrap { height: 65vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>GCAP3187 Emily Chatbot</h1>
+    </header>
+    <p class="sub">Read the quick intro, then switch to the Chatbot tab to start. Use your own email to receive your session report.</p>
+
+    <nav class="tabs" role="tablist" aria-label="GCAP3187 Emily">
+      <button id="tab-intro" class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-intro">Intro</button>
+      <button id="tab-chat" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-chat">Chatbot</button>
+    </nav>
+
+    <!-- Intro Panel -->
+    <section id="panel-intro" role="tabpanel" aria-labelledby="tab-intro">
+      <section class="card">
+        <h2>What is this?</h2>
+        <p>The Emily chatbot helps you practise course concepts and receive a short personalised report by email after your session.</p>
+        <ul>
+          <li>Ask questions about weekly topics, practise explaining ideas, and get feedback.</li>
+          <li>At the end, a summary can be emailed to you.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Before you start</h2>
+        <div class="steps">
+          <div class="step">
+            <strong>1) Use your own email address</strong>
+            <p>When the chatbot asks for your email, enter <em>your own</em> address (preferably your HKBU email). The report will be mailed there. Do not enter someone else’s email.</p>
+          </div>
+          <div class="step">
+            <strong>2) Keep it respectful and academic</strong>
+            <p>Use clear language and cite course ideas where relevant. Avoid sharing sensitive personal data.</p>
+          </div>
+          <div class="step">
+            <strong>3) Technical note</strong>
+            <p>If your browser blocks embedded pages, use the “Open in new tab” option in the Chatbot panel.</p>
+          </div>
+        </div>
+        <p class="note">By proceeding, you agree to use your own email and communicate respectfully. If you prefer not to provide an email, you can still read the chat, but the report will not be sent.</p>
+      </section>
+
+      <section class="card">
+        <h2>Syllabus & learning focus</h2>
+        <p>Key topics and outcomes will guide what the chatbot asks you. If available, review the syllabus summary before chatting.</p>
+        <ul>
+          <li>Weekly themes and learning outcomes</li>
+          <li>Expected writing and reflection formats</li>
+          <li>Assessment and participation expectations</li>
+        </ul>
+        <p class="note">(We can add a link or summary here if the syllabus is provided in this project.)</p>
+      </section>
+    </section>
+
+    <!-- Chatbot Panel -->
+    <section id="panel-chat" class="hidden" role="tabpanel" aria-labelledby="tab-chat">
+      <div class="toolbar">
+        <a class="btn" href="https://textbot.hkbu.tech/chat/GCAP3187-emily" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+        <button class="btn" type="button" id="reloadBtn">Reload</button>
+        <span class="note">If the embedded chat is blocked by your browser, use “Open in new tab”.</span>
+      </div>
+      <div class="chat-wrap">
+        <iframe
+          id="chatFrame"
+          src="https://textbot.hkbu.tech/chat/GCAP3187-emily"
+          title="GCAP3187 Emily Chatbot"
+          allow="clipboard-read; clipboard-write; geolocation *; microphone; camera; autoplay; encrypted-media; fullscreen"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"
+        ></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const introTab = document.getElementById('tab-intro');
+    const chatTab = document.getElementById('tab-chat');
+    const introPanel = document.getElementById('panel-intro');
+    const chatPanel = document.getElementById('panel-chat');
+    const reloadBtn = document.getElementById('reloadBtn');
+    const chatFrame = document.getElementById('chatFrame');
+
+    function show(panel) {
+      const isIntro = panel === 'intro';
+      introPanel.classList.toggle('hidden', !isIntro);
+      chatPanel.classList.toggle('hidden', isIntro);
+      introTab.setAttribute('aria-selected', String(isIntro));
+      chatTab.setAttribute('aria-selected', String(!isIntro));
+      if (!isIntro) {
+        // When switching to chat, we could lazy-load if needed. Currently already set.
+      }
+    }
+
+    introTab.addEventListener('click', () => show('intro'));
+    chatTab.addEventListener('click', () => show('chat'));
+
+    reloadBtn.addEventListener('click', () => {
+      if (chatFrame) chatFrame.src = chatFrame.src;
+    });
+
+    // Default view
+    show('intro');
+  </script>
+</body>
+</html>

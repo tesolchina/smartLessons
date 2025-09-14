@@ -1,0 +1,215 @@
+# Master Citation Enhancement Guide v2
+*Focused recommendations with specific manuscript references*
+
+**Version Update (v2 vs v1):** This v2 refines v1 by incorporating RAG-annotated suggestions for 15 targeted insertions, emphasizing high-frequency citations like Doran (1981), Latham & Locke (2007), and Schunk (1990) in under-cited sections (e.g., Results, Discussion). It strengthens cross-section echoes with 2 new map entries for better manuscript cohesion. Priorities are rebalanced for impact, with updated rationale drawing from RAG summary. Total refinements enhance empirical support without exceeding core structure. Timestamp: 2025-09-13 15:27.
+
+How to Use This Guide
+1. Each recommendation includes exact text from your manuscript
+2. Before/After examples show exactly what to change
+3. Priority levels help you focus on most important additions first
+4. Page/section references make finding the text easy
+
+---
+
+PRIORITY 1: Critical Citations (Do These First)
+
+1. SRL Definition Enhancement
+Location: Introduction, first paragraph  
+Anchor text: "Self-regulated learning (SRL) is a dynamic process that enables students to actively plan, manage, and control their learning actions to achieve specific goals"  
+Before:  
+Self-regulated learning (SRL) is a dynamic process that enables students to actively plan, manage, and control their learning actions to achieve specific goals.
+After:  
+Self-regulated learning (SRL) is a dynamic process that enables students to actively plan, manage, and control their learning actions to achieve specific goals (Winne & Hadwin, 1998; Pintrich, 2000; Zimmerman, 2013; Panadero, 2017; Winne, 2022).
+Rationale: Builds on v1 by adding Panadero (2017) and Winne (2022) from RAG for broader SRL model support, addressing cyclical phases. High-impact for foundational claims.  
+Priority: 1
+
+2. Student Goal Quality Problem
+Location: Introduction, section discussing student challenges  
+Anchor text: "students' goals remain vague even after instruction"  
+Before:  
+students' goals remain vague even after instruction
+After:  
+students' goals remain vague even after instruction, with research showing that students consistently struggle to create specific, measurable, and time-bound goals (McCardle et al., 2016; Raluy & Mislang, 2022; Brady et al., 2024).
+Rationale: Enhances v1 with Brady et al. (2024) from RAG for recent empirical evidence on vague goals, strengthening claims about persistent issues.  
+Priority: 1
+
+3. AI Chatbot Advantage Claims
+Location: Literature Review, section comparing AI vs rule-based chatbots  
+Anchor text: "AI-based chatbots leverage large language models (LLMs) to provide adaptive, context-sensitive, and personalized interactions"  
+Before:  
+AI-based chatbots leverage large language models (LLMs) to provide adaptive, context-sensitive, and personalized interactions.
+After:  
+AI-based chatbots leverage large language models (LLMs) to provide adaptive, context-sensitive, and personalized interactions (Ng et al., 2024; Hew et al., 2025; Guan et al., 2024; Lai, 2024).
+Rationale: Adds Lai (2024) from RAG to emphasize personalization in SRL, directly tying to RAG's AI education focus.  
+Priority: 1
+
+4. SRL Cyclical Phases Anchor
+Location: Literature Review, SRL model paragraph  
+Anchor text: "SRL is characterized by three cyclical phases: forethought, performance, and self-reflection"  
+Before:  
+SRL is characterized by three cyclical phases: forethought, performance, and self-reflection ... (Zimmerman 2002, Zimmerman, 2013, Lee et al., 2025).
+After:  
+SRL is characterized by three cyclical phases: forethought, performance, and self-reflection ... (Zimmerman, 2002; Zimmerman, 2013; Panadero, 2017; Winne, 2022; Lee et al., 2025; Guan et al., 2024).
+Rationale: Incorporates Guan et al. (2024) from RAG for chatbot-SRL integration, updating v1 for recent synthesis.  
+Priority: 1
+
+5. SMART Framework Enhancement
+Location: Literature Review, where SMART goals are discussed  
+Anchor text: "The SMART framework (specific, measurable, achievable, realistic, and time-related), introduced by Doran (1981)"  
+Before:  
+The SMART framework (specific, measurable, achievable, realistic, and time-related), introduced by Doran (1981)
+After:  
+The SMART framework (specific, measurable, achievable, realistic, and time-related), introduced by Doran (1981) and extensively validated in educational contexts (Bjerke & Renger, 2017; Latham & Locke, 2007; Schunk, 1990).
+Rationale: Draws from RAG's frequent suggestions for SMART validation, adding Schunk (1990) for proximal goal ties.  
+Priority: 1
+
+---
+
+PRIORITY 2: Supporting Citations (Do These Second)
+
+6. Technology Acceptance Framework
+Location: Methods section, where you discuss perceived usefulness and ease of use  
+Anchor text: "The instrument comprised six items measuring perceived usefulness and four items measuring perceived ease of use"  
+Before:  
+The instrument comprised six items measuring perceived usefulness and four items measuring perceived ease of use.
+After:  
+The instrument comprised six items measuring perceived usefulness and four items measuring perceived ease of use, based on the Technology Acceptance Model (Davis, 1989; Ng et al., 2024).
+Rationale: Adds Ng et al. (2024) from RAG to link TAM to AI chatbots, enhancing relevance.  
+Priority: 2
+
+7. Proximal vs Distal Goals
+Location: Literature Review, goal types discussion  
+Anchor text: "Proximal goals, which are short-term and easier to monitor, provide stronger study motivation than distant goals"  
+Before:  
+Proximal goals, which are short-term and easier to monitor, provide stronger study motivation than distant goals
+After:  
+Proximal goals, which are short-term and easier to monitor, provide stronger study motivation than distant goals (Schunk, 1990; Bandura & Schunk, 1981; Seijts & Latham, 2001; Latham & Locke, 2007).
+Rationale: High-frequency RAG citations for goal-setting; strengthens empirical links to motivation.  
+Priority: 2
+
+8. SRL Outcomes and Goal Attainment Links
+Location: Introduction/Literature Review, when stating that goal setting enhances outcomes  
+Anchor text: "Research has found that students who set goals tend to achieve greater academic performance compared to those who did not"  
+Before:  
+Research has found that students who set goals tend to achieve greater academic performance compared to those who did not
+After:  
+Research has found that students who set goals tend to achieve greater academic performance compared to those who did not (Kizilcec et al., 2017; Garavalia & Gredler, 2002; Brady et al., 2024).
+Rationale: Integrates RAG-suggested Brady et al. (2024) for recent forethought processes evidence.  
+Priority: 2
+
+9. Chatbot Education Review
+Location: Literature Review, educational chatbot section  
+Anchor text: "Recent years have witnessed a growing interest among researchers in utilizing chatbots to tackle educational challenges"  
+Before:  
+Recent years have witnessed a growing interest among researchers in utilizing chatbots to tackle educational challenges
+After:  
+Recent years have witnessed a growing interest among researchers in utilizing chatbots to tackle educational challenges (Wollny et al., 2021; Kuhail et al., 2022; Ait Baha et al., 2023).
+Rationale: Adds Ait Baha et al. (2023) from RAG for impact on learning experience.  
+Priority: 2
+
+10. Rule-Based Chatbot Limitations
+Location: Literature Review, limitations of rule-based chatbots  
+Anchor text: "However, these rule-based chatbots faced limitations, including restricted response options, a lack of true intelligent and natural conversation flow"  
+Before:  
+However, these rule-based chatbots faced limitations, including restricted response options, a lack of true intelligent and natural conversation flow ...
+After:  
+However, these rule-based chatbots faced limitations, including restricted response options and a lack of natural conversation flow (Singh et al., 2019; Hew et al., 2021; Hew et al., 2022; Guan et al., 2024).
+Rationale: Incorporates Guan et al. (2024) from RAG for SRL-specific limitations.  
+Priority: 2
+
+---
+
+PRIORITY 3: Comprehensive Coverage (Do These Third)
+
+11. Weekly/Proximal Goal Design Justification
+Location: Methods, sampling/check-in schedule rationale  
+Anchor text: "The timeframe was selected to provide periodic check-in points ... (Zimmerman, 2008). Moreover, setting short-term goals has been shown ... (Seijts & Latham, 2001)."  
+Before:  
+The timeframe was selected to provide periodic check-in points ... (Zimmerman, 2008). Moreover, setting short-term goals has been shown ... (Seijts & Latham, 2001).
+After:  
+The timeframe was selected to provide periodic check-in points ... (Zimmerman, 2008). Moreover, setting short-term goals has been shown ... (Seijts & Latham, 2001; Schunk, 1990; Bandura & Schunk, 1981).
+Rationale: RAG emphasizes proximal goals; adds for stronger justification.  
+Priority: 3
+
+12. Personalization and Resource Provision by Chatbots
+Location: Discussion theme "personalized learning"  
+Anchor text: "Students reported that the chatbot could effectively bridge information gaps by offering access to a wide array of materials"  
+Before:  
+Students reported that the chatbot could effectively bridge information gaps by offering access to a wide array of materials ...
+After:  
+Students reported that the chatbot could effectively bridge information gaps by offering access to a wide array of materials, a finding aligned with reviews on educational/service chatbots’ capacity to surface resources and adapt to learner needs (Wollny et al., 2021; Kuhail et al., 2022; Mohamad et al., 2021; Ng et al., 2024).
+Rationale: Updates v1 with Ng et al. (2024) for AI personalization from RAG.  
+Priority: 3
+
+13. Connecting AI Personalization to Outcomes
+Location: Discussion, where high perceived usefulness is linked to personalization  
+Anchor text: "This perceived personalization is a key advantage of LLM-based chatbots over their rule-based predecessors"  
+Before:  
+This perceived personalization is a key advantage of LLM-based chatbots over their rule-based predecessors
+After:  
+This perceived personalization is a key advantage of LLM-based chatbots over their rule-based predecessors (Ng et al., 2024; Lai, 2024; Hew et al., 2025).
+Rationale: Reinforces with Hew et al. (2025) from RAG for outcomes link.  
+Priority: 3
+
+14. Methods-to-Results Bridge on SMART Coding
+Location: Results, before reporting SMART distribution improvements  
+Anchor text: "Prior to the intervention, only 16.38% ..."  
+Before:  
+Prior to the intervention, only 16.38% ...
+After:  
+Using the six-tier SMART coding defined in Methods (SMART-0 to SMART-5 based on the five criteria), we observed the following distributional changes: Prior to the intervention, only 16.38% ... (Doran, 1981; Bjerke & Renger, 2017).
+Rationale: Echoes Methods; adds RAG citations for SMART framework.  
+Priority: 3
+
+15. Discussion Echo to Literature Review on AI vs Rule-Based
+Location: Discussion, where contributions are summarized  
+Anchor text: "Our study demonstrates that an AI-based chatbot ..."  
+Before:  
+Our study demonstrates that an AI-based chatbot ...
+After:  
+Our study demonstrates that an AI-based chatbot ... (Hew et al., 2021; Hew et al., 2022; Ng et al., 2024; Guan et al., 2024; Lai, 2024).
+Rationale: Strengthens echo with Lai (2024) from RAG for adaptive feedback.  
+Priority: 3
+
+---
+
+Section Echo Map (Make Sections Talk to Each Other)
+
+Use the following one-liners to explicitly connect claims across sections. Insert them verbatim at the suggested spots.
+
+1) Literature Review → Methods (Design Rationale)  
+- Insert at end of Methods: participants/context paragraph (after ILOs and baseline goals):  
+As outlined in the Literature Review, SRL unfolds cyclically across forethought, performance, and reflection (Zimmerman, 2013; Panadero, 2017; Winne, 2022); accordingly, our week-by-week schedule operationalizes proximal, monitorable targets (Schunk, 1990; Seijts & Latham, 2001; Bandura & Schunk, 1981).
+
+2) Methods → Results (Measurement Echo)  
+- Insert before SMART distribution (Table 3) intro:  
+Following the SMART scheme described in Methods, we report distributional shifts in SMART-0 through SMART-5 across five timepoints (Doran, 1981; Bjerke & Renger, 2017).
+
+3) Literature Review → Discussion (Mechanism Echo)  
+- Insert in the first Discussion paragraph:  
+This pattern aligns with evidence that AI-based chatbots provide adaptive, example-driven scaffolding beyond rule-based systems (Hew et al., 2021; Hew et al., 2022; Ng et al., 2024; Guan et al., 2024; Lai, 2024), enabling iterative refinement of SMART elements.
+
+4) Methods/PU-PEOU → Results → Discussion (TAM Echo)  
+- Insert at the end of the Results paragraph summarizing PU/PEOU means:  
+These perceptions are consistent with Technology Acceptance Model constructs (Davis, 1989; Ng et al., 2024) and help explain sustained engagement.
+- Insert in Discussion when interpreting drivers of usefulness:  
+Grounded in TAM, the high perceived usefulness likely reflects the chatbot’s timely, personalized guidance, a capability emphasized in recent AI-education studies (Ng et al., 2024; Lai, 2024; Hew et al., 2025).
+
+5) Introduction Claims → Conclusion (Closing Echo)  
+- Insert as the first sentence of the Conclusion:  
+Addressing the gaps identified in the Introduction, our mixed-methods results show immediate and sustained gains in SMART goal quality, with high perceived usefulness and ease of use (McCardle et al., 2016; Raluy & Mislang, 2022; Brady et al., 2024).
+
+6) New: Results → Discussion (Goal Quality Echo)  
+- Insert after quantitative goal improvement in Discussion:  
+Echoing the sustained SMART-5 increase from 16.38% to 84.28% in Results (Table 3), this improvement stems from the chatbot's iterative feedback, aligning with proximal goal research (Schunk, 1990; Bandura & Schunk, 1981).
+
+7) New: Discussion → Conclusion (Implications Echo)  
+- Insert before practical implications in Conclusion:  
+Building on Discussion findings of personalization driving usefulness, this hybrid AI-human model can scale SRL support across disciplines (Ng et al., 2024; Guan et al., 2024).
+
+---
+
+Quick Implementation Checklist
+
+Phase 1 (Most Critical - 30 minutes):  
+- [ ] Add SRL
