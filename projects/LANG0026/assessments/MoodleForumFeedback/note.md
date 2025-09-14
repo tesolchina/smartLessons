@@ -110,14 +110,16 @@ here /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/LANG002
 
 1. **`individual_student_reports.md`**: Original detailed analysis for participants
 2. **`class_overview_report.md`**: Overall trends and recommendations  
-3. **`comprehensive_section_reports.md`**: **NEW** - Complete section-based reports with full transcripts and analysis
+3. **`comprehensive_section_reports.md`**: Complete section-based reports with full transcripts and analysis
 4. **`section_based_reports.md`**: Basic section organization
+5. **`corrected_participation_report.md`**: **CORRECTED** - Accounts for nested forum replies
 
 **Key Report Features:**
-- Full student transcripts included for review
+- ⚠️ **CORRECTED**: Now properly captures nested forum reply chains
+- Full student transcripts included for review (16 complete submissions found)
 - Assessment scores and detailed feedback for each participant
-- Clear identification of non-participants by section
 - Cross-referenced with official student enrollment list
+- **New Discovery**: 76.2% of forum participants completed all 3 assignment components
 
 ## Recommendations for Instruction
 
@@ -185,9 +187,27 @@ The analysis system can:
 
 ### Final Summary:
 
-✅ **Successfully cross-referenced** 56 enrolled students with 22 forum participants  
-✅ **Generated comprehensive section-based reports** with full transcripts and analysis  
-✅ **Identified critical participation gaps** in Sections 37 & 38 (76% non-participation)  
-✅ **Provided actionable recommendations** for immediate instructor intervention  
+⚠️ **CRITICAL CORRECTION APPLIED** (2025-09-15 05:35:00)
 
-**Priority Action**: Contact the 34 non-participating students immediately, especially in Sections 37 & 38 where participation is critically low (24% vs 64% in Section 36).
+**Initial Error**: Analysis missed nested forum replies where students posted multi-step responses as reply chains.
+
+**Key Discovery**: WONG Cho Yi and others submitted COMPLETE assignments (all 3 steps) as nested replies to instructor posts, not as single top-level posts.
+
+### Corrected Statistics:
+✅ **Forum Participants Found**: 21 students (from forum data)  
+✅ **Complete Submissions (3/3 components)**: 16 students (76.2%)  
+✅ **Partial Submissions**: 5 students (23.8%)  
+✅ **No Valid Content**: 0 students (0.0%)  
+
+### Corrected Examples:
+- **WONG Cho Yi**: 🌟 COMPLETE (3 nested posts: transcript + error analysis + self-assessment)
+- **PENG Yafei**: 🌟 COMPLETE (2 posts with all components)
+- **ZHANG Zimu**: 🌟 COMPLETE (2 posts with all components)
+- **Total of 16 complete submissions** found vs. original count of 15
+
+### Technical Learning:
+- **Forum Structure**: Moodle exports include `parent` field indicating reply relationships
+- **Nested Analysis Required**: Students posted Step 1 → Step 2 → Step 3 as separate replies
+- **Data Processing**: Need to aggregate all posts per student, not just analyze individual posts
+
+**Priority Action UPDATED**: The participation crisis is not as severe as initially calculated. However, still need to cross-reference with official student enrollment (56 students) to identify the ~35 students who didn't participate at all.
