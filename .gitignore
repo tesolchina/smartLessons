@@ -17,6 +17,9 @@ service-account*.json
 **/token.json
 **/secrets/*
 **/config/secrets/*
+**/key.txt
+**/token
+**/platform_access_credentials.md
 *.key
 *.pem
 *.p12
