@@ -1,64 +1,61 @@
-# Daily Assistant  
-[![CI](https://github.com/tesolchina/DailyAssistant/actions/workflows/ci.yml/badge.svg)](https://github.com/tesolchina/DailyAssistant/actions/workflows/ci.yml) ![Coverage](https://img.shields.io/badge/coverage-pending-lightgrey) ![Lint](https://img.shields.io/badge/lint-ruff-informational)
+# DailyAssistant
 
-**Purpose**: AI-powered daily task automation with clean operational structure
+AI-powered daily assistant for academic and research tasks, featuring secure credential management and integration with Google APIs, document processing, and specialized tools for research projects.
 
-**Status**: Organized with project-based structure and operational tools
+## Features
 
-## 🏗️ Structure Overview
+- **Secure Credential Management**: Environment variable-based configuration for API keys and sensitive data
+- **Google APIs Integration**: Secure authentication for Google Docs, Drive, and Slides
+- **Document Processing**: PDF to markdown conversion, document enhancement tools
+- **Email Automation**: Smart email handling and automated responses
+- **Research Tools**: Specialized modules for various research projects
+- **Project Organization**: Structured tools for different academic projects
 
-### 📁 `/projects/` - Specific Projects
-- **`screening_test/`** - Current screening test development project
-- Each project contains its own documentation, testing, and deliverables
+## Quick Start
 
-### 📁 `/operating/` - Daily Operational Tools
-- **`email_automation/`** - Email processing and automation tools
-- **`document_sync/`** - Google Drive and document synchronization
-- **`crawlers/`** - Web data extraction and parsing utilities
+1. **Clone and Setup**
+   ```bash
+   git clone https://github.com/simonwang/DailyAssistant.git
+   cd DailyAssistant
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   pip install -e .
+   ```
 
-### 📁 Root Documentation
-- `projectNotes.md` - Master project plans and objectives
-- `STRUCTURE.md` - Detailed directory organization guide
-- `quick_start_plan.md` - Quick setup instructions  
-- `/newWebsitePlanningScripts/` - Planning and organization scripts
-- Excel reports and automation utilities
+2. **Configure Environment**
+   ```bash
+   cp .env.template .env
+   # Edit .env with your credentials
+   ```
 
-## Export Ready:
-✅ **Self-contained**: All dependencies included  
-✅ **Portable**: Can be moved to any project context  
-✅ **Documented**: Clear usage instructions and examples  
-✅ **Modular**: Individual tools can be used separately  
+3. **Security Setup**
+   - Follow the [Security Migration Guide](docs/SECURITY_MIGRATION_GUIDE.md)
+   - Never commit credentials to git
+   - Use environment variables for all sensitive data
 
-## Key Features:
-- Email template generation
-- Website crawling and analysis  
-- Project note management
-- Task automation scripts
-- Report generation tools
+## Structure
 
-## Usage:
-Copy entire `3_dailyAssistant/` folder to any project for instant AI assistance capabilities.
+- `dailyassistant/` - Core application package
+- `tools/` - Utility scripts and modules
+- `projects/` - Specific research projects
+- `docs/` - Documentation and guides
+- `config/` - Configuration and security modules
 
-## 🧪 Testing
-This repository now includes initial automated tests (pytest) for the ZoteroPDF RAG components.
+## Security
 
-Install dependencies (ensure environment active):
-```bash
-pip install -e .
-```
+This project implements secure credential management:
+- All API keys and sensitive data use environment variables
+- No credentials are stored in repository files
+- Comprehensive .gitignore prevents accidental credential commits
+- See [Security Migration Guide](docs/SECURITY_MIGRATION_GUIDE.md) for details
 
-Run all tests:
-```bash
-pytest -q
-```
+## Contributing
 
-Run a specific test:
-```bash
-pytest tests/test_index.py::test_index_creation_and_search -q
-```
+1. Ensure all credentials use environment variables
+2. Follow the project structure guidelines
+3. Update documentation for new features
+4. Test all changes before committing
 
-Notes:
-- Tests generate synthetic annotated markdown docs (no external data required).
-- FAISS in-memory index built per test session.
-- No network calls to OpenRouter (LLM) are performed; generation is mocked where needed.
-- Future: add evaluation harness + regression query suite.
+## License
+
+MIT License - see LICENSE file for details.
