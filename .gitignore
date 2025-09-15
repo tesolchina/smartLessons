@@ -1,16 +1,22 @@
-# Local environment files
+# Security: Credentials and API keys - NEVER COMMIT THESE
 .env
 .env.local
 .env.*
-
-# Google API Credentials - NEVER COMMIT THESE
+!.env.example
+!.env.template
 credentials.json
 token.pickle
 *.credentials.json
 *token.pickle
 service-account*.json
-
-# Other sensitive files
+**/credentials*.json
+**/client_secret*.json
+**/*key*.json
+**/.env
+**/.env.*
+**/token.json
+**/secrets/*
+**/config/secrets/*
 *.key
 *.pem
 *.p12
@@ -54,6 +60,22 @@ logs/
 *.rar
 *.tar
 *.gz
+
+# Large files that exceed GitHub limits
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.wmv
+*.flv
+*.webm
+*.m4v
+faiss.index
+*.index
+documents.json
+*.db
+*.sqlite
+*.sqlite3
 
 # Auto-sync exclusions
 node_modules/
