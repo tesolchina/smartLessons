@@ -2,7 +2,7 @@
 class WorkshopManager {
     constructor() {
         this.currentComponent = 'overview';
-        this.components = ['overview', 'ai-video', 'streaming-avatars', 'implementation', 'resources'];
+        this.components = ['overview', 'ai-video', 'streaming-avatars', 'implementation', 'resources', 'vibe-coding', 'time-reflection'];
         this.init();
     }
 
@@ -74,7 +74,21 @@ class WorkshopManager {
             // Parse the HTML content
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlContent, 'text/html');
-            const bodyContent = doc.body.innerHTML;
+            const bodyContent = doc.body ? doc.body.innerHTML : htmlContent;
+
+            // Inject component-specific styles (from head) once per component
+            const head = doc.head;
+            if (head) {
+                const styleNodes = head.querySelectorAll('style, link[rel="stylesheet"]');
+                styleNodes.forEach((node, idx) => {
+                    const marker = `comp-style-${componentId}-${idx}`;
+                    if (!document.head.querySelector(`[data-style-marker="${marker}"]`)) {
+                        const clone = node.cloneNode(true);
+                        clone.setAttribute('data-style-marker', marker);
+                        document.head.appendChild(clone);
+                    }
+                });
+            }
 
             // Insert the content with animation
             component.style.opacity = '0';

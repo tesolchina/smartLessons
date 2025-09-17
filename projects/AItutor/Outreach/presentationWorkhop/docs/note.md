@@ -24,3 +24,5 @@ when we decide the content - we should ask
 - what is the roadmap for developing a solid and practical solutions
 
 ===========update notes below ==============
+
+But I actually need an outline in this note here for further editing
