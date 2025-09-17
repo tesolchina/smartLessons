@@ -23,3 +23,14 @@ https://docs.google.com/document/d/19ND3APGCVjd-UC1ie0kurt9YXlJw-smf1EfuF6szMJ0/
 
 
 Google tools /Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/tools/google
+
+
+==== summary of teacher's notes ======
+
+/Users/simonwang/Documents/Usage/VibeCoding/DailyAssistant/projects/GCAP3056/Projects and teams 
+
+in each of the project folder except energy poverty 
+
+we have a txt file - teacher's oral note transcript 
+
+please prepare an md file to summarize the teacher's note and pay attention to the potential argument we'll develop and the info we need to gather
