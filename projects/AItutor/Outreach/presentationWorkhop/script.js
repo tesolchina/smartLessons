@@ -58,35 +58,53 @@ class WorkshopManager {
         }
     }
 
-    fetchComponentContent(componentId) {
+    async fetchComponentContent(componentId) {
         const component = document.getElementById(componentId);
 
-        // Use XMLHttpRequest to avoid CORS issues with local files
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', `components/${componentId}.html`, true);
-
-        xhr.onload = () => {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                // Parse the HTML content
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(xhr.responseText, 'text/html');
-                const bodyContent = doc.body.innerHTML;
-
-                // Insert the content
-                component.innerHTML = bodyContent;
-                component.dataset.loaded = 'true';
-            } else {
-                console.error(`Error loading ${componentId}: ${xhr.status}`);
-                component.innerHTML = '<p>Error loading content. Please check the component file.</p>';
+        try {
+            // Use fetch API with proper error handling
+            const response = await fetch(`components/${componentId}.html`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        };
+            
+            const htmlContent = await response.text();
+            
+            // Parse the HTML content
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlContent, 'text/html');
+            const bodyContent = doc.body.innerHTML;
 
-        xhr.onerror = () => {
-            console.error(`Network error loading ${componentId}`);
-            component.innerHTML = '<p>Error loading content. Please check your internet connection.</p>';
-        };
+            // Insert the content with animation
+            component.style.opacity = '0';
+            component.innerHTML = bodyContent;
+            component.dataset.loaded = 'true';
+            
+            // Fade in the content
+            setTimeout(() => {
+                component.style.opacity = '1';
+            }, 100);
+            
+        } catch (error) {
+            console.error(`Error loading component ${componentId}:`, error);
+            component.innerHTML = this.getErrorContent(componentId);
+        }
+    }
 
-        xhr.send();
+    getErrorContent(componentId) {
+        return `
+            <div class="error-content">
+                <h2>Content Loading</h2>
+                <p>The ${componentId} module is being prepared for your workshop experience.</p>
+                <div class="loading-placeholder">
+                    <div class="placeholder-line"></div>
+                    <div class="placeholder-line"></div>
+                    <div class="placeholder-line short"></div>
+                </div>
+                <p><em>This content will be dynamically loaded based on your workshop planning document.</em></p>
+            </div>
+        `;
     }
 }
 

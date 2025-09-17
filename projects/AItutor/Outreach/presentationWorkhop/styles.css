@@ -316,20 +316,54 @@ body {
     margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
-    .header {
-        padding: 30px 20px;
-    }
+        /* Loading and Error States */
+        .error-content {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--medium-text);
+        }
 
-    .component-toggle {
-        grid-template-columns: 1fr;
-    }
+        .loading-placeholder {
+            margin: 30px 0;
+        }
 
-    .component {
-        padding: 25px 20px;
-    }
+        .placeholder-line {
+            height: 20px;
+            background: linear-gradient(90deg, var(--warm-peach), var(--warm-yellow), var(--warm-peach));
+            border-radius: 10px;
+            margin: 10px 0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
 
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        .placeholder-line.short {
+            width: 60%;
+            margin: 10px auto;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Component transition */
+        .component {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .component-toggle {
+                grid-template-columns: 1fr;
+            }
+            
+            .component {
+                padding: 25px 20px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }

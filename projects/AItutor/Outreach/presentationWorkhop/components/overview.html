@@ -4,33 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workshop Overview</title>
+    <style>
+        .scmp-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .key-points {
+            background: var(--warm-peach);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .scmp-letter {
+            background: var(--warm-yellow);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-purple);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .challenge-card {
+            background: linear-gradient(135deg, #ffe4e1, #ffd1dc);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #dc3545;
+            position: relative;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2196f3;
+            position: relative;
+        }
+
+        .research-citations {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .citation {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .citation::before {
+            content: '📚';
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .scmp-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <h2>Workshop Overview</h2>
+    
+    <!-- SCMP Letter Integration Section -->
+    <div class="scmp-section">
+        <div class="key-points">
+            <h3>🎯 Key Insights from 2017 SCMP Letter</h3>
+            <div class="timeline-item">
+                <strong>Attendance vs. Engagement Problem</strong><br>
+                Traditional lectures create passive learning environments
+            </div>
+            <div class="timeline-item">
+                <strong>Flipped Classroom Solution</strong><br>
+                Active learning through pre-class preparation and in-class interaction
+            </div>
+            <div class="timeline-item">
+                <strong>Technology as Enabler</strong><br>
+                Digital tools can transform educational delivery
+            </div>
+            <div class="timeline-item">
+                <strong>HKBU Innovation Leadership</strong><br>
+                Early adoption of progressive educational methods
+            </div>
+        </div>
+        
+        <div class="scmp-letter">
+            <h4>📰 SCMP Letter Excerpt (2017)</h4>
+            <blockquote>
+                <p><em>"Relaxed attendance rules at Hong Kong's Baptist University will improve learning... The flipped classroom approach has been actively promoted at Hong Kong Baptist University (HKBU), particularly among General Education (GE) course instructors seeking to enhance student engagement and learning outcomes."</em></p>
+            </blockquote>
+            <p><strong>Evolution Since 2017:</strong> From basic flipped classroom adoption to AI-powered content creation and interactive avatars.</p>
+            <a href="https://www.scmp.com/comment/letters/article/2109347/relaxed-attendance-rules-hong-kongs-baptist-university-will-improve" target="_blank" style="color: var(--primary-purple); text-decoration: none;">→ Read Full Letter</a>
+        </div>
+    </div>
+
+    <!-- Current Challenges vs AI Solutions -->
+    <h3>The Evolution: From Barriers to Breakthroughs</h3>
+    
+    <div class="challenge-grid">
+        <div class="challenge-card">
+            <h4>❌ Traditional Challenges</h4>
+            <ul>
+                <li><strong>Time Investment:</strong> Hours to create quality videos</li>
+                <li><strong>Technical Skills:</strong> Learning Camtasia, video editing</li>
+                <li><strong>Content Quality:</strong> Professional production standards</li>
+                <li><strong>Scalability:</strong> Manual process for each course</li>
+            </ul>
+        </div>
+        
+        <div class="solution-card">
+            <h4>✅ AI-Powered Solutions</h4>
+            <ul>
+                <li><strong>Rapid Creation:</strong> Minutes, not hours</li>
+                <li><strong>No Tech Expertise:</strong> Simple form-based interface</li>
+                <li><strong>Professional Output:</strong> AI-generated high-quality content</li>
+                <li><strong>Infinite Scale:</strong> Automated content generation</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Learning Outcomes -->
     <div class="abstract-content">
-        <p><strong>About this Workshop:</strong> The flipped classroom approach has been actively promoted at Hong Kong Baptist University (HKBU), particularly among General Education (GE) course instructors seeking to enhance student engagement and learning outcomes.</p>
+        <h3>🎓 Workshop Learning Outcomes</h3>
+        <p>By the end of this workshop, you will be able to:</p>
     </div>
 
     <div class="learning-outcomes">
         <div class="outcome-item">
             <span class="outcome-number">1</span>
-            <strong>Understand the flipped classroom model</strong> and its benefits for student engagement
+            <strong>Create AI-generated videos</strong> suitable for flipped classroom delivery using HeyGen's platform
         </div>
         <div class="outcome-item">
             <span class="outcome-number">2</span>
-            <strong>Explore AI-powered tools</strong> for creating engaging video content
+            <strong>Deploy streaming avatars</strong> as 24/7 teaching assistants for student interaction
         </div>
         <div class="outcome-item">
             <span class="outcome-number">3</span>
-            <strong>Learn about streaming avatars</strong> and their applications in education
+            <strong>Apply vibe coding techniques</strong> to customize and extend AI educational tools
         </div>
         <div class="outcome-item">
             <span class="outcome-number">4</span>
-            <strong>Develop practical implementation strategies</strong> for your courses
+            <strong>Evaluate time investment</strong> and redirect effort from tool development to core academic work
+        </div>
+        <div class="outcome-item">
+            <span class="outcome-number">5</span>
+            <strong>Implement pilot programs</strong> in your GE courses with measurable success metrics
         </div>
     </div>
 
-    <h3>Workshop Structure</h3>
-    <p>This workshop will guide you through the process of implementing flipped classroom methodology using cutting-edge AI tools. We'll cover everything from content creation to student engagement strategies.</p>
+    <!-- Academic Foundation -->
+    <div class="research-citations">
+        <h4>📖 Academic Research Foundation</h4>
+        <div class="citation">
+            <strong>"Integrating artificial intelligence in the flipped classroom approach"</strong> (2025) - Current theoretical framework for AI integration in educational settings
+        </div>
+        <div class="citation">
+            <strong>"AI-assisted assessment in higher education: A systematic review"</strong> (2024) - Learning experiences automation and innovative teaching models
+        </div>
+        <div class="citation">
+            <strong>"Investigating large language model-based intelligent teaching assistants"</strong> (2024) - Impact on STEM courses and retrieval-augmented generation
+        </div>
+        <div class="citation">
+            <strong>Original Flipped Classroom Research</strong> (Bergmann & Sams) - Foundational methodology and best practices
+        </div>
+    </div>
+
+    <!-- Workshop Promise -->
+    <div class="tools-grid">
+        <div class="tool-card">
+            <h4>🎥 Live Demonstrations</h4>
+            <p>Watch real-time video creation using HeyGen's AI platform, from script to finished product in minutes.</p>
+        </div>
+        <div class="tool-card">
+            <h4>🤖 Interactive Avatars</h4>
+            <p>Experience conversations with AI teaching assistants and explore their educational applications.</p>
+        </div>
+        <div class="tool-card">
+            <h4>💻 Vibe Coding</h4>
+            <p>See how AI assistants like Cline help non-programmers build educational tools through conversation.</p>
+        </div>
+    </div>
+
+    <div class="abstract-content">
+        <h4>🚀 Workshop Philosophy</h4>
+        <p><strong>"AI doesn't replace teachers - it amplifies their impact."</strong></p>
+        <p>This workshop demonstrates how artificial intelligence can eliminate technical barriers, reduce time investment, and enhance educational quality, allowing educators to focus on what they do best: teaching and research.</p>
+    </div>
 </body>
 </html>
