@@ -1,0 +1,61 @@
+# Energy Poverty - Information Gathering
+
+**📁 Google Drive Version**  
+**Created:** 2025-09-18 01:09:09  
+**Project:** energy_poverty  
+**Local Source:** Projects and teams/energy_poverty/info_gathering.md  
+
+---
+
+# Energy Poverty in Hong Kong - Information Gathering
+
+## Project Overview
+**Topic:** Energy Poverty and Social Equity in Hong Kong
+**Focus:** How energy affordability affects vulnerable populations
+
+## Key Research Questions
+1. What is the current state of energy poverty in Hong Kong?
+2. Which demographics are most affected by energy poverty?
+3. What are the health and social impacts of energy poverty?
+4. What policy interventions exist currently?
+5. How do other cities address energy poverty effectively?
+
+## Information Needed
+### Quantitative Data
+- [ ] Energy expenditure as % of household income by district
+- [ ] Electricity tariff trends over past 5 years
+- [ ] Number of households in subdivided flats
+- [ ] Energy consumption patterns by income level
+- [ ] Utility disconnection rates
+
+### Qualitative Information
+- [ ] Personal stories from affected families
+- [ ] Social worker perspectives
+- [ ] NGO reports on energy poverty
+- [ ] Government policy statements
+- [ ] Academic research findings
+
+## Potential Arguments to Develop
+1. **Equity Argument:** Energy poverty exacerbates social inequality
+2. **Health Argument:** Inadequate heating/cooling affects public health
+3. **Economic Argument:** Energy poverty cycles trap families in poverty
+4. **Policy Argument:** Current subsidies are insufficient/misdirected
+
+## Sources to Investigate
+- [ ] Census and Statistics Department data
+- [ ] CLP and HK Electric reports
+- [ ] Society for Community Organization (SoCO) studies
+- [ ] Legislative Council papers on energy policy
+- [ ] Academic journals on energy poverty
+
+## Action Items
+- [ ] Interview families in subdivided flats
+- [ ] Review government energy assistance programs
+- [ ] Compare Hong Kong with other cities (Singapore, London)
+- [ ] Calculate true cost of energy poverty to society
+
+## Notes and Insights
+[Add findings and insights here as research progresses]
+
+---
+*Last updated: 2025-09-18 01:01:00*
