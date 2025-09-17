@@ -32,7 +32,7 @@ class DocumentConverter:
         '.pdf': 'pdf',
         '.html': 'html',
         '.htm': 'html',
-        '.txt': 'plain',
+        '.txt': 'plain-text',
         '.rtf': 'rtf',
         '.odt': 'odt',
         '.epub': 'epub',
@@ -213,7 +213,7 @@ class DocumentConverter:
                 # Convert to text first, then to markdown
                 temp_txt = output_path.replace('.md', '.txt')
                 if self.convert_pdf_to_text(input_path, temp_txt):
-                    if self.convert_with_pandoc(temp_txt, output_path, 'plain'):
+                    if self.convert_with_pandoc(temp_txt, output_path, None):  # Let pandoc auto-detect
                         os.remove(temp_txt)  # Clean up temp file
                         return True
                 return False
