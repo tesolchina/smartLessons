@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=dynasty, initial-scale=1.0">
+    <title>Vibe Coding Demo</title>
+    <style>
+        .coding-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coding-hero::before {
+            content: '💻✨🤖';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .chat-panel {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-purple);
+        }
+
+        .code-panel {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 25px;
+            color: #d4d4d4;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-panel::before {
+            content: '🔴 🟡 🟢';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 0.8rem;
+        }
+
+        .code-content {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .ai-message {
+            background: var(--warm-peach);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .user-message {
+            background: var(--warm-yellow);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid var(--primary-purple);
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .step.active {
+            background: var(--primary-orange);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .step.completed {
+            background: var(--primary-purple);
+            color: white;
+        }
+
+        .step.inactive {
+            background: var(--warm-peach);
+            color: var(--dark-text);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .concept-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-orange);
+            transition: transform 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .demo-controls {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .demo-btn {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139,92,246,0.3);
+        }
+
+        .demo-btn.secondary {
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+        }
+
+        .code-highlight {
+            background: #264f78;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .syntax-js { color: #569cd6; }
+        .syntax-string { color: #ce9178; }
+        .syntax-comment { color: #6a9955; }
+        .syntax-function { color: #dcdcaa; }
+        .syntax-keyword { color: #c586c0; }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--warm-peach);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-orange), var(--primary-purple));
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 4px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: var(--primary-purple);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tr:nth-child(even) td {
+            background: var(--warm-peach);
+        }
+
+        @media (max-width: 768px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .step-indicator {
+                flex-direction: column;
+            }
+            
+            .step {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Vibe Coding: AI-Assisted Development for Educators</h2>
+    
+    <div class="coding-hero">
+        <h3>💡 "You don't need to be a programmer to build educational tools"</h3>
+        <p>Watch AI assistants like Cline transform ideas into functional applications through natural conversation</p>
+    </div>
+
+    <!-- Core Concept Introduction -->
+    <div class="abstract-content">
+        <h3>🚀 What is Vibe Coding?</h3>
+        <p><strong>Vibe Coding</strong> is the practice of building software through conversational interaction with AI assistants. Instead of learning complex programming syntax, you describe what you want to build, and the AI helps translate your ideas into working code.</p>
+    </div>
+
+    <div class="concept-grid">
+        <div class="concept-card">
+            <h4>🗣️ Conversational Development</h4>
+            <p>Describe your educational tool idea in plain English. The AI understands context and educational requirements.</p>
+        </div>
+        
+        <div class="concept-card">
+            <h4>🔄 Iterative Refinement</h4>
+            <p>Start with a basic concept and evolve it through dialogue. "Make it more interactive" or "Add student analytics".</p>
+        </div>
+        
+        <div class="concept-card">
+            <h4>📚 Educational Context</h4>
+            <p>AI assistants understand educational terminology, learning objectives, and pedagogical best practices.</p>
+        </div>
+        
+        <div class="concept-card">
+            <h4>⚡ Rapid Prototyping</h4>
+            <p>From idea to working prototype in minutes, not months. Perfect for testing educational concepts quickly.</p>
+        </div>
+    </div>
+
+    <!-- Live Demo Section -->
+    <h3>🎬 Live Demonstration: Building an Educational Widget</h3>
+    <p>Watch the process of creating a quiz generator tool through AI-assisted coding:</p>
+
+    <div class="step-indicator">
+        <div class="step completed" data-step="1">1. Idea</div>
+        <div class="step active" data-step="2">2. Planning</div>
+        <div class="step inactive" data-step="3">3. Development</div>
+        <div class="step inactive" data-step="4">4. Testing</div>
+        <div class="step inactive" data-step="5">5. Deployment</div>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width: 40%;"></div>
+    </div>
+
+    <div class="demo-container">
+        <div class="chat-panel">
+            <h4>💬 Conversation with AI Assistant</h4>
+            <div id="conversation-content">
+                <div class="user-message">
+                    <strong>👤 Educator:</strong><br>
+                    "I need to create an interactive quiz generator for my flipped classroom videos. Students should be able to take quizzes after watching the AI-generated content and get immediate feedback."
+                </div>
+                
+                <div class="ai-message">
+                    <strong>🤖 Cline:</strong><br>
+                    "Great idea! I'll help you build an interactive quiz generator. Let me break this down into components:
+                    <br><br>
+                    1. Quiz creation interface<br>
+                    2. Student quiz-taking interface<br>
+                    3. Real-time feedback system<br>
+                    4. Progress tracking<br>
+                    <br>
+                    Should this integrate with your HeyGen videos or work as a standalone tool?"
+                </div>
+
+                <div class="user-message">
+                    <strong>👤 Educator:</strong><br>
+                    "I'd like it to integrate with HeyGen videos. When a video ends, the quiz should automatically appear. Also, can we track which questions students get wrong most often?"
+                </div>
+
+                <div class="ai-message">
+                    <strong>🤖 Cline:</strong><br>
+                    "Perfect! I'll create a video-integrated quiz system with analytics. Let me start building the HTML structure with embedded JavaScript for HeyGen integration and a simple backend for tracking..."
+                </div>
+            </div>
+            
+            <div class="demo-controls">
+                <button class="demo-btn" onclick="nextStep()">▶️ Next Step</button>
+                <button class="demo-btn secondary" onclick="showCode()">👀 View Code</button>
+                <button class="demo-btn" onclick="resetDemo()">🔄 Reset Demo</button>
+            </div>
+        </div>
+
+        <div class="code-panel">
+            <div class="code-content" id="code-content">
+<span class="syntax-comment">// AI-Generated Quiz Integration for HeyGen Videos</span>
+<span class="syntax-keyword">class</span> <span class="syntax-function">VideoQuizSystem</span> {
+    <span class="syntax-function">constructor</span>(<span class="syntax-string">videoId</span>, <span class="syntax-string">quizData</span>) {
+        <span class="syntax-keyword">this</span>.<span class="syntax-string">videoId</span> = <span class="syntax-string">videoId</span>;
+        <span class="syntax-keyword">this</span>.<span class="syntax-string">quizData</span> = <span class="syntax-string">quizData</span>;
+        <span class="syntax-keyword">this</span>.<span class="syntax-function">initializeQuiz</span>();
+    }
+
+    <span class="syntax-function">initializeQuiz</span>() {
+        <span class="syntax-comment">// Listen for video completion</span>
+        <span class="syntax-keyword">window</span>.<span class="syntax-function">addEventListener</span>(<span class="syntax-string">'heygenVideoComplete'</span>, () => {
+            <span class="syntax-keyword">this</span>.<span class="syntax-function">displayQuiz</span>();
+        });
+    }
+
+    <span class="syntax-function">displayQuiz</span>() {
+        <span class="syntax-keyword">const</span> <span class="syntax-string">quizContainer</span> = <span class="syntax-keyword">document</span>.<span class="syntax-function">createElement</span>(<span class="syntax-string">'div'</span>);
+        <span class="syntax-string">quizContainer</span>.<span class="syntax-string">className</span> = <span class="syntax-string">'video-quiz-overlay'</span>;
+        
+        <span class="syntax-comment">// Generate quiz HTML based on learning objectives</span>
+        <span class="syntax-keyword">this</span>.<span class="syntax-function">renderQuestions</span>(<span class="syntax-string">quizContainer</span>);
+    }
+
+    <span class="syntax-function">trackAnswer</span>(<span class="syntax-string">questionId</span>, <span class="syntax-string">answer</span>) {
+        <span class="syntax-comment">// Send analytics to backend</span>
+        <span class="syntax-function">fetch</span>(<span class="syntax-string">'/api/quiz-analytics'</span>, {
+            <span class="syntax-string">method</span>: <span class="syntax-string">'POST'</span>,
+            <span class="syntax-string">body</span>: <span class="syntax-keyword">JSON</span>.<span class="syntax-function">stringify</span>({
+                <span class="syntax-string">videoId</span>: <span class="syntax-keyword">this</span>.<span class="syntax-string">videoId</span>,
+                <span class="syntax-string">questionId</span>,
+                <span class="syntax-string">answer</span>
+            })
+        });
+    }
+}
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison: Traditional vs Vibe Coding -->
+    <h3>⚔️ Traditional Development vs Vibe Coding</h3>
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Aspect</th>
+                <th>Traditional Programming</th>
+                <th>Vibe Coding with AI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Learning Curve</strong></td>
+                <td>Months to years of syntax and framework study</td>
+                <td>Start building immediately with natural language</td>
+            </tr>
+            <tr>
+                <td><strong>Development Time</strong></td>
+                <td>Weeks for simple educational tools</td>
+                <td>Hours to build functional prototypes</td>
+            </tr>
+            <tr>
+                <td><strong>Error Handling</strong></td>
+                <td>Debug complex syntax and logic errors</td>
+                <td>AI explains and fixes issues conversationally</td>
+            </tr>
+            <tr>
+                <td><strong>Documentation</strong></td>
+                <td>Search through technical documentation</td>
+                <td>Ask AI to explain any part of the code</td>
+            </tr>
+            <tr>
+                <td><strong>Best Practices</strong></td>
+                <td>Learn through trial and error</td>
+                <td>AI incorporates industry standards automatically</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Real-world Applications -->
+    <div class="abstract-content">
+        <h3>🎯 Educational Applications</h3>
+        <p>Vibe coding empowers educators to create custom tools for their specific teaching needs:</p>
+    </div>
+
+    <div class="tools-grid">
+        <div class="tool-card">
+            <h4>📊 Custom Analytics Dashboards</h4>
+            <p>Build personalized student progress tracking systems that integrate with your existing LMS and provide insights specific to your teaching style.</p>
+        </div>
+        <div class="tool-card">
+            <h4>🎮 Interactive Learning Games</h4>
+            <p>Create subject-specific educational games and simulations that align perfectly with your curriculum and learning objectives.</p>
+        </div>
+        <div class="tool-card">
+            <h4>📝 Assessment Tools</h4>
+            <p>Develop adaptive quizzes, peer review systems, and automated grading tools that understand your rubrics and assessment criteria.</p>
+        </div>
+    </div>
+
+    <!-- Live Implementation Example -->
+    <div class="demo-section">
+        <h3>💻 Try It Yourself: HeyGen API Integration</h3>
+        <p>Here's how you might ask an AI assistant to integrate HeyGen into your workflow:</p>
+        
+        <div class="ai-message">
+            <strong>💬 Example Conversation:</strong><br><br>
+            <strong>You:</strong> "I want to automatically generate videos for my course modules. Can you help me integrate HeyGen's API so that when I upload a syllabus, it creates videos for each topic?"<br><br>
+            
+            <strong>AI Assistant:</strong> "I'll help you build an automated video generation system! Here's what we'll create:
+            <ol>
+                <li>Syllabus parser to extract topics and learning objectives</li>
+                <li>Script generator that creates educational content</li>
+                <li>HeyGen API integration for video creation</li>
+                <li>Progress dashboard to monitor generation status</li>
+            </ol>
+            Let me start with the file upload interface..."
+        </div>
+    </div>
+
+    <div class="abstract-content">
+        <h4>🚀 The Power of Conversational Development</h4>
+        <p><strong>Democratizing Technology:</strong> Vibe coding removes the technical barriers that have traditionally separated educators from the tools they need. Instead of waiting for IT departments or hiring developers, educators can create, test, and deploy their own solutions.</p>
+        <p><strong>Pedagogical Focus:</strong> By handling the technical complexity, AI allows educators to focus on what they do best - understanding student needs and designing effective learning experiences.</p>
+    </div>
+
+    <script>
+        let currentStep = 2;
+        const totalSteps = 5;
+        const steps = ['idea', 'planning', 'development', 'testing', 'deployment'];
+        
+        const conversations = {
+            1: [
+                { type: 'user', text: '"I need a way to make my flipped classroom videos more interactive."' },
+                { type: 'ai', text: '"Let\'s explore some options! What specific interactions would help your students engage better with the content?"' }
+            ],
+            2: [
+                { type: 'user', text: '"I want quizzes that appear after video segments to check understanding."' },
+                { type: 'ai', text: '"Great idea! I\'ll help you build an interactive quiz system. Let me break this down into components..."' }
+            ],
+            3: [
+                { type: 'user', text: '"The quiz looks good! Can we add analytics to see which questions students struggle with?"' },
+                { type: 'ai', text: '"Absolutely! I\'ll add a tracking system that captures answer patterns and generates teacher insights..."' }
+            ],
+            4: [
+                { type: 'user', text: '"Perfect! How do we test this with real students?"' },
+                { type: 'ai', text: '"Let\'s create a pilot testing environment with sample students and collect feedback on usability..."' }
+            ],
+            5: [
+                { type: 'user', text: '"The testing went well! Can you help me deploy this to my actual course?"' },
+                { type: 'ai', text: '"Excellent! I\'ll help you set up the production environment and integrate with your LMS..."' }
+            ]
+        };
+
+        const codeExamples = {
+            1: 'console.log("Starting educational tool development...");',
+            2: `// Planning the quiz integration system
+const quizConfig = {
+    videoIntegration: true,
+    analyticsEnabled: true,
+    adaptiveFeedback: true
+};`,
+            3: `// Building the interactive quiz component
+class VideoQuiz {
+    constructor(config) {
+        this.config = config;
+        this.initializeQuiz();
+    }
+    // Implementation continues...
+}`,
+            4: `// Adding testing framework
+describe('Video Quiz System', () => {
+    test('displays quiz after video completion', () => {
+        // Test implementation
+    });
+});`,
+            5: `// Production deployment configuration
+const deploymentConfig = {
+    environment: 'production',
+    lmsIntegration: 'canvas',
+    scalingOptions: 'auto'
+};`
+        };
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateDemo();
+            }
+        }
+
+        function updateDemo() {
+            // Update step indicators
+            document.querySelectorAll('.step').forEach((step, index) => {
+                const stepNum = index + 1;
+                step.className = 'step ';
+                if (stepNum < currentStep) {
+                    step.className += 'completed';
+                } else if (stepNum === currentStep) {
+                    step.className += 'active';
+                } else {
+                    step.className += 'inactive';
+                }
+            });
+
+            // Update progress bar
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+
+            // Update conversation (simplified for demo)
+            if (conversations[currentStep]) {
+                updateConversation(conversations[currentStep]);
+            }
+
+            // Update code
+            if (codeExamples[currentStep]) {
+                updateCode(codeExamples[currentStep]);
+            }
+        }
+
+        function updateConversation(messages) {
+            const container = document.getElementById('conversation-content');
+            container.innerHTML = '';
+            
+            messages.forEach(msg => {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = msg.type === 'user' ? 'user-message' : 'ai-message';
+                messageDiv.innerHTML = `<strong>${msg.type === 'user' ? '👤 Educator:' : '🤖 Cline:'}</strong><br>${msg.text}`;
+                container.appendChild(messageDiv);
+            });
+        }
+
+        function updateCode(code) {
+            document.getElementById('code-content').innerHTML = code;
+        }
+
+        function showCode() {
+            alert('In a real workshop, this would open the complete code in your preferred editor for hands-on exploration!');
+        }
+
+        function resetDemo() {
+            currentStep = 1;
+            updateDemo();
+        }
+
+        // Initialize demo
+        updateDemo();
+    </script>
+</body>
+</html>
