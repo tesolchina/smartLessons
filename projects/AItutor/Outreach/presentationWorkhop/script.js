@@ -81,6 +81,9 @@ class WorkshopManager {
             component.innerHTML = bodyContent;
             component.dataset.loaded = 'true';
             
+            // Execute scripts after content is loaded
+            this.executeScripts(component);
+            
             // Fade in the content
             setTimeout(() => {
                 component.style.opacity = '1';
@@ -90,6 +93,28 @@ class WorkshopManager {
             console.error(`Error loading component ${componentId}:`, error);
             component.innerHTML = this.getErrorContent(componentId);
         }
+    }
+
+    executeScripts(container) {
+        // Find all script tags in the loaded content
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+            // Create a new script element
+            const newScript = document.createElement('script');
+            
+            // Copy all attributes
+            Array.from(oldScript.attributes).forEach(attr => {
+                newScript.setAttribute(attr.name, attr.value);
+            });
+            
+            // Copy the script content
+            newScript.textContent = oldScript.textContent;
+            
+            // Replace the old script with the new one to trigger execution
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+        
+        console.log('Scripts executed for component:', container.id);
     }
 
     getErrorContent(componentId) {
