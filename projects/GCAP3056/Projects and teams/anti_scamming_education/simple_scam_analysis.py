@@ -4,6 +4,8 @@ Key Anti-Scam Data Insights Visualization
 Simplified version focusing on the most important findings
 """
 
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -90,7 +92,7 @@ def create_key_insights():
     
     plt.tight_layout()
     plt.savefig('anti_scam_key_insights.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Generated anti_scam_key_insights.png")
 
 def create_evidence_summary():
     """Create summary chart showing evidence for campaign-data misalignment"""
@@ -143,7 +145,7 @@ def create_evidence_summary():
     
     plt.tight_layout()
     plt.savefig('evidence_summary.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Generated evidence_summary.png")
 
 def create_simple_data_table():
     """Create a summary data table"""
@@ -165,7 +167,7 @@ def create_simple_data_table():
     ax.axis('tight')
     ax.axis('off')
     
-    table = ax.table(cellText=df.values, colLabels=df.columns, 
+    table = ax.table(cellText=df.values.astype(str), colLabels=df.columns.tolist(), 
                     cellLoc='center', loc='center')
     table.auto_set_font_size(False)
     table.set_fontsize(10)
@@ -182,7 +184,7 @@ def create_simple_data_table():
     plt.title('Hong Kong Scam Data Summary 2024\nEvidence for Education-Crime Data Misalignment', 
              fontweight='bold', fontsize=14, pad=20)
     plt.savefig('scam_data_summary_table.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Generated scam_data_summary_table.png")
     
     return df
 

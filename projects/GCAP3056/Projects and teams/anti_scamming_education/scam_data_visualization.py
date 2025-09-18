@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """
-Hong Kong Scam Data Visualization
-GCAP3056 Anti-Scamming Education Project
-Data Source: Hong Kong Police Force Crime Statistics
+Comprehensive Anti-Scam Data Analysis and Visualization
+Based on Hong Kong Police Force statistics and education campaign data
 """
+
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import seaborn as sns
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -69,7 +75,7 @@ def create_scam_trend_analysis():
     
     plt.tight_layout()
     plt.savefig('hong_kong_scam_trends.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Chart generated successfully")
 
 def create_scam_type_analysis():
     """Analyze different types of scams and their impacts"""
@@ -166,7 +172,7 @@ def create_scam_type_analysis():
     
     plt.tight_layout()
     plt.savefig('scam_types_analysis.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Chart generated successfully")
 
 def create_demographic_analysis():
     """Analyze victim demographics and education campaign targeting"""
@@ -245,7 +251,7 @@ def create_demographic_analysis():
     
     plt.tight_layout()
     plt.savefig('demographic_analysis.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Chart generated successfully")
 
 def create_education_effectiveness_analysis():
     """Analyze the effectiveness of different education campaigns"""
@@ -336,7 +342,7 @@ def create_education_effectiveness_analysis():
     
     plt.tight_layout()
     plt.savefig('education_effectiveness.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Chart generated successfully")
 
 def create_international_comparison():
     """Compare Hong Kong's anti-scam measures with other regions"""
@@ -376,14 +382,16 @@ def create_international_comparison():
     hk_effectiveness = [4, 4, 3, 4]
     mainland_effectiveness = [5, 5, 5, 5]
     
-    bars3 = ax2.bar(x - width/2, hk_effectiveness, width, label='Hong Kong', alpha=0.8, color='blue')
-    bars4 = ax2.bar(x + width/2, mainland_effectiveness, width, label='Mainland China', alpha=0.8, color='orange')
+    x2 = np.arange(len(response_types))
+    
+    bars3 = ax2.bar(x2 - width/2, hk_effectiveness, width, label='Hong Kong', alpha=0.8, color='blue')
+    bars4 = ax2.bar(x2 + width/2, mainland_effectiveness, width, label='Mainland China', alpha=0.8, color='orange')
     
     ax2.set_title('Response Mechanism Effectiveness\nComparative Analysis', 
                  fontsize=14, fontweight='bold')
     ax2.set_xlabel('Response Type', fontsize=12)
     ax2.set_ylabel('Effectiveness Score (1-5)', fontsize=12)
-    ax2.set_xticks(x)
+    ax2.set_xticks(x2)
     ax2.set_xticklabels(response_types)
     ax2.legend()
     ax2.grid(True, alpha=0.3, axis='y')
@@ -439,7 +447,7 @@ def create_international_comparison():
     
     plt.tight_layout()
     plt.savefig('international_comparison.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Chart generated successfully")
 
 def create_policy_recommendations_analysis():
     """Visualize policy gaps and recommendations"""
@@ -534,7 +542,7 @@ def create_policy_recommendations_analysis():
     
     plt.tight_layout()
     plt.savefig('policy_recommendations.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    print("✓ Chart generated successfully")
 
 def main():
     """Main function to generate all visualizations"""
