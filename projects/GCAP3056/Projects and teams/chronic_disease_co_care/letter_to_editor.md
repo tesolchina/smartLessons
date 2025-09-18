@@ -43,12 +43,14 @@ Hong Kong needs healthcare policy that prioritizes universal access and addresse
 ## Research Notes for Letter Development:
 
 ### Key Arguments to Develop:
+
 1. **Transparency and Accountability**: Lack of public data on program effectiveness
 2. **Healthcare Equity**: Two-tier system concerns and access barriers
 3. **Resource Allocation**: Public investment efficiency vs. alternative approaches
 4. **International Comparison**: Best practices in chronic disease management programs
 
 ### Evidence Points Needed:
+
 - Actual participation rates vs. eligible population estimates
 - Geographic distribution of participating clinics
 - Cost per case identified and treated
@@ -56,6 +58,7 @@ Hong Kong needs healthcare policy that prioritizes universal access and addresse
 - International chronic disease program evaluation standards
 
 ### Strategic Messaging:
+
 - Frame as accountability and transparency issue, not program criticism
 - Focus on evidence-based healthcare policy requirements
 - Connect to broader healthcare equity and access concerns

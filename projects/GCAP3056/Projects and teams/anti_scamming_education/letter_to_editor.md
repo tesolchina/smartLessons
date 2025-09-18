@@ -43,18 +43,21 @@ Government must accelerate technological innovation in scam prevention, learning
 ## Research Notes for Letter Development:
 
 ### Key Evidence Points:
+
 - Gap between public education campaigns and actual crime data patterns
 - Comparison between Hong Kong and Mainland China anti-scam technology
 - Evolution of scam methodologies vs. educational content updating
 - Demographic targeting effectiveness in current campaigns
 
 ### Strategic Arguments:
+
 1. **Evidence-Based Policy**: Alignment between crime intelligence and education campaigns
 2. **Technology Innovation**: Hong Kong's lag behind regional anti-scam technology
 3. **Resource Efficiency**: Targeted vs. generic awareness campaign effectiveness
 4. **Cross-Border Learning**: What Hong Kong can adopt from successful approaches
 
 ### Government Accountability Angles:
+
 1. **Data Transparency**: Access to detailed victim demographics and scam patterns
 2. **Technology Investment**: Government commitment to anti-scam innovation
 3. **Campaign Effectiveness**: Measurement and evaluation of educational initiatives

@@ -41,18 +41,21 @@ Government must explain why Hong Kong lags behind international best practices i
 ## Research Notes for Letter Development:
 
 ### Key Evidence Points:
+
 - Dr. Tin chatbot: 3+ years old, rule-based technology (pre-LLM era)
 - HKO maintains 52+ open datasets with API access
 - Current system limited to preset Q&A functionality
 - International trend toward AI-powered government services
 
 ### Technical Arguments:
+
 1. **Obsolete Technology**: Rule-based vs. LLM capability comparison
 2. **Underutilized Resources**: Open data potential for AI services
 3. **User Experience**: Current system limitations vs. modern expectations
 4. **Cost-Effectiveness**: Modern solutions vs. maintaining legacy systems
 
 ### Government Accountability Angles:
+
 1. **Procurement Transparency**: Tendering processes and upgrade planning
 2. **Technology Assessment**: Current system evaluation and improvement criteria
 3. **Digital Government Strategy**: AI integration plans and timeline commitments
