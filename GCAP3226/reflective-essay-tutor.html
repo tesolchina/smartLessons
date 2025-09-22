@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP3226 - Reflective Essay Writing Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(93, 92, 222, 0.15);
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(93, 92, 222, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(93, 92, 222, 0.5); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- Header -->
+    <div class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center fade-in">
+                <h1 class="text-4xl font-bold mb-2">✍️ Reflective Essay Writing Tutor</h1>
+                <p class="text-xl opacity-90">GCAP3226 - Empowering Citizens Through Data</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-8 max-w-6xl">
+        
+        <!-- Introduction Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 fade-in card-hover">
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full mb-4">
+                    <span class="text-3xl">🎯</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Welcome to Your AI Writing Assistant</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Get personalized guidance for your 200-word reflective essay</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-primary mb-4">📝 What This Tutor Helps With</h3>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <span>Reflecting on <strong>two key models</strong> from GCAP3226</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <span>Connecting theory to your <strong>personal project</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <span>Structuring your <strong>reflective essay</strong> effectively</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <span>Developing <strong>critical analysis</strong> and personal insights</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-primary mb-4">🎓 Expected Outcome</h3>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                            After your session, you'll have a clear structure and key insights for your <strong>200-word reflective essay</strong>. 
+                            You'll understand how to articulate your learning journey and demonstrate the practical application of course models to your project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 fade-in card-hover">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                <span class="mr-2">🚀</span>How to Use the Tutor
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
+                        <span class="text-2xl">1️⃣</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Start the Conversation</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Click the chatbot below and type <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">ok</code> to begin</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full mb-4">
+                        <span class="text-2xl">2️⃣</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Follow the Guide</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Answer questions about your models and project thoughtfully</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full mb-4">
+                        <span class="text-2xl">3️⃣</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Complete & Submit</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Type <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">3Q3Q</code> when done to get your summary</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Tips Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 fade-in card-hover">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                <span class="mr-2">💡</span>Writing Tips for Success
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-green-600 dark:text-green-400 mb-4">✅ Do Include</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-0.5">•</span>
+                            <span>Specific examples from your learning experience</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-0.5">•</span>
+                            <span>Clear connections between models and your project</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-0.5">•</span>
+                            <span>Personal insights and "aha!" moments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-0.5">•</span>
+                            <span>Both strengths and limitations of the models</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-red-600 dark:text-red-400 mb-4">❌ Avoid</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 mt-0.5">•</span>
+                            <span>Simply describing what the models are</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 mt-0.5">•</span>
+                            <span>Generic statements without personal reflection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 mt-0.5">•</span>
+                            <span>Superficial connections to your project</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 mt-0.5">•</span>
+                            <span>Exceeding the 200-word limit significantly</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chatbot Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-8 fade-in">
+            <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold mb-2">🤖 Your AI Writing Tutor</h2>
+                    <p class="opacity-90">Ready to help you craft your reflective essay</p>
+                </div>
+            </div>
+            
+            <!-- Chatbot iframe with enhanced styling -->
+            <div class="relative">
+                <div class="absolute top-4 right-4 z-10">
+                    <button onclick="refreshChatbot()" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 p-2 rounded-full transition-colors" title="Refresh chatbot">
+                        <svg class="w-4 h-4 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <iframe 
+                    id="chatbotFrame"
+                    src="https://textbot.hkbu.tech/chat/GCAP3226-reflectEssayTutor" 
+                    width="100%" 
+                    height="700" 
+                    frameborder="0"
+                    class="w-full"
+                    style="min-height: 700px;"
+                    loading="lazy"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    title="GCAP3226 Reflective Essay Writing Tutor">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- After Chat Section -->
+        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-8 fade-in card-hover border border-yellow-200 dark:border-yellow-800">
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 dark:bg-yellow-900 rounded-full mb-4">
+                    <span class="text-3xl">📋</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Next Steps After Your Chat Session</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                        <span class="text-blue-500 mr-2">📝</span>Review Your Notes
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        Use the conversation summary and your own notes to organize your thoughts and key insights.
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                        <span class="text-purple-500 mr-2">✍️</span>Write Your Essay
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        Draft your 200-word reflective essay using the structure and insights from your chat session.
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                        <span class="text-green-500 mr-2">📤</span>Submit to Moodle
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        Submit your completed reflective essay through the course Moodle page by the deadline.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 max-w-2xl mx-auto">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        <strong>💡 Remember:</strong> This AI tutor guides your thinking process. The final essay should reflect your own insights and learning journey in your own words.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="text-center mt-8 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm max-w-2xl mx-auto">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    <span class="mr-2">📧</span>Need Additional Help?
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    If you have questions about the assignment or need further guidance after using the AI tutor:
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <a href="mailto:taliawu17@hkbu.edu.hk" class="inline-flex items-center text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300">
+                        <span class="mr-1">📧</span>Dr. Talia Wu
+                    </a>
+                    <a href="mailto:simonwang@hkbu.edu.hk" class="inline-flex items-center text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300">
+                        <span class="mr-1">📧</span>Dr. Simon Wang
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Course Hub -->
+        <div class="text-center mt-8 mb-6">
+            <a href="./intro.html" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors shadow-lg">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to GCAP3226 Course Hub
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Refresh chatbot iframe
+        function refreshChatbot() {
+            const iframe = document.getElementById('chatbotFrame');
+            iframe.src = iframe.src;
+        }
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial state for fade-in elements
+            document.querySelectorAll('.fade-in').forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.animationDelay = `${index * 0.1}s`;
+                observer.observe(element);
+                
+                // Trigger animation after a short delay
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            // Add pulse glow to chatbot section
+            const chatbotSection = document.querySelector('.bg-gradient-to-r.from-purple-500');
+            if (chatbotSection) {
+                chatbotSection.classList.add('pulse-glow');
+            }
+        });
+
+        // Handle iframe loading
+        document.getElementById('chatbotFrame').addEventListener('load', function() {
+            console.log('Chatbot loaded successfully');
+        });
+
+        // Handle iframe errors
+        document.getElementById('chatbotFrame').addEventListener('error', function() {
+            console.error('Error loading chatbot');
+            // You could add error handling UI here
+        });
+    </script>
+</body>
+</html>
