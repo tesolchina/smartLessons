@@ -732,7 +732,7 @@
 
         async function updateDemoContent(slideNum) {
             console.log(`🎯 UpdateDemoContent called for slide ${slideNum}`);
-            const demoContent = document.getElementById('demo-content');
+            const demoContent = document.querySelector('.demo-content');
             if (!demoContent) {
                 console.warn('❌ demo-content element not found');
                 return;
