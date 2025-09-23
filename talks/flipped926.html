@@ -213,7 +213,7 @@
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 mb-4 border border-gray-200 dark:border-gray-700">
                         <div class="flex items-center justify-between mb-3">
                             <div class="slide-indicator text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-3 py-1 rounded-full">
-                                Slide 1 • Demo
+                                Slide 1 • QR Codes
                             </div>
                             <div class="text-xs text-gray-500 dark:text-gray-400">
                                 Controls both slides & content
@@ -249,10 +249,9 @@
                     </div>
                     
                     <!-- Canvas Tabs -->
-                                        <!-- Canvas Tabs -->
                     <div class="flex space-x-2 mb-4">
                         <button id="tab-demo" onclick="switchCanvasTab('demo')" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all">
-                            Demo
+                            QR Codes
                         </button>
                         <button id="tab-resources" onclick="switchCanvasTab('resources')" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
                             Resources
@@ -266,11 +265,24 @@
                             <div class="demo-content">
                                 <!-- Dynamic demo content will be injected here by updateDemoContent() -->
                                 <div class="text-center p-8">
-                                    <div class="text-6xl mb-4">🎯</div>
-                                    <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Workshop Overview</h3>
-                                    <p class="text-gray-600 dark:text-gray-400">Welcome to our interactive presentation on flipped classroom methodology.</p>
+                                    <div class="text-4xl mb-4">📱</div>
+                                    <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-4">QR Code - Slide 1</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">Scan to access this presentation on your device</p>
+                                    
+                                    <!-- QR Code Image -->
+                                    <div class="flex justify-center mb-4">
+                                        <div class="bg-white p-4 rounded-lg shadow-lg border-2 border-gray-200">
+                                            <img src="flipped926_qr.png" alt="QR Code for presentation" class="w-48 h-48 mx-auto" />
+                                        </div>
+                                    </div>
+                                    
                                     <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
-                                        <p class="text-sm text-blue-700 dark:text-blue-300">Use the slide controls to navigate through different sections and demos.</p>
+                                        <p class="text-sm text-blue-700 dark:text-blue-300 mb-2">
+                                            <strong>URL:</strong> https://smartlessons.hkbu.tech/talks/flipped926.html
+                                        </p>
+                                        <p class="text-xs text-blue-600 dark:text-blue-400">
+                                            Share this QR code with participants to let them follow along on their devices
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -709,8 +721,9 @@
             
             // Update slide indicator
             const slideIndicators = document.querySelectorAll('.slide-indicator');
+            const indicatorText = slideNum === 1 ? `Slide ${slideNum} • QR Codes` : `Slide ${slideNum} • QR Codes`;
             slideIndicators.forEach(indicator => {
-                indicator.textContent = `Slide ${slideNum} • Demo`;
+                indicator.textContent = indicatorText;
             });
             
             // Update demo content based on slide number
@@ -730,12 +743,39 @@
         }
 
         function updateDemoContent(slideNum) {
-            const demoContent = document.getElementById('demo-content');
+            const demoContent = document.querySelector('.demo-content');
             if (!demoContent) return;
 
-            // Define content for different slide ranges
+            // Special handling for slide 1 - show QR code
+            if (slideNum === 1) {
+                demoContent.innerHTML = `
+                    <div class="text-center p-8">
+                        <div class="text-4xl mb-4">📱</div>
+                        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-4">QR Code - Slide 1</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Scan to access this presentation on your device</p>
+                        
+                        <!-- QR Code Image -->
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-white p-4 rounded-lg shadow-lg border-2 border-gray-200">
+                                <img src="flipped926_qr.png" alt="QR Code for presentation" class="w-48 h-48 mx-auto" />
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+                            <p class="text-sm text-blue-700 dark:text-blue-300 mb-2">
+                                <strong>URL:</strong> https://smartlessons.hkbu.tech/talks/flipped926.html
+                            </p>
+                            <p class="text-xs text-blue-600 dark:text-blue-400">
+                                Share this QR code with participants to let them follow along on their devices
+                            </p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Define content for other slides
             const slideContentMap = {
-                1: { title: "Workshop Introduction", icon: "🎓", description: "Welcome to the Flipped Classroom Workshop", color: "blue" },
                 2: { title: "What is Flipped Learning?", icon: "🔄", description: "Understanding the core concepts", color: "green" },
                 3: { title: "Benefits Overview", icon: "📈", description: "Why flip your classroom?", color: "purple" },
                 4: { title: "Implementation Planning", icon: "📋", description: "Step-by-step implementation guide", color: "orange" },
@@ -752,7 +792,7 @@
                 15: { title: "Workshop Conclusion", icon: "✅", description: "Key takeaways and next steps", color: "rose" }
             };
 
-            const content = slideContentMap[slideNum] || slideContentMap[1];
+            const content = slideContentMap[slideNum] || { title: "Content Loading", icon: "⏳", description: "Please wait...", color: "gray" };
 
             demoContent.innerHTML = `
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
