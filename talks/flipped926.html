@@ -748,17 +748,25 @@
         }
 
         async function updateDemoContent(slideNum) {
+            console.log(`🎯 UpdateDemoContent called for slide ${slideNum}`);
             const demoContent = document.getElementById('demo-content');
-            if (!demoContent) return;
+            if (!demoContent) {
+                console.warn('❌ demo-content element not found');
+                return;
+            }
 
             // Try to use module loader if available
             if (window.slideModuleLoader) {
+                console.log(`🔧 Using module loader for slide ${slideNum}`);
                 try {
                     await window.slideModuleLoader.switchToSlide(slideNum, demoContent);
+                    console.log(`✅ Module loader succeeded for slide ${slideNum}`);
                     return;
                 } catch (error) {
-                    console.warn('Module loader failed, falling back to default content:', error);
+                    console.warn('❌ Module loader failed, falling back to default content:', error);
                 }
+            } else {
+                console.warn('❌ No module loader available');
             }
 
             // Fallback to default content for slides without modules
