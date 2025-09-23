@@ -568,48 +568,6 @@
                 }
             }, 3000);
             
-            // Add manual slide control panel
-            addSlideControlPanel();
-        }
-        
-        function addSlideControlPanel() {
-            const controlPanel = document.createElement('div');
-            controlPanel.innerHTML = `
-                <div class="fixed top-4 right-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-3 z-40 border border-gray-200 dark:border-gray-700">
-                    <div class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-2">Manual Slide Control</div>
-                    <div class="flex items-center space-x-2">
-                        <button onclick="manualSlideChange(-1)" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs hover:bg-gray-300 dark:hover:bg-gray-600">◀</button>
-                        <span id="current-slide-display" class="text-sm font-bold text-blue-600 dark:text-blue-400 min-w-[40px] text-center">1</span>
-                        <button onclick="manualSlideChange(1)" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs hover:bg-gray-300 dark:hover:bg-gray-600">▶</button>
-                    </div>
-                    <input type="range" id="slide-slider" min="1" max="20" value="1" 
-                           class="w-full mt-2 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer" 
-                           onchange="manualSlideChange(0, this.value)">
-                </div>
-            `;
-            document.body.appendChild(controlPanel);
-        }
-        
-        function manualSlideChange(direction, exactSlide = null) {
-            const currentDisplay = document.getElementById('current-slide-display');
-            const slider = document.getElementById('slide-slider');
-            
-            let newSlide;
-            if (exactSlide !== null) {
-                newSlide = parseInt(exactSlide);
-            } else {
-                newSlide = Math.max(1, Math.min(20, currentSlide + direction));
-            }
-            
-            if (newSlide !== currentSlide) {
-                currentSlide = newSlide;
-                updateCanvasContent(newSlide);
-                
-                if (currentDisplay) currentDisplay.textContent = newSlide;
-                if (slider) slider.value = newSlide;
-                
-                console.log(`Manual slide change: ${newSlide}`);
-            }
         }
 
         // New simplified function for manual controls
