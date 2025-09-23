@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route 56 Bus Simulation Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bus-icon {
+            width: 30px;
+            height: 20px;
+            background: #3B82F6;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        .bus-icon::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            left: 3px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .bus-icon::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            right: 3px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .route-line {
+            background: linear-gradient(to right, #10B981, #3B82F6);
+            height: 4px;
+            border-radius: 2px;
+        }
+        .stop-marker {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #10B981;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <div class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl font-bold">Route 56 Bus Simulation</h1>
+        <p class="text-blue-100">Tuen Mun ↔ Sheung Shui Route Analysis (Real Clock Time)</p>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="bg-white shadow-sm p-4 border-b sticky top-0 z-50">
+        <div class="flex flex-wrap gap-4 items-center">
+            <button id="startSimulation" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+                Start Simulation
+            </button>
+            <button id="pauseSimulation" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded" disabled>
+                Pause
+            </button>
+            <button id="resetSimulation" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                Reset
+            </button>
+            <div class="flex items-center gap-2">
+                <label class="text-sm font-medium">Speed:</label>
+                <input type="range" id="speedControl" min="1" max="10" value="5" class="w-20">
+                <span id="speedValue" class="text-sm">5x</span>
+            </div>
+            <div class="text-sm text-gray-600">
+                Simulation starts at 9:00 AM (First bus departs at 9:10 AM)
+            </div>
+        </div>
+    </div>
+
+    <!-- Route Visualization (Full Width) -->
+    <div class="bg-white rounded-lg shadow p-6 m-4">
+        <h2 class="text-xl font-bold mb-4">Route Map & Real-time Tracking</h2>
+        
+        <!-- Forward Route -->
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold mb-3 text-blue-600">Forward: Tuen Mun → Sheung Shui</h3>
+            <div class="text-sm text-gray-600 mb-2">Departures: 9:10, 9:30, 9:50, 10:10, 10:30</div>
+            <div class="relative">
+                <div class="route-line mb-2"></div>
+                <div class="flex justify-between items-center" id="forwardStops">
+                    <!-- Stops will be generated here -->
+                </div>
+                <div id="forwardBuses" class="mt-4 relative" style="height: 40px;">
+                    <!-- Buses will be positioned here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Backward Route -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3 text-purple-600">Backward: Sheung Shui → Tuen Mun</h3>
+            <div class="text-sm text-gray-600 mb-2">Departures: 9:25, 9:45, 10:05, 10:25</div>
+            <div class="relative">
+                <div class="route-line mb-2" style="background: linear-gradient(to right, #8B5CF6, #EC4899);"></div>
+                <div class="flex justify-between items-center" id="backwardStops">
+                    <!-- Stops will be generated here -->
+                </div>
+                <div id="backwardBuses" class="mt-4 relative" style="height: 40px;">
+                    <!-- Buses will be positioned here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row: Statistics and Chart -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mx-4">
+        <!-- Live Statistics Panel -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4">Live Statistics</h2>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-3 rounded">
+                    <div class="text-sm font-medium text-blue-600">Overall Utilization</div>
+                    <div class="text-2xl font-bold text-blue-800" id="overallUtil">0%</div>
+                </div>
+                
+                <div class="bg-green-50 p-3 rounded">
+                    <div class="text-sm font-medium text-green-600">Active Buses</div>
+                    <div class="text-2xl font-bold text-green-800" id="activeBuses">0</div>
+                </div>
+                
+                <div class="bg-purple-50 p-3 rounded">
+                    <div class="text-sm font-medium text-purple-600">Total Passengers</div>
+                    <div class="text-2xl font-bold text-purple-800" id="totalPassengers">0</div>
+                </div>
+                
+                <div class="bg-orange-50 p-3 rounded">
+                    <div class="text-sm font-medium text-orange-600">Queued Passengers</div>
+                    <div class="text-2xl font-bold text-orange-800" id="queuedPassengers">0</div>
+                </div>
+            </div>
+
+            <!-- Current Time -->
+            <div class="mt-6 p-3 bg-gray-50 rounded">
+                <div class="text-sm font-medium text-gray-600">Current Clock Time</div>
+                <div class="text-lg font-bold" id="simTime">09:10</div>
+            </div>
+
+            <!-- Legend -->
+            <div class="mt-4 text-xs text-gray-600">
+                <p><strong>Note:</strong> Percentages at stops = average seat utilization rates</p>
+                <p>λ = passengers per minute (Poisson), alighting = Binomial distribution</p>
+            </div>
+        </div>
+
+        <!-- Utilization Chart -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4">Real-time Utilization by Stop</h2>
+            <canvas id="utilizationChart" width="400" height="300"></canvas>
+        </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="bg-white rounded-lg shadow p-6 m-4">
+        <h2 class="text-xl font-bold mb-4">Detailed Statistics</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-50">
+                        <th class="px-4 py-2 text-left">Stop</th>
+                        <th class="px-4 py-2 text-left">Direction</th>
+                        <th class="px-4 py-2 text-left">λ (pax/min)</th>
+                        <th class="px-4 py-2 text-left">Alight Prob.</th>
+                        <th class="px-4 py-2 text-left">Avg Utilization</th>
+                        <th class="px-4 py-2 text-left">Queue Count</th>
+                    </tr>
+                </thead>
+                <tbody id="statsTable">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Simulation data and configuration (using CLOCK TIME)
+        const simulationData = {
+            forward: {
+                stops: [
+                    'Ching Tin Estate', 'NOVA LAND', 'Wo Tin Estate', 'Tai Hing Police Station',
+                    'Kei Lun Wai', 'Yan Tin Estate', 'Ng Lau Road', 'Sheung Shui Station-Exit D2',
+                    'San Shing Avenue', 'Lung Sum Avenue Sports Center', 'Tin Ping Estate'
+                ],
+                departures: [550, 570, 590, 610, 630], // Minutes from midnight (9:10, 9:30, 9:50, 10:10, 10:30)
+                stopLambdas: [0.5, 0.25, 0.2, 0.15, 0.2, 0.2, 0, 0.3, 0, 0, 0], // passengers/minute per stop
+                alightProbabilities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.04, 0.0, 0.68, 0.15, 0.15, 1.0],
+                utilization: [11.63, 17.45, 22.13, 25.61, 30.31, 33.73, 33.73, 17.76, 15.09, 12.78, 0.00],
+                segmentTimes: [0.5, 2.67, 3.0, 2.5, 2.0, 2.0, 24, 3.667, 2.167, 2.167] // minutes between stops
+            },
+            backward: {
+                stops: [
+                    'Tin Ping Estate', 'Tin Yee House Tin Ping Estate', 'Lung Fung Garden',
+                    'Sheung Shui Station', 'So Kwun Po Village', 'Ng Lau Road', 'Yan Tin Estate',
+                    'Siu Yin House Siu Hong Court', 'Tuen Mun Hospital', 'Blossom Garden',
+                    'Wo Tin Estate', 'NOVO LAND'
+                ],
+                departures: [565, 585, 605, 625], // Minutes from midnight (9:25, 9:45, 10:05, 10:25)
+                stopLambdas: [0.2, 0.1, 0.3, 1, 0, 0, 0.05, 0.1, 0, 0, 0, 0], // passengers/minute per stop
+                alightProbabilities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.04, 0.15, 0.08, 0.07, 0.27, 0.56, 1.0],
+                utilization: [4.69, 7.01, 13.95, 37.16, 37.16, 35.64, 31.47, 31.25, 29.06, 21.24, 9.38, 0.00],
+                segmentTimes: [1.714, 2.143, 2.0, 4.286, 24.714, 1.0, 2.286, 0.571, 4.0, 5.286, 1.714] // minutes between stops
+            }
+        };
+
+        const BUS_CAPACITY = 86;
+        const HEADWAY = 20; // minutes between buses
+        let isRunning = false;
+        let simulationSpeed = 5;
+        let currentTime = 540; // Start at 9:00 AM (540 minutes from midnight)
+        let buses = [];
+        let charts = {};
+        let stopQueues = {};
+        let lastUpdateTime = 550;
+
+        // Utility functions
+        function poissonRandom(lambda) {
+            // Generate Poisson random number using Knuth's algorithm
+            const L = Math.exp(-lambda);
+            let k = 0;
+            let p = 1;
+            
+            do {
+                k++;
+                p *= Math.random();
+            } while (p > L);
+            
+            return k - 1;
+        }
+
+        function binomialRandom(n, p) {
+            // Generate Binomial random number
+            let successes = 0;
+            for (let i = 0; i < n; i++) {
+                if (Math.random() < p) {
+                    successes++;
+                }
+            }
+            return successes;
+        }
+
+        function formatTime(minutes) {
+            // Convert minutes from midnight to HH:MM format
+            const totalMinutes = Math.floor(minutes) % (24 * 60);
+            const hours = Math.floor(totalMinutes / 60);
+            const mins = totalMinutes % 60;
+            return `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}`;
+        }
+
+        function formatTimeAMPM(minutes) {
+            // Convert to 12-hour format for display
+            const totalMinutes = Math.floor(minutes) % (24 * 60);
+            const hours = Math.floor(totalMinutes / 60);
+            const mins = totalMinutes % 60;
+            const period = hours >= 12 ? 'PM' : 'AM';
+            const displayHours = hours === 0 ? 12 : (hours > 12 ? hours - 12 : hours);
+            return `${displayHours}:${mins.toString().padStart(2, '0')} ${period}`;
+        }
+
+        // Initialize the application
+        function initializeApp() {
+            setupRouteVisualization();
+            setupCharts();
+            setupEventListeners();
+            populateStatsTable();
+            initializeStopQueues();
+            updateDisplay();
+        }
+
+        // Initialize stop queues
+        function initializeStopQueues() {
+            stopQueues = {};
+            
+            // Forward stops
+            simulationData.forward.stops.forEach((stop, index) => {
+                stopQueues[`forward_${index}`] = {
+                    count: 0,
+                    arrivals: [],
+                    lambda: simulationData.forward.stopLambdas[index]
+                };
+            });
+
+            // Backward stops
+            simulationData.backward.stops.forEach((stop, index) => {
+                stopQueues[`backward_${index}`] = {
+                    count: 0,
+                    arrivals: [],
+                    lambda: simulationData.backward.stopLambdas[index]
+                };
+            });
+        }
+
+        // Setup route visualization
+        function setupRouteVisualization() {
+            // Forward stops
+            const forwardContainer = document.getElementById('forwardStops');
+            simulationData.forward.stops.forEach((stop, index) => {
+                const stopDiv = document.createElement('div');
+                stopDiv.className = 'flex flex-col items-center';
+                stopDiv.innerHTML = `
+                    <div class="stop-marker" data-stop="${index}" data-direction="forward"></div>
+                    <div class="text-xs mt-1 text-center w-20">${stop}</div>
+                    <div class="text-xs text-blue-600 font-semibold" id="liveUtil_forward_${index}">0.0%</div>
+                    <div class="text-xs text-gray-500">λ=${simulationData.forward.stopLambdas[index]}</div>
+                    <div class="text-xs text-red-500" id="queue_forward_${index}">Q:0</div>
+                `;
+                forwardContainer.appendChild(stopDiv);
+            });
+
+            // Backward stops
+            const backwardContainer = document.getElementById('backwardStops');
+            simulationData.backward.stops.forEach((stop, index) => {
+                const stopDiv = document.createElement('div');
+                stopDiv.className = 'flex flex-col items-center';
+                stopDiv.innerHTML = `
+                    <div class="stop-marker" data-stop="${index}" data-direction="backward" style="border-color: #8B5CF6;"></div>
+                    <div class="text-xs mt-1 text-center w-20">${stop}</div>
+                    <div class="text-xs text-purple-600 font-semibold" id="liveUtil_backward_${index}">0.0%</div>
+                    <div class="text-xs text-gray-500">λ=${simulationData.backward.stopLambdas[index]}</div>
+                    <div class="text-xs text-red-500" id="queue_backward_${index}">Q:0</div>
+                `;
+                backwardContainer.appendChild(stopDiv);
+            });
+        }
+
+        // Setup charts
+        function setupCharts() {
+            // Utilization Chart - Start with all zeros
+            const utilizationCtx = document.getElementById('utilizationChart').getContext('2d');
+            charts.utilization = new Chart(utilizationCtx, {
+                type: 'bar',
+                data: {
+                    labels: simulationData.forward.stops,
+                    datasets: [{
+                        label: 'Forward Route',
+                        data: new Array(simulationData.forward.stops.length).fill(0), // Start with zeros
+                        backgroundColor: 'rgba(59, 130, 246, 0.6)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Backward Route',
+                        data: new Array(simulationData.backward.stops.length).fill(0), // Start with zeros
+                        backgroundColor: 'rgba(139, 92, 246, 0.6)',
+                        borderColor: 'rgba(139, 92, 246, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 70,
+                            title: {
+                                display: true,
+                                text: 'Utilization (%)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                maxRotation: 45
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            document.getElementById('startSimulation').addEventListener('click', startSimulation);
+            document.getElementById('pauseSimulation').addEventListener('click', pauseSimulation);
+            document.getElementById('resetSimulation').addEventListener('click', resetSimulation);
+            
+            const speedControl = document.getElementById('speedControl');
+            speedControl.addEventListener('input', (e) => {
+                simulationSpeed = parseInt(e.target.value);
+                document.getElementById('speedValue').textContent = `${simulationSpeed}x`;
+            });
+        }
+
+        // Simulation control functions
+        function startSimulation() {
+            if (!isRunning) {
+                isRunning = true;
+                document.getElementById('startSimulation').disabled = true;
+                document.getElementById('pauseSimulation').disabled = false;
+                
+                // Initialize buses based on departure times
+                initializeBuses();
+                runSimulation();
+            }
+        }
+
+        function pauseSimulation() {
+            isRunning = false;
+            document.getElementById('startSimulation').disabled = false;
+            document.getElementById('pauseSimulation').disabled = true;
+        }
+
+        function resetSimulation() {
+            isRunning = false;
+            currentTime = 540; // Reset to 9:00 AM
+            lastUpdateTime = 540;
+            buses = [];
+            document.getElementById('startSimulation').disabled = false;
+            document.getElementById('pauseSimulation').disabled = true;
+            
+            // Clear buses from visualization
+            document.getElementById('forwardBuses').innerHTML = '';
+            document.getElementById('backwardBuses').innerHTML = '';
+            
+            // Reset stop queues
+            initializeStopQueues();
+            
+            updateDisplay();
+        }
+
+        // Initialize buses
+        function initializeBuses() {
+            buses = [];
+            
+            // Forward buses
+            simulationData.forward.departures.forEach((departure, index) => {
+                buses.push({
+                    id: `forward_${index}`,
+                    direction: 'forward',
+                    departureTime: departure,
+                    currentStop: 0,
+                    passengers: 0,
+                    active: false,
+                    nextStopTime: departure,
+                    completed: false
+                });
+            });
+
+            // Backward buses
+            simulationData.backward.departures.forEach((departure, index) => {
+                buses.push({
+                    id: `backward_${index}`,
+                    direction: 'backward',
+                    departureTime: departure,
+                    currentStop: 0,
+                    passengers: 0,
+                    active: false,
+                    nextStopTime: departure,
+                    completed: false
+                });
+            });
+        }
+
+        // Main simulation loop
+        function runSimulation() {
+            if (!isRunning) return;
+
+            const deltaTime = simulationSpeed / 60; // Convert to minutes per update
+            currentTime += deltaTime;
+            
+            // Update passenger arrivals at stops
+            updateStopQueues(deltaTime);
+            
+            // Update bus positions and status
+            updateBuses();
+            updateDisplay();
+            
+            setTimeout(runSimulation, 100); // 100ms updates
+        }
+
+        // Update stop queues with new passenger arrivals
+        function updateStopQueues(deltaTime) {
+            Object.keys(stopQueues).forEach(stopKey => {
+                const queue = stopQueues[stopKey];
+                if (queue.lambda > 0) {
+                    // Generate new passengers using Poisson distribution
+                    const newArrivals = poissonRandom(queue.lambda * deltaTime);
+                    
+                    // Add arrival times for wait time calculation
+                    for (let i = 0; i < newArrivals; i++) {
+                        queue.arrivals.push(currentTime - Math.random() * deltaTime);
+                    }
+                    
+                    queue.count += newArrivals;
+                }
+            });
+        }
+
+        // Update bus positions and operations
+        function updateBuses() {
+            buses.forEach(bus => {
+                if (bus.completed) return;
+                
+                if (currentTime >= bus.departureTime && !bus.active) {
+                    bus.active = true;
+                    createBusElement(bus);
+                }
+                
+                if (bus.active) {
+                    // Check if bus should arrive at next stop
+                    if (currentTime >= bus.nextStopTime) {
+                        processBusAtStop(bus);
+                    }
+                    updateBusPosition(bus);
+                }
+            });
+        }
+
+        // Process passenger boarding and alighting at stops
+        function processBusAtStop(bus) {
+            const routeData = bus.direction === 'forward' ? simulationData.forward : simulationData.backward;
+            const maxStops = routeData.stops.length;
+            
+            if (bus.currentStop >= maxStops) {
+                bus.completed = true;
+                return;
+            }
+            
+            const stopKey = `${bus.direction}_${bus.currentStop}`;
+            const alightProb = routeData.alightProbabilities[bus.currentStop];
+            
+            // Alighting passengers (Binomial distribution)
+            let alighting = 0;
+            if (bus.currentStop === maxStops - 1) {
+                // Last stop - everyone alights
+                alighting = bus.passengers;
+            } else {
+                alighting = binomialRandom(bus.passengers, alightProb);
+            }
+            bus.passengers -= alighting;
+            
+            // Boarding passengers (from queue)
+            if (stopQueues[stopKey]) {
+                const availableSpace = BUS_CAPACITY - bus.passengers;
+                const boarding = Math.min(stopQueues[stopKey].count, availableSpace);
+                
+                bus.passengers += boarding;
+                stopQueues[stopKey].count -= boarding;
+                
+                // Remove boarded passengers from queue (oldest first)
+                stopQueues[stopKey].arrivals = stopQueues[stopKey].arrivals.slice(boarding);
+            }
+            
+            // Move to next stop
+            bus.currentStop++;
+            if (bus.currentStop < maxStops) {
+                const segmentTime = routeData.segmentTimes[bus.currentStop - 1];
+                bus.nextStopTime = currentTime + segmentTime;
+            }
+        }
+
+        // Create bus element in DOM
+        function createBusElement(bus) {
+            const container = document.getElementById(bus.direction + 'Buses');
+            const busElement = document.createElement('div');
+            busElement.className = 'bus-icon';
+            busElement.id = bus.id;
+            busElement.style.position = 'absolute';
+            busElement.style.left = '0%';
+            busElement.style.top = Math.random() * 20 + 'px'; // Slight vertical offset
+            
+            // Add passenger count indicator
+            const passengerDiv = document.createElement('div');
+            passengerDiv.className = 'text-xs text-white font-bold text-center';
+            passengerDiv.style.lineHeight = '20px';
+            passengerDiv.textContent = '0';
+            busElement.appendChild(passengerDiv);
+            
+            container.appendChild(busElement);
+        }
+
+        // Update bus position
+        function updateBusPosition(bus) {
+            const busElement = document.getElementById(bus.id);
+            if (!busElement || bus.completed) return;
+
+            const routeData = bus.direction === 'forward' ? simulationData.forward : simulationData.backward;
+            const maxStops = routeData.stops.length;
+            
+            // Calculate position based on current stop and progress to next stop
+            let position = 0;
+            if (bus.currentStop > 0) {
+                position = ((bus.currentStop - 1) / (maxStops - 1)) * 90;
+                
+                // Add interpolation if moving to next stop
+                if (bus.currentStop < maxStops && bus.nextStopTime > currentTime) {
+                    const segmentTime = routeData.segmentTimes[bus.currentStop - 1];
+                    const progressInSegment = 1 - ((bus.nextStopTime - currentTime) / segmentTime);
+                    const segmentProgress = (1 / (maxStops - 1)) * 90 * progressInSegment;
+                    position += segmentProgress;
+                }
+            }
+            
+            busElement.style.left = Math.min(position, 90) + '%';
+            
+            // Update passenger count display
+            const passengerDiv = busElement.querySelector('div');
+            if (passengerDiv) {
+                passengerDiv.textContent = bus.passengers;
+            }
+            
+            // Color code based on utilization
+            const utilization = (bus.passengers / BUS_CAPACITY) * 100;
+            if (utilization > 70) {
+                busElement.style.backgroundColor = '#EF4444'; // Red
+            } else if (utilization > 40) {
+                busElement.style.backgroundColor = '#F59E0B'; // Yellow
+            } else {
+                busElement.style.backgroundColor = '#10B981'; // Green
+            }
+        }
+
+        // Update display
+        function updateDisplay() {
+            // Update clock time
+            document.getElementById('simTime').textContent = formatTimeAMPM(currentTime);
+
+            // Update statistics
+            const activeBusCount = buses.filter(bus => bus.active && !bus.completed).length;
+            const totalPassengers = buses.reduce((sum, bus) => sum + bus.passengers, 0);
+            const totalQueued = Object.values(stopQueues).reduce((sum, queue) => sum + queue.count, 0);
+            const avgUtilization = activeBusCount > 0 ? 
+                (totalPassengers / (activeBusCount * BUS_CAPACITY)) * 100 : 0;
+            
+            document.getElementById('activeBuses').textContent = activeBusCount;
+            document.getElementById('totalPassengers').textContent = totalPassengers;
+            document.getElementById('queuedPassengers').textContent = totalQueued;
+            document.getElementById('overallUtil').textContent = avgUtilization.toFixed(1) + '%';
+            
+            // Update queue displays at stops and live utilization
+            Object.keys(stopQueues).forEach(stopKey => {
+                const queueElement = document.getElementById(`queue_${stopKey}`);
+                if (queueElement) {
+                    queueElement.textContent = `Q:${stopQueues[stopKey].count}`;
+                }
+                
+                // Update table queue count
+                const tableQueueElement = document.getElementById(`tableQueue_${stopKey}`);
+                if (tableQueueElement) {
+                    tableQueueElement.textContent = stopQueues[stopKey].count;
+                }
+            });
+            
+            // Update live utilization at stops and chart
+            updateLiveUtilization();
+        }
+
+        // Populate statistics table
+        function populateStatsTable() {
+            const tableBody = document.getElementById('statsTable');
+            const allData = [
+                ...simulationData.forward.stops.map((stop, index) => ({
+                    stop: stop,
+                    direction: 'Forward',
+                    lambda: simulationData.forward.stopLambdas[index],
+                    alightProb: simulationData.forward.alightProbabilities[index],
+                    avgUtil: simulationData.forward.utilization[index],
+                    stopKey: `forward_${index}`
+                })),
+                ...simulationData.backward.stops.map((stop, index) => ({
+                    stop: stop,
+                    direction: 'Backward',
+                    lambda: simulationData.backward.stopLambdas[index],
+                    alightProb: simulationData.backward.alightProbabilities[index],
+                    avgUtil: simulationData.backward.utilization[index],
+                    stopKey: `backward_${index}`
+                }))
+            ];
+
+            allData.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                tr.className = 'border-b hover:bg-gray-50';
+                tr.innerHTML = `
+                    <td class="px-4 py-2">${row.stop}</td>
+                    <td class="px-4 py-2">${row.direction}</td>
+                    <td class="px-4 py-2">${row.lambda}</td>
+                    <td class="px-4 py-2">${(row.alightProb * 100).toFixed(1)}%</td>
+                    <td class="px-4 py-2" id="liveAvgUtil_${row.stopKey}">0.00%</td>
+                    <td class="px-4 py-2" id="tableQueue_${row.stopKey}">0</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Update live utilization displays
+        function updateLiveUtilization() {
+            // Calculate current utilization at each stop based on buses currently there
+            const forwardUtils = new Array(simulationData.forward.stops.length).fill(0);
+            const backwardUtils = new Array(simulationData.backward.stops.length).fill(0);
+            const forwardCounts = new Array(simulationData.forward.stops.length).fill(0);
+            const backwardCounts = new Array(simulationData.backward.stops.length).fill(0);
+            
+            // Count buses and their utilization at each stop
+            buses.forEach(bus => {
+                if (bus.active && !bus.completed && bus.currentStop < 
+                    (bus.direction === 'forward' ? simulationData.forward.stops.length : simulationData.backward.stops.length)) {
+                    const utilization = (bus.passengers / BUS_CAPACITY) * 100;
+                    
+                    if (bus.direction === 'forward') {
+                        forwardUtils[bus.currentStop] += utilization;
+                        forwardCounts[bus.currentStop]++;
+                    } else {
+                        backwardUtils[bus.currentStop] += utilization;
+                        backwardCounts[bus.currentStop]++;
+                    }
+                }
+            });
+            
+            // Calculate averages and update displays
+            forwardUtils.forEach((util, index) => {
+                const avgUtil = forwardCounts[index] > 0 ? util / forwardCounts[index] : 0;
+                const element = document.getElementById(`liveUtil_forward_${index}`);
+                if (element) {
+                    element.textContent = avgUtil.toFixed(1) + '%';
+                }
+                
+                const tableElement = document.getElementById(`liveAvgUtil_forward_${index}`);
+                if (tableElement) {
+                    tableElement.textContent = avgUtil.toFixed(2) + '%';
+                }
+            });
+            
+            backwardUtils.forEach((util, index) => {
+                const avgUtil = backwardCounts[index] > 0 ? util / backwardCounts[index] : 0;
+                const element = document.getElementById(`liveUtil_backward_${index}`);
+                if (element) {
+                    element.textContent = avgUtil.toFixed(1) + '%';
+                }
+                
+                const tableElement = document.getElementById(`liveAvgUtil_backward_${index}`);
+                if (tableElement) {
+                    tableElement.textContent = avgUtil.toFixed(2) + '%';
+                }
+            });
+            
+            // Update chart data
+            if (charts.utilization) {
+                charts.utilization.data.datasets[0].data = forwardUtils.map((util, index) => 
+                    forwardCounts[index] > 0 ? util / forwardCounts[index] : 0
+                );
+                charts.utilization.data.datasets[1].data = backwardUtils.map((util, index) => 
+                    backwardCounts[index] > 0 ? util / backwardCounts[index] : 0
+                );
+                charts.utilization.update('none'); // Update without animation for performance
+            }
+        }
+
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>
