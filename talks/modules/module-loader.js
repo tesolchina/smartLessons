@@ -188,7 +188,7 @@ class SlideModuleLoader {
      * Preload critical slide modules (slide 1 and next few slides)
      */
     async preloadCriticalModules() {
-        const criticalSlides = [1, 2, 3];
+        const criticalSlides = [1];
         for (const slideNum of criticalSlides) {
             try {
                 await this.loadSlideModule(slideNum);
