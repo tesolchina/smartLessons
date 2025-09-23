@@ -209,84 +209,73 @@
 
                 <!-- Right Side - Interactive Canvas -->
                 <div class="canvas-section">
-                    <!-- Slide Indicator -->
-                    <div class="slide-indicator text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-3 py-1 rounded-full mb-4 text-center">
-                        Slide 1 • Overview
+                    <!-- Manual Slide Control Panel -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 mb-4 border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="slide-indicator text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-3 py-1 rounded-full">
+                                Slide 1 • Demo
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                Controls both slides & content
+                            </div>
+                        </div>
+                        
+                        <!-- Manual Slide Controls -->
+                        <div class="flex items-center justify-center space-x-3 mb-3">
+                            <button onclick="changeSlide(-1)" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
+                                ◀ Prev
+                            </button>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Slide:</span>
+                                <span id="current-slide-display" class="text-lg font-bold text-blue-600 dark:text-blue-400 min-w-[30px] text-center">1</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">/ 15</span>
+                            </div>
+                            <button onclick="changeSlide(1)" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
+                                Next ▶
+                            </button>
+                        </div>
+                        
+                        <!-- Slide Slider -->
+                        <input type="range" id="slide-slider" min="1" max="15" value="1" 
+                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" 
+                               onchange="changeSlide(0, this.value)" oninput="updateSlideDisplay(this.value)">
+                        
+                        <!-- Quick Jump Buttons -->
+                        <div class="flex justify-center space-x-2 mt-3">
+                            <button onclick="changeSlide(0, 1)" class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded text-xs hover:bg-blue-200 dark:hover:bg-blue-800">Start</button>
+                            <button onclick="changeSlide(0, 5)" class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded text-xs hover:bg-green-200 dark:hover:bg-green-800">Mid</button>
+                            <button onclick="changeSlide(0, 10)" class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 rounded text-xs hover:bg-purple-200 dark:hover:bg-purple-800">End</button>
+                        </div>
                     </div>
                     
                     <!-- Canvas Tabs -->
-                    <div class="canvas-tabs flex flex-wrap gap-2 mb-4">
-                        <button class="canvas-tab bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-blue-700" 
-                                data-tab="overview" onclick="switchCanvasTab('overview')">
-                            📋 Overview
+                                        <!-- Canvas Tabs -->
+                    <div class="flex space-x-2 mb-4">
+                        <button id="tab-demo" onclick="switchCanvasTab('demo')" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all">
+                            Demo
                         </button>
-                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
-                                data-tab="implementation" onclick="switchCanvasTab('implementation')">
-                            � Implementation
-                        </button>
-                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
-                                data-tab="ai-video" onclick="switchCanvasTab('ai-video')">
-                            🤖 AI Video
-                        </button>
-                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
-                                data-tab="resources" onclick="switchCanvasTab('resources')">
-                            📚 Resources
-                        </button>
-                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
-                                data-tab="reflection" onclick="switchCanvasTab('reflection')">
-                            💭 Reflection
+                        <button id="tab-resources" onclick="switchCanvasTab('resources')" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
+                            Resources
                         </button>
                     </div>
                     
                     <!-- Canvas Content Areas -->
                     <div class="canvas-content">
-                        <!-- Overview Section -->
-                        <div id="overviewSection" class="canvas-section-content" style="display: block;">
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Workshop Overview</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
-                                    <div class="text-3xl mb-2">🎯</div>
-                                    <h3 class="font-semibold mb-2">Learning Objectives</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Understand flipped classroom methodology and practical implementation strategies.</p>
-                                </div>
-                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
-                                    <div class="text-3xl mb-2">📊</div>
-                                    <h3 class="font-semibold mb-2">Workshop Structure</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Interactive sessions combining theory, practice, and AI-enhanced learning.</p>
+                        <!-- Demo Section -->
+                        <div id="demoSection" class="canvas-section-content" style="display: block;">
+                            <div class="demo-content">
+                                <!-- Dynamic demo content will be injected here by updateDemoContent() -->
+                                <div class="text-center p-8">
+                                    <div class="text-6xl mb-4">🎯</div>
+                                    <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Workshop Overview</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Welcome to our interactive presentation on flipped classroom methodology.</p>
+                                    <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+                                        <p class="text-sm text-blue-700 dark:text-blue-300">Use the slide controls to navigate through different sections and demos.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Implementation Section -->
-                        <div id="implementationSection" class="canvas-section-content" style="display: none;">
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Implementation Strategies</h2>
-                            <div class="space-y-4">
-                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
-                                    <h3 class="font-semibold mb-2">🚀 Getting Started</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Step-by-step guide to implementing flipped classroom methodology in your teaching practice.</p>
-                                </div>
-                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
-                                    <h3 class="font-semibold mb-2">📋 Planning Tools</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Templates and resources for lesson planning and curriculum design.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- AI Video Section -->
-                        <div id="aiVideoSection" class="canvas-section-content" style="display: none;">
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">AI-Enhanced Learning</h2>
-                            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
-                                <div class="text-center">
-                                    <div class="text-4xl mb-3">🤖</div>
-                                    <h3 class="font-semibold mb-2">AI Video Generation</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Explore AI tools for creating educational content and interactive learning experiences.</p>
-                                    <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all">
-                                        Launch AI Demo
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
+
                         <!-- Resources Section -->
                         <div id="resourcesSection" class="canvas-section-content" style="display: none;">
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Additional Resources</h2>
@@ -306,23 +295,6 @@
                                         <li>• Assessment Platforms</li>
                                         <li>• Community Forums</li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Reflection Section -->
-                        <div id="reflectionSection" class="canvas-section-content" style="display: none;">
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Time for Reflection</h2>
-                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
-                                <div class="text-center">
-                                    <div class="text-4xl mb-4">💭</div>
-                                    <h3 class="font-semibold mb-3">Workshop Reflection</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Share your thoughts and insights from today's session.</p>
-                                    <textarea class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white" 
-                                              rows="4" placeholder="What are your key takeaways from this workshop?"></textarea>
-                                    <button class="mt-3 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all">
-                                        Submit Reflection
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -388,13 +360,15 @@
                 activeTab.classList.add('bg-blue-600', 'text-white');
             }
             
-            // Show selected content
+            // Show selected content - updated for simplified structure
             const sectionMap = {
-                'overview': 'overviewSection',
-                'implementation': 'implementationSection', 
-                'ai-video': 'aiVideoSection',
+                'demo': 'demoSection',
                 'resources': 'resourcesSection',
-                'reflection': 'reflectionSection'
+                // Legacy mappings for backward compatibility
+                'overview': 'demoSection',
+                'implementation': 'demoSection', 
+                'ai-video': 'demoSection',
+                'reflection': 'resourcesSection'
             };
             
             const targetSection = document.getElementById(sectionMap[tabName]);
@@ -634,6 +608,36 @@
                 console.log(`Manual slide change: ${newSlide}`);
             }
         }
+
+        // New simplified function for manual controls
+        function changeSlide(direction, exactSlide = null) {
+            const currentDisplay = document.getElementById('current-slide-display');
+            const slider = document.getElementById('slide-slider');
+            
+            let newSlide;
+            if (exactSlide !== null) {
+                newSlide = parseInt(exactSlide);
+            } else {
+                newSlide = Math.max(1, Math.min(15, currentSlide + direction));
+            }
+            
+            if (newSlide !== currentSlide) {
+                currentSlide = newSlide;
+                updateCanvasContent(newSlide);
+                
+                if (currentDisplay) currentDisplay.textContent = newSlide;
+                if (slider) slider.value = newSlide;
+                
+                console.log(`Slide changed to: ${newSlide}`);
+            }
+        }
+
+        function updateSlideDisplay(value) {
+            const currentDisplay = document.getElementById('current-slide-display');
+            if (currentDisplay) {
+                currentDisplay.textContent = value;
+            }
+        }
         
         function attemptSlideDetection() {
             // Try multiple detection methods
@@ -703,67 +707,14 @@
             if (currentDisplay) currentDisplay.textContent = slideNum;
             if (slider) slider.value = slideNum;
             
-            // Remove active class from all canvas tabs
-            document.querySelectorAll('.canvas-tab').forEach(btn => {
-                btn.classList.remove('bg-blue-600', 'text-white');
-                btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-            });
-            
-            // Hide all canvas sections
-            document.querySelectorAll('.canvas-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Smart slide-to-content mapping
-            let targetTab = 'overview';
-            let targetSection = 'overviewSection';
-            
-            if (slideNum >= 1 && slideNum <= 3) {
-                targetTab = 'overview';
-                targetSection = 'overviewSection';
-            } else if (slideNum >= 4 && slideNum <= 6) {
-                targetTab = 'implementation';
-                targetSection = 'implementationSection';
-            } else if (slideNum >= 7 && slideNum <= 9) {
-                targetTab = 'ai-video';
-                targetSection = 'aiVideoSection';
-            } else if (slideNum >= 10 && slideNum <= 12) {
-                targetTab = 'resources';
-                targetSection = 'resourcesSection';
-            } else if (slideNum >= 13) {
-                targetTab = 'reflection';
-                targetSection = 'reflectionSection';
-            }
-            
-            // Activate the corresponding tab and show content
-            const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
-            const activeSection = document.getElementById(targetSection);
-            
-            if (activeButton) {
-                activeButton.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-                activeButton.classList.add('bg-blue-600', 'text-white');
-                
-                // Add pulse animation for visual feedback
-                activeButton.style.animation = 'pulse 0.5s ease-in-out';
-                setTimeout(() => {
-                    activeButton.style.animation = '';
-                }, 500);
-            }
-            
-            if (activeSection) {
-                activeSection.style.display = 'block';
-                activeSection.style.opacity = '0';
-                setTimeout(() => {
-                    activeSection.style.opacity = '1';
-                }, 50);
-            }
-            
-            // Update slide indicator in the canvas
+            // Update slide indicator
             const slideIndicators = document.querySelectorAll('.slide-indicator');
             slideIndicators.forEach(indicator => {
-                indicator.textContent = `Slide ${slideNum} • ${targetTab.charAt(0).toUpperCase() + targetTab.slice(1)}`;
-                indicator.className = 'slide-indicator text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-3 py-1 rounded-full mb-2';
+                indicator.textContent = `Slide ${slideNum} • Demo`;
             });
+            
+            // Update demo content based on slide number
+            updateDemoContent(slideNum);
             
             // Add visual feedback for slide change
             const canvasContent = document.querySelector('.canvas-content');
@@ -775,7 +726,68 @@
                 }, 300);
             }
             
-            console.log(`Canvas updated for slide ${slideNum}: ${targetTab}`);
+            console.log(`Canvas updated for slide ${slideNum}`);
+        }
+
+        function updateDemoContent(slideNum) {
+            const demoContent = document.getElementById('demo-content');
+            if (!demoContent) return;
+
+            // Define content for different slide ranges
+            const slideContentMap = {
+                1: { title: "Workshop Introduction", icon: "🎓", description: "Welcome to the Flipped Classroom Workshop", color: "blue" },
+                2: { title: "What is Flipped Learning?", icon: "🔄", description: "Understanding the core concepts", color: "green" },
+                3: { title: "Benefits Overview", icon: "📈", description: "Why flip your classroom?", color: "purple" },
+                4: { title: "Implementation Planning", icon: "📋", description: "Step-by-step implementation guide", color: "orange" },
+                5: { title: "Content Creation", icon: "🎬", description: "Creating engaging video content", color: "red" },
+                6: { title: "Technology Tools", icon: "💻", description: "Essential tools and platforms", color: "teal" },
+                7: { title: "AI in Education", icon: "🤖", description: "Leveraging AI for better learning", color: "indigo" },
+                8: { title: "Video Generation", icon: "🎥", description: "AI-powered content creation", color: "pink" },
+                9: { title: "Interactive Elements", icon: "🎯", description: "Engaging student interactions", color: "yellow" },
+                10: { title: "Assessment Strategies", icon: "📊", description: "Evaluating flipped learning", color: "cyan" },
+                11: { title: "Student Feedback", icon: "💬", description: "Gathering and using feedback", color: "lime" },
+                12: { title: "Continuous Improvement", icon: "🔧", description: "Refining your approach", color: "amber" },
+                13: { title: "Community Building", icon: "👥", description: "Creating learning communities", color: "emerald" },
+                14: { title: "Future Trends", icon: "🚀", description: "What's next in flipped learning", color: "violet" },
+                15: { title: "Workshop Conclusion", icon: "✅", description: "Key takeaways and next steps", color: "rose" }
+            };
+
+            const content = slideContentMap[slideNum] || slideContentMap[1];
+
+            demoContent.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">${content.icon}</div>
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">${content.title}</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">${content.description}</p>
+                        <div class="text-sm text-${content.color}-600 dark:text-${content.color}-400 mb-4 font-medium">
+                            Slide ${slideNum} of 15
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <div class="text-2xl mb-2">📚</div>
+                                <h3 class="font-semibold mb-1">Learning Focus</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Interactive content for this topic</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <div class="text-2xl mb-2">🎯</div>
+                                <h3 class="font-semibold mb-1">Activities</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Hands-on exercises and demos</p>
+                            </div>
+                        </div>
+                        <button onclick="alert('Demo for slide ${slideNum} would launch here!')" 
+                                class="mt-4 px-6 py-2 bg-${content.color}-500 text-white rounded-lg hover:bg-${content.color}-600 transition-all">
+                            Launch Interactive Demo
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Add fade-in animation
+            demoContent.style.opacity = '0';
+            setTimeout(() => {
+                demoContent.style.opacity = '1';
+            }, 100);
         }
         
         function loadDemo(demoType, slideNum) {
