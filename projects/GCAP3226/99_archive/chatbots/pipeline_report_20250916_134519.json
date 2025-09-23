@@ -1,0 +1,19 @@
+{
+  "pipeline_execution": {
+    "start_time": "2025-09-16T13:43:02.984223",
+    "end_time": "2025-09-16T13:45:19.794945",
+    "total_topics": 7,
+    "processed_topics": 1,
+    "successful_topics": 1,
+    "failed_topics": 0
+  },
+  "topic_results": {
+    "2": {
+      "status": "success",
+      "topic_name": "Topic2_BusStopMerge",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic2_BusStopMerge/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic2_BusStopMerge/Enhanced_Regression_Framework_20250916_134302.md",
+      "processing_time": "2025-09-16T13:45:19.794683"
+    }
+  }
+}

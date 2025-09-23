@@ -1,0 +1,23 @@
+DATA INTEGRITY NOTICE
+
+Updated: 2025-09-08 09:55 HKT
+
+Summary
+- Data collected BEFORE 2025-09-08 09:55 HKT may be incorrect due to a parsing artifact that produced near-uniform 9.0 km/h speeds across stations.
+- Data collected FROM 2025-09-08 09:55 HKT onward is considered correct after fixing the parser and adding sanity checks.
+
+Affected files in this folder
+- hk_wind_log_20250908.csv
+- hk_wind_log_20250908_deploy.csv
+- collector.log (now includes HEARTBEAT and SUSPICIOUS_DATA entries)
+
+What changed
+- Parser now uses csv.reader and targets HKO columns: mean speed = column 9, max gust = column 10 (first language block).
+- Added detection for suspicious uniform low values; findings recorded in collector.log.
+
+Guidance
+- Treat rows with timestamp earlier than 2025-09-08 09:55 HKT as unreliable for analysis.
+- Prefer data at or after 2025-09-08 09:55 HKT for comparisons and reporting.
+
+Contact
+- If you need a cleaned export that excludes early rows, generate a filtered CSV using the application’s CSV endpoint or contact the maintainer.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANG0036 Assessment iFrame Embed</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LANG0036 Assessment Overview</h1>
+        <p>This is an example of the assessment overview embedded as an iFrame.</p>
+        
+        <iframe id="assessment-iframe" src="index.html" width="100%" height="800" scrolling="no"></iframe>
+    </div>
+
+    <script>
+        // Listen for messages from the iframe to adjust height
+        window.addEventListener('message', function(event) {
+            if (event.data.height) {
+                document.getElementById('assessment-iframe').style.height = (event.data.height + 20) + 'px';
+            }
+        }, false);
+    </script>
+</body>
+</html>

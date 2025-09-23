@@ -1,0 +1,40 @@
+{
+  "wind_data": [
+    {
+      "raw_data": "Please include valid parameters in API request. For details, please refer to <a href=\"https://data.weather.gov.hk/weatherAPI/doc/HKO_Open_Data_API_Documentation.pdf\">Hong Kong Observatory Open Data API Documentation</a>.\r\n<br><br>\r\n請在應用程式介面請求中提供有效的參數。有關詳情，請參閱<a href=\"https://data.weather.gov.hk/weatherAPI/doc/HKO_Open_Data_API_Documentation_tc.pdf\">香港天文台開放數據應用程式介面說明書</a>。\r\n<br><br>\r\n请在应用程序编程接口请求中提供有效的参数。有关详情，请参阅<a href=\"https://data.weather.gov.hk/weatherAPI/doc/HKO_Open_Data_API_Documentation_s",
+      "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=ltmv&lang=en",
+      "type": "text"
+    }
+  ],
+  "analysis": {
+    "analysis_time": "2025-09-08T00:02:57.159484",
+    "target_period": "Tomorrow morning (8 AM - 12 PM)",
+    "data_points_analyzed": 1,
+    "signal_8_probability": "UNKNOWN",
+    "current_conditions": {},
+    "risk_indicators": [
+      "No wind speed data available"
+    ],
+    "stations_monitored": [],
+    "recommendations": [
+      "❓ Unable to assess due to limited data",
+      "🔍 Check official HKO forecasts and warnings",
+      "📱 Monitor multiple weather sources",
+      "⏰ Re-run analysis when more data available"
+    ]
+  },
+  "metadata": {
+    "script_version": "1.0",
+    "execution_time": "2025-09-08T00:02:57.159940",
+    "signal_thresholds": {
+      "signal_1": 22,
+      "signal_3": 41,
+      "signal_8_ne": 63,
+      "signal_8_nw": 63,
+      "signal_8_se": 63,
+      "signal_8_sw": 63,
+      "signal_9": 88,
+      "signal_10": 118
+    }
+  }
+}

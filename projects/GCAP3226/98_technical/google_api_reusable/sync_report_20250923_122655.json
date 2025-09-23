@@ -1,0 +1,7 @@
+{
+  "teams_synced": [],
+  "errors": [
+    "Error reading instructor document: <HttpError 404 when requesting https://docs.googleapis.com/v1/documents/1xU09pURBEFi0_rspYxp_0MA9hEVHLKKFqodIuKqM7kQ?alt=json returned \"Requested entity was not found.\". Details: \"Requested entity was not found.\">"
+  ],
+  "timestamp": "2025-09-23T12:26:53.974821"
+}

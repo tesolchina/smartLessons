@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A/V Combiner Demo — Frames + Audio → Video (with sound)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-800">🎬 A/V Combiner Demo</h1>
+      <p class="text-gray-600">Generate audio from a script (Web Audio → WAV Blob), render frames on a canvas, and export a WebM video that includes the audio track. No speechSynthesis capture is used for export.</p>
+      <div class="mt-2 text-sm text-blue-700">Key: Start audio playback before/while recording; wire audio via AudioContext→MediaStreamDestination; render frames with requestAnimationFrame synced to audio.currentTime.</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-3">📝 Script</h2>
+        <textarea id="scriptInput" class="w-full border rounded p-3 h-40 text-gray-800" spellcheck="false">Welcome to today's lesson on artificial intelligence in education. AI is revolutionizing how we learn and teach. First, let's explore how AI personalizes learning for each student. Next, we'll see how it improves student engagement through interactive content. Then, we'll discuss how AI provides real-time feedback to help students learn faster. Finally, we'll look at how AI scales educational content to reach more learners worldwide.</textarea>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+          <button id="btnGenerateAudio" class="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700">🎵 Generate Audio</button>
+          <button id="btnGenerateVideo" class="py-2 px-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed" disabled>🎬 Generate Video</button>
+          <button id="btnReset" class="py-2 px-4 bg-gray-600 text-white rounded-lg hover:bg-gray-700">🔄 Reset</button>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="font-semibold mb-2">🎧 Audio Preview</h3>
+          <audio id="audioPreview" controls class="w-full"></audio>
+          <div id="audioInfo" class="text-sm text-gray-600 mt-1">No audio yet</div>
+          <div id="progressWrap" class="mt-3 hidden">
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span id="progressLabel">Preparing...</span>
+              <span id="progressPct">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-3">📺 Video Output</h2>
+        <canvas id="stage" width="1280" height="720" class="w-full border rounded mb-3 bg-black"></canvas>
+
+        <div id="videoOut" class="hidden">
+          <h3 class="font-semibold mb-2">🎥 Generated Video</h3>
+          <video id="videoPreview" controls class="w-full rounded"></video>
+          <div id="videoInfo" class="text-sm text-gray-600 mt-1"></div>
+          <div class="mt-3">
+            <button id="btnDownloadVideo" class="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700">📥 Download Video</button>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="font-semibold mb-2">⚙️ Settings</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+            <label class="flex items-center gap-2">FPS
+              <input id="fpsInput" type="number" min="10" max="60" value="30" class="w-20 border rounded p-1">
+            </label>
+            <label class="flex items-center gap-2">Width
+              <input id="wInput" type="number" min="320" max="1920" value="1280" class="w-24 border rounded p-1">
+            </label>
+            <label class="flex items-center gap-2">Height
+              <input id="hInput" type="number" min="240" max="1080" value="720" class="w-24 border rounded p-1">
+            </label>
+            <label class="flex items-center gap-2">Base color
+              <input id="colorInput" type="color" value="#667eea" class="w-10 h-8 border rounded">
+            </label>
+          </div>
+          <div id="stats" class="text-sm text-gray-600 mt-3">Stats: —</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logs -->
+    <div class="bg-white rounded-lg shadow p-6 mt-6">
+      <h2 class="text-xl font-semibold mb-3">📋 Logs</h2>
+      <div id="log" class="font-mono text-xs bg-gray-50 border rounded p-3 max-h-72 overflow-auto whitespace-pre-wrap">Ready.</div>
+    </div>
+  </div>
+
+  <script>
+    // State
+    let audioBlob = null;
+    let audioURL = null;
+    let videoBlob = null;
+    let videoURL = null;
+
+    const els = {
+      scriptInput: document.getElementById('scriptInput'),
+      btnGenerateAudio: document.getElementById('btnGenerateAudio'),
+      btnGenerateVideo: document.getElementById('btnGenerateVideo'),
+      btnReset: document.getElementById('btnReset'),
+      audioPreview: document.getElementById('audioPreview'),
+      audioInfo: document.getElementById('audioInfo'),
+      progressWrap: document.getElementById('progressWrap'),
+      progressLabel: document.getElementById('progressLabel'),
+      progressPct: document.getElementById('progressPct'),
+      progressBar: document.getElementById('progressBar'),
+      stage: document.getElementById('stage'),
+      videoOut: document.getElementById('videoOut'),
+      videoPreview: document.getElementById('videoPreview'),
+      videoInfo: document.getElementById('videoInfo'),
+      btnDownloadVideo: document.getElementById('btnDownloadVideo'),
+      fpsInput: document.getElementById('fpsInput'),
+      wInput: document.getElementById('wInput'),
+      hInput: document.getElementById('hInput'),
+      colorInput: document.getElementById('colorInput'),
+      stats: document.getElementById('stats'),
+      log: document.getElementById('log'),
+    };
+
+    function log(...args) {
+      const ts = new Date().toLocaleTimeString();
+      const line = `[${ts}] ${args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ')}`;
+      console.log(line);
+      els.log.textContent += '\\n' + line;
+      els.log.scrollTop = els.log.scrollHeight;
+    }
+
+    function setProgress(pct, label) {
+      els.progressWrap.classList.remove('hidden');
+      els.progressLabel.textContent = label || '';
+      els.progressPct.textContent = `${Math.round(pct)}%`;
+      els.progressBar.style.width = `${Math.round(pct)}%`;
+    }
+    function hideProgress() {
+      els.progressWrap.classList.add('hidden');
+      els.progressBar.style.width = '0%';
+      els.progressLabel.textContent = '';
+      els.progressPct.textContent = '0%';
+    }
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B','KB','MB','GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return (bytes / Math.pow(k, i)).toFixed(1) + ' ' + sizes[i];
+    }
+
+    function wordsAndDuration(text) {
+      const words = text.trim().split(/\\s+/).filter(Boolean).length;
+      // ~0.4 sec/word, clamp 6–60 sec for demo
+      const duration = Math.max(6, Math.min(60, Math.round(words * 0.4)));
+      return { words, duration };
+    }
+
+    // Generate real speech audio using Azure TTS (replaces synthetic beeping audio)
+    async function createSpeechLikeWav(text) {
+      const { words, duration } = wordsAndDuration(text);
+      log('🎤 Generating real speech audio via Azure TTS', JSON.stringify({ words, duration }));
+      
+      try {
+        // Call Azure TTS endpoint
+        const response = await fetch('/api/tts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            text: text,
+            voice: 'en-US-JennyNeural', // High-quality female voice
+            format: 'audio-24khz-48kbitrate-mono-mp3'
+          })
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+          throw new Error(`Azure TTS failed: ${errorData.error || response.statusText}`);
+        }
+
+        // Convert MP3 response to blob
+        const arrayBuffer = await response.arrayBuffer();
+        const audioBlob = new Blob([arrayBuffer], { type: 'audio/mpeg' });
+        
+        log('✅ Azure TTS audio generated', formatBytes(audioBlob.size));
+        return audioBlob;
+
+      } catch (error) {
+        log('❌ Azure TTS failed, falling back to synthetic audio:', error.message);
+        
+        // Fallback to synthetic audio if Azure fails
+        return createFallbackAudio(text, duration);
+      }
+    }
+
+    // Fallback synthetic audio (improved quality, less beepy)
+    async function createFallbackAudio(text, duration) {
+      log('🔄 Creating fallback audio (synthetic)');
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const sampleRate = audioCtx.sampleRate;
+      const totalFrames = sampleRate * duration;
+      const channels = 1;
+      const buffer = audioCtx.createBuffer(channels, totalFrames, sampleRate);
+
+      const tokens = text.trim().split(/\\s+/).filter(Boolean);
+      const wordDur = duration / Math.max(1, tokens.length);
+
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < totalFrames; i++) {
+        const t = i / sampleRate;
+        const wordIdx = Math.min(tokens.length - 1, Math.floor(t / wordDur));
+        const inWord = (t % wordDur) / wordDur;
+        const char = tokens[wordIdx]?.[Math.floor(inWord * (tokens[wordIdx].length || 1))] || 'a';
+
+        // More speech-like formants (less beepy)
+        const vowel = /[aeiou]/i.test(char);
+        const f0 = vowel ? 120 : 95;   // Lower base frequency
+        const f1 = vowel ? 600 : 450;  // Lower formants
+        const f2 = vowel ? 900 : 1200;
+
+        // Smoother envelope
+        const env = Math.sin(Math.PI * Math.min(1, Math.max(0, inWord))) ** 2;
+        const trem = 0.8 + 0.2 * Math.sin(2 * Math.PI * 3 * t);
+
+        // Mix with noise for more natural sound
+        const noise = (Math.random() - 0.5) * 0.02;
+        const s = 0.15 * (
+          Math.sin(2 * Math.PI * f0 * t) * 0.6 +
+          Math.sin(2 * Math.PI * f1 * t) * 0.25 +
+          Math.sin(2 * Math.PI * f2 * t) * 0.15
+        ) * env * trem + noise;
+
+        // Word pauses
+        const pause = (t % wordDur) < (wordDur * 0.1) ? 0.2 : 1.0;
+        data[i] = s * pause;
+      }
+
+      const wav = audioBufferToWav(buffer);
+      return new Blob([wav], { type: 'audio/wav' });
+    }
+
+    function audioBufferToWav(buffer) {
+      // 16-bit PCM WAV writer for mono buffer
+      const numOfChan = buffer.numberOfChannels;
+      const length = buffer.length * numOfChan * 2 + 44;
+      const out = new ArrayBuffer(length);
+      const view = new DataView(out);
+
+      let pos = 0;
+      function writeString(s) { for (let i = 0; i < s.length; i++) view.setUint8(pos++, s.charCodeAt(i)); }
+      function writeUint32(d) { view.setUint32(pos, d, true); pos += 4; }
+      function writeUint16(d) { view.setUint16(pos, d, true); pos += 2; }
+
+      // RIFF header
+      writeString('RIFF');
+      writeUint32(length - 8);
+      writeString('WAVE');
+
+      // fmt chunk
+      writeString('fmt ');
+      writeUint32(16);
+      writeUint16(1); // PCM
+      writeUint16(numOfChan);
+      writeUint32(buffer.sampleRate);
+      writeUint32(buffer.sampleRate * numOfChan * 2);
+      writeUint16(numOfChan * 2);
+      writeUint16(16);
+
+      // data
+      writeString('data');
+      writeUint32(length - 44);
+
+      // write interleaved data
+      const channels = [];
+      for (let i = 0; i < numOfChan; i++) channels.push(buffer.getChannelData(i));
+      let offset = 0;
+      while (pos < length) {
+        for (let i = 0; i < numOfChan; i++) {
+          let sample = Math.max(-1, Math.min(1, channels[i][offset] || 0));
+          sample = sample < 0 ? sample * 0x8000 : sample * 0x7FFF;
+          view.setInt16(pos, sample, true);
+          pos += 2;
+        }
+        offset++;
+      }
+      return out;
+    }
+
+    function chooseMime() {
+      const opts = [
+        'video/webm;codecs=vp9,opus',
+        'video/webm;codecs=vp8,opus',
+        'video/webm'
+      ];
+      for (const m of opts) {
+        if (MediaRecorder.isTypeSupported(m)) return m;
+      }
+      return '';
+    }
+
+    async function generateAudio() {
+      try {
+        els.btnGenerateAudio.disabled = true;
+        els.btnGenerateVideo.disabled = true;
+        setProgress(10, 'Generating audio…');
+
+        const text = els.scriptInput.value;
+        const { words, duration } = wordsAndDuration(text);
+        const blob = await createSpeechLikeWav(text);
+        audioBlob = blob;
+
+        if (audioURL) URL.revokeObjectURL(audioURL);
+        audioURL = URL.createObjectURL(blob);
+        els.audioPreview.src = audioURL;
+        
+        // Update info with estimated duration first, then actual duration when loaded
+        els.audioInfo.textContent = `Audio: ${formatBytes(blob.size)} • ~${duration}s • ${words} words`;
+        
+        // Update with actual duration when audio metadata loads
+        els.audioPreview.addEventListener('loadedmetadata', () => {
+          const actualDuration = els.audioPreview.duration;
+          els.audioInfo.textContent = `Audio: ${formatBytes(blob.size)} • ${Math.round(actualDuration)}s (actual) • ${words} words`;
+          els.stats.textContent = `Words: ${words} • Actual Duration: ${Math.round(actualDuration)}s`;
+          log('📊 Actual audio duration detected:', Math.round(actualDuration) + 's');
+        }, { once: true });
+        
+        setProgress(100, 'Audio ready');
+        setTimeout(hideProgress, 800);
+
+        els.btnGenerateVideo.disabled = false;
+        log('✅ Audio generated', formatBytes(blob.size));
+      } catch (err) {
+        log('❌ Audio generation failed:', err.message || err);
+      } finally {
+        els.btnGenerateAudio.disabled = false;
+      }
+    }
+
+    async function generateVideo() {
+      if (!audioBlob) {
+        log('⚠️ Generate audio first.');
+        return;
+      }
+
+      // Update canvas size settings
+      const fps = Math.max(10, Math.min(60, parseInt(els.fpsInput.value || '30', 10)));
+      const width = Math.max(320, Math.min(1920, parseInt(els.wInput.value || '1280', 10)));
+      const height = Math.max(240, Math.min(1080, parseInt(els.hInput.value || '720', 10)));
+      els.stage.width = width; els.stage.height = height;
+
+      const text = els.scriptInput.value;
+      const baseColor = els.colorInput.value;
+
+      // Prepare audio element for recording path (separate from preview)
+      const audioEl = new Audio(audioURL);
+      audioEl.crossOrigin = 'anonymous';
+      audioEl.preload = 'auto';
+      audioEl.volume = 1.0;
+
+      const ctx2d = els.stage.getContext('2d');
+
+      setProgress(5, 'Preparing audio…');
+      log('🔊 Preparing audio element for recording.');
+
+      await new Promise((resolve) => {
+        if (audioEl.readyState >= 3 /* HAVE_FUTURE_DATA */) return resolve();
+        audioEl.addEventListener('canplaythrough', resolve, { once: true });
+        audioEl.addEventListener('loadeddata', resolve, { once: true });
+      });
+
+      // Get ACTUAL audio duration (not estimated)
+      const actualDuration = audioEl.duration;
+      log('🕐 Using actual audio duration:', actualDuration + 's', '(not estimated)');
+
+      // Wire audio graph
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const srcNode = audioCtx.createMediaElementSource(audioEl);
+      const dest = audioCtx.createMediaStreamDestination();
+      srcNode.connect(dest);
+      srcNode.connect(audioCtx.destination); // monitor (optional)
+
+      const audioTrack = dest.stream.getAudioTracks()[0];
+      setProgress(12, 'Wiring A/V…');
+      log('🎚️ Audio track ready?', !!audioTrack);
+
+      // Capture video stream from canvas
+      const videoStream = els.stage.captureStream(fps);
+      const videoTrack = videoStream.getVideoTracks()[0];
+
+      const combined = new MediaStream([videoTrack, audioTrack].filter(Boolean));
+      log('🧪 Tracks — video:', !!videoTrack, 'audio:', !!audioTrack);
+
+      // Recorder setup
+      const mime = chooseMime();
+      const options = mime ? { mimeType: mime } : undefined;
+      log('🎞️ MediaRecorder mime:', mime || '(browser default)');
+
+      const chunks = [];
+      let recorder;
+      try {
+        recorder = new MediaRecorder(combined, options);
+      } catch (e) {
+        log('❌ MediaRecorder init failed:', e.message || e);
+        return;
+      }
+
+      recorder.ondataavailable = (ev) => {
+        if (ev.data?.size > 0) chunks.push(ev.data);
+      };
+      recorder.onstop = () => {
+        videoBlob = new Blob(chunks, { type: mime || 'video/webm' });
+        if (videoURL) URL.revokeObjectURL(videoURL);
+        videoURL = URL.createObjectURL(videoBlob);
+
+        els.videoPreview.src = videoURL;
+        els.videoOut.classList.remove('hidden');
+        els.videoInfo.textContent = `Video: ${formatBytes(videoBlob.size)} • ${width}x${height} @${fps}fps • codec: ${mime || 'webm (default)'}`;
+        setProgress(100, 'Video complete');
+        setTimeout(hideProgress, 1000);
+
+        log('✅ Video done:', formatBytes(videoBlob.size));
+      };
+
+      // Render loop synced to audio time
+      let stopRAF = false;
+      function renderFrame() {
+        if (stopRAF) return;
+        const t = audioEl.currentTime; // seconds
+        const prog = Math.min(1, t / actualDuration); // Use ACTUAL duration
+
+        // Gradient background
+        const grad = ctx2d.createLinearGradient(0, 0, width, height);
+        grad.addColorStop(0, baseColor);
+        grad.addColorStop(1, '#764ba2');
+        ctx2d.fillStyle = grad;
+        ctx2d.fillRect(0, 0, width, height);
+
+        // Avatar circle
+        const cx = width * 0.25, cy = height * 0.55, r = Math.min(width, height) * 0.085;
+        ctx2d.fillStyle = 'rgba(255,255,255,0.18)';
+        ctx2d.beginPath(); ctx2d.arc(cx, cy, r, 0, Math.PI * 2); ctx2d.fill();
+
+        // Avatar emoji with subtle "speaking" pulse
+        ctx2d.save();
+        const scale = 1 + 0.05 * Math.sin(t * 10);
+        ctx2d.translate(cx, cy);
+        ctx2d.scale(scale, scale);
+        ctx2d.textAlign = 'center'; ctx2d.textBaseline = 'middle';
+        ctx2d.font = `${Math.round(r*1.9)}px sans-serif`;
+        ctx2d.fillStyle = '#fff';
+        ctx2d.fillText('🤖', 0, 0);
+        ctx2d.restore();
+
+        // Title
+        ctx2d.fillStyle = '#fff';
+        ctx2d.font = 'bold 48px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+        ctx2d.textAlign = 'center';
+        ctx2d.fillText('AI in Education', width * 0.74, 100);
+
+        // Bullets timed across ACTUAL duration (not estimated)
+        const bullets = [
+          'AI Personalizes Learning',
+          'Improves Student Engagement',
+          'Provides Real-time Feedback',
+          'Scales Educational Content'
+        ];
+        const blockX = width * 0.56;
+        const blockY = 220;
+        const spacing = 80;
+
+        bullets.forEach((b, i) => {
+          // Use ACTUAL audio duration for bullet timing
+          const appearAt = (actualDuration / bullets.length) * (i + 0.5);
+          if (t >= appearAt) {
+            const fade = Math.min(1, (t - appearAt) / 0.5);
+            ctx2d.globalAlpha = Math.max(0, Math.min(1, fade));
+            ctx2d.textAlign = 'left';
+            ctx2d.font = '36px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+            ctx2d.fillText('•', blockX, blockY + i * spacing);
+            ctx2d.fillText(b, blockX + 24, blockY + i * spacing);
+            ctx2d.globalAlpha = 1;
+          }
+        });
+
+        // Progress bar
+        const pw = width * 0.8, ph = 10;
+        const px = (width - pw) / 2, py = height - 60;
+        ctx2d.fillStyle = 'rgba(255,255,255,0.35)'; ctx2d.fillRect(px, py, pw, ph);
+        ctx2d.fillStyle = 'rgba(255,255,255,0.9)'; ctx2d.fillRect(px, py, pw * prog, ph);
+
+        // Time text with ACTUAL duration
+        ctx2d.fillStyle = '#fff';
+        ctx2d.font = '22px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+        ctx2d.textAlign = 'center';
+        ctx2d.fillText(`${Math.floor(t)}s / ${Math.floor(actualDuration)}s`, width/2, height - 24);
+
+        requestAnimationFrame(renderFrame);
+      }
+
+      try {
+        // User gesture likely happened on button click; resume audioCtx and start playback
+        await audioCtx.resume();
+        setProgress(20, 'Starting audio & recorder…');
+        await audioEl.play(); // CRITICAL: ensure audio is emitting samples
+        log('▶️ Audio started for recording.');
+
+        recorder.start(500); // gather chunks every 500ms
+        log('⏺️ Recorder started. State:', recorder.state);
+
+        setProgress(40, 'Rendering frames…');
+        requestAnimationFrame(renderFrame);
+
+        audioEl.onended = () => {
+          log('⏹️ Audio ended, stopping recorder…');
+          stopRAF = true;
+          // allow a tiny tail for last frames
+          setTimeout(() => recorder.stop(), 150);
+        };
+
+      } catch (err) {
+        stopRAF = true;
+        log('❌ Failed to start audio/recorder:', err.message || err);
+      }
+    }
+
+    function resetAll() {
+      // Revoke URLs
+      if (audioURL) { URL.revokeObjectURL(audioURL); audioURL = null; }
+      if (videoURL) { URL.revokeObjectURL(videoURL); videoURL = null; }
+      audioBlob = null; videoBlob = null;
+
+      els.audioPreview.src = '';
+      els.audioInfo.textContent = 'No audio yet';
+      els.videoPreview.src = '';
+      els.videoOut.classList.add('hidden');
+      hideProgress();
+      log('🔄 Reset completed.');
+    }
+
+    // Events
+    els.btnGenerateAudio.addEventListener('click', generateAudio);
+    els.btnGenerateVideo.addEventListener('click', generateVideo);
+    els.btnReset.addEventListener('click', resetAll);
+    els.btnDownloadVideo.addEventListener('click', () => {
+      if (!videoBlob || !videoURL) return;
+      const a = document.createElement('a');
+      a.href = videoURL;
+      a.download = 'avatar-video-with-audio.webm';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+
+    // Init
+    (function init() {
+      const text = els.scriptInput.value;
+      const { words, duration } = wordsAndDuration(text);
+      els.stats.textContent = `Words: ${words} • Est. Duration: ~${duration}s`;
+      els.btnGenerateVideo.disabled = true;
+      log('🚀 AV Combiner initialized.');
+    })();
+  </script>
+</body>
+</html>

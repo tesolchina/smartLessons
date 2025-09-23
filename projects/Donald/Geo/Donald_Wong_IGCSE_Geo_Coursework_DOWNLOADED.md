@@ -1,0 +1,13 @@
+# Donald Wong IGCSE Geography Coursework
+
+允許「Google 文件」存取你必要的 Cookie
+如關閉必要的 Cookie，你將無法存取此內容
+瞭解更多資訊允許 Cookie
+
+登入您的 Google 帳戶
+你必須登入才能存取此內容
+登入
+
+無法存取你的 Google 帳戶
+目前無法存取此內容。如要繼續操作，請嘗試登入你的 Google 帳戶或允許使用 Cookie。
+瞭解更多資訊

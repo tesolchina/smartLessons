@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP3056 Weeks 1–3: Orientation & Issue Discovery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5D5CDE',
+              'primary-light': '#7B7AE8',
+              'primary-dark': '#4A49C2'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 min-h-screen">
+    <!-- Notification Container will be created by JS -->
+    <div class="max-w-6xl mx-auto py-8 px-4 md:px-0">
+        <!-- Header -->
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-2">GCAP3056 Weeks 1–3</h1>
+            <div class="text-gray-700 dark:text-gray-300 mb-2 font-medium">Orientation & Issue Discovery</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                    1 hour interactive lecture + group tasks & meetings
+                </span>
+            </div>
+            <!-- Overall Progress Bar -->
+            <div class="flex flex-col items-center mt-4">
+                <div class="w-full max-w-md bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-2">
+                    <div id="overallProgressBar" class="bg-primary h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Overall Progress: <span id="overallProgressText">0%</span></div>
+            </div>
+        </div>
+
+        <!-- Module 1 Card -->
+        <div class="bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-2xl p-6 md:p-8 border border-primary/20 shadow mb-8">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold">1</div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-primary mb-1">Module 1: Orientation & Issue Discovery</h2>
+                    <div class="text-green-700 text-sm font-semibold">Open Now</div>
+                </div>
+            </div>
+            <div class="text-gray-700 dark:text-gray-200 mt-2">
+                <ul class="list-disc ml-6 space-y-1 text-sm">
+                    <li>Discover the basics of public policy and advocacy in Hong Kong</li>
+                    <li>Draft your first “policy ask” and learn to write for public impact</li>
+                    <li>Meet your team and start brainstorming your capstone project</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activities for Module 1 -->
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <!-- Interactive Lecture -->
+            <div class="flex flex-col items-stretch bg-blue-50 dark:bg-blue-900/20 rounded-xl p-5 border border-blue-100 dark:border-blue-700 shadow group transition">
+                <button onclick="loadContent('interactiveLecture.html')" data-section="lecture"
+                    class="flex-1 flex flex-col items-center group-hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">📚</div>
+                    <div class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-1">Interactive Lecture</div>
+                    <div class="section-progress bg-blue-600 dark:bg-blue-400 h-1 rounded-full w-full my-2 transition-all duration-300" style="width: 0%"></div>
+                    <span class="completion-status text-xs block text-gray-500 dark:text-gray-400 mb-2">⭕ Not Started</span>
+                    <div class="text-xs text-blue-700 dark:text-blue-300 text-center">
+                        What is policy? Who are the actors? Why advocacy matters?
+                    </div>
+                </button>
+            </div>
+            <!-- Practice & Discussion -->
+            <div class="flex flex-col items-stretch bg-green-50 dark:bg-green-900/20 rounded-xl p-5 border border-green-100 dark:border-green-700 shadow group transition">
+                <button onclick="loadContent('PracticeDiscussion.html')" data-section="practice"
+                    class="flex-1 flex flex-col items-center group-hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">💬</div>
+                    <div class="text-lg font-semibold text-green-800 dark:text-green-200 mb-1">Practice & Discussion</div>
+                    <div class="section-progress bg-green-600 dark:bg-green-400 h-1 rounded-full w-full my-2 transition-all duration-300" style="width: 0%"></div>
+                    <span class="completion-status text-xs block text-gray-500 dark:text-gray-400 mb-2">⭕ Not Started</span>
+                    <div class="text-xs text-green-700 dark:text-green-300 text-center">
+                        Try your first “policy ask” and review classmates’ ideas!
+                    </div>
+                </button>
+            </div>
+            <!-- Reflect & Assess -->
+            <div class="flex flex-col items-stretch bg-purple-50 dark:bg-purple-900/20 rounded-xl p-5 border border-purple-100 dark:border-purple-700 shadow group transition">
+                <button onclick="loadContent('ReflectAssess.html')" data-section="reflect"
+                    class="flex-1 flex flex-col items-center group-hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <div class="text-lg font-semibold text-purple-800 dark:text-purple-200 mb-1">Reflect & Assess</div>
+                    <div class="section-progress bg-purple-600 dark:bg-purple-400 h-1 rounded-full w-full my-2 transition-all duration-300" style="width: 0%"></div>
+                    <span class="completion-status text-xs block text-gray-500 dark:text-gray-400 mb-2">⭕ Not Started</span>
+                    <div class="text-xs text-purple-700 dark:text-purple-300 text-center">
+                        Set goals and reflect on your advocacy journey.
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Content Display Area -->
+        <div class="mt-6">
+            <div id="contentArea" class="bg-white dark:bg-gray-800 rounded-lg p-6 min-h-60 shadow-sm text-center text-gray-400 dark:text-gray-500">
+                <div class="text-5xl mb-3">🎓</div>
+                <h3 class="text-lg font-semibold mb-2">Welcome to Module 1!</h3>
+                <p>Select an activity above (lecture, practice, or reflection) to begin your learning journey.</p>
+                <div class="text-xs text-gray-300 mt-4">
+                    Progress will be tracked as you complete each section.
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col md:flex-row gap-3 justify-center mt-10">
+            <button onclick="saveProgress()"
+                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+                Save Progress
+            </button>
+            <button onclick="generateReport()"
+                    class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Generate Report
+            </button>
+            <button onclick="toggleDarkMode()"
+                    class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-2 rounded-lg transition-colors">
+                🌗 Toggle Dark Mode
+            </button>
+        </div>
+
+        <!-- Last Updated -->
+        <div class="text-right text-xs text-gray-400 mt-10">
+            Last updated: <span id="lastUpdated"></span>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="fixed top-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform duration-300 z-50"></div>
+
+    <!-- Main Course JS -->
+    <script src="js/course-app.js"></script>
+</body>
+</html>

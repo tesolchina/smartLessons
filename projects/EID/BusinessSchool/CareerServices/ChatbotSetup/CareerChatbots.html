@@ -1,0 +1,763 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerLink@BUS - AI Career Chatbots</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#6366f1',
+                        careerBlue: '#4F46E5'
+                    }
+                }
+            }
+        }
+        
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary to-secondary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-2">CareerLink@BUS</h1>
+                <p class="text-xl opacity-90">AI-Powered Career Guidance Chatbots</p>
+                <p class="text-sm mt-2 opacity-75">Hong Kong Baptist University Career Services</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex space-x-8">
+                <button onclick="switchTab('browse')" id="browseTab" class="tab-btn active py-4 px-6 text-sm font-medium border-b-2 border-primary text-primary">
+                    <i class="fas fa-th-large mr-2"></i>Browse Chatbots
+                </button>
+                <button onclick="switchTab('chat')" id="chatTab" class="tab-btn py-4 px-6 text-sm font-medium border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                    <i class="fas fa-comments mr-2"></i>Chat Interface
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Browse Tab Content -->
+    <div id="browseContent" class="tab-content">
+        <!-- How to Use Section -->
+        <section class="py-12 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">How to Use These Chatbots</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-graduate text-primary text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Getting Started</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Choose the chatbot that matches your current career stage</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Prepare your CV (remove personal contact info)</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Have job descriptions ready if applying for specific roles</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Be specific about your career goals and interests</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-lightbulb text-primary text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Tips for Best Results</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Provide detailed, accurate information</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Follow the chatbot's prompts and questions</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Ask follow-up questions for clarification</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">•</span>Use multiple chatbots for comprehensive guidance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-info-circle text-blue-600 text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200">Important Notes</h3>
+                    </div>
+                    <div class="text-blue-700 dark:text-blue-300 space-y-2">
+                        <p><strong>Privacy:</strong> Always remove personal contact information from your CV before sharing</p>
+                        <p><strong>Support:</strong> For personalized assistance, contact <strong>busd-css@hkbu.edu.hk</strong></p>
+                        <p><strong>Best Practice:</strong> Use these chatbots as guidance tools alongside professional career counseling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="py-6 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="searchBox" placeholder="Search chatbots by name or topic..." class="w-full px-4 py-3 pl-12 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                    <button onclick="filterByCategory('all')" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-primary text-white">All</button>
+                    <button onclick="filterByCategory('application')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors">Application</button>
+                    <button onclick="filterByCategory('interview')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors">Interview</button>
+                    <button onclick="filterByCategory('networking')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors">Networking</button>
+                    <button onclick="filterByCategory('strategy')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors">Strategy</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbots Grid -->
+    <section class="py-12 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Available Career Chatbots</h2>
+            
+            <div id="chatbotsGrid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Chatbot cards will be generated here -->
+            </div>
+            
+            <div id="noResults" class="hidden text-center py-12">
+                <i class="fas fa-search text-gray-400 text-4xl mb-4"></i>
+                <p class="text-gray-500 dark:text-gray-400 text-lg">No chatbots found matching your search criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold mb-2">Need Personal Assistance?</h3>
+                <p class="text-gray-300">Contact our career services team for one-on-one guidance</p>
+            </div>
+            <div class="flex justify-center items-center space-x-4">
+                <i class="fas fa-envelope text-primary"></i>
+                <a href="mailto:busd-css@hkbu.edu.hk" class="text-primary hover:text-blue-300 transition-colors">busd-css@hkbu.edu.hk</a>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-700">
+                <p class="text-gray-400 text-sm">© 2024 Hong Kong Baptist University - CareerLink@BUS</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- Chat Tab Content -->
+    <div id="chatContent" class="tab-content hidden h-screen flex">
+        <!-- Left Sidebar -->
+        <div id="chatSidebar" class="w-80 bg-primary text-white p-6 flex flex-col transition-all duration-300">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold flex items-center">
+                    <i class="fas fa-cog mr-2"></i>
+                    Chatbot Configuration
+                </h2>
+                <button onclick="toggleSidebar()" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Provider Selection -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium mb-2 flex items-center">
+                    <i class="fas fa-globe mr-2"></i>
+                    Select Provider
+                </label>
+                <select id="providerSelect" class="w-full px-3 py-2 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <option value="hkbu">HKBU Chatbot</option>
+                </select>
+            </div>
+
+            <!-- API Configuration -->
+            <div class="mb-6 bg-yellow-500/20 p-4 rounded-lg">
+                <label class="block text-sm font-medium mb-2 flex items-center">
+                    <i class="fas fa-key mr-2"></i>
+                    API Configuration
+                </label>
+                <input type="password" id="apiKey" placeholder="Paste your API key..." class="w-full px-3 py-2 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 text-base">
+                <p class="text-xs mt-2 opacity-90">
+                    Get your key from the 
+                    <a href="#" class="underline hover:text-blue-200">HKBU Generative AI Platform</a>
+                </p>
+            </div>
+
+            <!-- Model Selection -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium mb-2 flex items-center">
+                    <i class="fas fa-microchip mr-2"></i>
+                    Choose Model
+                </label>
+                <select id="modelSelect" class="w-full px-3 py-2 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <option value="gpt-4.1">GPT-4.1</option>
+                    <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                    <option value="claude-3.5">Claude 3.5 Sonnet</option>
+                </select>
+            </div>
+
+            <!-- Connect/Clear Buttons -->
+            <div class="flex space-x-3 mb-6">
+                <button onclick="connectChatbot()" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center">
+                    <i class="fas fa-check mr-2"></i>
+                    Connect
+                </button>
+                <button onclick="clearChat()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center">
+                    <i class="fas fa-trash mr-2"></i>
+                    Clear
+                </button>
+            </div>
+
+            <!-- System Prompt -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium mb-2 flex items-center">
+                    <i class="fas fa-terminal mr-2"></i>
+                    System Prompt
+                </h3>
+                <div class="text-xs opacity-75 space-y-1">
+                    <p><strong>Selected:</strong> <span id="selectedChatbotName">None selected</span></p>
+                    <p><strong>Status:</strong> <span id="connectionStatus">Disconnected</span></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="flex-1 flex flex-col bg-gray-50 dark:bg-gray-900">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-primary to-secondary text-white p-4 flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-user-tie text-lg"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-lg" id="chatbotTitle">Career Assistant</h2>
+                        <p class="text-sm opacity-75">Text Chat with your AI assistant</p>
+                    </div>
+                </div>
+                <div class="flex space-x-3">
+                    <button onclick="toggleSidebar()" class="px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-lg text-sm transition-colors">
+                        <i class="fas fa-sidebar mr-1"></i>
+                        Hide Left
+                    </button>
+                    <button onclick="newSession()" class="px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-lg text-sm transition-colors">
+                        <i class="fas fa-plus mr-1"></i>
+                        New Session
+                    </button>
+                    <button onclick="switchTab('browse')" class="px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-lg text-sm transition-colors">
+                        <i class="fas fa-arrow-left mr-1"></i>
+                        Back
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chatMessages" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <!-- Welcome message -->
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 max-w-3xl shadow-sm">
+                        <p class="text-gray-800 dark:text-gray-200">
+                            Welcome to CareerLink@BUS! I'm here to help you with your career development. 
+                            Please select a chatbot from the configuration panel and connect your API key to get started.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex items-center space-x-3">
+                    <div class="flex-1 relative">
+                        <input type="text" id="chatInput" placeholder="Please connect your HKBU API key first" disabled="" class="w-full px-4 py-3 pr-12 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-500">
+                        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                    </div>
+                    <button onclick="sendMessage()" disabled="" id="sendButton" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentChatbot = null;
+        let isConnected = false;
+        let chatHistory = [];
+        // Chatbot data (excluding deleted ones)
+        const chatbots = [
+            {
+                id: 1,
+                name: "CV & Cover Letter Review",
+                description: "Get comprehensive feedback on your resume and cover letter with ATS optimization and interview preparation tips.",
+                category: "application",
+                icon: "fas fa-file-alt",
+                requirements: "Your CV (without personal contact info) and job description",
+                features: ["ATS-friendly optimization", "3-part work experience structure", "Cover letter template", "Interview preparation tips"]
+            },
+            {
+                id: 2,
+                name: "Optimization of LinkedIn Profile",
+                description: "Build and maintain a professional LinkedIn profile that attracts employers and networking opportunities.",
+                category: "networking",
+                icon: "fab fa-linkedin",
+                requirements: "Your LinkedIn profile and target fields",
+                features: ["Profile optimization strategies", "Professional networking tips", "Employer outreach guidance", "Industry-specific advice"]
+            },
+            {
+                id: 3,
+                name: "General Tips for Passing Aptitude Test",
+                description: "Master aptitude tests including numerical reasoning, verbal reasoning, personality tests, and gamified assessments.",
+                category: "interview",
+                icon: "fas fa-brain",
+                requirements: "Target position, company name, and test types",
+                features: ["Test-specific strategies", "Recruiter expectations", "Practice recommendations", "Performance optimization"]
+            },
+            {
+                id: 4,
+                name: "Key Questions Before Accepting a Job Offer",
+                description: "Make informed decisions about job offers by considering all important factors and asking the right questions.",
+                category: "strategy",
+                icon: "fas fa-handshake",
+                requirements: "Your CV, company name, and targeted role",
+                features: ["Offer evaluation criteria", "Negotiation strategies", "Career alignment assessment", "Decision-making framework"]
+            },
+            {
+                id: 5,
+                name: "How to Utilise AI Prompts for Job Search",
+                description: "Learn effective AI prompts for different job search stages from exploration to onboarding.",
+                category: "strategy",
+                icon: "fas fa-robot",
+                requirements: "Your CV and interested industry fields",
+                features: ["Stage-specific AI prompts", "Job search automation", "Application optimization", "Interview preparation"]
+            },
+            {
+                id: 6,
+                name: "Networking Strategies",
+                description: "Develop effective networking strategies and learn when, where, and who to connect with in your industry.",
+                category: "networking",
+                icon: "fas fa-users",
+                requirements: "Industries you want to explore",
+                features: ["Networking event strategies", "Cold outreach templates", "LinkedIn connection tactics", "Relationship building"]
+            },
+            {
+                id: 7,
+                name: "Employer Expectations in Group Interview",
+                description: "Understand what employers look for in group interviews and learn strategies to stand out from other candidates.",
+                category: "interview",
+                icon: "fas fa-users-cog",
+                requirements: "Your CV, target position, and recruiting company",
+                features: ["Group dynamics understanding", "Leadership demonstration", "Collaboration skills", "Sample responses"]
+            },
+            {
+                id: 8,
+                name: "How to Search for Jobs Effectively",
+                description: "Get industry trend analysis and personalized job search strategies based on your background and interests.",
+                category: "strategy",
+                icon: "fas fa-search",
+                requirements: "Your CV and fields of interest",
+                features: ["Industry trend analysis", "Role fit assessment", "Search optimization", "Career pathway guidance"]
+            },
+            {
+                id: 9,
+                name: "Cover Letter Review",
+                description: "Learn professional cover letter structure and get personalized review and editing of your draft.",
+                category: "application",
+                icon: "fas fa-envelope-open-text",
+                requirements: "Your CV, draft cover letter, and job description",
+                features: ["Professional structure templates", "Content optimization", "Company alignment", "ATS compatibility"]
+            },
+            {
+                id: 10,
+                name: "How to Excel in Job Interviews",
+                description: "Comprehensive interview preparation with STAR method training and customized question practice.",
+                category: "interview",
+                icon: "fas fa-comments",
+                requirements: "Your CV, job description, and assessment formats",
+                features: ["STAR method training", "Customized questions", "Follow-up strategies", "Performance improvement"]
+            },
+            {
+                id: 11,
+                name: "Tips on Individual & Group Interview",
+                description: "Master both individual and group interview formats with comprehensive preparation strategies.",
+                category: "interview",
+                icon: "fas fa-user-friends",
+                requirements: "Your CV and job description for targeted position",
+                features: ["Individual interview mastery", "Group interview tactics", "Technical & soft skills prep", "Post-interview follow-up"]
+            }
+        ];
+
+        // Function to create chatbot card HTML
+        function createChatbotCard(chatbot) {
+            return `
+                <div class="chatbot-card bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-600" data-category="${chatbot.category}">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white mr-4">
+                                <i class="${chatbot.icon} text-lg"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white line-clamp-2">${chatbot.name}</h3>
+                        </div>
+                        
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">${chatbot.description}</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-800 dark:text-white mb-2">Key Features:</h4>
+                            <ul class="space-y-1">
+                                ${chatbot.features.slice(0, 3).map(feature => 
+                                    `<li class="text-xs text-gray-600 dark:text-gray-300 flex items-center">
+                                        <span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
+                                        ${feature}
+                                    </li>`
+                                ).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-4 p-3 bg-gray-50 dark:bg-gray-600 rounded-lg">
+                            <h4 class="text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">Required:</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">${chatbot.requirements}</p>
+                        </div>
+                        
+                        <button onclick="selectChatbot('${chatbot.name}')" class="w-full bg-primary text-white py-2.5 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-200 text-sm font-medium">
+                            Start Chatbot Session
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to render chatbots
+        function renderChatbots(chatbotsToRender) {
+            const grid = document.getElementById('chatbotsGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (chatbotsToRender.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+            } else {
+                grid.innerHTML = chatbotsToRender.map(createChatbotCard).join('');
+                noResults.classList.add('hidden');
+            }
+        }
+
+        // Function to filter by category
+        function filterByCategory(category) {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active', 'bg-primary', 'text-white');
+                btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
+            
+            event.target.classList.add('active', 'bg-primary', 'text-white');
+            event.target.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            let filtered = category === 'all' ? chatbots : chatbots.filter(bot => bot.category === category);
+            
+            if (searchTerm) {
+                filtered = filtered.filter(bot => 
+                    bot.name.toLowerCase().includes(searchTerm) || 
+                    bot.description.toLowerCase().includes(searchTerm) ||
+                    bot.features.some(feature => feature.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            renderChatbots(filtered);
+        }
+
+        // Function to handle search
+        function handleSearch() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const activeCategory = document.querySelector('.filter-btn.active').textContent.toLowerCase();
+            
+            let filtered = activeCategory === 'all' ? chatbots : chatbots.filter(bot => bot.category === activeCategory);
+            
+            if (searchTerm) {
+                filtered = filtered.filter(bot => 
+                    bot.name.toLowerCase().includes(searchTerm) || 
+                    bot.description.toLowerCase().includes(searchTerm) ||
+                    bot.features.some(feature => feature.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            renderChatbots(filtered);
+        }
+
+
+
+        // Tab switching function
+        function switchTab(tabName) {
+            const browseContent = document.getElementById('browseContent');
+            const chatContent = document.getElementById('chatContent');
+            const browseTab = document.getElementById('browseTab');
+            const chatTab = document.getElementById('chatTab');
+
+            if (tabName === 'browse') {
+                browseContent.classList.remove('hidden');
+                chatContent.classList.add('hidden');
+                browseTab.classList.add('active', 'border-primary', 'text-primary');
+                browseTab.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+                chatTab.classList.remove('active', 'border-primary', 'text-primary');
+                chatTab.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            } else {
+                browseContent.classList.add('hidden');
+                chatContent.classList.remove('hidden');
+                chatTab.classList.add('active', 'border-primary', 'text-primary');
+                chatTab.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+                browseTab.classList.remove('active', 'border-primary', 'text-primary');
+                browseTab.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            }
+        }
+
+        // Enhanced chatbot selection function
+        function selectChatbot(chatbotName) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-robot text-primary text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Start Chat Session</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            You've selected "<strong>${chatbotName}</strong>". Would you like to open the chat interface and start your session?
+                        </p>
+                        <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-6">
+                            <p class="text-blue-700 dark:text-blue-300 text-sm">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                <strong>Remember:</strong> Have your CV (without personal contact info) and job descriptions ready.
+                            </p>
+                        </div>
+                        <div class="flex justify-end space-x-3">
+                            <button onclick="this.closest('.fixed').remove()" class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                                Cancel
+                            </button>
+                            <button onclick="startChatSession('${chatbotName}'); this.closest('.fixed').remove()" class="px-4 py-2 bg-primary text-white hover:bg-blue-600 rounded-lg transition-colors">
+                                Start Chat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Start chat session function
+        function startChatSession(chatbotName) {
+            currentChatbot = chatbotName;
+            document.getElementById('selectedChatbotName').textContent = chatbotName;
+            document.getElementById('chatbotTitle').textContent = chatbotName;
+            
+            // Switch to chat tab
+            switchTab('chat');
+            
+            // Clear previous messages and add welcome message
+            clearChat();
+            
+            // Find the chatbot data
+            const chatbotData = chatbots.find(bot => bot.name === chatbotName);
+            if (chatbotData) {
+                const welcomeMessage = `Hello! I'm your ${chatbotName} assistant. ${chatbotData.description} To get started, please make sure you have: ${chatbotData.requirements}. How can I help you today?`;
+                addMessageToChat('assistant', welcomeMessage);
+            }
+        }
+
+        // Sidebar toggle function
+        function toggleSidebar() {
+            const sidebar = document.getElementById('chatSidebar');
+            if (sidebar.classList.contains('hidden')) {
+                sidebar.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('hidden');
+            }
+        }
+
+        // Connect chatbot function
+        function connectChatbot() {
+            const apiKey = document.getElementById('apiKey').value;
+            const model = document.getElementById('modelSelect').value;
+            
+            if (!apiKey.trim()) {
+                showNotification('Please enter your API key', 'error');
+                return;
+            }
+
+            // Simulate connection
+            isConnected = true;
+            document.getElementById('connectionStatus').textContent = 'Connected';
+            document.getElementById('chatInput').disabled = false;
+            document.getElementById('sendButton').disabled = false;
+            document.getElementById('chatInput').placeholder = 'Type your message...';
+            
+            showNotification('Successfully connected to ' + model, 'success');
+            
+            // Add connection message to chat
+            addMessageToChat('system', 'Connected to ' + model + '. How can I assist you with your career development today?');
+        }
+
+        // Clear chat function
+        function clearChat() {
+            chatHistory = [];
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.innerHTML = `
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 max-w-3xl shadow-sm">
+                        <p class="text-gray-800 dark:text-gray-200">
+                            Chat cleared. How can I help you today?
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // New session function
+        function newSession() {
+            clearChat();
+            document.getElementById('selectedChatbotName').textContent = 'None selected';
+            currentChatbot = null;
+        }
+
+        // Send message function
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message || !isConnected) return;
+
+            // Add user message to chat
+            addMessageToChat('user', message);
+            
+            // Clear input
+            input.value = '';
+            
+            // Simulate AI response (in real implementation, this would call the actual API)
+            setTimeout(() => {
+                const responses = [
+                    "Thank you for your question. I'd be happy to help you with your career development. Could you please provide more details about your specific situation?",
+                    "Based on your inquiry, I recommend starting with a thorough review of your current CV. Would you like to share your CV (without personal contact information) so I can provide specific feedback?",
+                    "That's a great question about career development. To give you the most relevant advice, could you tell me more about your target industry or role?",
+                    "I understand you're looking for career guidance. For the best results, please share any relevant documents or specific questions you have about your career path."
+                ];
+                
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                addMessageToChat('assistant', randomResponse);
+            }, 1000);
+        }
+
+        // Add message to chat function
+        function addMessageToChat(sender, message) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            
+            if (sender === 'user') {
+                messageDiv.innerHTML = `
+                    <div class="flex items-start space-x-3 justify-end">
+                        <div class="bg-primary text-white rounded-lg p-4 max-w-3xl shadow-sm">
+                            <p>${message}</p>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-white text-sm"></i>
+                        </div>
+                    </div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-white text-sm"></i>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 max-w-3xl shadow-sm">
+                            <p class="text-gray-800 dark:text-gray-200">${message}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Show notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' : 
+                type === 'error' ? 'bg-red-500 text-white' : 
+                'bg-blue-500 text-white'
+            }`;
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'} mr-2"></i>
+                    ${message}
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            renderChatbots(chatbots);
+            
+            // Setup search functionality
+            const searchBox = document.getElementById('searchBox');
+            searchBox.addEventListener('input', handleSearch);
+            
+            // Setup enter key for chat input
+            const chatInput = document.getElementById('chatInput');
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+            
+            // Add CSS for truncating text
+            const style = document.createElement('style');
+            style.textContent = `
+                .line-clamp-2 {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+                .tab-content {
+                    min-height: calc(100vh - 200px);
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+
+
+</body></html>

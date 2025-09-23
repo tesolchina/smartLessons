@@ -1,0 +1,38 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Fetch deeper CKAN data",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"scripts/fetch_from_ckan.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Summarize downloads visualizations",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"scripts/summarize_downloads.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Fetch deeper CKAN data (xls/xlsx)",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"scripts/fetch_from_ckan.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

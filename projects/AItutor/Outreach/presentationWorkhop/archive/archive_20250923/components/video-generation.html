@@ -1,0 +1,239 @@
+<div class="slide-content">
+    <div class="slide-header">
+        <h1>Video Generation: HeyGen vs API Approaches</h1>
+        <div class="slide-number">Slide 2 of 5</div>
+    </div>
+    
+    <div class="slide-body">
+        <div class="bullet-points">
+            <div class="bullet-point">
+                <div class="bullet">•</div>
+                <div class="content">
+                    <h3>HeyGen Approach (GUI-based)</h3>
+                    <p>User-friendly interface for quick video creation</p>
+                </div>
+            </div>
+            
+            <div class="bullet-point">
+                <div class="bullet">•</div>
+                <div class="content">
+                    <h3>API-based Solutions</h3>
+                    <p>Programmatic control and integration possibilities</p>
+                </div>
+            </div>
+            
+            <div class="bullet-point">
+                <div class="bullet">•</div>
+                <div class="content">
+                    <h3>Pros and Cons</h3>
+                    <p>Cost, scalability, and customization considerations</p>
+                </div>
+            </div>
+            
+            <div class="bullet-point">
+                <div class="bullet">•</div>
+                <div class="content">
+                    <h3>Implementation Strategy</h3>
+                    <p>Choosing the right approach for your context</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <button class="demo-toggle" onclick="toggleDemo('video-demo')">
+            🎬 Show Live Video Generation Demo
+        </button>
+        <div id="video-demo" class="demo-area" style="display: none;">
+            <div class="demo-placeholder">
+                <h3>Live Video Generation Demo</h3>
+                <p>Demo placeholder - will show actual video generation tools</p>
+                <div class="demo-buttons">
+                    <button class="demo-btn">Try HeyGen Interface</button>
+                    <button class="demo-btn">Try API Approach</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.slide-content {
+    max-width: 100%;
+    padding: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #ff6b35;
+    padding-bottom: 20px;
+}
+
+.slide-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.slide-number {
+    background: #ff6b35;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.slide-body {
+    margin-bottom: 40px;
+}
+
+.bullet-points {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.bullet-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 5px solid #8b5cf6;
+    transition: transform 0.3s ease;
+}
+
+.bullet-point:hover {
+    transform: translateX(10px);
+}
+
+.bullet {
+    font-size: 2rem;
+    color: #ff6b35;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 8px 0;
+}
+
+.content p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.demo-section {
+    border-top: 2px solid #e5e7eb;
+    padding-top: 30px;
+}
+
+.demo-toggle {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.demo-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139,92,246,0.3);
+}
+
+.demo-area {
+    margin-top: 20px;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffeee6, #fff3cd);
+    border-radius: 15px;
+    border: 2px solid #ff6b35;
+}
+
+.demo-placeholder {
+    text-align: center;
+}
+
+.demo-placeholder h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+.demo-placeholder p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.demo-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.demo-btn {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.demo-btn:hover {
+    background: #e55a2b;
+}
+
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 20px;
+    }
+    
+    .slide-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .bullet-point {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .demo-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+<script>
+function toggleDemo(demoId) {
+    const demo = document.getElementById(demoId);
+    const button = document.querySelector('.demo-toggle');
+    
+    if (demo.style.display === 'none') {
+        demo.style.display = 'block';
+        button.textContent = '🎬 Hide Demo';
+    } else {
+        demo.style.display = 'none';
+        button.textContent = '🎬 Show Live Video Generation Demo';
+    }
+}
+</script>

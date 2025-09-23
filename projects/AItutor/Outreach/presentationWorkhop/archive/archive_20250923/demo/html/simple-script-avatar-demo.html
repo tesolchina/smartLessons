@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script-to-Avatar Demo - Simple Version</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .avatar-container {
+            background: radial-gradient(circle, #4f46e5 0%, #7c3aed 100%);
+            min-height: 400px;
+            position: relative;
+        }
+        .slide-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 300px;
+        }
+        .bullet-point {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.8s ease-in-out;
+        }
+        .bullet-point.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .avatar-speaking {
+            animation: speaking 1s ease-in-out infinite alternate;
+        }
+        @keyframes speaking {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+        .audio-wave {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+        }
+        .wave-bar {
+            width: 4px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+        @keyframes wave {
+            0%, 100% { height: 20px; }
+            50% { height: 40px; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">🎬 Script-to-Avatar Demo</h1>
+            <p class="text-gray-600">Simple demo: Script → Audio → Avatar → Video with synchronized bullet points</p>
+        </div>
+
+        <!-- Demo Scripts Selection -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">📝 Demo Scripts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <button onclick="loadScript('ai-education')" class="p-4 border-2 border-blue-200 rounded-lg hover:border-blue-400 transition-colors">
+                    <h3 class="font-semibold text-blue-800">🤖 AI in Education</h3>
+                    <p class="text-sm text-gray-600">How AI transforms learning</p>
+                </button>
+                <button onclick="loadScript('climate-change')" class="p-4 border-2 border-green-200 rounded-lg hover:border-green-400 transition-colors">
+                    <h3 class="font-semibold text-green-800">🌍 Climate Change</h3>
+                    <p class="text-sm text-gray-600">Understanding global warming</p>
+                </button>
+                <button onclick="loadScript('space-exploration')" class="p-4 border-2 border-purple-200 rounded-lg hover:border-purple-400 transition-colors">
+                    <h3 class="font-semibold text-purple-800">🚀 Space Exploration</h3>
+                    <p class="text-sm text-gray-600">Journey to the stars</p>
+                </button>
+            </div>
+            
+            <!-- Current Script Display -->
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Current Script:</h3>
+                <p id="currentScript" class="text-gray-700 leading-relaxed">
+                    Welcome to today's lesson on artificial intelligence in education. AI is revolutionizing how we learn and teach. First, let's explore how AI personalizes learning for each student. Next, we'll see how it improves student engagement through interactive content. Then, we'll discuss how AI provides real-time feedback to help students learn faster. Finally, we'll look at how AI scales educational content to reach more learners worldwide.
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Demo Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left: Avatar & Controls -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">🎭 Avatar Presenter</h2>
+                
+                <!-- Avatar Display -->
+                <div class="avatar-container rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <div id="avatarIcon" class="w-32 h-32 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center text-6xl">
+                            🤖
+                        </div>
+                        <p id="avatarStatus" class="text-lg font-semibold mb-2">Ready to present</p>
+                        <div id="audioWave" class="audio-wave hidden">
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div id="progressContainer" class="mb-4 hidden">
+                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                        <span id="progressLabel">Processing...</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div id="progressBar" class="progress-bar bg-blue-600 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Audio Control Panel -->
+                <div id="audioContainer" class="mb-4 hidden">
+                    <h3 class="font-semibold mb-2">🎵 Audio Control Panel</h3>
+                    
+                    <!-- Audio Player -->
+                    <audio id="audioPlayer" class="w-full mb-3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    
+                    <!-- Custom Controls -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2">
+                                <button id="playPauseBtn" onclick="togglePlayPause()" 
+                                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50">
+                                    ▶️ Play
+                                </button>
+                                <button onclick="stopAudio()" 
+                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                                    ⏹️ Stop
+                                </button>
+                                <button onclick="replayAudio()" 
+                                        class="px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                                    🔄 Replay
+                                </button>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3 cursor-pointer" id="audioProgressContainer" onclick="seekAudio(event)">
+                            <div id="audioProgress" class="bg-blue-600 h-2 rounded-full transition-all duration-100" style="width: 0%"></div>
+                        </div>
+                        
+                        <!-- Volume and Speed Controls -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm font-medium">🔊 Volume:</span>
+                                <input type="range" id="volumeSlider" min="0" max="100" value="100" 
+                                       class="w-20" onchange="setVolume(this.value)">
+                                <span id="volumeValue" class="text-sm w-8">100%</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm font-medium">⚡ Speed:</span>
+                                <select id="speedSelect" onchange="setPlaybackRate(this.value)" 
+                                        class="px-2 py-1 border border-gray-300 rounded text-sm">
+                                    <option value="0.5">0.5x</option>
+                                    <option value="0.75">0.75x</option>
+                                    <option value="1" selected>1x</option>
+                                    <option value="1.25">1.25x</option>
+                                    <option value="1.5">1.5x</option>
+                                    <option value="2">2x</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Audio Status -->
+                        <div class="mt-3 p-2 bg-blue-50 rounded text-sm">
+                            <span class="font-medium">Status:</span> 
+                            <span id="audioStatus" class="text-blue-700">Ready to play</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="space-y-3">
+                    <button id="generateBtn" onclick="startGeneration()" 
+                            class="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50">
+                        🎬 Generate Avatar Video
+                    </button>
+                    
+                    <div id="playControls" class="hidden grid grid-cols-3 gap-2">
+                        <button id="playBtn" onclick="playDemo()" 
+                                class="py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                            ▶️ Play
+                        </button>
+                        <button onclick="pauseDemo()" 
+                                class="py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">
+                            ⏸️ Pause
+                        </button>
+                        <button onclick="resetDemo()" 
+                                class="py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700">
+                            🔄 Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Bullet Points & Video -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">📋 Key Points</h2>
+                
+                <!-- Bullet Points Display -->
+                <div class="slide-preview rounded-lg p-6 text-white mb-4">
+                    <h3 id="slideTitle" class="text-2xl font-bold mb-4">AI in Education</h3>
+                    <ul id="bulletList" class="space-y-3">
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> AI Personalizes Learning
+                        </li>
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> Improves Student Engagement
+                        </li>
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> Provides Real-time Feedback
+                        </li>
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> Scales Educational Content
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Video Output -->
+                <div id="videoContainer" class="hidden">
+                    <h3 class="font-semibold mb-2">🎥 Generated Video</h3>
+                    <div class="bg-gray-900 rounded-lg p-8 text-center text-white">
+                        <div class="text-4xl mb-2">🎬</div>
+                        <p>Avatar Video Ready</p>
+                        <p class="text-sm text-gray-400">Script + Avatar + Bullets synchronized</p>
+                    </div>
+                </div>
+
+                <!-- Download Options -->
+                <div id="downloadSection" class="hidden mt-4">
+                    <h3 class="font-semibold mb-2">📥 Download</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="downloadFile('audio')" 
+                                class="py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                            🎵 Audio
+                        </button>
+                        <button onclick="downloadFile('video')" 
+                                class="py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                            🎬 Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="mt-6 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">📊 Demo Statistics</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-blue-600" id="wordCount">65</div>
+                    <div class="text-sm text-gray-600">Words</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-green-600" id="duration">26s</div>
+                    <div class="text-sm text-gray-600">Duration</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-purple-600" id="bulletCount">4</div>
+                    <div class="text-sm text-gray-600">Bullets</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-orange-600" id="status">Ready</div>
+                    <div class="text-sm text-gray-600">Status</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo Scripts Database
+        const demoScripts = {
+            'ai-education': {
+                title: 'AI in Education',
+                script: 'Welcome to today\'s lesson on artificial intelligence in education. AI is revolutionizing how we learn and teach. First, let\'s explore how AI personalizes learning for each student. Next, we\'ll see how it improves student engagement through interactive content. Then, we\'ll discuss how AI provides real-time feedback to help students learn faster. Finally, we\'ll look at how AI scales educational content to reach more learners worldwide.',
+                bullets: [
+                    'AI Personalizes Learning',
+                    'Improves Student Engagement', 
+                    'Provides Real-time Feedback',
+                    'Scales Educational Content'
+                ]
+            },
+            'climate-change': {
+                title: 'Climate Change',
+                script: 'Climate change is one of the most pressing challenges of our time. Rising global temperatures are causing dramatic shifts in weather patterns worldwide. First, we\'ll examine the primary causes of greenhouse gas emissions. Second, we\'ll explore the visible impacts on our environment today. Third, we\'ll discuss innovative solutions being developed globally. Finally, we\'ll look at how individuals can make a meaningful difference.',
+                bullets: [
+                    'Greenhouse Gas Emissions',
+                    'Environmental Impacts',
+                    'Global Solutions',
+                    'Individual Actions'
+                ]
+            },
+            'space-exploration': {
+                title: 'Space Exploration',
+                script: 'Space exploration represents humanity\'s greatest adventure into the unknown. From the first moon landing to Mars rovers, we continue pushing boundaries. First, let\'s review the historic milestones that brought us here. Next, we\'ll examine current missions exploring our solar system. Then, we\'ll discuss future plans for human settlement on other planets. Finally, we\'ll explore how space technology benefits life on Earth.',
+                bullets: [
+                    'Historic Milestones',
+                    'Current Missions',
+                    'Future Settlements',
+                    'Earth Benefits'
+                ]
+            }
+        };
+
+        let currentScriptKey = 'ai-education';
+        let isGenerating = false;
+        let isPlaying = false;
+        let bulletTimings = [];
+        let audioPlayer;
+        let isAudioPlaying = false;
+
+        // Utility function for delays
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Load a demo script
+        function loadScript(scriptKey) {
+            currentScriptKey = scriptKey;
+            const script = demoScripts[scriptKey];
+            
+            document.getElementById('currentScript').textContent = script.script;
+            document.getElementById('slideTitle').textContent = script.title;
+            
+            // Update bullet points
+            const bulletList = document.getElementById('bulletList');
+            bulletList.innerHTML = script.bullets.map(bullet => 
+                `<li class="bullet-point flex items-center">
+                    <span class="mr-3 text-xl">•</span> ${bullet}
+                </li>`
+            ).join('');
+            
+            // Update statistics
+            updateStatistics();
+            resetDemo();
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            const script = demoScripts[currentScriptKey];
+            const words = script.script.split(/\s+/).length;
+            const duration = Math.round(words * 0.4); // ~0.4 seconds per word
+            
+            document.getElementById('wordCount').textContent = words;
+            document.getElementById('duration').textContent = duration + 's';
+            document.getElementById('bulletCount').textContent = script.bullets.length;
+            
+            // Calculate bullet timings
+            bulletTimings = script.bullets.map((_, index) => {
+                return (duration / script.bullets.length) * (index + 0.5);
+            });
+        }
+
+        // Start generation process
+        async function startGeneration() {
+            if (isGenerating) return;
+            
+            isGenerating = true;
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('status').textContent = 'Generating';
+            
+            // Step 1: Generate Audio
+            showProgress(20, 'Generating audio...');
+            updateAvatarStatus('🎵 Creating speech...');
+            await sleep(2000);
+            
+            // Step 2: Create Avatar Animation
+            showProgress(50, 'Animating avatar...');
+            updateAvatarStatus('🎭 Preparing avatar...');
+            await sleep(1500);
+            
+            // Step 3: Synchronize Bullets
+            showProgress(80, 'Synchronizing bullets...');
+            updateAvatarStatus('📋 Timing bullet points...');
+            await sleep(1000);
+            
+            // Step 4: Generate Video
+            showProgress(100, 'Creating video...');
+            updateAvatarStatus('🎬 Finalizing video...');
+            await sleep(1000);
+            
+            // Complete
+            hideProgress();
+            updateAvatarStatus('✅ Video ready!');
+            document.getElementById('status').textContent = 'Complete';
+            
+            // Show audio player
+            showAudioPlayer();
+            
+            // Show controls
+            document.getElementById('playControls').classList.remove('hidden');
+            document.getElementById('videoContainer').classList.remove('hidden');
+            document.getElementById('downloadSection').classList.remove('hidden');
+            
+            isGenerating = false;
+            document.getElementById('generateBtn').disabled = false;
+        }
+
+        // Show audio player with real generated audio
+        async function showAudioPlayer() {
+            const audioContainer = document.getElementById('audioContainer');
+            audioPlayer = document.getElementById('audioPlayer');
+            
+            // Generate real audio using Web Speech API
+            const script = demoScripts[currentScriptKey];
+            const audioBlob = await generateRealAudio(script.script);
+            
+            if (audioBlob) {
+                const audioUrl = URL.createObjectURL(audioBlob);
+                audioPlayer.src = audioUrl;
+                setupAudioEvents();
+                audioContainer.classList.remove('hidden');
+                updateAudioStatus('Audio ready - click play to preview');
+            } else {
+                // Fallback: create a simple tone
+                const audioUrl = await createSimpleAudio();
+                audioPlayer.src = audioUrl;
+                setupAudioEvents();
+                audioContainer.classList.remove('hidden');
+                updateAudioStatus('Demo audio ready - click play to preview');
+            }
+        }
+
+        // Setup audio event listeners
+        function setupAudioEvents() {
+            audioPlayer.addEventListener('loadedmetadata', () => {
+                const duration = formatTime(audioPlayer.duration);
+                document.getElementById('totalTime').textContent = duration;
+                updateAudioStatus(`Audio loaded (${duration})`);
+            });
+
+            audioPlayer.addEventListener('timeupdate', () => {
+                const currentTime = audioPlayer.currentTime;
+                const duration = audioPlayer.duration;
+                const progress = (currentTime / duration) * 100;
+                
+                document.getElementById('audioProgress').style.width = progress + '%';
+                document.getElementById('currentTime').textContent = formatTime(currentTime);
+                
+                // Update bullet points based on audio time
+                updateBulletsFromAudio(currentTime);
+            });
+
+            audioPlayer.addEventListener('play', () => {
+                isAudioPlaying = true;
+                document.getElementById('playPauseBtn').innerHTML = '⏸️ Pause';
+                document.getElementById('avatarIcon').classList.add('avatar-speaking');
+                document.getElementById('audioWave').classList.remove('hidden');
+                updateAudioStatus('Playing...');
+            });
+
+            audioPlayer.addEventListener('pause', () => {
+                isAudioPlaying = false;
+                document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+                document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+                document.getElementById('audioWave').classList.add('hidden');
+                updateAudioStatus('Paused');
+            });
+
+            audioPlayer.addEventListener('ended', () => {
+                isAudioPlaying = false;
+                document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+                document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+                document.getElementById('audioWave').classList.add('hidden');
+                updateAudioStatus('Playback completed');
+            });
+        }
+
+        // Audio control functions
+        function togglePlayPause() {
+            if (!audioPlayer) return;
+            
+            if (isAudioPlaying) {
+                audioPlayer.pause();
+            } else {
+                audioPlayer.play();
+            }
+        }
+
+        function stopAudio() {
+            if (!audioPlayer) return;
+            
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            resetBullets();
+            updateAudioStatus('Stopped');
+        }
+
+        function replayAudio() {
+            if (!audioPlayer) return;
+            
+            audioPlayer.currentTime = 0;
+            resetBullets();
+            audioPlayer.play();
+        }
+
+        function setVolume(value) {
+            if (!audioPlayer) return;
+            
+            audioPlayer.volume = value / 100;
+            document.getElementById('volumeValue').textContent = value + '%';
+        }
+
+        function setPlaybackRate(rate) {
+            if (!audioPlayer) return;
+            
+            audioPlayer.playbackRate = parseFloat(rate);
+            updateAudioStatus(`Playing at ${rate}x speed`);
+        }
+
+        function seekAudio(event) {
+            if (!audioPlayer) return;
+            
+            const progressContainer = document.getElementById('audioProgressContainer');
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = event.clientX - rect.left;
+            const percentage = clickX / rect.width;
+            const newTime = percentage * audioPlayer.duration;
+            
+            audioPlayer.currentTime = newTime;
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+
+        function updateAudioStatus(status) {
+            document.getElementById('audioStatus').textContent = status;
+        }
+
+        function updateBulletsFromAudio(currentTime) {
+            const bullets = document.querySelectorAll('.bullet-point');
+            const script = demoScripts[currentScriptKey];
+            const duration = audioPlayer.duration;
+            
+            // Calculate when each bullet should appear based on audio time
+            script.bullets.forEach((bullet, index) => {
+                const bulletTime = (duration / script.bullets.length) * (index + 0.5);
+                
+                if (currentTime >= bulletTime && bullets[index]) {
+                    bullets[index].classList.add('visible');
+                }
+            });
+        }
+
+        function resetBullets() {
+            const bullets = document.querySelectorAll('.bullet-point');
+            bullets.forEach(bullet => bullet.classList.remove('visible'));
+        }
+
+        // Generate real audio using Web Speech API
+        async function generateRealAudio(text) {
+            return new Promise((resolve) => {
+                if ('speechSynthesis' in window) {
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.rate = 0.9;
+                    utterance.pitch = 1.0;
+                    utterance.volume = 1.0;
+                    
+                    // Try to use a professional voice
+                    const voices = speechSynthesis.getVoices();
+                    const preferredVoice = voices.find(voice => 
+                        voice.name.includes('Google') || 
+                        voice.name.includes('Microsoft') ||
+                        voice.lang.startsWith('en')
+                    );
+                    if (preferredVoice) {
+                        utterance.voice = preferredVoice;
+                    }
+
+                    // Record the speech
+                    const mediaRecorder = setupAudioRecording();
+                    if (mediaRecorder) {
+                        mediaRecorder.start();
+                        
+                        utterance.onend = () => {
+                            setTimeout(() => {
+                                mediaRecorder.stop();
+                            }, 500);
+                        };
+                        
+                        mediaRecorder.ondataavailable = (event) => {
+                            if (event.data.size > 0) {
+                                resolve(event.data);
+                            } else {
+                                resolve(null);
+                            }
+                        };
+                        
+                        speechSynthesis.speak(utterance);
+                    } else {
+                        // Fallback if recording not available
+                        speechSynthesis.speak(utterance);
+                        resolve(null);
+                    }
+                } else {
+                    resolve(null);
+                }
+            });
+        }
+
+        // Setup audio recording
+        function setupAudioRecording() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const destination = audioContext.createMediaStreamDestination();
+                const mediaRecorder = new MediaRecorder(destination.stream);
+                return mediaRecorder;
+            } catch (error) {
+                console.log('Audio recording not available:', error);
+                return null;
+            }
+        }
+
+        // Create simple audio as fallback
+        async function createSimpleAudio() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const duration = parseInt(document.getElementById('duration').textContent);
+            const sampleRate = audioContext.sampleRate;
+            const buffer = audioContext.createBuffer(1, sampleRate * duration, sampleRate);
+            const data = buffer.getChannelData(0);
+            
+            // Generate a pleasant tone sequence
+            for (let i = 0; i < data.length; i++) {
+                const time = i / sampleRate;
+                const frequency = 440 + Math.sin(time * 0.5) * 100; // Varying frequency
+                data[i] = Math.sin(2 * Math.PI * frequency * time) * 0.1 * Math.exp(-time * 0.1);
+            }
+            
+            // Convert to blob
+            const wav = audioBufferToWav(buffer);
+            return new Blob([wav], { type: 'audio/wav' });
+        }
+
+        // Convert AudioBuffer to WAV
+        function audioBufferToWav(buffer) {
+            const length = buffer.length;
+            const arrayBuffer = new ArrayBuffer(44 + length * 2);
+            const view = new DataView(arrayBuffer);
+            const data = buffer.getChannelData(0);
+            
+            // WAV header
+            const writeString = (offset, string) => {
+                for (let i = 0; i < string.length; i++) {
+                    view.setUint8(offset + i, string.charCodeAt(i));
+                }
+            };
+            
+            writeString(0, 'RIFF');
+            view.setUint32(4, 36 + length * 2, true);
+            writeString(8, 'WAVE');
+            writeString(12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
+            view.setUint32(24, buffer.sampleRate, true);
+            view.setUint32(28, buffer.sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            writeString(36, 'data');
+            view.setUint32(40, length * 2, true);
+            
+            // Convert float samples to 16-bit PCM
+            let offset = 44;
+            for (let i = 0; i < length; i++) {
+                const sample = Math.max(-1, Math.min(1, data[i]));
+                view.setInt16(offset, sample * 0x7FFF, true);
+                offset += 2;
+            }
+            
+            return arrayBuffer;
+        }
+
+        // Play demo with bullet animations
+        function playDemo() {
+            if (!audioPlayer) {
+                updateAudioStatus('No audio loaded - generate audio first');
+                return;
+            }
+            
+            if (isAudioPlaying) {
+                audioPlayer.pause();
+                return;
+            }
+            
+            // Reset bullets and start playing
+            resetBullets();
+            audioPlayer.currentTime = 0;
+            audioPlayer.play();
+        }
+
+        // Pause demo
+        function pauseDemo() {
+            if (audioPlayer) {
+                audioPlayer.pause();
+            }
+        }
+
+        // Reset demo
+        function resetDemo() {
+            if (audioPlayer) {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+            }
+            
+            resetBullets();
+            updateAvatarStatus('🔄 Reset - Ready to play');
+            updateAudioStatus('Reset - Ready to play');
+        }
+
+        // Generate and download real files
+        async function downloadFile(type) {
+            updateAvatarStatus(`📥 Generating ${type}...`);
+            
+            if (type === 'audio') {
+                // Download the actual generated audio
+                const audioPlayer = document.getElementById('audioPlayer');
+                if (audioPlayer.src) {
+                    const a = document.createElement('a');
+                    a.href = audioPlayer.src;
+                    a.download = `avatar-audio-${currentScriptKey}.wav`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    updateAvatarStatus(`📥 Audio downloaded!`);
+                } else {
+                    updateAvatarStatus(`❌ No audio to download`);
+                }
+            } else if (type === 'video') {
+                // Generate real video with avatar and bullet points
+                const videoBlob = await generateRealVideo();
+                if (videoBlob) {
+                    const url = URL.createObjectURL(videoBlob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `avatar-video-${currentScriptKey}.webm`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    updateAvatarStatus(`📥 Video downloaded!`);
+                } else {
+                    updateAvatarStatus(`❌ Video generation failed`);
+                }
+            }
+        }
+
+        // Generate real video with Canvas and MediaRecorder
+        async function generateRealVideo() {
+            return new Promise(async (resolve) => {
+                try {
+                    // Create canvas for video generation
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 1280;
+                    canvas.height = 720;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Setup video recording
+                    const stream = canvas.captureStream(30); // 30 FPS
+                    const mediaRecorder = new MediaRecorder(stream, {
+                        mimeType: 'video/webm;codecs=vp9'
+                    });
+                    
+                    const chunks = [];
+                    mediaRecorder.ondataavailable = (event) => {
+                        if (event.data.size > 0) {
+                            chunks.push(event.data);
+                        }
+                    };
+                    
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(chunks, { type: 'video/webm' });
+                        resolve(blob);
+                    };
+                    
+                    // Start recording
+                    mediaRecorder.start();
+                    
+                    // Generate video frames
+                    const script = demoScripts[currentScriptKey];
+                    const duration = parseInt(document.getElementById('duration').textContent) * 1000; // Convert to ms
+                    const frameRate = 30;
+                    const totalFrames = Math.floor(duration / 1000 * frameRate);
+                    
+                    let currentFrame = 0;
+                    let currentBullet = 0;
+                    
+                    const renderFrame = () => {
+                        // Clear canvas
+                        ctx.fillStyle = '#667eea';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        
+                        // Add gradient background
+                        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                        gradient.addColorStop(0, '#667eea');
+                        gradient.addColorStop(1, '#764ba2');
+                        ctx.fillStyle = gradient;
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        
+                        // Draw avatar
+                        const avatarX = canvas.width * 0.25;
+                        const avatarY = canvas.height * 0.5;
+                        const avatarSize = 120;
+                        
+                        // Avatar background circle
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+                        ctx.beginPath();
+                        ctx.arc(avatarX, avatarY, avatarSize, 0, Math.PI * 2);
+                        ctx.fill();
+                        
+                        // Avatar emoji (robot)
+                        ctx.font = `${avatarSize}px Arial`;
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        
+                        // Animate avatar (speaking effect)
+                        const speakingScale = 1 + Math.sin(currentFrame * 0.3) * 0.1;
+                        ctx.save();
+                        ctx.translate(avatarX, avatarY);
+                        ctx.scale(speakingScale, speakingScale);
+                        ctx.fillText('🤖', 0, 0);
+                        ctx.restore();
+                        
+                        // Draw title
+                        ctx.fillStyle = 'white';
+                        ctx.font = 'bold 48px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText(script.title, canvas.width * 0.75, 100);
+                        
+                        // Draw bullet points
+                        const bulletStartY = 200;
+                        const bulletSpacing = 80;
+                        const timePerBullet = duration / script.bullets.length;
+                        const currentTime = (currentFrame / totalFrames) * duration;
+                        
+                        script.bullets.forEach((bullet, index) => {
+                            const bulletTime = timePerBullet * (index + 0.5);
+                            const shouldShow = currentTime >= bulletTime;
+                            
+                            if (shouldShow) {
+                                const alpha = Math.min(1, (currentTime - bulletTime) / 500); // Fade in over 500ms
+                                ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+                                ctx.font = '36px Arial';
+                                ctx.textAlign = 'left';
+                                
+                                const bulletY = bulletStartY + index * bulletSpacing;
+                                ctx.fillText('•', canvas.width * 0.55, bulletY);
+                                ctx.fillText(bullet, canvas.width * 0.58, bulletY);
+                            }
+                        });
+                        
+                        // Draw progress indicator
+                        const progressWidth = canvas.width * 0.8;
+                        const progressHeight = 8;
+                        const progressX = (canvas.width - progressWidth) / 2;
+                        const progressY = canvas.height - 50;
+                        
+                        // Progress background
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                        ctx.fillRect(progressX, progressY, progressWidth, progressHeight);
+                        
+                        // Progress fill
+                        const progress = currentFrame / totalFrames;
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                        ctx.fillRect(progressX, progressY, progressWidth * progress, progressHeight);
+                        
+                        currentFrame++;
+                        
+                        if (currentFrame < totalFrames) {
+                            setTimeout(renderFrame, 1000 / frameRate);
+                        } else {
+                            // Stop recording
+                            setTimeout(() => {
+                                mediaRecorder.stop();
+                            }, 100);
+                        }
+                    };
+                    
+                    // Start rendering
+                    renderFrame();
+                    
+                } catch (error) {
+                    console.error('Video generation error:', error);
+                    resolve(null);
+                }
+            });
+        }
+
+        // Update avatar status
+        function updateAvatarStatus(status) {
+            document.getElementById('avatarStatus').textContent = status;
+        }
+
+        // Show progress
+        function showProgress(percentage, label) {
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = percentage + '%';
+            document.getElementById('progressLabel').textContent = label;
+        }
+
+        // Hide progress
+        function hideProgress() {
+            document.getElementById('progressContainer').classList.add('hidden');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateStatistics();
+        });
+    </script>
+</body>
+</html>

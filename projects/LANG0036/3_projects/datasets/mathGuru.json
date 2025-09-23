@@ -1,0 +1,49 @@
+{
+  "system_prompt": "You are an expert statistician and policy analyst with deep expertise in regression analysis, econometrics, and public policy evaluation. Your role is to critically assess statistical methodologies and their applications in policy contexts.",
+  
+  "assessment_prompts": {
+    "methodology_assessment": "Please evaluate the methodological rigor of the regression analysis proposed in this document. Specifically assess: 1) Are the dependent and independent variables appropriately chosen? 2) Are the model specifications realistic and well-justified? 3) Are there any obvious endogeneity or omitted variable bias concerns? 4) Are the sample size requirements and data collection strategies feasible?",
+    
+    "policy_relevance": "Analyze the policy relevance and practical applicability of this regression framework. Consider: 1) How well do the proposed models address the stated policy questions? 2) Are the expected findings actionable for policymakers? 3) Does the analysis framework provide clear decision-making criteria? 4) Are the recommendations realistic within Hong Kong's governance context?",
+    
+    "technical_soundness": "Examine the technical soundness of the statistical approaches. Evaluate: 1) Are the chosen regression types (linear, logistic, ordinal, time series) appropriate for the research questions? 2) Are interaction effects and non-linear relationships adequately considered? 3) Are the model assumptions realistic for the proposed data? 4) Are validation and robustness checking strategies sufficient?",
+    
+    "data_feasibility": "Assess the feasibility of the proposed data collection and analysis strategy. Consider: 1) Are the required data sources realistically accessible? 2) Are the sample sizes adequate for the proposed analyses? 3) Are there practical constraints that could limit implementation? 4) What are the main challenges in executing this research design?",
+    
+    "improvement_suggestions": "Provide constructive suggestions for improving this regression analysis framework. Focus on: 1) Alternative model specifications that might be more robust 2) Additional control variables that should be considered 3) Methodological enhancements for stronger causal inference 4) Practical implementation improvements for better policy impact",
+    
+    "overall_assessment": "Provide an overall assessment of this regression analysis framework on a scale of 1-10, with detailed justification. Consider methodological rigor, policy relevance, technical soundness, and practical feasibility. Highlight the strongest aspects and the most critical areas needing improvement."
+  },
+  
+  "evaluation_criteria": {
+    "methodological_rigor": {
+      "weight": 0.25,
+      "factors": ["variable selection", "model specification", "causal identification", "bias mitigation"]
+    },
+    "policy_relevance": {
+      "weight": 0.25,
+      "factors": ["decision utility", "actionability", "stakeholder needs", "governance context"]
+    },
+    "technical_soundness": {
+      "weight": 0.25,
+      "factors": ["statistical appropriateness", "assumption validity", "robustness", "interpretation clarity"]
+    },
+    "practical_feasibility": {
+      "weight": 0.25,
+      "factors": ["data accessibility", "resource requirements", "implementation barriers", "sustainability"]
+    }
+  },
+  
+  "specific_assessment_questions": [
+    "Does the document clearly identify the policy problem and how regression analysis will help solve it?",
+    "Are the dependent variables well-defined and measurable?",
+    "Do the independent variables capture the key factors influencing the outcomes?",
+    "Are potential confounding variables adequately addressed?",
+    "Is the proposed sample size sufficient for reliable statistical inference?",
+    "Are the data collection methods clearly specified and realistic?",
+    "Do the model specifications align with the theoretical framework?",
+    "Are the expected results practically significant, not just statistically significant?",
+    "Are the policy recommendations logically derived from the analytical framework?",
+    "Is the analysis plan robust to potential data limitations or quality issues?"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Employer Expectations in Group Interview",
+  "styleClass": "from-indigo-700 to-pink-500",
+  "model": "gpt-4.1-mini",
+  "welcomePrompt": "Please provide: \n1. Your CV \n2. The target position as well as recruiting company",
+  "systemPrompt": "You are an experienced HR manager. \n1. What are employers looking for in group interviews? \n2. How to pass the group interviews?\n3. Provide sample answers in 500 words.\n\nAt the end of each chatbox, make sure you add this statement: For more specific information, please contact CareerLink@BUS at busd-css@hkbu.edu.hk.",
+  "reportGenerationInstructions": "Generate a report evaluating how thoroughly the LLM addressed each of the three HR-related questions—including employer expectations, strategies to succeed, and 500-word sample answers—while verifying the consistent inclusion of the required contact statement at the end of each response.",
+  "bccEmail": ["simonwanghkteacher@gmail.com"],
+  "ccEmail": ["adatong@hkbu.edu.hk"]
+}

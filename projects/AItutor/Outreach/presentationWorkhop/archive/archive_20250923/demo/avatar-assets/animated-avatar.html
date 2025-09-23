@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Avatar Component</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .avatar-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .avatar-figure {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            position: relative;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-figure:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .avatar-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-emoji {
+            font-size: 120px;
+            animation: pulse 2s infinite;
+        }
+
+        .speaking-animation {
+            animation: speaking 0.5s infinite alternate;
+        }
+
+        .avatar-controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-btn.active {
+            background: rgba(76, 175, 80, 0.8);
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+        }
+
+        .avatar-info {
+            color: white;
+            margin-top: 20px;
+        }
+
+        .avatar-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar-status {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .animation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .animation-btn {
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .animation-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes speaking {
+            0% { transform: scale(1) rotate(-1deg); }
+            100% { transform: scale(1.02) rotate(1deg); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); }
+        }
+
+        .bounce { animation: bounce 1s infinite; }
+        .shake { animation: shake 0.5s infinite; }
+        .spin { animation: spin 2s linear infinite; }
+        .glow { animation: glow 2s infinite; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .avatar-container {
+                padding: 20px;
+            }
+            
+            .avatar-figure {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .avatar-image {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .avatar-emoji {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="avatar-container">
+        <div class="avatar-figure" id="avatarFigure">
+            <div class="avatar-emoji" id="avatarEmoji">🤖</div>
+        </div>
+        
+        <div class="avatar-info">
+            <div class="avatar-name" id="avatarName">AI Assistant</div>
+            <div class="avatar-status" id="avatarStatus">Ready to help</div>
+        </div>
+        
+        <div class="avatar-controls">
+            <button class="control-btn" onclick="toggleSpeaking()">
+                <span id="speakBtn">🎤 Speak</span>
+            </button>
+            <button class="control-btn" onclick="changeAvatar()">
+                🎭 Change Look
+            </button>
+            <button class="control-btn" onclick="resetAvatar()">
+                🔄 Reset
+            </button>
+        </div>
+        
+        <div class="animation-options">
+            <button class="animation-btn" onclick="playAnimation('bounce')">Bounce</button>
+            <button class="animation-btn" onclick="playAnimation('shake')">Shake</button>
+            <button class="animation-btn" onclick="playAnimation('spin')">Spin</button>
+            <button class="animation-btn" onclick="playAnimation('glow')">Glow</button>
+            <button class="animation-btn" onclick="playAnimation('pulse')">Pulse</button>
+        </div>
+    </div>
+
+    <script>
+        class AnimatedAvatar {
+            constructor() {
+                this.avatarFigure = document.getElementById('avatarFigure');
+                this.avatarEmoji = document.getElementById('avatarEmoji');
+                this.avatarName = document.getElementById('avatarName');
+                this.avatarStatus = document.getElementById('avatarStatus');
+                this.speakBtn = document.getElementById('speakBtn');
+                
+                this.isSpeaking = false;
+                this.currentAnimation = '';
+                
+                // Avatar variations
+                this.avatars = [
+                    { emoji: '�', name: 'Owl AI', status: 'Wise Assistant' },
+                    { emoji: '👨‍💻', name: 'Code Helper', status: 'Programming mode' },
+                    { emoji: '👩‍🏫', name: 'Teacher Bot', status: 'Learning mode' },
+                    { emoji: '🧠', name: 'Smart AI', status: 'Thinking...' },
+                    { emoji: '⚡', name: 'Quick Bot', status: 'Fast response' },
+                    { emoji: '🎯', name: 'Focus AI', status: 'Task oriented' }
+                ];
+                this.currentAvatarIndex = 0;
+                
+                this.init();
+            }
+            
+            init() {
+                // Add click interaction
+                this.avatarFigure.addEventListener('click', () => {
+                    this.playAnimation('bounce');
+                });
+                
+                // Load avatar images if available
+                this.loadAvatarImages();
+            }
+            
+            loadAvatarImages() {
+                // Try to load the owl avatar image
+                const owlImage = new Image();
+                owlImage.onload = () => {
+                    // Replace emoji with actual avatar image
+                    this.avatarEmoji.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.src = 'tex/owl.png';
+                    img.className = 'avatar-image';
+                    img.alt = 'Avatar';
+                    this.avatarEmoji.appendChild(img);
+                    this.updateAvatarInfo('Owl AI', 'Wise Assistant');
+                };
+                owlImage.onerror = () => {
+                    console.log('Avatar image not found, using emoji fallback');
+                };
+                owlImage.src = 'tex/owl.png';
+            }
+            
+            toggleSpeaking() {
+                this.isSpeaking = !this.isSpeaking;
+                
+                if (this.isSpeaking) {
+                    this.avatarFigure.classList.add('speaking-animation');
+                    this.speakBtn.innerHTML = '🔇 Stop';
+                    this.updateAvatarInfo(null, 'Speaking...');
+                    
+                    // Simulate speech with TTS if available
+                    if (window.speechSynthesis) {
+                        const utterance = new SpeechSynthesisUtterance('Hello! I am your AI assistant, ready to help you with any questions or tasks.');
+                        utterance.onend = () => {
+                            this.stopSpeaking();
+                        };
+                        speechSynthesis.speak(utterance);
+                    } else {
+                        // Auto-stop after 3 seconds if no TTS
+                        setTimeout(() => this.stopSpeaking(), 3000);
+                    }
+                } else {
+                    this.stopSpeaking();
+                }
+            }
+            
+            stopSpeaking() {
+                this.isSpeaking = false;
+                this.avatarFigure.classList.remove('speaking-animation');
+                this.speakBtn.innerHTML = '🎤 Speak';
+                this.updateAvatarInfo(null, 'Ready to help');
+                
+                if (window.speechSynthesis) {
+                    speechSynthesis.cancel();
+                }
+            }
+            
+            changeAvatar() {
+                this.currentAvatarIndex = (this.currentAvatarIndex + 1) % this.avatars.length;
+                const avatar = this.avatars[this.currentAvatarIndex];
+                
+                // Only change emoji if no image is loaded
+                if (!this.avatarEmoji.querySelector('img')) {
+                    this.avatarEmoji.textContent = avatar.emoji;
+                }
+                
+                this.updateAvatarInfo(avatar.name, avatar.status);
+                this.playAnimation('spin');
+            }
+            
+            resetAvatar() {
+                this.stopSpeaking();
+                this.clearAnimation();
+                this.currentAvatarIndex = 0;
+                
+                // Reset to first avatar or keep image if loaded
+                if (!this.avatarEmoji.querySelector('img')) {
+                    const avatar = this.avatars[0];
+                    this.avatarEmoji.textContent = avatar.emoji;
+                    this.updateAvatarInfo(avatar.name, avatar.status);
+                }
+                
+                this.playAnimation('pulse');
+            }
+            
+            playAnimation(animationType) {
+                this.clearAnimation();
+                this.currentAnimation = animationType;
+                this.avatarFigure.classList.add(animationType);
+                
+                // Auto-clear animation after duration
+                setTimeout(() => {
+                    if (this.currentAnimation === animationType) {
+                        this.clearAnimation();
+                    }
+                }, 2000);
+            }
+            
+            clearAnimation() {
+                this.avatarFigure.classList.remove('bounce', 'shake', 'spin', 'glow');
+                this.currentAnimation = '';
+            }
+            
+            updateAvatarInfo(name, status) {
+                if (name) this.avatarName.textContent = name;
+                if (status) this.avatarStatus.textContent = status;
+            }
+            
+            // Public API for integration
+            speak(text) {
+                if (window.speechSynthesis && text) {
+                    this.avatarFigure.classList.add('speaking-animation');
+                    this.updateAvatarInfo(null, 'Speaking...');
+                    
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.onend = () => {
+                        this.avatarFigure.classList.remove('speaking-animation');
+                        this.updateAvatarInfo(null, 'Ready to help');
+                    };
+                    speechSynthesis.speak(utterance);
+                }
+            }
+            
+            setEmotion(emotion) {
+                const emotions = {
+                    happy: '😊',
+                    thinking: '🤔',
+                    excited: '🤩',
+                    confused: '😕',
+                    sleepy: '😴'
+                };
+                
+                if (emotions[emotion] && !this.avatarEmoji.querySelector('img')) {
+                    this.avatarEmoji.textContent = emotions[emotion];
+                }
+            }
+        }
+        
+        // Initialize the animated avatar
+        const avatar = new AnimatedAvatar();
+        
+        // Global functions for HTML buttons
+        function toggleSpeaking() {
+            avatar.toggleSpeaking();
+        }
+        
+        function changeAvatar() {
+            avatar.changeAvatar();
+        }
+        
+        function resetAvatar() {
+            avatar.resetAvatar();
+        }
+        
+        function playAnimation(type) {
+            avatar.playAnimation(type);
+        }
+        
+        // Export for integration with other components
+        window.AnimatedAvatar = AnimatedAvatar;
+        window.avatarInstance = avatar;
+    </script>
+</body>
+</html>

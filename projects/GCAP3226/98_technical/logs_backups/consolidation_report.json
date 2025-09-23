@@ -1,0 +1,29 @@
+{
+  "consolidation_date": "2025-09-22T11:53:29.688685",
+  "source_directory": "/Users/simonwang/Documents/Usage/VibeCodingMac/GCAP3226prep",
+  "target_directory": "/Users/simonwang/Documents/Usage/VibeCodingMac/DailyAssistant/projects/GCAP3226",
+  "backup_directory": "/Users/simonwang/Documents/Usage/VibeCodingMac/DailyAssistant/projects/GCAP3226/consolidation_backup_20250922_115329",
+  "folder_mappings": {
+    "Materials": "course_materials",
+    "Chatbots": "chatbots",
+    "syllabus": "course_materials/syllabus",
+    "tools": "scripts",
+    "src": "scripts/src",
+    "NewTopics": "course_materials/new_topics",
+    "TopicSelectionPM": "course_materials/topic_selection",
+    "MoodlePost": "course_materials/moodle_posts",
+    "temp": "temp_materials"
+  },
+  "skipped_files": [
+    ".gitignore",
+    "package.json",
+    ".DS_Store",
+    "tsconfig.json",
+    "setup.sh"
+  ],
+  "skipped_directories": [
+    ".vscode",
+    ".github",
+    ".git"
+  ]
+}

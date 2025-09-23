@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Investment Reflection</title>
+    <style>
+        .reflection-hero {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reflection-hero::before {
+            content: '⏰💡📚';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .time-audit-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .time-breakdown {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .traditional-time {
+            border-left: 4px solid #dc3545;
+        }
+
+        .ai-enhanced-time {
+            border-left: 4px solid #28a745;
+        }
+
+        .time-chart {
+            margin: 20px 0;
+        }
+
+        .time-bar {
+            display: flex;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 15px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .time-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .time-segment:hover {
+            filter: brightness(1.1);
+            cursor: pointer;
+        }
+
+        .teaching { background: #ff6b6b; }
+        .research { background: #4ecdc4; }
+        .admin { background: #45b7d1; }
+        .tool-dev { background: #96ceb4; }
+        .meetings { background: #feca57; }
+        .other { background: #a55eea; }
+
+        .roi-calculator {
+            background: linear-gradient(135deg, var(--warm-peach), var(--warm-yellow));
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .calculator-input {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .input-group {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+        }
+
+        .roi-results {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .metric-card.savings {
+            background: linear-gradient(135deg, #d4f1d4, #a8e6a8);
+            border: 2px solid #28a745;
+        }
+
+        .metric-card.productivity {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            border: 2px solid #2196f3;
+        }
+
+        .metric-card.quality {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border: 2px solid #ff9800;
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin: 10px 0;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--dark-text);
+            font-weight: 600;
+        }
+
+        .case-study {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-purple);
+        }
+
+        .testimonial {
+            background: var(--warm-yellow);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-orange);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: 600;
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+        .goal-setting {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .goal-input {
+            background: var(--white);
+            color: var(--dark-text);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: none;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .timeline-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-orange);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 60px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-orange);
+        }
+
+        .timeline-item.current::before {
+            background: var(--primary-orange);
+        }
+
+        .timeline-item.future::before {
+            background: var(--primary-purple);
+            box-shadow: 0 0 0 3px var(--primary-purple);
+        }
+
+        .timeline-content {
+            background: var(--warm-peach);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .time-audit-container, .timeline-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-input {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Time Investment Reflection: Reclaim Your Academic Focus</h2>
+    
+    <div class="reflection-hero">
+        <h3>⚖️ "Stop building tools, start teaching and researching"</h3>
+        <p>Discover how AI can redirect your effort from technical development back to your core academic mission</p>
+    </div>
+
+    <!-- Current State Analysis -->
+    <div class="abstract-content">
+        <h3>🔍 Academic Time Audit: Where Does Your Time Really Go?</h3>
+        <p>Most educators underestimate the hidden costs of content creation and tool development. Let's examine the typical academic workload distribution:</p>
+    </div>
+
+    <div class="time-audit-container">
+        <div class="time-breakdown traditional-time">
+            <h4>❌ Traditional Academic Week (40 hours)</h4>
+            <div class="time-chart">
+                <div class="time-bar">
+                    <div class="time-segment teaching" style="width: 35%;" title="Teaching: 14 hours">Teaching (35%)</div>
+                    <div class="time-segment research" style="width: 25%;" title="Research: 10 hours">Research (25%)</div>
+                    <div class="time-segment tool-dev" style="width: 20%;" title="Content/Tool Development: 8 hours">Tool Dev (20%)</div>
+                    <div class="time-segment admin" style="width: 15%;" title="Admin: 6 hours">Admin (15%)</div>
+                    <div class="time-segment meetings" style="width: 5%;" title="Meetings: 2 hours">Meet (5%)</div>
+                </div>
+                
+                <h5>⏰ Hidden Time Costs:</h5>
+                <ul>
+                    <li><strong>Video Creation:</strong> 3-5 hours per lecture</li>
+                    <li><strong>Tool Development:</strong> 2-4 hours per custom solution</li>
+                    <li><strong>Content Updates:</strong> 1-2 hours per revision</li>
+                    <li><strong>Technical Troubleshooting:</strong> 0.5-1 hour per issue</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="time-breakdown ai-enhanced-time">
+            <h4>✅ AI-Enhanced Academic Week (40 hours)</h4>
+            <div class="time-chart">
+                <div class="time-bar">
+                    <div class="time-segment teaching" style="width: 40%;" title="Teaching: 16 hours">Teaching (40%)</div>
+                    <div class="time-segment research" style="width: 35%;" title="Research: 14 hours">Research (35%)</div>
+                    <div class="time-segment tool-dev" style="width: 5%;" title="AI Tool Management: 2 hours">AI Tools (5%)</div>
+                    <div class="time-segment admin" style="width: 15%;" title="Admin: 6 hours">Admin (15%)</div>
+                    <div class="time-segment meetings" style="width: 5%;" title="Meetings: 2 hours">Meet (5%)</div>
+                </div>
+                
+                <h5>💡 AI-Accelerated Tasks:</h5>
+                <ul>
+                    <li><strong>Video Creation:</strong> 5-10 minutes per lecture</li>
+                    <li><strong>Tool Customization:</strong> 15-30 minutes via vibe coding</li>
+                    <li><strong>Content Updates:</strong> 2-5 minutes per revision</li>
+                    <li><strong>Technical Issues:</strong> Handled automatically by AI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROI Calculator -->
+    <div class="roi-calculator">
+        <h3>📊 Personal ROI Calculator</h3>
+        <p>Calculate your potential time savings and productivity gains with AI-assisted tools:</p>
+        
+        <div class="calculator-input">
+            <div class="input-group">
+                <label for="videos-per-month">Videos Created Per Month</label>
+                <input type="number" id="videos-per-month" value="8" min="0" max="50" onchange="calculateROI()">
+            </div>
+            
+            <div class="input-group">
+                <label for="hours-per-video">Hours Per Video (Traditional)</label>
+                <input type="number" id="hours-per-video" value="4" min="1" max="10" step="0.5" onchange="calculateROI()">
+            </div>
+            
+            <div class="input-group">
+                <label for="tools-created">Custom Tools Created Per Semester</label>
+                <input type="number" id="tools-created" value="3" min="0" max="20" onchange="calculateROI()">
+            </div>
+            
+            <div class="input-group">
+                <label for="hours-per-tool">Hours Per Tool (Traditional)</label>
+                <input type="number" id="hours-per-tool" value="12" min="1" max="40" onchange="calculateROI()">
+            </div>
+            
+            <div class="input-group">
+                <label for="hourly-value">Your Hourly Value ($)</label>
+                <input type="number" id="hourly-value" value="75" min="25" max="200" onchange="calculateROI()">
+            </div>
+            
+            <div class="input-group">
+                <label for="research-priority">Research Priority (1-10)</label>
+                <input type="range" id="research-priority" value="8" min="1" max="10" onchange="calculateROI()">
+                <span id="research-priority-value">8</span>
+            </div>
+        </div>
+        
+        <div class="roi-results" id="roi-results">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Impact Metrics -->
+    <h3>📈 Potential Impact Analysis</h3>
+    <div class="metric-grid">
+        <div class="metric-card savings">
+            <div class="metric-number" id="time-saved">32</div>
+            <div class="metric-label">Hours Saved Per Month</div>
+        </div>
+        
+        <div class="metric-card productivity">
+            <div class="metric-number" id="research-boost">+67%</div>
+            <div class="metric-label">Research Time Increase</div>
+        </div>
+        
+        <div class="metric-card quality">
+            <div class="metric-number" id="quality-score">94%</div>
+            <div class="metric-label">Content Quality Score</div>
+        </div>
+        
+        <div class="metric-card savings">
+            <div class="metric-number" id="annual-value">$2,400</div>
+            <div class="metric-label">Annual Value Creation</div>
+        </div>
+    </div>
+
+    <!-- Case Studies -->
+    <h3>🎓 Success Stories from Early Adopters</h3>
+    
+    <div class="case-study">
+        <h4>Dr. Sarah Chen - Psychology Department</h4>
+        <div class="testimonial">
+            Since implementing AI-assisted video creation, I've reduced my content preparation time by 75%. The extra 12 hours per week have allowed me to focus on my research on cognitive behavioral therapy, resulting in two additional publications this year.
+            <div class="testimonial-author">- Dr. Sarah Chen, Associate Professor of Psychology</div>
+        </div>
+        <p><strong>Quantified Impact:</strong> 288 hours saved annually, 2 additional research publications, 15% increase in student engagement scores.</p>
+    </div>
+
+    <div class="case-study">
+        <h4>Prof. Michael Rodriguez - Engineering Faculty</h4>
+        <div class="testimonial">
+            The AI avatar handles 80% of routine student questions, freeing up my office hours for meaningful mentoring. My students love the 24/7 availability, and I love having time for my renewable energy research again.
+            <div class="testimonial-author">- Prof. Michael Rodriguez, Department of Engineering</div>
+        </div>
+        <p><strong>Quantified Impact:</strong> 200+ hours redirected to research, $150K grant secured, 92% student satisfaction with AI support.</p>
+    </div>
+
+    <!-- Future Vision Timeline -->
+    <h3>🔮 Your Academic Future: Traditional vs AI-Enhanced Path</h3>
+    <div class="timeline-comparison">
+        <div>
+            <h4>📉 Traditional Path (Next 2 Years)</h4>
+            <div class="timeline">
+                <div class="timeline-item current">
+                    <div class="timeline-content">
+                        <strong>Year 1:</strong> Spend 320+ hours on content creation and tool development. Research output stagnates.
+                    </div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="timeline-content">
+                        <strong>Year 2:</strong> Burnout from technical tasks. Miss research opportunities. Students demand more interactive content.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>📈 AI-Enhanced Path (Next 2 Years)</h4>
+            <div class="timeline">
+                <div class="timeline-item current">
+                    <div class="timeline-content">
+                        <strong>Year 1:</strong> Redirect 200+ hours to research. Publish additional papers. Students enjoy AI-powered learning.
+                    </div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="timeline-content">
+                        <strong>Year 2:</strong> Secure major research grants. Lead department in innovation. Become model for AI integration.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goal Setting -->
+    <div class="goal-setting">
+        <h3>🎯 Set Your Time Reallocation Goals</h3>
+        <p>Define how you'll redirect the time saved by AI tools:</p>
+        
+        <input type="text" class="goal-input" placeholder="Research Goal: e.g., Complete longitudinal study on student engagement patterns" />
+        <input type="text" class="goal-input" placeholder="Teaching Goal: e.g., Develop innovative assessment methods for critical thinking" />
+        <input type="text" class="goal-input" placeholder="Personal Goal: e.g., Maintain better work-life balance and reduce weekend work" />
+        
+        <button class="demo-btn" onclick="saveGoals()" style="background: var(--primary-orange); border: none; padding: 15px 30px; border-radius: 8px; color: white; font-weight: 600; cursor: pointer; margin-top: 15px;">
+            💾 Save My Goals
+        </button>
+    </div>
+
+    <!-- Action Steps -->
+    <div class="abstract-content">
+        <h3>🚀 Your Next Steps</h3>
+        <p><strong>Ready to reclaim your academic focus?</strong> Here's your roadmap to AI-enhanced productivity:</p>
+    </div>
+
+    <div class="tools-grid">
+        <div class="tool-card">
+            <h4>📅 Week 1: Pilot Testing</h4>
+            <p>Start with one AI-generated video for your most time-intensive lecture. Measure the time difference and student response.</p>
+        </div>
+        <div class="tool-card">
+            <h4>📊 Month 1: Data Collection</h4>
+            <p>Track time spent on content creation before and after AI integration. Document quality metrics and student feedback.</p>
+        </div>
+        <div class="tool-card">
+            <h4>🎯 Semester 1: Full Integration</h4>
+            <p>Implement AI tools across your entire course portfolio. Redirect saved time to your priority research projects.</p>
+        </div>
+    </div>
+
+    <script>
+        function calculateROI() {
+            const videosPerMonth = parseFloat(document.getElementById('videos-per-month').value) || 0;
+            const hoursPerVideo = parseFloat(document.getElementById('hours-per-video').value) || 0;
+            const toolsCreated = parseFloat(document.getElementById('tools-created').value) || 0;
+            const hoursPerTool = parseFloat(document.getElementById('hours-per-tool').value) || 0;
+            const hourlyValue = parseFloat(document.getElementById('hourly-value').value) || 0;
+            const researchPriority = parseFloat(document.getElementById('research-priority').value) || 0;
+            
+            // Update research priority display
+            document.getElementById('research-priority-value').textContent = researchPriority;
+            
+            // Calculate traditional time investment
+            const traditionalVideoTime = videosPerMonth * hoursPerVideo * 12; // Annual
+            const traditionalToolTime = toolsCreated * hoursPerTool * 2; // Per year (2 semesters)
+            const totalTraditionalTime = traditionalVideoTime + traditionalToolTime;
+            
+            // Calculate AI-assisted time investment
+            const aiVideoTime = videosPerMonth * 0.17 * 12; // 10 minutes = 0.17 hours
+            const aiToolTime = toolsCreated * 0.5 * 2; // 30 minutes = 0.5 hours
+            const totalAiTime = aiVideoTime + aiToolTime;
+            
+            // Calculate savings
+            const timeSaved = totalTraditionalTime - totalAiTime;
+            const monthlySavings = timeSaved / 12;
+            const dollarValue = timeSaved * hourlyValue;
+            const researchBoost = Math.round(((timeSaved / totalTraditionalTime) * 100) * (researchPriority / 10));
+            
+            // Update display
+            document.getElementById('time-saved').textContent = Math.round(monthlySavings);
+            document.getElementById('research-boost').textContent = `+${researchBoost}%`;
+            document.getElementById('annual-value').textContent = `$${Math.round(dollarValue).toLocaleString()}`;
+            
+            // Update ROI results
+            document.getElementById('roi-results').innerHTML = `
+                <h4>📈 Your Personalized ROI Analysis</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 8px;">
+                        <strong>Annual Time Savings:</strong><br>
+                        ${Math.round(timeSaved)} hours
+                    </div>
+                    <div style="background: #e1f5fe; padding: 15px; border-radius: 8px;">
+                        <strong>Equivalent Value:</strong><br>
+                        $${Math.round(dollarValue).toLocaleString()}
+                    </div>
+                    <div style="background: #fff3e0; padding: 15px; border-radius: 8px;">
+                        <strong>Research Time Gained:</strong><br>
+                        ${Math.round(timeSaved * 0.7)} hours/year
+                    </div>
+                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
+                        <strong>ROI Multiple:</strong><br>
+                        ${Math.round(dollarValue / 1000)}x initial investment
+                    </div>
+                </div>
+                <p style="margin-top: 15px; font-style: italic; color: var(--medium-text);">
+                    💡 <strong>Insight:</strong> At your current research priority level (${researchPriority}/10), 
+                    you could potentially redirect <strong>${Math.round(timeSaved * 0.7)} hours annually</strong> 
+                    to high-impact research activities.
+                </p>
+            `;
+        }
+        
+        function saveGoals() {
+            const goals = Array.from(document.querySelectorAll('.goal-input'))
+                .map(input => input.value)
+                .filter(value => value.trim() !== '');
+            
+            if (goals.length > 0) {
+                alert(`🎯 Goals saved successfully!\n\nYou've committed to:\n${goals.map((goal, i) => `${i+1}. ${goal}`).join('\n')}\n\nWe'll follow up with resources to help you achieve these objectives!`);
+            } else {
+                alert('📝 Please enter at least one goal before saving.');
+            }
+        }
+        
+        // Initialize calculator
+        calculateROI();
+        
+        // Add hover effects to time segments
+        document.querySelectorAll('.time-segment').forEach(segment => {
+            segment.addEventListener('mouseover', function() {
+                const tooltip = this.getAttribute('title');
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            segment.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Interview Preparation",
+  "styleClass": "from-gray-600 to-slate-500",
+  "model": "gpt-4.1-mini",
+  "welcomePrompt": "Please provide: \n\n1. Your CV\n2. The job description for the targeted position",
+  "systemPrompt": "You are an expert in career advising. Please provide specific feedback on how to prepare for job interviews. Generate a list of interview questions according to the CV and job description.\n",
+  "reportGenerationInstructions": "Generate a report analyzing the extent to which the LLM provided specific, actionable interview preparation advice and accurately tailored interview questions to the user’s CV and job description.",
+  "bccEmail": ["simonwanghkteacher@gmail.com"],
+  "ccEmail": ["adatong@hkbu.edu.hk"]
+}

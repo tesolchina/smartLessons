@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個性化人工智慧聊天機器人在大學中文教學中的應用 - 王浩博士</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2px;
+            border-radius: 16px;
+        }
+        
+        .gradient-border-inner {
+            background: white;
+            border-radius: 14px;
+        }
+        
+        .dark .gradient-border-inner {
+            background: #1f2937;
+        }
+        
+        .floating-indicator {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .presentation-frame {
+            transition: all 0.3s ease;
+        }
+        
+        .presentation-frame:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fullscreen-button {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 min-h-screen">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="text-center mb-8">
+            <div class="floating-indicator inline-block mb-4">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-2xl">🤖</span>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+                個性化人工智慧聊天機器人在大學中文教學中的應用
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-2">王浩博士</p>
+            <p class="text-lg text-gray-500 dark:text-gray-500">2025年7月18日</p>
+        </div>
+
+        <div class="mb-8">
+            <div class="gradient-border shadow-2xl presentation-frame">
+                <div class="gradient-border-inner p-6">
+                    <div class="flex justify-end items-center mb-4">
+                        <button onclick="openFullscreen()" class="fullscreen-button text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                            🔍 全螢幕檢視
+                        </button>
+                    </div>
+                    <div class="w-full rounded-lg overflow-hidden bg-white" style="height: 80vh; min-height: 600px;">
+                        <div style="position: relative; width: 100%; height: 100%; padding-top: 0; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); overflow: hidden; border-radius: 8px; will-change: transform;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                                src="https://www.canva.com/design/DAGsohM6WZE/jU1PIm4KzAkALJWHsaGMyQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <a href="https://www.canva.com/design/DAGsohM6WZE/jU1PIm4KzAkALJWHsaGMyQ/view?utm_content=DAGsohM6WZE&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener" class="text-primary hover:underline text-sm">
+                            📖 檢視完整簡報
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gradient-border shadow-lg">
+            <div class="gradient-border-inner p-6">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-xl">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI 助理已啟動</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">互動式AI助理將在左下角協助您了解更多關於中文教學應用的資訊</p>
+                    <div class="flex justify-center items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span>💬 即時對話</span>
+                        <span>🎯 個性化回應</span>
+                        <span>📚 教學支援</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar Info Panel -->
+    <div id="avatarInfoPanel" class="fixed bottom-6 left-6 bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600 shadow-lg max-w-xs z-40 hidden">
+        <div class="font-semibold text-gray-900 dark:text-white text-sm">AI 中文教學助理</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400">王浩博士研究團隊</div>
+        <div class="text-xs text-primary hover:underline cursor-pointer">了解更多 →</div>
+    </div>
+
+    <!-- Avatar Embed Script -->
+    <script>!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 20px;\n    bottom: 20px;\n    width: 260px;\n    height: 280px;\n    border-radius: 16px;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease;\n    overflow: hidden;\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 340px; width: calc(100vw - 40px); left: 20px;":"height: 380px; width: 300px; right: 20px; left: auto;"}\n    border-radius: 16px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n    border-radius: 14px;\n    overflow: hidden;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n    border-radius: 14px;\n  }\n  `;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);</script>
+
+    <script>
+        function initializeAvatarInfo() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarInfoPanel = document.getElementById('avatarInfoPanel');
+            
+            if (avatarEmbed && avatarInfoPanel) {
+                let hoverTimeout;
+                
+                avatarEmbed.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                    avatarInfoPanel.classList.remove('hidden');
+                });
+                
+                avatarEmbed.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 2000);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 1000);
+                });
+            }
+        }
+
+        function openFullscreen() {
+            window.open('https://www.canva.com/design/DAGsohM6WZE/2cqHmR7QY3yrdq6dXgV6Rw/view?utm_content=DAGsohM6WZE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h203f2ed31e', '_blank');
+        }
+
+        function initializePiPHandler() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarContainer = document.getElementById('heygen-streaming-container');
+            
+            if (avatarContainer) {
+                const iframe = avatarContainer.querySelector('iframe');
+                
+                if (iframe) {
+                    iframe.addEventListener('enterpictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '0';
+                            avatarEmbed.style.visibility = 'hidden';
+                            avatarEmbed.style.pointerEvents = 'none';
+                        }
+                    });
+                    
+                    iframe.addEventListener('leavepictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '1';
+                            avatarEmbed.style.visibility = 'visible';
+                            avatarEmbed.style.pointerEvents = 'auto';
+                        }
+                    });
+                }
+            }
+            
+            document.addEventListener('enterpictureinpicture', function() {
+                if (avatarEmbed) {
+                    avatarEmbed.style.opacity = '0';
+                    avatarEmbed.style.visibility = 'hidden';
+                    avatarEmbed.style.pointerEvents = 'none';
+                }
+            });
+            
+            document.addEventListener('leavepictureinpicture', function() {
+                if (avatarEmbed) {
+                    avatarEmbed.style.opacity = '1';
+                    avatarEmbed.style.visibility = 'visible';
+                    avatarEmbed.style.pointerEvents = 'auto';
+                }
+            });
+        }
+
+        setTimeout(() => {
+            initializeAvatarInfo();
+            initializePiPHandler();
+        }, 2000);
+    </script>
+</body>
+</html>

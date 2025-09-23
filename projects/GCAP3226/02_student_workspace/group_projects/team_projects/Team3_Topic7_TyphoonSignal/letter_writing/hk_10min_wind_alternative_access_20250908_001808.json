@@ -1,0 +1,146 @@
+{
+  "assessment_time": "2025-09-08T00:18:08.768755",
+  "portal_analysis": {
+    "page_title": "Common Spatial Data Infrastructure (CSDI) Portal",
+    "data_links": [],
+    "api_references": [],
+    "embedded_data": [],
+    "metadata": {}
+  },
+  "working_endpoints": [
+    {
+      "url": "https://portal.csdi.gov.hk/geoportal/?datasetId=hko_rcd_1634953844424_88011&lang=en",
+      "status": "accessible",
+      "content_type": "text/html;charset=utf-8",
+      "content_length": 11374,
+      "contains_wind_data": true,
+      "data_type": "html",
+      "wind_references": 28,
+      "station_references": 0
+    },
+    {
+      "url": "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-ten-minute-wind-info/resource/3dadbf08-148c-4daa-8051-7ce315fa013b",
+      "status": "accessible",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 58955,
+      "contains_wind_data": true,
+      "data_type": "html",
+      "wind_references": 37,
+      "station_references": 0
+    },
+    {
+      "url": "https://www.hko.gov.hk/en/wxinfo/currwx/current.htm",
+      "status": "accessible",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 11440,
+      "contains_wind_data": true,
+      "data_type": "html",
+      "wind_references": 2,
+      "station_references": 1
+    },
+    {
+      "url": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en",
+      "status": "accessible",
+      "content_type": "application/json; charset=utf-8",
+      "content_length": 3457,
+      "contains_wind_data": true,
+      "data_type": "json",
+      "has_features": false,
+      "has_stations": false
+    },
+    {
+      "url": "https://rss.weather.gov.hk/rss/CurrentWeather.xml",
+      "status": "accessible",
+      "content_type": "text/xml; charset=utf-8",
+      "content_length": 6989,
+      "contains_wind_data": true,
+      "data_type": "xml",
+      "xml_root": "rss"
+    },
+    {
+      "url": "https://rss.weather.gov.hk/rss/WeatherWarningBulletin.xml",
+      "status": "accessible",
+      "content_type": "text/xml; charset=utf-8",
+      "content_length": 5749,
+      "contains_wind_data": true,
+      "data_type": "xml",
+      "xml_root": "rss"
+    }
+  ],
+  "wind_data": [
+    {
+      "timestamp": "2025-09-08T00:18:08.664865",
+      "source": "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-ten-minute-wind-info/resource/3dadbf08-148c-4daa-8051-7ce315fa013b",
+      "data_type": "html_table",
+      "dataset": "Data Providers",
+      "regional_weather_in_hong_kong_–_the_latest_10-minute_mean_wind_direction_and_wind_speed_and_maximum_gust": "Hong Kong Observatory"
+    },
+    {
+      "timestamp": "2025-09-08T00:18:08.664904",
+      "source": "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-ten-minute-wind-info/resource/3dadbf08-148c-4daa-8051-7ce315fa013b",
+      "data_type": "html_table",
+      "dataset": "Data Category",
+      "regional_weather_in_hong_kong_–_the_latest_10-minute_mean_wind_direction_and_wind_speed_and_maximum_gust": "Climate and Weather"
+    },
+    {
+      "timestamp": "2025-09-08T00:18:08.664932",
+      "source": "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-ten-minute-wind-info/resource/3dadbf08-148c-4daa-8051-7ce315fa013b",
+      "data_type": "html_table",
+      "dataset": "Format",
+      "regional_weather_in_hong_kong_–_the_latest_10-minute_mean_wind_direction_and_wind_speed_and_maximum_gust": "API"
+    },
+    {
+      "timestamp": "2025-09-08T00:18:08.664957",
+      "source": "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-ten-minute-wind-info/resource/3dadbf08-148c-4daa-8051-7ce315fa013b",
+      "data_type": "html_table",
+      "dataset": "API",
+      "regional_weather_in_hong_kong_–_the_latest_10-minute_mean_wind_direction_and_wind_speed_and_maximum_gust": "Available"
+    },
+    {
+      "timestamp": "2025-09-08T00:18:08.664978",
+      "source": "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-ten-minute-wind-info/resource/3dadbf08-148c-4daa-8051-7ce315fa013b",
+      "data_type": "html_table",
+      "dataset": "Update Frequency",
+      "regional_weather_in_hong_kong_–_the_latest_10-minute_mean_wind_direction_and_wind_speed_and_maximum_gust": "Every 10 Minutes"
+    },
+    {
+      "timestamp": "2025-09-08T00:18:08.753943",
+      "source": "https://rss.weather.gov.hk/rss/CurrentWeather.xml",
+      "data_type": "xml_rss",
+      "title": "Bulletin updated at 00:02 HKT 08/09/2025",
+      "pub_date": "Sun, 07 Sep 2025 16:02:00 GMT",
+      "stations": [
+        "other places"
+      ]
+    },
+    {
+      "timestamp": "2025-09-08T00:18:08.768197",
+      "source": "https://rss.weather.gov.hk/rss/WeatherWarningBulletin.xml",
+      "data_type": "xml_rss",
+      "title": "Information about Tropical Cyclone Bulletin (23:45 HKT on 07.09.2025)",
+      "pub_date": "Sun, 07 Sep 2025 23:45:00 +0800",
+      "wind_speeds_kmh": [
+        63,
+        18,
+        51,
+        60
+      ],
+      "max_wind_kmh": 63,
+      "stations": [
+        "Ngong Ping"
+      ]
+    }
+  ],
+  "station_mapping": {
+    "total_unique_stations": 0,
+    "stations_with_coordinates": 0,
+    "stations_with_wind_data": 0,
+    "station_details": {},
+    "data_sources_per_station": {}
+  },
+  "metadata": {
+    "target_dataset": "latest_10min_wind",
+    "intended_frequency": "Every 10 minutes",
+    "alternative_methods": "Web scraping, RSS feeds, working APIs"
+  }
+}

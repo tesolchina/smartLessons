@@ -1,0 +1,58 @@
+{
+  "_comment": "GCAP3226 Google API Configuration",
+  "_instructions": [
+    "1. Replace 'your_spreadsheet_id_here' with your actual Google Sheets ID",
+    "2. Replace 'your_course_folder_id_here' with your Google Drive course folder ID (optional)",
+    "3. Update the path to your service account JSON file",
+    "4. Customize templates as needed for your course"
+  ],
+  
+  "SERVICE_ACCOUNT_FILE": "credentials/gcap3226-service-account.json",
+  "SPREADSHEET_ID": "your_spreadsheet_id_here",
+  "COURSE_FOLDER_ID": "your_course_folder_id_here",
+  
+  "SCOPES": [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/documents"
+  ],
+  
+  "TEMPLATES": {
+    "project_plan": {
+      "name": "GCAP3226 - Team Project Plan",
+      "type": "document"
+    },
+    "data_analysis": {
+      "name": "GCAP3226 - Data Analysis Worksheet", 
+      "type": "spreadsheet"
+    },
+    "presentation": {
+      "name": "GCAP3226 - Final Presentation",
+      "type": "presentation"
+    },
+    "meeting_notes": {
+      "name": "GCAP3226 - Team Meeting Notes",
+      "type": "document"
+    },
+    "literature_review": {
+      "name": "GCAP3226 - Literature Review",
+      "type": "document"
+    }
+  },
+  
+  "SHEET_RANGES": {
+    "teams": "Teams!A:F",
+    "folder_links": "Teams!G:H"
+  },
+  
+  "PERMISSIONS": {
+    "team_members": "writer",
+    "instructors": "owner",
+    "tas": "writer"
+  },
+  
+  "NOTIFICATION_SETTINGS": {
+    "send_email": true,
+    "email_message": "Welcome to your GCAP3226 team folder! This is your collaborative workspace for the course project. Happy collaborating! 🚀"
+  }
+}

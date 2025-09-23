@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Script-to-Avatar Vue Demo</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.avatar-container {background: radial-gradient(circle,#4f46e5 0%,#7c3aed 100%);min-height:400px;position:relative;}
+.bullet-point{opacity:0;transform:translateX(20px);transition:all .8s ease-in-out;}
+.bullet-point.visible{opacity:1;transform:translateX(0);}
+.avatar-speaking{animation:speaking 1s ease-in-out infinite alternate;}
+@keyframes speaking{0%{transform:scale(1);}100%{transform:scale(1.1);}}
+.progress-bar{transition:width .5s ease;}
+.audio-wave{display:flex;align-items:center;justify-content:center;gap:3px;}
+.wave-bar{width:4px;height:20px;background:rgba(255,255,255,.8);border-radius:2px;animation:wave 1.2s ease-in-out infinite;}
+.wave-bar:nth-child(1){animation-delay:0s}.wave-bar:nth-child(2){animation-delay:.1s}.wave-bar:nth-child(3){animation-delay:.2s}.wave-bar:nth-child(4){animation-delay:.3s}.wave-bar:nth-child(5){animation-delay:.4s}
+@keyframes wave{0%,100%{height:20px}50%{height:40px}}
+</style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+<div id="app" class="container mx-auto px-4 py-8" v-cloak>
+  <!-- Header -->
+  <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+    <h1 class="text-3xl font-bold text-gray-800 mb-2">🎬 Script-to-Avatar Demo (Vue)</h1>
+    <p class="text-gray-600">Vue 3 version: generate TTS audio, then full video with synchronized bullet points.</p>
+  </div>
+
+  <!-- Scripts -->
+  <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+    <h2 class="text-xl font-bold mb-4">📝 Demo Scripts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+      <div class="flex flex-wrap items-center gap-4 mb-4">
+        <div>
+          <label class="text-sm font-semibold mr-2">Engine:</label>
+          <select v-model="ttsEngine" class="border rounded px-2 py-1 text-sm">
+            <option value="browser">Browser TTS</option>
+            <option value="azure">Azure TTS (fast)</option>
+          </select>
+        </div>
+        <div v-if="ttsEngine==='azure'" class="text-xs text-gray-500">Ensure server env vars AZURE_SPEECH_KEY & AZURE_SPEECH_REGION are set.</div>
+      </div>
+      <button v-for="(s,key) in scripts" :key="key" @click="loadScript(key)"
+        :class="['p-4 border-2 rounded-lg transition-colors', currentScriptKey===key?'border-blue-500 bg-blue-50':'border-gray-200 hover:border-blue-400']">
+        <h3 class="font-semibold text-blue-800">{{ s.icon }} {{ s.title }}</h3>
+        <p class="text-sm text-gray-600">{{ s.description }}</p>
+      </button>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-4">
+      <h3 class="font-semibold mb-2">Current Script:</h3>
+      <p class="text-gray-700 leading-relaxed">{{ currentScript.script }}</p>
+      <div class="mt-2 text-sm text-gray-500">Words: {{ wordCount }} | Est: {{ estimatedDuration }}s</div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Left -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-xl font-bold mb-4">🎭 Avatar Presenter</h2>
+      <div class="avatar-container rounded-lg mb-4 flex items-center justify-center">
+        <div class="text-center text-white">
+          <div :class="['w-32 h-32 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center text-6xl', isSpeaking?'avatar-speaking':'']" id="avatarIcon">🤖</div>
+          <p class="text-lg font-semibold mb-2">{{ avatarStatus }}</p>
+          <div id="audioWave" :class="['audio-wave', isSpeaking?'':'hidden']">
+            <div class="wave-bar" v-for="n in 5" :key="n"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="progressContainer" v-show="showProgressBar" class="mb-4">
+        <div class="flex justify-between text-sm text-gray-600 mb-1">
+          <span>{{ progressLabel }}</span><span>{{ progress.toFixed(2) }}%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+          <div class="progress-bar bg-indigo-600 h-3" :style="{width: progress+'%'}"></div>
+        </div>
+      </div>
+
+      <!-- Audio Generation Controls -->
+      <div class="space-y-3 mb-4">
+        <button @click="generateAudio" :disabled="isAudioGenerating" :class="btnPrimary(isAudioGenerating)">
+          <span v-if="isAudioGenerating">🎵 Generating Audio...</span><span v-else>🎵 Step 1: Generate & Preview Audio</span>
+        </button>
+        <button @click="generateFullVideo" :disabled="!audioReady || isVideoGenerating" :class="btnSecondary(!audioReady || isVideoGenerating)">
+          <span v-if="isVideoGenerating">🎬 Generating Video...</span><span v-else>🎬 Step 2: Generate Full Video</span>
+        </button>
+        <button @click="generateQuickVideo" :disabled="isVideoGenerating" class="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:opacity-50">⚡ Quick Video (No Audio)</button>
+        <button v-if="isVideoGenerating" @click="cancelGeneration" class="w-full py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700">❌ Cancel Generation</button>
+      </div>
+
+      <!-- Audio Player -->
+      <div v-if="audioUrl" id="audioContainer" class="mb-4">
+        <h3 class="font-semibold mb-2">🎵 Generated Audio</h3>
+        <audio id="audioPlayer" class="w-full mb-2" :src="audioUrl" controls @play="onPlay" @pause="onPause"></audio>
+        <div class="text-sm text-gray-600">Size: {{ audioFileSize }} | Duration: {{ Math.round(audioDuration) }}s | Mode: {{ audioMode }}</div>
+        <div class="flex gap-2 mt-2">
+          <button @click="downloadAudio" class="px-3 py-2 bg-green-600 text-white rounded hover:bg-green-700">📥 Download</button>
+          <button @click="resetAudio" class="px-3 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">🔄 Reset Audio</button>
+        </div>
+      </div>
+
+      <div class="text-sm text-gray-500" v-if="debugMessage">{{ debugMessage }}</div>
+    </div>
+
+    <!-- Right -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-xl font-bold mb-4">📋 Key Points & Video</h2>
+      <div class="slide-preview rounded-lg p-6 text-white mb-4">
+        <h3 class="text-2xl font-bold mb-4">{{ currentScript.title }}</h3>
+        <ul class="space-y-3" id="bulletList">
+          <li v-for="(b,i) in currentScript.bullets" :key="i" :class="['bullet-point flex items-center', visibleBullets>i?'visible':'']">
+            <span class="mr-3 text-xl">•</span>{{ b }}
+          </li>
+        </ul>
+      </div>
+
+      <div id="videoContainer" v-if="videoReady">
+        <h3 class="font-semibold mb-2">🎥 Generated Video</h3>
+        <div class="bg-gray-900 rounded-lg p-4">
+          <video id="videoPreview" controls class="w-full rounded" :src="videoUrl" v-show="videoUrl"></video>
+          <div v-show="!videoUrl" class="text-center text-white p-8">
+            <div class="text-4xl mb-2">🎬</div>
+            <p>Avatar Video Ready</p>
+            <p class="text-sm text-gray-400">Script + Avatar + Bullets synchronized</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-3">
+          <button @click="downloadVideo" class="py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">📥 Video</button>
+          <button @click="resetVideo" class="py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700">🔄 Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logs -->
+  <div class="mt-6 bg-white rounded-lg shadow-lg p-6">
+    <h2 class="text-xl font-bold mb-4">📊 Logs</h2>
+    <div class="bg-gray-50 rounded-lg p-4 max-h-64 overflow-y-auto text-sm font-mono">
+      <div v-for="(l,i) in logs" :key="i"><span class="text-gray-500">[{{ l.ts }}]</span> {{ l.msg }}</div>
+      <div v-if="!logs.length" class="text-gray-500">Ready...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const { createApp } = Vue;
+createApp({
+  data(){return{
+    scripts:{
+      'ai-education':{icon:'🤖',title:'AI in Education',description:'How AI transforms learning',script:"Welcome to today's lesson on artificial intelligence in education. AI is revolutionizing how we learn and teach. First, let's explore how AI personalizes learning for each student. Next, we'll see how it improves student engagement through interactive content. Then, we'll discuss how AI provides real-time feedback to help students learn faster. Finally, we'll look at how AI scales educational content to reach more learners worldwide.",bullets:['AI Personalizes Learning','Improves Student Engagement','Provides Real-time Feedback','Scales Educational Content']},
+      'climate-change':{icon:'🌍',title:'Climate Change',description:'Understanding global warming',script:'Climate change is one of the most pressing challenges of our time. Rising global temperatures are causing dramatic shifts in weather patterns worldwide. First, we\'ll examine the primary causes of greenhouse gas emissions. Second, we\'ll explore the visible impacts on our environment today. Third, we\'ll discuss innovative solutions being developed globally. Finally, we\'ll look at how individuals can make a meaningful difference.',bullets:['Causes of Emissions','Visible Environmental Impacts','Innovative Solutions','Individual Actions']},
+      'space-exploration':{icon:'🚀',title:'Space Exploration',description:'Journey to the stars',script:'Space exploration represents humanity\'s greatest adventure into the unknown. From the first moon landing to Mars rovers, we continue pushing boundaries. First, let\'s review the historic milestones that brought us here. Next, we\'ll examine current missions exploring our solar system. Then, we\'ll discuss future plans for human settlement on other planets. Finally, we\'ll explore how space technology benefits life on Earth.',bullets:['Historic Milestones','Current Missions','Future Plans','Benefits to Earth']}
+    },
+    currentScriptKey:'ai-education',
+    audioMode:'TTS',
+    ttsEngine:'browser',
+    isAudioGenerating:false,
+    isVideoGenerating:false,
+    audioReady:false,
+    videoReady:false,
+    progress:0,progressLabel:'',showProgressBar:false,
+    audioUrl:null,audioBlob:null,audioDuration:0,audioFileSize:'',
+    videoUrl:null,videoBlob:null,
+    cancelFlag:false,
+    visibleBullets:0,
+    avatarStatus:'Ready',
+    isSpeaking:false,
+    logs:[],
+    debugMessage:''
+  }},
+  computed:{currentScript(){return this.scripts[this.currentScriptKey];},wordCount(){return this.currentScript.script.split(/\s+/).length;},estimatedDuration(){return Math.round(this.wordCount*0.4);}},
+  methods:{
+    btnPrimary(dis){return ['w-full py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 disabled:opacity-50',dis?'opacity-70 cursor-not-allowed':''];},
+    btnSecondary(dis){return ['w-full py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 disabled:opacity-50',dis?'opacity-70 cursor-not-allowed':''];},
+    log(msg){const ts=new Date().toLocaleTimeString();this.logs.push({ts,msg});console.log(`[${ts}] ${msg}`);},
+    loadScript(k){this.currentScriptKey=k;this.log('📝 Loaded script: '+this.currentScript.title);this.resetAudio();this.resetVideo();this.visibleBullets=0;},
+    showProgress(p,label){this.showProgressBar=true;this.progress=p;this.progressLabel=label;},
+    hideProgress(){this.showProgressBar=false;},
+    async generateAudio(){
+      if(this.isAudioGenerating)return;
+      this.isAudioGenerating=true;this.audioReady=false;this.audioUrl=null;this.audioBlob=null;
+      this.showProgress(5,'Initializing');await this.wait(150);
+      try {
+        this.avatarStatus='📝 Preparing script';
+        this.showProgress(15,'Analyzing script');await this.wait(150);
+        let result=null;
+        if(this.ttsEngine==='azure'){
+          this.showProgress(40,'Requesting Azure');this.avatarStatus='⚡ Cloud request';
+          result=await this.fetchAzureTTS(this.currentScript.script);
+          if(!result){this.log('⚠️ Azure failed, falling back to browser TTS');this.showProgress(45,'Fallback browser TTS');result=await this.recordTTSAudio(this.currentScript.script);}        
+        } else {
+          this.showProgress(40,'Recording TTS');this.avatarStatus='🎤 Recording';
+          result=await this.recordTTSAudio(this.currentScript.script);
+        }
+        if(!result||!result.blob){this.log('❌ TTS failed - no audio');this.avatarStatus='❌ Audio failed';return;}
+        this.audioBlob=result.blob;this.audioDuration=Math.round(result.duration||this.estimatedDuration);this.audioUrl=URL.createObjectURL(result.blob);this.audioFileSize=this.formatSize(result.blob.size);this.audioReady=true;this.avatarStatus='✅ Audio ready';
+        this.showProgress(90,'Finalizing');await this.wait(150);this.showProgress(100,'Done');this.log('✅ Audio generated '+this.audioFileSize+' via '+this.ttsEngine);
+      } catch(e){
+        this.log('❌ Audio generation error: '+e.message);this.avatarStatus='❌ Audio error';
+      } finally {
+        await this.wait(400);this.hideProgress();this.isAudioGenerating=false;
+      }
+    },
+    async fetchAzureTTS(text){try{const body={text,voice:'en-US-JennyNeural'};const resp=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});if(!resp.ok){this.log('⚠️ Azure TTS error status '+resp.status);return null;}const arrayBuf=await resp.arrayBuffer();const blob=new Blob([arrayBuf],{type:'audio/mpeg'});if(blob.size<500){this.log('⚠️ Azure TTS too small');return null;}this.log('🎵 Azure TTS size '+blob.size);return {blob,duration:Math.max(this.estimatedDuration,5)};}catch(err){this.log('❌ Azure fetch error '+err.message);return null;}},
+    async recordTTSAudio(text){return new Promise(async resolve=>{try{const TIMEOUT=30000;let stopped=false;const timeout=setTimeout(()=>stop('timeout'),TIMEOUT);const ensureVoices=()=>new Promise(r=>{let t=0;const poll=()=>{const v=speechSynthesis.getVoices();if(v.length||t>1500)return r(v);t+=100;setTimeout(poll,100);};poll();});const voices=await ensureVoices();const preferred=voices.find(v=>v.name.includes('Daniel'))||voices.find(v=>v.lang.startsWith('en-'))||voices[0];this.log('🗣 Voices: '+voices.length+' chosen: '+(preferred&&preferred.name));const audioCtx=new (window.AudioContext||window.webkitAudioContext)();const dest=audioCtx.createMediaStreamDestination();const rec=new MediaRecorder(dest.stream,{mimeType:'audio/webm;codecs=opus'});const chunks=[];rec.ondataavailable=e=>{if(e.data&&e.data.size>0)chunks.push(e.data);};rec.onstop=()=>{clearTimeout(timeout);const blob=new Blob(chunks,{type:'audio/webm'});this.log('🎵 TTS captured size '+blob.size);if(blob.size<1500)return resolve(null);resolve({blob,duration:estDuration});};const silentOsc=audioCtx.createOscillator();const gain=audioCtx.createGain();gain.gain.value=0.0001;silentOsc.connect(gain).connect(dest);silentOsc.start();silentOsc.stop(audioCtx.currentTime+40);const words=text.split(/\s+/);const segments=[];let remaining=text.trim();const MAX=180;while(remaining.length){if(remaining.length<=MAX){segments.push(remaining);break;}let slice=remaining.slice(0,MAX);const p=slice.lastIndexOf('.');const sp=slice.lastIndexOf(' ');const cut=p>40?p+1:(sp>40?sp:slice.length);segments.push(remaining.slice(0,cut).trim());remaining=remaining.slice(cut).trim();}let idx=0;let estDuration=Math.max(words.length*0.4,5);const next=()=>{if(idx>=segments.length){stop('done');return;}const seg=segments[idx++];const utt=new SpeechSynthesisUtterance(seg);if(preferred)utt.voice=preferred;utt.rate=0.9;utt.pitch=1;utt.onstart=()=>{if(rec.state==='inactive'){rec.start();this.isSpeaking=true;}};utt.onend=()=>{setTimeout(()=>next(),120);};utt.onerror=e=>{this.log('❌ segment error '+e.error);setTimeout(()=>next(),150);};speechSynthesis.speak(utt);};const stop=r=>{if(stopped)return;stopped=true;this.isSpeaking=false;try{if(rec.state==='recording')rec.stop();}catch(_){}this.log('🛑 TTS stop: '+r);};if(speechSynthesis.speaking||speechSynthesis.pending){speechSynthesis.cancel();setTimeout(next,160);}else next();}catch(err){this.log('❌ TTS setup error '+err.message);resolve(null);} });},
+    async generateFullVideo(){if(!this.audioReady||this.isVideoGenerating)return;this.isVideoGenerating=true;this.videoReady=false;this.cancelFlag=false;this.showProgress(5,'Setup video');this.avatarStatus='🎬 Preparing video';await this.wait(200);try{const audioElement=document.getElementById('audioPlayer');const audioStream=audioElement.captureStream?audioElement.captureStream():audioElement.mozCaptureStream?audioElement.mozCaptureStream():null;const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=720;const ctx=canvas.getContext('2d');const stream=canvas.captureStream(30);if(audioStream){audioStream.getAudioTracks().forEach(t=>stream.addTrack(t));}else{this.log('⚠️ No audio stream captured');}
+      const mimeVariants=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];let mime=mimeVariants.find(m=>MediaRecorder.isTypeSupported(m))||'video/webm';const rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:2_500_000});const chunks=[];rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};rec.onstop=()=>{const blob=new Blob(chunks,{type:mime});this.videoBlob=blob;this.videoUrl=URL.createObjectURL(blob);this.videoReady=true;this.avatarStatus='✅ Video ready';this.log('✅ Video size '+blob.size);this.showProgress(100,'Done');};
+      const bullets=this.currentScript.bullets;this.visibleBullets=0;const totalDuration=this.audioDuration||this.estimatedDuration;const frameRate=30;const totalFrames=frameRate*totalDuration;let frame=0;rec.start(1000);const render=()=>{if(this.cancelFlag){rec.stop();return;}const progress=frame/totalFrames;this.progress=5+progress*85;this.progressLabel='Rendering '+(totalDuration-Math.floor(progress*totalDuration))+'s left';ctx.fillStyle='#111827';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='white';ctx.font='48px Arial';ctx.textAlign='center';ctx.fillText(this.currentScript.title,canvas.width/2,80);ctx.font='32px Arial';ctx.textAlign='left';const margin=100;const bulletInterval=totalDuration/bullets.length;const currentTime=progress*totalDuration;const shouldVisible=Math.floor(currentTime/bulletInterval)+1;this.visibleBullets=Math.min(shouldVisible,bullets.length);bullets.forEach((b,i)=>{const y=160+i*70;ctx.globalAlpha=i<this.visibleBullets?1:0.15;ctx.fillText('• '+b,margin,y);});ctx.globalAlpha=1;ctx.fillStyle='white';ctx.font='24px Arial';ctx.textAlign='center';ctx.fillText(Math.floor(currentTime)+'s / '+Math.floor(totalDuration)+'s',canvas.width/2,canvas.height-30);frame++;if(frame<totalFrames){requestAnimationFrame(render);}else{setTimeout(()=>rec.stop(),120);}};render();}catch(e){this.log('❌ Video generation error '+e.message);this.avatarStatus='❌ Video error';}finally{this.isVideoGenerating=false;}},
+    generateQuickVideo(){this.audioDuration=this.estimatedDuration;this.audioReady=false;this.generateFullVideo();},
+    cancelGeneration(){this.cancelFlag=true;this.avatarStatus='🚫 Cancelled';this.log('🚫 Cancelled by user');},
+    downloadAudio(){if(!this.audioBlob)return;const a=document.createElement('a');a.href=this.audioUrl;a.download=`audio-${this.currentScriptKey}.webm`;document.body.appendChild(a);a.click();document.body.removeChild(a);},
+    downloadVideo(){if(!this.videoBlob)return;const a=document.createElement('a');a.href=this.videoUrl;a.download=`video-${this.currentScriptKey}.webm`;document.body.appendChild(a);a.click();document.body.removeChild(a);},
+    resetAudio(){if(this.audioUrl)URL.revokeObjectURL(this.audioUrl);this.audioUrl=null;this.audioBlob=null;this.audioReady=false;this.audioDuration=0;this.isSpeaking=false;},
+    resetVideo(){if(this.videoUrl)URL.revokeObjectURL(this.videoUrl);this.videoUrl=null;this.videoBlob=null;this.videoReady=false;},
+    resetAll(){this.resetAudio();this.resetVideo();this.visibleBullets=0;},
+    onPlay(){this.isSpeaking=true;},onPause(){this.isSpeaking=false;},
+    formatSize(bytes){if(!bytes)return '0 B';const k=1024;const sizes=['B','KB','MB','GB'];const i=Math.floor(Math.log(bytes)/Math.log(k));return (bytes/Math.pow(k,i)).toFixed(1)+' '+sizes[i];},
+    wait(ms){return new Promise(r=>setTimeout(r,ms));}
+  },
+  mounted(){this.log('🚀 Vue demo mounted');this.log('📝 Loaded script: '+this.currentScript.title);}
+}).mount('#app');
+</script>
+</body>
+</html>

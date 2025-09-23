@@ -1,0 +1,79 @@
+{
+  "analysis_time": "2025-09-08T00:06:24.366035",
+  "current_conditions": {
+    "timestamp": "2025-09-08T00:06:24.227737",
+    "current_signal": 8,
+    "wind_measurements": [
+      {
+        "location": "Cheung Chau Beach and Tap Mun",
+        "sustained_wind_kmh": 60,
+        "additional_speeds": [
+          53,
+          51
+        ],
+        "max_gust_kmh": 89
+      }
+    ],
+    "typhoon_info": {
+      "name": "Tapah",
+      "intensity": "Severe ",
+      "latitude": 20.2,
+      "longitude": 113.3,
+      "distance_km": 250,
+      "direction": "south-southwest",
+      "max_sustained_winds_kmh": 105
+    },
+    "warnings": [
+      "Storm surge flooding warning for low-lying areas"
+    ],
+    "forecast": {
+      "signal_duration": "Until 11 a.m. on Monday",
+      "wind_expectation": "Winds expected to strengthen further on Monday morning"
+    }
+  },
+  "signal_8_analysis": {
+    "current_status": "SIGNAL 8 CURRENTLY IN FORCE",
+    "signal_level": 8,
+    "storm_info": {
+      "name": "Tapah",
+      "intensity": "Severe ",
+      "latitude": 20.2,
+      "longitude": 113.3,
+      "distance_km": 250,
+      "direction": "south-southwest",
+      "max_sustained_winds_kmh": 105
+    },
+    "current_wind_conditions": {
+      "stations_reporting": 1,
+      "max_sustained_wind": 60,
+      "max_gust": 89,
+      "locations": [
+        {
+          "name": "Cheung Chau Beach and Tap Mun",
+          "sustained_wind": 60,
+          "gust": 89
+        }
+      ]
+    },
+    "tomorrow_morning_assessment": {
+      "probability": "MODERATE",
+      "reasoning": "Storm 250km away, conditions may improve",
+      "expected_conditions": "Signal may be lowered but strong winds continue",
+      "peak_time": "Monitor for changes overnight"
+    },
+    "recommendations": [
+      "📱 Monitor HKO updates continuously",
+      "🔋 Keep devices charged and have backup power",
+      "🥫 Ensure adequate food and water supplies",
+      "🚪 Check that all windows and doors are secure",
+      "🚗 Do not attempt to drive or use roads",
+      "🌊 Stay away from seafronts and exposed areas"
+    ],
+    "risk_level": "HIGH"
+  },
+  "data_sources": [
+    "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en",
+    "https://rss.weather.gov.hk/rss/WeatherWarningBulletin.xml",
+    "https://rss.weather.gov.hk/rss/CurrentWeather.xml"
+  ]
+}

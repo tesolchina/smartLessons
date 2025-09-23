@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-09-23",
+  "summary": {
+    "documents_renamed": 6,
+    "presentations_created": 6,
+    "master_spreadsheet_created": true,
+    "errors_count": 0
+  },
+  "details": {
+    "renamed_docs": [
+      {
+        "team": "Team_1",
+        "old_name": "Reflection_Essays_Team_1",
+        "new_name": "Presentation_outreach_Team_1",
+        "file_id": "1jw9Il-7M_Az4MyiDvpovO85zu6c2gOOHtryB3cvOgv0"
+      },
+      {
+        "team": "Team_2",
+        "old_name": "Reflection_Essays_Team_2",
+        "new_name": "Presentation_outreach_Team_2",
+        "file_id": "1gyDuHzUVeu7tsRSbdjchvk-qnGUBY5G4PxQw_xiiqMI"
+      },
+      {
+        "team": "Team_3",
+        "old_name": "Reflection_Essays_Team_3",
+        "new_name": "Presentation_outreach_Team_3",
+        "file_id": "1aQpajFFnWYKUTgNIfEynEh7-aGnKrpKqvLvdDs6YLcY"
+      },
+      {
+        "team": "Team_4",
+        "old_name": "Reflection_Essays_Team_4",
+        "new_name": "Presentation_outreach_Team_4",
+        "file_id": "1ZobycX4pkblt_IIAY4XboXk9RO9KiZ8Wv2xmyOQe3zQ"
+      },
+      {
+        "team": "Team_5",
+        "old_name": "Reflection_Essays_Team_5",
+        "new_name": "Presentation_outreach_Team_5",
+        "file_id": "1Yvq_8cChdYU7CagNlGZXJerReoNAGg1stVEGHkjtcWA"
+      },
+      {
+        "team": "Team_6",
+        "old_name": "Reflection_Essays_Team_6",
+        "new_name": "Presentation_outreach_Team_6",
+        "file_id": "1eyr2zNqE38qHLZRgqljJfl7VKx0Fwc4odIKYC6nwITQ"
+      }
+    ],
+    "created_slides": [
+      {
+        "team": "Team_1",
+        "title": "Team_1 - Topic 6 - Flu Shot Participation Analysis",
+        "presentation_id": "1y1J68c6MsDh-Cr9Yo7po6WfWRCFmOPUJqwJdQB6rD8k",
+        "url": "https://docs.google.com/presentation/d/1y1J68c6MsDh-Cr9Yo7po6WfWRCFmOPUJqwJdQB6rD8k"
+      },
+      {
+        "team": "Team_2",
+        "title": "Team_2 - Topic 3 - Inter-Company Bus Route Coordination",
+        "presentation_id": "1zX1Ruo6gDrXdg-Fe0s0CD0uiupXws_-zhBpMLSHMKoQ",
+        "url": "https://docs.google.com/presentation/d/1zX1Ruo6gDrXdg-Fe0s0CD0uiupXws_-zhBpMLSHMKoQ"
+      },
+      {
+        "team": "Team_3",
+        "title": "Team_3 - Topic 7 - Typhoon Signal Data Analysis",
+        "presentation_id": "1njgegVqclzPpNoHbKonc4DJISC_YblZQB4TjBmiKey0",
+        "url": "https://docs.google.com/presentation/d/1njgegVqclzPpNoHbKonc4DJISC_YblZQB4TjBmiKey0"
+      },
+      {
+        "team": "Team_4",
+        "title": "Team_4 - Topic 4 - Municipal Solid Waste Charging Scheme",
+        "presentation_id": "1dxTayyp0Cu5mrP_FmNfiEsYPRlOylWwX2-RkkcMciA0",
+        "url": "https://docs.google.com/presentation/d/1dxTayyp0Cu5mrP_FmNfiEsYPRlOylWwX2-RkkcMciA0"
+      },
+      {
+        "team": "Team_5",
+        "title": "Team_5 - Topic 5 - Green@Community Recycling Network Analysis",
+        "presentation_id": "10INBQvYBSJMMt28Y9kBUv3aZQFbvnTRfiCV9et5I-HQ",
+        "url": "https://docs.google.com/presentation/d/10INBQvYBSJMMt28Y9kBUv3aZQFbvnTRfiCV9et5I-HQ"
+      },
+      {
+        "team": "Team_6",
+        "title": "Team_6 - Topic 2 - Bus Stop Merger Optimization",
+        "presentation_id": "13hSo13-G7Q9cijEw7DPnE-GvNSc48JOqbfC5aagRhJA",
+        "url": "https://docs.google.com/presentation/d/13hSo13-G7Q9cijEw7DPnE-GvNSc48JOqbfC5aagRhJA"
+      }
+    ],
+    "master_spreadsheet": {
+      "title": "GCAP3226 - Team Resources Master Sheet",
+      "spreadsheet_id": "1yqJL5bDJW4N5YVKZFChKRJg5sI394mLbWIW-amamsEw",
+      "url": "https://docs.google.com/spreadsheets/d/1yqJL5bDJW4N5YVKZFChKRJg5sI394mLbWIW-amamsEw"
+    },
+    "errors": []
+  }
+}

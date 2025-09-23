@@ -1,0 +1,96 @@
+{
+  "categories": {
+    "assignment": {
+      "description": "Individual and group assignments",
+      "color": "#dc3545",
+      "icon": "📝",
+      "typical_duration": "1-2 weeks"
+    },
+    "discussion": {
+      "description": "Class discussions and forums",
+      "color": "#28a745", 
+      "icon": "💬",
+      "typical_duration": "ongoing"
+    },
+    "project": {
+      "description": "Long-term group projects",
+      "color": "#6f42c1",
+      "icon": "🎯", 
+      "typical_duration": "multiple weeks"
+    },
+    "announcement": {
+      "description": "Course announcements and updates",
+      "color": "#ffc107",
+      "icon": "📢",
+      "typical_duration": "immediate"
+    },
+    "reflection": {
+      "description": "Personal reflection exercises",
+      "color": "#17a2b8",
+      "icon": "🤔",
+      "typical_duration": "1 week"
+    },
+    "welcome": {
+      "description": "Course introduction and welcome",
+      "color": "#20c997",
+      "icon": "👋",
+      "typical_duration": "first week"
+    }
+  },
+  "tags": {
+    "introduction": "Course and student introductions",
+    "welcome": "Welcome activities and orientation", 
+    "first_week": "First week activities",
+    "reflection": "Reflective thinking exercises",
+    "data_privacy": "Data privacy and protection topics",
+    "essay": "Written essay assignments",
+    "group_work": "Collaborative group activities",
+    "timeline": "Project schedules and timelines",
+    "policy_analysis": "Policy analysis and evaluation",
+    "open_data": "Open government data exploration",
+    "exploration": "Exploratory learning activities",
+    "government_data": "Government and public sector data",
+    "guest_speaker": "External speaker sessions",
+    "data_governance": "Data governance frameworks",
+    "data_collection": "Data gathering methodologies",
+    "planning": "Planning and strategy development",
+    "individual_work": "Individual assignments and tasks",
+    "ethics": "Ethical considerations and frameworks",
+    "data_analysis": "Data analysis techniques and tools",
+    "privacy": "Privacy protection and rights",
+    "milestone": "Project milestone and checkpoints",
+    "progress": "Progress tracking and review",
+    "peer_review": "Peer evaluation and feedback",
+    "feedback": "Feedback and assessment activities",
+    "collaboration": "Collaborative learning exercises",
+    "presentation": "Presentation and communication skills",
+    "final_project": "Final project deliverables"
+  },
+  "status_types": {
+    "active": {
+      "description": "Currently available to students",
+      "color": "#28a745"
+    },
+    "planned": {
+      "description": "Scheduled for future release",
+      "color": "#ffc107"
+    },
+    "archived": {
+      "description": "Past activities, no longer active",
+      "color": "#6c757d"
+    },
+    "draft": {
+      "description": "Being prepared, not yet published",
+      "color": "#17a2b8"
+    }
+  },
+  "forum_types": {
+    "discussion": "Open-ended discussion forums",
+    "assignment": "Assignment submission portals", 
+    "project": "Project-related forums and resources",
+    "announcement": "Course announcements and news",
+    "q_and_a": "Question and answer forums",
+    "peer_review": "Peer review and feedback systems",
+    "reflection": "Personal reflection submissions"
+  }
+}

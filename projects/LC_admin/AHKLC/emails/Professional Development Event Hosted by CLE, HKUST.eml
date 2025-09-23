@@ -1,0 +1,487 @@
+Received: from SG2PR02MB5507.apcprd02.prod.outlook.com (2603:1096:4:1c3::13)
+ by SI2PR02MB5225.apcprd02.prod.outlook.com with HTTPS; Wed, 17 Sep 2025
+ 06:56:06 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=fail;
+ b=O+XiOQFWayKzZsr9/bz1vpYDjqZvgZ+icrnW1Jlu3AWSluOoHeNNvuPL2AJjy+eeX91CWGcC7k08FjkBUBTFj0B61FFoVUU8kT6jv1brgP5U0iznOmz2fkEtaZ9PioqMm3Nfc8fXvPJy8MNb9FZNPcH2tF+ogH8C+KYm8eYAGNfNbFfr9jNyWWaPxjyXg7ABQ6cuwd0z7FyqPbJINiTUyBI74peBnT9m/LGjtZi5Oo8ZeVfM8ktDKs9svMuRS09EBgOD7GEpPc+eguxNpkAVj1KwnxaFGLn5lhjz0cK6hRk87KwhPx5L+Ox4ZCt5awRKcaGzVumjSnh57HFoxreaTA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ZmSvznL1QGksezFvnomlLc1n1Xx1Y4cc3oJEptNDpX8=;
+ b=sOSQWkBR4+GpQB79y8zSiIGanNAQvhL59XN3ghhdgPAwXn+wHZlNz0T6DyxqlR9ocPn9vtz7wxNGRVhF1fL51Id82ekLvWIkdlELH++jMHxyUeKFDbCNn+wCQI0jvihfnl2Jn/hF5ds4lTgPrkwNtgY3GtAEyTNR4GUet4h0b2vSbleKivLFoJlYVGg/m7+Se9asqoJWUbN99CiSO53IpyHZvdzUQQmTD/ruCEgdhQDU5geweCMfAU/HfEF9eKpVpNzC3oanEiumklSbYBXPG5LzpLU5uppw3I2YVkLR0DKDse5HMHVyudRkiSX/g3IjPpQMaZhVXwVNBHRPIRaeNw==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 158.182.0.61) smtp.rcpttodomain=exmail.hkbu.edu.hk smtp.mailfrom=hkbu.edu.hk;
+ dmarc=bestguesspass action=none header.from=hkbu.edu.hk; dkim=fail (signature
+ did not verify) header.d=hkbu.edu.hk; dkim=fail (signature did not verify)
+ header.d=hkbu.edu.hk; dkim=fail (body hash did not verify)
+ header.d=hkbu.edu.hk; arc=fail (47)
+Received: from TYCP286CA0112.JPNP286.PROD.OUTLOOK.COM (2603:1096:400:29c::7)
+ by SG2PR02MB5507.apcprd02.prod.outlook.com (2603:1096:4:1c3::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9094.22; Wed, 17 Sep
+ 2025 06:56:02 +0000
+Received: from TY2PEPF0000AB89.apcprd03.prod.outlook.com
+ (2603:1096:400:29c:cafe::90) by TYCP286CA0112.outlook.office365.com
+ (2603:1096:400:29c::7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9137.13 via Frontend Transport; Wed,
+ 17 Sep 2025 06:56:01 +0000
+Authentication-Results: spf=pass (sender IP is 158.182.0.61)
+ smtp.mailfrom=hkbu.edu.hk; dkim=fail (signature did not verify)
+ header.d=hkbu.edu.hk;dkim=fail (signature did not verify)
+ header.d=hkbu.edu.hk;dkim=fail (body hash did not verify)
+ header.d=hkbu.edu.hk;dmarc=bestguesspass action=none
+ header.from=hkbu.edu.hk;compauth=pass reason=109
+Received-SPF: Pass (protection.outlook.com: domain of hkbu.edu.hk designates
+ 158.182.0.61 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.182.0.61; helo=mailgwy61.hkbu.edu.hk; pr=C
+Received: from mailgwy61.hkbu.edu.hk (158.182.0.61) by
+ TY2PEPF0000AB89.mail.protection.outlook.com (10.167.253.7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9137.12 via Frontend Transport; Wed, 17 Sep 2025 06:56:00 +0000
+DomainKey-Signature: s=HKBU-Domain-Key; d=hkbu.edu.hk; c=nofws; q=dns;
+  h=IronPort-SDR:X-MassRcpt:X-BlockMassRcpt:X-Talos-CUID:
+   X-Talos-MUID:X-IronPort-AV:BU-Internal-Disclaimer-Header:
+   Delivered-To:DKIM-Signature:X-CSE-ConnectionGUID:
+   X-CSE-MsgGUID:Authentication-Results:X-MassRcpt:
+   X-BlockMassRcpt:X-ThreatScanner-Verdict:IronPort-Data:
+   IronPort-HdrOrdr:X-Talos-CUID:X-Talos-MUID:X-IronPort-AV:
+   BU-Internal-Disclaimer-Header:ARC-Seal:
+   ARC-Message-Signature:ARC-Authentication-Results:
+   DKIM-Signature:From:To:Subject:Thread-Topic:Thread-Index:
+   Date:Message-ID:References:In-Reply-To:Accept-Language:
+   Content-Language:X-MS-Has-Attach:X-MS-TNEF-Correlator:
+   x-ms-reactions:x-ms-publictraffictype:
+   x-ms-traffictypediagnostic:
+   x-ms-office365-filtering-correlation-id:
+   x-ms-exchange-senderadcheck:x-ms-exchange-antispam-relay:
+   x-microsoft-antispam:x-microsoft-antispam-message-info:
+   x-forefront-antispam-report:
+   x-ms-exchange-antispam-messagedata-chunkcount:
+   x-ms-exchange-antispam-messagedata-0:Content-Type:
+   MIME-Version:
+   X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount:
+   X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0:
+   X-OriginatorOrg:X-MS-Exchange-CrossTenant-AuthAs:
+   X-MS-Exchange-CrossTenant-AuthSource:
+   X-MS-Exchange-CrossTenant-Network-Message-Id:
+   X-MS-Exchange-CrossTenant-originalarrivaltime:
+   X-MS-Exchange-CrossTenant-fromentityheader:
+   X-MS-Exchange-CrossTenant-id:
+   X-MS-Exchange-CrossTenant-mailboxtype:
+   X-MS-Exchange-CrossTenant-userprincipalname:
+   X-MS-Exchange-Transport-CrossTenantHeadersStamped;
+  b=yqG1TmvqHSzgKH3wH20q9K/go0bDC2HrUF/iXYWNwamRsc8goETjWAki
+   EnErDPK6XURXohLweevZjhjm5cdvCJMNVgdDFhPFr+u8j/5qZYgtoDgCt
+   /Oc2Zlpjx4gXSJlrmJItkZ7Y34/zSweOj/Hz+iH/iq1+YshIOlihukmji
+   Q=;
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=hkbu.edu.hk; i=@hkbu.edu.hk; q=dns/txt;
+  s=HKBU-Domain-DKIM; t=1758092161; x=1789628161;
+  h=from:to:subject:date:message-id:references:in-reply-to:
+   mime-version;
+  bh=TdduvWWUrRSLrCxQA/wUNa/KhwuMpmlPqla+hE3zHBM=;
+  b=eWYtpW4gIgBSbpK3GGOiIPJ+9jZbNqP6inZqrBjKO0sFhym6gD9ButlY
+   CYKntXgs9Hxipdd42ug1ZzEarRaO/SO5You5uyeiWrB4dRe1uYjnk/wzZ
+   8AEyiARjnuBuyRMxvwTlwj49hjb95GNps8ekbdGSPLUKkB9o8HpfO2LRg
+   0=;
+IronPort-SDR: vAV+Utlf1xzbjVAK1f3pNwVYzcwOrjvqMf2YtD5lBg8BM/KwPM92O0ODWrdpK/15cM9gl1pakG
+ L9AkYhXz4HN8Dv4h/eeLrhUTEDhY+Crv0nA9R1dAkyzzZAR4sL/AYP0fnnStav+FfgiC0FYEiw
+ 79ZfmPu06es17iPuXim/N9Xs7tqiBqNz1/QLhXBW1atIroP+oQGVwAzvFKa77sPQlV1cv1O23D
+ 1qnQYQQywfDDvCnSXTiV+DcAG9sEEHofMzPpsq1HXoVt1GDa1/q3Y5kT3M3S9saamYjBI+JLWO
+ Xqw=
+X-MassRcpt: False
+X-BlockMassRcpt: False
+X-Talos-CUID: 9a23:9Nb74G2etyZ8dkqUskE6/rxfRO4LcGbPkizrM0qqL2xld+OpWGOJ0fYx
+X-Talos-MUID: 9a23:Ko5TeAtX72EIiLryn82nuilHae4y4riVLX8Cz44dv/e5FQZWAmLI
+X-IronPort-AV: E=Sophos;i="6.18,271,1751212800"; 
+   d="scan'208,217";a="50987439"
+BU-Internal-Disclaimer-Header: True
+Delivered-To: &lcft@maillist.hkbu.edu.hk
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=hkbu.edu.hk; i=@hkbu.edu.hk; q=dns/txt;
+  s=HKBU-Domain-DKIM; t=1758092159; x=1789628159;
+  h=from:to:subject:date:message-id:references:in-reply-to:
+   mime-version;
+  bh=TdduvWWUrRSLrCxQA/wUNa/KhwuMpmlPqla+hE3zHBM=;
+  b=rwozia49EELbezsL3BLi9q0xFlehp6BPJANdt16+OrwsYLK9jCCTGbzp
+   JR21G+jYgMPHWRxqLXnyoCAxXZW5PFpV5VbqKkTVIsOFxCXHKjgojTiz7
+   dguO1b6OHeKd0ICWAR6uVnqiBWbvt5umTPSazDxDSFAB36xvzhQI+Sv4V
+   c=;
+X-CSE-ConnectionGUID: zN6hXpuhTGiAwn6xgN+kOw==
+X-CSE-MsgGUID: mYZRwxsNQVubNGIsmaiBIQ==
+Authentication-Results-Original: ob1.hc196-4.ap.iphmx.com; dkim=pass
+ (signature verified) header.i=@hkbu.edu.hk
+X-MassRcpt: False
+X-BlockMassRcpt: False
+X-ThreatScanner-Verdict: Negative
+IronPort-Data: A9a23:cynwp65JSalj0uJ/BsVs6AxRtCTGchMFZxGqfqrLsTDasY5as4F+v
+ mQWXTuDaayPYDT8c4p0O4qxphlT7MXXn99gT1Rt/yAxEysa+MHIO4iUfxz6V8+wwmwvb67FA
+ +E2MISowBUcFyeEzvuVGuG/6yE6j+fRH+CU5NfsYkhZXRVjRDoqlSVtkus4hp8AqdWiCkaGt
+ MiaT/f3YTdJ4BYqdDtEg06/gEk35qmq6WpH5gVWic1j5zcyqVFEVfrzGonhdxMUcqEMdsamS
+ uDKyq2O/2+x138FFtO/n7/nRVYBS7jUMBLmoiI+t3+K20UqSoQai87XBdJEAatlo2zhc+NZk
+ b2hgaeNpTIBYsUgrgi/vy5wSEmSNYUekFPOzOTWXca7lyUqeFO0qxli4d1f0ST1NY+bDEkXn
+ cH0JgzhYTiRoby28KqmStVDh+08Kpf7M6VcuVZ/mGSx4fYOGfgvQo321Odg5m9rrf0WRa+YY
+ NcFYz1yahiGewdIJlocFJM5mqGvm2X7dDpb7lmSoMLb4UCOlkooiOGraYCLPIzULSlWth/wS
+ mbu5WXlCx4bMNi3yTmP7zShivKJnSCTtIc6Su3lq6Q22AD7Kmo7DSwkb0Srut+AtFO0ff1+M
+ Ekd+wAPlP1nnKCsZpynN/Gim1bKuhUSR/JVGuw+7ACW1uzU4AyEQGUIU3hBa7QbWNQeQDUr0
+ hqLlsvgAzFmq6GcW3Wbr+7M92nqaXZTKnIebygZSwdD+8PkvIw4khPISJBkDbKxidr2Xzr3x
+ lhmsRQDulnatuZSv42T/VPNnnShqoWPTg1d2+kddjnNAt9RDGJ9W7GV1A==
+IronPort-HdrOrdr: A9a23:mlwWjqkwqhvE77ygi+jTu4r1QBXpDfI13DAbv31ZSRFFG/FwWf
+ rOoB17726QtN9/Yh0dcLy7V5VoIkmsl6Kdg7NwAV7KZmCP0wHEEGgI1/qA/9SPIUPDytI=
+X-Talos-CUID: =?us-ascii?q?9a23=3AZf/IsGv9+/0KuIXtJI49QZav6Is3VCPd/G/NI3O?=
+ =?us-ascii?q?XCE92TuOFRnnT+4R7xp8=3D?=
+X-Talos-MUID: =?us-ascii?q?9a23=3At1g1Xgydlv8tZXcn1n6XjouivY+aqKGfOnoSgY4?=
+ =?us-ascii?q?ggveZPwpfGiyYhTWdY7Zyfw=3D=3D?=
+X-IronPort-AV: E=Sophos;i="6.18,271,1751212800"; 
+   d="scan'208,217";a="68552405"
+BU-Internal-Disclaimer-Header: True
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=lfVG3GUw1xwroNqE5k4QlcvGSB4bQ94771GoqBI/X0REsbP4DVO4eHAz+RCvAdU2EXUTVMxcqdlG0HVZ6GlpotVbjniXB+lexc+tPinSoG03zaajHcPcgWKuZD/SNvwZKI0iOapctvxDrXun+DfATJj52dRy6WswvLHPPKvbM3ByX9pKjyoVFiv5+3H+kZTBN10nB5eXPnSTg7wYh4S15u0OolXjnCmbu/eDFJVQ2j0Zpv0udHUgAiX3+mb5xWnW8jk45t8o7IZ21kUL9vErYSH62pTkYIgpSqg+/p+wuy+8mgOJX/d04MKzgftMmmvq4et2fZ7S1tMDb6k8R22Ybw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=wauiZekMy18dWgEq8YHRwaF4Lk2BjVkP1FNwR60a8k0=;
+ b=X8geHFVWJu8J+djVavKdfmWvnYrkTdLE9Z2yqZRv8ana+wwJMN9QtyVnlLigWaWUl+VJBHYEGAeLsBjyrmzt9du3njzYxooGHgknW00nDXfO86+/UkyqSW+MjxpVglJRSrCjVRd/mhdY6McKslVO6eCVYOulOwqGrZoxfgPszbrM3/7cS4b2Dhv9F+HY/7WwUgWFtkMlOu/uzYfpSogKzEyKhpz1LMsVEXW9jcMTQHY3ifMvLmf/gpbDbXBo7E+H9Z2xbBjlD1tW91Foq8IJbbo4bAHKKmQXgkCcK1SLwIlRW5BrCnSPljtSPHBiaS6ftVk1LgGZ3jXI7AIh03ycYQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=hkbu.edu.hk; dmarc=pass action=none header.from=hkbu.edu.hk;
+ dkim=pass header.d=hkbu.edu.hk; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hkbu.edu.hk;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wauiZekMy18dWgEq8YHRwaF4Lk2BjVkP1FNwR60a8k0=;
+ b=b8K+x9eG2sGXP7jiuzwsnVETRlcLT28FgPrECSoa8L2fvc6TwazJ4NvpTONLs5WMierXH+8+Z3Zu31A4jw2dgGW/7AFq6zw5ZeTAW3ZwO0XQvxK3FlvFzyH3RlFMw+ZgMWamCl4h+g/34TwZl3eXrXVUAaYXWScY7iMWvAYcoTOEJiexwayJrrXsTpy4+pzFoKBCiplz/de3FlpHtpcTPXgqdisR9lmoikaO/0QfIYNNH6SxSZh9+ehV9S7F3/fdUUGfnQutbWCU7+whW2vyRrgX9nXJJvrcSX7JQxoOUmuuCkxvJFdFw9vvz0sNRvX6z2nvC2wjfNPrCBlCl9HWuA==
+From: Rita G SINGH <ritagill@hkbu.edu.hk>
+To: "&lcft@maillist.hkbu.edu.hk" <&lcft@maillist.hkbu.edu.hk>
+Subject: Professional Development Event Hosted by CLE, HKUST
+Thread-Topic: Professional Development Event Hosted by CLE, HKUST
+Thread-Index: AQHcJ5yTMVmwcWyKAUOEOWBFELFAeLSW75J8
+Date: Wed, 17 Sep 2025 06:55:54 +0000
+Message-ID: <TY1PPF28DEB91D172A371047C3D5E6843969917A@TY1PPF28DEB91D1.apcprd02.prod.outlook.com>
+References: <CAMx_mfuRhNZ_UGokDFr5x8swGYumUX4aWMbjpZErBVZxUFid9A@mail.gmail.com>
+ <CAMx_mfus2d1NjLH=SqVdvBUAWW7oAziqCruK1fr7PJ_9aGQxdg@mail.gmail.com>
+ <CAMx_mftpkvqwU0WNYVgpJ-7MmsDhQzfWGVxKaBB0O5g=NgWYHQ@mail.gmail.com>
+ <TY4P286MB660640BEF2D06E83186CE79AB717A@TY4P286MB6606.JPNP286.PROD.OUTLOOK.COM>
+In-Reply-To: <TY4P286MB660640BEF2D06E83186CE79AB717A@TY4P286MB6606.JPNP286.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-GB
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+x-ms-traffictypediagnostic: TY1PPF28DEB91D1:EE_|SI2PR02MB6104:EE_|TY2PEPF0000AB89:EE_|SG2PR02MB5507:EE_|SI2PR02MB5225:EE_
+X-MS-Office365-Filtering-Correlation-Id: 81378cbb-d823-44b4-65af-08ddf5b7436d
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|1800799024|376014|366016|13003099007|8096899003|38070700021;
+X-Microsoft-Antispam-Message-Info-Original: =?us-ascii?Q?CwgRI1HPdSY2WmBmVCfpsAvEr/KSpF/9riSyMOIE9ke5dK4tWghp4jR0ROtv?=
+ =?us-ascii?Q?euxkKXSqkwil6uMd3xNt/6ORvMoRYbrvjsPjaAqEVl40Dv/UMVD4db0N7E2A?=
+ =?us-ascii?Q?AvnhDTJ7/u2PKigsulZZ50dZxwHz0617hAZh8VpuM4bGF0+FJvXvEnRian8E?=
+ =?us-ascii?Q?zN8K+AZYf661jyzh1fdipdnh/6rvI6arF1UxE2jQLZHimhdcjzB7ETvfVjj3?=
+ =?us-ascii?Q?WZ/s/pmeeTbQks5yoa3jjIW23wkGyXC6AVPBM41e7FCYDxHFNhnd+xj18mqr?=
+ =?us-ascii?Q?lIRquhjEoytIxMjR0j5Eb7FkyvB7pHXlPN+wXJAie20VZoGlDZjBJxEQsaIl?=
+ =?us-ascii?Q?bh1PRaJyzv/gHpwXLB+cDQ4aaHljn/iajBrEysvKEn8sBHDlljP7C3otwASI?=
+ =?us-ascii?Q?2POZksbmvthszNAUQvueHbV1YOVXQ0OabFYxIULNxtvmDT+oZVZdzbeXsUwq?=
+ =?us-ascii?Q?iIxAB70Oa2S1tK4/37lUkOX9Ri5OGoTQ+59Q1Z4iQqOJkoYX2/7Hhqv2xgZa?=
+ =?us-ascii?Q?qppwA2Mpvyj/kws0CIiFrzPO+cufWlUWxafrZHp1YTRuJz+LO8xSD+GyGD1J?=
+ =?us-ascii?Q?IpSltSl9V9IILKXES0fmx7j783uh8JdLPtMfmX0eVogKsx9C+lerlvvFm6wa?=
+ =?us-ascii?Q?YftSXYYMA/W/v98DRw8pzOtPblR/0Uq4F2gpl/EemUInl5S7NXStePEW29+L?=
+ =?us-ascii?Q?RtzJ/uxOuQ0fFNAcdrG2KfoyrO6Li9gEWTRtfDqCjvNiZd+9rWuBbWQlAev5?=
+ =?us-ascii?Q?2A8/eBeK5kZXEjaj0d405prOSE6oW9mY1yvBbQ2y+X5ZMi0JO+lo8juHTiyw?=
+ =?us-ascii?Q?Sdg9pM3Mt8b0jqJDUo9lxpm6nVhYCJ1COvOEb0up6reyKP5akPykBGPzeVJ8?=
+ =?us-ascii?Q?t4mqWzpqPeB/l3uD1aeWCTGAmGU61PJISFpIyvoH3orfgivB1u0zH+JPcay5?=
+ =?us-ascii?Q?i2/C9TxCrVna0b150hqtDt66zxjFwkvvWtUPnMyStzJOw1fpbLYo/lt9yX++?=
+ =?us-ascii?Q?viUenDBXzkQZiHx8iS8VVoX1Gc/+WxBQHOfeZ3XYPH9CUD0Hi4EYp46yIbnJ?=
+ =?us-ascii?Q?rC84948CVOWOOEYYnH+8wtTGu/g8rN0q8oVkwUUrgZ+pCFtkzZBoK3fr8Otb?=
+ =?us-ascii?Q?o0OMxczd+0jfrC52hdiklKhQs1W7ObZwDPBx6i3huo3ratQKaf+zO4TyxFrD?=
+ =?us-ascii?Q?PONSJK3hkTShMosZOmoDLSmRCqhukOfq1QPSno5oacz61uBr6y7RkflybGF7?=
+ =?us-ascii?Q?wmEIS6Hm3DkNOdIeTdjrSHSmsiOkmU75i8oNYJ8BfJYWTfbGLbR0KGPDz8Rd?=
+ =?us-ascii?Q?Joqcpb//LhtGcOwn8rDJuSpF+6N35Z9ubu6wYV6IoxXs2IWWBp+Me4oewkGe?=
+ =?us-ascii?Q?4GuNtht3NqwwJ3yal88zmYu6xYf0yJ1JZfRKY9x+dvV6bHkmL4d42Tl9KuuF?=
+ =?us-ascii?Q?XNOWz2yZUl47sQVWtLfezMIJz6xU481O3muaXRGAh6m37pSFX3uiKQ=3D=3D?=
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY1PPF28DEB91D1.apcprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(13003099007)(8096899003)(38070700021);DIR:OUT;SFP:1102;
+Content-Type: multipart/alternative;
+	boundary="_000_TY1PPF28DEB91D172A371047C3D5E6843969917ATY1PPF28DEB91D1_"
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SI2PR02MB6104
+Return-Path: ritagill@hkbu.edu.hk
+X-MS-Exchange-Organization-ExpirationStartTime: 17 Sep 2025 06:56:01.5541
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 81378cbb-d823-44b4-65af-08ddf5b7436d
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: ed9ca920-543e-4305-9a64-d6239716efbb:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: TY2PEPF0000AB89.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource: TY2PEPF0000AB89.apcprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 8827b25c-7e69-4d3e-dcc8-08ddf5b73f08
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|35042699022|69100299015|8096899003|4076899003|13003099007;
+X-Forefront-Antispam-Report: CIP:158.182.0.61;CTRY:HK;LANG:en;SCL:-1;SRV:;IPV:CAL;SFV:NSPM;H:mailgwy61.hkbu.edu.hk;PTR:mailgwy61.hkbu.edu.hk;CAT:NONE;SFS:(13230040)(35042699022)(69100299015)(8096899003)(4076899003)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Sep 2025 06:56:00.4919
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 81378cbb-d823-44b4-65af-08ddf5b7436d
+X-MS-Exchange-CrossTenant-Id: ed9ca920-543e-4305-9a64-d6239716efbb
+X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF0000AB89.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SG2PR02MB5507
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:05.6096148
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9115.005
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?LNx1gg+lRekmrRt0OOQoVHdKtant5rfbxvruJtookeJ/9EA/4LMZr1BDb3Ag?=
+ =?us-ascii?Q?hOMmqKrnOf9JNuH5grxd5XxwXUvZ3OWNqHBj2q09bE6K0vkd+jrEhA8rtVAp?=
+ =?us-ascii?Q?l2kbXd5tOr89w2uJO3EwSQZlHygMCYbnkimwH5CD2/RCpUl6enciX3FvdfwX?=
+ =?us-ascii?Q?IflPQakUK4bd9qJ/s9E3STttkgnlEDdzWW1pywDWYLJp4YEJQDz6y9tds24z?=
+ =?us-ascii?Q?TeaUPqcR7nWAuSxYNB33Ctf5Y0KjDdOoOkkrkvU1NsLQ+tyfP0FofD6QqqzS?=
+ =?us-ascii?Q?SxLvNR8BVpOYCOV+CGJ1+EBNKUq2IA6TZSAb9O3h2iNsvTH80bm+Oik8vKoI?=
+ =?us-ascii?Q?sma383MRQxhOpg1TST3/Yoce9xujlvLz5DyUywbtO22nPRk83KLgOMq6szEf?=
+ =?us-ascii?Q?ub013BWHIrgiGZ1iEd7N8mKf2KXaOLt9YD27krM9kac4XyrQTOG6wJT6WT6b?=
+ =?us-ascii?Q?lyBrYPjQ5ebFLtaC7WbrKattAqt5qGKPmZbLbzh1uoGirzK/NF1jRf9K1vut?=
+ =?us-ascii?Q?2LQo5OjArR1UfWw87IxoQJHIPWFp8Fhn5UoJLpifHQXUQmfC0bbmuUAA4ChU?=
+ =?us-ascii?Q?3PCp/x9/fde/TchszkZkOwh3tTp82edXJ1S/9YUu8cYDcunhM9V/dk72NoYU?=
+ =?us-ascii?Q?RntpGx5JT6Hkl29GlqBBL9jkVDTjyPxlU/58BwnCeLnjXJ7LM9KW0DZ5cES7?=
+ =?us-ascii?Q?s1Hd2/risOxA8YYYRsiTb06nHrYzJ2jEJvBUbJRYTFie/4XxBZLCEMdh04hP?=
+ =?us-ascii?Q?XWQHgU0fgktJMOZ+cVFiBWTzH1gU33Miw12YCkrc2gSWkiQk8m8c/+/4id7Q?=
+ =?us-ascii?Q?aJtGuKpoqrv+TpZQ9u3zPQmKhcownUrWPuu+vD85jAiyEeSEy7LfYeA/emMt?=
+ =?us-ascii?Q?GZXL83ogX8JnmPtofA5JMg2sv2J05pFHP+/jz37/cAEH6O+BRG+qkiCn2lOw?=
+ =?us-ascii?Q?ZMFE/jHZj/kPwof0/PNtnhh5B99rP44ZU7iw+G4YU6MYHhQSV8vv35kWmQPw?=
+ =?us-ascii?Q?1CJ2DATDGP2JGpB6GT/djTKtGSE+Tl9cjOZDPMEHTHQ4y86kSTeMWmW/Jc6a?=
+ =?us-ascii?Q?wcH7e4A+KI7X5BfLoQIBSSd5fNhBnqnoH9H7unolbkJqUcHBf4jT/VvTMFOP?=
+ =?us-ascii?Q?FVgCR2oU630XO7d3m6QwjvZ1c/LCp4LDUjYpNr6SHaHWOAn7g4U+bP2VrjzI?=
+ =?us-ascii?Q?8GLWr4Xy0dWuGvqnAckJJg8tFgO1LofnhyQtQFBEvDPU+CCV/Sxb/uxjO7QG?=
+ =?us-ascii?Q?e6bbrBBQQK+K7ck/GLKGToI1KPjzWa3lMXKmaII7VA=3D=3D?=
+MIME-Version: 1.0
+
+--_000_TY1PPF28DEB91D172A371047C3D5E6843969917ATY1PPF28DEB91D1_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Colleagues,
+
+The Center for language education at HKUST is hosting the following talk at=
+ 3:10 pm on 24 Sept - pls feel free to attend it if you have time. The zoom=
+ link is provided.
+
+Best wishes,
+Rita
+
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+Building Skills in Multimodal Genres
+
+Date: Wed 24 Sep
+Time: 15:10-16:20
+Venue: Rm 3301 (HKUST Academic Building)
+Speakers: Dr. Julia Chen (PolyU), Dr. Aditi Jhaveri (HKUST) and Ms. Eunice =
+Tang (HKUST)
+
+Join us for a professional development session launching a new UGC-funded w=
+ebsite for teaching multimodal communication. This session will highlight t=
+he significant development work completed over the past year by our expande=
+d project team.
+
+Working alongside Dr. Julia Chen and Dr. Grace Lim (Hong Kong Polytechnic U=
+niversity) and Ms. Christy Chan (City University of Hong Kong), the team fr=
+om The Hong Kong University of Science and Technology (HKUST), including Dr=
+. Aditi Jhaveri and Ms. Eunice Tang, has driven the project's development o=
+ver the past year. Building on the foundational work of former team members=
+ like Dr. Elza Tsang, they have designed and built a comprehensive suite of=
+ practical resources.
+
+You will be among the first to explore our new modules, which feature compl=
+ete lessons on essential digital genres for English Across the Curriculum, =
+including academic blogs, explainer videos, infographics, digital stories, =
+podcasts, video abstracts and CVs (among others). This hands-on session wil=
+l allow you to experience these resources firsthand and discuss strategies =
+for integrating them into your own teaching context.
+
+Zoom Information: https://hkust.zoom.us/j/93013691590?pwd=3Dqr6Kg1cjaeoBPzH=
+BRanPw7mRZzFaFi.1
+Meeting ID: 930 1369 1590
+Passcode: 883226
+
+
+
+
+
+---------------------------------------------------------------------------=
+---
+
+Disclaimer
+
+This message (including any attachments) may contain confidential informati=
+on intended for a specific individual and/or purpose. If you are not the in=
+tended recipient, please delete this message and notify the sender immediat=
+ely. Any disclosure, copying, or distribution of this message, or the takin=
+g of any action based on it, is prohibited as it may be unlawful or may lea=
+d to disciplinary action.
+
+--_000_TY1PPF28DEB91D172A371047C3D5E6843969917ATY1PPF28DEB91D1_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+</head>
+<body>
+<div dir=3D"ltr">Dear Colleagues,</div>
+<div dir=3D"ltr"><br>
+</div>
+<div dir=3D"ltr">The Center for language education at HKUST is hosting the =
+following talk at 3:10 pm on 24 Sept - pls feel free to attend it if you ha=
+ve time. The zoom link is provided.&nbsp;</div>
+<div dir=3D"ltr"><br>
+</div>
+<div dir=3D"ltr">Best wishes,</div>
+<div dir=3D"ltr">Rita&nbsp;</div>
+<div id=3D"mail-editor-reference-message-container" class=3D"ms-outlook-mob=
+ile-reference-message">
+<div id=3D"mail-editor-reference-message-container">
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"margin: 0px; font-family=
+: Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"margin: 0px; font-family=
+: Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"margin: 0px; font-family=
+: Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"margin: 0px; font-family: Calibri, H=
+elvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"margin: 0px; font-family=
+: Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b><br>
+</b></div>
+<div class=3D"elementToProof" style=3D"margin: 0px; font-family: Calibri, H=
+elvetica, sans-serif; font-size: 14pt; color: rgb(0, 0, 0);">
+<b>Building Skills in Multimodal Genres&nbsp;</b></div>
+<div class=3D"elementToProof" style=3D"margin: 0px; font-family: Calibri, H=
+elvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b>Date:</b> Wed 24 Sep&nbsp;&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b>Time:</b> 15:10-16:20&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b>Venue:</b> Rm 3301 (HKUST Academic Building)</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b>Speakers: </b>Dr.<b> </b>Julia Chen (PolyU), Dr. Aditi Jhaveri (HKUST) a=
+nd Ms. Eunice Tang (HKUST)
+</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Join us for a professional development session launching a new UGC-funded w=
+ebsite for teaching multimodal communication. This session will highlight t=
+he significant development work completed over the past year by our expande=
+d project team.&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Working alongside Dr. Julia Chen and Dr. Grace Lim (Hong Kong Polytechnic U=
+niversity) and Ms. Christy Chan (City University of Hong Kong), the team fr=
+om The Hong Kong University of Science and Technology (HKUST), including Dr=
+. Aditi Jhaveri and Ms. Eunice Tang,
+ has driven the project's development over the past year. Building on the f=
+oundational work of former team members like Dr. Elza Tsang, they have desi=
+gned and built a comprehensive suite of practical resources.&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+You will be among the first to explore our new modules, which feature compl=
+ete lessons on essential digital genres for English Across the Curriculum, =
+including academic blogs, explainer videos, infographics, digital stories, =
+podcasts, video abstracts and CVs
+ (among others). This hands-on session will allow you to experience these r=
+esources firsthand and discuss strategies for integrating them into your ow=
+n teaching context.&nbsp;</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; margin: 0px; font-family: Calibri, Helvetica, sans-serif; font-=
+size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; white-space: pre-wrap; margin: 0px; font-family: Calibri, Helve=
+tica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b>Zoom Information: <a href=3D"https://hkust.zoom.us/j/93013691590?pwd=3Dq=
+r6Kg1cjaeoBPzHBRanPw7mRZzFaFi.1" id=3D"OWA48a713c8-5a37-c865-f2c4-72ea78a7f=
+220" class=3D"OWAAutoLink">
+https://hkust.zoom.us/j/93013691590?pwd=3Dqr6Kg1cjaeoBPzHBRanPw7mRZzFaFi.1<=
+/a></b></div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"text-align: left; text-i=
+ndent: 0px; margin: 0px; font-family: Calibri, Helvetica, sans-serif; font-=
+size: 12pt; color: rgb(0, 0, 0);">
+<b>Meeting ID:</b>&nbsp;930 1369 1590<br>
+<b>Passcode:</b>&nbsp;883226</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"margin: 0px; font-family=
+: Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" class=3D"elementToProof" style=3D"font-family: Calibri, He=
+lvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" class=3D"elementToProof"><br>
+</div>
+<div dir=3D"ltr"><br>
+</div>
+<div dir=3D"ltr" style=3D"font-family: Calibri, sans-serif; font-size: 11pt=
+;"><br>
+</div>
+</div>
+</div>
+<div id=3D"disclaimer"><hr>
+<table border=3D"0" style=3D"margin: 10px auto; width: 95%"><tbody><tr bgco=
+lor=3D"#ffffff"><td colspan=3D"2">
+<img src=3D"https://staffweb.hkbu.edu.hk/BU-logo.png" width=3D"260" alt=3D"=
+Baptist University Logo" border=3D"0" style=3D"width: 260px; max-width: 260=
+px; height: auto;">
+<p style=3D"padding: 0px 8px 1px; color: #a0a0a0; line-height: 13px; font-f=
+amily: Calibri, Helvetica, Arial, sans-serif; font-size: 10px; font-weight:=
+ bolder;">Disclaimer<br><br>This message (including any attachments) may co=
+ntain confidential information intended for a specific individual and/or pu=
+rpose. If you are not the intended recipient, please delete this message an=
+d notify the sender immediately. Any disclosure, copying, or distribution o=
+f this message, or the taking of any action based on it, is prohibited as i=
+t may be unlawful or may lead to disciplinary action.</p></td></tr></tbody>=
+</table></body>
+</html>
+
+--_000_TY1PPF28DEB91D172A371047C3D5E6843969917ATY1PPF28DEB91D1_--

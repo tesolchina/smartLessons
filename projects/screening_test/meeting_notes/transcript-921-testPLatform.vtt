@@ -1,0 +1,726 @@
+WEBVTT
+
+1
+00:00:01.430 --> 00:00:07.440
+Simon Wang: Okay, so we are going to the listening part.
+
+2
+00:00:08.430 --> 00:00:16.599
+Simon Wang: And, at the beginning, there's the, chat headset and everything. So, there's the…
+
+3
+00:00:17.200 --> 00:00:22.540
+Simon Wang: Some information about the screening test for freshmen.
+
+4
+00:00:23.020 --> 00:00:26.520
+Simon Wang: As you can see here.
+
+5
+00:00:27.830 --> 00:00:35.640
+Simon Wang: So actually, this… this page needs to be revised a little bit, because…
+
+6
+00:00:36.060 --> 00:00:49.369
+Simon Wang: the information here should be more about the listening test. The reading test has already been finished, so we should say something like, now let's move on to the listening
+
+7
+00:00:49.600 --> 00:00:58.270
+Simon Wang: test, instead of, presenting this kind of generic information. So this is actually something we have to…
+
+8
+00:00:58.270 --> 00:01:10.219
+Simon Wang: raise and discuss, because actually all the page information here should be set by us, so we should be able to set it through Markdown file or whatever, so we need to,
+
+9
+00:01:10.420 --> 00:01:12.069
+Simon Wang: Look into that.
+
+10
+00:01:12.310 --> 00:01:21.439
+Simon Wang: And then… oh, actually, this is the listening session, so… so we need to think about how to… kind of redesigning the whole…
+
+11
+00:01:21.470 --> 00:01:38.029
+Simon Wang: Bang. I mean, I mean, the previous page is… maybe the two pages can be consolidated or something. Anyway, so, so that's one issue we need to discuss, so maybe you can take some screenshot and, you can, you can raise the, you know, take the notes that I, I was just talking about.
+
+12
+00:01:38.120 --> 00:01:45.929
+Simon Wang: Okay? So, but then here it said it… you will answer 5 questions, 4 multiple-choice questions.
+
+13
+00:01:47.090 --> 00:01:50.239
+Simon Wang: There's one audio recording…
+
+14
+00:01:51.180 --> 00:02:02.800
+Simon Wang: So the listening test got a total of 10 minutes, with 5 questions, 4 multiple choice, and 1 close summary question.
+
+15
+00:02:05.060 --> 00:02:21.479
+Simon Wang: Well, I mean, one issue we may want to consider is that, it seems like 10 minutes is relatively short. Only 4 multiple-choice questions and one closed summary question is… it may be very difficult to dis…
+
+16
+00:02:21.620 --> 00:02:29.479
+Simon Wang: kind of differentiate the students, right? Because there's so many… so… such a small number of questions, so actually that's something we want to…
+
+17
+00:02:29.740 --> 00:02:31.810
+Simon Wang: Discuss as well.
+
+18
+00:02:32.030 --> 00:02:38.019
+Simon Wang: But other than that, it seems okay. I mean, the whole instruction we can review later.
+
+19
+00:02:38.320 --> 00:02:49.280
+Simon Wang: We might want to reformat it and make it, like, a little bit more, visually appealing, because right now it's a little bit plain. But anyway, so we get started here.
+
+20
+00:02:49.430 --> 00:02:55.070
+Simon Wang: There's a total of… Five questions.
+
+21
+00:02:55.290 --> 00:03:04.010
+Simon Wang: And, there's the countdown, there's the 10-minute thing, and we can actually look at all the 5 questions here.
+
+22
+00:03:05.040 --> 00:03:07.709
+Simon Wang: Which is no problem, but…
+
+23
+00:03:08.240 --> 00:03:13.790
+Simon Wang: We actually need to… actually, maybe we can just go ahead and try this.
+
+24
+00:03:15.840 --> 00:03:20.739
+Simon Wang: Because here, we don't know how long is the audio, but we can give it a try.
+
+25
+00:03:23.720 --> 00:03:32.340
+Simon Wang: See, here, there's some problem here, because here is that you will hear two excerpts from the podcast. Each recording will be played once.
+
+26
+00:03:32.770 --> 00:03:35.239
+Simon Wang: But then,
+
+27
+00:03:35.790 --> 00:03:49.709
+Simon Wang: Previously, as… if you remember, it says there's only one, one excerpt, so actually, we need to, consider how to, you know, how to, how to, correct this.
+
+28
+00:03:51.790 --> 00:03:53.480
+Simon Wang: listening component.
+
+29
+00:03:53.890 --> 00:03:55.230
+Simon Wang: situation.
+
+30
+00:03:56.070 --> 00:04:06.169
+Simon Wang: During your research on MBTI and job hunting, you came across a podcast on whether job seekers should include their MBTI on their resume.
+
+31
+00:04:10.390 --> 00:04:12.570
+Simon Wang: Now listen to excerpt 1.
+
+32
+00:04:14.990 --> 00:04:27.609
+Simon Wang: Today, we're, tackling something lots of you might be thinking about, especially early in your careers. It's this trend of considering, you know, personality tests, like Myers-Briggs, the MVPI,
+
+33
+00:04:27.610 --> 00:04:43.930
+Simon Wang: And whether to put those results on your job applications. You take these tests maybe for self-discovery, find them interesting, and then think, hey, maybe this helps me stand out. Especially when the job market feels crowded. Exactly. So the big question we're diving into is, is that actually a good idea?
+
+34
+00:04:44.000 --> 00:04:57.790
+Simon Wang: And, spoiler alert, it's… well, it's pretty nuanced. It definitely is. It touches on how we, you know, present ourselves professionally, how we communicate strengths, and maybe most importantly, what people doing the hiring actually care about.
+
+35
+00:04:57.790 --> 00:05:11.880
+Simon Wang: So maybe we should start with why someone, especially a recent grad, might even think about doing this. What's the perceived upside? Okay, yeah, let's unpack that. I mean, if you're just starting out, you want any edge you can get. You look around, see tons of applicants, maybe similar grades, similar majors, and you think.
+
+36
+00:05:11.880 --> 00:05:14.059
+Simon Wang: how do I show I'm different? And…
+
+37
+00:05:14.080 --> 00:05:22.339
+Simon Wang: putting down, say, INTJ might feel like a quick way to signal, hey, I'm strategic, or maybe ESFP, to say, I'm good with people.
+
+38
+00:05:22.710 --> 00:05:41.760
+Simon Wang: like a shorthand. Exactly. It feels like a shortcut to communicating your work style, or maybe how you approach problems, and there's this idea that it shows self-awareness, you know, that you thought about yourself, your strengths, weaknesses. Employers often say they value that. Right, it feels like you're being transparent, maybe even getting ahead of the game. Here's who I am, here's how I tick.
+
+39
+00:05:42.130 --> 00:05:44.660
+Simon Wang: And you sometimes hear that in certain places.
+
+40
+00:05:44.850 --> 00:05:56.639
+Simon Wang: I think, particularly in parts of Asia, it's becoming more common, almost expected sometimes, to include this kind of thing. Interesting. So, from the job seeker's point of view, you can see the logic. It feels…
+
+41
+00:05:56.800 --> 00:05:58.820
+Simon Wang: proactive, informative.
+
+42
+00:06:03.060 --> 00:06:07.890
+Simon Wang: Okay, so as you can see here, this audio actually kind of stopped
+
+43
+00:06:08.040 --> 00:06:13.860
+Simon Wang: a little bit, abruptly. It's… it's not, like, a very natural ending.
+
+44
+00:06:13.970 --> 00:06:27.849
+Simon Wang: But then, according to here, it says we will hear two excerpts, but, there's only one. So, the question here is, we need to ask
+
+45
+00:06:28.120 --> 00:06:36.890
+Simon Wang: the programming consultant, whether we can add another audio here, so the students can decide
+
+46
+00:06:37.000 --> 00:06:42.360
+Simon Wang: You know, after listening to the first and the second.
+
+47
+00:06:42.710 --> 00:06:51.409
+Simon Wang: But then we also do not know, which questions are connected to which audio.
+
+48
+00:06:51.660 --> 00:07:05.660
+Simon Wang: So, that's something we need to clarify with the staff that are writing the exam papers. So, you can already see that there's some problem here.
+
+49
+00:07:05.890 --> 00:07:14.930
+Simon Wang: But… Yeah, so, so, so… but then, of course, what we need to do is go back to…
+
+50
+00:07:15.130 --> 00:07:25.260
+Simon Wang: the folder… that I just sent… And,
+
+51
+00:07:25.990 --> 00:07:39.999
+Simon Wang: I think the folder is still sending because it's pretty large. And, so, this is another issue. We need to be more explicit and specific about
+
+52
+00:07:41.000 --> 00:07:45.320
+Simon Wang: the format of the exam questions, okay? Because…
+
+53
+00:07:45.710 --> 00:08:01.979
+Simon Wang: the task we need to do is actually transfer all the tasks and questions into Markdown file, and that can be a lot of work, but, if we tell the exam writers in advance what specific format we need.
+
+54
+00:08:02.180 --> 00:08:11.559
+Simon Wang: from them, Or even we could give them the markdown file and ask them to fill in the different
+
+55
+00:08:11.760 --> 00:08:13.630
+Simon Wang: text.
+
+56
+00:08:14.720 --> 00:08:22.169
+Simon Wang: Then that would become a standard workflow, because later on, we're going to start using this platform, and we have to standardize the workflow.
+
+57
+00:08:22.300 --> 00:08:24.990
+Simon Wang: To avoid any confusion.
+
+58
+00:08:34.350 --> 00:08:40.850
+Simon Wang: Yeah, so, yeah, you said something about we cannot move to the next question. See, the thing is,
+
+59
+00:08:41.250 --> 00:08:48.980
+Simon Wang: During the… during the exam, during the audio playing, we cannot move, but now we can move.
+
+60
+00:08:49.410 --> 00:08:55.430
+Simon Wang: You see what I mean? So, from the test candidate's perspective.
+
+61
+00:08:55.940 --> 00:09:09.189
+Simon Wang: there are different ways to do this, right? They can actually start by just going through all the questions, and take notes and think about, you know, what this audio is about, and that's perfectly fine. We're okay with it.
+
+62
+00:09:10.260 --> 00:09:14.039
+Simon Wang: But then we need to tell people in advance how this is going to work.
+
+63
+00:09:14.680 --> 00:09:18.109
+Simon Wang: Which is why, we need to, like.
+
+64
+00:09:18.750 --> 00:09:28.889
+Simon Wang: provide the training, you know. Remember, we talked about we need a training manual, we need a candidate's manual or something, just to… to show people
+
+65
+00:09:28.970 --> 00:09:45.630
+Simon Wang: how everything is going to work, okay? But, I think we want to have a structure, we want to have an outline for that manual, but we don't want to fill in the details, especially the screenshot just yet, because the screenshot is not yet finalized.
+
+66
+00:09:45.840 --> 00:09:48.609
+Simon Wang: Okay? So,
+
+67
+00:09:49.340 --> 00:10:00.979
+Simon Wang: that's actually something we want to test. So, so, when I say we want to test the, the listening section, I'm talking about this kind of thing, you know?
+
+68
+00:10:01.830 --> 00:10:02.990
+Simon Wang: Because…
+
+69
+00:10:03.240 --> 00:10:12.439
+Simon Wang: there's, you know, obviously there's a two audio versus one audio thing we need to figure out, but then there's other issues we want to think about as well.
+
+70
+00:10:13.290 --> 00:10:21.179
+Simon Wang: Yeah, so that's the listening part. Now, another thing I want to discuss is…
+
+71
+00:10:21.910 --> 00:10:26.759
+Simon Wang: If you go to the writing section, let's very briefly talk about the writing section as well.
+
+72
+00:10:27.660 --> 00:10:32.529
+Simon Wang: For the writing section, There's also a little bit of audio.
+
+73
+00:10:32.790 --> 00:10:36.540
+Simon Wang: And, again, we have, we have to test, right? So…
+
+74
+00:10:45.260 --> 00:10:47.659
+Simon Wang: So, we, we read through this.
+
+75
+00:10:47.910 --> 00:10:53.390
+Simon Wang: And, there's the audio that we can listen to, and then there's a total of 40 minutes.
+
+76
+00:10:58.390 --> 00:11:00.030
+Simon Wang: writing component.
+
+77
+00:11:00.550 --> 00:11:02.080
+Simon Wang: Situation.
+
+78
+00:11:02.900 --> 00:11:12.029
+Simon Wang: After the reading and listening tasks, you are asked to compile a report focusing on the disadvantages of using personality test results in job applications.
+
+79
+00:11:13.420 --> 00:11:23.880
+Simon Wang: You will listen to the full podcast. Make notes as you listen. Before the recording starts, you have one minute to familiarize yourself with the task requirement.
+
+80
+00:11:46.080 --> 00:11:59.979
+Simon Wang: Okay, so I'm not going to play the whole audio here, but at some point, maybe you need to listen to the whole audio and think about, maybe just go through the process, including writing.
+
+81
+00:12:00.550 --> 00:12:05.820
+Simon Wang: It seems like you can… you can ride a little bit… And you can save…
+
+82
+00:12:06.600 --> 00:12:10.700
+Simon Wang: And then you can go to the… wait…
+
+83
+00:12:11.410 --> 00:12:18.570
+Simon Wang: Looks… oh, I think it's because, the audio is playing, so you cannot really…
+
+84
+00:12:20.300 --> 00:12:27.439
+Simon Wang: you cannot really move around when the audio is playing, so… You'll now hear the full podcast.
+
+85
+00:12:27.570 --> 00:12:29.379
+Simon Wang: Make notes as you listen.
+
+86
+00:12:31.950 --> 00:12:44.609
+Simon Wang: Today, we're, tackling something lots of you might be thinking about, especially early in your careers. It's this trend of considering, you know, personality tests, like the Myers-Briggs, the MBPI,
+
+87
+00:12:44.610 --> 00:13:09.590
+Simon Wang: And whether to put those results on your job applications. You take these tests, maybe for self-discovery, find them interesting, and then think, hey, maybe this helps me stand out. Especially when the job market feels crowded. Exactly. So the big question we're diving into is, is that actually a good idea? And, spoiler alert, it's… well, it's pretty nuanced. It definitely is. It touches on how we, you know, present ourselves professionally.
+
+88
+00:13:09.590 --> 00:13:28.869
+Simon Wang: how we communicate strengths, and maybe most importantly, what people doing the hiring actually care about. So maybe we should start with why someone, especially a recent grad, might even think about doing this. What's the perceived upside? Okay, yeah, let's unpack that. I mean, if you're just starting out, you want any edge you can get. You look around, see tons of applicants, maybe similar grades, similar majors, and you think.
+
+89
+00:13:28.870 --> 00:13:31.060
+Simon Wang: how do I show I'm different? And…
+
+90
+00:13:31.070 --> 00:13:36.199
+Simon Wang: putting down, say, INTJ might feel like a quick way to signal, hey, I'm strategic.
+
+91
+00:13:36.240 --> 00:13:39.289
+Simon Wang: Or maybe ESFP to say, I'm good with people.
+
+92
+00:13:39.680 --> 00:13:58.759
+Simon Wang: like a shorthand. Exactly. It feels like a shortcut to communicating your work style, or maybe how you approach problems, and there's this idea that it shows self-awareness, you know, that you thought about yourself, your strengths, weaknesses. Employers often say they value that. Right, it feels like you're being transparent, maybe even getting ahead of the game. Here's who I am, here's how I tick.
+
+93
+00:13:59.130 --> 00:14:01.659
+Simon Wang: And you sometimes hear that in certain places.
+
+94
+00:14:01.840 --> 00:14:13.679
+Simon Wang: I think, particularly in parts of Asia, it's becoming more common, almost expected sometimes, to include this kind of thing. Interesting. So, from the job seeker's point of view, you can see the logic. It feels…
+
+95
+00:14:13.780 --> 00:14:18.490
+Simon Wang: Proactive, informative, but. And there's always a but.
+
+96
+00:14:18.770 --> 00:14:25.069
+Simon Wang: How does it look from the other side of the desk, the employer's perspective? Yeah, that's where things get tricky, because honestly.
+
+97
+00:14:25.140 --> 00:14:44.470
+Simon Wang: Many hiring managers, HR professionals, they're pretty skeptical. Skeptical how? Like, they just don't care. Well, some see it as maybe unprofessional, or at least, not the best use of valuable resume space. Their main focus, overwhelmingly, is on skills. Can you actually do the job? What experience do you have?
+
+98
+00:14:44.560 --> 00:15:01.270
+Simon Wang: internships, projects, actual competencies. So the personality label just doesn't carry much weight compared to, say, listing your proficiency in Python or your experience managing a project. Precisely. Because, think about it, those four letters are a huge oversimplification of who you are, right?
+
+99
+00:15:01.310 --> 00:15:14.079
+Simon Wang: People are complex. Putting someone in a box based on a self-reported test, it risks stereotyping. Yeah, I could see that. Like, assuming all introverts are bad in team settings, or all thinking types lack empathy, which just…
+
+100
+00:15:14.630 --> 00:15:28.930
+Simon Wang: Not true. Exactly. And it's crucial to remember what these tests, like the MBTI, were actually designed for. They're intended for self-understanding, personal growth, maybe team development after hiring, not really for selection or recruitment. So using it for hiring is kind of misapplying the tool.
+
+101
+00:15:28.930 --> 00:15:34.960
+Simon Wang: That's what many experts, including psychologists and even the official MBTI organization, would argue.
+
+102
+00:15:34.960 --> 00:15:45.180
+Simon Wang: They caution against using it for hiring decisions. There are questions about, its reliability over time and its validity in actually predicting job performance.
+
+103
+00:15:45.180 --> 00:16:01.180
+Simon Wang: Does being an E or an I really tell you if someone will be a good accountant, or engineer, or marketer? The link is tenuous at best. It reminds me of that comparison you sometimes hear. Yeah. Like, it's almost akin to putting your horoscope sign on your resume. Interesting, maybe.
+
+104
+00:16:01.180 --> 00:16:11.900
+Simon Wang: but not exactly a scientific basis for a hiring decision. That comparison does get made, yeah. While maybe a bit harsh, it highlights the lack of predictive power for job success in the eyes of many employers.
+
+105
+00:16:11.900 --> 00:16:32.060
+Simon Wang: And there's another risk, too, diversity. If you start filtering candidates based on perceived ideal personality types for certain roles, you can end up screening out people with different valuable perspectives, you might build a team where everyone thinks alike, and you lose that, creative friction, that diversity of thought that often leads to innovation. That's a really important point. It's not just
+
+106
+00:16:32.060 --> 00:16:34.330
+Simon Wang: Potentially unfair to the applicant.
+
+107
+00:16:34.330 --> 00:16:50.769
+Simon Wang: But it could actually harm the company by limiting its talent pool and perspectives. Definitely. It can lead to missed opportunities on both sides, and potentially raise flags about, you know, unconscious bias creeping into the hiring process. Okay, so let's bring it back to the listener.
+
+108
+00:16:50.830 --> 00:16:55.280
+Simon Wang: If you're a recent graduate, you've maybe done the MBPI, found it insightful.
+
+109
+00:16:55.710 --> 00:16:58.809
+Simon Wang: What's the practical advice here? What should you actually do?
+
+110
+00:16:58.950 --> 00:17:02.669
+Simon Wang: The general consensus, the sort of standard advice is this.
+
+111
+00:17:02.920 --> 00:17:08.799
+Simon Wang: While understanding your type can be super helpful for your own growth, for figuring out how you interact best with others.
+
+112
+00:17:08.839 --> 00:17:25.389
+Simon Wang: proactively putting that MBTI type or similar results on your resume or cover letter, probably not the best move, it's generally not recommended. Generally not. Are there any situations where it might be okay? Like, what if a job ad specifically asks for it? That seems rare, but… It is rare, but it could happen.
+
+113
+00:17:25.390 --> 00:17:30.649
+Simon Wang: If a job description explicitly asks for it, well, then you have a choice to make. You could provide it.
+
+114
+00:17:30.950 --> 00:17:47.299
+Simon Wang: But even then, I'd advise a bit of caution. Think about why they're asking. Is it a company that really understands and uses these tools appropriately, maybe for team-building insights later? Or does it feel like a potentially crude filtering mechanism? Fair enough. So, even if asked.
+
+115
+00:17:47.320 --> 00:18:01.399
+Simon Wang: Maybe pause and consider. But for the vast majority of applications… For the vast majority, absolutely focus your energy elsewhere. Right. Focus on the stuff we know employers do value. Clearly showing your skills, the hard skills, the soft skills. Yes.
+
+116
+00:18:01.400 --> 00:18:14.290
+Simon Wang: And providing concrete evidence through your experiences. What did you achieve in your internships? What projects did you complete in school? Any volunteer work that demonstrates relevant qualities? Use that resume, that cover letter, to tell those stories.
+
+117
+00:18:14.380 --> 00:18:26.340
+Simon Wang: Show, don't just tell. Exactly. And the cover letter and interview are really your prime opportunities to demonstrate things like your communication style, your problem-solving approach, how you collaborate.
+
+118
+00:18:26.360 --> 00:18:41.150
+Simon Wang: you can illustrate these things with specific examples. Here's a time I worked on a team project, and we faced a challenge. That's much more powerful than just saying, I'm an ENFP. So you're conveying those underlying qualities, the things the personality type might hint at.
+
+119
+00:18:41.150 --> 00:18:49.740
+Simon Wang: But you're doing it through actual evidence of your behavior and accomplishments. Precisely. Let your actions and experiences speak for themselves.
+
+120
+00:18:51.730 --> 00:18:55.219
+Simon Wang: Okay, so… This is the end of the recording.
+
+121
+00:18:55.980 --> 00:19:01.529
+Simon Wang: Alright, so… Now have 30 minutes to complete the writing component according to the instructions.
+
+122
+00:19:04.560 --> 00:19:11.950
+Simon Wang: Alright, so after the, playing the whole audio now, students, the candidates will be able to write
+
+123
+00:19:12.060 --> 00:19:16.470
+Simon Wang: the two paragraphs, and then save and submit.
+
+124
+00:19:17.050 --> 00:19:34.059
+Simon Wang: while I was listening to this audio, actually, I got some comments. Maybe I just very quickly go through, and then you can take notes, and we can discuss later. I mean, we can raise these issues to the team. For writing tests with, you know, which is about 40 minutes.
+
+125
+00:19:34.080 --> 00:19:42.230
+Simon Wang: The listening audio is about 8 minutes, I think it's a bit long, so that's a concern. Maybe we want to shorten the audio?
+
+126
+00:19:42.400 --> 00:19:46.000
+Simon Wang: And also, there's no reading materials.
+
+127
+00:19:46.590 --> 00:19:57.800
+Simon Wang: currently accessible at this section, but in the instruction, it says you are required to make use of information or example found in both the reading passage and the podcast to support your reasoning. So…
+
+128
+00:19:58.130 --> 00:20:12.050
+Simon Wang: In other words, the expectation here is that students need to take the information from the reading passage into consideration when writing the essay, but the reading passage is not available.
+
+129
+00:20:12.420 --> 00:20:29.659
+Simon Wang: And there must be something that needs to be done, right? Either we can provide the reading passage on paper, or we provide some space for students to take notes in the reading part, and then the notes can be transferred over to the writing section, so…
+
+130
+00:20:29.660 --> 00:20:48.989
+Simon Wang: you know, we have to do something, otherwise it's just not possible for students just based on their memory, from the reading test to write this, you know? So that's the kind of problem or issue we need to identify when we're doing this kind of test. It's not very obvious, it's something you have to, you know, you have to start
+
+131
+00:20:49.100 --> 00:20:52.589
+Simon Wang: Doing the test, like a student or like a teacher.
+
+132
+00:20:52.710 --> 00:21:05.339
+Simon Wang: And then you will be able to find this kind of problem, and then we have to raise it, and then we need to discuss with the team so we can start, you know, improve and make sure that it's a good experience for everybody.
+
+133
+00:21:05.770 --> 00:21:19.539
+Simon Wang: Yeah, so… I think that's the writing part. Later on, when we actually start writing, we can actually submit it and see, you know, how that test will be collected from that end.
+
+134
+00:21:19.740 --> 00:21:35.309
+Simon Wang: Because at some point, we will actually do the AI assessment, so we're going to send the writing essay, the essay submitted from the students to AI with some prompts and rubrics, and we'll get some feedback back, and even some tentative grades.
+
+135
+00:21:35.550 --> 00:21:52.710
+Simon Wang: And we need to do that module later on, so that's called AI Assessment of… of the… of the test. But let's… let's take some notes, and we can follow up on that a bit later, because that's the… that's the second stage, that's the assessment part of… of the… of the platform.
+
+136
+00:21:53.630 --> 00:22:11.279
+Simon Wang: Okay, so, since we're here, maybe we can just very quickly, go through the speaking test again. So, again, you know, this page, I think we need to modify a little bit, at least we should highlight, okay, so we can say something. This check, check, check, we have done all these three, now it's the speaking part.
+
+137
+00:22:11.430 --> 00:22:15.709
+Simon Wang: Now, for the speaking part, we get in…
+
+138
+00:22:15.840 --> 00:22:22.260
+Simon Wang: And, we, we can see that, you know, there's,
+
+139
+00:22:22.430 --> 00:22:27.050
+Simon Wang: A total of 4 minutes, 1 minute to prepare your answer, and 3 minutes to record a response.
+
+140
+00:22:27.060 --> 00:22:46.779
+Simon Wang: A timer will count down from 4 minutes, so actually the wording needs to be rephrased a little bit. After 1 minute preparation, you start recording. If you delay starting, you may not have enough time. So I think this is the kind of information we actually need to, kind of,
+
+141
+00:22:46.910 --> 00:22:47.830
+Simon Wang: just…
+
+142
+00:22:48.110 --> 00:22:57.419
+Simon Wang: inform students in advance. And also, what if students do not enter start section? You know, they just stay here, or whatever?
+
+143
+00:22:58.100 --> 00:23:00.609
+Simon Wang: That might actually delay things.
+
+144
+00:23:01.120 --> 00:23:03.849
+Simon Wang: So maybe we want to start thinking about the…
+
+145
+00:23:04.070 --> 00:23:08.159
+Simon Wang: Putting a timer or something here.
+
+146
+00:23:08.660 --> 00:23:12.709
+Simon Wang: That, that's, that's one, one, one thing we want to consider.
+
+147
+00:23:13.890 --> 00:23:19.510
+Simon Wang: Okay, so… and then we can…
+
+148
+00:23:20.790 --> 00:23:24.649
+Simon Wang: start looking at this. Just one minute to prepare.
+
+149
+00:23:27.080 --> 00:23:34.789
+Simon Wang: So, so I think the format here, we should enlarge the font size a bit, because it's actually a little bit difficult to read.
+
+150
+00:23:34.930 --> 00:23:40.310
+Simon Wang: Given that there's a time constraint, right, we have to…
+
+151
+00:23:40.580 --> 00:23:54.529
+Simon Wang: kind of, enlarge this format a little bit, enlarge the font size. So, it's about the disadvantage of using personality test results in job applications. The 3-minute talk.
+
+152
+00:23:54.810 --> 00:23:57.909
+Simon Wang: And, there's a timer here.
+
+153
+00:23:58.320 --> 00:24:10.750
+Simon Wang: And, we can, start recording, so we actually need to do a little bit, recording, you know? So, basically, we can try and, record the whole thing.
+
+154
+00:24:10.860 --> 00:24:12.519
+Simon Wang: And, because…
+
+155
+00:24:12.770 --> 00:24:30.030
+Simon Wang: here, there's a timer here, but there's no timer here. Well, actually, there is a timer here, but there's no countdown, so we are talking about up to 3 minutes, so basically, the student needs to keep talking and record the whole thing.
+
+156
+00:24:30.190 --> 00:24:41.160
+Simon Wang: And apparently there's no space for people to take notes, so we're thinking either we need to provide the students some… some… a piece of paper or something to write the…
+
+157
+00:24:41.380 --> 00:24:59.909
+Simon Wang: the notes, then that's actually something we have to design. We need to inform the students in advance that at this stage, during the preparation time, there will be a paper provided for them, and maybe pencil as well, so they can take the notes, and then they can use that notes to give the talk.
+
+158
+00:25:00.790 --> 00:25:15.259
+Simon Wang: Yeah, so… so I think that's kind of the details we need to think about in terms of the whole setting of the test, how we can provide all the logistics support for the students, and make sure that they have a good experience.
+
+159
+00:25:16.390 --> 00:25:22.770
+Simon Wang: Right, and here, there's, like, a total of,
+
+160
+00:25:23.240 --> 00:25:36.190
+Simon Wang: a total of, 3 minutes, so we need to test the edge case. Obviously, if I stop, and then, it can be saved, but what if, while I'm talking, the timer, you know, the time is up?
+
+161
+00:25:36.190 --> 00:25:43.330
+Simon Wang: So, so that's kind of a more kind of unusual case, right? Because the student didn't really put…
+
+162
+00:25:43.340 --> 00:25:45.700
+Simon Wang: Click on stop, or even saved.
+
+163
+00:25:45.810 --> 00:25:48.179
+Simon Wang: Will the audio be…
+
+164
+00:25:48.180 --> 00:26:10.050
+Simon Wang: will the microphone be stopped automatically, and will the audio be saved automatically and uploaded to the server? So these are the edge cases we have to test. So, one of the key strategies when it comes to doing this kind of test is to look at the edge case, look at the exceptional case.
+
+165
+00:26:10.050 --> 00:26:27.479
+Simon Wang: but not necessarily the ordinary or usual case. I mean, the usual operation, it's probably going to work, right? So that's kind of the normal circumstances. But what's really important here is we have to test those exceptional cases
+
+166
+00:26:27.480 --> 00:26:32.480
+Simon Wang: When, unexpected or unusual things happened.
+
+167
+00:26:33.590 --> 00:26:38.530
+Simon Wang: And we need to see how the platform behaves
+
+168
+00:26:38.890 --> 00:26:45.190
+Simon Wang: Under those circumstances, and whether those behaviors are acceptable.
+
+169
+00:26:45.450 --> 00:26:50.349
+Simon Wang: So this is actually, you know, something we have to do to follow up.
+
+170
+00:26:50.670 --> 00:26:55.930
+Simon Wang: But let's see, I think we're almost done here.
+
+171
+00:26:57.020 --> 00:27:02.779
+Simon Wang: Yeah, we're almost done here.
+
+172
+00:27:06.950 --> 00:27:12.749
+Simon Wang: So you see here, it's even over 3 minutes, it still keep recording, so that's a concern.
+
+173
+00:27:13.200 --> 00:27:17.129
+Simon Wang: I mean, the microphone should stop.
+
+174
+00:27:17.700 --> 00:27:24.289
+Simon Wang: And now, you can see the exam, is completed, so it's been logged out.
+
+175
+00:27:24.680 --> 00:27:28.790
+Simon Wang: And then we need to kind of…
+
+176
+00:27:29.830 --> 00:27:38.440
+Simon Wang: Okay, so here's another thing. Now, we finished everything, and it's logged out. I think that's not a very good closure.
+
+177
+00:27:38.560 --> 00:27:55.989
+Simon Wang: a good closure would be, we need to have a page saying that, okay, this is what you have done, the test, you know, this is your test candidate number, blah blah blah blah, and, you know, thank you for taking the test, and, you know, whatever. So we need to have a proper closure, right? We don't want to just…
+
+178
+00:27:56.820 --> 00:28:03.760
+Simon Wang: the logout, you know? Yeah, so that's the kind of issue we want to think about as well.
+
+179
+00:28:03.940 --> 00:28:15.850
+Simon Wang: Yeah, so we kind of tested a little bit, you know, we go through listening, we go through writing, and we go through speaking. Not reading, because I did reading before.
+
+180
+00:28:15.960 --> 00:28:24.580
+Simon Wang: And, I'm doing this recording, so I think we should be able to take some screenshots, and also the transcript we'll be able to access
+
+181
+00:28:24.790 --> 00:28:29.400
+Simon Wang: All the… the… You know, issue here.
+

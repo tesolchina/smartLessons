@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-09-23T12:25:58.018358",
+  "instructor_doc": {
+    "title": "GCAP3226 Instructor Notes - 2025-09-23",
+    "doc_id": "1Vd98A1bFDgJrMj8UiKLrOYdIauP0rr-Ca7kz4A6Hu80",
+    "url": "https://docs.google.com/document/d/1Vd98A1bFDgJrMj8UiKLrOYdIauP0rr-Ca7kz4A6Hu80"
+  },
+  "team_updates": [],
+  "errors": [
+    "Error creating team update system: <HttpError 400 when requesting https://www.googleapis.com/drive/v3/files/1xU09pURBEFi0_rspYxp_0MA9hEVHLKKFqodIuKqM7kQ/permissions?alt=json returned \"The specified permission role is invalid. Valid values are 'reader', 'commenter', 'writer', 'fileOrganizer', 'organizer', and 'owner'.\". Details: \"[{'message': \"The specified permission role is invalid. Valid values are 'reader', 'commenter', 'writer', 'fileOrganizer', 'organizer', and 'owner'.\", 'domain': 'global', 'reason': 'invalid', 'location': 'permission.role', 'locationType': 'other'}]\">"
+  ],
+  "summary": {
+    "teams_updated": 0,
+    "errors_count": 1,
+    "system_ready": true
+  }
+}

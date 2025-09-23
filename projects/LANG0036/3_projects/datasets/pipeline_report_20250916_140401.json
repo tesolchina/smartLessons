@@ -1,0 +1,61 @@
+{
+  "pipeline_execution": {
+    "start_time": "2025-09-16T13:45:38.770326",
+    "end_time": "2025-09-16T14:04:01.793282",
+    "total_topics": 7,
+    "processed_topics": 7,
+    "successful_topics": 7,
+    "failed_topics": 0
+  },
+  "topic_results": {
+    "1": {
+      "status": "success",
+      "topic_name": "Topic1_BusFrequency",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic1_BusFrequency/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic1_BusFrequency/Enhanced_Regression_Framework_20250916_134538.md",
+      "processing_time": "2025-09-16T13:48:13.258178"
+    },
+    "2": {
+      "status": "success",
+      "topic_name": "Topic2_BusStopMerge",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic2_BusStopMerge/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic2_BusStopMerge/Enhanced_Regression_Framework_20250916_134815.md",
+      "processing_time": "2025-09-16T13:50:27.360338"
+    },
+    "3": {
+      "status": "success",
+      "topic_name": "Topic3_BusRoutesCoordination",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic3_BusRoutesCoordination/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic3_BusRoutesCoordination/Enhanced_Regression_Framework_20250916_135029.md",
+      "processing_time": "2025-09-16T13:54:42.216201"
+    },
+    "4": {
+      "status": "success",
+      "topic_name": "Topic4_SolidWasteCharging",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic4_SolidWasteCharging/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic4_SolidWasteCharging/Enhanced_Regression_Framework_20250916_135444.md",
+      "processing_time": "2025-09-16T13:57:01.382153"
+    },
+    "5": {
+      "status": "success",
+      "topic_name": "Topic5_GreenCommunity",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic5_GreenCommunity/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic5_GreenCommunity/Enhanced_Regression_Framework_20250916_135703.md",
+      "processing_time": "2025-09-16T13:59:25.457171"
+    },
+    "6": {
+      "status": "success",
+      "topic_name": "Topic6_FluShotParticipation",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic6_FluShotParticipation/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic6_FluShotParticipation/Enhanced_Regression_Framework_20250916_135927.md",
+      "processing_time": "2025-09-16T14:01:41.323401"
+    },
+    "7": {
+      "status": "success",
+      "topic_name": "Topic7_TyphoonSignal",
+      "assessment_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic7_TyphoonSignal/AI_Assessment_Results.md",
+      "revision_file": "/Users/simonwang/Documents/Usage/VibeCoding/GCAP3226prep/TopicSelectionPM/Topic7_TyphoonSignal/Enhanced_Regression_Framework_20250916_140143.md",
+      "processing_time": "2025-09-16T14:04:01.792815"
+    }
+  }
+}

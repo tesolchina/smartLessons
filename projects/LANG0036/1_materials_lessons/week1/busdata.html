@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - Module 1: Data Governance in Everyday Life</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .story, .questions, .presentation, .task {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .questions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .questions li {
+            margin: 10px 0;
+        }
+        .presentation ul {
+            padding-left: 20px;
+        }
+        .task textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        .task button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .task button:hover {
+            background-color: #2980b9;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .feedback.success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            display: block;
+        }
+        .notes-section {
+            margin-top: 30px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .notes-section textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        .notes-section button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .notes-section button:hover {
+            background-color: #218838;
+        }
+        .chatbot-section {
+            margin-top: 30px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .chatbot-section iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            h1, h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Week 1 - Module 1: Data Governance in Everyday Life</h1>
+
+        <div class="section">
+            <h2>Icebreaker: True/False Lead-In (5-10 minutes)</h2>
+            <div class="story">
+                <p><strong>Story/Case</strong>: Imagine you're waiting for a bus in your neighborhood. You check a bus app, but it shows two stops with the same name on opposite sides of the street. You pick the wrong one and miss your bus! This happened in a real community due to poor data labeling.</p>
+            </div>
+            <div class="questions">
+                <p><strong>True/False Questions</strong>: Consider these statements and decide if they are true or false.</p>
+                <ul>
+                    <li><strong>T/F</strong>: Small data issues, like unclear bus stop names in an app, can cause real inconvenience to people. <em>(Answer: True)</em></li>
+                    <li><strong>T/F</strong>: Data problems like this are only the responsibility of app developers and not the government or bus companies. <em>(Answer: False)</em></li>
+                </ul>
+                <p><strong>Quick Chat</strong>: Think about this: "Has something like this ever happened to you with an app or service? How did it feel?" Share your thoughts with the class or a small group.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Presentation: Key Points on Data Governance (10-15 minutes)</h2>
+            <div class="presentation">
+                <ul>
+                    <li><strong>What is Data Governance?</strong> It’s about ensuring data is clean, accurate, and transparent so it’s useful for everyone.</li>
+                    <li><strong>Why It Matters</strong>: Poor data (e.g., duplicate bus stop names) leads to confusion and inefficiency in daily life.</li>
+                    <li><strong>Real Case</strong>: In one community, residents wrote to the transport department and escalated the issue to senior officials until the bus company added unique codes to distinguish stops in the app.</li>
+                    <li><strong>Big Picture</strong>: Clean data isn’t just for convenience—it’s a foundation for better public services and trust in systems.</li>
+                </ul>
+                <p><strong>Delivery Tip</strong>: This section is for instructors to discuss or for students to read. Relate back to the icebreaker story for context.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Task and Discussion with AI (20-30 minutes)</h2>
+            <div class="task">
+                <p><strong>Open-Ended Task</strong>:</p>
+                <ol>
+                    <li><strong>Identify a Data Issue</strong>: Think of a small data problem in your community (e.g., unclear store hours online, inconsistent road signs). Write a short description (3-5 sentences) below.</li>
+                    <li><strong>AI Assistance</strong>: Use the AI chatbot (embedded below) to draft a polite email to a local authority explaining the issue and requesting a fix. Example prompt: "Help me write an email to the transport department about unclear bus stop names in an app, asking for better labeling."</li>
+                    <li><strong>Group Discussion</strong>: Be prepared to share your problem and email draft with a small group. Discuss: "What might make authorities listen to such requests? What challenges could they face in fixing data issues?"</li>
+                </ol>
+                <p><strong>Submit Your Description</strong>: Write your data issue description here and click "Submit" to get feedback.</p>
+                <textarea id="taskInput" placeholder="Write your description of a community data issue here..."></textarea>
+                <button onclick="submitTask()">Submit</button>
+                <div id="feedback" class="feedback">
+                    <p id="feedbackText"></p>
+                </div>
+                <p><strong>Instructor Note</strong>: If AI access is limited, discuss as a group or use a provided template email.</p>
+            </div>
+        </div>
+
+        <div class="notes-section">
+            <h2>Personal Notes</h2>
+            <p>Write any notes or reflections from this module below. These will be saved locally in your browser.</p>
+            <textarea id="notes" placeholder="Type your notes here..."></textarea>
+            <button onclick="saveNotes()">Save Notes</button>
+            <p id="saveStatus"></p>
+        </div>
+
+        <div class="chatbot-section">
+            <h2>AI Chatbot Assistance</h2>
+            <p>Use this chatbot to help with drafting emails or brainstorming ideas for your task. Type your prompts directly into the frame below.</p>
+            <!-- Replace the src with the actual URL of your AI chatbot service -->
+            <iframe src="https://www.example.com/chatbot" title="AI Chatbot for Assistance"></iframe>
+            <p><strong>Note</strong>: If the chatbot does not load, inform your instructor or access an alternative AI tool if provided.</p>
+        </div>
+    </div>
+
+    <script>
+        // Load notes from localStorage when the page loads
+        window.onload = function() {
+            const savedNotes = localStorage.getItem('module1Notes');
+            if (savedNotes) {
+                document.getElementById('notes').value = savedNotes;
+            }
+        };
+
+        // Save notes to localStorage
+        function saveNotes() {
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('module1Notes', notes);
+            document.getElementById('saveStatus').textContent = 'Notes saved successfully!';
+            setTimeout(() => {
+                document.getElementById('saveStatus').textContent = '';
+            }, 2000);
+        }
+
+        // Provide feedback on task submission
+        function submitTask() {
+            const input = document.getElementById('taskInput').value.trim();
+            const feedback = document.getElementById('feedback');
+            const feedbackText = document.getElementById('feedbackText');
+
+            if (input.length === 0) {
+                feedbackText.textContent = 'Please write a description before submitting.';
+                feedback.className = 'feedback';
+                feedback.style.display = 'block';
+            } else {
+                feedbackText.textContent = 'Great job! Your description is submitted. Use the AI chatbot below if you need help drafting an email, and be ready to discuss with your group.';
+                feedback.className = 'feedback success';
+                feedback.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

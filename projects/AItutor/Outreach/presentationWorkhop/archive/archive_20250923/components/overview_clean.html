@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Overview - Interactive Slide Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .overview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .slide-deck {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            display: none;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .slide h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #34495e;
+            text-align: center;
+        }
+
+        .slide h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #5a6c7d;
+            text-align: center;
+        }
+
+        .slide p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #007acc;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item h4 {
+            color: #007acc;
+            margin-bottom: 10px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .problem-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-top: 4px solid #e74c3c;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .solution-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-top: 4px solid #27ae60;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .module-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .module-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .module-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .call-to-action {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .call-to-action:hover {
+            transform: translateY(-2px);
+        }
+
+        .navigation-controls {
+            background: #2c3e50;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-indicator {
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .overview-container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .slide {
+                padding: 20px;
+                min-height: 400px;
+            }
+            
+            .slide h1 { font-size: 2rem; }
+            .slide h2 { font-size: 1.6rem; }
+            .slide h3 { font-size: 1.3rem; }
+            
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-controls {
+                padding: 15px 20px;
+            }
+        }
+
+        /* SCMP Embed Styles */
+        .scmp-embed {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid #007acc;
+        }
+
+        .scmp-embed h3 {
+            color: #007acc;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .embed-fallback {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .embed-fallback a {
+            color: #007acc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .embed-fallback a:hover {
+            text-decoration: underline;
+        }
+
+        /* Interactive Section Styles */
+        .interactive-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            min-height: 150px;
+        }
+
+        .interactive-area {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #28a745;
+        }
+
+        .interactive-placeholder {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .placeholder-button {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(40,167,69,0.3);
+        }
+
+        .placeholder-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(40,167,69,0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="overview-container">
+        <div class="slide-deck">
+            <!-- Slide 1: Workshop Introduction -->
+            <div class="slide active">
+                <h1>🎯 Workshop Overview</h1>
+                <h3>Engaging Students in Flipped Classroom with AI-Powered Video and Avatars</h3>
+                <div class="highlight-box">
+                    <p><strong>September 26, 2025 | 2:30 PM | ZOOM</strong></p>
+                    <p><strong>Today's Mission:</strong> Transform your teaching with AI while reclaiming time for research and meaningful student interaction.</p>
+                    <p><em>"AI makes flipped classroom accessible and effective for every educator"</em></p>
+                </div>
+                <p>Welcome to the future of education at HKBU! 🌟</p>
+            </div>
+
+            <!-- Slide 2: The Evolution Journey (2017 → 2025) -->
+            <div class="slide">
+                <h2>🚀 From 2017 Vision to 2025 Reality</h2>
+                <div class="timeline-item">
+                    <h4>📰 2017: The SCMP Letter</h4>
+                    <p>"Relaxed attendance rules at Hong Kong's Baptist University will improve teaching quality"</p>
+                    <p><em>We advocated for flexible learning approaches that prioritize engagement over attendance.</em></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>📋 2018-2024: GE Office Policy Evolution</h4>
+                    <p>• Guidelines for flipped classroom implementation</p>
+                    <p>• Funding support for innovative teaching methods</p>
+                    <p>• Faculty development programs and training workshops</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>🤖 2025: AI-Powered Transformation</h4>
+                    <p>• AI eliminates video production barriers</p>
+                    <p>• 24/7 intelligent tutoring with streaming avatars</p>
+                    <p>• No-code solutions for every educator</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>✨ The 8-Year Journey Complete</h3>
+                    <p>What started as a vision for flexible learning has evolved into an AI-powered reality that makes flipped classroom accessible to everyone!</p>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Current Challenge -->
+            <div class="slide">
+                <h2>⚡ The Traditional Pain Points</h2>
+                <div class="problem-grid">
+                    <div class="problem-item">
+                        <h4>🎬 Video Production Hell</h4>
+                        <p>4-6 hours per video</p>
+                        <p>Complex editing software</p>
+                        <p>Technical learning curve</p>
+                    </div>
+                    
+                    <div class="problem-item">
+                        <h4>⏰ Time Drain</h4>
+                        <p>320+ hours annually</p>
+                        <p>Less time for research</p>
+                        <p>Reduced student interaction</p>
+                    </div>
+                    
+                    <div class="problem-item">
+                        <h4>🚫 Barriers to Entry</h4>
+                        <p>75% face technical hurdles</p>
+                        <p>Expensive equipment needs</p>
+                        <p>Limited scalability</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>💡 The Core Problem</h3>
+                    <p>Traditional flipped classroom methods require educators to become video production experts, taking time away from what they do best: teaching and research.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4: The AI Solution -->
+            <div class="slide">
+                <h2>🚀 AI-Powered Breakthrough</h2>
+                <div class="solution-grid">
+                    <div class="solution-item">
+                        <h4>⚡ Instant Creation</h4>
+                        <p>5-10 minutes per video</p>
+                        <p>Text-to-video AI</p>
+                        <p>No editing required</p>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>🤖 Smart Avatars</h4>
+                        <p>24/7 student support</p>
+                        <p>Personalized tutoring</p>
+                        <p>Intelligent responses</p>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>💻 Vibe Coding</h4>
+                        <p>AI-assisted development</p>
+                        <p>No programming background needed</p>
+                        <p>Custom tools in minutes</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>✨ 95% Time Savings</h3>
+                    <p>Stop building tools, start teaching and researching! AI handles the production complexity while you focus on educational content and student engagement.</p>
+                </div>
+            </div>
+
+            <!-- Slide 5: Workshop Learning Journey -->
+            <div class="slide">
+                <h2>🎓 Your Learning Journey Today</h2>
+                <div class="module-grid">
+                    <div class="module-item">
+                        <h4>🎬 AI Video</h4>
+                        <p>Create your first AI-generated educational video</p>
+                    </div>
+                    <div class="module-item">
+                        <h4>🤖 Streaming Avatars</h4>
+                        <p>Deploy a 24/7 AI teaching assistant</p>
+                    </div>
+                    <div class="module-item">
+                        <h4>💻 Vibe Coding</h4>
+                        <p>Experience AI-assisted tool development</p>
+                    </div>
+                    <div class="module-item">
+                        <h4>⏰ Time Reflection</h4>
+                        <p>Calculate your time savings and ROI</p>
+                    </div>
+                    <div class="module-item">
+                        <h4>🚀 Implementation</h4>
+                        <p>Plan integration into your courses</p>
+                    </div>
+                    <div class="module-item">
+                        <h4>📚 Resources</h4>
+                        <p>Access ongoing support and community</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Workshop Objectives</h3>
+                    <p>By the end of today, you'll have practical AI tools ready for your classroom and a clear implementation roadmap.</p>
+                </div>
+            </div>
+
+            <!-- Slide 6: Call to Action -->
+            <div class="slide">
+                <h2>🌟 Join the HKBU Innovation Community</h2>
+                <div class="call-to-action">
+                    <h3>"AI doesn't replace teachers - it amplifies their impact."</h3>
+                    <p><strong>Ready to Transform Your Teaching?</strong></p>
+                    <p>✅ Create AI-powered educational content</p>
+                    <p>✅ Deploy intelligent teaching assistants</p>
+                    <p>✅ Reclaim time for research and meaningful student interaction</p>
+                    <p style="font-size: 1.2em; margin-top: 20px;"><strong>Let's start your AI journey today!</strong></p>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="navigation-controls">
+                <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+                
+                <div class="slide-indicator">
+                    <div class="indicator-dot active" onclick="currentSlide(1)"></div>
+                    <div class="indicator-dot" onclick="currentSlide(2)"></div>
+                    <div class="indicator-dot" onclick="currentSlide(3)"></div>
+                    <div class="indicator-dot" onclick="currentSlide(4)"></div>
+                    <div class="indicator-dot" onclick="currentSlide(5)"></div>
+                    <div class="indicator-dot" onclick="currentSlide(6)"></div>
+                </div>
+                
+                <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Interactive Areas for Each Slide (Outside the slide deck) -->
+        <div class="interactive-section">
+            <!-- Interactive Area for Slide 1 -->
+            <div class="interactive-area" id="interactive-1">
+                <div class="interactive-placeholder">🎮 Interactive Component Area</div>
+                <p>Welcome Animation & Workshop Navigation Game</p>
+                <button class="placeholder-button" onclick="alert('Welcome interactive component will be implemented here!')">
+                    Start Workshop Journey
+                </button>
+            </div>
+
+            <!-- Interactive Area for Slide 2 with SCMP Embed -->
+            <div class="interactive-area" id="interactive-2" style="display: none;">
+                <div class="interactive-placeholder">📊 Interactive Timeline Component</div>
+                <p>Interactive Timeline: 2017 → 2025 Journey</p>
+                <button class="placeholder-button" onclick="alert('Interactive timeline showing the 8-year evolution will be here!')">
+                    Explore the Evolution
+                </button>
+            </div>
+
+            <!-- SCMP Article Embed for Slide 2 -->
+            <div class="scmp-embed" id="scmp-embed" style="display: none;">
+                <h3>📰 Original SCMP Letter from 2017</h3>
+                <div class="embed-fallback">
+                    <p><strong>📎 Read the full article:</strong></p>
+                    <p><a href="https://www.scmp.com/comment/letters/article/2109347/relaxed-attendance-rules-hong-kongs-baptist-university-will-improve" target="_blank">
+                        Relaxed attendance rules at Hong Kong's Baptist University will improve teaching quality
+                    </a></p>
+                    <p><em>Click the link above to read the original letter that started this journey 8 years ago.</em></p>
+                </div>
+                <!-- Note: SCMP doesn't allow direct iframe embedding due to CORS policy -->
+                <!-- The fallback link provides access to the original article -->
+            </div>
+
+            <!-- Interactive Area for Slide 3 -->
+            <div class="interactive-area" id="interactive-3" style="display: none;">
+                <div class="interactive-placeholder">🔄 Before/After Comparison Tool</div>
+                <p>Interactive Comparison: 2017 vs 2025 Teaching Methods</p>
+                <button class="placeholder-button" onclick="alert('Interactive before/after comparison tool will be implemented here!')">
+                    Compare Then vs Now
+                </button>
+            </div>
+
+            <!-- Interactive Area for Slide 4 -->
+            <div class="interactive-area" id="interactive-4" style="display: none;">
+                <div class="interactive-placeholder">📈 ROI Calculator</div>
+                <p>Calculate Your Time Savings & Funding Opportunities</p>
+                <button class="placeholder-button" onclick="alert('Interactive ROI calculator for GE funding will be here!')">
+                    Calculate Your Benefits
+                </button>
+            </div>
+
+            <!-- Interactive Area for Slide 5 -->
+            <div class="interactive-area" id="interactive-5" style="display: none;">
+                <div class="interactive-placeholder">🎮 Problem Simulation Game</div>
+                <p>Experience the Traditional Flipped Classroom Challenges</p>
+                <button class="placeholder-button" onclick="alert('Interactive simulation of traditional video production challenges!')">
+                    Experience the Pain Points
+                </button>
+            </div>
+
+            <!-- Interactive Area for Slide 6 -->
+            <div class="interactive-area" id="interactive-6" style="display: none;">
+                <div class="interactive-placeholder">🎯 Workshop Navigation Hub</div>
+                <p>Choose Your Learning Path Through Today's Modules</p>
+                <button class="placeholder-button" onclick="alert('Interactive workshop navigation and module selection!')">
+                    Start Your AI Journey
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.indicator-dot');
+            const interactiveAreas = document.querySelectorAll('.interactive-area');
+            const scmpEmbed = document.getElementById('scmp-embed');
+            
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            
+            // Hide all slides and interactive areas
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            interactiveAreas.forEach(area => area.style.display = 'none');
+            
+            // Hide SCMP embed
+            if (scmpEmbed) {
+                scmpEmbed.style.display = 'none';
+            }
+            
+            // Show current slide
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+            
+            // Show corresponding interactive area
+            const currentInteractive = document.getElementById(`interactive-${slideIndex}`);
+            if (currentInteractive) {
+                currentInteractive.style.display = 'block';
+            }
+            
+            // Show SCMP embed for slide 2
+            if (slideIndex === 2 && scmpEmbed) {
+                scmpEmbed.style.display = 'block';
+            }
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = slideIndex === 1;
+            document.getElementById('nextBtn').disabled = slideIndex === slides.length;
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+        
+        // Initialize
+        showSlide(slideIndex);
+        
+        console.log('Overview component loaded with interactive slide deck');
+    </script>
+</body>
+</html>

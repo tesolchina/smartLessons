@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talk Outline</title>
+  <style>
+    .outline-hero {
+      background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      margin: 30px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .outline-hero::before { content: '🧭🎤✨'; position: absolute; top: 10px; right: 20px; font-size: 2rem; opacity: .25; }
+
+    .outline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin: 20px 0; }
+    .outline-card { background: var(--white); padding: 22px; border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.08); border-left: 4px solid var(--primary-purple); }
+    .outline-card h4 { color: var(--primary-purple); margin: 0 0 10px 0; }
+    .outline-list { margin: 10px 0 0 0; padding-left: 18px; }
+    .outline-list li { margin: 6px 0; }
+
+    .timeplan { background: var(--warm-yellow); border-left: 4px solid var(--primary-orange); padding: 20px; border-radius: 12px; }
+    .cta { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); color: white; padding: 24px; border-radius: 14px; margin: 20px 0; text-align: center; }
+    .cta .btn { display: inline-block; margin-top: 10px; background: var(--primary-orange); color: white; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+
+    .ref { background: var(--white); border-left: 4px solid #4CAF50; padding: 20px; border-radius: 12px; }
+    .muted { color: var(--medium-text); font-size: .95rem; }
+  </style>
+</head>
+<body>
+  <h2>Talk Outline</h2>
+  <div class="outline-hero">
+    <h3>Flipped Classroom 2.0 — AI as a Force Multiplier</h3>
+    <p>How AI‑generated video, streaming avatars, and vibe coding reduce prep time and increase engagement.</p>
+  </div>
+
+  <div class="outline-grid">
+    <div class="outline-card">
+      <h4>Objectives</h4>
+      <ul class="outline-list">
+        <li>Share key messages on flipped learning evolution (2017 → now).</li>
+        <li>Demonstrate practical AI tooling live (HeyGen, avatars, vibe coding).</li>
+        <li>Present an adoption roadmap colleagues can follow next week.</li>
+        <li>Invite collaborators for a pilot cohort at HKBU.</li>
+      </ul>
+    </div>
+
+    <div class="outline-card">
+      <h4>Audience</h4>
+      <ul class="outline-list">
+        <li>GE/LC colleagues with limited time and mixed tech comfort.</li>
+        <li>Program leaders seeking measurable impact and scalability.</li>
+      </ul>
+    </div>
+
+    <div class="outline-card">
+      <h4>Key Messages</h4>
+      <ul class="outline-list">
+        <li>AI collapses the time-to-teach: hours → minutes for quality video content.</li>
+        <li>Avatars enable always-on Q&A and language practice without extra staff hours.</li>
+        <li>Vibe coding lets non-programmers prototype teaching tools conversationally.</li>
+        <li>Success = pedagogy-first: align with learning outcomes; tech is the enabler.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="outline-grid">
+    <div class="outline-card">
+      <h4>Narrative Arc</h4>
+      <ul class="outline-list">
+        <li>2017 Letter → rationale for flexible attendance & flipped learning.</li>
+        <li>Today’s constraints: time cost, tooling friction, consistency.</li>
+        <li>AI toolkit: video generation, streaming avatars, vibe coding.</li>
+        <li>Live demos tied to outcomes: comprehension checks, feedback loops.</li>
+        <li>Roadmap + invitation: make it real this semester.</li>
+      </ul>
+    </div>
+
+    <div class="outline-card">
+      <h4>Demo Plan</h4>
+      <ul class="outline-list">
+        <li>AI Video: generate a 60–90s micro‑lecture from a short prompt.</li>
+        <li>Avatar: show a scripted scenario + a live Q&A turn.</li>
+        <li>Vibe Coding: evolve a quiz widget from plain-English spec.</li>
+      </ul>
+    </div>
+
+    <div class="outline-card timeplan">
+      <h4>Timing (45–60 min)</h4>
+      <ul class="outline-list">
+        <li>Intro + context: 5–7m</li>
+        <li>Why now (evidence + pain points): 5m</li>
+        <li>Demo 1: AI Video: 10–12m</li>
+        <li>Demo 2: Streaming Avatars: 8–10m</li>
+        <li>Demo 3: Vibe Coding: 10–12m</li>
+        <li>Roadmap + Q&A + invitation: 7–10m</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="outline-grid">
+    <div class="outline-card">
+      <h4>Adoption Roadmap</h4>
+      <ul class="outline-list">
+        <li>Week 1–2: produce 1 AI micro‑lecture; collect baseline prep time.</li>
+        <li>Month 1: add avatar Q&A; pilot quiz widget; gather student feedback.</li>
+        <li>Semester: integrate with LMS; scale across topics; share results.</li>
+      </ul>
+    </div>
+
+    <div class="outline-card">
+      <h4>Success Metrics</h4>
+      <ul class="outline-list">
+        <li>Prep time reduction per lecture (target ≥60%).</li>
+        <li>Student completion/engagement in pre‑class materials.</li>
+        <li>In‑class readiness (quiz accuracy, fewer remedial minutes).</li>
+        <li>Colleague adoption and cross‑course reuse of assets.</li>
+      </ul>
+    </div>
+
+    <div class="outline-card">
+      <h4>Risks & Mitigation</h4>
+      <ul class="outline-list">
+        <li>Quality drift → use rubrics and quick faculty review loop.</li>
+        <li>Over‑automation → keep human voice; use AI for scaffolding.</li>
+        <li>Access/ethics → transparent labeling; data‑light workflows.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h4>Invitation to Colleagues</h4>
+    <p class="muted">Join a small pilot to co‑design practical AI workflows for our courses.</p>
+    <a class="btn" href="#" onclick="document.dispatchEvent(new CustomEvent('openResourcesSignup'))">Register interest</a>
+  </div>
+
+  <div class="ref">
+    <h4>References & Context</h4>
+    <ul class="outline-list">
+      <li>SCMP Letter (2017) on flexible attendance and flipped learning.</li>
+      <li>Recent reviews on flipped classroom effectiveness and challenges.</li>
+      <li>This workshop’s components: AI Video, Streaming Avatars, Vibe Coding, Time Reflection, Implementation, Resources.</li>
+    </ul>
+  </div>
+
+  <script>
+    // Hook up the CTA to the Resources module if present
+    document.addEventListener('openResourcesSignup', () => {
+      const btn = document.querySelector('[data-component="resources"]');
+      if (btn) btn.click();
+      // Optionally, focus a signup field if exists.
+      setTimeout(() => {
+        const input = document.querySelector('.signup-input');
+        if (input) input.focus();
+      }, 300);
+    });
+  </script>
+</body>
+</html>

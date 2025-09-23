@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Demo - Iframe Integration Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid #e9ecef;
+        }
+
+        .demo-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .demo-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .demo-header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: #f8f9fa;
+        }
+
+        .demo-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e9ecef;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .full-width-demo {
+            grid-column: 1 / -1;
+            margin-top: 30px;
+        }
+
+        .full-width-demo .iframe-container {
+            height: 800px;
+        }
+
+        .integration-info {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .integration-info h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+
+        .feature-item h4 {
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .code-example .comment {
+            color: #68d391;
+        }
+
+        .code-example .tag {
+            color: #63b3ed;
+        }
+
+        .code-example .attr {
+            color: #fbb6ce;
+        }
+
+        .code-example .string {
+            color: #faf089;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .btn-info {
+            background: linear-gradient(45deg, #17a2b8, #138496);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .iframe-container {
+                height: 500px;
+            }
+            
+            .full-width-demo .iframe-container {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦉 AI Video Demo Integration</h1>
+            <p>Testing iframe compatibility and workshop integration scenarios</p>
+        </div>
+
+        <div class="demo-grid">
+            <!-- Simple Demo -->
+            <div class="demo-card">
+                <div class="demo-header">
+                    <h3>🎯 Simple Demo</h3>
+                    <p>Basic video generation workflow</p>
+                </div>
+                <div class="iframe-container">
+                    <div class="loading-overlay" id="loading1">
+                        <div class="loading-spinner"></div>
+                        <p>Loading demo...</p>
+                    </div>
+                    <iframe 
+                        class="demo-iframe" 
+                        src="vue-avatar-demo.html"
+                        onload="hideLoading('loading1')"
+                        title="Simple AI Video Demo">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Enhanced Demo -->
+            <div class="demo-card">
+                <div class="demo-header">
+                    <h3>🚀 Enhanced Demo</h3>
+                    <p>Professional features and analytics</p>
+                </div>
+                <div class="iframe-container">
+                    <div class="loading-overlay" id="loading2">
+                        <div class="loading-spinner"></div>
+                        <p>Loading enhanced demo...</p>
+                    </div>
+                    <iframe 
+                        class="demo-iframe" 
+                        src="enhanced-avatar-demo.html"
+                        onload="hideLoading('loading2')"
+                        title="Enhanced AI Video Demo">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Width Demo -->
+        <div class="demo-card full-width-demo">
+            <div class="demo-header">
+                <h3>📺 Workshop Presentation Mode</h3>
+                <p>Full-screen demo for workshop presentations and live demonstrations</p>
+            </div>
+            <div class="iframe-container">
+                <div class="loading-overlay" id="loading3">
+                    <div class="loading-spinner"></div>
+                    <p>Loading presentation mode...</p>
+                </div>
+                <iframe 
+                    class="demo-iframe" 
+                    src="enhanced-avatar-demo.html"
+                    onload="hideLoading('loading3')"
+                    title="Workshop Presentation Demo">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Integration Information -->
+        <div class="integration-info">
+            <h2>🔧 Integration Guide</h2>
+            <p>These demos are designed to be easily embedded in various educational platforms and workshop environments.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>🎓 LMS Integration</h4>
+                    <p>Seamlessly embed in Canvas, Moodle, Blackboard, or any LMS that supports iframe content. Responsive design ensures compatibility across devices.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 Mobile Responsive</h4>
+                    <p>Optimized for tablets and smartphones with touch-friendly interfaces and adaptive layouts that work on any screen size.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔒 Secure Embedding</h4>
+                    <p>HTTPS-ready with proper security headers and cross-origin policies for safe integration in educational environments.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚡ Fast Loading</h4>
+                    <p>Lightweight Vue.js implementation with CDN resources ensures quick loading times even on slower connections.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px; color: #495057;">📋 Embedding Code Examples</h3>
+
+            <h4 style="margin-top: 20px; color: #6c757d;">Basic Iframe Embedding:</h4>
+            <div class="code-example">
+<span class="comment"><!-- Simple embedding for basic demonstrations --></span>
+<span class="tag">&lt;iframe</span> 
+    <span class="attr">src</span>=<span class="string">"https://your-domain.com/demo/vue-avatar-demo.html"</span>
+    <span class="attr">width</span>=<span class="string">"100%"</span> 
+    <span class="attr">height</span>=<span class="string">"600"</span>
+    <span class="attr">frameborder</span>=<span class="string">"0"</span>
+    <span class="attr">title</span>=<span class="string">"AI Video Generation Demo"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span>
+            </div>
+
+            <h4 style="margin-top: 20px; color: #6c757d;">Responsive Embedding:</h4>
+            <div class="code-example">
+<span class="comment"><!-- Responsive container for mobile compatibility --></span>
+<span class="tag">&lt;div</span> <span class="attr">style</span>=<span class="string">"position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;iframe</span> 
+        <span class="attr">src</span>=<span class="string">"https://your-domain.com/demo/enhanced-avatar-demo.html"</span>
+        <span class="attr">style</span>=<span class="string">"position: absolute; top: 0; left: 0; width: 100%; height: 100%;"</span>
+        <span class="attr">frameborder</span>=<span class="string">"0"</span>
+        <span class="attr">allowfullscreen</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/iframe&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+            </div>
+
+            <h4 style="margin-top: 20px; color: #6c757d;">Workshop Presentation Mode:</h4>
+            <div class="code-example">
+<span class="comment"><!-- Full-screen mode for live demonstrations --></span>
+<span class="tag">&lt;iframe</span> 
+    <span class="attr">src</span>=<span class="string">"https://your-domain.com/demo/enhanced-avatar-demo.html"</span>
+    <span class="attr">width</span>=<span class="string">"100%"</span> 
+    <span class="attr">height</span>=<span class="string">"800"</span>
+    <span class="attr">frameborder</span>=<span class="string">"0"</span>
+    <span class="attr">allowfullscreen</span>
+    <span class="attr">sandbox</span>=<span class="string">"allow-scripts allow-same-origin"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span>
+            </div>
+
+            <div class="btn-group">
+                <a href="vue-avatar-demo.html" target="_blank" class="btn btn-primary">
+                    🎯 Open Simple Demo
+                </a>
+                <a href="enhanced-avatar-demo.html" target="_blank" class="btn btn-success">
+                    🚀 Open Enhanced Demo
+                </a>
+                <a href="../index.html" target="_blank" class="btn btn-info">
+                    📚 Workshop Overview
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hideLoading(loadingId) {
+            const loadingElement = document.getElementById(loadingId);
+            if (loadingElement) {
+                setTimeout(() => {
+                    loadingElement.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingElement.style.display = 'none';
+                    }, 300);
+                }, 500);
+            }
+        }
+
+        // Add some interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for demo cards
+            const demoCards = document.querySelectorAll('.demo-card');
+            demoCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 15px 40px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                });
+            });
+
+            // Add copy functionality to code examples
+            const codeExamples = document.querySelectorAll('.code-example');
+            codeExamples.forEach(example => {
+                example.style.cursor = 'pointer';
+                example.title = 'Click to copy code';
+                
+                example.addEventListener('click', function() {
+                    const text = this.textContent;
+                    navigator.clipboard.writeText(text).then(() => {
+                        const originalBg = this.style.backgroundColor;
+                        this.style.backgroundColor = '#28a745';
+                        setTimeout(() => {
+                            this.style.backgroundColor = originalBg;
+                        }, 200);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

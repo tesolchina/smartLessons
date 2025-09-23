@@ -1,0 +1,20 @@
+{
+  "module_name": "module2_student",
+  "description": "Module 2 - Student Copy",
+  "original_pdf": "UE1 (2526a) Module 2 Student (v1_20250827).pdf",
+  "created_date": "2025-09-05T15:17:42.839211",
+  "processing_status": {
+    "pdf_exists": true,
+    "markdown_converted": true,
+    "html_converted": false,
+    "xml_converted": false
+  },
+  "file_counts": {
+    "original": 0,
+    "markdown": 15,
+    "html": 0,
+    "xml": 0,
+    "images": 1
+  },
+  "last_updated": "2025-09-05T15:17:42.849084"
+}

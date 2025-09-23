@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script-to-Avatar Demo v3 - Audio Fixed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .avatar-container {
+            background: radial-gradient(circle, #4f46e5 0%, #7c3aed 100%);
+            min-height: 400px;
+            position: relative;
+        }
+        .slide-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 300px;
+        }
+        .bullet-point {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.8s ease-in-out;
+        }
+        .bullet-point.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .avatar-speaking { animation: speaking 1s ease-in-out infinite alternate; }
+        @keyframes speaking { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        .progress-bar { transition: width 0.5s ease; }
+        .audio-wave { display: flex; align-items: center; justify-content: center; gap: 3px; }
+        .wave-bar { width:4px; height:20px; background: rgba(255,255,255,0.8); border-radius:2px; animation: wave 1.2s ease-in-out infinite; }
+        .wave-bar:nth-child(1){animation-delay:0s;} .wave-bar:nth-child(2){animation-delay:0.1s;} .wave-bar:nth-child(3){animation-delay:0.2s;} .wave-bar:nth-child(4){animation-delay:0.3s;} .wave-bar:nth-child(5){animation-delay:0.4s;}
+        @keyframes wave { 0%,100%{height:20px;} 50%{height:40px;} }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">🎬 Script-to-Avatar Demo v3</h1>
+            <p class="text-gray-600">Generate narration audio first, then build full video with synchronized bullet points.</p>
+        </div>
+
+        <!-- Demo Scripts Selection -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">📝 Demo Scripts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <button onclick="loadScript('ai-education')" class="p-4 border-2 border-blue-200 rounded-lg hover:border-blue-400 transition-colors">
+                    <h3 class="font-semibold text-blue-800">🤖 AI in Education</h3>
+                    <p class="text-sm text-gray-600">How AI transforms learning</p>
+                </button>
+                <button onclick="loadScript('climate-change')" class="p-4 border-2 border-green-200 rounded-lg hover:border-green-400 transition-colors">
+                    <h3 class="font-semibold text-green-800">🌍 Climate Change</h3>
+                    <p class="text-sm text-gray-600">Understanding global warming</p>
+                </button>
+                <button onclick="loadScript('space-exploration')" class="p-4 border-2 border-purple-200 rounded-lg hover:border-purple-400 transition-colors">
+                    <h3 class="font-semibold text-purple-800">🚀 Space Exploration</h3>
+                    <p class="text-sm text-gray-600">Journey to the stars</p>
+                </button>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Current Script:</h3>
+                <p id="currentScript" class="text-gray-700 leading-relaxed"></p>
+            </div>
+        </div>
+
+        <!-- Main Demo Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left: Avatar & Controls -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">🎭 Avatar Presenter</h2>
+                <!-- Avatar Display -->
+                <div class="avatar-container rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <div id="avatarIcon" class="w-32 h-32 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center text-6xl">🤖</div>
+                        <p id="avatarStatus" class="text-lg font-semibold mb-2">Ready to present</p>
+                        <div id="audioWave" class="audio-wave hidden">
+                            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Progress Bar -->
+                <div id="progressContainer" class="mb-4 hidden">
+                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                        <span id="progressLabel">Preparing...</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div id="progressBar" class="progress-bar bg-indigo-600 h-3 w-0"></div>
+                    </div>
+                </div>
+                <div id="audioContainer" class="mb-4">
+                    <!-- Audio Player -->
+                    <audio id="audioPlayer" class="w-full mb-3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    
+                    <!-- Custom Controls -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2">
+                                <button id="playPauseBtn" onclick="togglePlayPause()" 
+                                        class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50">
+                                    ▶️ Play
+                                </button>
+                                <button onclick="stopAudio()" 
+                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                                    ⏹️ Stop
+                                </button>
+                                <button onclick="replayAudio()" 
+                                        class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                    🔄 Replay
+                                </button>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3 cursor-pointer" id="audioProgressContainer" onclick="seekAudio(event)">
+                            <div id="audioProgress" class="bg-green-600 h-2 rounded-full transition-all duration-100" style="width: 0%"></div>
+                        </div>
+                        
+                        <!-- Volume and Speed Controls -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm font-medium">🔊 Volume:</span>
+                                <input type="range" id="volumeSlider" min="0" max="100" value="100" 
+                                       class="w-20" onchange="setVolume(this.value)">
+                                <span id="volumeValue" class="text-sm w-8">100%</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm font-medium">⚡ Speed:</span>
+                                <select id="speedSelect" onchange="setPlaybackRate(this.value)" 
+                                        class="px-2 py-1 border border-gray-300 rounded text-sm">
+                                    <option value="0.5">0.5x</option>
+                                    <option value="0.75">0.75x</option>
+                                    <option value="1" selected>1x</option>
+                                    <option value="1.25">1.25x</option>
+                                    <option value="1.5">1.5x</option>
+                                    <option value="2">2x</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Audio Status -->
+                        <div class="mt-3 p-2 bg-blue-50 rounded text-sm">
+                            <span class="font-medium">Status:</span> 
+                            <span id="audioStatus" class="text-blue-700">Ready to play</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="space-y-3">
+                    <!-- Step 1: Generate Audio -->
+                    <button id="generateAudioBtn" onclick="generateAudioOnly()" 
+                            class="w-full py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-bold rounded-lg hover:from-green-700 hover:to-blue-700 disabled:opacity-50">
+                        🎵 Step 1: Generate & Preview Audio
+                    </button>
+                    
+                    <!-- Step 2: Generate Full Video (disabled until audio is ready) -->
+                    <button id="generateVideoBtn" onclick="generateFullVideo()" disabled
+                            class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-lg hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                        🎬 Step 2: Generate Full Video
+                    </button>
+                    
+                    <!-- Quick Video Option (no audio required) -->
+                    <button id="quickVideoBtn" onclick="generateQuickVideo()" 
+                            class="w-full py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-teal-600 mt-2">
+                        ⚡ Quick Video (No Audio)
+                    </button>
+                    
+                    <button id="cancelVideoBtn" onclick="cancelVideoGeneration()" style="display: none;"
+                            class="w-full py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 mt-2">
+                        ❌ Cancel Generation
+                    </button>
+                    
+                    <div id="playControls" class="hidden grid grid-cols-2 gap-2">
+                        <button onclick="pauseDemo()" 
+                                class="py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">
+                            ⏸️ Pause
+                        </button>
+                        <button onclick="resetDemo()" 
+                                class="py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700">
+                            🔄 Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Bullet Points & Video -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">📋 Key Points</h2>
+                
+                <!-- Bullet Points Display -->
+                <div class="slide-preview rounded-lg p-6 text-white mb-4">
+                    <h3 id="slideTitle" class="text-2xl font-bold mb-4">AI in Education</h3>
+                    <ul id="bulletList" class="space-y-3">
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> AI Personalizes Learning
+                        </li>
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> Improves Student Engagement
+                        </li>
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> Provides Real-time Feedback
+                        </li>
+                        <li class="bullet-point flex items-center">
+                            <span class="mr-3 text-xl">•</span> Scales Educational Content
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Video Output -->
+                <div id="videoContainer" class="hidden">
+                    <h3 class="font-semibold mb-2">🎥 Generated Video</h3>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <video id="videoPreview" controls class="w-full rounded" style="display: none;">
+                            Your browser does not support the video element.
+                        </video>
+                        <div id="videoPlaceholder" class="text-center text-white p-8">
+                            <div class="text-4xl mb-2">🎬</div>
+                            <p>Avatar Video Ready</p>
+                            <p class="text-sm text-gray-400">Script + Avatar + Bullets synchronized</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Options -->
+                <div id="downloadSection" class="hidden mt-4">
+                    <h3 class="font-semibold mb-2">📥 Download</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="downloadFile('audio')" 
+                                class="py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                            🎵 Audio
+                        </button>
+                        <button onclick="downloadFile('video')" 
+                                class="py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                            🎬 Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="mt-6 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">📊 Demo Statistics</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-blue-600" id="wordCount">65</div>
+                    <div class="text-sm text-gray-600">Words</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-green-600" id="duration">26s</div>
+                    <div class="text-sm text-gray-600">Duration</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-purple-600" id="bulletCount">4</div>
+                    <div class="text-sm text-gray-600">Bullets</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-orange-600" id="status">Ready</div>
+                    <div class="text-sm text-gray-600">Status</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo Scripts Database
+        const demoScripts = {
+            'ai-education': {
+                title: 'AI in Education',
+                script: 'Welcome to today\'s lesson on artificial intelligence in education. AI is revolutionizing how we learn and teach. First, let\'s explore how AI personalizes learning for each student. Next, we\'ll see how it improves student engagement through interactive content. Then, we\'ll discuss how AI provides real-time feedback to help students learn faster. Finally, we\'ll look at how AI scales educational content to reach more learners worldwide.',
+                bullets: [
+                    'AI Personalizes Learning',
+                    'Improves Student Engagement', 
+                    'Provides Real-time Feedback',
+                    'Scales Educational Content'
+                ]
+            },
+            'climate-change': {
+                title: 'Climate Change',
+                script: 'Climate change is one of the most pressing challenges of our time. Rising global temperatures are causing dramatic shifts in weather patterns worldwide. First, we\'ll examine the primary causes of greenhouse gas emissions. Second, we\'ll explore the visible impacts on our environment today. Third, we\'ll discuss innovative solutions being developed globally. Finally, we\'ll look at how individuals can make a meaningful difference.',
+                bullets: [
+                    'Greenhouse Gas Emissions',
+                    'Environmental Impacts',
+                    'Global Solutions',
+                    'Individual Actions'
+                ]
+            },
+            'space-exploration': {
+                title: 'Space Exploration',
+                script: 'Space exploration represents humanity\'s greatest adventure into the unknown. From the first moon landing to Mars rovers, we continue pushing boundaries. First, let\'s review the historic milestones that brought us here. Next, we\'ll examine current missions exploring our solar system. Then, we\'ll discuss future plans for human settlement on other planets. Finally, we\'ll explore how space technology benefits life on Earth.',
+                bullets: [
+                    'Historic Milestones',
+                    'Current Missions',
+                    'Future Settlements',
+                    'Earth Benefits'
+                ]
+            }
+        };
+
+        let currentScriptKey = 'ai-education';
+        let isGenerating = false;
+        let isPlaying = false;
+        let bulletTimings = [];
+        let audioPlayer;
+        let isAudioPlaying = false;
+        let audioGenerated = false;
+
+        // Utility function for delays
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Load a demo script
+        function loadScript(scriptKey) {
+            currentScriptKey = scriptKey;
+            const script = demoScripts[scriptKey];
+            
+            document.getElementById('currentScript').textContent = script.script;
+            document.getElementById('slideTitle').textContent = script.title;
+            
+            // Update bullet points
+            const bulletList = document.getElementById('bulletList');
+            bulletList.innerHTML = script.bullets.map(bullet => 
+                `<li class="bullet-point flex items-center">
+                    <span class="mr-3 text-xl">•</span> ${bullet}
+                </li>`
+            ).join('');
+            
+            // Update statistics
+            updateStatistics();
+            
+            // Reset buttons and state
+            audioGenerated = false;
+            document.getElementById('generateAudioBtn').innerHTML = '🎵 Step 1: Generate & Preview Audio';
+            document.getElementById('generateAudioBtn').disabled = false;
+            document.getElementById('generateVideoBtn').innerHTML = '🎬 Step 2: Generate Full Video';
+            document.getElementById('generateVideoBtn').disabled = true;
+            
+            resetDemo();
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            const script = demoScripts[currentScriptKey];
+            const words = script.script.split(/\s+/).length;
+            const duration = Math.round(words * 0.4); // ~0.4 seconds per word
+            
+            document.getElementById('wordCount').textContent = words;
+            document.getElementById('duration').textContent = duration + 's';
+            document.getElementById('bulletCount').textContent = script.bullets.length;
+            
+            // Calculate bullet timings
+            bulletTimings = script.bullets.map((_, index) => {
+                return (duration / script.bullets.length) * (index + 0.5);
+            });
+        }
+
+        // Step 1: Generate Audio Only
+        async function generateAudioOnly() {
+            if (isGenerating) return;
+            
+            isGenerating = true;
+            audioGenerated = false;
+            document.getElementById('generateAudioBtn').disabled = true;
+            document.getElementById('generateVideoBtn').disabled = true;
+            document.getElementById('status').textContent = 'Generating Audio';
+            
+            try {
+                // Show progress for audio generation
+                showProgress(25, 'Processing script...');
+                updateAvatarStatus('📝 Analyzing script...');
+                await sleep(1000);
+                
+                showProgress(50, 'Generating speech...');
+                updateAvatarStatus('🎵 Creating audio...');
+                await sleep(2000);
+                
+                showProgress(75, 'Optimizing audio...');
+                updateAvatarStatus('⚡ Finalizing audio...');
+                await sleep(1000);
+                
+                showProgress(100, 'Audio ready!');
+                updateAvatarStatus('✅ Audio generated successfully!');
+                
+                // Generate and show audio
+                await showAudioPlayer();
+                
+                // Wait a moment for events to be properly bound
+                await sleep(200);
+                
+                // Enable video generation and show controls
+                document.getElementById('generateVideoBtn').disabled = false;
+                document.getElementById('playControls').classList.remove('hidden');
+                audioGenerated = true;
+                
+                // Update button text to indicate success
+                document.getElementById('generateAudioBtn').innerHTML = '✅ Audio Ready - Generate Again?';
+                document.getElementById('generateAudioBtn').disabled = false;
+                
+                hideProgress();
+                document.getElementById('status').textContent = 'Audio Ready';
+                
+                // NO AUTO-PLAY - user controls when to play
+                updateAudioStatus('🎵 Audio ready - use controls to play');
+                
+            } catch (error) {
+                updateAvatarStatus('❌ Audio generation failed');
+                document.getElementById('status').textContent = 'Error';
+                hideProgress();
+            } finally {
+                isGenerating = false;
+            }
+        }
+
+        // Step 2: Generate Full Video (only after audio is ready)
+        async function generateFullVideo() {
+            console.log('🚀 === STARTING FULL VIDEO GENERATION ===');
+            console.log('🚀 Audio generated:', audioGenerated);
+            console.log('🚀 Is generating:', isGenerating);
+            console.log('🚀 Current script:', currentScriptKey);
+            console.log('🚀 Audio mode:', window.audioMode);
+            
+            if (!audioGenerated) {
+                updateAvatarStatus('⚠️ Generate audio first!');
+                console.log('❌ No audio generated, stopping');
+                return;
+            }
+            
+            if (isGenerating) {
+                console.log('❌ Already generating, stopping');
+                return;
+            }
+            
+            isGenerating = true;
+            let startTime = Date.now();
+            let generationTimeout;
+            let isCancelled = false;
+            
+            console.log('🚀 Setting up UI for generation...');
+            document.getElementById('generateVideoBtn').disabled = true;
+            document.getElementById('status').textContent = 'Generating Video';
+            
+            // Show cancel button
+            document.getElementById('cancelVideoBtn').style.display = 'block';
+            
+            // Set a 60-second timeout
+            generationTimeout = setTimeout(() => {
+                isCancelled = true;
+                updateAvatarStatus('⏰ Video generation timeout - Please try again');
+                hideProgress();
+                document.getElementById('status').textContent = 'Timeout';
+                document.getElementById('generateVideoBtn').disabled = false;
+                isGenerating = false;
+            }, 60000); // 60 seconds timeout
+            
+            try {
+                // Video generation steps with realistic timing
+                showProgress(5, 'Preparing avatar... (~2s)');
+                updateAvatarStatus('🎭 Setting up avatar...');
+                await sleep(500);
+                if (isCancelled) return;
+                
+                showProgress(15, 'Recording audio... (~8s)');
+                if (window.audioMode === 'TTS') {
+                    updateAvatarStatus('🎤 Recording TTS audio...');
+                } else {
+                    updateAvatarStatus('🎵 Preparing audio track...');
+                }
+                await sleep(1000);
+                if (isCancelled) return;
+                
+                showProgress(25, 'Synchronizing bullets... (~3s)');
+                updateAvatarStatus('📋 Timing bullet points...');
+                await sleep(500);
+                if (isCancelled) return;
+                
+                showProgress(35, 'Starting video render... (~20s)');
+                updateAvatarStatus('🎬 Creating video with audio...');
+                
+                // Add progress updates during video generation
+                const progressInterval = setInterval(() => {
+                    if (isCancelled) {
+                        clearInterval(progressInterval);
+                        return;
+                    }
+                    
+                    const elapsed = (Date.now() - startTime) / 1000;
+                    const estimated = 30; // 30 seconds estimated total
+                    const progress = Math.min(90, 35 + (elapsed / estimated) * 50);
+                    const remaining = Math.max(0, estimated - elapsed);
+                    
+                    showProgress(progress, `Rendering video... (~${Math.ceil(remaining)}s remaining)`);
+                    updateAvatarStatus(`🎬 Rendering video... ${Math.ceil(remaining)}s left`);
+                }, 2000);
+                
+                // Actually generate the video with timeout protection
+                const videoBlob = await Promise.race([
+                    generateRealVideo(),
+                    new Promise((_, reject) => 
+                        setTimeout(() => reject(new Error('Video generation timeout')), 45000)
+                    )
+                ]);
+                
+                clearInterval(progressInterval);
+                if (isCancelled) return;
+                
+                if (videoBlob) {
+                    showProgress(95, 'Processing video... (~2s)');
+                    updateAvatarStatus('⚡ Finalizing video...');
+                    
+                    // Create video preview
+                    const videoUrl = URL.createObjectURL(videoBlob);
+                    const videoPreview = document.getElementById('videoPreview');
+                    const videoPlaceholder = document.getElementById('videoPlaceholder');
+                    
+                    videoPreview.src = videoUrl;
+                    videoPreview.style.display = 'block';
+                    videoPlaceholder.style.display = 'none';
+                    
+                    // Store for download
+                    window.generatedVideoBlob = videoBlob;
+                    window.generatedVideoUrl = videoUrl;
+                    
+                    showProgress(100, 'Video complete!');
+                    
+                    const totalTime = ((Date.now() - startTime) / 1000).toFixed(1);
+                    updateAvatarStatus(`✅ Video ready in ${totalTime}s! Preview below:`);
+                    
+                    // Show video preview
+                    document.getElementById('videoContainer').classList.remove('hidden');
+                    
+                    // Create video preview element
+                    const newVideoPreview = document.createElement('video');
+                    newVideoPreview.src = videoUrl;
+                    newVideoPreview.controls = true;
+                    newVideoPreview.className = 'w-full max-w-lg mx-auto mt-4 border rounded-lg shadow-lg';
+                    newVideoPreview.style.maxHeight = '400px';
+                    
+                    // Add download button (optional)
+                    const downloadButton = document.createElement('button');
+                    downloadButton.textContent = '📥 Download Video';
+                    downloadButton.className = 'mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700';
+                    downloadButton.onclick = () => {
+                        const a = document.createElement('a');
+                        a.href = videoUrl;
+                        a.download = `avatar-video-${currentScriptKey}.webm`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    };
+                    
+                    // Clear previous content and add new preview
+                    const videoContainer = document.getElementById('videoContainer');
+                    videoContainer.innerHTML = '';
+                    videoContainer.appendChild(newVideoPreview);
+                    videoContainer.appendChild(document.createElement('br'));
+                    videoContainer.appendChild(downloadButton);
+                    
+                    if (window.audioMode === 'TTS') {
+                        console.log('Video with embedded TTS ready for preview');
+                    } else {
+                        console.log('Video with audio ready for preview');
+                    }
+                    
+                } else {
+                    throw new Error('Video generation failed');
+                }
+                
+                // Update button
+                document.getElementById('generateVideoBtn').innerHTML = '✅ Video Ready - Generate Again?';
+                document.getElementById('generateVideoBtn').disabled = false;
+                
+                hideProgress();
+                document.getElementById('status').textContent = 'Complete';
+                
+            } catch (error) {
+                console.error('Video generation error:', error);
+                if (error.message.includes('timeout')) {
+                    updateAvatarStatus('⏰ Video generation took too long - Please try again');
+                } else {
+                    updateAvatarStatus('❌ Video generation failed');
+                }
+                hideProgress();
+                document.getElementById('status').textContent = 'Error';
+                document.getElementById('generateVideoBtn').disabled = false;
+            } finally {
+                clearTimeout(generationTimeout);
+                isGenerating = false;
+                // Hide cancel button
+                document.getElementById('cancelVideoBtn').style.display = 'none';
+            }
+        }
+        
+        // Quick video generation without audio processing
+        async function generateQuickVideo() {
+            console.log('Starting quick video generation (no audio)...');
+            
+            const statusEl = document.getElementById('generationStatus');
+            const generateBtn = document.getElementById('generateVideoBtn');
+            const quickBtn = document.getElementById('quickVideoBtn');
+            const cancelBtn = document.getElementById('cancelVideoBtn');
+            
+            try {
+                // Show progress
+                statusEl.textContent = '⚡ Creating quick video...';
+                statusEl.className = 'text-blue-600 font-semibold';
+                generateBtn.disabled = true;
+                quickBtn.disabled = true;
+                cancelBtn.style.display = 'block';
+                isGenerating = true;
+                
+                // Create canvas for video generation
+                const canvas = document.createElement('canvas');
+                canvas.width = 1280;
+                canvas.height = 720;
+                const ctx = canvas.getContext('2d');
+                
+                // Get video stream from canvas
+                const videoStream = canvas.captureStream(30); // 30 FPS
+                
+                // Setup video recording (video only, no audio)
+                const mediaRecorder = new MediaRecorder(videoStream, {
+                    mimeType: 'video/webm'
+                });
+                
+                const chunks = [];
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        chunks.push(event.data);
+                    }
+                };
+                
+                const recordingPromise = new Promise((resolve) => {
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(chunks, { type: 'video/webm' });
+                        console.log('Quick video completed, size:', blob.size);
+                        resolve(blob);
+                    };
+                });
+                
+                // Start recording
+                mediaRecorder.start();
+                console.log('Started quick video recording');
+                
+                // Generate video frames (faster, simpler animation)
+                const script = demoScripts[currentScriptKey];
+                const duration = 10; // Fixed 10 seconds for quick video
+                const frameRate = 20; // Lower frame rate for speed
+                const totalFrames = duration * frameRate;
+                
+                let currentFrame = 0;
+                let startTime = Date.now();
+                
+                const renderFrame = () => {
+                    if (!isGenerating) {
+                        mediaRecorder.stop();
+                        return;
+                    }
+                    
+                    // Calculate progress
+                    const progress = currentFrame / totalFrames;
+                    const currentTime = currentFrame / frameRate;
+                    const elapsed = (Date.now() - startTime) / 1000;
+                    const remaining = Math.max(0, duration - elapsed);
+                    
+                    // Update status
+                    statusEl.textContent = `⚡ Quick video: ${Math.round(remaining)}s remaining...`;
+                    
+                    // Clear canvas with simple background
+                    ctx.fillStyle = '#4f46e5';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Simple gradient
+                    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                    gradient.addColorStop(0, '#4f46e5');
+                    gradient.addColorStop(1, '#7c3aed');
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Draw avatar (simple, no complex animation)
+                    const avatarX = canvas.width * 0.25;
+                    const avatarY = canvas.height * 0.5;
+                    const avatarSize = 100;
+                    
+                    // Avatar background
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+                    ctx.beginPath();
+                    ctx.arc(avatarX, avatarY, avatarSize, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    // Simple avatar
+                    ctx.font = `${avatarSize}px Arial`;
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillStyle = 'white';
+                    ctx.fillText('🤖', avatarX, avatarY);
+                    
+                    // Draw title
+                    ctx.fillStyle = 'white';
+                    ctx.font = 'bold 44px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(script.title, canvas.width * 0.75, 120);
+                    
+                    // Draw all bullet points at once (no timing)
+                    ctx.font = '32px Arial';
+                    ctx.textAlign = 'left';
+                    script.bullets.forEach((bullet, index) => {
+                        const bulletY = 220 + index * 70;
+                        ctx.fillText('•', canvas.width * 0.55, bulletY);
+                        ctx.fillText(bullet, canvas.width * 0.58, bulletY);
+                    });
+                    
+                    // Simple progress bar
+                    const progressWidth = canvas.width * 0.6;
+                    const progressHeight = 6;
+                    const progressX = (canvas.width - progressWidth) / 2;
+                    const progressY = canvas.height - 80;
+                    
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.fillRect(progressX, progressY, progressWidth, progressHeight);
+                    
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                    ctx.fillRect(progressX, progressY, progressWidth * progress, progressHeight);
+                    
+                    // Time indicator
+                    ctx.fillStyle = 'white';
+                    ctx.font = '20px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`${Math.floor(currentTime)}s / ${duration}s`, canvas.width / 2, canvas.height - 40);
+                    
+                    currentFrame++;
+                    
+                    if (currentFrame < totalFrames) {
+                        setTimeout(renderFrame, 1000 / frameRate);
+                    } else {
+                        setTimeout(() => {
+                            mediaRecorder.stop();
+                            console.log('Quick video rendering completed');
+                        }, 100);
+                    }
+                };
+                
+                // Start rendering
+                renderFrame();
+                
+                // Wait for recording to complete with timeout
+                const videoBlob = await Promise.race([
+                    recordingPromise,
+                    new Promise((resolve) => setTimeout(() => resolve(null), 15000)) // 15s timeout
+                ]);
+                
+                if (videoBlob && isGenerating) {
+                    console.log('Quick video generated successfully');
+                    
+                    // Create video preview and download button
+                    const videoUrl = URL.createObjectURL(videoBlob);
+                    
+                    const quickVideoPreview = document.createElement('video');
+                    quickVideoPreview.src = videoUrl;
+                    quickVideoPreview.controls = true;
+                    quickVideoPreview.className = 'w-full max-w-md mx-auto mt-4 border rounded-lg shadow-lg';
+                    quickVideoPreview.style.maxHeight = '300px';
+                    
+                    const downloadLink = document.createElement('button');
+                    downloadLink.textContent = '📥 Download Quick Video';
+                    downloadLink.className = 'inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 mr-2 mt-2';
+                    downloadLink.onclick = () => {
+                        const a = document.createElement('a');
+                        a.href = videoUrl;
+                        a.download = `quick_${script.title.toLowerCase().replace(/\s+/g, '_')}_video.webm`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    };
+                    
+                    // Update status with success and preview
+                    statusEl.innerHTML = '';
+                    statusEl.appendChild(document.createTextNode('✅ Quick video ready! Preview below:'));
+                    statusEl.appendChild(document.createElement('br'));
+                    statusEl.appendChild(quickVideoPreview);
+                    statusEl.appendChild(document.createElement('br'));
+                    statusEl.appendChild(downloadLink);
+                    statusEl.className = 'text-green-600 font-semibold';
+                    
+                } else if (isGenerating) {
+                    statusEl.textContent = '❌ Quick video generation timed out';
+                    statusEl.className = 'text-red-600 font-semibold';
+                }
+                
+            } catch (error) {
+                console.error('Quick video generation error:', error);
+                if (isGenerating) {
+                    statusEl.textContent = `❌ Quick video generation failed: ${error.message}`;
+                    statusEl.className = 'text-red-600 font-semibold';
+                }
+            } finally {
+                // Reset UI
+                generateBtn.disabled = false;
+                quickBtn.disabled = false;
+                cancelBtn.style.display = 'none';
+                isGenerating = false;
+            }
+        }
+        
+        // Cancel video generation
+        function cancelVideoGeneration() {
+            if (isGenerating) {
+                // Stop any ongoing speech synthesis
+                if (window.speechSynthesis) {
+                    speechSynthesis.cancel();
+                }
+                
+                // Reset states
+                isGenerating = false;
+                
+                // Update UI
+                updateAvatarStatus('🚫 Video generation cancelled');
+                hideProgress();
+                document.getElementById('status').textContent = 'Cancelled';
+                document.getElementById('generateVideoBtn').disabled = false;
+                document.getElementById('cancelVideoBtn').style.display = 'none';
+                
+                console.log('Video generation cancelled by user');
+            }
+        }
+
+        // Start generation process
+        async function startGeneration() {
+            if (isGenerating) return;
+            
+            isGenerating = true;
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('status').textContent = 'Generating';
+            
+            // Step 1: Generate Audio
+            showProgress(20, 'Generating audio...');
+            updateAvatarStatus('🎵 Creating speech...');
+            await sleep(2000);
+            
+            // Step 2: Create Avatar Animation
+            showProgress(50, 'Animating avatar...');
+            updateAvatarStatus('🎭 Preparing avatar...');
+            await sleep(1500);
+            
+            // Step 3: Synchronize Bullets
+            showProgress(80, 'Synchronizing bullets...');
+            updateAvatarStatus('📋 Timing bullet points...');
+            await sleep(1000);
+            
+            // Step 4: Generate Video
+            showProgress(100, 'Creating video...');
+            updateAvatarStatus('🎬 Finalizing video...');
+            await sleep(1000);
+            
+            // Complete
+            hideProgress();
+            updateAvatarStatus('✅ Video ready!');
+            document.getElementById('status').textContent = 'Complete';
+            
+            // Show audio player
+            showAudioPlayer();
+            
+            // Show controls
+            document.getElementById('playControls').classList.remove('hidden');
+            document.getElementById('videoContainer').classList.remove('hidden');
+            document.getElementById('downloadSection').classList.remove('hidden');
+            
+            isGenerating = false;
+            document.getElementById('generateBtn').disabled = false;
+        }
+
+        // Show audio player with real generated audio
+        async function showAudioPlayer() {
+            const audioContainer = document.getElementById('audioContainer');
+            audioPlayer = document.getElementById('audioPlayer');
+            
+            // Show the audio container and controls immediately
+            audioContainer.classList.remove('hidden');
+            updateAudioStatus('Generating speech...');
+            
+            // Generate real audio using Web Speech API
+            const script = demoScripts[currentScriptKey];
+            let audioCreated = false;
+            let useTTS = false;
+            
+            try {
+                const ttsResult = await generateRealAudio(script.script);
+                if (ttsResult === 'TTS_READY') {
+                    // TTS is prepared and ready
+                    useTTS = true;
+                    audioCreated = true;
+                    updateAudioStatus('Speech ready - click play to hear the script');
+                    console.log('TTS ready for playback');
+                }
+            } catch (error) {
+                console.log('TTS preparation failed:', error);
+            }
+            
+            // If TTS failed, create a simple tone as fallback
+            if (!audioCreated) {
+                console.log('Creating fallback audio...');
+                try {
+                    const audioUrl = await createSimpleAudio();
+                    audioPlayer.src = audioUrl;
+                    audioCreated = true;
+                    updateAudioStatus('Demo audio ready - click play to start');
+                } catch (error) {
+                    console.log('Fallback audio generation failed:', error);
+                    updateAudioStatus('Audio generation failed - please try again');
+                    return;
+                }
+            }
+            
+            // Store the audio mode for later use
+            window.audioMode = useTTS ? 'TTS' : 'FALLBACK';
+            
+            // Setup audio events AFTER successful audio creation
+            if (!useTTS) {
+                setupAudioEvents();
+            } else {
+                setupTTSEvents();
+            }
+            
+            // Ensure no auto-play - user must click play
+            console.log('Audio ready, user must click play to start');
+        }
+
+        // Setup audio event listeners
+        function setupAudioEvents() {
+            if (!audioPlayer) return;
+            
+            // Clear any existing event listeners
+            audioPlayer.removeEventListener('loadedmetadata', onLoadedMetadata);
+            audioPlayer.removeEventListener('timeupdate', onTimeUpdate);
+            audioPlayer.removeEventListener('play', onPlay);
+            audioPlayer.removeEventListener('pause', onPause);
+            audioPlayer.removeEventListener('ended', onEnded);
+            
+            // Add fresh event listeners
+            audioPlayer.addEventListener('loadedmetadata', onLoadedMetadata);
+            audioPlayer.addEventListener('timeupdate', onTimeUpdate);
+            audioPlayer.addEventListener('play', onPlay);
+            audioPlayer.addEventListener('pause', onPause);
+            audioPlayer.addEventListener('ended', onEnded);
+            
+            console.log('Audio events setup complete');
+        }
+
+        function onLoadedMetadata() {
+            const duration = formatTime(audioPlayer.duration);
+            document.getElementById('totalTime').textContent = duration;
+            updateAudioStatus(`Audio loaded (${duration}) - ready to play`);
+            console.log('Audio metadata loaded, duration:', audioPlayer.duration);
+        }
+
+        function onTimeUpdate() {
+            const currentTime = audioPlayer.currentTime;
+            const duration = audioPlayer.duration;
+            const progress = (currentTime / duration) * 100;
+            
+            document.getElementById('audioProgress').style.width = progress + '%';
+            document.getElementById('currentTime').textContent = formatTime(currentTime);
+            
+            // Update bullet points based on audio time
+            updateBulletsFromAudio(currentTime);
+        }
+
+        function onPlay() {
+            isAudioPlaying = true;
+            document.getElementById('playPauseBtn').innerHTML = '⏸️ Pause';
+            document.getElementById('avatarIcon').classList.add('avatar-speaking');
+            document.getElementById('audioWave').classList.remove('hidden');
+            updateAudioStatus('Playing...');
+            console.log('Audio started playing');
+        }
+
+        function onPause() {
+            isAudioPlaying = false;
+            document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+            document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+            document.getElementById('audioWave').classList.add('hidden');
+            updateAudioStatus('Paused');
+            console.log('Audio paused');
+        }
+
+        function onEnded() {
+            isAudioPlaying = false;
+            document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+            document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+            document.getElementById('audioWave').classList.add('hidden');
+            updateAudioStatus('Playback completed');
+            console.log('Audio playback ended');
+        }
+
+        // Setup TTS-specific events
+        function setupTTSEvents() {
+            console.log('Setting up TTS event handling');
+            
+            if (window.currentUtterance) {
+                window.currentUtterance.onstart = () => {
+                    isAudioPlaying = true;
+                    document.getElementById('playPauseBtn').innerHTML = '⏸️ Pause';
+                    document.getElementById('avatarIcon').classList.add('avatar-speaking');
+                    document.getElementById('audioWave').classList.remove('hidden');
+                    updateAudioStatus('Speaking script...');
+                    console.log('TTS started speaking');
+                    
+                    // Start bullet point animation based on estimated timing
+                    startBulletAnimationTTS();
+                };
+                
+                window.currentUtterance.onend = () => {
+                    isAudioPlaying = false;
+                    document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+                    document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+                    document.getElementById('audioWave').classList.add('hidden');
+                    updateAudioStatus('Speech completed');
+                    console.log('TTS finished speaking');
+                };
+                
+                window.currentUtterance.onerror = (event) => {
+                    isAudioPlaying = false;
+                    document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+                    document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+                    document.getElementById('audioWave').classList.add('hidden');
+                    updateAudioStatus('Speech error: ' + event.error);
+                    console.log('TTS error:', event.error);
+                };
+            }
+        }
+
+        // Start bullet animation for TTS
+        function startBulletAnimationTTS() {
+            const script = demoScripts[currentScriptKey];
+            const estimatedDuration = parseInt(document.getElementById('duration').textContent);
+            
+            // Calculate when each bullet should appear
+            script.bullets.forEach((bullet, index) => {
+                const bulletTime = (estimatedDuration / script.bullets.length) * (index + 0.5) * 1000; // Convert to ms
+                
+                setTimeout(() => {
+                    if (isAudioPlaying) {
+                        const bullets = document.querySelectorAll('.bullet-point');
+                        if (bullets[index]) {
+                            bullets[index].classList.add('visible');
+                            console.log(`Bullet ${index + 1} appeared: ${bullet}`);
+                        }
+                    }
+                }, bulletTime);
+            });
+        }
+
+        // Audio control functions
+        function togglePlayPause() {
+            console.log('togglePlayPause called, audioMode:', window.audioMode);
+            
+            if (window.audioMode === 'TTS') {
+                // Handle TTS mode
+                if (isAudioPlaying) {
+                    // Pause TTS
+                    speechSynthesis.pause();
+                    isAudioPlaying = false;
+                    document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+                    document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+                    document.getElementById('audioWave').classList.add('hidden');
+                    updateAudioStatus('Paused');
+                    console.log('TTS paused');
+                } else {
+                    // Resume or start TTS
+                    if (speechSynthesis.paused) {
+                        speechSynthesis.resume();
+                        isAudioPlaying = true;
+                        document.getElementById('playPauseBtn').innerHTML = '⏸️ Pause';
+                        document.getElementById('avatarIcon').classList.add('avatar-speaking');
+                        document.getElementById('audioWave').classList.remove('hidden');
+                        updateAudioStatus('Speaking...');
+                        console.log('TTS resumed');
+                    } else if (window.currentUtterance) {
+                        // Start fresh TTS
+                        speechSynthesis.speak(window.currentUtterance);
+                        // Note: isAudioPlaying will be set to true in the onstart event
+                        console.log('TTS started');
+                    } else {
+                        updateAudioStatus('No speech ready');
+                        console.log('No currentUtterance available');
+                    }
+                }
+            } else {
+                // Handle regular audio mode
+                if (!audioPlayer) {
+                    updateAudioStatus('No audio loaded');
+                    return;
+                }
+                
+                if (isAudioPlaying) {
+                    audioPlayer.pause();
+                } else {
+                    audioPlayer.play().catch(error => {
+                        console.log('Play failed:', error);
+                        updateAudioStatus('Play failed - check audio');
+                    });
+                }
+            }
+        }
+
+        function stopAudio() {
+            console.log('stopAudio called, audioMode:', window.audioMode);
+            
+            if (window.audioMode === 'TTS') {
+                // Stop TTS
+                speechSynthesis.cancel();
+                isAudioPlaying = false;
+                document.getElementById('playPauseBtn').innerHTML = '▶️ Play';
+                document.getElementById('avatarIcon').classList.remove('avatar-speaking');
+                document.getElementById('audioWave').classList.add('hidden');
+                resetBullets();
+                updateAudioStatus('Stopped');
+                console.log('TTS stopped');
+            } else {
+                // Stop regular audio
+                if (!audioPlayer) return;
+                
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+                resetBullets();
+                updateAudioStatus('Stopped');
+            }
+        }
+
+        function replayAudio() {
+            console.log('replayAudio called, audioMode:', window.audioMode);
+            
+            if (window.audioMode === 'TTS') {
+                // Replay TTS
+                speechSynthesis.cancel(); // Stop current speech
+                resetBullets();
+                if (window.currentUtterance) {
+                    setTimeout(() => {
+                        speechSynthesis.speak(window.currentUtterance);
+                        console.log('TTS replay started');
+                    }, 100); // Small delay to ensure cancel completes
+                }
+            } else {
+                // Replay regular audio
+                if (!audioPlayer) return;
+                
+                audioPlayer.currentTime = 0;
+                resetBullets();
+                audioPlayer.play();
+            }
+        }
+
+        function setVolume(value) {
+            if (!audioPlayer) return;
+            
+            audioPlayer.volume = value / 100;
+            document.getElementById('volumeValue').textContent = value + '%';
+        }
+
+        function setPlaybackRate(rate) {
+            if (!audioPlayer) return;
+            
+            audioPlayer.playbackRate = parseFloat(rate);
+            updateAudioStatus(`Playing at ${rate}x speed`);
+        }
+
+        function seekAudio(event) {
+            if (!audioPlayer) return;
+            
+            const progressContainer = document.getElementById('audioProgressContainer');
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = event.clientX - rect.left;
+            const percentage = clickX / rect.width;
+            const newTime = percentage * audioPlayer.duration;
+            
+            audioPlayer.currentTime = newTime;
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+
+        function updateAudioStatus(status) {
+            document.getElementById('audioStatus').textContent = status;
+        }
+
+        function updateBulletsFromAudio(currentTime) {
+            const bullets = document.querySelectorAll('.bullet-point');
+            const script = demoScripts[currentScriptKey];
+            const duration = audioPlayer.duration;
+            
+            // Calculate when each bullet should appear based on audio time
+            script.bullets.forEach((bullet, index) => {
+                const bulletTime = (duration / script.bullets.length) * (index + 0.5);
+                
+                if (currentTime >= bulletTime && bullets[index]) {
+                    bullets[index].classList.add('visible');
+                }
+            });
+        }
+
+        function resetBullets() {
+            const bullets = document.querySelectorAll('.bullet-point');
+            bullets.forEach(bullet => bullet.classList.remove('visible'));
+        }
+
+        // Generate real audio using Web Speech API
+        async function generateRealAudio(text) {
+            return new Promise((resolve) => {
+                console.log('Starting TTS generation for:', text.substring(0, 50) + '...');
+                
+                if (!('speechSynthesis' in window)) {
+                    console.log('Speech synthesis not supported');
+                    resolve(null);
+                    return;
+                }
+
+                // Wait for voices to load
+                const waitForVoices = () => {
+                    const voices = speechSynthesis.getVoices();
+                    if (voices.length === 0) {
+                        setTimeout(waitForVoices, 100);
+                        return;
+                    }
+                    
+                    console.log('Available voices:', voices.length);
+                    
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.rate = 0.8; // Slower for clarity
+                    utterance.pitch = 1.0;
+                    utterance.volume = 1.0;
+                    
+                    // Try to use a good quality voice
+                    const preferredVoice = voices.find(voice => 
+                        voice.name.includes('Daniel') ||
+                        voice.name.includes('Samantha') ||
+                        voice.name.includes('Alex') ||
+                        voice.name.includes('Karen') ||
+                        (voice.lang.startsWith('en') && voice.localService)
+                    );
+                    
+                    if (preferredVoice) {
+                        utterance.voice = preferredVoice;
+                        console.log('Using voice:', preferredVoice.name);
+                    }
+
+                    // Create a simple solution: store utterance for later use
+                    // We'll play it directly through speechSynthesis when user clicks play
+                    window.currentUtterance = utterance;
+                    
+                    console.log('TTS utterance prepared for manual playback');
+                    resolve('TTS_READY'); // Special marker to indicate TTS is ready
+                };
+                
+                waitForVoices();
+            });
+        }
+
+        // Setup audio recording
+        function setupAudioRecording() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const destination = audioContext.createMediaStreamDestination();
+                const mediaRecorder = new MediaRecorder(destination.stream);
+                return mediaRecorder;
+            } catch (error) {
+                console.log('Audio recording not available:', error);
+                return null;
+            }
+        }
+
+        // Create simple audio as fallback
+        async function createSimpleAudio() {
+            return new Promise((resolve) => {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const duration = Math.max(parseInt(document.getElementById('duration').textContent) || 10, 5); // At least 5 seconds
+                    const sampleRate = audioContext.sampleRate;
+                    const frameCount = sampleRate * duration;
+                    
+                    console.log(`Creating fallback audio: ${duration}s, ${frameCount} frames`);
+                    
+                    const buffer = audioContext.createBuffer(2, frameCount, sampleRate);
+                    
+                    // Generate a pleasant tone sequence for both channels
+                    for (let channel = 0; channel < 2; channel++) {
+                        const data = buffer.getChannelData(channel);
+                        for (let i = 0; i < frameCount; i++) {
+                            const time = i / sampleRate;
+                            // Create multiple harmonious tones
+                            const freq1 = 220; // A3
+                            const freq2 = 330; // E4
+                            const freq3 = 440; // A4
+                            
+                            // Mix multiple frequencies for a richer sound
+                            const amplitude = 0.05 * (1 - time / duration); // Fade out over time
+                            const tone1 = Math.sin(2 * Math.PI * freq1 * time) * amplitude * 0.5;
+                            const tone2 = Math.sin(2 * Math.PI * freq2 * time) * amplitude * 0.3;
+                            const tone3 = Math.sin(2 * Math.PI * freq3 * time) * amplitude * 0.2;
+                            
+                            data[i] = tone1 + tone2 + tone3;
+                        }
+                    }
+                    
+                    // Convert to WAV blob
+                    const wav = audioBufferToWav(buffer);
+                    const blob = new Blob([wav], { type: 'audio/wav' });
+                    const url = URL.createObjectURL(blob);
+                    
+                    console.log('Fallback audio created, size:', blob.size, 'bytes');
+                    resolve(url);
+                    
+                } catch (error) {
+                    console.log('Fallback audio creation failed:', error);
+                    // Create a basic audio data URL as absolute last resort
+                    const silentAudio = createSilentAudio();
+                    resolve(silentAudio);
+                }
+            });
+        }
+
+        // Create silent audio as absolute fallback
+        function createSilentAudio() {
+            // Create a minimal silent WAV file data URL
+            const duration = 5; // 5 seconds
+            const sampleRate = 22050; // Lower sample rate for smaller file
+            const samples = duration * sampleRate;
+            
+            // WAV file structure
+            const buffer = new ArrayBuffer(44 + samples * 2);
+            const view = new DataView(buffer);
+            
+            // WAV header
+            const writeString = (offset, string) => {
+                for (let i = 0; i < string.length; i++) {
+                    view.setUint8(offset + i, string.charCodeAt(i));
+                }
+            };
+            
+            writeString(0, 'RIFF');
+            view.setUint32(4, 36 + samples * 2, true);
+            writeString(8, 'WAVE');
+            writeString(12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);  // PCM
+            view.setUint16(22, 1, true);  // Mono
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            writeString(36, 'data');
+            view.setUint32(40, samples * 2, true);
+            
+            // Fill with silence (zeros)
+            for (let i = 44; i < buffer.byteLength; i += 2) {
+                view.setInt16(i, 0, true);
+            }
+            
+            const blob = new Blob([buffer], { type: 'audio/wav' });
+            console.log('Silent audio created, size:', blob.size, 'bytes');
+            return URL.createObjectURL(blob);
+        }
+
+        // Convert AudioBuffer to WAV
+        function audioBufferToWav(buffer) {
+            const length = buffer.length;
+            const arrayBuffer = new ArrayBuffer(44 + length * 2);
+            const view = new DataView(arrayBuffer);
+            const data = buffer.getChannelData(0);
+            
+            // WAV header
+            const writeString = (offset, string) => {
+                for (let i = 0; i < string.length; i++) {
+                    view.setUint8(offset + i, string.charCodeAt(i));
+                }
+            };
+            
+            writeString(0, 'RIFF');
+            view.setUint32(4, 36 + length * 2, true);
+            writeString(8, 'WAVE');
+            writeString(12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
+            view.setUint32(24, buffer.sampleRate, true);
+            view.setUint32(28, buffer.sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            writeString(36, 'data');
+            view.setUint32(40, length * 2, true);
+            
+            // Convert float samples to 16-bit PCM
+            let offset = 44;
+            for (let i = 0; i < length; i++) {
+                const sample = Math.max(-1, Math.min(1, data[i]));
+                view.setInt16(offset, sample * 0x7FFF, true);
+                offset += 2;
+            }
+            
+            return arrayBuffer;
+        }
+
+        // Play demo with bullet animations
+        function playDemo() {
+            console.log('User requested to play demo, audio mode:', window.audioMode);
+            
+            if (window.audioMode === 'TTS') {
+                // Use TTS speech synthesis
+                if (!window.currentUtterance) {
+                    updateAudioStatus('No speech prepared - generate audio first');
+                    return;
+                }
+                
+                if (isAudioPlaying) {
+                    console.log('TTS already playing, stopping...');
+                    speechSynthesis.cancel();
+                    return;
+                }
+                
+                // Reset bullets and start TTS
+                resetBullets();
+                updateAudioStatus('Starting speech...');
+                speechSynthesis.speak(window.currentUtterance);
+                
+            } else {
+                // Use fallback audio player
+                if (!audioPlayer || !audioPlayer.src) {
+                    updateAudioStatus('No audio source available');
+                    return;
+                }
+                
+                if (isAudioPlaying) {
+                    console.log('Audio already playing, pausing...');
+                    audioPlayer.pause();
+                    return;
+                }
+                
+                // Reset bullets and start playing
+                resetBullets();
+                audioPlayer.currentTime = 0;
+                
+                audioPlayer.play().catch(error => {
+                    console.log('Manual play failed:', error);
+                    updateAudioStatus('Play failed - audio may not be properly loaded');
+                });
+            }
+        }
+
+        // Pause demo
+        function pauseDemo() {
+            if (window.audioMode === 'TTS') {
+                speechSynthesis.cancel();
+            } else if (audioPlayer) {
+                audioPlayer.pause();
+            }
+        }
+
+        // Reset demo
+        function resetDemo() {
+            // Stop any playing audio
+            if (window.audioMode === 'TTS') {
+                speechSynthesis.cancel();
+            } else if (audioPlayer) {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+            }
+            
+            // Reset audio state
+            isAudioPlaying = false;
+            
+            // Reset UI elements
+            const btnPlay = document.getElementById('playPauseBtn');
+            if (btnPlay) btnPlay.innerHTML = '▶️ Play';
+            const avatarIconEl = document.getElementById('avatarIcon');
+            if (avatarIconEl) avatarIconEl.classList.remove('avatar-speaking');
+            const audioWaveEl = document.getElementById('audioWave');
+            if (audioWaveEl) audioWaveEl.classList.add('hidden');
+            
+            if (window.audioMode !== 'TTS') {
+                document.getElementById('audioProgress').style.width = '0%';
+                document.getElementById('currentTime').textContent = '0:00';
+            }
+            
+            resetBullets();
+            updateAvatarStatus('🔄 Reset - Ready to play');
+            updateAudioStatus('Reset - Ready to play');
+            
+            // Hide containers that should be hidden
+            const toHideIds = ['audioContainer','playControls','videoContainer','downloadSection'];
+            for (const id of toHideIds) {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            }
+            
+            // Clean up video preview and generated video data
+            const videoPreview = document.getElementById('videoPreview');
+            const videoPlaceholder = document.getElementById('videoPlaceholder');
+            
+            if (window.generatedVideoUrl) {
+                URL.revokeObjectURL(window.generatedVideoUrl);
+                window.generatedVideoUrl = null;
+                window.generatedVideoBlob = null;
+            }
+            
+            if (videoPreview) {
+                videoPreview.src = '';
+                videoPreview.style.display = 'none';
+            }
+            if (videoPlaceholder) {
+                videoPlaceholder.style.display = 'block';
+            }
+        }
+
+        // Generate and download real files
+        async function downloadFile(type) {
+            updateAvatarStatus(`📥 Generating ${type}...`);
+            
+            if (type === 'audio') {
+                // Download the actual generated audio
+                const audioPlayer = document.getElementById('audioPlayer');
+                if (window.audioMode === 'TTS') {
+                    updateAvatarStatus(`ℹ️ TTS audio recording for download...`);
+                    try {
+                        const audioBlob = await recordTTSAudio();
+                        if (audioBlob && audioBlob.size > 1000) {
+                            const url = URL.createObjectURL(audioBlob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = `avatar-audio-${currentScriptKey}.webm`;
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+                            updateAvatarStatus(`📥 TTS audio downloaded!`);
+                        } else {
+                            updateAvatarStatus(`❌ TTS audio recording failed`);
+                        }
+                    } catch (error) {
+                        updateAvatarStatus(`❌ TTS audio recording error`);
+                        console.error('TTS audio download error:', error);
+                    }
+                } else if (audioPlayer.src) {
+                    const a = document.createElement('a');
+                    a.href = audioPlayer.src;
+                    a.download = `avatar-audio-${currentScriptKey}.wav`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    updateAvatarStatus(`📥 Audio downloaded!`);
+                } else {
+                    updateAvatarStatus(`❌ No audio to download`);
+                }
+            } else if (type === 'video') {
+                // Check if video is already generated
+                if (window.generatedVideoBlob && window.generatedVideoUrl) {
+                    // Use pre-generated video
+                    updateAvatarStatus('📥 Downloading pre-generated video...');
+                    const a = document.createElement('a');
+                    a.href = window.generatedVideoUrl;
+                    a.download = `avatar-video-${currentScriptKey}.webm`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    updateAvatarStatus('📥 Video downloaded!');
+                } else {
+                    // Generate video on demand
+                    if (window.audioMode === 'TTS') {
+                        updateAvatarStatus(`🎬 Recording TTS audio and creating video...`);
+                    } else {
+                        updateAvatarStatus(`🎬 Creating video with audio track...`);
+                    }
+                    
+                    const videoBlob = await generateRealVideo();
+                    if (videoBlob) {
+                        const url = URL.createObjectURL(videoBlob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `avatar-video-${currentScriptKey}.webm`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        
+                        if (window.audioMode === 'TTS') {
+                            updateAvatarStatus(`📥 Video with embedded TTS audio downloaded!`);
+                        } else {
+                            updateAvatarStatus(`📥 Video with audio downloaded!`);
+                        }
+                    } else {
+                        updateAvatarStatus(`❌ Video generation failed`);
+                    }
+                }
+            }
+        }
+
+        // Generate real video with Canvas and MediaRecorder + Audio
+        async function generateRealVideo() {
+            return new Promise(async (resolve) => {
+                try {
+                    console.log('Starting video generation with audio...');
+                    
+                    // Create canvas for video generation
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 1280;
+                    canvas.height = 720;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Get video stream from canvas
+                    const videoStream = canvas.captureStream(30); // 30 FPS
+                    
+                    let combinedStream;
+                    
+                    if (window.audioMode === 'TTS') {
+                        console.log('🎵 TTS mode: Setting up audio for video...');
+                        
+                        try {
+                            // For TTS mode, we'll use a different approach
+                            // First, record the TTS audio to a blob, then use that blob for video
+                            console.log('📱 Recording TTS audio first...');
+                            
+                            const audioBlob = await recordTTSAudio();
+                            
+                            if (audioBlob && audioBlob.size > 1000) {
+                                console.log('📱 TTS audio recorded successfully, size:', audioBlob.size);
+                                
+                                // Create audio element from recorded TTS
+                                const audioUrl = URL.createObjectURL(audioBlob);
+                                const audioElement = new Audio(audioUrl);
+                                
+                                // Create audio context and connect to destination
+                                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                                await audioContext.resume();
+                                console.log('📱 Audio context ready, state:', audioContext.state);
+                                
+                                // Wait for audio to load
+                                await new Promise((resolve, reject) => {
+                                    audioElement.onloadeddata = resolve;
+                                    audioElement.onerror = reject;
+                                    audioElement.load();
+                                });
+                                
+                                console.log('📱 Audio element loaded, duration:', audioElement.duration);
+                                
+                                const source = audioContext.createMediaElementSource(audioElement);
+                                const destination = audioContext.createMediaStreamDestination();
+                                source.connect(destination);
+                                
+                                // Start playing the audio to activate the stream
+                                audioElement.currentTime = 0;
+                                audioElement.loop = true; // Loop to ensure continuous audio
+                                await audioElement.play();
+                                
+                                console.log('📱 Audio element playing');
+                                
+                                // Combine video and audio streams
+                                const audioTrack = destination.stream.getAudioTracks()[0];
+                                const videoTrack = videoStream.getVideoTracks()[0];
+                                
+                                console.log('📱 Audio track:', audioTrack ? 'EXISTS' : 'MISSING');
+                                console.log('📱 Video track:', videoTrack ? 'EXISTS' : 'MISSING');
+                                
+                                if (audioTrack && videoTrack) {
+                                    combinedStream = new MediaStream([videoTrack, audioTrack]);
+                                    console.log('✅ Combined stream created with TTS audio and video');
+                                    
+                                    // Store the audio element so we can stop it later
+                                    window.recordingAudioElement = audioElement;
+                                } else {
+                                    console.log('⚠️ Missing tracks, using video-only');
+                                    combinedStream = videoStream;
+                                }
+                                
+                            } else {
+                                console.log('❌ TTS recording failed or too small, using video-only');
+                                combinedStream = videoStream;
+                            }
+                            
+                        } catch (error) {
+                            console.error('❌ TTS audio setup failed:', error);
+                            combinedStream = videoStream;
+                        }
+                    } else if (audioPlayer && audioPlayer.src) {
+                        // For recorded audio, try to combine with video
+                        try {
+                            // Ensure audio player is ready and can play
+                            audioPlayer.loop = true; // Loop audio during video generation
+                            
+                            // Create audio context to get audio stream
+                            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                            await audioContext.resume(); // Ensure context is running
+                            
+                            const source = audioContext.createMediaElementSource(audioPlayer);
+                            const destination = audioContext.createMediaStreamDestination();
+                            source.connect(destination);
+                            
+                            // Start playing to activate stream
+                            await audioPlayer.play();
+                            
+                            // Combine video and audio streams
+                            const audioTrack = destination.stream.getAudioTracks()[0];
+                            const videoTrack = videoStream.getVideoTracks()[0];
+                            combinedStream = new MediaStream([videoTrack, audioTrack]);
+                            
+                            console.log('Combined video + recorded audio streams');
+                            console.log('Audio track active:', audioTrack.enabled, 'readyState:', audioTrack.readyState);
+                        } catch (error) {
+                            console.log('Audio stream combination failed, using video only:', error);
+                            combinedStream = videoStream;
+                        }
+                    } else {
+                        combinedStream = videoStream;
+                        console.log('No audio source, creating video only');
+                    }
+                    
+                    // Setup video recording
+                    console.log('🎬 Setting up MediaRecorder with combined stream');
+                    console.log('🎬 Combined stream tracks:', combinedStream.getTracks().map(t => ({
+                        kind: t.kind,
+                        enabled: t.enabled,
+                        readyState: t.readyState,
+                        label: t.label
+                    })));
+                    
+                    let mediaRecorder;
+                    try {
+                        mediaRecorder = new MediaRecorder(combinedStream, {
+                            mimeType: 'video/webm;codecs=vp9,opus'
+                        });
+                        console.log('✅ MediaRecorder created, state:', mediaRecorder.state);
+                    } catch (error) {
+                        console.error('❌ MediaRecorder creation failed:', error);
+                        // Fallback to simpler codec
+                        try {
+                            mediaRecorder = new MediaRecorder(combinedStream, {
+                                mimeType: 'video/webm'
+                            });
+                            console.log('✅ MediaRecorder created with fallback codec');
+                        } catch (fallbackError) {
+                            console.error('❌ MediaRecorder fallback also failed:', fallbackError);
+                            throw new Error('MediaRecorder not supported');
+                        }
+                    }
+                    
+                    const chunks = [];
+                    mediaRecorder.ondataavailable = (event) => {
+                        if (event.data.size > 0) {
+                            chunks.push(event.data);
+                        }
+                    };
+                    
+                    mediaRecorder.onstop = () => {
+                        // Stop any playing audio to prevent continued playback
+                        if (window.recordingAudioElement && !window.recordingAudioElement.paused) {
+                            console.log('🔇 Stopping TTS audio playback');
+                            window.recordingAudioElement.pause();
+                            window.recordingAudioElement.currentTime = 0;
+                        }
+                        
+                        if (window.audioMode === 'TTS') {
+                            const allAudio = document.querySelectorAll('audio');
+                            allAudio.forEach(audio => {
+                                if (!audio.paused) {
+                                    audio.pause();
+                                    audio.currentTime = 0;
+                                }
+                            });
+                        } else if (audioPlayer && !audioPlayer.paused) {
+                            audioPlayer.pause();
+                            audioPlayer.currentTime = 0;
+                        }
+                        
+                        const blob = new Blob(chunks, { type: 'video/webm' });
+                        console.log('🎬 Video generation completed, size:', blob.size);
+                        resolve(blob);
+                    };
+                    
+                    // Start recording
+                    mediaRecorder.start();
+                    console.log('Started video recording');
+                    
+                    // Generate video frames synchronized with audio
+                    const script = demoScripts[currentScriptKey];
+                    const duration = parseInt(document.getElementById('duration').textContent) * 1000; // Convert to ms
+                    const frameRate = 30;
+                    const totalFrames = Math.floor(duration / 1000 * frameRate);
+                    
+                    let currentFrame = 0;
+                    
+                    const renderFrame = () => {
+                        try {
+                            // Safety check
+                            if (!isGenerating) {
+                                console.log('🛑 Generation cancelled, stopping renderFrame');
+                                return;
+                            }
+                            
+                            if (currentFrame % 30 === 0) { // Log every 30 frames (1 second at 30fps)
+                                console.log(`🎬 Rendering frame ${currentFrame}/${totalFrames} (${Math.round(currentFrame/totalFrames*100)}%)`);
+                            }
+                            
+                            // Calculate progress
+                            const progress = currentFrame / totalFrames;
+                            const currentTime = (currentFrame / frameRate); // in seconds
+                            
+                            // Clear canvas
+                            ctx.fillStyle = '#667eea';
+                            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        
+                        // Add gradient background
+                        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                        gradient.addColorStop(0, '#667eea');
+                        gradient.addColorStop(1, '#764ba2');
+                        ctx.fillStyle = gradient;
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        
+                        // Draw avatar section (left side)
+                        const avatarX = canvas.width * 0.25;
+                        const avatarY = canvas.height * 0.5;
+                        const avatarSize = 120;
+                        
+                        // Avatar background circle
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+                        ctx.beginPath();
+                        ctx.arc(avatarX, avatarY, avatarSize, 0, Math.PI * 2);
+                        ctx.fill();
+                        
+                        // Avatar emoji with speaking animation
+                        ctx.font = `${avatarSize}px Arial`;
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        
+                        // Speaking animation effect
+                        const speakingScale = 1 + Math.sin(currentFrame * 0.3) * 0.05;
+                        ctx.save();
+                        ctx.translate(avatarX, avatarY);
+                        ctx.scale(speakingScale, speakingScale);
+                        ctx.fillStyle = 'white';
+                        ctx.fillText('🤖', 0, 0);
+                        ctx.restore();
+                        
+                        // Draw title
+                        ctx.fillStyle = 'white';
+                        ctx.font = 'bold 48px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText(script.title, canvas.width * 0.75, 100);
+                        
+                        // Draw bullet points with timing
+                        const bulletStartY = 200;
+                        const bulletSpacing = 80;
+                        const scriptDuration = duration / 1000; // back to seconds
+                        
+                        script.bullets.forEach((bullet, index) => {
+                            const bulletTime = (scriptDuration / script.bullets.length) * (index + 0.5);
+                            const shouldShow = currentTime >= bulletTime;
+                            
+                            if (shouldShow) {
+                                const fadeTime = Math.min(1, (currentTime - bulletTime) / 0.5); // Fade in over 0.5s
+                                const alpha = Math.max(0, Math.min(1, fadeTime));
+                                
+                                ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+                                ctx.font = '36px Arial';
+                                ctx.textAlign = 'left';
+                                
+                                const bulletY = bulletStartY + index * bulletSpacing;
+                                ctx.fillText('•', canvas.width * 0.55, bulletY);
+                                ctx.fillText(bullet, canvas.width * 0.58, bulletY);
+                            }
+                        });
+                        
+                        // Draw progress bar
+                        const progressWidth = canvas.width * 0.8;
+                        const progressHeight = 8;
+                        const progressX = (canvas.width - progressWidth) / 2;
+                        const progressY = canvas.height - 50;
+                        
+                        // Progress background
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                        ctx.fillRect(progressX, progressY, progressWidth, progressHeight);
+                        
+                        // Progress fill
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                        ctx.fillRect(progressX, progressY, progressWidth * progress, progressHeight);
+                        
+                        // Draw time indicator
+                        ctx.fillStyle = 'white';
+                        ctx.font = '24px Arial';
+                        ctx.textAlign = 'center';
+                        const timeText = `${Math.floor(currentTime)}s / ${Math.floor(scriptDuration)}s`;
+                        ctx.fillText(timeText, canvas.width / 2, canvas.height - 20);
+                        
+                        currentFrame++;
+                        
+                        if (currentFrame < totalFrames) {
+                            setTimeout(renderFrame, 1000 / frameRate);
+                        } else {
+                            // Stop recording after all frames
+                            setTimeout(() => {
+                                mediaRecorder.stop();
+                                console.log('🎬 Video rendering completed');
+                            }, 100);
+                        }
+                        
+                        } catch (frameError) {
+                            console.error('❌ Frame rendering error:', frameError);
+                            // Stop on error to prevent infinite loop
+                            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                                mediaRecorder.stop();
+                            }
+                        }
+                    };
+                    
+                    // Start rendering frames
+                    renderFrame();
+                    
+                } catch (error) {
+                    console.error('Video generation error:', error);
+                    resolve(null);
+                }
+            });
+        }
+
+        // Generate TTS audio directly into the video recording stream (DEPRECATED - using pre-recorded audio now)
+        function generateTTSAudioForVideo() {
+            console.log('🔇 This function is deprecated - using pre-recorded TTS audio instead');
+        }
+
+        // Record TTS audio to blob for video combination
+        async function recordTTSAudio() {
+            return new Promise((resolve) => {
+                try {
+                    console.log('🎤 Recording TTS audio (segmented)...');
+                    const TIMEOUT_MS = 30000;
+                    const cutoff = setTimeout(() => { safeStop('timeout'); }, TIMEOUT_MS);
+
+                    const script = demoScripts[currentScriptKey];
+                    const fullText = (script.script || script.bullets?.join('. ') || '').trim();
+                    if (!fullText) { console.warn('⚠️ Empty script text'); clearTimeout(cutoff); resolve(null); return; }
+
+                    function ensureVoices(maxWait=1500){
+                        return new Promise(r=>{const s=performance.now();(function check(){const v=speechSynthesis.getVoices();if(v.length||performance.now()-s>maxWait)return r(v);setTimeout(check,100);})();});
+                    }
+
+                    const audioContext = new (window.AudioContext||window.webkitAudioContext)();
+                    const destination = audioContext.createMediaStreamDestination();
+                    const mediaRecorder = new MediaRecorder(destination.stream,{mimeType:'audio/webm;codecs=opus'});
+                    const chunks=[]; let started=false; let stopped=false;
+                    function safeStop(reason){ if(stopped) return; stopped=true; clearTimeout(cutoff); try{ if(mediaRecorder.state==='recording') mediaRecorder.stop(); }catch(_){} console.log('🛑 Stop capture:',reason);}                    
+                    mediaRecorder.ondataavailable=e=>{ if(e.data&&e.data.size>0) chunks.push(e.data); };
+                    mediaRecorder.onstop=()=>{ const blob=new Blob(chunks,{type:'audio/webm'}); console.log('✅ TTS recorded size:',blob.size); resolve(blob.size<1200?null:blob); };
+
+                    // keep-alive silent source to maintain stream
+                    const osc=audioContext.createOscillator(); const g=audioContext.createGain(); g.gain.value=0.0001; osc.connect(g).connect(destination); osc.start(); osc.stop(audioContext.currentTime+40);
+
+                    (async()=>{
+                        const voices=await ensureVoices();
+                        const preferred=voices.find(v=>v.name.includes('Daniel'))||voices.find(v=>v.lang==='en-GB')||voices[0];
+                        console.log('🗣 Voices:',voices.length,'chosen:',preferred?preferred.name:'none');
+                        // segment text into manageable chunks
+                        const parts=[]; const MAX=180; let rest=fullText; while(rest.length){ if(rest.length<=MAX){parts.push(rest); break;} let slice=rest.slice(0,MAX); const p=slice.lastIndexOf('.'); const sp=slice.lastIndexOf(' '); const cut=p>40?p+1:(sp>40?sp:slice.length); parts.push(rest.slice(0,cut).trim()); rest=rest.slice(cut).trim(); }
+                        console.log('✂️ Segments:',parts.length);
+                        let i=0;
+                        function next(){ if(i>=parts.length){ safeStop('done'); return; } const seg=parts[i++]; const utt=new SpeechSynthesisUtterance(seg); if(preferred) utt.voice=preferred; utt.rate=.9; utt.pitch=1; utt.volume=1; utt.onstart=()=>{ console.log(`▶️ ${i}/${parts.length}`); if(!started){ mediaRecorder.start(); started=true; } }; utt.onend=()=>{ setTimeout(next,120); }; utt.onerror=e=>{ console.error('❌ segment error',e.error); setTimeout(next,120); }; speechSynthesis.speak(utt);}                        
+                        if(speechSynthesis.speaking||speechSynthesis.pending){ console.log('🔄 Cancel existing speech'); speechSynthesis.cancel(); setTimeout(next,180);} else next();
+                    })().catch(e=>{ console.error('❌ TTS setup error',e); safeStop('setup-error'); resolve(null); });
+
+                    const guard=setInterval(()=>{ if(started && !speechSynthesis.speaking && !speechSynthesis.pending && !stopped){ safeStop('natural-end'); clearInterval(guard);} },400);
+                    setTimeout(()=>{ if(!stopped) safeStop('final-cutoff'); }, TIMEOUT_MS+1500);
+                } catch(err) {
+                    console.error('❌ recordTTSAudio failure',err); resolve(null);
+                }
+            });
+        }
+
+        // Update avatar status
+        function updateAvatarStatus(status) {
+            document.getElementById('avatarStatus').textContent = status;
+        }
+
+        // Show progress
+        function showProgress(percentage, label) {
+            document.getElementById('progressContainer').classList.remove('hidden');
+            const formattedPercentage = parseFloat(percentage).toFixed(2);
+            document.getElementById('progressBar').style.width = formattedPercentage + '%';
+            document.getElementById('progressText').textContent = formattedPercentage + '%';
+            document.getElementById('progressLabel').textContent = label;
+        }
+
+        // Hide progress
+        function hideProgress() {
+            document.getElementById('progressContainer').classList.add('hidden');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateStatistics();
+        });
+    </script>
+</body>
+</html>

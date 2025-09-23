@@ -1,0 +1,2 @@
+given the project on signal no. 8 we need to request data from HKO under the Code on Access to Info and so we will verify the data we get from the API on the typhoon date 
+please check the data available and draft an email to HKO staff dsec@hko.gov.hk 

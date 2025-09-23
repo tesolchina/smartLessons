@@ -1,0 +1,161 @@
+/* 
+  Styles for the main application shell (index.html).
+  This includes the full-page iframe and the floating avatar component.
+*/
+
+/* --- Basic Page Layout --- */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbars on the main page */
+  box-sizing: border-box;
+}
+
+/* --- Main Content Iframe --- */
+#main-iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  display: block;
+}
+
+/* --- Floating Avatar Component --- */
+.avatar-floating-box {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 340px;
+  height: 400px;
+  min-width: 170px;
+  min-height: 200px;
+  max-width: 96vw;
+  max-height: 96vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border: 2px solid #fff;
+  z-index: 100001;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  touch-action: none; /* Prevents page scroll on touch devices when interacting with the box */
+  transition: box-shadow 0.2s, border-color 0.2s;
+  user-select: none; /* Prevents text selection while dragging */
+}
+
+/* Active state for when dragging or resizing */
+.avatar-floating-box.active {
+  box-shadow: 0 12px 48px rgba(80,60,180,0.25);
+  border-color: #7b7ae8;
+}
+
+/* Draggable header bar */
+.avatar-box-header {
+  cursor: move;
+  background: rgba(255,255,255,0.85);
+  padding: 5px 8px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 28px;
+  z-index: 2;
+}
+
+/* Close button in the header */
+.avatar-box-header .close-btn {
+  font-size: 21px;
+  cursor: pointer;
+  color: #4338ca;
+  opacity: 0.75;
+  border-radius: 4px;
+  transition: background 0.18s, opacity 0.18s;
+  padding: 0 7px;
+  background: transparent;
+  border: none;
+  outline: none;
+  line-height: 1;
+  margin-left: 8px;
+}
+
+.avatar-box-header .close-btn:hover, 
+.avatar-box-header .close-btn:focus {
+  background: #ddd;
+  opacity: 1;
+}
+
+/* Iframe inside the floating avatar box */
+.avatar-iframe {
+  width: 100%;
+  height: 100%;
+  min-width: 80px;
+  min-height: 80px;
+  border: none;
+  background: transparent;
+  flex: 1 1 0%; /* Allows the iframe to fill remaining space */
+  display: block;
+}
+
+/* Resizing handle in the bottom-right corner */
+.avatar-resize-handle {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 32px;
+  height: 32px;
+  cursor: se-resize;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  pointer-events: auto;
+  background: transparent;
+}
+
+.avatar-resize-handle svg {
+  width: 22px;
+  height: 22px;
+  opacity: 0.7;
+  color: #a5b4fc;
+  pointer-events: none; /* Ensures the handle itself receives the click, not the SVG */
+}
+
+/* --- Restore Button (when avatar is hidden) --- */
+#restoreAvatarBtn {
+  display: none; /* Hidden by default, shown via JS */
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100002;
+  border-radius: 9999px; /* full-rounded */
+  background-image: linear-gradient(to top right, #8B5CF6, #3B82F6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+#restoreAvatarBtn:hover {
+  transform: scale(1.05);
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 700px) {
+  .avatar-floating-box {
+    /* Using !important to override inline styles set by JS during drag/resize */
+    right: 6px !important;
+    bottom: 6px !important;
+    width: 86vw !important;
+    height: calc(86vw * 1.176) !important; /* Maintains aspect ratio (400/340 ≈ 1.176) */
+    min-width: 120px;
+    min-height: 141px; /* 120 * 1.176 */
+    max-width: 98vw;
+    max-height: 90vh;
+  }
+}

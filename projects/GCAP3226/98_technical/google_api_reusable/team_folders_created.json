@@ -1,0 +1,488 @@
+{
+  "timestamp": "2025-09-22T18:49:57.750642",
+  "course_folder_id": "15TA_J0fV-YitdSAnF1vKI96wUQ-MP7EO",
+  "teams_created": 6,
+  "teams_failed": 0,
+  "teams": [
+    {
+      "team_name": "Team_1",
+      "topic": "Topic_6",
+      "topic_description": "TBD - Topic 6",
+      "folder_id": "1zGDV77Vih4DxDyH9f6eKnr00Kp4nWyMo",
+      "folder_link": "https://drive.google.com/drive/folders/1zGDV77Vih4DxDyH9f6eKnr00Kp4nWyMo",
+      "members": [
+        {
+          "name": "Yeung Wing Yu",
+          "id": "23238283",
+          "gmail": "opheliasheep123@gmail.com",
+          "whatsapp": "97728503"
+        },
+        {
+          "name": "Kwok Tsz Yau",
+          "id": "22234020",
+          "gmail": "kwoktszyau2004@gmail.com",
+          "whatsapp": "96232165"
+        },
+        {
+          "name": "Tsoi Yik Hon",
+          "id": "22232192",
+          "gmail": "",
+          "whatsapp": "61722240"
+        },
+        {
+          "name": "SuJiaLu",
+          "id": "22256946",
+          "gmail": "",
+          "whatsapp": "53986330"
+        }
+      ],
+      "files": [
+        {
+          "name": "Project_Proposal_Team_1",
+          "id": "14Tps1SKjRJx3MXo0yINJ3pv5f-prwk_DScexI7cXzzY",
+          "link": "https://docs.google.com/document/d/14Tps1SKjRJx3MXo0yINJ3pv5f-prwk_DScexI7cXzzY/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Data_Collection_Plan_Team_1",
+          "id": "18jKwBjI7EHfZQSDH3J6lmJloEw-3jc0m6M1IQGQ757U",
+          "link": "https://docs.google.com/document/d/18jKwBjI7EHfZQSDH3J6lmJloEw-3jc0m6M1IQGQ757U/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_1",
+          "id": "1pQ1gA2cWslja-K02OFE2jPGJRStiCU8fsGLi7E38C7o",
+          "link": "https://docs.google.com/spreadsheets/d/1pQ1gA2cWslja-K02OFE2jPGJRStiCU8fsGLi7E38C7o/edit?usp=drivesdk",
+          "type": "spreadsheet"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_1",
+          "id": "1pQ1gA2cWslja-K02OFE2jPGJRStiCU8fsGLi7E38C7o",
+          "link": "https://docs.google.com/spreadsheets/d/1pQ1gA2cWslja-K02OFE2jPGJRStiCU8fsGLi7E38C7o/edit?usp=drivesdk",
+          "type": "presentation"
+        },
+        {
+          "name": "Meeting_Notes_Team_1",
+          "id": "1ePgzMV1aMkYIQyx3aNvVRUTYAvoAdJoBnIfwW5E7EpA",
+          "link": "https://docs.google.com/document/d/1ePgzMV1aMkYIQyx3aNvVRUTYAvoAdJoBnIfwW5E7EpA/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Literature_Review_Team_1",
+          "id": "1jw9Il-7M_Az4MyiDvpovO85zu6c2gOOHtryB3cvOgv0",
+          "link": "https://docs.google.com/document/d/1jw9Il-7M_Az4MyiDvpovO85zu6c2gOOHtryB3cvOgv0/edit?usp=drivesdk",
+          "type": "document"
+        }
+      ],
+      "whatsapp_group": "",
+      "gmail_members": 2,
+      "total_members": 4,
+      "status": "success"
+    },
+    {
+      "team_name": "Team_2",
+      "topic": "Topic_3",
+      "topic_description": "TBD - Topic 3",
+      "folder_id": "1KJ8Y1QkDHo7Oull02GdfjP-OO0ZxJS3C",
+      "folder_link": "https://drive.google.com/drive/folders/1KJ8Y1QkDHo7Oull02GdfjP-OO0ZxJS3C",
+      "members": [
+        {
+          "name": "Chan Hei Tung",
+          "id": "23232099",
+          "gmail": "adriennecht@gmail.com",
+          "whatsapp": "92107071"
+        },
+        {
+          "name": "Yip Tsz Ying",
+          "id": "23229543",
+          "gmail": "",
+          "whatsapp": "93118850"
+        },
+        {
+          "name": "Ko Man Wai",
+          "id": "23234997",
+          "gmail": "",
+          "whatsapp": ""
+        },
+        {
+          "name": "Wong Ling Yan Cassy",
+          "id": "23233168",
+          "gmail": "",
+          "whatsapp": ""
+        },
+        {
+          "name": "Tsoi Tsz Yan",
+          "id": "23229101",
+          "gmail": "tsoitszyannn@gmail.com",
+          "whatsapp": "61597468"
+        },
+        {
+          "name": "Zi Xing Saul Ma",
+          "id": "23200278",
+          "gmail": "",
+          "whatsapp": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "Project_Proposal_Team_2",
+          "id": "1g5zfK4gap0expKSIZVx7UGfwz-y0bpeJy5Z2LUJIRuE",
+          "link": "https://docs.google.com/document/d/1g5zfK4gap0expKSIZVx7UGfwz-y0bpeJy5Z2LUJIRuE/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Data_Collection_Plan_Team_2",
+          "id": "15PWU6nGdWghNutPYHPrPCJz4KlUmMQRrVWHOipXUQNI",
+          "link": "https://docs.google.com/document/d/15PWU6nGdWghNutPYHPrPCJz4KlUmMQRrVWHOipXUQNI/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_2",
+          "id": "1UqiLtDGAZtgmKtEOxFupoGFer9ZYE0MIWvwJ0-kfeJ0",
+          "link": "https://docs.google.com/spreadsheets/d/1UqiLtDGAZtgmKtEOxFupoGFer9ZYE0MIWvwJ0-kfeJ0/edit?usp=drivesdk",
+          "type": "spreadsheet"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_2",
+          "id": "1UqiLtDGAZtgmKtEOxFupoGFer9ZYE0MIWvwJ0-kfeJ0",
+          "link": "https://docs.google.com/spreadsheets/d/1UqiLtDGAZtgmKtEOxFupoGFer9ZYE0MIWvwJ0-kfeJ0/edit?usp=drivesdk",
+          "type": "presentation"
+        },
+        {
+          "name": "Meeting_Notes_Team_2",
+          "id": "1v-ZciNVEXZ-bj5EI8moLqXDp55aF2PJDv2DzGVw6zwE",
+          "link": "https://docs.google.com/document/d/1v-ZciNVEXZ-bj5EI8moLqXDp55aF2PJDv2DzGVw6zwE/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Literature_Review_Team_2",
+          "id": "1gyDuHzUVeu7tsRSbdjchvk-qnGUBY5G4PxQw_xiiqMI",
+          "link": "https://docs.google.com/document/d/1gyDuHzUVeu7tsRSbdjchvk-qnGUBY5G4PxQw_xiiqMI/edit?usp=drivesdk",
+          "type": "document"
+        }
+      ],
+      "whatsapp_group": "https://chat.whatsapp.com/Lq16DaYCqb326p8mlXBwJ0",
+      "gmail_members": 2,
+      "total_members": 6,
+      "status": "success"
+    },
+    {
+      "team_name": "Team_3",
+      "topic": "Topic_7",
+      "topic_description": "TBD - Topic 7",
+      "folder_id": "1Gx9TD1fRxuzNinEIgLMdvC-pTALbf8fD",
+      "folder_link": "https://drive.google.com/drive/folders/1Gx9TD1fRxuzNinEIgLMdvC-pTALbf8fD",
+      "members": [
+        {
+          "name": "Chen Man Ching",
+          "id": "23232781",
+          "gmail": "chenwenjing1023@gmail.com",
+          "whatsapp": "60450640"
+        },
+        {
+          "name": "Hui Man Hei",
+          "id": "25223305",
+          "gmail": "shuaimangguo0813@gmail.com",
+          "whatsapp": "90158707"
+        },
+        {
+          "name": "HONG KAM YIN",
+          "id": "25227394",
+          "gmail": "hhkamyin369@gmail.com",
+          "whatsapp": "52261355"
+        },
+        {
+          "name": "Kung Tsz Lok",
+          "id": "25206354",
+          "gmail": "joannakung3009@gmail.com",
+          "whatsapp": "56850521"
+        },
+        {
+          "name": "ZHENG ZIAN",
+          "id": "",
+          "gmail": "",
+          "whatsapp": ""
+        },
+        {
+          "name": "Chan Ching Yin",
+          "id": "22224009",
+          "gmail": "Leonchanchingyin@gmail.com",
+          "whatsapp": "69935955"
+        }
+      ],
+      "files": [
+        {
+          "name": "Project_Proposal_Team_3",
+          "id": "1ncodi4k0XcAwXjzAtu-ZaG3cnwhVNnuKPjZo_jBTXrw",
+          "link": "https://docs.google.com/document/d/1ncodi4k0XcAwXjzAtu-ZaG3cnwhVNnuKPjZo_jBTXrw/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Data_Collection_Plan_Team_3",
+          "id": "1odY4zyNn0GiLSE64GKdfqHA44k300_U03IR6p9nzisI",
+          "link": "https://docs.google.com/document/d/1odY4zyNn0GiLSE64GKdfqHA44k300_U03IR6p9nzisI/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_3",
+          "id": "1WpV4zhfvTHYY6_p_CtTw7YFpn0cBB3dzfDsIUyPzfrM",
+          "link": "https://docs.google.com/spreadsheets/d/1WpV4zhfvTHYY6_p_CtTw7YFpn0cBB3dzfDsIUyPzfrM/edit?usp=drivesdk",
+          "type": "spreadsheet"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_3",
+          "id": "1WpV4zhfvTHYY6_p_CtTw7YFpn0cBB3dzfDsIUyPzfrM",
+          "link": "https://docs.google.com/spreadsheets/d/1WpV4zhfvTHYY6_p_CtTw7YFpn0cBB3dzfDsIUyPzfrM/edit?usp=drivesdk",
+          "type": "presentation"
+        },
+        {
+          "name": "Meeting_Notes_Team_3",
+          "id": "1eCIOq9oVVSOtS8PFRXB7OZqYsKIXQMpy9nmqGc2OUp8",
+          "link": "https://docs.google.com/document/d/1eCIOq9oVVSOtS8PFRXB7OZqYsKIXQMpy9nmqGc2OUp8/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Literature_Review_Team_3",
+          "id": "1aQpajFFnWYKUTgNIfEynEh7-aGnKrpKqvLvdDs6YLcY",
+          "link": "https://docs.google.com/document/d/1aQpajFFnWYKUTgNIfEynEh7-aGnKrpKqvLvdDs6YLcY/edit?usp=drivesdk",
+          "type": "document"
+        }
+      ],
+      "whatsapp_group": "https://chat.whatsapp.com/E5U0JTMcXAiIO8kdLUtpIi",
+      "gmail_members": 5,
+      "total_members": 6,
+      "status": "success"
+    },
+    {
+      "team_name": "Team_4",
+      "topic": "Topic_4",
+      "topic_description": "TBD - Topic 4",
+      "folder_id": "1yYR-KxSfSI3VT4M2yLbIbj4pVEHTS__f",
+      "folder_link": "https://drive.google.com/drive/folders/1yYR-KxSfSI3VT4M2yLbIbj4pVEHTS__f",
+      "members": [
+        {
+          "name": "Liu Wai Man",
+          "id": "24221872",
+          "gmail": "lwm95820542@gmail.com",
+          "whatsapp": "95820542"
+        },
+        {
+          "name": "Kwok Lai Ki",
+          "id": "25215833",
+          "gmail": "kinkikwoki116@gmail.com",
+          "whatsapp": "59842385"
+        },
+        {
+          "name": "Chan Tsz Ying",
+          "id": "25200135",
+          "gmail": "",
+          "whatsapp": "51923705"
+        },
+        {
+          "name": "Wong Wai Lun",
+          "id": "25221310",
+          "gmail": "aw07133@gmail.com",
+          "whatsapp": "59182048"
+        }
+      ],
+      "files": [
+        {
+          "name": "Project_Proposal_Team_4",
+          "id": "1m0LAqbTUQWTjmQ0n6-HL8AXZPlN6CKARqPhnVczg21g",
+          "link": "https://docs.google.com/document/d/1m0LAqbTUQWTjmQ0n6-HL8AXZPlN6CKARqPhnVczg21g/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Data_Collection_Plan_Team_4",
+          "id": "1BN6MvXXVktK3f0nPc7OEPbyAWCXzD5BvAPzVhxMtHmo",
+          "link": "https://docs.google.com/document/d/1BN6MvXXVktK3f0nPc7OEPbyAWCXzD5BvAPzVhxMtHmo/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_4",
+          "id": "1zWRNqugZsuGUGt0LR94Kj5_Moea1rEqYOsjxJnZ928Q",
+          "link": "https://docs.google.com/spreadsheets/d/1zWRNqugZsuGUGt0LR94Kj5_Moea1rEqYOsjxJnZ928Q/edit?usp=drivesdk",
+          "type": "spreadsheet"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_4",
+          "id": "1zWRNqugZsuGUGt0LR94Kj5_Moea1rEqYOsjxJnZ928Q",
+          "link": "https://docs.google.com/spreadsheets/d/1zWRNqugZsuGUGt0LR94Kj5_Moea1rEqYOsjxJnZ928Q/edit?usp=drivesdk",
+          "type": "presentation"
+        },
+        {
+          "name": "Meeting_Notes_Team_4",
+          "id": "14KfoJ_KtgPU_X9sh4zuRnrj_XZZWTpHdJJJIpZh0UZ4",
+          "link": "https://docs.google.com/document/d/14KfoJ_KtgPU_X9sh4zuRnrj_XZZWTpHdJJJIpZh0UZ4/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Literature_Review_Team_4",
+          "id": "1ZobycX4pkblt_IIAY4XboXk9RO9KiZ8Wv2xmyOQe3zQ",
+          "link": "https://docs.google.com/document/d/1ZobycX4pkblt_IIAY4XboXk9RO9KiZ8Wv2xmyOQe3zQ/edit?usp=drivesdk",
+          "type": "document"
+        }
+      ],
+      "whatsapp_group": "https://chat.whatsapp.com/G5ocJeK5GgjCFBVBseVcre",
+      "gmail_members": 3,
+      "total_members": 4,
+      "status": "success"
+    },
+    {
+      "team_name": "Team_5",
+      "topic": "Topic_5",
+      "topic_description": "TBD - Topic 5",
+      "folder_id": "1vgf2jvKYNJu9EO2eD8S_sOOvWSIVL_Dw",
+      "folder_link": "https://drive.google.com/drive/folders/1vgf2jvKYNJu9EO2eD8S_sOOvWSIVL_Dw",
+      "members": [
+        {
+          "name": "MAN Wai Yin",
+          "id": "24202509",
+          "gmail": "manyin201612@gmail.com",
+          "whatsapp": "95821706"
+        },
+        {
+          "name": "Chan Chi Ki",
+          "id": "23233885",
+          "gmail": "cks171302@gmail.com",
+          "whatsapp": "91845208"
+        },
+        {
+          "name": "Tag Tsz Tung",
+          "id": "23230371",
+          "gmail": "jessie.one.air@gmail.com",
+          "whatsapp": "60485775"
+        },
+        {
+          "name": "HO Chun Chit",
+          "id": "24202495",
+          "gmail": "tony030824@gmail.com",
+          "whatsapp": "54819060"
+        },
+        {
+          "name": "Xu Jingyi",
+          "id": "24205397",
+          "gmail": "zjldbzq1314@gmail.com",
+          "whatsapp": "84902278"
+        },
+        {
+          "name": "Cheung Kwun Ho",
+          "id": "24219169",
+          "gmail": "",
+          "whatsapp": "65733021"
+        }
+      ],
+      "files": [
+        {
+          "name": "Project_Proposal_Team_5",
+          "id": "1SKQGnfh5E8DhQR0Srpx2sVDlThV_aTgGGFtTIWFNq0s",
+          "link": "https://docs.google.com/document/d/1SKQGnfh5E8DhQR0Srpx2sVDlThV_aTgGGFtTIWFNq0s/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Data_Collection_Plan_Team_5",
+          "id": "1Jt4fzdF1oRmRqmijTINHbFosL3k0YKbImt7R3tR-bcM",
+          "link": "https://docs.google.com/document/d/1Jt4fzdF1oRmRqmijTINHbFosL3k0YKbImt7R3tR-bcM/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_5",
+          "id": "1IONx37SiBtYjOUdubESyqSBw5Cj570eGrv7bvRHWr-E",
+          "link": "https://docs.google.com/spreadsheets/d/1IONx37SiBtYjOUdubESyqSBw5Cj570eGrv7bvRHWr-E/edit?usp=drivesdk",
+          "type": "spreadsheet"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_5",
+          "id": "1IONx37SiBtYjOUdubESyqSBw5Cj570eGrv7bvRHWr-E",
+          "link": "https://docs.google.com/spreadsheets/d/1IONx37SiBtYjOUdubESyqSBw5Cj570eGrv7bvRHWr-E/edit?usp=drivesdk",
+          "type": "presentation"
+        },
+        {
+          "name": "Meeting_Notes_Team_5",
+          "id": "1t3TC1oeYZCpWmwi7-W8ZlCioV3EUzapQKGnkaKczHII",
+          "link": "https://docs.google.com/document/d/1t3TC1oeYZCpWmwi7-W8ZlCioV3EUzapQKGnkaKczHII/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Literature_Review_Team_5",
+          "id": "1Yvq_8cChdYU7CagNlGZXJerReoNAGg1stVEGHkjtcWA",
+          "link": "https://docs.google.com/document/d/1Yvq_8cChdYU7CagNlGZXJerReoNAGg1stVEGHkjtcWA/edit?usp=drivesdk",
+          "type": "document"
+        }
+      ],
+      "whatsapp_group": "https://chat.whatsapp.com/E93BYRjp2FuClTcmzVxPc0",
+      "gmail_members": 5,
+      "total_members": 6,
+      "status": "success"
+    },
+    {
+      "team_name": "Team_6",
+      "topic": "Topic_2",
+      "topic_description": "TBD - Topic 2",
+      "folder_id": "1WlruCUvqQ1IO5EOmYbUX0B4vMjF-zCNo",
+      "folder_link": "https://drive.google.com/drive/folders/1WlruCUvqQ1IO5EOmYbUX0B4vMjF-zCNo",
+      "members": [
+        {
+          "name": "Tam Tin Chun",
+          "id": "23236353",
+          "gmail": "tamtinchun@gmail.com",
+          "whatsapp": "92250633"
+        },
+        {
+          "name": "Chan Dik On",
+          "id": "23230851",
+          "gmail": "chandikon7@gmail.com",
+          "whatsapp": "44144124"
+        },
+        {
+          "name": "Wong Chun Hang",
+          "id": "23213116",
+          "gmail": "qazwedc12369@gmail.com",
+          "whatsapp": "67351119"
+        }
+      ],
+      "files": [
+        {
+          "name": "Project_Proposal_Team_6",
+          "id": "16HCj1BExYTPoDLCw85JCxJWFpp6a6PwCNg-yQ6RInSk",
+          "link": "https://docs.google.com/document/d/16HCj1BExYTPoDLCw85JCxJWFpp6a6PwCNg-yQ6RInSk/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Data_Collection_Plan_Team_6",
+          "id": "1TaZaXUMspZEllNUPgP0cSx5jnC6uR6nmNcpdEXt8Vtg",
+          "link": "https://docs.google.com/document/d/1TaZaXUMspZEllNUPgP0cSx5jnC6uR6nmNcpdEXt8Vtg/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_6",
+          "id": "1Oth2HLaW1ztF-nqujYtIsTbjxp1RXBExUVDfwtl20AM",
+          "link": "https://docs.google.com/spreadsheets/d/1Oth2HLaW1ztF-nqujYtIsTbjxp1RXBExUVDfwtl20AM/edit?usp=drivesdk",
+          "type": "spreadsheet"
+        },
+        {
+          "name": "Analysis_Worksheet_Team_6",
+          "id": "1Oth2HLaW1ztF-nqujYtIsTbjxp1RXBExUVDfwtl20AM",
+          "link": "https://docs.google.com/spreadsheets/d/1Oth2HLaW1ztF-nqujYtIsTbjxp1RXBExUVDfwtl20AM/edit?usp=drivesdk",
+          "type": "presentation"
+        },
+        {
+          "name": "Meeting_Notes_Team_6",
+          "id": "1aZDi-WT-gRN1UYSdioiD9UCMZS0pmLiDwFZ0rR7xCrk",
+          "link": "https://docs.google.com/document/d/1aZDi-WT-gRN1UYSdioiD9UCMZS0pmLiDwFZ0rR7xCrk/edit?usp=drivesdk",
+          "type": "document"
+        },
+        {
+          "name": "Literature_Review_Team_6",
+          "id": "1eyr2zNqE38qHLZRgqljJfl7VKx0Fwc4odIKYC6nwITQ",
+          "link": "https://docs.google.com/document/d/1eyr2zNqE38qHLZRgqljJfl7VKx0Fwc4odIKYC6nwITQ/edit?usp=drivesdk",
+          "type": "document"
+        }
+      ],
+      "whatsapp_group": "https://chat.whatsapp.com/E9hLnEJmoy11GPrzlSGYrj",
+      "gmail_members": 3,
+      "total_members": 3,
+      "status": "success"
+    }
+  ]
+}

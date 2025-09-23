@@ -1,0 +1,215 @@
+Case Study II: Evaluating the 
+Efficiency of Bus Route Adjustments: 
+City bus No. 56
+
+GCAP3226 2025/09/23
+
+1
+
+Structure of Case Study II
+
+◦ Background
+◦ Simulation design
+◦ Random component in the simulation
+◦ Results Interpretation
+◦ Recommendations
+
+◦ In-class Exercise
+
+2
+
+Bus route planning programme
+
+3
+
+Criteria for Increasing Bus Frequency
+“For individual bus routes, if the passenger load factor reaches 90% 
+during the busiest half-hour and 75% during the busiest hour of peak 
+periods, or 60% during the busiest hour of off-peak periods, the 
+department and the franchised bus company will consider increasing 
+the service frequency.”
+
+4
+
+Yan Po Rd.
+
+5
+
+Questions
+
+The passenger load factor of City Bus No. 56, as reported in the proposal, is 32% 
+during the busiest hour (before adjustment). However, it is unclear:
+
+oHow this passenger load factor is defined
+
+oWhen the busiest hour occurs
+
+oWhether the 32% represents an average across different stops and shifts
+
+oHow an increase in bus frequency is justified given a passenger load factor of 
+32%
+
+6
+
+7
+
+Objectives
+oTo develop and analyze a simulation of Bus Route 56 operations during the 
+morning using field data and estimated arrival times (ETA) from 
+https://data.gov.hk/en/.
+
+oTo assess the justification for route and frequency adjustments to Bus No.56 by 
+estimating the seat utilization rate via simulation.
+
+oTo provide evidence-based policy recommendations.
+
+8
+
+Key processes 
+
+To calculate the seat utilization rate, we need to count the passengers on bus at each 
+stop. 
+
+oThe bus stops at every station; the travel time between each pair of stops is random.
+
+oAt each stop, the number of waiting passengers is random.
+
+oAt each stop, the number of passengers getting off is random.
+
+9
+
+Travel time
+oThe bus travel time between each pair of stops is modelled as a random variable 
+drawn from a normal distribution, with the mean and standard deviation 
+estimated from sample data.
+
+oUsing the API, we collected ETA at each stop for 30 trips of Bus No. 56.
+
+oWe then calculated the mean and standard deviation of travel times between 
+each pair of stops. For each simulation run, we sampled travel times from the 
+corresponding normal distributions to represent the bus travel times between 
+stops.
+
+10
+
+Number of waiting passengers
+
+oThe number of waiting passengers at each stop is modelled as a random 
+variable drawn from a Poisson distribution.
+
+o𝝀  − the average number of occurrences in the 
+time interval. It is estimated by field observation.
+
+11
+
+Number of passengers getting off
+oThe number of passengers getting off at each stop is modelled as a random 
+variable drawn from a Binomial distribution.
+
+12
+
+SimPy
+
+1. Initialization: Global variables are reset for each simulation run
+
+2. Environment Creation: A new SimPy environment is created
+
+3. Process Scheduling: Multiple bus processes are scheduled with different departure 
+times
+
+4. Concurrent Execution: All bus processes run concurrently, each following their route
+
+5. Event-Driven Progression: Each bus process yields control during travel times, 
+allowing other buses to operate
+
+6. Data Collection: Each process records utilization data as it progresses
+
+7. Simulation End: Runs until all buses complete their journeys
+
+13
+
+Result - existing forward (after adjustment)
+
+In 1000 simulation:
+
+oMedian of seat 
+utilization: 
+
+12% - 34%
+
+14
+
+Result - existing return (after adjustment)
+
+In 1000 simulation:
+
+oMedian of seat 
+utilization: 
+
+5% - 34%
+
+15
+
+Result – forward, before adjustment
+
+In 1000 simulation:
+
+oMedian of seat 
+utilization: 
+
+18% - 56%, based 
+on estimated 
+passenger flow at 
+the removed bus 
+stops.
+
+16
+
+Result – return, before adjustment
+
+In 1000 simulation:
+
+oMedian of seat 
+utilization: 
+
+8% - 58%
+
+17
+
+Result - Summary
+
+oThe adjustment appears to have reduced overall seat utilization rate. 
+
+oThe decision to increase bus frequency should also be analysed from the 
+perspective of operating costs.
+
+18
+
+Enquiry to Department of Transportation
+
+1. 
+
+Operational and Passenger Flow Data:
+
+What types of operational and passenger flow data (e.g., stop-level boarding and 
+alighting, peak/off-peak passenger counts) were collected and analyzed when assessing 
+the rerouting and schedule changes for Routes 56 and 56A?
+2. 
+
+Service Quality Evaluation:
+
+What quantitative models or criteria (such as load factor thresholds, predicted waiting 
+times, or cost-benefit analyses) were used to evaluate whether the service 
+modifications would maintain or improve passenger service quality?
+3. 
+
+Data Accessibility:
+
+Are the relevant operational datasets, consultation summaries, or evaluation models 
+available for public or academic review? If so, how can these be accessed? If not, would 
+the Transport Department consider releasing anonymized or summarized data in 
+accordance with the Code on Access to Information?
+
+19
+
+

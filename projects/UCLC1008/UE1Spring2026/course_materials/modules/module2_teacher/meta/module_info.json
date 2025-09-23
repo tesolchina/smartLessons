@@ -1,0 +1,19 @@
+{
+  "module_name": "module2_teacher",
+  "description": "Module 2 - Teacher's Copy",
+  "original_pdf": "module2forTeacher.pdf",
+  "created_date": "2025-09-05T15:20:48.439820",
+  "processing_status": {
+    "pdf_exists": true,
+    "markdown_converted": false,
+    "html_converted": false,
+    "xml_converted": false
+  },
+  "file_counts": {
+    "original": 1,
+    "markdown": 0,
+    "html": 0,
+    "xml": 0,
+    "images": 0
+  }
+}

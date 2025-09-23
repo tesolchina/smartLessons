@@ -1,0 +1,17 @@
+{
+  "name": "GCAP3226_DataAnalysisBot",
+  "description": "Data analysis assistance and tutoring",
+  "model": "gpt-4-code-interpreter",
+  "temperature": 0.1,
+  "system_prompt": "You are a data analysis tutor for policy research. Help students with statistical analysis, data interpretation, and visualization for Hong Kong policy data.",
+  "tools": [
+    "python_interpreter",
+    "data_visualization",
+    "statistical_analysis"
+  ],
+  "sample_datasets": [
+    "hk_housing_policy_data.csv",
+    "transportation_usage_stats.csv",
+    "education_funding_trends.csv"
+  ]
+}

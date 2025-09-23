@@ -1,0 +1,127 @@
+LANG0036 Project Reorganization Plan
+========================================
+
+Total files to reorganize: 1004
+
+
+ARCHIVES (4 files):
+----------------------------------------
+  03_instructor_tools/ai_assistants/.env -> 09_archives/.env
+  new-bytewise-frontend/.editorconfig -> 09_archives/.editorconfig
+  new-bytewise-frontend/.gitignore -> 09_archives/.gitignore
+  new-bytewise-frontend/.gitattributes -> 09_archives/.gitattributes
+
+ASSESSMENT (77 files):
+----------------------------------------
+  EEGC AY 2025-26/Course Files/EEGC2526 Assessment Guidelines.pdf -> 02_assessments/materials/EEGC2526 Assessment Guidelines.pdf
+  EEGC AY 2025-26/Course Files/LANG 0036 EEGC (25-26) Rubrics.docx -> 02_assessments/materials/LANG 0036 EEGC (25-26) Rubrics.docx
+  EEGC AY 2025-26/Course Files/EEGC2526 Assessment Guidelines.docx -> 02_assessments/materials/EEGC2526 Assessment Guidelines.docx
+  EEGC AY 2025-26/Course Files/LANG 0036 EEGC (25-26) Rubrics.pdf -> 02_assessments/materials/LANG 0036 EEGC (25-26) Rubrics.pdf
+  EEGC AY 2025-26/Assessments and Rubrics (Confidential)/Pre-course Video/Pre-course Video.docx -> 02_assessments/materials/Pre-course Video.docx
+  EEGC AY 2025-26/Assessments and Rubrics (Confidential)/Pre-course Video/Pre-course Video Rubrics.pdf -> 02_assessments/materials/Pre-course Video Rubrics.pdf
+  EEGC AY 2025-26/Assessments and Rubrics (Confidential)/Pre-course Video/LANG0036 EEGC (25-26) Post Video on Padlet (Student).pdf -> 02_assessments/materials/LANG0036 EEGC (25-26) Post Video on Padlet (Student).pdf
+  EEGC AY 2025-26/Assessments and Rubrics (Confidential)/Global Dialogues/LANG0036 EEGC (25-26) Global Dialogue Reflection (Template) .docx -> 02_assessments/materials/LANG0036 EEGC (25-26) Global Dialogue Reflection (Template) .docx
+  EEGC AY 2025-26/Assessments and Rubrics (Confidential)/Global Dialogues/LANG0036 EEGC (25-26) Global Dialogue Reflection (Sample) .docx -> 02_assessments/materials/LANG0036 EEGC (25-26) Global Dialogue Reflection (Sample) .docx
+  EEGC AY 2025-26/Assessments and Rubrics (Confidential)/Global Dialogues/Global Dialogues 2025-26 Registration.pdf -> 02_assessments/materials/Global Dialogues 2025-26 Registration.pdf
+  ... and 67 more files
+
+COMMUNICATION (2 files):
+----------------------------------------
+  emails/Week 4 EEGC 25-26.msg -> 08_communication/Week 4 EEGC 25-26.msg
+  emails/LANG0036 (ALL) [2025 S1]_ Starts in a week_ Global Dialogue II_ Sustainable Consumption.msg -> 08_communication/LANG0036 (ALL) [2025 S1]_ Starts in a week_ Global Dialogue II_ Sustainable Consumption.msg
+
+COURSE CONTENT (58 files):
+----------------------------------------
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_15_image_09.png -> 01_course_content/week04_simulation/slide_15_image_09.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_03_image_00.png -> 01_course_content/week04_simulation/slide_03_image_00.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_17_image_11.png -> 01_course_content/week04_simulation/slide_17_image_11.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_05_image_01.png -> 01_course_content/week04_simulation/slide_05_image_01.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_14_image_08.png -> 01_course_content/week04_simulation/slide_14_image_08.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_11_image_04.png -> 01_course_content/week04_simulation/slide_11_image_04.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_16_image_10.png -> 01_course_content/week04_simulation/slide_16_image_10.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_10_image_03.png -> 01_course_content/week04_simulation/slide_10_image_03.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_07_image_02.png -> 01_course_content/week04_simulation/slide_07_image_02.png
+  01_course_content/week04_simulation/extracted_materials/extracted_ppt_content/slide_12_image_07.png -> 01_course_content/week04_simulation/slide_12_image_07.png
+  ... and 48 more files
+
+DATA (77 files):
+----------------------------------------
+  hk_wind_data_20250908_071302.csv -> 05_data_resources/datasets/hk_wind_data_20250908_071302.csv
+  hk_wind_data_20250907.csv -> 05_data_resources/datasets/hk_wind_data_20250907.csv
+  reorganization_report.json -> 05_data_resources/datasets/reorganization_report.json
+  hk_wind_data_20250908.csv -> 05_data_resources/datasets/hk_wind_data_20250908.csv
+  05_scripts_utilities/automation/config.json -> 05_data_resources/datasets/config.json
+  05_scripts_utilities/automation/credentials/token.json -> 05_data_resources/datasets/token.json
+  05_scripts_utilities/automation/credentials/client_credentials.json -> 05_data_resources/datasets/client_credentials.json
+  01_course_content/week03_methods/resources/GCAP3226_week3.csv -> 05_data_resources/datasets/GCAP3226_week3.csv
+  03_instructor_tools/ai_assistants/pipeline_report_20250916_140401.json -> 05_data_resources/datasets/pipeline_report_20250916_140401.json
+  03_instructor_tools/ai_assistants/pipeline_report_20250916_134519.json -> 05_data_resources/datasets/pipeline_report_20250916_134519.json
+  ... and 67 more files
+
+DOCUMENTATION (233 files):
+----------------------------------------
+  0notes.md -> 07_documentation/0notes.md
+  PY_SCRIPTS_MOVED.md -> 07_documentation/PY_SCRIPTS_MOVED.md
+  reorganization_summary.md -> 07_documentation/reorganization_summary.md
+  README.md -> 07_documentation/README.md
+  roadmap.md -> 07_documentation/roadmap.md
+  README_backup_20250923_160710.md -> 07_documentation/README_backup_20250923_160710.md
+  suggested_prompts.md -> 07_documentation/suggested_prompts.md
+  implementation_guide.md -> 07_documentation/implementation_guide.md
+  chatbot_system_prompt.md -> 07_documentation/chatbot_system_prompt.md
+  assessments/06_writing_assessment.md -> 07_documentation/06_writing_assessment.md
+  ... and 223 more files
+
+MEDIA (53 files):
+----------------------------------------
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 11 Maginalisation in Education Access (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 11 Maginalisation in Education Access (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 02 Sustainable Consumption (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 02 Sustainable Consumption (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 03 Household Waste (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 03 Household Waste (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 01 Fast Fashion (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 01 Fast Fashion (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 06 Media and Technology (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 06 Media and Technology (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 07 Gender Equality (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 07 Gender Equality (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 04 Climate Change and Environment (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 04 Climate Change and Environment (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 10 Intercultural Communication (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 10 Intercultural Communication (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 09 Food and Equity (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 09 Food and Equity (PPT).pptx
+  EEGC AY 2025-26/PPTs/LANG0036 EEGC (25-26) Module 05 Global Labour and Employment (PPT).pptx -> 06_media_files/LANG0036 EEGC (25-26) Module 05 Global Labour and Employment (PPT).pptx
+  ... and 43 more files
+
+OTHER (9 files):
+----------------------------------------
+  05_scripts_utilities/content_extraction/src/chatParticipant.ts -> 10_miscellaneous/chatParticipant.ts
+  05_scripts_utilities/content_extraction/src/extension.ts -> 10_miscellaneous/extension.ts
+  05_scripts_utilities/content_extraction/src/openRouterClient.ts -> 10_miscellaneous/openRouterClient.ts
+  01_course_content/week04_simulation/lectures/week4.vtt -> 10_miscellaneous/week4.vtt
+  new-bytewise-frontend/public/favicon.ico -> 10_miscellaneous/favicon.ico
+  new-bytewise-frontend/src/assets/vue.svg -> 10_miscellaneous/vue.svg
+  week3/quizSustainableConsumption.xml -> 10_miscellaneous/quizSustainableConsumption.xml
+  course_materials/OneDrive_2025-09-23.zip -> 10_miscellaneous/OneDrive_2025-09-23.zip
+  04_data_resources/datasets/datasets/open_data/air_quality/Smart_Lampposts_Air_Quality_Data__Smart_Lampposts_Air_Quality_Realtime_Data.dat -> 10_miscellaneous/Smart_Lampposts_Air_Quality_Data__Smart_Lampposts_Air_Quality_Realtime_Data.dat
+
+SCRIPTS (64 files):
+----------------------------------------
+  comprehensive_reorganization.py -> 04_scripts_tools/python/comprehensive_reorganization.py
+  simple_reorganization.py -> 04_scripts_tools/python/simple_reorganization.py
+  merge_folders.py -> 04_scripts_tools/python/merge_folders.py
+  extract_and_merge.py -> 04_scripts_tools/python/extract_and_merge.py
+  05_scripts_utilities/content_extraction/fetch_from_ckan.py -> 04_scripts_tools/python/fetch_from_ckan.py
+  05_scripts_utilities/content_extraction/analyze_open_data_catalog.py -> 04_scripts_tools/python/analyze_open_data_catalog.py
+  05_scripts_utilities/content_extraction/ckan_catalog_overview.py -> 04_scripts_tools/python/ckan_catalog_overview.py
+  05_scripts_utilities/content_extraction/consolidate_materials.py -> 04_scripts_tools/python/consolidate_materials.py
+  05_scripts_utilities/content_extraction/preview_consolidation.py -> 04_scripts_tools/python/preview_consolidation.py
+  05_scripts_utilities/content_extraction/ckan_datasets_catalog.py -> 04_scripts_tools/python/ckan_datasets_catalog.py
+  ... and 54 more files
+
+STUDENT WORK (427 files):
+----------------------------------------
+  EEGC AY 2025-26/Materials for Students (Word)/3 S.docx -> 03_student_workspace/individual/3 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/1 S.docx -> 03_student_workspace/individual/1 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/9 S.docx -> 03_student_workspace/individual/9 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/5 S.docx -> 03_student_workspace/individual/5 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/10 S.docx -> 03_student_workspace/individual/10 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/7 S.docx -> 03_student_workspace/individual/7 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/2 S.docx -> 03_student_workspace/individual/2 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/11 S.docx -> 03_student_workspace/individual/11 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/8 S.docx -> 03_student_workspace/individual/8 S.docx
+  EEGC AY 2025-26/Materials for Students (Word)/4 S.docx -> 03_student_workspace/individual/4 S.docx
+  ... and 417 more files

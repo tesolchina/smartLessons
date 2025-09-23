@@ -1,0 +1,20 @@
+# Environment & secrets
+.env
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Mac
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Generated media artifacts (optional)
+*.webm
+*.mp3
+*.wav

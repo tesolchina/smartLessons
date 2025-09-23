@@ -1,0 +1,18 @@
+{
+  "name": "GCAP3226_CourseAssistant",
+  "description": "General course support and Q&A",
+  "model": "gpt-4",
+  "temperature": 0.3,
+  "system_prompt": "You are a helpful course assistant for GCAP 3226: Empowering Citizens through Data. Help students with course logistics, assignments, and general questions.",
+  "knowledge_base": [
+    "course_syllabus.md",
+    "assignment_instructions.md",
+    "frequently_asked_questions.md"
+  ],
+  "features": [
+    "syllabus_qa",
+    "assignment_help",
+    "schedule_management",
+    "general_support"
+  ]
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Integration Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+        }
+        
+        .avatar-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .control-group {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .control-group h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .text-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .text-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .integration-code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 style="text-align: center; margin-bottom: 30px;">🤖 Avatar Animation Demo</h1>
+        
+        <div class="avatar-section">
+            <div id="avatar-container"></div>
+            <p style="margin-top: 15px; opacity: 0.8;">Click the avatar or use controls below</p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <h3>🎭 Animations</h3>
+                <button class="btn" onclick="avatar.playAnimation('bounce')">Bounce</button>
+                <button class="btn" onclick="avatar.playAnimation('shake')">Shake</button>
+                <button class="btn" onclick="avatar.playAnimation('spin')">Spin</button>
+                <button class="btn" onclick="avatar.playAnimation('glow')">Glow</button>
+                <button class="btn" onclick="avatar.playAnimation('pulse')">Pulse</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>😊 Emotions</h3>
+                <button class="btn" onclick="avatar.showEmotion('happy')">Happy</button>
+                <button class="btn" onclick="avatar.showEmotion('thinking')">Thinking</button>
+                <button class="btn" onclick="avatar.showEmotion('excited')">Excited</button>
+                <button class="btn" onclick="avatar.showEmotion('confused')">Confused</button>
+                <button class="btn" onclick="avatar.showEmotion('sleeping')">Sleeping</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>🎤 Speech</h3>
+                <input type="text" class="text-input" id="speechText" 
+                       placeholder="Enter text to speak..." 
+                       value="Hello! I am your AI avatar assistant.">
+                <button class="btn" onclick="speakText()">Speak Text</button>
+                <button class="btn" onclick="avatar.stopSpeaking()">Stop Speaking</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>⚙️ Settings</h3>
+                <button class="btn" onclick="avatar.setSize(80)">Small (80px)</button>
+                <button class="btn" onclick="avatar.setSize(120)">Medium (120px)</button>
+                <button class="btn" onclick="avatar.setSize(160)">Large (160px)</button>
+                <button class="btn" onclick="toggleImageMode()">Toggle Image/Emoji</button>
+            </div>
+        </div>
+        
+        <div class="integration-code">
+            <h3>💻 Integration Code:</h3>
+            <pre>// Include the avatar animation script
+&lt;script src="avatar-assets/avatar-animation.js"&gt;&lt;/script&gt;
+
+// Create avatar instance
+const avatar = new AvatarAnimation('avatar-container', {
+    size: 120,
+    avatarType: 'image', // or 'emoji'
+    imagePath: 'avatar-assets/tex/owl.png',
+    defaultEmoji: '�',
+    enableSpeech: true
+});
+
+// Use avatar methods
+avatar.speak('Hello world!');
+avatar.playAnimation('bounce');
+avatar.showEmotion('happy');</pre>
+        </div>
+    </div>
+
+    <script src="avatar-animation.js"></script>
+    <script>
+        // Initialize avatar
+        const avatar = new AvatarAnimation('avatar-container', {
+            size: 120,
+            avatarType: 'image',
+            imagePath: 'tex/owl.png',
+            defaultEmoji: '�',
+            enableSpeech: true
+        });
+        
+        let isImageMode = true;
+        
+        function speakText() {
+            const text = document.getElementById('speechText').value;
+            if (text.trim()) {
+                avatar.speak(text);
+            }
+        }
+        
+        function toggleImageMode() {
+            isImageMode = !isImageMode;
+            if (isImageMode) {
+                avatar.setImage('tex/owl.png');
+            } else {
+                avatar.setEmoji('�');
+            }
+        }
+        
+        // Demo some automatic animations
+        setTimeout(() => {
+            avatar.playAnimation('pulse');
+        }, 2000);
+        
+        setTimeout(() => {
+            avatar.speak('Welcome to the avatar animation system!');
+        }, 4000);
+        
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    avatar.playAnimation('bounce');
+                    break;
+                case 'Enter':
+                    speakText();
+                    break;
+                case 'Escape':
+                    avatar.stopSpeaking();
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

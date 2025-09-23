@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Audio Generator</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div id="app">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Header -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">🎵 Vue Audio Generator</h1>
+                <p class="text-gray-600">Load scripts and generate playable audio files</p>
+            </div>
+
+            <!-- Script Selection -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">📝 Demo Scripts</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <button 
+                        v-for="(script, key) in scripts" 
+                        :key="key"
+                        @click="loadScript(key)"
+                        :class="['p-4 border-2 rounded-lg transition-colors', 
+                                currentScript === key ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-blue-400']">
+                        <h3 class="font-semibold text-blue-800">{{ script.icon }} {{ script.title }}</h3>
+                        <p class="text-sm text-gray-600">{{ script.description }}</p>
+                    </button>
+                </div>
+                
+                <!-- Current Script Display -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="font-semibold mb-2">Current Script:</h3>
+                    <p class="text-gray-700 leading-relaxed">{{ currentScriptText }}</p>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Words: {{ wordCount }} | Estimated Duration: {{ estimatedDuration }}s
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Generation -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">🎤 Audio Generation</h2>
+                
+                <!-- Generation Controls -->
+                <div class="space-y-4">
+                    <button 
+                        @click="generateAudio"
+                        :disabled="isGenerating"
+                        :class="['w-full py-3 px-6 rounded-lg font-bold text-white transition-colors',
+                                isGenerating ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700']">
+                        <span v-if="isGenerating">🎵 Generating Audio...</span>
+                        <span v-else>🎵 Generate Audio</span>
+                    </button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div v-if="isGenerating" class="mt-4">
+                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                        <span>{{ progressLabel }}</span>
+                        <span>{{ progress }}%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div 
+                            class="bg-blue-600 h-3 rounded-full transition-all duration-500"
+                            :style="{ width: progress + '%' }">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Player -->
+                <div v-if="audioUrl" class="mt-6">
+                    <h3 class="font-semibold mb-2">🎵 Generated Audio</h3>
+                    <audio controls class="w-full mb-2">
+                        <source :src="audioUrl" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="text-sm text-gray-600">
+                        File size: {{ audioFileSize }} | Duration: {{ audioDuration }}s
+                    </div>
+                    <button 
+                        @click="downloadAudio"
+                        class="mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                        📥 Download Audio
+                    </button>
+                </div>
+            </div>
+
+            <!-- Generation Log -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">📋 Generation Log</h2>
+                <div class="bg-gray-50 rounded-lg p-4 max-h-64 overflow-y-auto">
+                    <div 
+                        v-for="(log, index) in logs" 
+                        :key="index"
+                        class="text-sm font-mono mb-1">
+                        <span class="text-gray-500">[{{ log.timestamp }}]</span>
+                        <span class="ml-2">{{ log.message }}</span>
+                    </div>
+                    <div v-if="logs.length === 0" class="text-gray-500 text-sm">
+                        Ready to generate audio...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    // Demo Scripts
+                    scripts: {
+                        'ai-education': {
+                            icon: '🤖',
+                            title: 'AI in Education',
+                            description: 'How AI transforms learning',
+                            text: 'Welcome to today\'s lesson on artificial intelligence in education. AI is revolutionizing how we learn and teach. First, let\'s explore how AI personalizes learning for each student. Next, we\'ll see how it improves student engagement through interactive content. Then, we\'ll discuss how AI provides real-time feedback to help students learn faster. Finally, we\'ll look at how AI scales educational content to reach more learners worldwide.'
+                        },
+                        'climate-change': {
+                            icon: '🌍',
+                            title: 'Climate Change',
+                            description: 'Understanding global warming',
+                            text: 'Climate change is one of the most pressing challenges of our time. Rising global temperatures are causing dramatic shifts in weather patterns worldwide. First, we\'ll examine the primary causes of greenhouse gas emissions. Second, we\'ll explore the visible impacts on our environment today. Third, we\'ll discuss innovative solutions being developed globally. Finally, we\'ll look at how individuals can make a meaningful difference.'
+                        },
+                        'space-exploration': {
+                            icon: '🚀',
+                            title: 'Space Exploration',
+                            description: 'Journey to the stars',
+                            text: 'Space exploration represents humanity\'s greatest adventure into the unknown. From the first moon landing to Mars rovers, we continue pushing boundaries. First, let\'s review the historic milestones that brought us here. Next, we\'ll examine current missions exploring our solar system. Then, we\'ll discuss future plans for human settlement on other planets. Finally, we\'ll explore how space technology benefits life on Earth.'
+                        }
+                    },
+                    
+                    // State
+                    currentScript: 'ai-education',
+                    isGenerating: false,
+                    progress: 0,
+                    progressLabel: '',
+                    audioUrl: null,
+                    audioBlob: null,
+                    audioFileSize: '',
+                    audioDuration: 0,
+                    logs: []
+                }
+            },
+
+            computed: {
+                currentScriptText() {
+                    return this.scripts[this.currentScript]?.text || '';
+                },
+                wordCount() {
+                    return this.currentScriptText.split(/\s+/).length;
+                },
+                estimatedDuration() {
+                    return Math.round(this.wordCount * 0.4); // ~0.4 seconds per word
+                }
+            },
+
+            methods: {
+                loadScript(scriptKey) {
+                    this.currentScript = scriptKey;
+                    this.log(`📝 Loaded script: ${this.scripts[scriptKey].title}`);
+                    
+                    // Clear previous audio
+                    this.audioUrl = null;
+                    this.audioBlob = null;
+                    this.audioFileSize = '';
+                    this.audioDuration = 0;
+                },
+
+                async generateAudio() {
+                    if (this.isGenerating) return;
+                    
+                    this.isGenerating = true;
+                    this.progress = 0;
+                    this.audioUrl = null;
+                    this.audioBlob = null;
+                    
+                    try {
+                        this.log('🎵 Starting audio generation...');
+                        this.updateProgress(10, 'Initializing...');
+                        await this.sleep(500);
+                        
+                        this.updateProgress(30, 'Processing script...');
+                        await this.sleep(500);
+                        
+                        this.updateProgress(60, 'Generating speech audio...');
+                        const audioResult = await this.createSpeechAudio(this.currentScriptText);
+                        
+                        this.updateProgress(90, 'Finalizing audio...');
+                        await this.sleep(500);
+                        
+                        if (audioResult && audioResult.blob) {
+                            this.audioBlob = audioResult.blob;
+                            this.audioUrl = URL.createObjectURL(audioResult.blob);
+                            this.audioFileSize = this.formatFileSize(audioResult.blob.size);
+                            this.audioDuration = Math.round(audioResult.duration);
+                            
+                            this.log(`✅ Audio generated successfully (${this.audioFileSize}, ~${this.audioDuration}s)`);
+                            this.updateProgress(100, 'Audio complete!');
+                        } else {
+                            throw new Error('Audio generation failed');
+                        }
+                        
+                    } catch (error) {
+                        this.log(`❌ Audio generation failed: ${error.message}`);
+                    } finally {
+                        await this.sleep(1000);
+                        this.isGenerating = false;
+                        this.progress = 0;
+                        this.progressLabel = '';
+                    }
+                },
+
+                async createSpeechAudio(text) {
+                    try {
+                        this.log('🎤 Creating procedural speech-like audio...');
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        const duration = Math.max(text.split(/\s+/).length * 0.42, 6); // approximate speaking rate
+                        const sampleRate = 22050; // downsample for smaller file
+                        const frameCount = Math.floor(sampleRate * duration);
+                        const numChannels = 1;
+                        const buffer = audioContext.createBuffer(numChannels, frameCount, sampleRate);
+                        const words = text.split(/\s+/);
+                        const wordDuration = duration / words.length;
+
+                        const data = buffer.getChannelData(0);
+                        for (let i = 0; i < frameCount; i++) {
+                            const time = i / sampleRate;
+                            const wordIndex = Math.floor(time / wordDuration);
+                            const timeInWord = (time % wordDuration) / wordDuration;
+                            let sample = 0;
+                            if (wordIndex < words.length) {
+                                const word = words[wordIndex];
+                                const char = word[Math.floor(timeInWord * word.length)] || 'a';
+                                let baseFreq, f1, f2;
+                                if ('aeiouAEIOU'.includes(char)) {
+                                    baseFreq = 140 + Math.sin(time * 2.7) * 25;
+                                    f1 = 700 + Math.sin(time * 5.1) * 180;
+                                    f2 = 1150 + Math.sin(time * 6.3) * 260;
+                                } else {
+                                    baseFreq = 110 + Math.sin(time * 3.3) * 18;
+                                    f1 = 500 + Math.sin(time * 4.7) * 140;
+                                    f2 = 1700 + Math.sin(time * 7.2) * 380;
+                                }
+                                const env = Math.sin(timeInWord * Math.PI) ** 1.2;
+                                const rhythm = 0.6 + 0.4 * Math.abs(Math.sin(time * 11));
+                                const amp = 0.3 * env * rhythm;
+                                sample = (
+                                    Math.sin(2 * Math.PI * baseFreq * time) * 0.5 +
+                                    Math.sin(2 * Math.PI * f1 * time) * 0.3 +
+                                    Math.sin(2 * Math.PI * f2 * time) * 0.15 +
+                                    (Math.random() - 0.5) * 0.1
+                                ) * amp;
+                                // brief attenuation early in word for plosive effect
+                                if (timeInWord < 0.05) sample *= timeInWord / 0.05;
+                            }
+                            const pauseFactor = (time % wordDuration) < (wordDuration * 0.08) ? 0.25 : 1.0;
+                            data[i] = sample * pauseFactor;
+                        }
+
+                        const wav = this.audioBufferToWav(buffer, numChannels, sampleRate);
+                        const blob = new Blob([wav], { type: 'audio/wav' });
+                        if (blob.size < 1024) {
+                            this.log('⚠️ Generated audio unexpectedly small');
+                        }
+                        this.log(`🎵 Procedural audio created: ${this.formatFileSize(blob.size)}`);
+                        return { blob, duration };
+                    } catch (error) {
+                        this.log(`❌ Speech audio creation failed: ${error.message}`);
+                        return null;
+                    }
+                },
+                audioBufferToWav(buffer, numChannels = 1, sampleRateOverride) {
+                    const length = buffer.length;
+                    const sampleRate = sampleRateOverride || buffer.sampleRate;
+                    const bytesPerSample = 2;
+                    const blockAlign = numChannels * bytesPerSample;
+                    const byteRate = sampleRate * blockAlign;
+                    const dataSize = length * bytesPerSample * numChannels;
+                    const bufferOut = new ArrayBuffer(44 + dataSize);
+                    const view = new DataView(bufferOut);
+
+                    const writeString = (off, str) => { for (let i=0;i<str.length;i++) view.setUint8(off+i, str.charCodeAt(i)); };
+                    writeString(0,'RIFF');
+                    view.setUint32(4,36+dataSize,true);
+                    writeString(8,'WAVE');
+                    writeString(12,'fmt ');
+                    view.setUint32(16,16,true); // PCM chunk size
+                    view.setUint16(20,1,true); // PCM
+                    view.setUint16(22,numChannels,true);
+                    view.setUint32(24,sampleRate,true);
+                    view.setUint32(28,byteRate,true);
+                    view.setUint16(32,blockAlign,true);
+                    view.setUint16(34,16,true); // bits per sample
+                    writeString(36,'data');
+                    view.setUint32(40,dataSize,true);
+
+                    let offset = 44;
+                    const channelData = [];
+                    for (let c=0;c<numChannels;c++) channelData.push(buffer.getChannelData(Math.min(c, buffer.numberOfChannels-1)));
+                    for (let i=0;i<length;i++) {
+                        for (let c=0;c<numChannels;c++) {
+                            const sample = Math.max(-1, Math.min(1, channelData[c][i]));
+                            view.setInt16(offset, sample * 0x7FFF, true);
+                            offset += 2;
+                        }
+                    }
+                    return bufferOut;
+                },
+
+                downloadAudio() {
+                    if (!this.audioBlob) return;
+                    
+                    const url = URL.createObjectURL(this.audioBlob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${this.currentScript}-audio.wav`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    this.log('📥 Audio downloaded');
+                },
+
+                updateProgress(percentage, label) {
+                    this.progress = percentage;
+                    this.progressLabel = label;
+                },
+
+                log(message) {
+                    const timestamp = new Date().toLocaleTimeString();
+                    this.logs.push({ timestamp, message });
+                    console.log(`[${timestamp}] ${message}`);
+                },
+
+                formatFileSize(bytes) {
+                    if (bytes === 0) return '0 Bytes';
+                    const k = 1024;
+                    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                    const i = Math.floor(Math.log(bytes) / Math.log(k));
+                    return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+                },
+
+                sleep(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+            },
+
+            mounted() {
+                this.log('🚀 Vue Audio Generator initialized');
+                this.log(`📝 Loaded script: ${this.scripts[this.currentScript].title}`);
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

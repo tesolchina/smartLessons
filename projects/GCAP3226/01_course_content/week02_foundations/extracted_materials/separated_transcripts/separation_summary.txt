@@ -1,0 +1,30 @@
+TRANSCRIPT SEPARATION SUMMARY
+==================================================
+
+SPEAKER ATTRIBUTION:
+- Simon Wang: Course instructor, technical content
+- Talia: Questionnaire methodology expert
+
+CONTENT BREAKDOWN:
+Simon Wang Sections:
+  • Course introduction and logistics
+  • Administrative interruptions
+  • Technical setup instructions
+  • Software configuration
+
+Talia Sections:
+  • Survey question design methodology
+  • Attitude measurement techniques
+  • Policy perception questionnaires
+  • Ordinal scale explanations
+
+SEPARATION METHODOLOGY:
+- Used LLM content analysis to ignore original speaker labels
+- Identified content themes and presentation styles
+- Split Chunk 2 at natural transition points
+- Maintained context while separating speakers
+
+FILES CREATED:
+- simon_wang_transcript.txt (Instructor content)
+- talia_transcript.txt (Questionnaire methodology)
+- separation_summary.txt (This summary)

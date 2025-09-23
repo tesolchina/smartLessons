@@ -1,0 +1,403 @@
+{
+  "consolidation_time": "2025-09-08T00:21:47.049960",
+  "consolidated_data": {
+    "fetch_time": "2025-09-08T00:21:44.300881",
+    "successful_sources": [
+      {
+        "url": "https://rss.weather.gov.hk/rss/CurrentWeather.xml",
+        "description": "HKO Current Weather RSS",
+        "data_points": 1
+      },
+      {
+        "url": "https://rss.weather.gov.hk/rss/WeatherWarningBulletin.xml",
+        "description": "HKO Weather Warning RSS",
+        "data_points": 2
+      },
+      {
+        "url": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "data_points": 9
+      }
+    ],
+    "failed_sources": [],
+    "wind_data": [
+      {
+        "timestamp": "2025-09-08T00:21:44.969261",
+        "source": "https://rss.weather.gov.hk/rss/CurrentWeather.xml",
+        "description": "HKO Current Weather RSS",
+        "category": "rss_feed",
+        "title": "Bulletin updated at 00:02 HKT 08/09/2025",
+        "content": "\n        \n         <img src=\"https://rss.weather.gov.hk/img/pic64.png\" style=\"vertical-align: middle;\">        <p>At \n        midnight \n               at the Hong Kong Observatory :<br/>\n        Air temperature : 27 degrees Celsius<br/>\n        Relative Humidity : 84 per cent<br/>\n\t\t <br/>\t\tWidespread heavy rain may affect Hong Kong in a couple of hours. Members of the public should be on the alert.<br/>\t\t\t\t\t\t\t\t        \t\t        \t\t\t\t\t\t\t\t\t\t    \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br/><font color=\"red\"><SPAN",
+        "pub_date": "Sun, 07 Sep 2025 16:02:00 GMT",
+        "type": "rss_item",
+        "mentioned_stations": [
+          "other places"
+        ],
+        "current_signal": 8
+      },
+      {
+        "timestamp": "2025-09-08T00:21:45.495975",
+        "source": "https://rss.weather.gov.hk/rss/WeatherWarningBulletin.xml",
+        "description": "HKO Weather Warning RSS",
+        "category": "rss_feed",
+        "title": "Information about Tropical Cyclone Bulletin (23:45 HKT on 07.09.2025)",
+        "content": "Tropical Cyclone Warning Bulletin<br/><br/>Here is the latest Tropical Cyclone Warning Bulletin issued by the Hong Kong Observatory.<br/><br/>The No. 8 Southeast Gale or Storm Signal is in force.<br/><br/>This means that winds with mean speeds of 63 kilometres per hour or more are expected from the southeast quarter.<br/><br/>At midnight, Severe Tropical Storm Tapah was centred about 250 kilometres south-southwest of Hong Kong (near 20.2 degrees north 113.3 degrees east) and is forecast to move ",
+        "pub_date": "Sun, 07 Sep 2025 23:45:00 +0800",
+        "type": "rss_item",
+        "extracted_wind_speeds": [
+          63,
+          18,
+          60,
+          53,
+          51,
+          89,
+          65,
+          60
+        ],
+        "max_extracted_wind": 89,
+        "extracted_gust_speeds": [
+          89,
+          65,
+          60
+        ],
+        "max_extracted_gust": 89,
+        "mentioned_stations": [
+          "Ngong Ping"
+        ]
+      },
+      {
+        "timestamp": "2025-09-08T00:21:45.496205",
+        "source": "https://rss.weather.gov.hk/rss/WeatherWarningBulletin.xml",
+        "description": "HKO Weather Warning RSS",
+        "category": "rss_feed",
+        "title": "Information about Thunderstorm Warning (22:30 HKT on 07.09.2025)",
+        "content": "Thunderstorm Warning issued at 9:53 a.m. on 7 Sep 2025 has been extended until 5:00 a.m. tomorrow. A few squally thunderstorms are expected to occur over Hong Kong.Members of the public are advised to take the following precautions when thunderstorms occur:<br/><br/>1. Seek safe shelter if you are staying outdoors.<br/><br/>2. Leave the water. Do not swim outdoors or engage in other outdoor water sports.<br/><br/>3. Do not stand on high grounds. Keep away from highly conductive objects, trees or",
+        "pub_date": "Sun, 07 Sep 2025 22:30:00 +0800",
+        "type": "rss_item"
+      }
+    ],
+    "current_warnings": [],
+    "station_data": [],
+    "forecast_data": [
+      {
+        "timestamp": "2025-09-08T00:21:46.544539",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250908",
+        "week": "Monday",
+        "forecastWind": "Southeast force 7 to 8, up to force 10 on high ground at first. South force 5 to 6 later.",
+        "forecastWeather": "Cloudy to overcast with squally heavy showers and thunderstorms. Seas will be very rough with swells.",
+        "forecastMaxtemp": {
+          "value": 29,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 25,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 95,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 80,
+          "unit": "percent"
+        },
+        "ForecastIcon": 64,
+        "PSR": "High"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544575",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250909",
+        "week": "Tuesday",
+        "forecastWind": "South force 4 to 5.",
+        "forecastWeather": "Mainly cloudy with occasional showers and a few squally thunderstorms. Showers will be heavy at times at first.",
+        "forecastMaxtemp": {
+          "value": 30,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 26,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 95,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 75,
+          "unit": "percent"
+        },
+        "ForecastIcon": 63,
+        "PSR": "High"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544579",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250910",
+        "week": "Wednesday",
+        "forecastWind": "South to southeast force 3 to 4.",
+        "forecastWeather": "Mainly cloudy with a few showers. More showers with thunderstorms in some areas at first. Sunny intervals during the day.",
+        "forecastMaxtemp": {
+          "value": 32,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 27,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 95,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 70,
+          "unit": "percent"
+        },
+        "ForecastIcon": 54,
+        "PSR": "Medium High"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544582",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250911",
+        "week": "Thursday",
+        "forecastWind": "Southeast force 2 to 3.",
+        "forecastWeather": "Sunny periods and one or two showers. Very hot during the day.",
+        "forecastMaxtemp": {
+          "value": 33,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 28,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 90,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 65,
+          "unit": "percent"
+        },
+        "ForecastIcon": 53,
+        "PSR": "Medium Low"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544585",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250912",
+        "week": "Friday",
+        "forecastWind": "Light winds force 2.",
+        "forecastWeather": "Mainly fine. Very hot during the day.",
+        "forecastMaxtemp": {
+          "value": 34,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 28,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 85,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 55,
+          "unit": "percent"
+        },
+        "ForecastIcon": 90,
+        "PSR": "Low"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544588",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250913",
+        "week": "Saturday",
+        "forecastWind": "Light winds force 2.",
+        "forecastWeather": "Mainly fine. Very hot during the day.",
+        "forecastMaxtemp": {
+          "value": 34,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 28,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 85,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 55,
+          "unit": "percent"
+        },
+        "ForecastIcon": 90,
+        "PSR": "Low"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544591",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250914",
+        "week": "Sunday",
+        "forecastWind": "Light winds force 2.",
+        "forecastWeather": "Mainly fine apart from isolated showers. Very hot during the day.",
+        "forecastMaxtemp": {
+          "value": 34,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 28,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 85,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 55,
+          "unit": "percent"
+        },
+        "ForecastIcon": 90,
+        "PSR": "Low"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544594",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250915",
+        "week": "Monday",
+        "forecastWind": "Light winds force 2.",
+        "forecastWeather": "Mainly fine apart from isolated showers. Very hot during the day.",
+        "forecastMaxtemp": {
+          "value": 34,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 28,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 85,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 55,
+          "unit": "percent"
+        },
+        "ForecastIcon": 50,
+        "PSR": "Low"
+      },
+      {
+        "timestamp": "2025-09-08T00:21:46.544599",
+        "source": "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en",
+        "description": "HKO 9-day Weather Forecast",
+        "category": "forecast",
+        "type": "weather_forecast",
+        "forecastDate": "20250916",
+        "week": "Tuesday",
+        "forecastWind": "East force 2 to 3.",
+        "forecastWeather": "Sunny periods, one or two showers and thunderstorms.",
+        "forecastMaxtemp": {
+          "value": 33,
+          "unit": "C"
+        },
+        "forecastMintemp": {
+          "value": 28,
+          "unit": "C"
+        },
+        "forecastMaxrh": {
+          "value": 85,
+          "unit": "percent"
+        },
+        "forecastMinrh": {
+          "value": 55,
+          "unit": "percent"
+        },
+        "ForecastIcon": 51,
+        "PSR": "Low"
+      }
+    ]
+  },
+  "signal_8_analysis": {
+    "analysis_time": "2025-09-08T00:21:47.048825",
+    "data_summary": {
+      "total_sources": 3,
+      "total_data_points": 3,
+      "warning_count": 0,
+      "station_count": 0
+    },
+    "current_signal_status": 8,
+    "wind_measurements": {
+      "extracted_speeds": [
+        63,
+        18,
+        60,
+        53,
+        51,
+        89,
+        65,
+        60
+      ],
+      "extracted_gusts": [
+        89,
+        65,
+        60
+      ],
+      "max_speed": 89,
+      "max_gust": 89,
+      "avg_speed": 57.375,
+      "speed_count": 8,
+      "avg_gust": 71.33333333333333,
+      "gust_count": 3
+    },
+    "tomorrow_morning_forecast": {
+      "signal_8_probability": "HIGH",
+      "risk_level": "HIGH RISK",
+      "key_factors": [
+        "Signal 8 currently in force",
+        "Limited station coverage - assessment may be incomplete"
+      ]
+    },
+    "official_warnings": [],
+    "monitoring_stations": [
+      {
+        "name": "other places",
+        "source": "HKO Current Weather RSS"
+      },
+      {
+        "name": "Ngong Ping",
+        "source": "HKO Weather Warning RSS"
+      }
+    ]
+  },
+  "metadata": {
+    "script_version": "Final v1.0",
+    "purpose": "Signal 8 assessment for tomorrow morning",
+    "data_sources": "Multiple HKO APIs and RSS feeds",
+    "update_frequency": "Run every 1-2 hours for monitoring"
+  }
+}

@@ -1,0 +1,7 @@
+link_id,link_name_en,link_name_tc,link_name_sc,start_node,start_node_northing,start_node_easting,start_node_latitude,start_node_longitude,end_node,end_node_northing,end_node_easting,end_node_latitude,end_node_longitude,region,road_type
+4651-4631,Cross-Harbour Tunnel towards the Kowloon direction,紅磡海底隧道往九龍方向,红磡海底隧道往九龙方向,4651,816087.665,836884.007,22.28367185,114.182851773,4631,818132.347,836599.836,22.302136683,114.180094749,HK,MAJOR ROUTE
+46319-46512,Cross-Harbour Tunnel towards the Hong Kong Island direction,紅磡海底隧道往港島方向,红磡海底隧道往港岛方向,46319,817917.971,836650.693,22.300200725,114.180588253,46512,816083.846,836893.978,22.283637359,114.182948525,K,MAJOR ROUTE
+4650-3651,Eastern Harbour Crossing towards the Kowloon direction,東區海底隧道往九龍方向,东区海底隧道往九龙方向,4650,816768.747,839919.319,22.289818685,114.212306476,3651,817878.688,841880.892,22.299836861,114.231345315,HK,MAJOR ROUTE
+36511-46502,Eastern Harbour Crossing towards the Hong Kong Island direction,東區海底隧道往港島方向,东区海底隧道往港岛方向,36511,817854.503,841899.095,22.299618396,114.231521884,46502,816756.4,839931.964,22.289707157,114.212429154,K,MAJOR ROUTE
+4652-4633,Western Harbour Crossing towards the Kowloon direction,西區海底隧道往九龍方向,西区海底隧道往九龙方向,4652,816778.101,833101.677,22.289904135,114.146148572,4633,818290.731,834364.207,22.303565974,114.158398284,HK,MAJOR ROUTE
+46332-46522,Western Harbour Crossing towards the Hong Kong Island direction,西區海底隧道往港島方向,西区海底隧道往港岛方向,46332,818269.104,834395.219,22.303370703,114.158699276,46522,816768.056,833112.038,22.289813441,114.146249134,K,MAJOR ROUTE

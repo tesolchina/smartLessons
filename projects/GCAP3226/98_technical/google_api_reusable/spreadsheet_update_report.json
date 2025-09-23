@@ -1,0 +1,329 @@
+{
+  "timestamp": "2025-09-23",
+  "spreadsheet_id": "1yqJL5bDJW4N5YVKZFChKRJg5sI394mLbWIW-amamsEw",
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1yqJL5bDJW4N5YVKZFChKRJg5sI394mLbWIW-amamsEw",
+  "summary": {
+    "teams_processed": 6,
+    "total_documents_found": 36,
+    "errors_count": 0
+  },
+  "details": {
+    "teams_updated": [
+      {
+        "team": "Team_1",
+        "docs_count": 4,
+        "sheets_count": 1,
+        "slides_count": 1,
+        "other_count": 0
+      },
+      {
+        "team": "Team_2",
+        "docs_count": 4,
+        "sheets_count": 1,
+        "slides_count": 1,
+        "other_count": 0
+      },
+      {
+        "team": "Team_3",
+        "docs_count": 4,
+        "sheets_count": 1,
+        "slides_count": 1,
+        "other_count": 0
+      },
+      {
+        "team": "Team_4",
+        "docs_count": 4,
+        "sheets_count": 1,
+        "slides_count": 1,
+        "other_count": 0
+      },
+      {
+        "team": "Team_5",
+        "docs_count": 4,
+        "sheets_count": 1,
+        "slides_count": 1,
+        "other_count": 0
+      },
+      {
+        "team": "Team_6",
+        "docs_count": 4,
+        "sheets_count": 1,
+        "slides_count": 1,
+        "other_count": 0
+      }
+    ],
+    "documents_found": {
+      "Team_1": {
+        "google_docs": [
+          {
+            "id": "1jw9Il-7M_Az4MyiDvpovO85zu6c2gOOHtryB3cvOgv0",
+            "name": "Presentation_outreach_Team_1",
+            "link": "https://docs.google.com/document/d/1jw9Il-7M_Az4MyiDvpovO85zu6c2gOOHtryB3cvOgv0/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1ePgzMV1aMkYIQyx3aNvVRUTYAvoAdJoBnIfwW5E7EpA",
+            "name": "Meeting_Notes_Team_1",
+            "link": "https://docs.google.com/document/d/1ePgzMV1aMkYIQyx3aNvVRUTYAvoAdJoBnIfwW5E7EpA/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "14Tps1SKjRJx3MXo0yINJ3pv5f-prwk_DScexI7cXzzY",
+            "name": "Project_Report_Team_1",
+            "link": "https://docs.google.com/document/d/14Tps1SKjRJx3MXo0yINJ3pv5f-prwk_DScexI7cXzzY/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "18jKwBjI7EHfZQSDH3J6lmJloEw-3jc0m6M1IQGQ757U",
+            "name": "Data_Collection_Plan_Team_1",
+            "link": "https://docs.google.com/document/d/18jKwBjI7EHfZQSDH3J6lmJloEw-3jc0m6M1IQGQ757U/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          }
+        ],
+        "google_sheets": [
+          {
+            "id": "1pQ1gA2cWslja-K02OFE2jPGJRStiCU8fsGLi7E38C7o",
+            "name": "Data_Analysis_Worksheet_Team_1",
+            "link": "https://docs.google.com/spreadsheets/d/1pQ1gA2cWslja-K02OFE2jPGJRStiCU8fsGLi7E38C7o/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.spreadsheet"
+          }
+        ],
+        "google_slides": [
+          {
+            "id": "1y1J68c6MsDh-Cr9Yo7po6WfWRCFmOPUJqwJdQB6rD8k",
+            "name": "Team_1 - Topic 6 - Flu Shot Participation Analysis",
+            "link": "https://docs.google.com/presentation/d/1y1J68c6MsDh-Cr9Yo7po6WfWRCFmOPUJqwJdQB6rD8k/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.presentation"
+          }
+        ],
+        "other_files": []
+      },
+      "Team_2": {
+        "google_docs": [
+          {
+            "id": "1gyDuHzUVeu7tsRSbdjchvk-qnGUBY5G4PxQw_xiiqMI",
+            "name": "Presentation_outreach_Team_2",
+            "link": "https://docs.google.com/document/d/1gyDuHzUVeu7tsRSbdjchvk-qnGUBY5G4PxQw_xiiqMI/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1v-ZciNVEXZ-bj5EI8moLqXDp55aF2PJDv2DzGVw6zwE",
+            "name": "Meeting_Notes_Team_2",
+            "link": "https://docs.google.com/document/d/1v-ZciNVEXZ-bj5EI8moLqXDp55aF2PJDv2DzGVw6zwE/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1g5zfK4gap0expKSIZVx7UGfwz-y0bpeJy5Z2LUJIRuE",
+            "name": "Project_Report_Team_2",
+            "link": "https://docs.google.com/document/d/1g5zfK4gap0expKSIZVx7UGfwz-y0bpeJy5Z2LUJIRuE/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "15PWU6nGdWghNutPYHPrPCJz4KlUmMQRrVWHOipXUQNI",
+            "name": "Data_Collection_Plan_Team_2",
+            "link": "https://docs.google.com/document/d/15PWU6nGdWghNutPYHPrPCJz4KlUmMQRrVWHOipXUQNI/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          }
+        ],
+        "google_sheets": [
+          {
+            "id": "1UqiLtDGAZtgmKtEOxFupoGFer9ZYE0MIWvwJ0-kfeJ0",
+            "name": "Data_Analysis_Worksheet_Team_2",
+            "link": "https://docs.google.com/spreadsheets/d/1UqiLtDGAZtgmKtEOxFupoGFer9ZYE0MIWvwJ0-kfeJ0/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.spreadsheet"
+          }
+        ],
+        "google_slides": [
+          {
+            "id": "1zX1Ruo6gDrXdg-Fe0s0CD0uiupXws_-zhBpMLSHMKoQ",
+            "name": "Team_2 - Topic 3 - Inter-Company Bus Route Coordination",
+            "link": "https://docs.google.com/presentation/d/1zX1Ruo6gDrXdg-Fe0s0CD0uiupXws_-zhBpMLSHMKoQ/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.presentation"
+          }
+        ],
+        "other_files": []
+      },
+      "Team_3": {
+        "google_docs": [
+          {
+            "id": "1aQpajFFnWYKUTgNIfEynEh7-aGnKrpKqvLvdDs6YLcY",
+            "name": "Presentation_outreach_Team_3",
+            "link": "https://docs.google.com/document/d/1aQpajFFnWYKUTgNIfEynEh7-aGnKrpKqvLvdDs6YLcY/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1eCIOq9oVVSOtS8PFRXB7OZqYsKIXQMpy9nmqGc2OUp8",
+            "name": "Meeting_Notes_Team_3",
+            "link": "https://docs.google.com/document/d/1eCIOq9oVVSOtS8PFRXB7OZqYsKIXQMpy9nmqGc2OUp8/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1ncodi4k0XcAwXjzAtu-ZaG3cnwhVNnuKPjZo_jBTXrw",
+            "name": "Project_Report_Team_3",
+            "link": "https://docs.google.com/document/d/1ncodi4k0XcAwXjzAtu-ZaG3cnwhVNnuKPjZo_jBTXrw/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1odY4zyNn0GiLSE64GKdfqHA44k300_U03IR6p9nzisI",
+            "name": "Data_Collection_Plan_Team_3",
+            "link": "https://docs.google.com/document/d/1odY4zyNn0GiLSE64GKdfqHA44k300_U03IR6p9nzisI/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          }
+        ],
+        "google_sheets": [
+          {
+            "id": "1WpV4zhfvTHYY6_p_CtTw7YFpn0cBB3dzfDsIUyPzfrM",
+            "name": "Data_Analysis_Worksheet_Team_3",
+            "link": "https://docs.google.com/spreadsheets/d/1WpV4zhfvTHYY6_p_CtTw7YFpn0cBB3dzfDsIUyPzfrM/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.spreadsheet"
+          }
+        ],
+        "google_slides": [
+          {
+            "id": "1njgegVqclzPpNoHbKonc4DJISC_YblZQB4TjBmiKey0",
+            "name": "Team_3 - Topic 7 - Typhoon Signal Data Analysis",
+            "link": "https://docs.google.com/presentation/d/1njgegVqclzPpNoHbKonc4DJISC_YblZQB4TjBmiKey0/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.presentation"
+          }
+        ],
+        "other_files": []
+      },
+      "Team_4": {
+        "google_docs": [
+          {
+            "id": "1ZobycX4pkblt_IIAY4XboXk9RO9KiZ8Wv2xmyOQe3zQ",
+            "name": "Presentation_outreach_Team_4",
+            "link": "https://docs.google.com/document/d/1ZobycX4pkblt_IIAY4XboXk9RO9KiZ8Wv2xmyOQe3zQ/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "14KfoJ_KtgPU_X9sh4zuRnrj_XZZWTpHdJJJIpZh0UZ4",
+            "name": "Meeting_Notes_Team_4",
+            "link": "https://docs.google.com/document/d/14KfoJ_KtgPU_X9sh4zuRnrj_XZZWTpHdJJJIpZh0UZ4/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1m0LAqbTUQWTjmQ0n6-HL8AXZPlN6CKARqPhnVczg21g",
+            "name": "Project_Report_Team_4",
+            "link": "https://docs.google.com/document/d/1m0LAqbTUQWTjmQ0n6-HL8AXZPlN6CKARqPhnVczg21g/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1BN6MvXXVktK3f0nPc7OEPbyAWCXzD5BvAPzVhxMtHmo",
+            "name": "Data_Collection_Plan_Team_4",
+            "link": "https://docs.google.com/document/d/1BN6MvXXVktK3f0nPc7OEPbyAWCXzD5BvAPzVhxMtHmo/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          }
+        ],
+        "google_sheets": [
+          {
+            "id": "1zWRNqugZsuGUGt0LR94Kj5_Moea1rEqYOsjxJnZ928Q",
+            "name": "Data_Analysis_Worksheet_Team_4",
+            "link": "https://docs.google.com/spreadsheets/d/1zWRNqugZsuGUGt0LR94Kj5_Moea1rEqYOsjxJnZ928Q/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.spreadsheet"
+          }
+        ],
+        "google_slides": [
+          {
+            "id": "1dxTayyp0Cu5mrP_FmNfiEsYPRlOylWwX2-RkkcMciA0",
+            "name": "Team_4 - Topic 4 - Municipal Solid Waste Charging Scheme",
+            "link": "https://docs.google.com/presentation/d/1dxTayyp0Cu5mrP_FmNfiEsYPRlOylWwX2-RkkcMciA0/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.presentation"
+          }
+        ],
+        "other_files": []
+      },
+      "Team_5": {
+        "google_docs": [
+          {
+            "id": "1Yvq_8cChdYU7CagNlGZXJerReoNAGg1stVEGHkjtcWA",
+            "name": "Presentation_outreach_Team_5",
+            "link": "https://docs.google.com/document/d/1Yvq_8cChdYU7CagNlGZXJerReoNAGg1stVEGHkjtcWA/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1t3TC1oeYZCpWmwi7-W8ZlCioV3EUzapQKGnkaKczHII",
+            "name": "Meeting_Notes_Team_5",
+            "link": "https://docs.google.com/document/d/1t3TC1oeYZCpWmwi7-W8ZlCioV3EUzapQKGnkaKczHII/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1SKQGnfh5E8DhQR0Srpx2sVDlThV_aTgGGFtTIWFNq0s",
+            "name": "Project_Report_Team_5",
+            "link": "https://docs.google.com/document/d/1SKQGnfh5E8DhQR0Srpx2sVDlThV_aTgGGFtTIWFNq0s/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1Jt4fzdF1oRmRqmijTINHbFosL3k0YKbImt7R3tR-bcM",
+            "name": "Data_Collection_Plan_Team_5",
+            "link": "https://docs.google.com/document/d/1Jt4fzdF1oRmRqmijTINHbFosL3k0YKbImt7R3tR-bcM/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          }
+        ],
+        "google_sheets": [
+          {
+            "id": "1IONx37SiBtYjOUdubESyqSBw5Cj570eGrv7bvRHWr-E",
+            "name": "Data_Analysis_Worksheet_Team_5",
+            "link": "https://docs.google.com/spreadsheets/d/1IONx37SiBtYjOUdubESyqSBw5Cj570eGrv7bvRHWr-E/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.spreadsheet"
+          }
+        ],
+        "google_slides": [
+          {
+            "id": "10INBQvYBSJMMt28Y9kBUv3aZQFbvnTRfiCV9et5I-HQ",
+            "name": "Team_5 - Topic 5 - Green@Community Recycling Network Analysis",
+            "link": "https://docs.google.com/presentation/d/10INBQvYBSJMMt28Y9kBUv3aZQFbvnTRfiCV9et5I-HQ/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.presentation"
+          }
+        ],
+        "other_files": []
+      },
+      "Team_6": {
+        "google_docs": [
+          {
+            "id": "1eyr2zNqE38qHLZRgqljJfl7VKx0Fwc4odIKYC6nwITQ",
+            "name": "Presentation_outreach_Team_6",
+            "link": "https://docs.google.com/document/d/1eyr2zNqE38qHLZRgqljJfl7VKx0Fwc4odIKYC6nwITQ/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1aZDi-WT-gRN1UYSdioiD9UCMZS0pmLiDwFZ0rR7xCrk",
+            "name": "Meeting_Notes_Team_6",
+            "link": "https://docs.google.com/document/d/1aZDi-WT-gRN1UYSdioiD9UCMZS0pmLiDwFZ0rR7xCrk/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "16HCj1BExYTPoDLCw85JCxJWFpp6a6PwCNg-yQ6RInSk",
+            "name": "Project_Report_Team_6",
+            "link": "https://docs.google.com/document/d/16HCj1BExYTPoDLCw85JCxJWFpp6a6PwCNg-yQ6RInSk/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          },
+          {
+            "id": "1TaZaXUMspZEllNUPgP0cSx5jnC6uR6nmNcpdEXt8Vtg",
+            "name": "Data_Collection_Plan_Team_6",
+            "link": "https://docs.google.com/document/d/1TaZaXUMspZEllNUPgP0cSx5jnC6uR6nmNcpdEXt8Vtg/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.document"
+          }
+        ],
+        "google_sheets": [
+          {
+            "id": "1Oth2HLaW1ztF-nqujYtIsTbjxp1RXBExUVDfwtl20AM",
+            "name": "Data_Analysis_Worksheet_Team_6",
+            "link": "https://docs.google.com/spreadsheets/d/1Oth2HLaW1ztF-nqujYtIsTbjxp1RXBExUVDfwtl20AM/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.spreadsheet"
+          }
+        ],
+        "google_slides": [
+          {
+            "id": "13hSo13-G7Q9cijEw7DPnE-GvNSc48JOqbfC5aagRhJA",
+            "name": "Team_6 - Topic 2 - Bus Stop Merger Optimization",
+            "link": "https://docs.google.com/presentation/d/13hSo13-G7Q9cijEw7DPnE-GvNSc48JOqbfC5aagRhJA/edit?usp=drivesdk",
+            "mime_type": "application/vnd.google-apps.presentation"
+          }
+        ],
+        "other_files": []
+      }
+    },
+    "errors": []
+  }
+}

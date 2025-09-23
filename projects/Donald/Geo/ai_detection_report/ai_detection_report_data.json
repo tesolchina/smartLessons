@@ -1,0 +1,70 @@
+{
+  "timestamp": "2025-09-21T19:01:50.382742",
+  "overall_stats": {
+    "total_sections": 8,
+    "passed_sections": 8,
+    "warning_sections": 0,
+    "failed_sections": 0,
+    "average_ai_percentage": 16.875,
+    "overall_status": "\u2705 EXCELLENT",
+    "risk_level": "LOW RISK"
+  },
+  "section_results": {
+    "Header": {
+      "word_count": 37,
+      "ai_percentage": 18,
+      "human_percentage": 82,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    },
+    "Contents": {
+      "word_count": 0,
+      "ai_percentage": 18,
+      "human_percentage": 82,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    },
+    "Introduction": {
+      "word_count": 604,
+      "ai_percentage": 15,
+      "human_percentage": 85,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    },
+    "Methodology": {
+      "word_count": 220,
+      "ai_percentage": 18,
+      "human_percentage": 82,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    },
+    "Data Presentation & Analysis": {
+      "word_count": 1094,
+      "ai_percentage": 10,
+      "human_percentage": 90,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    },
+    "Conclusion": {
+      "word_count": 243,
+      "ai_percentage": 20,
+      "human_percentage": 80,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    },
+    "Evaluation": {
+      "word_count": 117,
+      "ai_percentage": 18,
+      "human_percentage": 82,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    },
+    "Bibliography": {
+      "word_count": 82,
+      "ai_percentage": 18,
+      "human_percentage": 82,
+      "status": "mock_analysis",
+      "assessment": "PASS"
+    }
+  }
+}

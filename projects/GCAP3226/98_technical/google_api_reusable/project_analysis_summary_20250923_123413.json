@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-09-23T12:34:13.794882",
+  "teams_analyzed": 6,
+  "total_teams": 6,
+  "analysis_results": {
+    "Team_1": {
+      "topic": "Flu Shot Participation Analysis",
+      "government_decisions_count": 7,
+      "data_governance_tasks_count": 7,
+      "mathematical_models_count": 7,
+      "available_resources_count": 3,
+      "focus_areas": [
+        "Policy Analysis",
+        "Data Governance",
+        "Public Health"
+      ]
+    },
+    "Team_2": {
+      "topic": "Inter-Company Bus Route Coordination",
+      "government_decisions_count": 7,
+      "data_governance_tasks_count": 7,
+      "mathematical_models_count": 7,
+      "available_resources_count": 2,
+      "focus_areas": [
+        "Policy Analysis",
+        "Data Governance",
+        "Algorithm Development",
+        "Transportation"
+      ]
+    },
+    "Team_3": {
+      "topic": "Typhoon Signal Data Analysis",
+      "government_decisions_count": 7,
+      "data_governance_tasks_count": 7,
+      "mathematical_models_count": 7,
+      "available_resources_count": 2,
+      "focus_areas": [
+        "Policy Analysis",
+        "Data Governance",
+        "Transportation"
+      ]
+    },
+    "Team_4": {
+      "topic": "Municipal Solid Waste Charging Scheme",
+      "government_decisions_count": 7,
+      "data_governance_tasks_count": 7,
+      "mathematical_models_count": 7,
+      "available_resources_count": 5,
+      "focus_areas": [
+        "Policy Analysis",
+        "Data Governance",
+        "Environmental"
+      ]
+    },
+    "Team_5": {
+      "topic": "Green@Community Recycling Network Analysis",
+      "government_decisions_count": 7,
+      "data_governance_tasks_count": 7,
+      "mathematical_models_count": 7,
+      "available_resources_count": 2,
+      "focus_areas": [
+        "Policy Analysis",
+        "Data Governance",
+        "Algorithm Development",
+        "Environmental"
+      ]
+    },
+    "Team_6": {
+      "topic": "Bus Stop Merger Optimization",
+      "government_decisions_count": 7,
+      "data_governance_tasks_count": 7,
+      "mathematical_models_count": 7,
+      "available_resources_count": 3,
+      "focus_areas": [
+        "Policy Analysis",
+        "Data Governance",
+        "Algorithm Development",
+        "Transportation"
+      ]
+    }
+  }
+}

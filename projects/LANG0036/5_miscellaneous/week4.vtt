@@ -1,0 +1,4318 @@
+WEBVTT
+
+1
+00:00:00.230 --> 00:00:18.440
+Simon Wang: Alright, so, we are in week 4 now for our course, and, before we get started, I just want to invite all the students to, log in with your HKBU credentials, so you will be able to have access to this page.
+
+2
+00:00:18.900 --> 00:00:37.409
+Simon Wang: And not every student will have access to this page. By default, I think only the students from science faculty, will have access to the API key. But I submitted your name to ITO, so you should be able to access this page as well.
+
+3
+00:00:37.880 --> 00:00:45.280
+Simon Wang: So very briefly, I want to explain what is API. API stands for Application Programming Interface.
+
+4
+00:00:45.400 --> 00:00:54.829
+Simon Wang: Which is a different way to communicate with the computer system. The more conventional, typical way of
+
+5
+00:00:55.170 --> 00:00:59.610
+Simon Wang: Communicate with the computer system is through what we call graphical user interface.
+
+6
+00:00:59.890 --> 00:01:08.010
+Simon Wang: Like what you can see now. So, you see there's some graphics, and you enter, you type some text.
+
+7
+00:01:08.550 --> 00:01:15.920
+Simon Wang: And you will be able to communicate, and the chatbot will respond in a graphical user interface.
+
+8
+00:01:16.230 --> 00:01:24.559
+Simon Wang: But the application programming interface is, a different interface in the sense that, we do not use this kind of,
+
+9
+00:01:25.070 --> 00:01:38.809
+Simon Wang: GUI, or graphical user interface, instead of we write codes. And, through the codes, and we, following the protocols and rules specified in the API, so that
+
+10
+00:01:39.540 --> 00:01:44.889
+Simon Wang: Our computer program can communicate with a computer system, like large language model.
+
+11
+00:01:45.160 --> 00:01:49.160
+Simon Wang: Now, the reason we need you to grab this key
+
+12
+00:01:49.840 --> 00:02:00.810
+Simon Wang: is because later on, you need to enter the key into a platform that we built. And this way, our platform will be able to leverage
+
+13
+00:02:00.920 --> 00:02:08.150
+Simon Wang: the ITO's platform, and Because, you know, tokens are not free.
+
+14
+00:02:08.240 --> 00:02:21.839
+Simon Wang: You know, that's the basic fact. The fact that whenever you talk to a large language model, somebody has to run the computer somewhere to process your response and to run the model.
+
+15
+00:02:21.900 --> 00:02:41.219
+Simon Wang: So, tokens are not free, and ITO actually bought a lot of tokens from Microsoft Azure, and therefore, each of us can access the HKBU General AI services. Now, when you got the API key, and you enter to our system.
+
+16
+00:02:41.220 --> 00:02:48.510
+Simon Wang: you will be able to use the token from HKB UITO allocated to you.
+
+17
+00:02:48.780 --> 00:02:55.299
+Simon Wang: And, and then you can enjoy the services, okay? So I hope that's…
+
+18
+00:02:55.650 --> 00:03:11.550
+Simon Wang: clear enough instructions or explanation. If it doesn't make sense to you, that's okay, because you don't have to understand everything in order to use it, right? So all you have to do is just come to this page.
+
+19
+00:03:11.970 --> 00:03:19.819
+Simon Wang: and generate the API key, and remember, once you generate the key, you have to keep it somewhere, okay? Because it will show once only.
+
+20
+00:03:20.220 --> 00:03:24.699
+Simon Wang: And I'm not going to generate my key again, because I already generated before.
+
+21
+00:03:25.380 --> 00:03:33.310
+Simon Wang: So, go ahead and do that, and keep it in a place that's safe, okay? So, any, any question?
+
+22
+00:03:41.140 --> 00:03:45.030
+Simon Wang: So take some time and, get your key.
+
+23
+00:03:48.860 --> 00:03:51.279
+Simon Wang: I think I need to find mine as well.
+
+24
+00:04:11.760 --> 00:04:22.570
+Simon Wang: Now, Okay, I think, we should officially get started. We've got 27 students here, which is great.
+
+25
+00:04:23.310 --> 00:04:35.929
+Simon Wang: Well, again, I just want to very briefly talk about… because today, the reason why we are, we are having this, online meeting is because Typhoon, so I want to very quickly, share with you two letters
+
+26
+00:04:35.960 --> 00:04:38.859
+Simon Wang: that I… I published a while ago.
+
+27
+00:04:38.880 --> 00:04:43.829
+Simon Wang: about Typhoon, so… because, in this course, we're trying to…
+
+28
+00:04:43.840 --> 00:04:58.519
+Simon Wang: look at the government's decision and how data is being used to inform the government decisions, and we don't just do things within the classroom. This is an experiential learning course, so we actually want students to experience
+
+29
+00:04:58.520 --> 00:05:06.220
+Simon Wang: something different, something that you don't typically get in a university classroom. So…
+
+30
+00:05:06.290 --> 00:05:24.640
+Simon Wang: One thing that I hope some of you can experience is actually if you write letters to South China Morning Post, because this way you will be able to voice your opinions, you're going to join a conversation about public policy. So here's one example. If you still remember, I don't know whether you remember, this was a letter published
+
+31
+00:05:25.070 --> 00:05:35.700
+Simon Wang: Beck… In 2018, when there's this typhoon called, Menkok, so,
+
+32
+00:05:35.820 --> 00:05:41.579
+Simon Wang: rumor says that, you know, the coming typhoon is as strong, or even stronger than this one.
+
+33
+00:05:41.920 --> 00:05:59.469
+Simon Wang: But look at what happened, the day after typhoon. You know, people get stuck in this, in this, MTR station in Taiwai. And, I was… I was writing, you know, I wrote this letter to argue that actually, we should consider
+
+34
+00:05:59.710 --> 00:06:03.050
+Simon Wang: Allowing people to take a break after the typhoon.
+
+35
+00:06:03.210 --> 00:06:07.160
+Simon Wang: In case, you know, the city, you know, needs some time to recover.
+
+36
+00:06:07.540 --> 00:06:11.179
+Simon Wang: So, so that's, that's one, one…
+
+37
+00:06:12.490 --> 00:06:14.739
+Simon Wang: letter I want to share with you.
+
+38
+00:06:14.800 --> 00:06:27.020
+Simon Wang: And I think it's important to take a data-driven approach to this kind of decision-making. I don't know whether the Security Bureau or the Office of Chief Executive has been reviewing this case.
+
+39
+00:06:27.050 --> 00:06:44.890
+Simon Wang: I hope they have learned a lesson, because in terms of data-driven approach, we should definitely look at the whole, you know, transportation network, the infrastructure, to what extent there's damages to the system that the city needs time to recover.
+
+40
+00:06:45.090 --> 00:07:02.490
+Simon Wang: Right? So, so that's… that's a very important, case we want to, we want to consider. In fact, we have one team who's going to work on Typhoon, this semester, so I hope that team can also take a look at, this, this issue.
+
+41
+00:07:02.840 --> 00:07:10.240
+Simon Wang: Now, another letter I want to share with you, it was published in, last year, actually, 2024,
+
+42
+00:07:10.700 --> 00:07:14.660
+Simon Wang: Because starting from last year.
+
+43
+00:07:15.060 --> 00:07:23.030
+Simon Wang: the Hong Kong stock market will actually operate as usual, even when there's a typhoon.
+
+44
+00:07:23.210 --> 00:07:31.200
+Simon Wang: So, this, this is a new, new arrangement, starting from last year, and the argument I was trying to make is that
+
+45
+00:07:31.710 --> 00:07:36.079
+Simon Wang: as the title suggests, if the Hong Kong stock is changed.
+
+46
+00:07:36.530 --> 00:07:43.250
+Simon Wang: Could operate as usual, you know, because people work from home and, etc.
+
+47
+00:07:43.390 --> 00:07:54.989
+Simon Wang: then everybody should be doing that. Knowledge workers, schools, universities, we should all just, work as usual, you know, even during the typhoon days.
+
+48
+00:07:55.600 --> 00:08:00.270
+Simon Wang: But, unfortunately, at this stage, the Education Bureau
+
+49
+00:08:00.320 --> 00:08:17.589
+Simon Wang: the universities do not really have any official policies over how work should be arranged during the typhoon days. So again, if we think about data-driven approach, if we think about how we can help the government to make better decisions, then we need to
+
+50
+00:08:17.640 --> 00:08:31.560
+Simon Wang: start thinking about how to collect the data, how to use the data to, inform the decisions, alright? So, you know, because of today's timing, I just want to kind of share with, two, essays that,
+
+51
+00:08:31.660 --> 00:08:33.280
+Simon Wang: I published it a while ago.
+
+52
+00:08:34.350 --> 00:08:38.820
+Simon Wang: And another quick update is I've created
+
+53
+00:08:39.200 --> 00:08:58.939
+Simon Wang: Google Drive folders for each team, because I think right now we've got six teams. Each team has already selected a specific topic, so we're kind of ready to move on, to start actually working on the projects. So, anyone who is not yet in a team.
+
+54
+00:08:59.220 --> 00:09:05.409
+Simon Wang: or anyone who cannot access to the Google Drive folder that I share through the small WhatsApp group.
+
+55
+00:09:05.800 --> 00:09:21.299
+Simon Wang: please let me know. You can send a message to the small WhatsApp group, you need to give me your Gmail account. In fact, your classmates, your groupmates who have access to the Google folder, Google Drive folder, they should be able to invite you to access the Google folder.
+
+56
+00:09:21.490 --> 00:09:36.520
+Simon Wang: Alright? So, within the Google Drive folder, you will be able to see a couple of Google Docs. Okay, so all these Google Docs are empty at this stage, but just to kind of quickly go through this…
+
+57
+00:09:37.820 --> 00:09:55.160
+Simon Wang: We will have a meeting notes page. Basically, whenever we meet, whenever we have any progress on the project, you need to update the meeting notes, and you probably want to meet with your teammates from time to time to, you know, start working on the project, then you should update the meeting notes.
+
+58
+00:09:55.630 --> 00:09:59.270
+Simon Wang: We have a data collection plan, because,
+
+59
+00:09:59.480 --> 00:10:05.110
+Simon Wang: Next week, we're going to have small group meetings, and the week after is actually public holiday.
+
+60
+00:10:05.330 --> 00:10:10.099
+Simon Wang: So you should take the time to… the whole week, to doing some data collection.
+
+61
+00:10:10.230 --> 00:10:15.600
+Simon Wang: So, that page, that doc, is for you to update records about data collection.
+
+62
+00:10:15.850 --> 00:10:24.820
+Simon Wang: And there's also a worksheet, this is just a spreadsheet for you to, in case you want to have, put some structured data in that sheet, you can do that.
+
+63
+00:10:25.240 --> 00:10:27.739
+Simon Wang: We have a project report.
+
+64
+00:10:27.970 --> 00:10:43.309
+Simon Wang: document, that's where you can actually start planning your project report. This, this document, I think I'm going to rename it because, you know, on a second thought, I think this document should be more about outreach and presentation, so I'm going to rename it later.
+
+65
+00:10:43.580 --> 00:10:50.319
+Simon Wang: So basically, this Google Drive folder is where you want to do some real work, and you want to move forward.
+
+66
+00:10:50.410 --> 00:11:06.870
+Simon Wang: And just one quick reminder about doing everything is you want to document your contribution, okay? So whenever you're updating the document, whenever you are making some efforts to move the project forward, write down everything you have done with your name on it.
+
+67
+00:11:07.060 --> 00:11:25.740
+Simon Wang: Okay? Because at some point, we will start reviewing, everybody's work, we want to make sure that everybody contributes fairly to the teamwork, because part of the… I think about 50% of the whole course grades is by groups. But, we definitely want, you know, students to.
+
+68
+00:11:25.740 --> 00:11:34.770
+Simon Wang: contribute, and we enjoy teamwork, and we work together. So, it's very important to keep record of everything you do.
+
+69
+00:11:34.850 --> 00:11:37.139
+Simon Wang: In, in this space.
+
+70
+00:11:37.140 --> 00:11:56.149
+Simon Wang: Alright, and both Taylor and I, we have access to this space as well, and feel free to raise any questions, you can add the questions here, and then you can, you know, send us the link through the WhatsApp group or email us, and basically, this is going to be the platform where we're going to do the collaboration work.
+
+71
+00:11:57.000 --> 00:12:01.819
+Simon Wang: Okay, so any, any questions, any concerns, just, let us know.
+
+72
+00:12:02.330 --> 00:12:11.009
+Simon Wang: And this is actually a website I built a bit earlier,
+
+73
+00:12:11.190 --> 00:12:16.049
+Simon Wang: you can check out. It's kind of fun, because we use them
+
+74
+00:12:16.250 --> 00:12:24.929
+Simon Wang: API to access the data from Hong Kong Observatory, and we update this in real time, so we'll be able to see
+
+75
+00:12:25.060 --> 00:12:29.980
+Simon Wang: dumb, the wind data from the 30 stations
+
+76
+00:12:30.340 --> 00:12:44.420
+Simon Wang: And to see whether… to what extent the real, wing strings actually align with the signal number that the observatory published. But I won't get into details, because that's…
+
+77
+00:12:44.420 --> 00:12:53.769
+Simon Wang: basically the project of one of the teams. But just for fun, because you can see that the storm is coming, and we should be able to look at the data in real time.
+
+78
+00:12:55.010 --> 00:13:02.599
+Simon Wang: Right? Now… Before I invite, Taliet, you know, for Dr. Wu to talk about
+
+79
+00:13:02.900 --> 00:13:18.889
+Simon Wang: simulation, which is the main focus of today's topic, today's work discussion, because last week we talked about regression, this week we talked about simulation, there's a little bit more, in-class exercise we're going to work on. I want to talk about reflective essay.
+
+80
+00:13:19.280 --> 00:13:36.269
+Simon Wang: Now, a reflective essay is one of the assessment components. It actually accounts for 20% of the final grades. There's a total of 3 reflective essays you need to write, and this essay is not very long, it's only about 200 words.
+
+81
+00:13:36.270 --> 00:13:46.369
+Simon Wang: And one of the, kind of, the special features of this course is that you can use AI to write an essay. So we have some AI chatbot.
+
+82
+00:13:46.370 --> 00:13:55.719
+Simon Wang: that can help you, which is the reason why we invite you to set up the API key from the ITO page, right?
+
+83
+00:13:56.220 --> 00:13:58.720
+Simon Wang: So, if you come to this Moodle page.
+
+84
+00:14:00.280 --> 00:14:06.070
+Simon Wang: you will be able to see there's the reflective essay assignment. The deadline is,
+
+85
+00:14:06.350 --> 00:14:20.700
+Simon Wang: about two weeks from now, okay? So, there's a little bit of time you can work on, so just take your time, and you don't have to submit it just yet, so any question you may have, just let us know.
+
+86
+00:14:21.670 --> 00:14:28.499
+Simon Wang: The way you submit this essay is just to reply, okay? So you reply here.
+
+87
+00:14:28.630 --> 00:14:34.369
+Simon Wang: And you can submit your… Your essay.
+
+88
+00:14:35.360 --> 00:14:45.620
+Simon Wang: Now, actually, you can read through this Moodle, so a Moodle page, so I'm not going to get into everything, but just one thing to highlight is that we have this
+
+89
+00:14:46.280 --> 00:14:47.290
+Simon Wang: Page.
+
+90
+00:14:47.900 --> 00:14:53.689
+Simon Wang: This is where you can actually, talk to an AI, okay?
+
+91
+00:14:54.190 --> 00:15:06.929
+Simon Wang: So we have this AI writing assistance, as you can see. You need to reflect on what you have learned in the past 4 weeks or so, and also you want to start thinking about the project, alright?
+
+92
+00:15:07.510 --> 00:15:14.490
+Simon Wang: Because in the past 2 weeks, well, including this week, The main task
+
+93
+00:15:14.810 --> 00:15:26.250
+Simon Wang: we're trying to teach you, well, especially Italia, is trying to teach you some tools, okay, for quantitative reasoning. We talked about regression, last week talked about… we're going to talk about simulation.
+
+94
+00:15:26.390 --> 00:15:33.859
+Simon Wang: And once you learn a little bit about these tools, you need to think about how these tools will be applied to your projects.
+
+95
+00:15:34.430 --> 00:15:41.649
+Simon Wang: And while you're doing that, you can start writing this refractive essay, okay? So…
+
+96
+00:15:42.450 --> 00:15:47.309
+Simon Wang: As you can see here, there's a little bit of information, and you can go back to the Moodle page.
+
+97
+00:15:47.680 --> 00:15:54.259
+Simon Wang: But then… how do you use the tutor? Well, basically, you need to get your key.
+
+98
+00:15:55.030 --> 00:16:01.680
+Simon Wang: And then you click here, That will give you… get you to the… the tutor page.
+
+99
+00:16:06.630 --> 00:16:09.779
+Simon Wang: This is iframe, so it takes a while to load.
+
+100
+00:16:13.430 --> 00:16:20.140
+Simon Wang: And, here is where you want to enter the key. Okay, let me see if I got my key.
+
+101
+00:16:29.740 --> 00:16:31.379
+Simon Wang: So you got your key.
+
+102
+00:16:31.990 --> 00:16:38.129
+Simon Wang: And you choose your model, usually 4.1 would be good, and then you click connect.
+
+103
+00:16:41.990 --> 00:16:45.200
+Simon Wang: Now, once you click connect, you get connected.
+
+104
+00:16:45.320 --> 00:16:51.910
+Simon Wang: Right, and then there's some system prompt here. There's a welcome prompt here, it says, You know,
+
+105
+00:16:52.810 --> 00:16:58.620
+Simon Wang: This is your tutor for the course, you need to write a short, refractive essay and everything.
+
+106
+00:16:58.800 --> 00:17:02.570
+Simon Wang: And said, type OK to get started, then you type OK.
+
+107
+00:17:10.680 --> 00:17:20.580
+Simon Wang: Okay, and then the tutorial will start talking to you. Great, let's get started. Thinking about your team project, where were your… the key decisions made by the government that your team plans to focus on?
+
+108
+00:17:21.849 --> 00:17:29.640
+Simon Wang: Remember, we have this post that we talked about a while ago, we talk about, like.
+
+109
+00:17:29.750 --> 00:17:34.499
+Simon Wang: the group project instruction and timeline, I think we talked about this in week 2 or something.
+
+110
+00:17:35.220 --> 00:17:42.999
+Simon Wang: So, last week and this week, we explored topics, we talked about the tools, and next week, when we do the group consultation, we need to
+
+111
+00:17:43.110 --> 00:17:48.099
+Simon Wang: you know, finalize the top… I think everybody already selected topic, but then we have to start working on it.
+
+112
+00:17:48.590 --> 00:17:52.670
+Simon Wang: So go through this page, And then you come back.
+
+113
+00:17:53.330 --> 00:17:59.690
+Simon Wang: And you can start talking, so something like, maybe you can just, use an example.
+
+114
+00:18:00.130 --> 00:18:05.960
+Simon Wang: whether… to… Hello, people.
+
+115
+00:18:06.210 --> 00:18:09.320
+Simon Wang: To take a day off after.
+
+116
+00:18:09.560 --> 00:18:13.599
+Simon Wang: Typhoon. So just, just, just as an example, okay?
+
+117
+00:18:14.070 --> 00:18:18.109
+Simon Wang: And, and, you have a conversation with, with the chatbot.
+
+118
+00:18:18.480 --> 00:18:26.860
+Simon Wang: and go, and so on and so forth, and then your teams look at this, think about the data, right? How did the government use the data to inform the decision, blah blah blah.
+
+119
+00:18:26.990 --> 00:18:30.070
+Simon Wang: And you can say what…
+
+120
+00:18:30.490 --> 00:18:34.159
+Simon Wang: You can say something like, what would you suggest?
+
+121
+00:18:45.300 --> 00:18:49.210
+Simon Wang: And also you can close this if you want a bit more space.
+
+122
+00:18:54.660 --> 00:19:00.469
+Simon Wang: Okay, and then you can, you can start, ask the chatbot about…
+
+123
+00:19:00.740 --> 00:19:14.680
+Simon Wang: the model and everything, okay? But just to remember, AI can hallucinate. You know, AI is not 100% reliable. So part of the skills you need to learn in this course when you interact with AI is to be critical.
+
+124
+00:19:14.870 --> 00:19:26.129
+Simon Wang: Okay, don't just take anything that AI says as correct, or as completely reliable, alright? So you keep going like this for a little while.
+
+125
+00:19:27.310 --> 00:19:33.070
+Simon Wang: And then you click this green button. Well, actually, at some point.
+
+126
+00:19:33.820 --> 00:19:37.750
+Simon Wang: You know, the chapel will start… guide you to write an essay.
+
+127
+00:19:37.990 --> 00:19:41.170
+Simon Wang: But if you say, can you write…
+
+128
+00:19:41.930 --> 00:19:46.370
+Simon Wang: the essay. Well, actually, when you say, can you write an essay for me?
+
+129
+00:19:46.750 --> 00:19:54.159
+Simon Wang: The chat will probably help you to write an essay. But remember, you still have to put a lot of thoughts into it, okay?
+
+130
+00:19:57.170 --> 00:20:00.549
+Simon Wang: Because, because what we're trying to do in this course is…
+
+131
+00:20:00.900 --> 00:20:04.070
+Simon Wang: Okay, so actually, they write an essay for you, you see what I mean?
+
+132
+00:20:04.450 --> 00:20:16.649
+Simon Wang: But that's not… clearly not what you want to do to just submit it to the Moodle, right? So you actually have to put more thoughts and everything. But again, when you click here.
+
+133
+00:20:17.180 --> 00:20:21.480
+Simon Wang: You got… You got a, a page.
+
+134
+00:20:21.700 --> 00:20:27.339
+Simon Wang: Where you can, get a chat history and a little bit of analysis of what you have done.
+
+135
+00:20:28.170 --> 00:20:32.469
+Simon Wang: And, you, you can put your ad… you can put your email here, because…
+
+136
+00:20:32.710 --> 00:20:34.609
+Simon Wang: We don't have a login system.
+
+137
+00:20:35.170 --> 00:20:46.129
+Simon Wang: once you close the browser, everything is gone, okay? So, before you close your browser, make sure that you… you click the green button here, green check, and then you email.
+
+138
+00:20:46.630 --> 00:20:49.760
+Simon Wang: Alright, so, so you will get an email copy.
+
+139
+00:20:49.890 --> 00:20:55.750
+Simon Wang: Of the chat history. And your teacher will also get an email copy of the report.
+
+140
+00:20:55.930 --> 00:20:57.860
+Simon Wang: And if you want to download.
+
+141
+00:20:58.450 --> 00:21:00.759
+Simon Wang: You can also download the Markdown or PDF.
+
+142
+00:21:01.020 --> 00:21:01.920
+Simon Wang: Okay
+
+143
+00:21:02.370 --> 00:21:22.329
+Simon Wang: So that's the… that's the platform we built to help you, okay? So I hope you will enjoy it, I hope it's a good experience for you, because we believe that AI is going to be the partner for all of us, you know, especially when you become a knowledge worker after you graduate.
+
+144
+00:21:22.510 --> 00:21:29.540
+Simon Wang: So we want to create an authentic learning experience for you, that's why we have this AI platform for you to try, and…
+
+145
+00:21:29.810 --> 00:21:44.229
+Simon Wang: And just a kind of disclaimer, the platform is relatively new, and there could be some glitches, some, you know, bugs and everything, so please be patient, and do let us know how it goes, and
+
+146
+00:21:44.290 --> 00:21:58.900
+Simon Wang: try to keep a record of everything you do, just in case you, you know, close the browser or something, or the copy may not… the email function may not work properly, then download the Markdown, or download the…
+
+147
+00:21:58.990 --> 00:22:05.029
+Simon Wang: the, PDF before you hit the send button and before you close the browser.
+
+148
+00:22:05.250 --> 00:22:11.370
+Simon Wang: Alright, so I think that's all I have to say. Any questions?
+
+149
+00:22:16.050 --> 00:22:33.720
+Simon Wang: Remember, in the Moodle forum, we actually have one post for each topic. I think the information here is still useful. You do want to come back to kind of learn more about how this, project, you know, how you should pursue this project. And we have the smaller WhatsApp group for each team.
+
+150
+00:22:33.720 --> 00:22:44.229
+Simon Wang: we should work very closely, through the WhatsApp group, and, you know, you guys may want to, you know, set some meetings, and, because, you know.
+
+151
+00:22:44.900 --> 00:22:47.980
+Simon Wang: I think the goal is for us to…
+
+152
+00:22:48.520 --> 00:22:54.070
+Simon Wang: Send off inquiries to, to the government, around, next week.
+
+153
+00:22:54.280 --> 00:23:06.799
+Simon Wang: So you need to start thinking about that as well. And we're going to have another chatbot to help you with that, but for now, this chatbot for writing reflective
+
+154
+00:23:07.010 --> 00:23:18.640
+Simon Wang: journal, a reflective essay, should be a good start, because you only take the opportunity to reflect on what you have learned, and also to think about how you move forward, with the other… with the projects.
+
+155
+00:23:19.040 --> 00:23:20.390
+Simon Wang: Okay?
+
+156
+00:23:21.130 --> 00:23:23.300
+Simon Wang: So, any, any question?
+
+157
+00:23:24.640 --> 00:23:30.540
+Simon Wang: I think a good place to start is actually… this Moodle page.
+
+158
+00:23:31.320 --> 00:23:37.600
+Simon Wang: Because… I think this is the page where… You should have everything.
+
+159
+00:23:38.360 --> 00:23:41.470
+Simon Wang: I saw some message on the chat.
+
+160
+00:23:47.230 --> 00:23:48.370
+Simon Wang: Oh.
+
+161
+00:23:52.650 --> 00:24:00.740
+Simon Wang: Oh, okay, so I think I need to update the Moodle page about the deadline, because we kind of extend the deadline a little bit, so,
+
+162
+00:24:01.840 --> 00:24:02.700
+Simon Wang: Yeah.
+
+163
+00:24:02.860 --> 00:24:08.249
+Simon Wang: So, one question about the Moodle page, I think I need to update that.
+
+164
+00:24:09.020 --> 00:24:13.089
+Simon Wang: I think the deadline should be October 5th.
+
+165
+00:24:14.030 --> 00:24:20.020
+Simon Wang: What should invite accounts says it's not eligible to use the API service.
+
+166
+00:24:20.900 --> 00:24:23.840
+Simon Wang: I think you have to log out and log in again.
+
+167
+00:24:23.940 --> 00:24:33.280
+Simon Wang: Because the… ITO colleagues told me that they have already updated
+
+168
+00:24:33.670 --> 00:24:52.559
+Simon Wang: the records, so all the names that I submitted should have access to the API service. If you cannot, you log out, and then log in again. If you still cannot access the page, just email me, and I will follow up, because I'm sure that I submitted everybody's name.
+
+169
+00:24:56.430 --> 00:25:00.070
+Simon Wang: Any other… Questions?
+
+170
+00:25:02.720 --> 00:25:04.320
+Simon Wang: Okay, so…
+
+171
+00:25:05.130 --> 00:25:13.249
+Simon Wang: I think, that's all I have to say. I'm going to pass the floor to Talia to talk about simulation.
+
+172
+00:25:18.850 --> 00:25:20.890
+Tian WU: Okay, so good morning, everyone.
+
+173
+00:25:21.200 --> 00:25:23.339
+Tian WU: Can you hear me clearly?
+
+174
+00:25:26.980 --> 00:25:28.089
+Simon Wang: Yeah, okay.
+
+175
+00:25:29.220 --> 00:25:34.540
+Tian WU: Okay, so, can you see my screen of the Moodle page?
+
+176
+00:25:40.160 --> 00:25:40.960
+Tian WU: We're seeing…
+
+177
+00:25:40.960 --> 00:25:42.659
+Simon Wang: VS Code.
+
+178
+00:25:43.100 --> 00:25:45.479
+Tian WU: Let me share my screen again.
+
+179
+00:25:48.290 --> 00:25:50.620
+Tian WU: So now should be the Moodle page, right?
+
+180
+00:25:52.060 --> 00:25:52.790
+Simon Wang: Yes.
+
+181
+00:25:52.790 --> 00:26:02.450
+Tian WU: Yeah, okay, so before I started the, explanation, I would like to remind you that I updated the,
+
+182
+00:26:02.780 --> 00:26:06.560
+Tian WU: Jupyter Notebook for the regression part.
+
+183
+00:26:07.060 --> 00:26:12.309
+Tian WU: And I also uploaded a new joker notebook, which is called the Box Whisker Plot.
+
+184
+00:26:13.250 --> 00:26:22.480
+Tian WU: And also, we have the simulation notebook for today's demonstration. So these are the three documents you may download.
+
+185
+00:26:23.280 --> 00:26:26.189
+Tian WU: So later, we will discuss them one by one.
+
+186
+00:26:29.370 --> 00:26:41.319
+Tian WU: And before I start, talking about the simulation, I would like to follow up on the last in-class exercise, which is about some data visualization you worked on.
+
+187
+00:26:45.100 --> 00:26:53.290
+Tian WU: Let me share… Okay, so now my shared screen should be the, VS Code.
+
+188
+00:26:53.810 --> 00:26:54.920
+Tian WU: Page Wright.
+
+189
+00:26:56.400 --> 00:27:08.959
+Tian WU: So last time, at the end of the in-class exercise, I invited you to do two visualization tests to explore the relationship of,
+
+190
+00:27:09.070 --> 00:27:11.299
+Tian WU: That might be interesting.
+
+191
+00:27:12.330 --> 00:27:19.430
+Tian WU: So recall that the data set we used is the municipal solid waste dataset.
+
+192
+00:27:19.640 --> 00:27:24.340
+Tian WU: Where our response variable is the level of support for this policy.
+
+193
+00:27:24.630 --> 00:27:33.679
+Tian WU: And the potential explanatory variables, including the demographic variables, attitude-related variables, and behavior-related variables.
+
+194
+00:27:34.590 --> 00:27:37.789
+Tian WU: And when I received the in-class exercise.
+
+195
+00:27:37.960 --> 00:27:42.710
+Tian WU: This is the typical visualization result I get.
+
+196
+00:27:43.240 --> 00:27:51.539
+Tian WU: So you can see for the first visualization, it is about the support level versus the perceived fairness of the policy.
+
+197
+00:27:52.310 --> 00:27:57.160
+Tian WU: But what you would observe are these, separated dots.
+
+198
+00:27:57.880 --> 00:28:04.520
+Tian WU: It is because, for fairness and the support level, they're both categorical variables.
+
+199
+00:28:05.620 --> 00:28:13.040
+Tian WU: they can only take values like 1, 2, 3, 4, 5. There's very limited and discrete integers.
+
+200
+00:28:13.560 --> 00:28:14.240
+Tian WU: Okay.
+
+201
+00:28:14.500 --> 00:28:19.069
+Tian WU: So all the possible combinations are shown by these dots.
+
+202
+00:28:19.910 --> 00:28:28.240
+Tian WU: But this is not that informative, given that these two variables, they are categorical.
+
+203
+00:28:29.250 --> 00:28:36.920
+Tian WU: So I think a better way to do it is… Then open.
+
+204
+00:28:38.680 --> 00:28:44.850
+Tian WU: The latest regression… notebook.
+
+205
+00:28:54.560 --> 00:28:58.499
+Tian WU: So here, it's actually used the bar chart.
+
+206
+00:28:58.710 --> 00:29:04.449
+Tian WU: To show, in different categories of perceived fairness.
+
+207
+00:29:04.750 --> 00:29:09.449
+Tian WU: What are the percentages of opposed, neutral, and support?
+
+208
+00:29:10.800 --> 00:29:18.329
+Tian WU: So to do this, we can first record the, strongly against and against as opposed.
+
+209
+00:29:18.940 --> 00:29:28.190
+Tian WU: And we code very strongly support and support as support, so we will overall have these three groups.
+
+210
+00:29:29.130 --> 00:29:34.129
+Tian WU: And then… Show the percentages of these three groups.
+
+211
+00:29:34.680 --> 00:29:38.830
+Tian WU: In different categories of this perceived fairness.
+
+212
+00:29:40.290 --> 00:29:48.650
+Tian WU: So if we… show… Again, the two variables in this way, we can easily observe the trend.
+
+213
+00:29:48.980 --> 00:29:58.390
+Tian WU: With the increase of the perceived fairness of this policy, The percentages of a post decrease.
+
+214
+00:29:58.600 --> 00:30:01.880
+Tian WU: Right? The blue bars, the height, decreased.
+
+215
+00:30:02.570 --> 00:30:06.430
+Tian WU: Whereas for the height of the green bars.
+
+216
+00:30:07.200 --> 00:30:13.669
+Tian WU: The percentages of support is increasing from, like, 11% to 75%.
+
+217
+00:30:15.170 --> 00:30:20.660
+Tian WU: So the message is that if the variables themselves are categorical.
+
+218
+00:30:21.300 --> 00:30:24.320
+Tian WU: Then, it is better to use bar charts.
+
+219
+00:30:24.860 --> 00:30:26.960
+Tian WU: And using percentages.
+
+220
+00:30:27.450 --> 00:30:30.549
+Tian WU: To represent for different categories.
+
+221
+00:30:30.650 --> 00:30:35.790
+Tian WU: The percentages of different, groups.
+
+222
+00:30:36.130 --> 00:30:39.170
+Tian WU: For… for the other categorical variable.
+
+223
+00:30:40.490 --> 00:30:49.900
+Tian WU: I think for this, figure, it is… More informative compared to these dots.
+
+224
+00:30:51.140 --> 00:30:54.109
+Tian WU: Right, hopefully you, agree with me.
+
+225
+00:30:54.310 --> 00:30:59.489
+Tian WU: So when we do the visualization, we need to consider the type of data.
+
+226
+00:31:00.630 --> 00:31:03.620
+Tian WU: So then, when we use this scatter plot.
+
+227
+00:31:04.350 --> 00:31:14.230
+Tian WU: Well, when the variables are continuous, it is more often to use the scatterplot to show the relationship between the two variables.
+
+228
+00:31:14.840 --> 00:31:16.750
+Tian WU: So I think in the demo.
+
+229
+00:31:16.880 --> 00:31:23.570
+Tian WU: We once used the, scatter plot to Let me find it.
+
+230
+00:31:23.760 --> 00:31:27.649
+Tian WU: So now I'm at this regression model's full notebook.
+
+231
+00:31:33.020 --> 00:31:34.179
+Tian WU: Yeah, here.
+
+232
+00:31:35.800 --> 00:31:41.919
+Tian WU: So this is not a good example, but at least the, one of the variables
+
+233
+00:31:42.070 --> 00:31:48.499
+Tian WU: the distance between home and the nearest facilities. This is a continuous variable.
+
+234
+00:31:49.330 --> 00:32:02.490
+Tian WU: And for this scatter plot, we can see whether, on average, with the increase of the distance between the home of the participant of the survey to the nearest
+
+235
+00:32:02.720 --> 00:32:08.300
+Tian WU: Recycling facility, whether their support level is increasing or decreasing.
+
+236
+00:32:10.690 --> 00:32:19.469
+Tian WU: So most of the time, we use Scatterflow to measure or to visualize the relationship between two continuous variables.
+
+237
+00:32:20.250 --> 00:32:22.400
+Tian WU: This is the first message.
+
+238
+00:32:24.190 --> 00:32:28.620
+Tian WU: And the second is about the, plot.
+
+239
+00:32:29.210 --> 00:32:34.020
+Tian WU: Showing the education level versus the level of support.
+
+240
+00:32:35.060 --> 00:32:39.830
+Tian WU: So again, education level is a categorical variable.
+
+241
+00:32:40.050 --> 00:32:55.320
+Tian WU: Right, it can only take these discrete values, 1, 2, 3, 4, and we know the larger the value, it represents the, respondents has, a higher education, higher level of education.
+
+242
+00:32:55.980 --> 00:33:08.200
+Tian WU: So again, if these two are both categorical, a more appropriate way to visualize the relationship should be, again, the bar plot, showing the percentages.
+
+243
+00:33:08.540 --> 00:33:19.880
+Tian WU: In each, there's different, level of education, the, percentages of the, against, neutral, and support.
+
+244
+00:33:21.580 --> 00:33:27.320
+Tian WU: And here, this plot is actually a box whisker plot.
+
+245
+00:33:27.680 --> 00:33:31.169
+Tian WU: And this is usually used to show the distribution.
+
+246
+00:33:31.460 --> 00:33:34.390
+Tian WU: Of a continuous variable.
+
+247
+00:33:35.330 --> 00:33:40.829
+Tian WU: So I will give, a numerical example to…
+
+248
+00:33:40.940 --> 00:33:46.569
+Tian WU: To show you what does this box mean, and what this whiskers mean.
+
+249
+00:33:47.970 --> 00:33:51.299
+Tian WU: So now let's move to the box whisker plot.
+
+250
+00:33:51.480 --> 00:33:54.430
+Tian WU: I mentioned this notebook in the Moodle.
+
+251
+00:33:56.620 --> 00:34:02.380
+Tian WU: So suppose I have this sequence of values, So I generated these values.
+
+252
+00:34:02.740 --> 00:34:05.149
+Tian WU: In total, there are 26.
+
+253
+00:34:06.030 --> 00:34:10.629
+Tian WU: And they are, capped as two decimal places.
+
+254
+00:34:10.739 --> 00:34:13.049
+Tian WU: And it is already sorted.
+
+255
+00:34:15.900 --> 00:34:21.990
+Tian WU: So the smallest is from 0.15, and the largest is from 4.85.
+
+256
+00:34:23.159 --> 00:34:27.629
+Tian WU: to generate the box whisker plot.
+
+257
+00:34:27.780 --> 00:34:33.710
+Tian WU: We need to calculate the so-called five-point summary statistics for these data points.
+
+258
+00:34:35.429 --> 00:34:41.369
+Tian WU: Specifically, when you find the minimum value, which is obviously 0.15,
+
+259
+00:34:42.650 --> 00:34:47.319
+Tian WU: And also the maximum value, which is 4.85, right?
+
+260
+00:34:47.920 --> 00:34:52.099
+Tian WU: And for the middle 3-1, They are median.
+
+261
+00:34:53.460 --> 00:35:00.940
+Tian WU: So the median basically means the data points were cut the whole data set into two parts.
+
+262
+00:35:01.730 --> 00:35:08.830
+Tian WU: So the first 50% of the data, their value will be smaller than the median.
+
+263
+00:35:09.520 --> 00:35:16.509
+Tian WU: And the remaining around 50% of the data, their value, will be greater than the median value.
+
+264
+00:35:17.980 --> 00:35:23.109
+Tian WU: So, in our dataset, Given that there are 26 values.
+
+265
+00:35:23.700 --> 00:35:28.080
+Tian WU: So there will be two values sitting in the middle.
+
+266
+00:35:28.500 --> 00:35:32.259
+Tian WU: Which is the, 13th
+
+267
+00:35:32.980 --> 00:35:36.280
+Tian WU: 13th data, and the 14th data.
+
+268
+00:35:38.960 --> 00:35:42.140
+Tian WU: For each role, there are 5 data points.
+
+269
+00:35:42.500 --> 00:35:48.260
+Tian WU: So, the 13th data point is here, and the 14th data point is here.
+
+270
+00:35:49.720 --> 00:35:54.909
+Tian WU: And the median will be the average value of the two data points.
+
+271
+00:35:56.400 --> 00:36:00.800
+Tian WU: So we take average of these two, and it is 0.8.
+
+272
+00:36:01.940 --> 00:36:12.959
+Tian WU: So here, originally, the data points are not exactly two decimal places. So after some rounding, we have this 0.79 and 0.8.
+
+273
+00:36:13.540 --> 00:36:19.509
+Tian WU: And after we take average, and again, doing the rounding, the median is 0.8.
+
+274
+00:36:20.850 --> 00:36:23.469
+Tian WU: So this means that if we have a
+
+275
+00:36:23.590 --> 00:36:29.310
+Tian WU: Like, you imagine that if there is a, little vertical bar here.
+
+276
+00:36:30.200 --> 00:36:33.960
+Tian WU: This is the first 50% of the data.
+
+277
+00:36:34.150 --> 00:36:40.350
+Tian WU: Given that This data is already sorted from the smallest to the largest.
+
+278
+00:36:41.700 --> 00:36:46.840
+Tian WU: Whereas the remaining ones are the later. So from here.
+
+279
+00:36:47.760 --> 00:36:52.560
+Tian WU: These are the later, or the largest, the 50% of the data.
+
+280
+00:36:54.650 --> 00:36:57.170
+Tian WU: So this is what this medium means.
+
+281
+00:36:57.940 --> 00:37:08.890
+Tian WU: And in the box and whisker plot, this mean is usually shown as the, the horizontal bar in the middle of the box.
+
+282
+00:37:09.750 --> 00:37:13.819
+Tian WU: So if we go back to this education level.
+
+283
+00:37:13.970 --> 00:37:20.650
+Tian WU: you see this horizontal line in the middle of the box? So this is the median.
+
+284
+00:37:20.890 --> 00:37:25.360
+Tian WU: Median value of the, of these data points.
+
+285
+00:37:27.590 --> 00:37:37.130
+Tian WU: But we also need to decide the, where this, edge of the box is. So there are two edges, the upper one and lower one.
+
+286
+00:37:37.320 --> 00:37:41.849
+Tian WU: And we need to decide, what this corresponding value is.
+
+287
+00:37:42.970 --> 00:37:48.049
+Tian WU: And to do that, we need to calculate the so-called the Q1 and Q3.
+
+288
+00:37:48.970 --> 00:37:51.159
+Tian WU: So it's the, quartile one.
+
+289
+00:37:51.860 --> 00:37:58.150
+Tian WU: So this is the, value in the dataset that will split
+
+290
+00:37:58.460 --> 00:38:08.289
+Tian WU: The first 50% of data, again, into two parts, So, 25% and another 25%.
+
+291
+00:38:09.900 --> 00:38:17.690
+Tian WU: For example, for this data, we know that for these highlighted values, These are the first, like.
+
+292
+00:38:17.830 --> 00:38:21.649
+Tian WU: 50% of the data, right? 13 of them.
+
+293
+00:38:22.980 --> 00:38:30.330
+Tian WU: And then the value sitting in the middle will be the 7th data point.
+
+294
+00:38:32.460 --> 00:38:35.410
+Tian WU: So in total, we have 13 data points.
+
+295
+00:38:36.330 --> 00:38:46.020
+Tian WU: And the seventh data point will split the certain data points into… there are six, data points.
+
+296
+00:38:46.300 --> 00:38:48.900
+Tian WU: Before, there's 0.57.
+
+297
+00:38:49.100 --> 00:38:54.379
+Tian WU: And another 6 data points after this 0.57.
+
+298
+00:38:54.980 --> 00:38:58.850
+Tian WU: Within the first half, of this dataset.
+
+299
+00:38:59.780 --> 00:39:04.149
+Tian WU: So then the Q1 value will be 0.57.
+
+300
+00:39:05.540 --> 00:39:16.380
+Tian WU: Whereas, similarly, for this Q3, we focus on the, the median of the Later, 50% of the data.
+
+301
+00:39:17.270 --> 00:39:21.610
+Tian WU: So here is the later 50% of our data.
+
+302
+00:39:21.750 --> 00:39:26.170
+Tian WU: And we just count the 7ths, 1, 2, 3, 4, 5, 7.
+
+303
+00:39:29.500 --> 00:39:34.919
+Tian WU: So this… this 1.64 will split
+
+304
+00:39:35.180 --> 00:39:39.549
+Tian WU: The later 13 data points into two parts.
+
+305
+00:39:40.290 --> 00:39:43.790
+Tian WU: 6 before it, and 6 after it.
+
+306
+00:39:43.930 --> 00:39:46.349
+Tian WU: So this is the, Q3.
+
+307
+00:39:47.900 --> 00:39:55.339
+Tian WU: And with this, 5… point, summary statistics, we can decide where the box is.
+
+308
+00:39:56.350 --> 00:39:58.930
+Tian WU: So if I scroll down a little bit.
+
+309
+00:40:01.260 --> 00:40:07.090
+Tian WU: You can see that on the right-hand side of this figure is box and whisker plot.
+
+310
+00:40:07.390 --> 00:40:12.640
+Tian WU: In total, there are 26 values, all are kept as two decimal places.
+
+311
+00:40:14.030 --> 00:40:20.200
+Tian WU: The median is shown by this green line. The median is 0.8.
+
+312
+00:40:20.360 --> 00:40:22.920
+Tian WU: So you can find the corresponding value here.
+
+313
+00:40:23.730 --> 00:40:26.080
+Tian WU: And for the edge of the box.
+
+314
+00:40:26.310 --> 00:40:28.830
+Tian WU: here is the value of Q1.
+
+315
+00:40:29.060 --> 00:40:37.620
+Tian WU: So we calculate the Q1 is 0.57, This value is around 0.57.
+
+316
+00:40:38.990 --> 00:40:44.550
+Tian WU: And the upper edge of this box The value is 1.64.
+
+317
+00:40:44.700 --> 00:40:45.730
+Tian WU: So here.
+
+318
+00:40:45.870 --> 00:40:51.910
+Tian WU: The corresponding value on the y-axis is 1.64.
+
+319
+00:40:53.290 --> 00:41:03.050
+Tian WU: And we also have this minimum and maximum value, so the minimum value is 0.15, which is the end of this whisker.
+
+320
+00:41:04.310 --> 00:41:15.050
+Tian WU: Whereas… The maximum is 4.85, It is flying out of the, the whisker on the top.
+
+321
+00:41:15.310 --> 00:41:21.540
+Tian WU: So then, how do we decide which values are flying outside of the range?
+
+322
+00:41:22.600 --> 00:41:30.820
+Tian WU: Well, this is decided by calculating the so-called inner fence, So the inner fence.
+
+323
+00:41:32.810 --> 00:41:39.069
+Tian WU: depends on the IQR, where the IQR is the Q3 minus Q1.
+
+324
+00:41:41.600 --> 00:41:46.729
+Tian WU: In this graph, the IQR represents the height of this box.
+
+325
+00:41:47.460 --> 00:41:53.440
+Tian WU: Right, because here, this value is Q3, and this value is Q1.
+
+326
+00:41:54.270 --> 00:41:58.490
+Tian WU: So if IQR equals to Q3 minus Q1,
+
+327
+00:41:58.760 --> 00:42:01.199
+Tian WU: It represents the height of the box.
+
+328
+00:42:03.020 --> 00:42:08.890
+Tian WU: And the lower fence is calculated by the IQR minus 1.5.
+
+329
+00:42:10.030 --> 00:42:15.949
+Tian WU: times… Sorry, Q1 minus 1.5 times IQR.
+
+330
+00:42:16.910 --> 00:42:20.619
+Tian WU: So the formula It's shown in the code.
+
+331
+00:42:22.060 --> 00:42:24.440
+Tian WU: Here, for these three lines.
+
+332
+00:42:24.740 --> 00:42:27.389
+Tian WU: Because there's no,
+
+333
+00:42:27.580 --> 00:42:40.330
+Tian WU: predefined formula to calculate the IQR and also the so-called lower and upper fans, so we have to manually calculate these values.
+
+334
+00:42:43.980 --> 00:42:52.110
+Tian WU: So previously, we have calculated the value of Q1 and Q3, and we also know how… how tall that box is.
+
+335
+00:42:52.370 --> 00:42:59.539
+Tian WU: So we can just substitute the value and get the inner lower fans and inner upper fans.
+
+336
+00:43:03.320 --> 00:43:10.629
+Tian WU: So, after calculation, we found the lower fence is negative 1, and the upper fence is 3.2,
+
+337
+00:43:11.070 --> 00:43:13.289
+Tian WU: As long as the data point
+
+338
+00:43:13.790 --> 00:43:17.410
+Tian WU: Is lying out of the range.
+
+339
+00:43:18.000 --> 00:43:24.160
+Tian WU: From negative 1 to 3, then we will define the data points as outliers.
+
+340
+00:43:26.520 --> 00:43:31.050
+Tian WU: In our dataset, There are 3 values.
+
+341
+00:43:31.160 --> 00:43:33.930
+Tian WU: That are greater than this upper fence.
+
+342
+00:43:34.450 --> 00:43:38.699
+Tian WU: So you will see the corresponding three data points.
+
+343
+00:43:38.820 --> 00:43:42.369
+Tian WU: Flying out of the range of this box.
+
+344
+00:43:42.490 --> 00:43:43.850
+Tian WU: And whisker plot.
+
+345
+00:43:45.870 --> 00:43:49.660
+Tian WU: And the… the end of this whisker
+
+346
+00:43:50.010 --> 00:43:58.730
+Tian WU: Will… will be the largest value in our dataset, which is not ex… exceeding the upper fence.
+
+347
+00:44:00.720 --> 00:44:06.350
+Tian WU: So here, the, the end of this edge is, like, 2.15.
+
+348
+00:44:09.230 --> 00:44:16.020
+Tian WU: And as I mentioned, this box plot is used to visualize.
+
+349
+00:44:16.430 --> 00:44:20.049
+Tian WU: First of all, must be the continuous variable.
+
+350
+00:44:20.410 --> 00:44:26.449
+Tian WU: And also, we can use this box plot to have
+
+351
+00:44:27.180 --> 00:44:32.309
+Tian WU: An intuitive understanding of the distribution of the data points.
+
+352
+00:44:33.440 --> 00:44:40.200
+Tian WU: For example, we know that there are some extreme values on the… on the large value.
+
+353
+00:44:40.520 --> 00:44:43.690
+Tian WU: So there must be certain extreme values.
+
+354
+00:44:43.870 --> 00:44:46.699
+Tian WU: For… for large values.
+
+355
+00:44:47.320 --> 00:44:51.100
+Tian WU: Correspondingly, on the left-hand side, I plot the histogram.
+
+356
+00:44:51.400 --> 00:44:59.800
+Tian WU: Which… Divide the range of this dataset into different intervals.
+
+357
+00:45:00.350 --> 00:45:06.559
+Tian WU: and then I count the number of Values fall into different intervals.
+
+358
+00:45:07.300 --> 00:45:18.080
+Tian WU: So, for example, here, I think this is around 0.3, so from 0.3 to 1.2, For… for the value.
+
+359
+00:45:19.180 --> 00:45:23.099
+Tian WU: In our data falls into that interval.
+
+360
+00:45:23.780 --> 00:45:29.950
+Tian WU: we count the number of values. Say, in total, there are 16 such values.
+
+361
+00:45:30.500 --> 00:45:34.090
+Tian WU: Then we have a, a bar.
+
+362
+00:45:34.330 --> 00:45:35.260
+Tian WU: Here.
+
+363
+00:45:35.900 --> 00:45:44.180
+Tian WU: And then we count the number of, values falls between one point 2 to 2.1.
+
+364
+00:45:44.550 --> 00:45:50.120
+Tian WU: And it turns out that there are 6 of them, so we have the second bar, so on and so forth.
+
+365
+00:45:50.680 --> 00:45:57.419
+Tian WU: And it is indeed that we found there is a bar, so there are 3 values.
+
+366
+00:45:57.670 --> 00:46:03.990
+Tian WU: falls between, like, 3.8 to 4.7.
+
+367
+00:46:05.820 --> 00:46:08.660
+Tian WU: So there are, three values.
+
+368
+00:46:09.730 --> 00:46:11.410
+Tian WU: Which are really large.
+
+369
+00:46:12.220 --> 00:46:17.129
+Tian WU: So that corresponds to this outliers on this box plot.
+
+370
+00:46:17.720 --> 00:46:29.640
+Tian WU: And also, we can pay attention to the distance between Q1 and median versus the distance between median versus Q3.
+
+371
+00:46:31.620 --> 00:46:35.010
+Tian WU: We know that in this box.
+
+372
+00:46:35.600 --> 00:46:37.979
+Tian WU: There are 50% of the data.
+
+373
+00:46:38.260 --> 00:46:41.460
+Tian WU: Right, the middle 50% of the data.
+
+374
+00:46:42.580 --> 00:46:49.389
+Tian WU: But for the lower 25%, Their range is relatively small.
+
+375
+00:46:49.940 --> 00:46:54.539
+Tian WU: Compared to the range of the other 25%.
+
+376
+00:46:55.790 --> 00:47:01.050
+Tian WU: So this means that Starting from this median level.
+
+377
+00:47:01.530 --> 00:47:07.250
+Tian WU: The range of the next 25% of the data is Bone.
+
+378
+00:47:07.360 --> 00:47:08.560
+Tian WU: Larger.
+
+379
+00:47:09.190 --> 00:47:12.470
+Tian WU: Compared to the previous 25%.
+
+380
+00:47:13.100 --> 00:47:21.940
+Tian WU: So… If we look back into the histogram, this is reflected as a,
+
+381
+00:47:22.200 --> 00:47:26.879
+Tian WU: sliding. It's like a slide shape in this histogram.
+
+382
+00:47:27.370 --> 00:47:32.330
+Tian WU: So on the left-hand side, the distance is relatively short.
+
+383
+00:47:32.440 --> 00:47:38.720
+Tian WU: Whereas, on the right-hand side, the, the distance is…
+
+384
+00:47:38.850 --> 00:47:42.550
+Tian WU: It's larger for same 25% of the data.
+
+385
+00:47:42.970 --> 00:47:48.359
+Tian WU: So you would imagine that if we can, have more data.
+
+386
+00:47:48.910 --> 00:48:02.139
+Tian WU: So that the histogram will become smoother, then here will be a, here will be a, peak, and then gradually the shape will slide down.
+
+387
+00:48:03.320 --> 00:48:05.659
+Tian WU: And given that there are some
+
+388
+00:48:05.800 --> 00:48:09.919
+Tian WU: Large values on the right-hand side, there will be a long tail.
+
+389
+00:48:10.140 --> 00:48:11.840
+Tian WU: Extending to the right.
+
+390
+00:48:13.260 --> 00:48:21.400
+Tian WU: So with the tail on the right-hand side, this is called a scale to the right shape of the distribution of this dataset.
+
+391
+00:48:22.420 --> 00:48:27.279
+Tian WU: So roughly, we can see from this, box plot.
+
+392
+00:48:27.600 --> 00:48:30.820
+Tian WU: About, whether there's an outlier.
+
+393
+00:48:31.960 --> 00:48:39.209
+Tian WU: And the range of most of the data, and also, somehow, the distribution of the data points.
+
+394
+00:48:41.510 --> 00:48:48.040
+Tian WU: I think this shape is a bit like when we discussed about the, the salary…
+
+395
+00:48:48.760 --> 00:48:53.680
+Tian WU: So we know that, there are many super-rich people in Hong Kong.
+
+396
+00:48:54.160 --> 00:48:59.909
+Tian WU: And if we calculate the average salary of all the people in Hong Kong.
+
+397
+00:49:00.090 --> 00:49:05.199
+Tian WU: The average will be inflated because of those very rich people.
+
+398
+00:49:05.610 --> 00:49:06.360
+Tian WU: Right.
+
+399
+00:49:07.720 --> 00:49:14.700
+Tian WU: So, the mean value, the average salary, will be… Extract to the right.
+
+400
+00:49:15.170 --> 00:49:17.800
+Tian WU: Due to those very rich people.
+
+401
+00:49:18.450 --> 00:49:22.560
+Tian WU: But for most of the people, if we consider about the median.
+
+402
+00:49:22.810 --> 00:49:31.099
+Tian WU: The median level of the salary, like, 50% of the people, their salary will be less than this amount.
+
+403
+00:49:31.400 --> 00:49:35.760
+Tian WU: And the remaining 50th percent will be greater than that amount.
+
+404
+00:49:35.890 --> 00:49:39.590
+Tian WU: So this… Media will be…
+
+405
+00:49:39.900 --> 00:49:48.860
+Tian WU: Smaller than the average, than the mean value, if there are some very large value on the right-hand side.
+
+406
+00:49:49.620 --> 00:49:55.179
+Tian WU: Because median is not that sensitive to the extreme values.
+
+407
+00:49:55.730 --> 00:50:03.399
+Tian WU: or the outliers, because it's considered the center. It cuts the data points, in the middle.
+
+408
+00:50:04.070 --> 00:50:10.739
+Tian WU: Whereas for the mean value, when we calculate mean, we need to Sum over all the points.
+
+409
+00:50:10.990 --> 00:50:18.329
+Tian WU: The value of all the points in all the data points, and then divide it by the total number of data points.
+
+410
+00:50:18.630 --> 00:50:25.110
+Tian WU: Then, this mean value will be, Dragged to the right.
+
+411
+00:50:25.710 --> 00:50:31.940
+Tian WU: because of these extremely large values. So we observe this mean value sitting
+
+412
+00:50:32.150 --> 00:50:35.740
+Tian WU: At the right-hand side of the median value.
+
+413
+00:50:36.470 --> 00:50:40.520
+Tian WU: Or if you translate to the box plot, then it is above.
+
+414
+00:50:40.960 --> 00:50:43.160
+Tian WU: The, median value.
+
+415
+00:50:45.260 --> 00:50:53.749
+Tian WU: So hopefully, with this example, you have a better understanding of this box and whisker plot.
+
+416
+00:50:53.890 --> 00:51:02.419
+Tian WU: And, you could use all this visualization under appropriate circumstances.
+
+417
+00:51:04.530 --> 00:51:13.779
+Tian WU: Okay, I think maybe we take a 10-minute break, and if you have any questions, you can just send message in the chat box.
+
+418
+00:51:19.860 --> 00:51:32.970
+Simon Wang: So while we're taking a break, if anyone cannot have access to the Google Drive folder I shared in the individual WhatsApp group, just send your Gmail account to the group.
+
+419
+00:51:33.620 --> 00:51:44.679
+Simon Wang: And you know, actually your group members should be able to help you, invite you over to the folder, but you need my help, you can also, tag me and let me know.
+
+420
+00:51:51.040 --> 00:51:54.820
+Simon Wang: And also, if you,
+
+421
+00:51:54.940 --> 00:52:11.580
+Simon Wang: need help regarding the API key, also let us know. I think after, you know, after the break, Talia will talk a bit more about simulation, and then we're going to, have the in-class, exercise.
+
+422
+00:52:11.750 --> 00:52:17.759
+Simon Wang: And I'm going to set up some breakout room, so the…
+
+423
+00:52:18.210 --> 00:52:29.530
+Simon Wang: group members of each group can go to the breakout room, and, you can talk there, you can actually have a meeting about your project while you're doing the in-class exercise. So…
+
+424
+00:52:29.860 --> 00:52:35.089
+Simon Wang: Because next week, we're going to have small group meetings,
+
+425
+00:52:35.790 --> 00:52:40.750
+Simon Wang: We're going to provide more instructions in terms of the arrangement, But,
+
+426
+00:52:40.880 --> 00:52:52.289
+Simon Wang: Next week will be very critical, because you need to make some progress over the… over your own project, and you have to decide how you want to approach the government to collect information.
+
+427
+00:52:52.320 --> 00:53:04.520
+Simon Wang: So, and also this is the week before the public holiday, and you want to think about how you want to collect your data. So, so a lot of decisions will have to be made,
+
+428
+00:53:04.640 --> 00:53:06.750
+Simon Wang: Hopefully before or during.
+
+429
+00:53:06.880 --> 00:53:21.130
+Simon Wang: the group meetings next week. So I think we need to kind of… in addition to learning about the models, we need to start thinking about how to apply the models and tools to our projects.
+
+430
+00:57:55.240 --> 00:58:01.610
+Simon Wang: Right, another quick, message about, about Gihub.
+
+431
+00:58:01.690 --> 00:58:19.009
+Simon Wang: is that since you already took some time and efforts to learn about GitHub, VS Code, and everything, I would encourage you to actually apply for the GitHub education, because, once you
+
+432
+00:58:19.010 --> 00:58:29.250
+Simon Wang: get the GitHub education, eligibility, you will be able to enjoy some, GitHub Copilot Agent
+
+433
+00:58:29.350 --> 00:58:40.990
+Simon Wang: services, which is usually premium services that you have to pay, but if you've got student benefits, then you can use it a little bit more for free.
+
+434
+00:58:41.200 --> 00:58:44.420
+Simon Wang: At some point, we're going to talk about that.
+
+435
+00:58:44.620 --> 00:58:50.509
+Simon Wang: Well, we don't want to overwhelm you with all kinds of technical,
+
+436
+00:58:51.140 --> 00:58:56.400
+Simon Wang: details, but, I think the agent is going to,
+
+437
+00:58:56.560 --> 00:59:09.520
+Simon Wang: you know, give you a lot of, opportunities and, you know, help. So I would encourage you to look into that, but you have to apply for the education benefit first.
+
+438
+01:01:01.490 --> 01:01:03.529
+Tian WU: Okay, so maybe let's resume.
+
+439
+01:01:04.810 --> 01:01:14.759
+Tian WU: So Simon just mentioned about the GitHub education. If you log in into your GitHub account under this Billing and Licensing.
+
+440
+01:01:15.790 --> 01:01:29.480
+Tian WU: education benefits, you can go to this GitHub education page to submit an application. So on average, it will take around 5 days to process your application.
+
+441
+01:01:31.680 --> 01:01:44.310
+Tian WU: Okay, so regarding this box and whisker plot, if you ask the AI's help to generate this plot based on certain data, then the plot will be directly out.
+
+442
+01:01:44.420 --> 01:01:48.189
+Tian WU: So you don't have to actually consider all of these details.
+
+443
+01:01:48.360 --> 01:01:56.480
+Tian WU: But the reason I explain it is to hopefully help you to have a better understanding of how this is plotted out.
+
+444
+01:01:58.280 --> 01:02:04.390
+Tian WU: And another point is that if you would like to change the setting of the code.
+
+445
+01:02:04.580 --> 01:02:11.630
+Tian WU: Say, if you want to plot 30 data points, generate 30 data points rather than 26,
+
+446
+01:02:11.770 --> 01:02:18.970
+Tian WU: Of course, you can tell the AI assistant to help you to modify the code.
+
+447
+01:02:19.140 --> 01:02:24.790
+Tian WU: And you actually don't have to copy and paste, because there is apply to this notebook.
+
+448
+01:02:25.290 --> 01:02:31.970
+Tian WU: So once you click this, So the corresponding, code will be
+
+449
+01:02:33.180 --> 01:02:47.650
+Tian WU: modified automatically, so you can see the old version with 26, and the new version with 30. So just click keep, if you think everything's fine, just click keep, so that it saves you the copy and paste. You can
+
+450
+01:02:47.650 --> 01:02:53.650
+Tian WU: Directly apply the modified code to the old version of the code.
+
+451
+01:02:54.740 --> 01:02:56.540
+Tian WU: Okay, so this is a tip.
+
+452
+01:02:58.440 --> 01:02:59.560
+Tian WU: Okay.
+
+453
+01:03:00.530 --> 01:03:06.970
+Tian WU: So then, I still have some last words about the, requestion?
+
+454
+01:03:11.550 --> 01:03:12.310
+Tian WU: Yup.
+
+455
+01:03:14.100 --> 01:03:30.710
+Tian WU: So last time, we mainly talked about the linear regression, and our purpose is to try to use our data to estimate the values for this beta zero, this intercept, and the slope term, the beta 1.
+
+456
+01:03:31.930 --> 01:03:38.909
+Tian WU: And that is the case when the response is a continuous response.
+
+457
+01:03:39.780 --> 01:03:43.250
+Tian WU: Which means Y should be a continuous variable.
+
+458
+01:03:44.240 --> 01:03:47.860
+Tian WU: But in reality, it is not always the case, right?
+
+459
+01:03:48.160 --> 01:03:58.259
+Tian WU: In our questionnaire, the response variable is actually categorical, from the strongly opposed to strongly support.
+
+460
+01:03:59.110 --> 01:04:15.250
+Tian WU: In that case, it is not that appropriate to apply the linear regression, because it already violates one of the assumptions of the linear regression for distribution of the Y, or for this error term.
+
+461
+01:04:15.740 --> 01:04:19.929
+Tian WU: So, based on different types of responsible variable.
+
+462
+01:04:20.090 --> 01:04:22.930
+Tian WU: If the response variable is binary.
+
+463
+01:04:23.030 --> 01:04:27.119
+Tian WU: Like, when it can only take value of 0 or 1,
+
+464
+01:04:27.550 --> 01:04:36.270
+Tian WU: We will have the so-called logistic regression, And if Y is categorical, Especially…
+
+465
+01:04:36.620 --> 01:04:41.329
+Tian WU: It's an ordinal categorical response, just like
+
+466
+01:04:41.640 --> 01:04:46.539
+Tian WU: in our questionnaire is from strongly opposed to strongly support
+
+467
+01:04:46.710 --> 01:04:50.670
+Tian WU: Then it is more appropriate to use the ordinal regression.
+
+468
+01:04:51.850 --> 01:05:02.090
+Tian WU: Because not all of you will, will make use of, regression, because, as mentioned, regression is only,
+
+469
+01:05:02.480 --> 01:05:12.659
+Tian WU: Appropriate to be used to model the relationship between a dependent variable and one or more independent variables, assuming a linear relationship.
+
+470
+01:05:13.150 --> 01:05:15.550
+Tian WU: So if the question type is.
+
+471
+01:05:15.670 --> 01:05:26.029
+Tian WU: We want to explore the relationship between the response and some potential influence of factors, then linear regression might be a useful tool.
+
+472
+01:05:26.610 --> 01:05:28.880
+Tian WU: But not all of you will use this.
+
+473
+01:05:30.000 --> 01:05:40.689
+Tian WU: So I will not, spend more time to talk more about the details of logistic regression and the ordinary logistic regression.
+
+474
+01:05:40.930 --> 01:05:50.780
+Tian WU: But later, if your group project will make use of regression models, then we can, in a small group.
+
+475
+01:05:51.060 --> 01:06:03.579
+Tian WU: I will talk more about this, correct interpretation of the, the parameters for logistic regression and ordinary logistic regression model.
+
+476
+01:06:04.570 --> 01:06:08.449
+Tian WU: So that's the final words for the regression models.
+
+477
+01:06:09.680 --> 01:06:13.569
+Tian WU: And then, finally, we can start with the simulation.
+
+478
+01:06:18.380 --> 01:06:20.799
+Tian WU: So this is our second,
+
+479
+01:06:23.860 --> 01:06:26.580
+Tian WU: This is our second case study.
+
+480
+01:06:27.150 --> 01:06:34.389
+Tian WU: The topic is to evaluate the efficiency of the bus road adjustments. City bus number 56.
+
+481
+01:06:34.560 --> 01:06:35.290
+Tian WU: Thanks.
+
+482
+01:06:35.910 --> 01:06:38.720
+Tian WU: So here comes the structure of the case study.
+
+483
+01:06:38.900 --> 01:06:47.819
+Tian WU: We'll first briefly talk about the background of this proposal of adjusting the bus frequency and road.
+
+484
+01:06:48.530 --> 01:06:52.860
+Tian WU: And also, briefly introduce the simulation design.
+
+485
+01:06:53.370 --> 01:07:09.450
+Tian WU: And look into the random component in the simulation, and how we interpret the results, and correspondingly, how this study will help generate certain questions that we can acquire with the transport department.
+
+486
+01:07:10.130 --> 01:07:12.739
+Tian WU: Then we will have the in-class exercise.
+
+487
+01:07:15.870 --> 01:07:17.320
+Tian WU: So, background.
+
+488
+01:07:17.970 --> 01:07:25.450
+Tian WU: Actually, every year, this is an annual exercise for the franchise, the bus companies.
+
+489
+01:07:25.550 --> 01:07:30.750
+Tian WU: to submit these bus road planning programs to the Transport Department.
+
+490
+01:07:31.700 --> 01:07:38.299
+Tian WU: So… Do you know how many, franchise the bus companies in Hong Kong
+
+491
+01:07:43.070 --> 01:07:45.199
+Tian WU: You can type in the chat box.
+
+492
+01:07:50.640 --> 01:07:51.960
+Tian WU: 2?
+
+493
+01:07:55.960 --> 01:08:03.819
+Tian WU: Actually, there are 4 bus companies. So the franchise, the buses, including the city bus, the Colon Motor Bus.
+
+494
+01:08:04.230 --> 01:08:12.139
+Tian WU: Long Wind Bus and New Lentell Bus. In total, there are 4 franchise bus companies in Hong Kong.
+
+495
+01:08:12.820 --> 01:08:18.270
+Tian WU: And after they proposed this road change to the Transport Department.
+
+496
+01:08:18.430 --> 01:08:24.079
+Tian WU: The department will review the proposal and consult with relevant district councils.
+
+497
+01:08:24.550 --> 01:08:31.099
+Tian WU: Particularly for major changes, because that will affect the residents in the district.
+
+498
+01:08:31.430 --> 01:08:38.419
+Tian WU: So they will, consult the, district councils, About the adjustment.
+
+499
+01:08:39.069 --> 01:08:45.159
+Tian WU: Then, this proposal will be implemented, often begins on a temporary basis.
+
+500
+01:08:45.859 --> 01:08:52.100
+Tian WU: Following up to 24 months of operation without permanent legislative changes.
+
+501
+01:08:53.359 --> 01:09:02.939
+Tian WU: And if this change is determined to be a permanent change, Then, legislative procedures are required.
+
+502
+01:09:03.130 --> 01:09:08.349
+Tian WU: When the road changes need to be made permanent beyond the 24 months temporary period.
+
+503
+01:09:09.270 --> 01:09:19.019
+Tian WU: So that's the overall flow of… from proposing the road change to, finally, we have certain legislative procedures.
+
+504
+01:09:21.229 --> 01:09:26.030
+Tian WU: And in our case study, we will focus on city bus number 56,
+
+505
+01:09:26.319 --> 01:09:30.369
+Tian WU: So it is, operating in the North District.
+
+506
+01:09:30.490 --> 01:09:40.009
+Tian WU: So you can actually find that this, proposal is discussed in the committee meetings in the, North District Council.
+
+507
+01:09:42.270 --> 01:09:48.770
+Tian WU: And in this proposal, it states the criteria for increasing the buzz frequency.
+
+508
+01:09:50.910 --> 01:09:57.889
+Tian WU: Specifically, our case is, cited from the 2024 to 2005.
+
+509
+01:09:58.070 --> 01:10:00.529
+Tian WU: This bus road planning program.
+
+510
+01:10:01.360 --> 01:10:10.310
+Tian WU: It says that for individual bus roads, if the passenger load factor reaches 90% during the busiest half hour.
+
+511
+01:10:11.180 --> 01:10:15.739
+Tian WU: And 75% during the busiest hour of peak periods.
+
+512
+01:10:17.950 --> 01:10:23.300
+Tian WU: Or 60% during the busiest hour of off-peak periods.
+
+513
+01:10:24.300 --> 01:10:31.189
+Tian WU: Then, the department and the franchise, the bus company, will consider increasing the service frequency.
+
+514
+01:10:32.830 --> 01:10:37.379
+Tian WU: So this is written as the criteria for increasing bus frequency.
+
+515
+01:10:38.490 --> 01:10:42.210
+Tian WU: But… I think…
+
+516
+01:10:42.490 --> 01:10:51.899
+Tian WU: here, sorry that I cannot find the Chinese version of this, this proposal. It seems that only the traditional Chinese version is provided.
+
+517
+01:10:52.450 --> 01:11:01.909
+Tian WU: But for this 56, Regarding the, capacity of passengers, It says that in the
+
+518
+01:11:02.330 --> 01:11:09.220
+Tian WU: In the busiest one hour, The passenger load factor is 32%.
+
+519
+01:11:10.170 --> 01:11:12.690
+Tian WU: So this is before the adjustment.
+
+520
+01:11:13.520 --> 01:11:23.520
+Tian WU: They will make, adjustment of the frequency of 56, so that the existing capacity.
+
+521
+01:11:23.690 --> 01:11:25.500
+Tian WU: will be improved.
+
+522
+01:11:26.610 --> 01:11:31.489
+Tian WU: But it's a little bit weird that we found that for this bus number 56,
+
+523
+01:11:31.730 --> 01:11:38.860
+Tian WU: Even before the adjustment, the so-called passenger load factor is only 32%.
+
+524
+01:11:40.400 --> 01:11:42.709
+Tian WU: So then that leads to the question.
+
+525
+01:11:44.480 --> 01:11:51.060
+Tian WU: It is unclear, first of all, it is unclear how is this passenger load factor is defined.
+
+526
+01:11:52.500 --> 01:11:56.669
+Tian WU: So if we only consider those, stating passengers.
+
+527
+01:11:56.890 --> 01:12:00.099
+Tian WU: Then that will be the seed utilization rate.
+
+528
+01:12:00.360 --> 01:12:02.949
+Tian WU: Like, we use the number of people.
+
+529
+01:12:03.650 --> 01:12:04.770
+Tian WU: on the bus.
+
+530
+01:12:05.610 --> 01:12:10.670
+Tian WU: Divided by the capacity, or the number of seats on the bus.
+
+531
+01:12:11.040 --> 01:12:16.170
+Tian WU: Then we can have this, seed utilization rate.
+
+532
+01:12:17.480 --> 01:12:21.759
+Tian WU: Or, it can be, like, we use the number of people on the bus.
+
+533
+01:12:22.130 --> 01:12:25.320
+Tian WU: To divide the total capacity of a bus.
+
+534
+01:12:25.870 --> 01:12:29.589
+Tian WU: Including… In those standing spots.
+
+535
+01:12:30.120 --> 01:12:36.430
+Tian WU: So then, in this proposal, it is not clear exactly how this passenger load factor is defined.
+
+536
+01:12:36.660 --> 01:12:37.820
+Tian WU: Which way?
+
+537
+01:12:38.230 --> 01:12:39.760
+Tian WU: This is calculated.
+
+538
+01:12:41.040 --> 01:12:47.520
+Tian WU: And specifically, for this number 56, when the business hour occurs.
+
+539
+01:12:48.670 --> 01:12:52.099
+Tian WU: So I bet for a different, bus road.
+
+540
+01:12:52.550 --> 01:12:54.780
+Tian WU: The busiest hour will be different.
+
+541
+01:12:55.270 --> 01:12:57.959
+Tian WU: Right, but it is not listed here.
+
+542
+01:12:58.350 --> 01:13:07.210
+Tian WU: It only lists the, the frequency of the bus during the busiest hour, but it does not mention when exactly the busiest hour occurs.
+
+543
+01:13:08.850 --> 01:13:15.629
+Tian WU: Also, we only have one single number for this passenger load factor.
+
+544
+01:13:16.760 --> 01:13:21.450
+Tian WU: And we… by imagination, we… we… we can…
+
+545
+01:13:21.890 --> 01:13:24.399
+Tian WU: We can see that for different stops.
+
+546
+01:13:24.940 --> 01:13:28.539
+Tian WU: The seed utilization rate will be different.
+
+547
+01:13:29.420 --> 01:13:35.009
+Tian WU: Say, for those bus stops, which are near the MTR station.
+
+548
+01:13:35.270 --> 01:13:39.130
+Tian WU: If it is before the MTR station, I would expect that
+
+549
+01:13:39.270 --> 01:13:42.189
+Tian WU: The seed utilization rate will be high because
+
+550
+01:13:43.080 --> 01:13:53.050
+Tian WU: I would bet people taking this bus to go to the MTR station. And after the bus arrives at the MTR station, people get off the bus.
+
+551
+01:13:53.250 --> 01:13:56.729
+Tian WU: And then the seed utilization rate will decrease.
+
+552
+01:13:57.710 --> 01:14:01.549
+Tian WU: So for every stop, these numbers should be different.
+
+553
+01:14:02.800 --> 01:14:06.319
+Tian WU: And also, For different time period.
+
+554
+01:14:06.470 --> 01:14:09.300
+Tian WU: As is mentioned, there are business hours, right?
+
+555
+01:14:09.470 --> 01:14:15.729
+Tian WU: So for different hours, these… Seat utility rate… utilization rate should be different.
+
+556
+01:14:15.900 --> 01:14:22.280
+Tian WU: Say, during the morning hours, during the lunch hours, It should be certain variation.
+
+557
+01:14:22.850 --> 01:14:26.800
+Tian WU: So then, how exactly this single number is calculated?
+
+558
+01:14:27.020 --> 01:14:28.259
+Tian WU: is not clear.
+
+559
+01:14:29.750 --> 01:14:34.239
+Tian WU: And also, how an increase in bus frequency is justified.
+
+560
+01:14:34.370 --> 01:14:39.429
+Tian WU: Given… These percentages is very low, actually.
+
+561
+01:14:40.240 --> 01:14:47.939
+Tian WU: Comparing to the criteria in the same document, it says… it says that When this number reaches…
+
+562
+01:14:48.050 --> 01:14:56.409
+Tian WU: 90%, then the company and also the transport department will consider increasing the service frequency.
+
+563
+01:14:56.960 --> 01:14:58.690
+Tian WU: There are many questions.
+
+564
+01:14:58.880 --> 01:15:01.270
+Tian WU: After we reach this proposal.
+
+565
+01:15:03.460 --> 01:15:11.640
+Tian WU: So specifically, Originally, the, city bus number 56, the road is from
+
+566
+01:15:11.930 --> 01:15:18.230
+Tian WU: the road is the, the… represented by the blue line. Blue… blue curve.
+
+567
+01:15:19.520 --> 01:15:24.150
+Tian WU: So this is from… turn on to so-and-so.
+
+568
+01:15:25.150 --> 01:15:28.520
+Tian WU: this blue… Curve.
+
+569
+01:15:29.370 --> 01:15:35.740
+Tian WU: And it turns out that In addition to the frequency change, the rate of this, this,
+
+570
+01:15:36.080 --> 01:15:38.160
+Tian WU: Buzz also changed.
+
+571
+01:15:38.660 --> 01:15:43.989
+Tian WU: So now it is the, the rotis represented by this red dashed line.
+
+572
+01:15:44.710 --> 01:15:52.360
+Tian WU: So, visually, it's the distance of the, overall overall distance is increasing.
+
+573
+01:15:54.630 --> 01:15:58.439
+Tian WU: So we can see some key summaries of the
+
+574
+01:15:58.560 --> 01:16:03.130
+Tian WU: Of this bus before and after the adjustment.
+
+575
+01:16:04.020 --> 01:16:07.959
+Tian WU: So before, the, adjustment…
+
+576
+01:16:08.730 --> 01:16:20.280
+Tian WU: The total distance for the forward direction from Timmun to Shenzhou is 26.9 kilometers, whereas after adjustment, the distance is longer.
+
+577
+01:16:21.220 --> 01:16:28.239
+Tian WU: Whereas for the service time, it is increased by adding this afternoon to night session.
+
+578
+01:16:28.520 --> 01:16:30.159
+Tian WU: Plus the weekends.
+
+579
+01:16:32.100 --> 01:16:35.730
+Tian WU: And the hard way, which is the frequency of the bus.
+
+580
+01:16:36.060 --> 01:16:43.250
+Tian WU: So, previously, before adjustment, in one hour, there will be 30, there will be 2 buses.
+
+581
+01:16:44.240 --> 01:16:53.320
+Tian WU: Whereas for the proposed change, which is now, in action, it's like in one hour, in the morning sessions.
+
+582
+01:16:53.460 --> 01:16:56.169
+Tian WU: There will be 3 buses in 1 hour.
+
+583
+01:16:57.680 --> 01:17:02.240
+Tian WU: Although the road is different, the number of stops is kept the same.
+
+584
+01:17:03.960 --> 01:17:08.079
+Tian WU: Whereas for the return direction, the overall distance increased.
+
+585
+01:17:08.450 --> 01:17:10.909
+Tian WU: The overall service time is increased.
+
+586
+01:17:11.060 --> 01:17:16.139
+Tian WU: Like, adding the, afternoon and night session, plus the weekends.
+
+587
+01:17:16.930 --> 01:17:21.120
+Tian WU: The frequency is kept the same, and the number of stops increased.
+
+588
+01:17:22.430 --> 01:17:25.909
+Tian WU: So that's the overall, background for this bus.
+
+589
+01:17:29.270 --> 01:17:38.550
+Tian WU: And our objective is to develop and analyze a simulation of the bus road 56 operations during the morning.
+
+590
+01:17:38.750 --> 01:17:43.200
+Tian WU: Using field data, and also the estimated arrival times.
+
+591
+01:17:43.320 --> 01:17:46.720
+Tian WU: It's called ETA, from the Data Gulf of Hong Kong.
+
+592
+01:17:48.630 --> 01:17:54.300
+Tian WU: So pay attention that this bus starts service after 9.
+
+593
+01:17:54.880 --> 01:18:00.440
+Tian WU: So I think this is already different from the peak hour we usually define.
+
+594
+01:18:01.380 --> 01:18:11.080
+Tian WU: If we consider when the students go to school and people go to work, then usually the peak hour will be, like, from 7, or even from half past 6.
+
+595
+01:18:11.740 --> 01:18:15.179
+Tian WU: But for this boss, It does operate.
+
+596
+01:18:15.440 --> 01:18:16.690
+Tian WU: ads.
+
+597
+01:18:17.100 --> 01:18:19.220
+Tian WU: At least after 9 o'clock.
+
+598
+01:18:22.040 --> 01:18:29.079
+Tian WU: So we want to test, with the change of the frequency and also the bus route.
+
+599
+01:18:29.300 --> 01:18:34.929
+Tian WU: How would this seat utilization rate change using the simulation method?
+
+600
+01:18:35.740 --> 01:18:42.380
+Tian WU: And then we can provide the evidence-based policy inquiries to the transport department.
+
+601
+01:18:46.800 --> 01:18:49.960
+Tian WU: So recall that, we introduced this
+
+602
+01:18:52.630 --> 01:18:56.409
+Tian WU: If you have any comments, you can maybe type in the chat box.
+
+603
+01:18:58.310 --> 01:19:03.209
+Tian WU: So we talked about this simulation design in the, first class.
+
+604
+01:19:04.140 --> 01:19:10.639
+Tian WU: We said there are two tools will be introduced. The first is simulation design, and the second is regression.
+
+605
+01:19:11.380 --> 01:19:20.520
+Tian WU: So, simulation is about mimicking complex systems, Normally, over time, using logic, Maths and computers.
+
+606
+01:19:20.890 --> 01:19:26.520
+Tian WU: So today, we will have a, kind of, intuitive understanding of what this means.
+
+607
+01:19:27.340 --> 01:19:40.239
+Tian WU: And simulation is an experimental process. We run and rerun the model many times under different scenarios to predict the system behavior and evaluate performance under each scenario.
+
+608
+01:19:41.450 --> 01:19:46.299
+Tian WU: Previously, I have shown this, simulation visualization.
+
+609
+01:19:47.180 --> 01:19:51.330
+Tian WU: So, we have the, clock, which is…
+
+610
+01:19:51.970 --> 01:19:55.790
+Tian WU: Record… which is recording the time passed by.
+
+611
+01:19:55.970 --> 01:19:59.820
+Tian WU: And say, at 9-10, the first bus set out.
+
+612
+01:19:59.930 --> 01:20:03.649
+Tian WU: And for each station, there will be passengers queuing.
+
+613
+01:20:05.300 --> 01:20:19.959
+Tian WU: And of course, we will have the passengers alight the bus, so the number of passengers on the bus will not keep increasing. So at some point, the number of passengers on the bus will decrease.
+
+614
+01:20:21.000 --> 01:20:28.069
+Tian WU: So this is the, visualization of the simulation. So we can have a real-time
+
+615
+01:20:28.500 --> 01:20:36.650
+Tian WU: calculation of the utilization rate by different bus stops. So this will keep changing with the clock time past.
+
+616
+01:20:39.270 --> 01:20:42.939
+Tian WU: So then, let's see how this is, implemented.
+
+617
+01:20:50.140 --> 01:20:55.990
+Tian WU: So, in our simulation, There are 3 random components.
+
+618
+01:20:56.460 --> 01:21:09.359
+Tian WU: And this will, these three random components will affect, the seed utilization rate, which is the KPI we focus for this
+
+619
+01:21:09.460 --> 01:21:10.570
+Tian WU: Simulation.
+
+620
+01:21:13.210 --> 01:21:20.520
+Tian WU: So to calculate the seat utilization rate, we need to count the passengers on bus at each stop.
+
+621
+01:21:21.250 --> 01:21:21.980
+Tian WU: Right.
+
+622
+01:21:22.790 --> 01:21:29.160
+Tian WU: But this number is affected by this three components.
+
+623
+01:21:29.910 --> 01:21:34.419
+Tian WU: The first is the travel time between each pair of stops.
+
+624
+01:21:36.420 --> 01:21:41.200
+Tian WU: So I said here, the travel time between each pair of stops is random.
+
+625
+01:21:42.460 --> 01:21:50.390
+Tian WU: This means that if we observe the bus, Starting from stop A, driving to stop B,
+
+626
+01:21:51.050 --> 01:21:56.950
+Tian WU: This time will be different if we observe it in different time… at different times.
+
+627
+01:21:57.440 --> 01:21:59.709
+Tian WU: So for day one, I…
+
+628
+01:22:00.310 --> 01:22:07.620
+Tian WU: I use a clock to, record the traveling time from A to B. It's 10 minutes.
+
+629
+01:22:08.150 --> 01:22:13.090
+Tian WU: And for day 2, it might be 10 minutes plus 30 seconds.
+
+630
+01:22:13.990 --> 01:22:19.450
+Tian WU: And the next day, the day 3, will be 9 minutes and 45 seconds.
+
+631
+01:22:20.400 --> 01:22:30.089
+Tian WU: So every time when we try to measure the traveling time between each pair of the stops, it will be slightly different. It is not a constant.
+
+632
+01:22:31.640 --> 01:22:35.610
+Tian WU: So in this case, we can say that this component is ran…
+
+633
+01:22:35.930 --> 01:22:39.299
+Tian WU: So for those, say, traffic jams.
+
+634
+01:22:40.320 --> 01:22:45.449
+Tian WU: then the travel time between stop A and B will be very, very long.
+
+635
+01:22:45.860 --> 01:22:53.989
+Tian WU: Right? Whereas, if for one day, if the driver, drives the bus, Very fast. Then…
+
+636
+01:22:54.240 --> 01:22:56.340
+Tian WU: The traveling time will be quite short.
+
+637
+01:22:57.650 --> 01:23:04.310
+Tian WU: And this time will also affect the number of people waiting at the stop B.
+
+638
+01:23:06.690 --> 01:23:23.619
+Tian WU: Suppose there is a traffic jam, so it takes super long time to drive from A, stop A to stop B, then we would expect that the number of passengers waiting at stop B will be more than the usual case.
+
+639
+01:23:23.940 --> 01:23:29.430
+Tian WU: When the buzz just, Drive in an ordinary speed.
+
+640
+01:23:31.750 --> 01:23:36.129
+Tian WU: So, the number of waiting passengers at stop B is also random.
+
+641
+01:23:38.230 --> 01:23:43.389
+Tian WU: And also, at each stop, the number of passengers getting off is also random.
+
+642
+01:23:43.860 --> 01:23:50.460
+Tian WU: So, say if we, take that bus, and we take that bus for several times.
+
+643
+01:23:51.090 --> 01:23:55.280
+Tian WU: We count the number of people who get off at bus stop B.
+
+644
+01:23:56.360 --> 01:24:04.770
+Tian WU: But every time this number will be slightly different, it cannot be… always be the constant, like, every time it's 5 people who are getting off.
+
+645
+01:24:05.240 --> 01:24:10.290
+Tian WU: Usually, there will be certain variation, like, 3 people today.
+
+646
+01:24:10.480 --> 01:24:15.489
+Tian WU: 5 people next day, 4 people on day 3, something like that.
+
+647
+01:24:16.520 --> 01:24:25.780
+Tian WU: And actually, for this random component, we can use the random variables to describe their behaviors.
+
+648
+01:24:29.200 --> 01:24:31.439
+Tian WU: So first, it's about the travel time.
+
+649
+01:24:33.040 --> 01:24:39.110
+Tian WU: The bus travel time between each pair of the stops is modeled as a random variable.
+
+650
+01:24:39.330 --> 01:24:41.940
+Tian WU: Drawn from a normal distribution.
+
+651
+01:24:43.480 --> 01:24:51.320
+Tian WU: So we know for normal distribution, It's a bell-shaped, It's symmetric.
+
+652
+01:24:51.730 --> 01:25:03.960
+Tian WU: And the probability that the, if we regard the, maybe let me… That me… A lot.
+
+653
+01:25:07.530 --> 01:25:09.399
+Tian WU: Let me change the device.
+
+654
+01:25:24.860 --> 01:25:31.569
+Tian WU: Okay, so for normal distribution, Suppose this is time t.
+
+655
+01:25:32.850 --> 01:25:36.540
+Tian WU: This is… F15.
+
+656
+01:25:39.450 --> 01:25:46.569
+Tian WU: So this, travel time, we regard it, follows a normal distribution.
+
+657
+01:25:46.940 --> 01:25:52.659
+Tian WU: Say the traveling time from stop A and stop B On average, it's 10 minutes.
+
+658
+01:25:53.930 --> 01:26:00.100
+Tian WU: So the probability that the traveling time is between Baby.
+
+659
+01:26:04.250 --> 01:26:06.209
+Tian WU: Between here and here.
+
+660
+01:26:07.210 --> 01:26:11.290
+Tian WU: So suppose this is, like, 9.
+
+661
+01:26:12.040 --> 01:26:16.560
+Tian WU: 2… This is 10.8 minutes.
+
+662
+01:26:16.850 --> 01:26:25.499
+Tian WU: The probability that the traveling time is between 9.2 to 10.8 minutes the… the probability.
+
+663
+01:26:25.680 --> 01:26:29.579
+Tian WU: is very high. So you can see the area is very large.
+
+664
+01:26:30.370 --> 01:26:37.739
+Tian WU: Compared to the case where the driving time between, say, 11 to 12,
+
+665
+01:26:38.650 --> 01:26:41.580
+Tian WU: Then this variability is very small.
+
+666
+01:26:43.500 --> 01:26:48.770
+Tian WU: So we can use this, normal distribution to…
+
+667
+01:26:49.460 --> 01:26:56.709
+Tian WU: to describe the traveling time. So most of the time, the traveling time will be between, say, 9.2 to
+
+668
+01:26:56.860 --> 01:26:58.590
+Tian WU: 10.8.
+
+669
+01:26:59.950 --> 01:27:03.829
+Tian WU: Then, with the mean, which is the 10 minute here.
+
+670
+01:27:04.200 --> 01:27:18.140
+Tian WU: And the standard deviation, so suppose this represents the, 3 standard deviation. Here is 0.8, then I have roughly, this is, like, 0.2…
+
+671
+01:27:18.290 --> 01:27:19.150
+Tian WU: Sixth?
+
+672
+01:27:22.960 --> 01:27:23.780
+Tian WU: Right.
+
+673
+01:27:23.880 --> 01:27:29.710
+Tian WU: So I have this standard deviation, Estimated from sample data.
+
+674
+01:27:31.710 --> 01:27:38.950
+Tian WU: Specifically, we use the API, we can collect the estimated time of arrival.
+
+675
+01:27:39.110 --> 01:27:44.639
+Tian WU: At each stop for 30 trips of bus number 56.
+
+676
+01:27:45.490 --> 01:27:54.340
+Tian WU: So I know… from this, ETA data, so this is the real-time, arrival time.
+
+677
+01:27:55.690 --> 01:28:02.509
+Tian WU: a record the number it takes from stop A to stop B for 30 times.
+
+678
+01:28:05.160 --> 01:28:11.719
+Tian WU: And I use the average of the travel time of the 30 times as the mean.
+
+679
+01:28:12.190 --> 01:28:14.969
+Tian WU: Of my normal distribution.
+
+680
+01:28:15.990 --> 01:28:26.270
+Tian WU: And I also use the standard deviation of this 30, traveling times as the standard deviation of my normal distribution.
+
+681
+01:28:27.960 --> 01:28:35.989
+Tian WU: So then, in each simulation, I can draw a random number from this specific normal distribution.
+
+682
+01:28:36.570 --> 01:28:40.089
+Tian WU: as the travel time from stop A to stop B.
+
+683
+01:28:41.800 --> 01:28:45.489
+Tian WU: So every time, the travel time will be different.
+
+684
+01:28:45.590 --> 01:28:49.759
+Tian WU: Because it is drawn from a normal distribution.
+
+685
+01:28:49.880 --> 01:28:52.600
+Tian WU: But they are drawn from the same distribution.
+
+686
+01:28:52.750 --> 01:29:01.439
+Tian WU: Where the mean and standard deviation is estimated based on, the, Via real-time data.
+
+687
+01:29:05.030 --> 01:29:10.660
+Tian WU: And then, we calculate the mean and standard deviation of travel times between each pair of stops.
+
+688
+01:29:11.890 --> 01:29:17.169
+Tian WU: For each simulation run, we sample travel times from the corresponding normal distributions.
+
+689
+01:29:17.360 --> 01:29:20.380
+Tian WU: To represent the bus travel times between stops.
+
+690
+01:29:22.120 --> 01:29:26.160
+Tian WU: So if there are different pair of stops.
+
+691
+01:29:26.560 --> 01:29:34.580
+Tian WU: So for this pair of stops, each time I will draw a, travel time, from…
+
+692
+01:29:35.590 --> 01:29:42.020
+Tian WU: A normal distribution with same mean equals to 10, variance equals to 0.3.
+
+693
+01:29:43.030 --> 01:29:47.980
+Tian WU: Whereas for the next pair of bus stops.
+
+694
+01:29:48.530 --> 01:29:54.920
+Tian WU: Because the distance between these two might be different from the previous pair of stations.
+
+695
+01:29:55.340 --> 01:30:02.700
+Tian WU: So, I may need to draw the traveling time from a normal distribution with, say, mean value 15.
+
+696
+01:30:03.010 --> 01:30:06.430
+Tian WU: And 0.2, something like that.
+
+697
+01:30:06.780 --> 01:30:10.840
+Tian WU: So for each pair of There's bus stops.
+
+698
+01:30:11.420 --> 01:30:15.600
+Tian WU: I would draw this travel time from normal distribution
+
+699
+01:30:16.440 --> 01:30:21.949
+Tian WU: whose mean and standard deviation is estimated from the ETA data.
+
+700
+01:30:24.780 --> 01:30:34.410
+Tian WU: If we implement it in code, it will be, the random.normal. We use numpy mp.random.normal.
+
+701
+01:30:34.620 --> 01:30:43.709
+Tian WU: These command will help us to draw the random numbers from normal distribution with specific mean and specific standard deviation.
+
+702
+01:30:46.820 --> 01:30:49.610
+Tian WU: So after we know the traveling time.
+
+703
+01:30:49.710 --> 01:30:52.200
+Tian WU: Between each pair of the bus stops.
+
+704
+01:30:52.500 --> 01:30:57.629
+Tian WU: And we know that this will affect the number of waiting passengers at stop B.
+
+705
+01:30:58.450 --> 01:31:05.549
+Tian WU: Because, as mentioned, the longer the traveling time, the larger number of waiting passengers.
+
+706
+01:31:07.140 --> 01:31:16.909
+Tian WU: And this number of waiting passengers is often used… is often described by this so-called poison distribution.
+
+707
+01:31:19.040 --> 01:31:25.040
+Tian WU: So Poisson distribution is a discrete distribution.
+
+708
+01:31:25.270 --> 01:31:32.279
+Tian WU: So it can only take… It can only take value, like, 0 or 1 or 2 or 3.
+
+709
+01:31:32.910 --> 01:31:42.140
+Tian WU: And it can be used to describe the number of events happened within a unit's time interval.
+
+710
+01:31:42.910 --> 01:31:49.579
+Tian WU: Say, we want to describe the number of passengers, waiting at a stop.
+
+711
+01:31:50.120 --> 01:31:57.930
+Tian WU: Or the number of customers go into a supermarket, So this is… about counting.
+
+712
+01:31:58.050 --> 01:32:00.460
+Tian WU: The number of events happened.
+
+713
+01:32:01.890 --> 01:32:08.979
+Tian WU: And if we know that it follows a poison distribution, then one of the key parameters
+
+714
+01:32:09.560 --> 01:32:15.580
+Tian WU: So parameter is just like the mean and standard deviation for a normal distribution.
+
+715
+01:32:16.230 --> 01:32:20.609
+Tian WU: For poison distribution, the key parameter is lambda.
+
+716
+01:32:21.120 --> 01:32:26.960
+Tian WU: It represents the average number of occurrence in the time interval.
+
+717
+01:32:28.990 --> 01:32:37.900
+Tian WU: So suppose we know that if lambda equals to 4, It means, on average, In one hour.
+
+718
+01:32:38.180 --> 01:32:42.320
+Tian WU: There will be 4 people waiting at bus stop.
+
+719
+01:32:43.810 --> 01:32:50.709
+Tian WU: Then, we can calculate the corresponding probability when there is, like, only
+
+720
+01:32:51.750 --> 01:32:55.780
+Tian WU: Zero people waiting at the bus stop.
+
+721
+01:32:55.990 --> 01:33:00.660
+Tian WU: Then we know the average number is 4, then…
+
+722
+01:33:01.810 --> 01:33:05.570
+Tian WU: If we calculate the probability of zero passengers.
+
+723
+01:33:05.740 --> 01:33:10.200
+Tian WU: Or waiting at that bus stop, the corresponding probability will be very low.
+
+724
+01:33:11.580 --> 01:33:18.959
+Tian WU: And it is also, makes sense that if the average number of passengers waiting at the bus stop
+
+725
+01:33:19.190 --> 01:33:25.160
+Tian WU: Within the unit time, interval is 4, then the probability that
+
+726
+01:33:25.690 --> 01:33:36.100
+Tian WU: During that time interval, there will be 5 people who are waiting at the bus stop. The probability of this event will be relatively high.
+
+727
+01:33:37.020 --> 01:33:41.000
+Tian WU: Because… On average, there will be 4 people waiting there.
+
+728
+01:33:41.160 --> 01:33:47.990
+Tian WU: And 5 people is close to… to the average, close to the… Four people.
+
+729
+01:33:48.890 --> 01:33:57.099
+Tian WU: So then the chance of There are 5 people waiting there, this probability should be relatively high.
+
+730
+01:33:57.570 --> 01:34:00.690
+Tian WU: So you can observe this, graph.
+
+731
+01:34:02.350 --> 01:34:09.349
+Tian WU: When the average is 4, then the probability of 5 people waiting there is relatively high, whereas
+
+732
+01:34:10.420 --> 01:34:14.010
+Tian WU: If we know, on average, there will be 4 people waiting there.
+
+733
+01:34:14.270 --> 01:34:18.890
+Tian WU: The probability that there will be 20 people waiting there, then…
+
+734
+01:34:19.200 --> 01:34:24.340
+Tian WU: The likelihood of this event will be relatively small.
+
+735
+01:34:24.800 --> 01:34:29.039
+Tian WU: So that is the shape of this poison distribution.
+
+736
+01:34:30.210 --> 01:34:38.329
+Tian WU: And then… Just like what we did for the traveling time, we need to estimate the lambda.
+
+737
+01:34:38.670 --> 01:34:43.910
+Tian WU: The average number of people waiting at different bus stops.
+
+738
+01:34:45.350 --> 01:34:48.969
+Tian WU: And this can be estimated by the field observation.
+
+739
+01:34:49.640 --> 01:34:52.430
+Tian WU: Say, now we are at the bus stop 2.
+
+740
+01:34:52.760 --> 01:34:58.579
+Tian WU: And suppose, imagine that we are on the bus, Starting from stop 1.
+
+741
+01:34:59.090 --> 01:35:01.569
+Tian WU: We start to see how long it takes
+
+742
+01:35:01.700 --> 01:35:06.730
+Tian WU: To drive from stop 1 to stop 2, And it turns out that
+
+743
+01:35:07.090 --> 01:35:09.329
+Tian WU: The travel time is 10 minutes.
+
+744
+01:35:09.620 --> 01:35:13.460
+Tian WU: And at stop 2, there are 5 people waiting there.
+
+745
+01:35:14.310 --> 01:35:16.680
+Tian WU: This is our first observation.
+
+746
+01:35:17.690 --> 01:35:21.239
+Tian WU: Then, for the next day, or for the next shift.
+
+747
+01:35:21.970 --> 01:35:27.589
+Tian WU: The traveling time between stop 1 and stop 2 is 15 minutes.
+
+748
+01:35:28.280 --> 01:35:33.310
+Tian WU: And then we observe there are 8 people. We are waiting at stop 2.
+
+749
+01:35:34.140 --> 01:35:37.040
+Tian WU: So we have a record, so on and so forth.
+
+750
+01:35:38.250 --> 01:35:41.109
+Tian WU: So after we collected this field data.
+
+751
+01:35:41.810 --> 01:35:45.390
+Tian WU: We can calculate the rate for each observation.
+
+752
+01:35:46.730 --> 01:35:53.530
+Tian WU: So the rate represents the average number of passengers In the time interval.
+
+753
+01:35:54.600 --> 01:36:02.380
+Tian WU: So you may imagine that the passengers just come, In a uniformly way.
+
+754
+01:36:02.520 --> 01:36:07.260
+Tian WU: So during this 10 minutes, In total, there are 5 people.
+
+755
+01:36:08.170 --> 01:36:12.369
+Tian WU: Catch the… Arrive at stop 2.
+
+756
+01:36:13.350 --> 01:36:20.410
+Tian WU: So this means, on average, for every minute, There are 0.5 people.
+
+757
+01:36:20.850 --> 01:36:22.719
+Tian WU: Arrived at the stop tool.
+
+758
+01:36:24.570 --> 01:36:28.969
+Tian WU: Similarly, we can calculate this arrival rate
+
+759
+01:36:29.130 --> 01:36:32.400
+Tian WU: For, the next few observations.
+
+760
+01:36:33.080 --> 01:36:36.860
+Tian WU: And then we can take average of these rates
+
+761
+01:36:37.220 --> 01:36:44.109
+Tian WU: As an estimate of the average number of passengers waiting at stop 2.
+
+762
+01:36:46.490 --> 01:36:52.270
+Tian WU: Say, if we only have these 4 observations on average, for every minute.
+
+763
+01:36:52.870 --> 01:36:57.510
+Tian WU: 0.51 passengers will arrive at Stock 2.
+
+764
+01:36:59.640 --> 01:37:04.269
+Tian WU: And with this estimation, for each time of the simulation.
+
+765
+01:37:04.460 --> 01:37:08.689
+Tian WU: We can draw a random number of passengers.
+
+766
+01:37:08.830 --> 01:37:14.399
+Tian WU: from a Poisson distribution with lambda equals to this 0.5.
+
+767
+01:37:17.290 --> 01:37:22.349
+Tian WU: But, of course, we need to time the, time interval of the traveling time.
+
+768
+01:37:22.810 --> 01:37:28.679
+Tian WU: So this lambda rate is… per minute, How many passengers will come?
+
+769
+01:37:28.840 --> 01:37:37.129
+Tian WU: And these need to be multiplied by the time interval of traveling from stop 1 to stop 2.
+
+770
+01:37:39.320 --> 01:37:41.940
+Tian WU: So this is about how we,
+
+771
+01:37:42.440 --> 01:37:45.370
+Tian WU: Simulate the number of waiting passengers.
+
+772
+01:37:46.610 --> 01:37:53.879
+Tian WU: And then… the passengers must get off somewhere, right? They cannot, like, stay in the bus forever.
+
+773
+01:37:55.350 --> 01:37:59.950
+Tian WU: There is another distribution, which is called the binomial distribution.
+
+774
+01:38:00.110 --> 01:38:05.369
+Tian WU: That can be used to describe the number of passengers getting off at each stop.
+
+775
+01:38:06.900 --> 01:38:10.650
+Tian WU: So for this distribution, you may just regard it as
+
+776
+01:38:10.940 --> 01:38:16.750
+Tian WU: If we flip a coin for several times, say, 20 times.
+
+777
+01:38:17.590 --> 01:38:23.029
+Tian WU: And we care the number of times that we get a hassle.
+
+778
+01:38:23.510 --> 01:38:24.920
+Tian WU: It gets a heads up.
+
+779
+01:38:25.410 --> 01:38:30.179
+Tian WU: So, say, I do the experiment, I flip a fair coin for 20 times.
+
+780
+01:38:30.570 --> 01:38:35.830
+Tian WU: Then, for this experiment, it turns out that there are 8 Coins.
+
+781
+01:38:36.230 --> 01:38:37.610
+Tian WU: That are heads up.
+
+782
+01:38:38.540 --> 01:38:40.690
+Tian WU: So this is one observation.
+
+783
+01:38:41.180 --> 01:38:44.389
+Tian WU: And we can repeat this experiment.
+
+784
+01:38:45.510 --> 01:38:51.889
+Tian WU: And the event that we are interested is the number of Heads up, off the coin.
+
+785
+01:38:52.550 --> 01:38:59.649
+Tian WU: And we record the number of heads up in the sequence of, flip, this coin flipping.
+
+786
+01:39:00.980 --> 01:39:07.900
+Tian WU: So here, you may just regard those passengers who get off as the coin has a heads up.
+
+787
+01:39:08.600 --> 01:39:17.159
+Tian WU: So we just… Regarding the total number of coin flipping as the number of people on the bus.
+
+788
+01:39:18.040 --> 01:39:21.650
+Tian WU: And then we count how many people get off.
+
+789
+01:39:23.260 --> 01:39:27.490
+Tian WU: So the number of get-offs is the event that we are interested.
+
+790
+01:39:28.230 --> 01:39:29.279
+Tian WU: And then…
+
+791
+01:39:30.590 --> 01:39:39.270
+Tian WU: The difference between the coin flipping and the passengers get off is that we know for a fair coin.
+
+792
+01:39:40.470 --> 01:39:44.199
+Tian WU: The probability of having a heads-up is 50%.
+
+793
+01:39:44.960 --> 01:39:45.640
+Tian WU: Right.
+
+794
+01:39:46.120 --> 01:39:48.690
+Tian WU: But here, we actually don't know.
+
+795
+01:39:49.050 --> 01:39:52.080
+Tian WU: How many percent of the people will get off?
+
+796
+01:39:53.250 --> 01:39:58.309
+Tian WU: And this probability will be different for different stops.
+
+797
+01:39:59.230 --> 01:40:11.350
+Tian WU: say, for those stops that are near the MTR station, then it's more likely that the passenger will get off at that station, because they want to take MTR.
+
+798
+01:40:11.730 --> 01:40:15.010
+Tian WU: Whereas for those small stations, then…
+
+799
+01:40:15.640 --> 01:40:20.210
+Tian WU: Overall, the number of people who get off the bus will be… will be
+
+800
+01:40:20.310 --> 01:40:23.090
+Tian WU: Will be fewer, will be smaller, right?
+
+801
+01:40:25.750 --> 01:40:32.720
+Tian WU: So then we can estimate the probability of getting off for each stop, again, using the field data.
+
+802
+01:40:34.650 --> 01:40:42.260
+Tian WU: So we collect data over several days or weeks, and again, we have certain observations for the specific stop.
+
+803
+01:40:43.620 --> 01:40:47.559
+Tian WU: So for stop 2, originally there are 10 people on the bus.
+
+804
+01:40:47.710 --> 01:40:50.450
+Tian WU: And it turns out that 4 of them are light.
+
+805
+01:40:52.000 --> 01:40:58.049
+Tian WU: For the next observation, in total, there are 12 people Riding on the bus.
+
+806
+01:40:58.440 --> 01:41:01.300
+Tian WU: And at stop 2, 5 of them are light.
+
+807
+01:41:01.830 --> 01:41:03.359
+Tian WU: So on and so forth.
+
+808
+01:41:04.130 --> 01:41:07.229
+Tian WU: So we can use these observations
+
+809
+01:41:07.510 --> 01:41:14.520
+Tian WU: To estimate the probability of a light lighting, For each stop.
+
+810
+01:41:16.730 --> 01:41:19.349
+Tian WU: Using this example, at stop 2,
+
+811
+01:41:20.530 --> 01:41:26.759
+Tian WU: The probabilities of getting off will be 0.4, 0.42, 0.4.
+
+812
+01:41:27.930 --> 01:41:33.859
+Tian WU: These are all the observations for a specific stop, Then we can take average.
+
+813
+01:41:34.050 --> 01:41:40.419
+Tian WU: Say we can take average as 0.4 and regard this as the probability of getting off.
+
+814
+01:41:40.600 --> 01:41:42.379
+Tian WU: For this specific stop.
+
+815
+01:41:44.750 --> 01:41:54.190
+Tian WU: And later in the simulation, we will draw the number of passengers getting off, from… the pool of…
+
+816
+01:41:54.660 --> 01:41:57.030
+Tian WU: The number of passengers on the bus.
+
+817
+01:41:57.760 --> 01:42:06.639
+Tian WU: So these passengers depends on the number of people waiting at stop 2, And also the,
+
+818
+01:42:07.210 --> 01:42:11.720
+Tian WU: The… the passengers who… Get on the bus at stop 1,
+
+819
+01:42:13.580 --> 01:42:16.099
+Tian WU: So this is our pool of passengers.
+
+820
+01:42:16.570 --> 01:42:23.329
+Tian WU: And for this group of passengers, The probability of alighting the bus.
+
+821
+01:42:23.580 --> 01:42:30.409
+Tian WU: Will be the probability that is estimated from the, field observations.
+
+822
+01:42:31.680 --> 01:42:33.900
+Tian WU: So for all the passengers on the bus.
+
+823
+01:42:36.130 --> 01:42:39.050
+Tian WU: With the probability of a light.
+
+824
+01:42:39.750 --> 01:42:42.579
+Tian WU: Being estimated by the field data.
+
+825
+01:42:42.860 --> 01:42:50.309
+Tian WU: We can draw a random number of how many of the passengers will get off at a specific stop.
+
+826
+01:42:52.410 --> 01:42:56.869
+Tian WU: So that's the three random components in our simulation.
+
+827
+01:42:59.610 --> 01:43:06.499
+Tian WU: And to implement this simulation, we will make use of the Python library, which is called SynPy.
+
+828
+01:43:07.770 --> 01:43:11.600
+Tian WU: So, SimPai is a discrete event simulation framework.
+
+829
+01:43:12.380 --> 01:43:20.699
+Tian WU: And it is specifically designed to model the system where events happened at discrete points in time.
+
+830
+01:43:23.010 --> 01:43:25.119
+Tian WU: Then what does an event mean?
+
+831
+01:43:26.810 --> 01:43:30.250
+Tian WU: So the event represents a specific action.
+
+832
+01:43:30.870 --> 01:43:35.420
+Tian WU: For example, when the bus Start to drive.
+
+833
+01:43:36.320 --> 01:43:42.309
+Tian WU: Or when the bus arrives at a stop, Or when passengers start
+
+834
+01:43:42.470 --> 01:43:48.539
+Tian WU: Boarding, and bus departure, a stop after a certain dwell time.
+
+835
+01:43:49.800 --> 01:43:53.860
+Tian WU: So these are, so-called events happened.
+
+836
+01:43:55.090 --> 01:44:02.810
+Tian WU: And these events are processed in a chromological order according to their scheduled time.
+
+837
+01:44:02.920 --> 01:44:04.719
+Tian WU: And only when they occur.
+
+838
+01:44:05.880 --> 01:44:12.669
+Tian WU: So, say, during the time interval between the bus driving from stop A and stop B,
+
+839
+01:44:12.990 --> 01:44:19.849
+Tian WU: Even though the time passed, So recall that in the visualization, there is a clock, right?
+
+840
+01:44:20.490 --> 01:44:30.690
+Tian WU: The time just keep pass, Keep passing, but the event will be paused because there's no event happens.
+
+841
+01:44:31.110 --> 01:44:36.690
+Tian WU: There's no, there's no action that changed
+
+842
+01:44:36.910 --> 01:44:41.200
+Tian WU: The status of the overall, system.
+
+843
+01:44:42.170 --> 01:44:53.390
+Tian WU: And only when the event happens, like bus arrives, passenger get on board, when this event happens, then we record the time of this event.
+
+844
+01:44:55.870 --> 01:45:04.770
+Tian WU: And later in the demo, Jupyter Notebook, you can see a typical Sympi structure, including these four steps.
+
+845
+01:45:05.470 --> 01:45:09.000
+Tian WU: So, first of all, we will create a simple environment.
+
+846
+01:45:09.240 --> 01:45:14.400
+Tian WU: So we use this, environment, we use… you will see this command.
+
+847
+01:45:15.260 --> 01:45:19.139
+Tian WU: And second step is to define a generator function.
+
+848
+01:45:19.380 --> 01:45:24.949
+Tian WU: So to generate the, the process that we… we are interested.
+
+849
+01:45:25.520 --> 01:45:27.420
+Tian WU: So we have the bus trip.
+
+850
+01:45:28.240 --> 01:45:35.080
+Tian WU: And the arguments can include many, many scenarios.
+
+851
+01:45:35.740 --> 01:45:40.080
+Tian WU: So the first must be the environment, we just compute.
+
+852
+01:45:40.950 --> 01:45:52.000
+Tian WU: And then we can consider, if we run the simulation for many, many times, then we can record this number of simulations, so we can record
+
+853
+01:45:52.100 --> 01:45:53.719
+Tian WU: This round number.
+
+854
+01:45:54.570 --> 01:46:03.719
+Tian WU: And also, if there are different bus buses on the simulation, we can record the bus ID, and then track the behavior of different buses.
+
+855
+01:46:04.950 --> 01:46:09.900
+Tian WU: Then we can also, specify the road configuration.
+
+856
+01:46:10.010 --> 01:46:18.099
+Tian WU: Say, about the forward direction, it passed through, the bus passed through, those 11 stops.
+
+857
+01:46:18.370 --> 01:46:29.019
+Tian WU: Whereas at the return direction, it will pass another 10 stops. So we can put the road configuration in this generator function.
+
+858
+01:46:29.450 --> 01:46:35.480
+Tian WU: And also, save the passenger data. Say how many people get on, how many people get off.
+
+859
+01:46:36.190 --> 01:46:41.999
+Tian WU: So these are all the possible components or arguments in this generator function.
+
+860
+01:46:43.310 --> 01:46:49.179
+Tian WU: And also, as mentioned, for the discrete event simulation.
+
+861
+01:46:50.560 --> 01:46:57.609
+Tian WU: For the time gap between two events, we need to pause the process, For those,
+
+862
+01:46:58.110 --> 01:47:00.389
+Tian WU: Time interval between events.
+
+863
+01:47:01.400 --> 01:47:03.390
+Tian WU: So we will yield this yield.
+
+864
+01:47:03.670 --> 01:47:08.529
+Tian WU: Comment, environment time out for, say, the travel time.
+
+865
+01:47:08.960 --> 01:47:12.770
+Tian WU: For the travel time, because nothing special happened,
+
+866
+01:47:13.200 --> 01:47:17.810
+Tian WU: We will not, like, use the… the resources.
+
+867
+01:47:18.620 --> 01:47:23.579
+Tian WU: We, we just… Pause the process, but let the time pass.
+
+868
+01:47:25.380 --> 01:47:35.880
+Tian WU: Then, we can add the generator function to the Sympi environment. So you will see int.process, you will see this key, function name.
+
+869
+01:47:36.040 --> 01:47:41.250
+Tian WU: And we put… The defined generator function here.
+
+870
+01:47:42.620 --> 01:47:49.629
+Tian WU: And then, the last step is to run the simulation and to let the time pass. So, environment.run.
+
+871
+01:47:49.890 --> 01:47:57.080
+Tian WU: So this is how we execute the simulation, by processing all the scheduled events until completion.
+
+872
+01:47:58.540 --> 01:48:02.659
+Tian WU: And you'll always see this environment.nel.
+
+873
+01:48:02.780 --> 01:48:06.830
+Tian WU: It means we record the current time when an event happens.
+
+874
+01:48:08.370 --> 01:48:19.749
+Tian WU: So to have a, intuitive understanding, maybe we go back to the demo drop your notebook.
+
+875
+01:48:32.290 --> 01:48:39.680
+Tian WU: So, as mentioned, we have this week 4 demo Shook your notebook.
+
+876
+01:48:41.970 --> 01:48:44.369
+Tian WU: It's called the, Week 4 Devo.
+
+877
+01:48:50.670 --> 01:48:59.069
+Tian WU: So the first part is just show how to use this NumPy to generate, random variables.
+
+878
+01:48:59.450 --> 01:49:05.120
+Tian WU: Like, we set a random seed, so every time the random numbers you generate it will be the same.
+
+879
+01:49:06.250 --> 01:49:12.040
+Tian WU: And it's actually quite simple, just use… numpy.random.normal.
+
+880
+01:49:12.260 --> 01:49:14.259
+Tian WU: And by defining the,
+
+881
+01:49:14.390 --> 01:49:20.669
+Tian WU: The mean and standard deviation, and how many random numbers you want, you can
+
+882
+01:49:21.010 --> 01:49:24.070
+Tian WU: Generate the, corresponding result.
+
+883
+01:49:25.610 --> 01:49:30.379
+Tian WU: And again, we can visualize the simulated random numbers.
+
+884
+01:49:30.510 --> 01:49:32.880
+Tian WU: So this is normally distributed.
+
+885
+01:49:33.250 --> 01:49:40.080
+Tian WU: If we plot the, histogram, and also the, box and whisker plot.
+
+886
+01:49:40.200 --> 01:49:46.860
+Tian WU: So hopefully by now, you, you are clear about the meaning of this fox and whisper plot.
+
+887
+01:49:47.080 --> 01:49:49.420
+Tian WU: These two should be quite consistent.
+
+888
+01:49:51.550 --> 01:49:57.089
+Tian WU: And then we can go to this four-step structure to set up a simulation using Simply.
+
+889
+01:49:57.990 --> 01:50:08.580
+Tian WU: As mentioned, the first step is to create a simple environment, and here we just do the simulation for a fixed traveling time from stop A to stop B.
+
+890
+01:50:11.280 --> 01:50:14.820
+Tian WU: In this case, we defined the generator function.
+
+891
+01:50:15.290 --> 01:50:19.230
+Tian WU: And we first record the, departure time.
+
+892
+01:50:20.100 --> 01:50:23.420
+Tian WU: And then the bus will travel for 3 minutes.
+
+893
+01:50:24.250 --> 01:50:28.529
+Tian WU: And because for the 3 minutes, it's not an event.
+
+894
+01:50:28.760 --> 01:50:37.459
+Tian WU: We just pause the process and use yield, To record the timeout, And then, after 3 minutes.
+
+895
+01:50:37.690 --> 01:50:39.230
+Tian WU: The time passes.
+
+896
+01:50:39.590 --> 01:50:41.980
+Tian WU: The bus arrives at stop speed.
+
+897
+01:50:42.460 --> 01:50:49.080
+Tian WU: Then we, again, record the current time, which is the arrival time, Then we'll print it out.
+
+898
+01:50:50.810 --> 01:50:55.439
+Tian WU: And then for step 3, we add the generator function to a simple environment.
+
+899
+01:50:55.670 --> 01:50:58.840
+Tian WU: So this is environmental process.
+
+900
+01:51:00.220 --> 01:51:03.520
+Tian WU: If we run it, Oops.
+
+901
+01:51:03.850 --> 01:51:07.859
+Tian WU: I think I should have run the… previous cell.
+
+902
+01:51:09.760 --> 01:51:10.450
+Tian WU: Yep.
+
+903
+01:51:11.890 --> 01:51:14.569
+Tian WU: The bus process added to the environment.
+
+904
+01:51:19.250 --> 01:51:34.480
+Tian WU: And then the step 4 is to run the simulation and let time pass. So if I run it, it says bus departs at time 0, bus arrives at time 3, simulation completed. Finally, the time is 3.
+
+905
+01:51:35.920 --> 01:51:40.670
+Tian WU: So that is a very simple simulation of
+
+906
+01:51:40.810 --> 01:51:44.340
+Tian WU: just driving the bus from stop A to stop B.
+
+907
+01:51:44.800 --> 01:51:50.629
+Tian WU: But later, we can add more elements, as discussed, into this framework.
+
+908
+01:51:51.120 --> 01:51:54.969
+Tian WU: To, simulate more complicated scenarios.
+
+909
+01:51:56.060 --> 01:51:59.130
+Tian WU: Let's have a 10-minute break first.
+
+910
+02:02:34.950 --> 02:02:36.750
+Tian WU: Okay, let's resume.
+
+911
+02:02:39.310 --> 02:02:41.650
+Tian WU: So for this code,
+
+912
+02:02:42.160 --> 02:02:52.069
+Tian WU: Don't worry that you don't have to start from scratch, you just ask the AI assistant of what kind of simulation you want to have.
+
+913
+02:02:52.130 --> 02:03:02.870
+Tian WU: and add those random components one by one, and I think, the, GitHub compiler can handle this scale of simulation.
+
+914
+02:03:04.070 --> 02:03:11.420
+Tian WU: So I will use the next around 10 minutes, 10 to 15 minutes, to finish the demonstration and also the remaining slides.
+
+915
+02:03:13.000 --> 02:03:26.880
+Tian WU: So previously, we just set the very basic simulation for just a bus traveling from stop A to stop B. Now, we add a random travel time and run the simulation for 100 times.
+
+916
+02:03:27.340 --> 02:03:34.010
+Tian WU: So instead of a fixed traveling time, 3 minutes, we add certain randomness.
+
+917
+02:03:35.770 --> 02:03:41.900
+Tian WU: We have a list to store our results of the traveling time.
+
+918
+02:03:42.150 --> 02:03:46.280
+Tian WU: Then here, we first define the generating… generator function.
+
+919
+02:03:46.740 --> 02:03:50.360
+Tian WU: And later, we follow the remaining steps.
+
+920
+02:03:51.520 --> 02:03:58.359
+Tian WU: So now, for the generator function, instead of the environment, we will record the run number.
+
+921
+02:03:58.820 --> 02:04:08.940
+Tian WU: Because we have, we will have 100 simulations, so we need to have a placeholder for the number of simulations.
+
+922
+02:04:11.040 --> 02:04:23.080
+Tian WU: At the beginning, it's the same. We record the departure time, and then we create random travel time from a normal distribution with mean equals to 3 and standard deviation equals to 0.3.
+
+923
+02:04:23.540 --> 02:04:29.309
+Tian WU: So this is exactly what we did for the first part, which is the random number generation.
+
+924
+02:04:30.960 --> 02:04:39.920
+Tian WU: Here, we have this maximum function to ensure that the value we draw from the normal distribution must be positive.
+
+925
+02:04:40.250 --> 02:04:44.030
+Tian WU: Because this is travel time, it must be non-negative.
+
+926
+02:04:44.430 --> 02:04:49.490
+Tian WU: But if we really randomly drawn from a normal distribution like this.
+
+927
+02:04:49.820 --> 02:04:56.590
+Tian WU: Although the probability of drawing a negative value is very, very, very, very small, but still, it is possible.
+
+928
+02:04:57.670 --> 02:05:06.610
+Tian WU: And to avoid that situation, we use this max function to, to set the 0.1 as the lower bound.
+
+929
+02:05:06.760 --> 02:05:12.820
+Tian WU: If the travel time is lower than the 0.1, we will use the 0.1 as our travel time.
+
+930
+02:05:14.500 --> 02:05:18.530
+Tian WU: Then, during the travel time, the process will be paused.
+
+931
+02:05:19.510 --> 02:05:25.100
+Tian WU: And then we record the arrival time and print out that the bus arrived at a certain time.
+
+932
+02:05:25.990 --> 02:05:36.379
+Tian WU: Then we gradually append our results to the, to the… to the big list about the running number, the departure time, the arrival time, so on and so forth.
+
+933
+02:05:41.810 --> 02:05:47.480
+Tian WU: So, start from here, we, use a loop, tool…
+
+934
+02:05:48.550 --> 02:05:52.120
+Tian WU: To implement the 100, simulations.
+
+935
+02:05:53.020 --> 02:05:59.970
+Tian WU: So, again, step one, create the environment. Step two, we define the generator function, which is the upper part.
+
+936
+02:06:00.270 --> 02:06:05.020
+Tian WU: And then step 3, we add the generator function to a SynPy environment.
+
+937
+02:06:05.240 --> 02:06:14.009
+Tian WU: Now here, for this process, we have two arguments, the environment and also the number of simulations.
+
+938
+02:06:14.270 --> 02:06:20.939
+Tian WU: Then we ask the, the SimPai to help us to execute the simulations.
+
+939
+02:06:21.860 --> 02:06:23.360
+Tian WU: Then print the result.
+
+940
+02:06:25.140 --> 02:06:31.429
+Tian WU: And the result will… will look like this. So for run 1, bus departures at…
+
+941
+02:06:31.730 --> 02:06:35.430
+Tian WU: Time 0, and arrivals at times 3.2.
+
+942
+02:06:36.270 --> 02:06:43.960
+Tian WU: So every time, for every run of simulation, you can see that the arrival time will be different, will be slightly different.
+
+943
+02:06:44.570 --> 02:06:52.040
+Tian WU: So this time, it's drawn from a normal distribution with mean 3 and variance No, standard deviation, 0.3.
+
+944
+02:06:55.370 --> 02:07:01.550
+Tian WU: Okay, so if you want to read more results, you can click this scrollable element.
+
+945
+02:07:02.270 --> 02:07:06.770
+Tian WU: So it will show all the, 100 times of the simulation results.
+
+946
+02:07:12.170 --> 02:07:15.549
+Tian WU: Now we come back to the slice.
+
+947
+02:07:16.400 --> 02:07:18.939
+Tian WU: Let me share a screen again.
+
+948
+02:07:27.480 --> 02:07:28.340
+Tian WU: Right.
+
+949
+02:07:29.040 --> 02:07:33.399
+Tian WU: So after we implement the assimilation, we can get the results.
+
+950
+02:07:33.580 --> 02:07:46.699
+Tian WU: So recall that our KPI for this project is the ute, sorry, it's the seed utilization rate. So for each stop, we record the, we, we…
+
+951
+02:07:47.020 --> 02:07:57.959
+Tian WU: Use this box and whisker plot to show the distribution of the… in 1,000 times the seed utilization rate for each stock.
+
+952
+02:07:59.010 --> 02:08:03.069
+Tian WU: So this is the, the existing scenario.
+
+953
+02:08:03.190 --> 02:08:07.880
+Tian WU: And the direction is forward, so from Qinmen to Shengshui.
+
+954
+02:08:08.550 --> 02:08:14.270
+Tian WU: And we can see that with the, driving of this bus setting out.
+
+955
+02:08:14.810 --> 02:08:22.300
+Tian WU: The seed utilization rate increases, So again, this orange vertical bar represents the median.
+
+956
+02:08:23.240 --> 02:08:27.680
+Tian WU: from… 12% to around 34%.
+
+957
+02:08:28.440 --> 02:08:34.749
+Tian WU: And here, for this station, this is Shenzhui MTR exit.
+
+958
+02:08:35.290 --> 02:08:46.460
+Tian WU: So you can observe there is a drop of the seat utilization rate, which makes sense, because people take bus all along… all along the way to get to the MTR station.
+
+959
+02:08:47.110 --> 02:08:51.179
+Tian WU: And then, finally, all the passengers get off at the last station.
+
+960
+02:08:51.650 --> 02:09:00.770
+Tian WU: So for this trip, the median of the seed utilization is around 12 to 34 across different stops.
+
+961
+02:09:01.860 --> 02:09:04.940
+Tian WU: And because, on average, this
+
+962
+02:09:05.240 --> 02:09:13.100
+Tian WU: Distribution shows a slightly right-skilled, because there are many, outliers on the right-hand side.
+
+963
+02:09:13.280 --> 02:09:20.220
+Tian WU: So the mean value is expected to be a little bit higher compared to these orange bars.
+
+964
+02:09:20.650 --> 02:09:29.070
+Tian WU: So if we take average, it will be around… Sirty… 30-something. So, 30-something.
+
+965
+02:09:29.310 --> 02:09:35.360
+Tian WU: So that is the existing… Utilization rate across these different stocks.
+
+966
+02:09:37.670 --> 02:09:43.889
+Tian WU: Similarly, we can calculate the median of seat utilization for the return direction.
+
+967
+02:09:44.370 --> 02:09:47.729
+Tian WU: And these circled 3 stops are new.
+
+968
+02:09:48.920 --> 02:09:56.729
+Tian WU: But we can still observe them, because the stops are there. We can use the field data, as mentioned, use the field data to
+
+969
+02:09:56.830 --> 02:10:05.970
+Tian WU: To estimate the traveling time, to estimate the number of people waiting at different stops, and also the number of people getting off the bus.
+
+970
+02:10:08.860 --> 02:10:15.339
+Tian WU: And we can also, based on certain assumption of the removed stops.
+
+971
+02:10:16.120 --> 02:10:21.720
+Tian WU: So for these two stops, they are no longer there, and we have no way to
+
+972
+02:10:22.170 --> 02:10:28.310
+Tian WU: Track the historical data of the number of passengers, getting on, getting off.
+
+973
+02:10:28.770 --> 02:10:41.569
+Tian WU: So these are based on certain assumptions. We may use the number of passengers waiting at the neighboring stops as the number of passengers waiting at those stops.
+
+974
+02:10:42.330 --> 02:10:55.819
+Tian WU: And regarding the traveling time, we can find the distance of this routine estate to the original bus stop, then have an estimate of the traveling time.
+
+975
+02:10:57.100 --> 02:11:05.410
+Tian WU: So to generate the before adjustments, we need certain assumptions of the traveling time and passenger flow.
+
+976
+02:11:06.810 --> 02:11:10.619
+Tian WU: And if the assumptions are correct, then…
+
+977
+02:11:11.180 --> 02:11:18.989
+Tian WU: Based on the simulation results, the median of the seed utilization rate will be between 18% to 56%.
+
+978
+02:11:19.490 --> 02:11:30.339
+Tian WU: So comparing to the existing scenario, before the adjustment is done, then the seat utilization rate is indeed higher.
+
+979
+02:11:30.680 --> 02:11:37.060
+Tian WU: Compared to… compared to the situation when the bus frequency is adjusted.
+
+980
+02:11:40.110 --> 02:11:50.170
+Tian WU: Similarly, we can calculate or estimate the median of seat utilization for the return direction and before the adjustment.
+
+981
+02:11:55.270 --> 02:12:03.879
+Tian WU: So, the results summary, Is that the adjustment appears to have reduced the overall seat utilization rate.
+
+982
+02:12:04.180 --> 02:12:10.770
+Tian WU: But with the increase of the frequency of bus, the cost of the bus company must also increase.
+
+983
+02:12:11.400 --> 02:12:21.789
+Tian WU: Right? So, within one hour, there will be one more bus to… to operate, and there must be the captain to drive the bus.
+
+984
+02:12:22.000 --> 02:12:26.740
+Tian WU: And also, the… the funeral, will… will be a cost.
+
+985
+02:12:27.020 --> 02:12:35.860
+Tian WU: So, if we consider the cost, then it is a problem, or it is a question that whether the, the income
+
+986
+02:12:38.930 --> 02:12:42.440
+Tian WU: Produced by this bus frequency increase.
+
+987
+02:12:42.570 --> 02:12:44.720
+Tian WU: Whether it can cover the cost.
+
+988
+02:12:45.110 --> 02:12:48.569
+Tian WU: Of the, frequency increase of the bus.
+
+989
+02:12:52.650 --> 02:12:59.599
+Tian WU: So then we can, formulate the inquiry to the transport department based on our analysis.
+
+990
+02:12:59.950 --> 02:13:07.959
+Tian WU: So first, what type of operational and passenger flow data, like the stop level boarding and a light peak
+
+991
+02:13:08.130 --> 02:13:17.780
+Tian WU: And off-peak passenger accounts were collected and analyzed when assessing the rerouting and schedule change for this bus number 56.
+
+992
+02:13:18.690 --> 02:13:22.550
+Tian WU: So you notice that in our simulation.
+
+993
+02:13:22.760 --> 02:13:25.369
+Tian WU: Some data are collected by ourselves.
+
+994
+02:13:25.480 --> 02:13:30.479
+Tian WU: And some of them are estimated based on very limited data.
+
+995
+02:13:31.020 --> 02:13:37.040
+Tian WU: They say we need to count the number of people waiting there, we need to count the number of people alight the bus.
+
+996
+02:13:37.180 --> 02:13:43.529
+Tian WU: But whether this work, has systematically done by TD.
+
+997
+02:13:44.070 --> 02:13:47.230
+Tian WU: As a review of the adjustment of the…
+
+998
+02:13:47.430 --> 02:13:51.350
+Tian WU: of 50… 56. So this is unclear.
+
+999
+02:13:51.600 --> 02:13:57.820
+Tian WU: But we can ask whether this type of data is available, whether it is already collected and analyzed.
+
+1000
+02:13:59.550 --> 02:14:07.920
+Tian WU: And second is, what quantitative models or criteria were used to evaluate whether the service modification would maintain
+
+1001
+02:14:08.550 --> 02:14:11.210
+Tian WU: Or improve the passenger service quality.
+
+1002
+02:14:11.800 --> 02:14:18.309
+Tian WU: So what exactly criteria they use to evaluate whether this is a,
+
+1003
+02:14:18.750 --> 02:14:23.350
+Tian WU: group, this is a good adjustment. And in what sense?
+
+1004
+02:14:23.780 --> 02:14:27.540
+Tian WU: Say, the city utilization rate decreased.
+
+1005
+02:14:27.780 --> 02:14:31.679
+Tian WU: But on the other hand, from the perspective of the bus company.
+
+1006
+02:14:31.800 --> 02:14:34.069
+Tian WU: So that may increase the cost.
+
+1007
+02:14:34.510 --> 02:14:44.790
+Tian WU: Then, how… what kind of index they use to evaluate whether this modification is, is overall a good move or not.
+
+1008
+02:14:46.220 --> 02:14:57.599
+Tian WU: And also, whether the relevant operational data sets, the consultation summaries, or evaluation models are available for public or academic review.
+
+1009
+02:14:58.390 --> 02:15:11.080
+Tian WU: If these datasets are already there, then can we access to it so that it can save us the time to collect the data by ourselves, and also improve the data quality?
+
+1010
+02:15:12.000 --> 02:15:13.000
+Tian WU: Because…
+
+1011
+02:15:13.590 --> 02:15:26.260
+Tian WU: what we can do is just collecting very limited data based on our availability, but if the TD conducted that field study, maybe it is more
+
+1012
+02:15:26.630 --> 02:15:31.410
+Tian WU: systematic, the number of data points will be more than ours.
+
+1013
+02:15:31.620 --> 02:15:41.750
+Tian WU: So that will improve our model parameter estimation, so that it will increase the accuracy of our simulation.
+
+1014
+02:15:42.370 --> 02:15:46.820
+Tian WU: We want to know whether such data is available to be accessed.
+
+1015
+02:15:46.970 --> 02:15:58.309
+Tian WU: And if not, would the TD consider releasing or try to summarize the data based on the code on access to information?
+
+1016
+02:16:00.490 --> 02:16:04.059
+Tian WU: So this is the second, case study.
+
+1017
+02:16:04.300 --> 02:16:21.999
+Tian WU: So hopefully, through this case study, you have a taste of, how we can use simulations to quantitatively measure or predict the system behavior of the index we are interested in here, like the seat utilization rate.
+
+1018
+02:16:22.390 --> 02:16:36.980
+Tian WU: And in your own group project, if your focus is on the public transportation, you may also need to apply similar simulation technique into your study.
+
+1019
+02:16:39.000 --> 02:16:44.439
+Simon Wang: Okay, so, so, Talia, maybe, allow me to jump in and, just to…
+
+1020
+02:16:44.510 --> 02:17:00.540
+Simon Wang: offer kind of a high-level, summary, especially for students, with limited math background, and, you know, some of the technical details may be a little bit, overwhelming to you, but, I'm…
+
+1021
+02:17:00.540 --> 02:17:07.680
+Simon Wang: I've only offered kind of, like, a layman's account on what we're trying to do here. So, basically.
+
+1022
+02:17:07.680 --> 02:17:12.459
+Simon Wang: But when we do simulation, we are using, mass models,
+
+1023
+02:17:12.459 --> 02:17:24.149
+Simon Wang: to try to approximate and try to get as close as we can an account of the reality, right? And because of the limited amount of data that we have.
+
+1024
+02:17:24.240 --> 02:17:37.289
+Simon Wang: it's not possible to… to actually grasp, or to… to actually understand the reality, or have a very precise, descriptive account of the reality. So,
+
+1025
+02:17:37.500 --> 02:17:56.080
+Simon Wang: So instead of, trying to get that, we, we use the simulation approach. So that's kind of the general, kind of picture, what we're trying to do here. And as we are using, the math model, of course, we have to select different math models, right? There's the…
+
+1026
+02:17:56.370 --> 02:18:05.169
+Simon Wang: The first one, we're talking about using the normal distribution, and then there's the binomial model, and then there's the poison.
+
+1027
+02:18:05.170 --> 02:18:05.570
+Tian WU: listening.
+
+1028
+02:18:05.570 --> 02:18:25.050
+Simon Wang: model for… for different, scenarios and different kind of, descriptions. So… so that's where we, we probably need some inputs from the experts. We have to consult the, the experts on… on this. But then at the same time, in order to have a, a good
+
+1029
+02:18:25.290 --> 02:18:36.959
+Simon Wang: approximation or simulation, we also need some real data, right? So we can't just do simulation without any real data. That's why we have to go to the field.
+
+1030
+02:18:37.020 --> 02:18:52.800
+Simon Wang: In fact, the master students who did this project, actually, they went to the site, and they collected some data, like when… how many passengers get off and get on the bus, and some real data we have to collect it.
+
+1031
+02:18:52.799 --> 02:19:06.520
+Simon Wang: And with that real data fed into the model, we will have a model that can actually provide the kind of approximation or simulation for us to better understand the reality.
+
+1032
+02:19:06.650 --> 02:19:16.470
+Simon Wang: So… so that's why, you know, next week or the week after, you need to also think about whether you can collect some field data.
+
+1033
+02:19:16.830 --> 02:19:34.910
+Simon Wang: But one thing we have to acknowledge is that we are very small teams, right? We are doing a course project, so it's not possible for us to do any kind of large-scale data collection. But the government, the government has got much more resources, you know? If they decide
+
+1034
+02:19:34.910 --> 02:19:48.770
+Simon Wang: it is important to collect some data and then use the simulation to better understand the reality, to better make decisions. Then they can actually make the decision to collect more data. So that's where the data governance
+
+1035
+02:19:48.770 --> 02:20:07.199
+Simon Wang: practices and data governance evaluation becomes very important and relevant here. So our job, you know, when we do our project, is to look at, you know, what data has been collected and curated by the government team, and whether or not this kind of data could be used for simulation.
+
+1036
+02:20:07.200 --> 02:20:22.329
+Simon Wang: That can help us better understand the reality. So, most likely, the government team is not necessarily doing that. You know, the data they've got may be very limited, or they've got the data, but they've never done any simulation.
+
+1037
+02:20:22.480 --> 02:20:41.170
+Simon Wang: to help them make decisions. Then that's our opportunity to make the argument, to say, look, you know, there's actually a better way to make decisions. So if you got the data, if you collect just a small amount of data with reasonable, you know, resources, then we will be able to
+
+1038
+02:20:41.190 --> 02:20:59.340
+Simon Wang: build a model, we're going to do the simulation that can help us to make better decisions. So I hope that you can keep this in mind. And of course, you know, there's the more technical details, and the AI can help you to write the code, to run the simulation, but more importantly, you need to know why. Why are we doing this?
+
+1039
+02:20:59.340 --> 02:21:04.459
+Simon Wang: So, so I hope that that can sort of clarify things a bit, but of course,
+
+1040
+02:21:04.460 --> 02:21:15.649
+Simon Wang: When… in the context of the specific project that we are working on, then we have to decide which model is the most appropriate and relevant for doing the simulation.
+
+1041
+02:21:17.990 --> 02:21:18.720
+Simon Wang: Right.
+
+1042
+02:21:22.640 --> 02:21:27.709
+Tian WU: Yeah, I think for the remaining time, we'll work on the in-class exercise, too.
+
+1043
+02:21:27.830 --> 02:21:34.570
+Tian WU: But there are only 3 tasks, so hopefully it's more straightforward than last times.
+
+1044
+02:21:36.230 --> 02:21:45.170
+Tian WU: A tip is that when you use the GitHub Copilot, you can make use of the Ghost test.
+
+1045
+02:21:45.710 --> 02:21:50.349
+Tian WU: If you remember, for example, now you can see my…
+
+1046
+02:21:50.600 --> 02:21:52.989
+Tian WU: You can see my notebook, right?
+
+1047
+02:21:54.220 --> 02:22:02.340
+Tian WU: I put my cursor at the end of the comment, starts with this hash, And if I hit enter.
+
+1048
+02:22:02.690 --> 02:22:07.599
+Tian WU: There will be such so-called ghost text showing up.
+
+1049
+02:22:08.040 --> 02:22:12.529
+Tian WU: So if you think it's okay, then you hit the tab button.
+
+1050
+02:22:15.910 --> 02:22:20.679
+Tian WU: You don't have to, like, ask every question in the chat box.
+
+1051
+02:22:20.880 --> 02:22:26.120
+Tian WU: So sometimes the, the ghost attacks is already good enough.
+
+1052
+02:22:34.590 --> 02:22:36.609
+Tian WU: You may consider to use this.
+
+1053
+02:22:36.740 --> 02:22:44.619
+Tian WU: Rather than ask everything to GitHub Copilot using this chat box.
+
+1054
+02:22:57.840 --> 02:23:06.350
+Tian WU: Yep, so after I hit the enter button, some… some… Command just shows up.
+
+1055
+02:23:06.470 --> 02:23:10.919
+Tian WU: If you think it's correct, it is consistent with your requirement.
+
+1056
+02:23:11.330 --> 02:23:17.940
+Tian WU: I said set the random seed at 48, but now it's set as 42, which is not right.
+
+1057
+02:23:18.760 --> 02:23:20.790
+Tian WU: But I can, I can change it.
+
+1058
+02:23:29.080 --> 02:23:29.800
+Tian WU: Yep.
+
+1059
+02:23:30.120 --> 02:23:38.080
+Tian WU: And for 20 times, so we need to generate the, random variables for 20 times, and print… to print it out. So you can…
+
+1060
+02:23:38.370 --> 02:23:45.090
+Tian WU: Modify the, the, requirement, you want the,
+
+1061
+02:23:45.570 --> 02:23:52.090
+Tian WU: GitHub Copilot to do using this hash, and then just Say…
+
+1062
+02:23:57.740 --> 02:24:03.109
+Tian WU: I don't know why it keeps generating log normal distribution, but it should be poison distribution.
+
+1063
+02:24:03.220 --> 02:24:10.809
+Tian WU: maybe I set these sentences one by one so that it can perform as what I expect.
+
+1064
+02:24:11.160 --> 02:24:12.740
+Tian WU: Let me play with this.
+
+1065
+02:24:14.210 --> 02:24:15.010
+Tian WU: Oops.
+
+1066
+02:24:20.380 --> 02:24:24.559
+Tian WU: Yeah, I think Simon just set out some rooms.
+
+1067
+02:24:24.920 --> 02:24:27.009
+Tian WU: He's setting some rooms.
+
+1068
+02:24:27.490 --> 02:24:40.419
+Tian WU: for questions, If you need help, you can go into the, specific room, We have, in total.
+
+1069
+02:24:40.540 --> 02:24:43.150
+Tian WU: For, teaching staff.
+
+1070
+02:24:43.950 --> 02:24:45.829
+Tian WU: David.
+
+1071
+02:24:47.480 --> 02:24:50.819
+Tian WU: Lili… I think Lily is here.
+
+1072
+02:24:55.270 --> 02:25:01.390
+Tian WU: Yeah, Simon and me. So if you have specific questions about this in-class exercise.
+
+1073
+02:25:02.030 --> 02:25:10.489
+Tian WU: Or any questions regarding the course material, feel free to join the room and ask questions to us.
+
+1074
+02:25:11.520 --> 02:25:25.770
+Simon Wang: Right, so, yeah, so there's four rooms, and if any of them, any of us are helping other students, you can either wait, or you can try another room. And what was the deadline of this in-class exercise?
+
+1075
+02:25:27.800 --> 02:25:31.970
+Tian WU: So far, I think I set it as… Let me see.
+
+1076
+02:25:44.040 --> 02:25:46.200
+Tian WU: 2… 15.9.
+
+1077
+02:25:49.490 --> 02:25:56.670
+Simon Wang: Okay, so because I think… I don't know whether, whether most of the students are at home, you know.
+
+1078
+02:25:56.880 --> 02:26:10.090
+Simon Wang: just in case, if they need a bit more time, I think we can be a bit more flexible here, but let's see how… because I think the exercise today is actually not very difficult, so maybe we'll see how it goes.
+
+1079
+02:26:14.980 --> 02:26:24.199
+Simon Wang: Okay, so yeah, so I will see you in the breakout room, or if you have any questions, you can also send a message to the WhatsApp group, okay?
+

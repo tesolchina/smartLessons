@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced AI Video Demo - Lingua the Owl</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .demo-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .demo-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .step-indicator {
+            display: flex;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #28a745, #ffc107, #dc3545);
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -50%;
+            top: 50%;
+            width: 100%;
+            height: 3px;
+            background: #e9ecef;
+            z-index: 1;
+            border-radius: 2px;
+        }
+
+        .step.active::after,
+        .step.completed::after {
+            background: linear-gradient(90deg, #007bff, #28a745);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            z-index: 3;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .step.active .step-number {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+        }
+
+        .step.completed .step-number {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .step-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .step.active .step-label {
+            color: #007bff;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .script-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .script-input {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+
+        .script-input label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #495057;
+            font-size: 18px;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .template-btn {
+            padding: 12px 16px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border: 2px solid #dee2e6;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .template-btn:hover {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border-color: #007bff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+        }
+
+        .script-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            resize: vertical;
+            transition: all 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .script-textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+
+        .script-stats {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .avatar-showcase {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .avatar-preview {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .owl-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .owl-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .owl-avatar.speaking {
+            animation: speak 1.5s infinite;
+        }
+
+        .owl-avatar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes speak {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(1deg); }
+            75% { transform: scale(1.05) rotate(-1deg); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .voice-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .voice-indicator.active {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        .avatar-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .control-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+
+        .control-section h4 {
+            margin-bottom: 15px;
+            color: #495057;
+            font-size: 16px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .control-select {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .control-select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+
+        .generate-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(40,167,69,0.3);
+        }
+
+        .generate-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(40,167,69,0.4);
+        }
+
+        .generate-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .progress-avatar {
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #007bff, #28a745);
+            border-radius: 15px;
+            transition: width 0.8s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-text {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .progress-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .progress-tips {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .progress-tips h4 {
+            margin-bottom: 20px;
+            color: #495057;
+            font-size: 18px;
+        }
+
+        .tip-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeInUp 0.6s forwards;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tip-item:nth-child(2) { animation-delay: 0.5s; }
+        .tip-item:nth-child(3) { animation-delay: 1s; }
+        .tip-item:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tip-icon {
+            color: #28a745;
+            margin-right: 15px;
+            font-size: 20px;
+            min-width: 25px;
+        }
+
+        .processing-stats {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+
+        .processing-stats h4 {
+            margin-bottom: 20px;
+            color: #495057;
+            font-size: 18px;
+        }
+
+        .stat-bar {
+            margin-bottom: 15px;
+        }
+
+        .stat-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .stat-bar-fill {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .stat-bar-progress {
+            height: 100%;
+            background: linear-gradient(45deg, #007bff, #28a745);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .results-section {
+            text-align: center;
+        }
+
+        .results-header {
+            margin-bottom: 40px;
+        }
+
+        .results-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #28a745, #20c997);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .video-showcase {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .video-player {
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16/9;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .play-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        .video-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .video-info h4 {
+            margin-bottom: 20px;
+            color: #495057;
+            font-size: 18px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .info-value {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .action-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .btn-info {
+            background: linear-gradient(45deg, #17a2b8, #138496);
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .metrics-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #dee2e6;
+            transition: all 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            color: #6c757d;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .comparison-section {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .comparison-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .comparison-item {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-item h4 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .time-traditional {
+            font-size: 3rem;
+            color: #dc3545;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .time-ai {
+            font-size: 3rem;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .workflow-steps {
+            font-size: 14px;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 1024px) {
+            .script-section,
+            .avatar-showcase,
+            .video-showcase,
+            .progress-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .owl-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            .demo-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="demo-container">
+            <!-- Header -->
+            <div class="header">
+                <h1>🦉 Lingua AI Video Studio</h1>
+                <p>Professional AI-powered video generation for educators</p>
+                
+                <div class="demo-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">{{ totalVideosGenerated }}</div>
+                        <div class="stat-label">Videos Generated</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">{{ totalTimeSaved }}</div>
+                        <div class="stat-label">Hours Saved</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">{{ satisfactionRate }}</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step Indicator -->
+            <div class="demo-card">
+                <div class="step-indicator">
+                    <div class="step" :class="{ active: currentStep === 1, completed: currentStep > 1 }">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Script & Content</div>
+                    </div>
+                    <div class="step" :class="{ active: currentStep === 2, completed: currentStep > 2 }">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Avatar Configuration</div>
+                    </div>
+                    <div class="step" :class="{ active: currentStep === 3, completed: currentStep > 3 }">
+                        <div class="step-number">3</div>
+                        <div class="step-label">AI Processing</div>
+                    </div>
+                    <div class="step" :class="{ active: currentStep === 4, completed: currentStep > 4 }">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Video Results</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 1: Script Input -->
+            <div v-show="currentStep === 1" class="demo-card fade-in">
+                <div class="main-content">
+                    <div class="script-section">
+                        <div class="script-input">
+                            <label for="script">📝 Educational Script Content</label>
+                            <div class="template-grid">
+                                <div class="template-btn" @click="loadTemplate('welcome')">
+                                    👋 Welcome Message
+                                </div>
+                                <div class="template-btn" @click="loadTemplate('lesson')">
+                                    📚 Lesson Introduction
+                                </div>
+                                <div class="template-btn" @click="loadTemplate('assignment')">
+                                    📋 Assignment Brief
+                                </div>
+                                <div class="template-btn" @click="loadTemplate('announcement')">
+                                    📢 Course Update
+                                </div>
+                            </div>
+                            <textarea 
+                                v-model="script" 
+                                class="script-textarea" 
+                                placeholder="Enter your educational content here, or select a template above to get started..."
+                                @input="updateScriptStats">
+                            </textarea>
+                            <div style="margin-top: 20px; text-align: right;">
+                                <button 
+                                    class="generate-btn" 
+                                    @click="nextStep" 
+                                    :disabled="!script.trim() || script.length < 50"
+                                    style="padding: 12px 25px; font-size: 16px;">
+                                    Next: Configure Avatar →
+                                </button>
+                            </div>
+                        </div>
+                        <div class="script-stats">
+                            <h4>📊 Content Analysis</h4>
+                            <div class="stat-row">
+                                <span>Word Count:</span>
+                                <span class="stat-value">{{ wordCount }}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Character Count:</span>
+                                <span class="stat-value">{{ characterCount }}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Estimated Duration:</span>
+                                <span class="stat-value">{{ estimatedDuration }}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Reading Level:</span>
+                                <span class="stat-value">{{ readingLevel }}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Content Type:</span>
+                                <span class="stat-value">{{ contentType }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Avatar Setup -->
+            <div v-show="currentStep === 2" class="demo-card fade-in">
+                <div class="main-content">
+                    <div class="avatar-showcase">
+                        <div class="avatar-preview">
+                            <div class="owl-container">
+                                <div class="owl-avatar" :class="{ speaking: isPreviewSpeaking }">
+                                    🦉
+                                    <div class="voice-indicator" :class="{ active: isPreviewSpeaking }">
+                                        🎤
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Lingua the Owl</h3>
+                            <p>Your AI Teaching Assistant</p>
+                            <button 
+                                class="action-btn btn-info" 
+                                @click="previewVoice"
+                                style="margin-top: 15px;">
+                                🔊 Preview Voice
+                            </button>
+                        </div>
+                        <div class="avatar-controls">
+                            <div class="control-section">
+                                <h4>🎭 Personality & Voice</h4>
+                                <div class="control-group">
+                                    <label>Voice Style:</label>
+                                    <select v-model="voiceStyle" class="control-select">
+                                        <option value="friendly">Friendly & Warm</option>
+                                        <option value="professional">Professional Educator</option>
+                                        <option value="enthusiastic">Enthusiastic & Energetic</option>
+                                        <option value="calm">Calm & Soothing</option>
+                                        <option value="authoritative">Authoritative Expert</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label>Speaking Speed:</label>
+                                    <select v-model="speakingSpeed" class="control-select">
+                                        <option value="slow">Slow (Complex Topics)</option>
+                                        <option value="normal">Normal Pace</option>
+                                        <option value="fast">Fast (Reviews/Summaries)</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label>Emotion Level:</label>
+                                    <select v-model="emotionLevel" class="control-select">
+                                        <option value="neutral">Neutral</option>
+                                        <option value="expressive">Expressive</option>
+                                        <option value="animated">Highly Animated</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-section">
+                                <h4>🎨 Visual Settings</h4>
+                                <div class="control-group">
+                                    <label>Background Scene:</label>
+                                    <select v-model="background" class="control-select">
+                                        <option value="classroom">Virtual Classroom</option>
+                                        <option value="library">Digital Library</option>
+                                        <option value="nature">Nature Scene</option>
+                                        <option value="office">Modern Office</option>
+                                        <option value="simple">Simple Gradient</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label>Video Quality:</label>
+                                    <select v-model="videoQuality" class="control-select">
+                                        <option value="hd">HD (1080p)</option>
+                                        <option value="4k">4K Ultra HD</option>
+                                        <option value="standard">Standard (720p)</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label>Aspect Ratio:</label>
+                                    <select v-model="aspectRatio" class="control-select">
+                                        <option value="16:9">16:9 (Widescreen)</option>
+                                        <option value="4:3">4:3 (Traditional)</option>
+                                        <option value="1:1">1:1 (Square)</option>
+                                        <option value="9:16">9:16 (Vertical)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button class="generate-btn" @click="startGeneration">
+                            🎬 Generate Professional Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Generation Progress -->
+            <div v-show="currentStep === 3" class="demo-card fade-in">
+                <div class="main-content">
+                    <div class="progress-section">
+                        <div class="progress-avatar">
+                            <div class="owl-avatar speaking">
+                                🦉
+                            </div>
+                        </div>
+                        <h2>🚀 AI Processing Your Video...</h2>
+                        <div class="progress-bar">
+                            <div class="progress-fill" :style="{ width: progress + '%' }"></div>
+                        </div>
+                        <div class="progress-text">{{ progressText }} ({{ progress }}%)</div>
+                        
+                        <div class="progress-details">
+                            <div class="progress-tips">
+                                <h4>💡 Educational AI Insights</h4>
+                                <div class="tip-item">
+                                    <span class="tip-icon">⏱️</span>
+                                    <span>Traditional video production requires 8-12 hours per minute of final content</span>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="tip-icon">💰</span>
+                                    <span>AI generation reduces production costs by up to 90% compared to studio recording</span>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="tip-icon">🌍</span>
+                                    <span>Easily localize content into 40+ languages for global accessibility</span>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="tip-icon">♿</span>
+                                    <span>Automatic captions and accessibility features included by default</span>
+                                </div>
+                            </div>
+                            <div class="processing-stats">
+                                <h4>🔧 Processing Status</h4>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-label">
+                                        <span>Script Analysis</span>
+                                        <span>{{ scriptAnalysisProgress }}%</span>
+                                    </div>
+                                    <div class="stat-bar-fill">
+                                        <div class="stat-bar-progress" :style="{ width: scriptAnalysisProgress + '%' }"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-label">
+                                        <span>Voice Synthesis</span>
+                                        <span>{{ voiceSynthesisProgress }}%</span>
+                                    </div>
+                                    <div class="stat-bar-fill">
+                                        <div class="stat-bar-progress" :style="{ width: voiceSynthesisProgress + '%' }"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-label">
+                                        <span>Avatar Animation</span>
+                                        <span>{{ avatarAnimationProgress }}%</span>
+                                    </div>
+                                    <div class="stat-bar-fill">
+                                        <div class="stat-bar-progress" :style="{ width: avatarAnimationProgress + '%' }"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-label">
+                                        <span>Video Rendering</span>
+                                        <span>{{ videoRenderingProgress }}%</span>
+                                    </div>
+                                    <div class="stat-bar-fill">
+                                        <div class="stat-bar-progress" :style="{ width: videoRenderingProgress + '%' }"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Results -->
+            <div v-show="currentStep === 4" class="demo-card fade-in">
+                <div class="main-content">
+                    <div class="results-section">
+                        <div class="results-header">
+                            <h2>🎉 Your Professional Video is Ready!</h2>
+                            <p>High-quality educational content generated in minutes, not hours</p>
+                        </div>
+                        
+                        <div class="video-showcase">
+                            <div class="video-player">
+                                <div class="video-placeholder">
+                                    <div class="play-button" @click="playVideo">
+                                        <span style="font-size: 40px;">▶️</span>
+                                    </div>
+                                    <h3>{{ videoTitle }}</h3>
+                                    <p>{{ videoDuration }} • {{ videoQuality.toUpperCase() }} • {{ aspectRatio }}</p>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>📋 Video Details</h4>
+                                <div class="info-item">
+                                    <span>Title:</span>
+                                    <span class="info-value">{{ videoTitle }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span>Duration:</span>
+                                    <span class="info-value">{{ videoDuration }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span>Quality:</span>
+                                    <span class="info-value">{{ videoQuality.toUpperCase() }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span>Voice Style:</span>
+                                    <span class="info-value">{{ voiceStyleDisplay }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span>Background:</span>
+                                    <span class="info-value">{{ backgroundDisplay }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span>File Size:</span>
+                                    <span class="info-value">{{ fileSize }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span>Generated:</span>
+                                    <span class="info-value">{{ generatedTime }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="action-btn btn-success">
+                                📥 Download MP4
+                            </button>
+                            <button class="action-btn btn-info">
+                                🔗 Share Link
+                            </button>
+                            <button class="action-btn btn-primary">
+                                📚 Export to LMS
+                            </button>
+                            <button class="action-btn btn-primary">
+                                📝 Generate Captions
+                            </button>
+                        </div>
+
+                        <div class="metrics-showcase">
+                            <div class="metric-card">
+                                <div class="metric-value">{{ generationTime }}</div>
+                                <div class="metric-label">Total Generation Time</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">{{ timeSaved }}</div>
+                                <div class="metric-label">Time Saved vs Traditional</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">{{ costSavings }}</div>
+                                <div class="metric-label">Cost Reduction</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">{{ accessibilityScore }}</div>
+                                <div class="metric-label">Accessibility Score</div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-section">
+                            <div class="comparison-title">⚡ Workflow Transformation</div>
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h4>Traditional Video Production</h4>
+                                    <div class="time-traditional">{{ traditionalTime }}</div>
+                                    <div class="workflow-steps">
+                                        📝 Script Writing<br>
+                                        🎬 Studio Setup & Recording<br>
+                                        ✂️ Video Editing & Post-production<br>
+                                        🔄 Review & Revision Cycles<br>
+                                        📤 Final Export & Distribution
+                                    </div>
+                                </div>
+                                <div class="comparison-item">
+                                    <h4>AI-Powered Generation</h4>
+                                    <div class="time-ai">{{ aiTime }}</div>
+                                    <div class="workflow-steps">
+                                        📝 Script Input<br>
+                                        🤖 AI Processing & Generation<br>
+                                        ✅ Instant Professional Results<br>
+                                        📤 Ready for Distribution
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 40px;">
+                            <button class="generate-btn" @click="resetDemo">
+                                🔄 Create Another Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    currentStep: 1,
+                    script: '',
+                    voiceStyle: 'friendly',
+                    speakingSpeed: 'normal',
+                    emotionLevel: 'expressive',
+                    background: 'classroom',
+                    videoQuality: 'hd',
+                    aspectRatio: '16:9',
+                    progress: 0,
+                    progressText: 'Initializing AI systems...',
+                    isPreviewSpeaking: false,
+                    
+                    // Progress tracking
+                    scriptAnalysisProgress: 0,
+                    voiceSynthesisProgress: 0,
+                    avatarAnimationProgress: 0,
+                    videoRenderingProgress: 0,
+                    
+                    // Results data
+                    videoTitle: '',
+                    videoDuration: '',
+                    fileSize: '',
+                    generatedTime: '',
+                    generationTime: '',
+                    timeSaved: '',
+                    costSavings: '',
+                    accessibilityScore: '',
+                    traditionalTime: '',
+                    aiTime: '',
+                    
+                    // Demo stats
+                    totalVideosGenerated: '12,847',
+                    totalTimeSaved: '8,392',
+                    satisfactionRate: '98.7%',
+                    
+                    // Script stats
+                    wordCount: 0,
+                    characterCount: 0,
+                    estimatedDuration: '0:00',
+                    readingLevel: 'College',
+                    contentType: 'Educational',
+                    
+                    templates: {
+                        welcome: "Welcome to our advanced learning platform! I'm Lingua, your dedicated AI teaching assistant, and I'm thrilled to guide you through today's educational journey. We'll be exploring fascinating concepts that will not only enhance your understanding but also provide practical skills you can apply immediately. Our interactive approach ensures that complex topics become accessible and engaging. Let's embark on this learning adventure together and discover the amazing possibilities that await us!",
+                        lesson: "Hello, brilliant students! Today's lesson focuses on a crucial concept that builds upon our previous discussions and sets the foundation for advanced topics ahead. We'll break down complex ideas into digestible segments, use real-world examples to illustrate key points, and provide hands-on activities to reinforce your learning. Remember, every expert was once a beginner, and every step you take brings you closer to mastery. Pay close attention as we dive deep into today's subject matter!",
+                        assignment: "Your upcoming assignment has been carefully designed to challenge your understanding and apply the concepts we've covered in practical scenarios. This project will help you synthesize information, think critically, and develop problem-solving skills essential for your academic and professional growth. Please review all requirements thoroughly, utilize the provided resources, and don't hesitate to reach out during office hours if you need clarification. Remember, the goal is deep understanding and skill development, not just completion. I'm confident you'll excel!",
+                        announcement: "Important course update! I'm excited to share some significant enhancements to our learning experience based on your valuable feedback. We've implemented new interactive features, updated our resource library with cutting-edge materials, and adjusted our schedule to better accommodate your learning pace. These improvements are designed to maximize your educational outcomes and ensure you have the best possible learning environment. Please check your course portal for detailed information about these exciting changes!"
+                    }
+                }
+            },
+            computed: {
+                voiceStyleDisplay() {
+                    const styles = {
+                        friendly: 'Friendly & Warm',
+                        professional: 'Professional Educator',
+                        enthusiastic: 'Enthusiastic & Energetic',
+                        calm: 'Calm & Soothing',
+                        authoritative: 'Authoritative Expert'
+                    };
+                    return styles[this.voiceStyle] || this.voiceStyle;
+                },
+                backgroundDisplay() {
+                    const backgrounds = {
+                        classroom: 'Virtual Classroom',
+                        library: 'Digital Library',
+                        nature: 'Nature Scene',
+                        office: 'Modern Office',
+                        simple: 'Simple Gradient'
+                    };
+                    return backgrounds[this.background] || this.background;
+                }
+            },
+            methods: {
+                loadTemplate(type) {
+                    this.script = this.templates[type];
+                    this.updateScriptStats();
+                },
+                updateScriptStats() {
+                    this.wordCount = this.script.trim() ? this.script.trim().split(/\s+/).length : 0;
+                    this.characterCount = this.script.length;
+                    
+                    // Estimate duration (average 150 words per minute)
+                    const minutes = Math.floor(this.wordCount / 150);
+                    const seconds = Math.floor((this.wordCount % 150) / 150 * 60);
+                    this.estimatedDuration = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    // Determine content type
+                    if (this.script.includes('welcome') || this.script.includes('Welcome')) {
+                        this.contentType = 'Welcome Message';
+                    } else if (this.script.includes('lesson') || this.script.includes('Lesson')) {
+                        this.contentType = 'Lesson Content';
+                    } else if (this.script.includes('assignment') || this.script.includes('Assignment')) {
+                        this.contentType = 'Assignment Brief';
+                    } else if (this.script.includes('announcement') || this.script.includes('update')) {
+                        this.contentType = 'Course Update';
+                    } else {
+                        this.contentType = 'Educational Content';
+                    }
+                    
+                    // Simple reading level estimation
+                    const avgWordsPerSentence = this.wordCount / (this.script.split(/[.!?]+/).length - 1 || 1);
+                    if (avgWordsPerSentence < 15) {
+                        this.readingLevel = 'High School';
+                    } else if (avgWordsPerSentence < 20) {
+                        this.readingLevel = 'College';
+                    } else {
+                        this.readingLevel = 'Graduate';
+                    }
+                },
+                nextStep() {
+                    if (this.currentStep < 4) {
+                        this.currentStep++;
+                    }
+                },
+                previewVoice() {
+                    this.isPreviewSpeaking = true;
+                    setTimeout(() => {
+                        this.isPreviewSpeaking = false;
+                    }, 4000);
+                },
+                startGeneration() {
+                    this.currentStep = 3;
+                    this.simulateGeneration();
+                },
+                simulateGeneration() {
+                    const steps = [
+                        { 
+                            progress: 15, 
+                            text: 'Analyzing script content and structure...',
+                            scriptAnalysis: 100,
+                            voiceSynthesis: 0,
+                            avatarAnimation: 0,
+                            videoRendering: 0
+                        },
+                        { 
+                            progress: 30, 
+                            text: 'Processing natural language patterns...',
+                            scriptAnalysis: 100,
+                            voiceSynthesis: 40,
+                            avatarAnimation: 0,
+                            videoRendering: 0
+                        },
+                        { 
+                            progress: 45, 
+                            text: 'Generating high-quality speech synthesis...',
+                            scriptAnalysis: 100,
+                            voiceSynthesis: 100,
+                            avatarAnimation: 20,
+                            videoRendering: 0
+                        },
+                        { 
+                            progress: 60, 
+                            text: 'Creating natural avatar animations...',
+                            scriptAnalysis: 100,
+                            voiceSynthesis: 100,
+                            avatarAnimation: 80,
+                            videoRendering: 0
+                        },
+                        { 
+                            progress: 75, 
+                            text: 'Rendering video frames in HD quality...',
+                            scriptAnalysis: 100,
+                            voiceSynthesis: 100,
+                            avatarAnimation: 100,
+                            videoRendering: 50
+                        },
+                        { 
+                            progress: 90, 
+                            text: 'Adding background and final effects...',
+                            scriptAnalysis: 100,
+                            voiceSynthesis: 100,
+                            avatarAnimation: 100,
+                            videoRendering: 85
+                        },
+                        { 
+                            progress: 100, 
+                            text: 'Finalizing professional video output...',
+                            scriptAnalysis: 100,
+                            voiceSynthesis: 100,
+                            avatarAnimation: 100,
+                            videoRendering: 100
+                        }
+                    ];
+
+                    let currentIndex = 0;
+                    const interval = setInterval(() => {
+                        if (currentIndex < steps.length) {
+                            const step = steps[currentIndex];
+                            this.progress = step.progress;
+                            this.progressText = step.text;
+                            this.scriptAnalysisProgress = step.scriptAnalysis;
+                            this.voiceSynthesisProgress = step.voiceSynthesis;
+                            this.avatarAnimationProgress = step.avatarAnimation;
+                            this.videoRenderingProgress = step.videoRendering;
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                            setTimeout(() => {
+                                this.showResults();
+                            }, 1500);
+                        }
+                    }, 2000);
+                },
+                showResults() {
+                    this.currentStep = 4;
+                    this.calculateMetrics();
+                },
+                calculateMetrics() {
+                    const now = new Date();
+                    this.generatedTime = now.toLocaleTimeString();
+                    
+                    // Calculate video metrics based on script
+                    const estimatedMinutes = Math.max(1, Math.floor(this.wordCount / 150));
+                    const estimatedSeconds = Math.floor((this.wordCount % 150) / 150 * 60);
+                    
+                    this.videoTitle = `${this.contentType} - ${this.getTopicFromScript()}`;
+                    this.videoDuration = `${estimatedMinutes}:${estimatedSeconds.toString().padStart(2, '0')}`;
+                    this.fileSize = this.calculateFileSize(estimatedMinutes);
+                    this.generationTime = '4.2 minutes';
+                    this.timeSaved = `${Math.floor(estimatedMinutes * 8)} hours`;
+                    this.costSavings = '91%';
+                    this.accessibilityScore = 'A+';
+                    this.traditionalTime = `${Math.floor(estimatedMinutes * 8)}+ hours`;
+                    this.aiTime = '4.2 min';
+                },
+                calculateFileSize(minutes) {
+                    // Rough file size calculation based on quality and duration
+                    const baseSize = minutes * (this.videoQuality === '4k' ? 800 : this.videoQuality === 'hd' ? 200 : 100);
+                    if (baseSize > 1000) {
+                        return `${(baseSize / 1000).toFixed(1)} GB`;
+                    }
+                    return `${baseSize} MB`;
+                },
+                getTopicFromScript() {
+                    // Enhanced topic extraction
+                    const script = this.script.toLowerCase();
+                    if (script.includes('welcome') || script.includes('introduction')) return 'Course Introduction';
+                    if (script.includes('lesson') || script.includes('chapter')) return 'Lesson Content';
+                    if (script.includes('assignment') || script.includes('project')) return 'Assignment Guidelines';
+                    if (script.includes('announcement') || script.includes('update')) return 'Course Update';
+                    if (script.includes('review') || script.includes('summary')) return 'Content Review';
+                    return 'Educational Content';
+                },
+                playVideo() {
+                    alert(`🎬 Playing: ${this.videoTitle}\n\nIn a real implementation, this would launch a video player showing Lingua the Owl delivering your script with:\n\n• ${this.voiceStyleDisplay} voice style\n• ${this.backgroundDisplay} background\n• Natural lip-sync and gestures\n• ${this.videoQuality.toUpperCase()} quality\n• Professional animations and transitions`);
+                },
+                resetDemo() {
+                    this.currentStep = 1;
+                    this.script = '';
+                    this.progress = 0;
+                    this.progressText = 'Initializing AI systems...';
+                    this.isPreviewSpeaking = false;
+                    this.scriptAnalysisProgress = 0;
+                    this.voiceSynthesisProgress = 0;
+                    this.avatarAnimationProgress = 0;
+                    this.videoRenderingProgress = 0;
+                    this.updateScriptStats();
+                }
+            },
+            mounted() {
+                // Initialize with a sample script for demo purposes
+                setTimeout(() => {
+                    if (!this.script) {
+                        this.loadTemplate('welcome');
+                    }
+                }, 1500);
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

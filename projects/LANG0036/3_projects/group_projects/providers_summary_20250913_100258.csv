@@ -1,0 +1,123 @@
+organization_id,organization_name,organization_title,num_datasets
+63b4bbff-2176-4cfd-bd6d-8dab2dcc2377,hk-aw,"Administration Wing, Chief Secretary for Administration's Office",12
+0eaccf1a-1abf-435c-876a-c75280d45db9,hk-afcd,"Agriculture, Fisheries and Conservation Department",52
+ebe2e138-7ea8-43ef-be36-553be99c5d86,aahk,Airport Authority Hong Kong,1
+c976c606-bede-4414-b415-b63a1515e407,hk-archsd,Architectural Services Department,25
+75e232d1-3ce8-4232-a873-dc9d2425573a,hk-aud,Audit Commission,5
+7dce55c5-fc5e-4b78-ae58-18c85f6425f8,hk-ams,Auxiliary Medical Service,1
+21a8f5d7-a398-419a-a578-7c158335aec7,hk-bd,Buildings Department,37
+88e98d98-89b0-437d-a95a-1dd00ba44454,hk-censtatd,Census and Statistics Department,200
+3c34de1c-0493-4cbf-92b5-6fba305c8fe3,centaline,Centaline Property Agency Limited,1
+be961dd1-65a3-433d-8b44-5661fba346b2,hk-cpu,Central Policy Unit,0
+8d6bf569-cd67-463b-846d-a8558ef6deaa,cfs,Centre for Food Safety,5
+1a7c5a1d-e968-4bd5-80d8-f6b9aeb70cb0,hk-ceo,Chief Executive's Office,21
+a19185bf-4c43-4389-9d46-08b76dbfc500,hk-cepu,Chief Executive's Policy Unit,57
+5def37a6-5a55-48ce-8fed-4f127a8e4eb5,hk-cso,Chief Secretary for Administration's Office,4
+0bebf8af-be74-401c-8a6a-593344b35f61,ckf,Chuen Kee Ferry Limited,2
+493a384c-8377-4d3d-85bd-096372617501,ctb,Citybus Limited,1
+249ca9b2-b3a4-428b-a3df-efff54d8a621,hk-cas,Civil Aid Service,4
+098091ff-82fa-4002-aaa8-d0222698c745,hk-cad,Civil Aviation Department,10
+0b42e32c-d3db-4898-a708-1ee5025ffbe5,hk-cedd,Civil Engineering and Development Department,29
+fff919d0-668c-48f8-90d7-f4529ab07833,hk-csb,Civil Service Bureau,24
+660e8da1-cf81-4391-9cf6-8c9fbc6791eb,hk-cedb,Commerce and Economic Development Bureau,16
+93c711b0-f505-4803-ad04-855efe71ecfd,chsc,Committee on Home-School Co-operation,2
+8ec07326-b345-4f0d-bd5f-a134704c51e7,hk-cr,Companies Registry,21
+bab5508c-781c-4c1e-8ae1-9bbe8e5fdc84,compcomm,Competition Commission,1
+b97e0594-8eeb-4282-a9e1-ae350cd6c715,hk-cmab,Constitutional and Mainland Affairs Bureau,3
+648fd263-64ac-4025-b7e5-878e7dbb4f42,cc,Consumer Council,3
+d2e9a17e-bf9f-49b1-aef3-28d02b51d1f6,hk-csd,Correctional Services Department,33
+2ebd55e6-f586-425d-84e8-24207fe2e9b6,hk-cstb,"Culture, Sports and Tourism Bureau",41
+a9883ed2-524d-4439-9d00-c985e79bd443,hk-customs,Customs and Excise Department,13
+cc95343c-5e71-4924-ad17-1ea725481cf3,hk-dh,Department of Health,78
+e33cfa2d-e60e-4017-bc2b-5a080ce9c62d,hk-doj,Department of Justice,7
+44a43c13-3b55-4c47-adab-17bafd258f2a,hk-devb,Development Bureau,19
+d47bf947-7275-445a-92d3-dea506423d1e,hk-dpo,Digital Policy Office,68
+8078048d-c35d-4632-b95b-c494ad056b8c,dc,District Councils,4
+f21c153b-18ac-48ef-bfb3-9efe5aad7a77,hk-dsd,Drainage Services Department,17
+acebd615-0714-48a3-9e8c-b5187bdd2895,hk-eabfu,Economic Analysis and Business Facilitation Unit,0
+4e8bc01e-e95c-49b3-9be6-5f06edfba86c,hk-edb,Education Bureau,73
+cb7419b6-efda-4eba-8ba8-375b8b9cfd70,eac,Electoral Affairs Commission,11
+62c2c828-93f0-4182-828a-72a8850c1491,hk-emsd,Electrical and Mechanical Services Department,93
+c22ba033-6505-4d76-9d58-76de3a3b5b0d,hk-epd,Environmental Protection Department,54
+fdbdc92c-7646-4a78-8822-5637d362868c,hk-eeb,Environment and Ecology Bureau,0
+54050ed2-39c4-4baa-8f87-948142772565,hk-fso,Financial Secretary's Office,3
+aaf91805-8c98-4299-adca-d475b24b78fc,hk-fstb,Financial Services and the Treasury Bureau,4
+bf02a81b-5e36-40ec-87a0-c43e8f66db3d,hk-fsd,Fire Services Department,29
+1b18711f-c6e2-46e5-ab13-824cfcabf1de,hk-fehd,Food and Environmental Hygiene Department,20
+1f2b4ee8-2b01-413e-85a6-efd31c6c2e30,ff,Fortune Ferry Company Limited,4
+3b8624c8-f67a-4564-94a3-3ea746646dd0,hk-gfs,Government Flying Service,1
+0490b135-4c4c-4a86-9d4d-508e79adc4b3,hk-govtlab,Government Laboratory,4
+f0e0174d-4a41-4e05-989e-92cba834d746,hk-gld,Government Logistics Department,24
+58a37aa1-52ed-48a0-82ab-b83b8f71800c,hk-gpa,Government Property Agency,19
+34b4ba7c-a6f9-46c3-9d2c-bc68ec6caa3b,hk-hhb,Health Bureau,11
+89fab59e-35c9-45c6-bad2-f17be25bd86d,hk-hyd,Highways Department,28
+527f3bde-af85-49d1-b5ff-57d6da66d0d1,hk-had,Home Affairs Department,32
+54a31e01-0b35-4731-bb8d-fbedc15b8b07,hk-hyab,Home and Youth Affairs Bureau,21
+52eaef7d-70ac-41a3-bfb6-13ee86a89102,hkcert,Hong Kong Computer Emergency Response Team Coordination Centre,2
+e7226aa5-17de-436a-8942-12cbf44e3a4e,cyberport,Hong Kong Cyberport Management Company Limited,13
+863110d2-8129-417a-9de9-eb57aaec40ee,hkeaa,Hong Kong Examinations and Assessment Authority,16
+eb4b0fdb-2412-492d-b686-df19c6084c29,hk-housing,Hong Kong Housing Authority,18
+48cbd690-e655-4db3-8ec4-3cd703e484f5,hkhs,Hong Kong Housing Society,4
+eb6ee643-d7eb-4472-9698-30c4b24a6b3c,hkirc,Hong Kong Internet Registration Corporation Limited,1
+1923f8eb-086a-4cc7-bda2-a1336569e44b,hkkf,Hong Kong & Kowloon Ferry Limited,1
+30cb2754-ba67-468d-b47e-d4d023ef94f0,hk-hkma,Hong Kong Monetary Authority,177
+568222e3-81c2-49d8-83a7-f9a2fdacc52f,hk-hko,Hong Kong Observatory,52
+8142bebf-1cb6-474e-a2fd-72beb0e65853,hk-hkpf,Hong Kong Police Force,33
+8a8d7dc9-603f-4bdc-833b-21415e4b3e3a,hk-hkpo,Hongkong Post,12
+ab7ae769-d740-42dc-827d-420f0903edac,hkpc,Hong Kong Productivity Council,6
+1e62bc6f-b324-4a91-add6-973306439324,hkstp,Hong Kong Science and Technology Parks Corporation,14
+11dd8cad-e210-48b5-bbf1-3b2f3433a037,hktdc,Hong Kong Trade Development Council,3
+2fb59359-7f08-49d8-b05d-40322ebf2f22,hktramways,"Hong Kong Tramways, Limited",2
+1b91109c-3f2a-40ec-94aa-5ff289e917c7,hospital,Hospital Authority,14
+f70f6978-b9a4-4e90-944f-253e471442a9,hk-hb,Housing Bureau,0
+7bca5567-a56e-4da4-a4df-9cbfc182bcd5,hk-immd,Immigration Department,88
+78663dee-8e63-4391-b01a-d2513ee27966,hk-icac,Independent Commission Against Corruption,31
+4b3b7348-5960-4916-aa60-3d5239e110bb,hk-isd,Information Services Department,5
+74b74f1c-0e4d-44b5-9e5b-695616e67c31,hk-ird,Inland Revenue Department,40
+50f93480-4921-4639-ad7b-f60ddab428c8,hk-itc,Innovation and Technology Commission,41
+626058c4-a01f-4df0-b580-9ff6fea57bd9,hk-itib,"Innovation, Technology and Industry Bureau",2
+df014eea-2c63-4f2a-80d5-472459ee771c,ia,Insurance Authority,200
+4391d5bc-6a92-4b40-aa75-f6aa26d1ec93,hk-ipd,Intellectual Property Department,33
+dfcf1ef4-db3b-437f-af44-b32ae509122f,hk-investhk,Invest Hong Kong,6
+a3a1ddd6-9c02-448e-857f-dab8119ed2d6,hk-jsscs,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,8
+fc01153d-756c-4163-aab9-c0eef1195111,hk-lwb,Labour and Welfare Bureau,4
+fb1ebe98-49c1-4bf3-967b-c548802a474d,hk-ld,Labour Department,35
+2fcbf29b-1ee6-48b0-8f48-721017ae3fdc,hk-lr,Land Registry,11
+1cae167e-12da-4272-bb19-3b9b2c0b3e92,hk-landsd,Lands Department,110
+45f934bc-b026-4ef6-b83a-e6e31ab02341,hk-lad,Legal Aid Department,2
+ef8791b8-b636-4d4e-ba38-2690618ddcf9,legco,Legislative Council,6
+f0aaea94-ea80-4450-955f-aa587135940e,hk-lcsd,Leisure and Cultural Services Department,118
+e43c2469-f851-4cf3-997a-5edeaab9e909,llb,Liquor Licensing Board,1
+9573e578-9d80-4ce2-aee3-2146728aff1d,mpfa,Mandatory Provident Fund Schemes Authority,7
+9776e8dc-f082-4ada-8659-0712aed6eb58,hk-md,Marine Department,26
+e26762df-994d-4b99-9dc0-ec905784ad56,mtr,MTR Corporation Limited,4
+ca9ef478-8992-4560-bb3a-7bc851ee5329,nlb,New Lantao Bus Company (1973) Limited,2
+25a1be81-1e82-4f2c-91d3-ce434bda9ac9,hk-ofnaa,"Office for Film, Newspaper and Article Administration",2
+ba1ae317-5df9-4c04-9448-edfc95cb3b16,hk-ofca,Office of the Communications Authority,39
+6aa52517-86d8-4e62-8fc2-3dda9f0e071e,hk-omb,Office of the Ombudsman,0
+8928e381-e78f-4033-afae-7d3c93bcdb5c,hk-oro,Official Receiver's Office,9
+a12c41b7-56b3-4f7b-bbf0-e0cf5d76869d,pckt,Peng Chau Kai To Limited,2
+f8f00a79-abdb-4f6b-9dec-10a88d59b4e4,hk-pland,Planning Department,17
+f6b5fb80-3040-40c6-b6a4-4c123353fe0e,hk-psc,Public Service Commission,1
+215d2afa-4eb8-4d71-8be9-fc3402c663a5,hk-rthk,Radio Television Hong Kong,3
+d0260b17-8714-4039-806d-a72823d84ccd,hk-rvd,Rating and Valuation Department,4
+ab7a40af-9a32-4c42-bc41-1a699631b7a1,hk-reo,Registration and Electoral Office,30
+4019984a-4b4c-4df6-ad12-1b70a4e15d6a,hk-sciocs,"Secretariat, Commissioner on Interception of Communications and Surveillance",7
+de2442f6-1741-43b1-895d-67d8442d0dec,hk-sb,Security Bureau,12
+d545faf5-0f72-4606-9150-f11714c3e73d,hk-swd,Social Welfare Department,166
+876756b9-19ff-45ad-84ee-1edf665571e1,sunferry,Sun Ferry Services Company Limited,3
+91da8cf6-78c1-4195-8943-70fcd0ef5843,towngas,The Hong Kong and China Gas Company Limited,1
+f27d2fa3-0970-4592-a46d-a599b5e402f1,hkelectric,"The Hongkong Electric Company, Limited",12
+456f83d9-77df-4440-bd3f-9be1108a6c7b,rehabsociety,The Hong Kong Society for Rehabilitation,1
+fa2ab2c1-4d53-4935-bcf7-bff5ac6e213d,starferry,"The ""Star"" Ferry Company, Limited",1
+44804ba6-04b1-4cf3-8191-664781cb6ddf,tpd,Town Planning Board,6
+7ce98701-2ec4-4888-a305-94b0cee54f81,hk-tid,Trade and Industry Department,2
+77f70bdc-b838-4ea7-b7ef-9c2568fe932d,hk-tlb,Transport and Logistics Bureau,3
+7454e563-7cff-4d0c-a563-1be0a85352d4,hk-td,Transport Department,58
+0b479ae4-302d-47af-8676-c49d1fbc2114,hk-try,Treasury,14
+bc17606d-7202-4a9a-883f-a09ba249eb36,traway,Tsui Wah Ferry Service (H.K.) Limited,2
+8290f675-4864-4039-bec3-0d0e5cd408bd,hk-ugc,University Grants Committee Secretariat,27
+dcdee38a-a75f-461f-9056-cc81a5adfe3b,ura,Urban Renewal Authority,2
+3cfcd1c3-3eb1-428c-ab6f-6915cbdc96e2,hk-wsd,Water Supplies Department,68
+1aaa4e0c-2742-436b-abf1-317d077a5ee2,wkcda,West Kowloon Cultural District Authority,1
+1b91b144-0fb5-4933-b0f5-9a2620aba5b3,hk-wfsfaa,Working Family and Student Financial Assistance Agency,20

@@ -1,0 +1,511 @@
+timestamp,station_id,station_name,wind_speed_kmh,wind_gust_kmh,wind_direction,signal_level
+2025-09-07 22:43:09,0,Central Pier,37.0,70.0,East,TC1
+2025-09-07 22:43:09,1,Chek Lap Kok,55.0,80.0,Southeast,TC3
+2025-09-07 22:43:09,2,Cheung Chau,87.0,103.0,Southeast,TC8
+2025-09-07 22:43:09,3,Cheung Chau Beach,50.0,78.0,East,TC3
+2025-09-07 22:43:09,4,Green Island,50.0,82.0,Southeast,TC3
+2025-09-07 22:43:09,5,Hong Kong Sea School,20.0,49.0,Southeast,TC1
+2025-09-07 22:43:09,6,Kai Tak,42.0,73.0,East,TC3
+2025-09-07 22:43:09,7,King's Park,25.0,59.0,Southeast,TC1
+2025-09-07 22:43:09,8,Lamma Island,51.0,74.0,Southeast,TC3
+2025-09-07 22:43:09,9,Lau Fau Shan,26.0,68.0,Southeast,TC1
+2025-09-07 22:43:09,10,Ngong Ping,77.0,142.0,East,TC8
+2025-09-07 22:43:09,11,North Point,13.0,36.0,East,TC1
+2025-09-07 22:43:09,12,Peng Chau,47.0,73.0,Southeast,TC3
+2025-09-07 22:43:09,13,Sai Kung,47.0,75.0,Southeast,TC3
+2025-09-07 22:43:09,14,Sha Chau,57.0,81.0,Southeast,TC3
+2025-09-07 22:43:09,15,Sha Tin,22.0,40.0,South,TC1
+2025-09-07 22:43:09,16,Shek Kong,25.0,58.0,East,TC1
+2025-09-07 22:43:09,17,Stanley,53.0,73.0,South,TC3
+2025-09-07 22:43:09,18,Star Ferry,47.0,69.0,East,TC3
+2025-09-07 22:43:09,19,Ta Kwu Ling,29.0,53.0,Southeast,TC1
+2025-09-07 22:43:09,20,Tai Mei Tuk,48.0,73.0,Southeast,TC3
+2025-09-07 22:43:09,21,Tai Po Kau,41.0,81.0,Southeast,TC3
+2025-09-07 22:43:09,22,Tap Mun,73.0,87.0,Southeast,TC8
+2025-09-07 22:43:09,23,Tate's Cairn,41.0,74.0,N/A,TC3
+2025-09-07 22:43:09,24,Tseung Kwan O,21.0,48.0,Southeast,TC1
+2025-09-07 22:43:09,25,Tsing Yi,32.0,62.0,Southeast,TC1
+2025-09-07 22:43:09,26,Tuen Mun,35.0,70.0,Southeast,TC1
+2025-09-07 22:43:09,27,Waglan Island,76.0,89.0,East,TC8
+2025-09-07 22:43:09,28,Wetland Park,12.0,38.0,Southeast,TC1
+2025-09-07 22:43:09,29,Wong Chuk Hang,27.0,66.0,Southeast,TC1
+2025-09-07 22:53:28,0,Central Pier,38.0,65.0,Southeast,TC1
+2025-09-07 22:53:28,1,Chek Lap Kok,58.0,81.0,Southeast,TC3
+2025-09-07 22:53:28,2,Cheung Chau,95.0,123.0,Southeast,TC8
+2025-09-07 22:53:28,3,Cheung Chau Beach,56.0,86.0,East,TC3
+2025-09-07 22:53:28,4,Green Island,52.0,92.0,Southeast,TC3
+2025-09-07 22:53:28,5,Hong Kong Sea School,19.0,69.0,East,TC1
+2025-09-07 22:53:28,6,Kai Tak,39.0,74.0,East,TC1
+2025-09-07 22:53:28,7,King's Park,27.0,60.0,Southeast,TC1
+2025-09-07 22:53:28,8,Lamma Island,50.0,78.0,Southeast,TC3
+2025-09-07 22:53:28,9,Lau Fau Shan,34.0,58.0,Southeast,TC1
+2025-09-07 22:53:28,10,Ngong Ping,62.0,117.0,Variable,TC3
+2025-09-07 22:53:28,11,North Point,12.0,45.0,Variable,TC1
+2025-09-07 22:53:28,12,Peng Chau,43.0,69.0,Southeast,TC3
+2025-09-07 22:53:28,13,Sai Kung,45.0,70.0,Southeast,TC3
+2025-09-07 22:53:28,14,Sha Chau,57.0,84.0,Southeast,TC3
+2025-09-07 22:53:28,15,Sha Tin,26.0,63.0,Southeast,TC1
+2025-09-07 22:53:28,16,Shek Kong,19.0,51.0,East,TC1
+2025-09-07 22:53:28,17,Stanley,55.0,76.0,South,TC3
+2025-09-07 22:53:28,18,Star Ferry,44.0,69.0,East,TC3
+2025-09-07 22:53:28,19,Ta Kwu Ling,24.0,59.0,Southeast,TC1
+2025-09-07 22:53:28,20,Tai Mei Tuk,45.0,74.0,East,TC3
+2025-09-07 22:53:28,21,Tai Po Kau,37.0,89.0,Southeast,TC1
+2025-09-07 22:53:28,22,Tap Mun,75.0,94.0,Southeast,TC8
+2025-09-07 22:53:28,23,Tate's Cairn,45.0,95.0,N/A,TC3
+2025-09-07 22:53:28,24,Tseung Kwan O,31.0,60.0,Southeast,TC1
+2025-09-07 22:53:28,25,Tsing Yi,15.0,42.0,Southeast,TC1
+2025-09-07 22:53:28,26,Tuen Mun,36.0,74.0,Southeast,TC1
+2025-09-07 22:53:28,27,Waglan Island,72.0,85.0,East,TC8
+2025-09-07 22:53:28,28,Wetland Park,14.0,34.0,Southeast,TC1
+2025-09-07 22:53:28,29,Wong Chuk Hang,30.0,77.0,Southeast,TC1
+2025-09-07 23:03:48,0,Central Pier,34.0,55.0,Southeast,TC1
+2025-09-07 23:03:48,1,Chek Lap Kok,49.0,70.0,Southeast,TC3
+2025-09-07 23:03:48,2,Cheung Chau,90.0,111.0,Southeast,TC8
+2025-09-07 23:03:48,3,Cheung Chau Beach,48.0,86.0,East,TC3
+2025-09-07 23:03:48,4,Green Island,51.0,81.0,Southeast,TC3
+2025-09-07 23:03:48,5,Hong Kong Sea School,22.0,47.0,Southeast,TC1
+2025-09-07 23:03:48,6,Kai Tak,38.0,57.0,East,TC1
+2025-09-07 23:03:48,7,King's Park,27.0,57.0,Southeast,TC1
+2025-09-07 23:03:48,8,Lamma Island,49.0,78.0,Southeast,TC3
+2025-09-07 23:03:48,9,Lau Fau Shan,31.0,63.0,Southeast,TC1
+2025-09-07 23:03:48,10,Ngong Ping,67.0,149.0,Variable,TC8
+2025-09-07 23:03:48,11,North Point,9.0,34.0,Variable,TC1
+2025-09-07 23:03:48,12,Peng Chau,49.0,77.0,Southeast,TC3
+2025-09-07 23:03:48,13,Sai Kung,48.0,71.0,Southeast,TC3
+2025-09-07 23:03:48,14,Sha Chau,51.0,64.0,Southeast,TC3
+2025-09-07 23:03:48,15,Sha Tin,28.0,46.0,Southeast,TC1
+2025-09-07 23:03:48,16,Shek Kong,23.0,65.0,East,TC1
+2025-09-07 23:03:48,17,Stanley,55.0,79.0,South,TC3
+2025-09-07 23:03:48,18,Star Ferry,49.0,69.0,East,TC3
+2025-09-07 23:03:48,19,Ta Kwu Ling,27.0,55.0,East,TC1
+2025-09-07 23:03:48,20,Tai Mei Tuk,51.0,77.0,East,TC3
+2025-09-07 23:03:48,21,Tai Po Kau,47.0,84.0,Southeast,TC3
+2025-09-07 23:03:48,22,Tap Mun,75.0,90.0,Southeast,TC8
+2025-09-07 23:03:48,23,Tate's Cairn,45.0,83.0,N/A,TC3
+2025-09-07 23:03:48,24,Tseung Kwan O,28.0,64.0,Southeast,TC1
+2025-09-07 23:03:48,25,Tsing Yi,36.0,63.0,Southeast,TC1
+2025-09-07 23:03:48,26,Tuen Mun,34.0,71.0,Southeast,TC1
+2025-09-07 23:03:48,27,Waglan Island,74.0,89.0,East,TC8
+2025-09-07 23:03:48,28,Wetland Park,17.0,40.0,Southeast,TC1
+2025-09-07 23:03:48,29,Wong Chuk Hang,27.0,58.0,East,TC1
+2025-09-07 23:14:08,0,Central Pier,36.0,64.0,Southeast,TC1
+2025-09-07 23:14:08,1,Chek Lap Kok,55.0,81.0,Southeast,TC3
+2025-09-07 23:14:08,2,Cheung Chau,84.0,98.0,Southeast,TC8
+2025-09-07 23:14:08,3,Cheung Chau Beach,40.0,78.0,East,TC1
+2025-09-07 23:14:08,4,Green Island,57.0,93.0,Southeast,TC3
+2025-09-07 23:14:08,5,Hong Kong Sea School,22.0,69.0,Variable,TC1
+2025-09-07 23:14:08,6,Kai Tak,45.0,77.0,East,TC3
+2025-09-07 23:14:08,7,King's Park,23.0,60.0,Southeast,TC1
+2025-09-07 23:14:08,8,Lamma Island,46.0,72.0,Southeast,TC3
+2025-09-07 23:14:08,9,Lau Fau Shan,30.0,53.0,Southeast,TC1
+2025-09-07 23:14:08,10,Ngong Ping,51.0,112.0,Variable,TC3
+2025-09-07 23:14:08,11,North Point,8.0,20.0,South,TC1
+2025-09-07 23:14:08,12,Peng Chau,47.0,69.0,Southeast,TC3
+2025-09-07 23:14:08,13,Sai Kung,44.0,66.0,Southeast,TC3
+2025-09-07 23:14:08,14,Sha Chau,62.0,81.0,Southeast,TC3
+2025-09-07 23:14:08,15,Sha Tin,23.0,49.0,Southeast,TC1
+2025-09-07 23:14:08,16,Shek Kong,19.0,50.0,East,TC1
+2025-09-07 23:14:08,17,Stanley,56.0,83.0,South,TC3
+2025-09-07 23:14:08,18,Star Ferry,50.0,85.0,East,TC3
+2025-09-07 23:14:08,19,Ta Kwu Ling,31.0,51.0,Southeast,TC1
+2025-09-07 23:14:08,20,Tai Mei Tuk,46.0,78.0,East,TC3
+2025-09-07 23:14:08,21,Tai Po Kau,53.0,76.0,Southeast,TC3
+2025-09-07 23:14:08,22,Tap Mun,72.0,86.0,Southeast,TC8
+2025-09-07 23:14:08,23,Tate's Cairn,48.0,86.0,N/A,TC3
+2025-09-07 23:14:08,24,Tseung Kwan O,25.0,55.0,Southeast,TC1
+2025-09-07 23:14:08,25,Tsing Yi,28.0,59.0,Southeast,TC1
+2025-09-07 23:14:08,26,Tuen Mun,36.0,76.0,Southeast,TC1
+2025-09-07 23:14:08,27,Waglan Island,72.0,85.0,Southeast,TC8
+2025-09-07 23:14:08,28,Wetland Park,17.0,39.0,Southeast,TC1
+2025-09-07 23:14:08,29,Wong Chuk Hang,24.0,71.0,Variable,TC1
+2025-09-07 23:24:28,0,Central Pier,39.0,68.0,East,TC1
+2025-09-07 23:24:28,1,Chek Lap Kok,56.0,94.0,Southeast,TC3
+2025-09-07 23:24:28,2,Cheung Chau,80.0,92.0,Southeast,TC8
+2025-09-07 23:24:28,3,Cheung Chau Beach,35.0,73.0,East,TC1
+2025-09-07 23:24:28,4,Green Island,56.0,90.0,Southeast,TC3
+2025-09-07 23:24:28,5,Hong Kong Sea School,20.0,50.0,Variable,TC1
+2025-09-07 23:24:28,6,Kai Tak,40.0,60.0,East,TC1
+2025-09-07 23:24:28,7,King's Park,24.0,48.0,Southeast,TC1
+2025-09-07 23:24:28,8,Lamma Island,54.0,85.0,Southeast,TC3
+2025-09-07 23:24:28,9,Lau Fau Shan,23.0,39.0,Southeast,TC1
+2025-09-07 23:24:28,10,Ngong Ping,39.0,94.0,Variable,TC1
+2025-09-07 23:24:28,11,North Point,12.0,30.0,East,TC1
+2025-09-07 23:24:28,12,Peng Chau,40.0,73.0,Southeast,TC1
+2025-09-07 23:24:28,13,Sai Kung,46.0,66.0,Southeast,TC3
+2025-09-07 23:24:28,14,Sha Chau,58.0,86.0,Southeast,TC3
+2025-09-07 23:24:28,15,Sha Tin,22.0,56.0,Southeast,TC1
+2025-09-07 23:24:28,16,Shek Kong,28.0,72.0,East,TC1
+2025-09-07 23:24:28,17,Stanley,59.0,86.0,South,TC3
+2025-09-07 23:24:28,18,Star Ferry,51.0,71.0,East,TC3
+2025-09-07 23:24:28,19,Ta Kwu Ling,35.0,73.0,East,TC1
+2025-09-07 23:24:28,20,Tai Mei Tuk,47.0,75.0,East,TC3
+2025-09-07 23:24:28,21,Tai Po Kau,54.0,90.0,Southeast,TC3
+2025-09-07 23:24:28,22,Tap Mun,68.0,81.0,Southeast,TC8
+2025-09-07 23:24:28,23,Tate's Cairn,43.0,91.0,N/A,TC3
+2025-09-07 23:24:28,24,Tseung Kwan O,33.0,64.0,Southeast,TC1
+2025-09-07 23:24:28,25,Tsing Yi,29.0,63.0,Southeast,TC1
+2025-09-07 23:24:28,26,Tuen Mun,26.0,58.0,Southeast,TC1
+2025-09-07 23:24:28,27,Waglan Island,75.0,86.0,Southeast,TC8
+2025-09-07 23:24:28,28,Wetland Park,11.0,29.0,Southeast,TC1
+2025-09-07 23:24:28,29,Wong Chuk Hang,24.0,60.0,East,TC1
+2025-09-07 23:34:47,0,Central Pier,38.0,69.0,Southeast,TC1
+2025-09-07 23:34:47,1,Chek Lap Kok,53.0,82.0,Southeast,TC3
+2025-09-07 23:34:47,2,Cheung Chau,86.0,109.0,Southeast,TC8
+2025-09-07 23:34:47,3,Cheung Chau Beach,40.0,77.0,Southeast,TC1
+2025-09-07 23:34:47,4,Green Island,60.0,87.0,Southeast,TC3
+2025-09-07 23:34:47,5,Hong Kong Sea School,14.0,37.0,Southwest,TC1
+2025-09-07 23:34:47,6,Kai Tak,45.0,67.0,Southeast,TC3
+2025-09-07 23:34:47,7,King's Park,28.0,64.0,Southeast,TC1
+2025-09-07 23:34:47,8,Lamma Island,50.0,82.0,Southeast,TC3
+2025-09-07 23:34:47,9,Lau Fau Shan,24.0,55.0,Southeast,TC1
+2025-09-07 23:34:47,10,Ngong Ping,40.0,128.0,Variable,TC1
+2025-09-07 23:34:47,11,North Point,13.0,34.0,East,TC1
+2025-09-07 23:34:47,12,Peng Chau,44.0,68.0,Southeast,TC3
+2025-09-07 23:34:47,13,Sai Kung,46.0,67.0,Southeast,TC3
+2025-09-07 23:34:47,14,Sha Chau,59.0,87.0,Southeast,TC3
+2025-09-07 23:34:47,15,Sha Tin,26.0,56.0,Southeast,TC1
+2025-09-07 23:34:47,16,Shek Kong,19.0,50.0,East,TC1
+2025-09-07 23:34:47,17,Stanley,61.0,83.0,South,TC3
+2025-09-07 23:34:47,18,Star Ferry,49.0,73.0,East,TC3
+2025-09-07 23:34:47,19,Ta Kwu Ling,30.0,58.0,East,TC1
+2025-09-07 23:34:47,20,Tai Mei Tuk,50.0,71.0,East,TC3
+2025-09-07 23:34:47,21,Tai Po Kau,36.0,78.0,Southeast,TC1
+2025-09-07 23:34:47,22,Tap Mun,77.0,95.0,Southeast,TC8
+2025-09-07 23:34:47,23,Tate's Cairn,51.0,85.0,N/A,TC3
+2025-09-07 23:34:47,24,Tseung Kwan O,23.0,62.0,Southeast,TC1
+2025-09-07 23:34:47,25,Tsing Yi,28.0,64.0,Southeast,TC1
+2025-09-07 23:34:47,26,Tuen Mun,26.0,57.0,Southeast,TC1
+2025-09-07 23:34:47,27,Waglan Island,73.0,95.0,Southeast,TC8
+2025-09-07 23:34:47,28,Wetland Park,10.0,26.0,Southeast,TC1
+2025-09-07 23:34:47,29,Wong Chuk Hang,26.0,61.0,Southeast,TC1
+2025-09-07 23:45:06,0,Central Pier,33.0,61.0,Southeast,TC1
+2025-09-07 23:45:06,1,Chek Lap Kok,41.0,67.0,Southeast,TC3
+2025-09-07 23:45:06,2,Cheung Chau,75.0,99.0,Southeast,TC8
+2025-09-07 23:45:06,3,Cheung Chau Beach,32.0,67.0,Southeast,TC1
+2025-09-07 23:45:06,4,Green Island,49.0,84.0,Southeast,TC3
+2025-09-07 23:45:06,5,Hong Kong Sea School,13.0,54.0,Southeast,TC1
+2025-09-07 23:45:06,6,Kai Tak,40.0,68.0,Southeast,TC1
+2025-09-07 23:45:06,7,King's Park,18.0,44.0,Southeast,TC1
+2025-09-07 23:45:06,8,Lamma Island,54.0,87.0,Southeast,TC3
+2025-09-07 23:45:06,9,Lau Fau Shan,26.0,58.0,Southeast,TC1
+2025-09-07 23:45:06,10,Ngong Ping,35.0,121.0,Variable,TC1
+2025-09-07 23:45:06,11,North Point,9.0,24.0,East,TC1
+2025-09-07 23:45:06,12,Peng Chau,42.0,62.0,Southeast,TC3
+2025-09-07 23:45:06,13,Sai Kung,47.0,68.0,Southeast,TC3
+2025-09-07 23:45:06,14,Sha Chau,57.0,76.0,Southeast,TC3
+2025-09-07 23:45:06,15,Sha Tin,23.0,43.0,South,TC1
+2025-09-07 23:45:06,16,Shek Kong,19.0,63.0,East,TC1
+2025-09-07 23:45:06,17,Stanley,58.0,78.0,South,TC3
+2025-09-07 23:45:06,18,Star Ferry,46.0,75.0,East,TC3
+2025-09-07 23:45:06,19,Ta Kwu Ling,27.0,56.0,East,TC1
+2025-09-07 23:45:06,20,Tai Mei Tuk,51.0,78.0,East,TC3
+2025-09-07 23:45:06,21,Tai Po Kau,37.0,75.0,Southeast,TC1
+2025-09-07 23:45:06,22,Tap Mun,75.0,86.0,Southeast,TC8
+2025-09-07 23:45:06,23,Tate's Cairn,45.0,85.0,N/A,TC3
+2025-09-07 23:45:06,24,Tseung Kwan O,19.0,54.0,South,TC1
+2025-09-07 23:45:06,25,Tsing Yi,32.0,58.0,Southeast,TC1
+2025-09-07 23:45:06,26,Tuen Mun,31.0,74.0,Southeast,TC1
+2025-09-07 23:45:06,27,Waglan Island,75.0,91.0,Southeast,TC8
+2025-09-07 23:45:06,28,Wetland Park,14.0,37.0,Southeast,TC1
+2025-09-07 23:45:06,29,Wong Chuk Hang,35.0,69.0,East,TC1
+2025-09-07 23:55:25,0,Central Pier,28.0,46.0,Southeast,TC1
+2025-09-07 23:55:25,1,Chek Lap Kok,42.0,71.0,Southeast,TC3
+2025-09-07 23:55:25,2,Cheung Chau,71.0,94.0,Southeast,TC8
+2025-09-07 23:55:25,3,Cheung Chau Beach,32.0,75.0,Southeast,TC1
+2025-09-07 23:55:25,4,Green Island,49.0,85.0,East,TC3
+2025-09-07 23:55:25,5,Hong Kong Sea School,11.0,41.0,Variable,TC1
+2025-09-07 23:55:25,6,Kai Tak,38.0,77.0,Southeast,TC1
+2025-09-07 23:55:25,7,King's Park,36.0,66.0,Southeast,TC1
+2025-09-07 23:55:25,8,Lamma Island,45.0,83.0,Southeast,TC3
+2025-09-07 23:55:25,9,Lau Fau Shan,41.0,75.0,Southeast,TC3
+2025-09-07 23:55:25,10,Ngong Ping,30.0,82.0,Variable,TC1
+2025-09-07 23:55:25,11,North Point,12.0,30.0,Southeast,TC1
+2025-09-07 23:55:25,12,Peng Chau,42.0,64.0,Southeast,TC3
+2025-09-07 23:55:25,13,Sai Kung,50.0,72.0,Southeast,TC3
+2025-09-07 23:55:25,14,Sha Chau,54.0,89.0,Southeast,TC3
+2025-09-07 23:55:25,15,Sha Tin,15.0,50.0,South,TC1
+2025-09-07 23:55:25,16,Shek Kong,30.0,55.0,East,TC1
+2025-09-07 23:55:25,17,Stanley,58.0,81.0,South,TC3
+2025-09-07 23:55:25,18,Star Ferry,51.0,78.0,East,TC3
+2025-09-07 23:55:25,19,Ta Kwu Ling,28.0,54.0,Southeast,TC1
+2025-09-07 23:55:25,20,Tai Mei Tuk,40.0,62.0,East,TC1
+2025-09-07 23:55:25,21,Tai Po Kau,33.0,59.0,Southeast,TC1
+2025-09-07 23:55:25,22,Tap Mun,77.0,94.0,Southeast,TC8
+2025-09-07 23:55:25,23,Tate's Cairn,51.0,80.0,N/A,TC3
+2025-09-07 23:55:25,24,Tseung Kwan O,22.0,50.0,Southeast,TC1
+2025-09-07 23:55:25,25,Tsing Yi,30.0,62.0,Southeast,TC1
+2025-09-07 23:55:25,26,Tuen Mun,35.0,66.0,Southeast,TC1
+2025-09-07 23:55:25,27,Waglan Island,82.0,96.0,Southeast,TC8
+2025-09-07 23:55:25,28,Wetland Park,26.0,70.0,Southeast,TC1
+2025-09-07 23:55:25,29,Wong Chuk Hang,34.0,68.0,East,TC1
+2025-09-08 00:05:44,0,Central Pier,27.0,57.0,Southeast,TC1
+2025-09-08 00:05:44,1,Chek Lap Kok,47.0,79.0,Southeast,TC3
+2025-09-08 00:05:44,2,Cheung Chau,92.0,124.0,Southeast,TC8
+2025-09-08 00:05:44,3,Cheung Chau Beach,39.0,75.0,Southeast,TC1
+2025-09-08 00:05:44,4,Green Island,49.0,94.0,Southeast,TC3
+2025-09-08 00:05:44,5,Hong Kong Sea School,17.0,53.0,Variable,TC1
+2025-09-08 00:05:44,6,Kai Tak,45.0,88.0,Southeast,TC3
+2025-09-08 00:05:44,7,King's Park,27.0,65.0,Southeast,TC1
+2025-09-08 00:05:44,8,Lamma Island,55.0,102.0,Southeast,TC3
+2025-09-08 00:05:44,9,Lau Fau Shan,39.0,68.0,Southeast,TC1
+2025-09-08 00:05:44,10,Ngong Ping,101.0,138.0,East,TC8
+2025-09-08 00:05:44,11,North Point,17.0,30.0,East,TC1
+2025-09-08 00:05:44,12,Peng Chau,48.0,73.0,Southeast,TC3
+2025-09-08 00:05:44,13,Sai Kung,54.0,78.0,Southeast,TC3
+2025-09-08 00:05:44,14,Sha Chau,59.0,84.0,Southeast,TC3
+2025-09-08 00:05:44,15,Sha Tin,30.0,53.0,Southeast,TC1
+2025-09-08 00:05:44,16,Shek Kong,18.0,56.0,East,TC1
+2025-09-08 00:05:44,17,Stanley,63.0,89.0,South,TC8
+2025-09-08 00:05:44,18,Star Ferry,41.0,62.0,Southeast,TC3
+2025-09-08 00:05:44,19,Ta Kwu Ling,18.0,39.0,Southeast,TC1
+2025-09-08 00:05:44,20,Tai Mei Tuk,48.0,69.0,Southeast,TC3
+2025-09-08 00:05:44,21,Tai Po Kau,39.0,71.0,Southeast,TC1
+2025-09-08 00:05:44,22,Tap Mun,79.0,94.0,Southeast,TC8
+2025-09-08 00:05:44,23,Tate's Cairn,50.0,87.0,N/A,TC3
+2025-09-08 00:05:44,24,Tseung Kwan O,29.0,69.0,Southeast,TC1
+2025-09-08 00:05:44,25,Tsing Yi,26.0,58.0,Southeast,TC1
+2025-09-08 00:05:44,26,Tuen Mun,26.0,53.0,Southeast,TC1
+2025-09-08 00:05:44,27,Waglan Island,84.0,102.0,Southeast,TC8
+2025-09-08 00:05:44,28,Wetland Park,26.0,57.0,Southeast,TC1
+2025-09-08 00:05:44,29,Wong Chuk Hang,30.0,68.0,East,TC1
+2025-09-08 00:16:03,0,Central Pier,45.0,76.0,Southeast,TC3
+2025-09-08 00:16:03,1,Chek Lap Kok,48.0,80.0,Southeast,TC3
+2025-09-08 00:16:03,2,Cheung Chau,80.0,117.0,Southeast,TC8
+2025-09-08 00:16:03,3,Cheung Chau Beach,39.0,77.0,Southeast,TC1
+2025-09-08 00:16:03,4,Green Island,39.0,76.0,Southeast,TC1
+2025-09-08 00:16:03,5,Hong Kong Sea School,16.0,40.0,Variable,TC1
+2025-09-08 00:16:03,6,Kai Tak,60.0,86.0,Southeast,TC3
+2025-09-08 00:16:03,7,King's Park,24.0,54.0,Southeast,TC1
+2025-09-08 00:16:03,8,Lamma Island,55.0,87.0,Southeast,TC3
+2025-09-08 00:16:03,9,Lau Fau Shan,32.0,55.0,Southeast,TC1
+2025-09-08 00:16:03,10,Ngong Ping,45.0,134.0,Variable,TC3
+2025-09-08 00:16:03,11,North Point,14.0,30.0,East,TC1
+2025-09-08 00:16:03,12,Peng Chau,48.0,75.0,Southeast,TC3
+2025-09-08 00:16:03,13,Sai Kung,55.0,73.0,Southeast,TC3
+2025-09-08 00:16:03,14,Sha Chau,55.0,68.0,Southeast,TC3
+2025-09-08 00:16:03,15,Sha Tin,26.0,59.0,Southeast,TC1
+2025-09-08 00:16:03,16,Shek Kong,19.0,60.0,East,TC1
+2025-09-08 00:16:03,17,Stanley,68.0,94.0,South,TC8
+2025-09-08 00:16:03,18,Star Ferry,49.0,73.0,East,TC3
+2025-09-08 00:16:03,19,Ta Kwu Ling,25.0,51.0,Southeast,TC1
+2025-09-08 00:16:03,20,Tai Mei Tuk,45.0,68.0,Southeast,TC3
+2025-09-08 00:16:03,21,Tai Po Kau,47.0,83.0,Southeast,TC3
+2025-09-08 00:16:03,22,Tap Mun,80.0,98.0,Southeast,TC8
+2025-09-08 00:16:03,23,Tate's Cairn,58.0,95.0,N/A,TC3
+2025-09-08 00:16:03,24,Tseung Kwan O,26.0,64.0,Southeast,TC1
+2025-09-08 00:16:03,25,Tsing Yi,24.0,51.0,Southeast,TC1
+2025-09-08 00:16:03,26,Tuen Mun,32.0,71.0,Southeast,TC1
+2025-09-08 00:16:03,27,Waglan Island,82.0,101.0,Southeast,TC8
+2025-09-08 00:16:03,28,Wetland Park,19.0,46.0,Southeast,TC1
+2025-09-08 00:16:03,29,Wong Chuk Hang,33.0,66.0,East,TC1
+2025-09-08 00:26:26,0,Central Pier,32.0,74.0,Southeast,TC1
+2025-09-08 00:26:26,1,Chek Lap Kok,41.0,76.0,Southeast,TC3
+2025-09-08 00:26:26,2,Cheung Chau,74.0,100.0,Southeast,TC8
+2025-09-08 00:26:26,3,Cheung Chau Beach,40.0,82.0,Southeast,TC1
+2025-09-08 00:26:26,4,Green Island,60.0,103.0,Southeast,TC3
+2025-09-08 00:26:26,5,Hong Kong Sea School,13.0,46.0,South,TC1
+2025-09-08 00:26:26,6,Kai Tak,57.0,97.0,Southeast,TC3
+2025-09-08 00:26:26,7,King's Park,28.0,72.0,Southeast,TC1
+2025-09-08 00:26:26,8,Lamma Island,58.0,84.0,Southeast,TC3
+2025-09-08 00:26:26,9,Lau Fau Shan,35.0,63.0,Southeast,TC1
+2025-09-08 00:26:26,10,Ngong Ping,58.0,117.0,Southwest,TC3
+2025-09-08 00:26:26,11,North Point,10.0,29.0,East,TC1
+2025-09-08 00:26:26,12,Peng Chau,53.0,83.0,Southeast,TC3
+2025-09-08 00:26:26,13,Sai Kung,60.0,77.0,Southeast,TC3
+2025-09-08 00:26:26,14,Sha Chau,55.0,71.0,Southeast,TC3
+2025-09-08 00:26:26,15,Sha Tin,30.0,62.0,South,TC1
+2025-09-08 00:26:26,16,Shek Kong,22.0,82.0,East,TC1
+2025-09-08 00:26:26,17,Stanley,60.0,83.0,South,TC3
+2025-09-08 00:26:26,18,Star Ferry,48.0,72.0,Southeast,TC3
+2025-09-08 00:26:26,19,Ta Kwu Ling,27.0,54.0,Southeast,TC1
+2025-09-08 00:26:26,20,Tai Mei Tuk,53.0,83.0,Southeast,TC3
+2025-09-08 00:26:26,21,Tai Po Kau,41.0,60.0,Southeast,TC3
+2025-09-08 00:26:26,22,Tap Mun,80.0,102.0,Southeast,TC8
+2025-09-08 00:26:26,23,Tate's Cairn,57.0,91.0,N/A,TC3
+2025-09-08 00:26:26,24,Tseung Kwan O,30.0,72.0,Southeast,TC1
+2025-09-08 00:26:26,25,Tsing Yi,36.0,62.0,Southeast,TC1
+2025-09-08 00:26:26,26,Tuen Mun,32.0,67.0,South,TC1
+2025-09-08 00:26:26,27,Waglan Island,84.0,98.0,Southeast,TC8
+2025-09-08 00:26:26,28,Wetland Park,18.0,37.0,Southeast,TC1
+2025-09-08 00:26:26,29,Wong Chuk Hang,27.0,68.0,North,TC1
+2025-09-08 00:36:45,0,Central Pier,30.0,77.0,Southeast,TC1
+2025-09-08 00:36:45,1,Chek Lap Kok,47.0,71.0,Southeast,TC3
+2025-09-08 00:36:45,2,Cheung Chau,69.0,90.0,Southeast,TC8
+2025-09-08 00:36:45,3,Cheung Chau Beach,37.0,75.0,Southeast,TC1
+2025-09-08 00:36:45,4,Green Island,64.0,95.0,South,TC8
+2025-09-08 00:36:45,5,Hong Kong Sea School,8.0,22.0,Variable,TC1
+2025-09-08 00:36:45,6,Kai Tak,46.0,75.0,Southeast,TC3
+2025-09-08 00:36:45,7,King's Park,26.0,58.0,South,TC1
+2025-09-08 00:36:45,8,Lamma Island,53.0,82.0,Southeast,TC3
+2025-09-08 00:36:45,9,Lau Fau Shan,37.0,67.0,Southeast,TC1
+2025-09-08 00:36:45,10,Ngong Ping,53.0,121.0,Southwest,TC3
+2025-09-08 00:36:45,11,North Point,9.0,35.0,Southwest,TC1
+2025-09-08 00:36:45,12,Peng Chau,45.0,79.0,Southeast,TC3
+2025-09-08 00:36:45,13,Sai Kung,51.0,70.0,Southeast,TC3
+2025-09-08 00:36:45,14,Sha Chau,66.0,99.0,South,TC8
+2025-09-08 00:36:45,15,Sha Tin,30.0,50.0,Southeast,TC1
+2025-09-08 00:36:45,16,Shek Kong,27.0,70.0,East,TC1
+2025-09-08 00:36:45,17,Stanley,48.0,64.0,South,TC3
+2025-09-08 00:36:45,18,Star Ferry,36.0,68.0,Southeast,TC1
+2025-09-08 00:36:45,19,Ta Kwu Ling,30.0,65.0,Southeast,TC1
+2025-09-08 00:36:45,20,Tai Mei Tuk,45.0,77.0,Southeast,TC3
+2025-09-08 00:36:45,21,Tai Po Kau,37.0,63.0,Southeast,TC1
+2025-09-08 00:36:45,22,Tap Mun,76.0,93.0,Southeast,TC8
+2025-09-08 00:36:45,23,Tate's Cairn,55.0,76.0,N/A,TC3
+2025-09-08 00:36:45,24,Tseung Kwan O,24.0,54.0,Southeast,TC1
+2025-09-08 00:36:45,25,Tsing Yi,45.0,73.0,Southeast,TC3
+2025-09-08 00:36:45,26,Tuen Mun,36.0,77.0,Southeast,TC1
+2025-09-08 00:36:45,27,Waglan Island,86.0,101.0,Southeast,TC8
+2025-09-08 00:36:45,28,Wetland Park,17.0,40.0,Southeast,TC1
+2025-09-08 00:36:45,29,Wong Chuk Hang,19.0,34.0,Northwest,TC1
+2025-09-08 00:47:04,0,Central Pier,30.0,62.0,Southeast,TC1
+2025-09-08 00:47:04,1,Chek Lap Kok,64.0,89.0,Southeast,TC8
+2025-09-08 00:47:04,2,Cheung Chau,60.0,88.0,Southeast,TC3
+2025-09-08 00:47:04,3,Cheung Chau Beach,27.0,48.0,Southeast,TC1
+2025-09-08 00:47:04,4,Green Island,50.0,78.0,South,TC3
+2025-09-08 00:47:04,5,Hong Kong Sea School,8.0,36.0,Variable,TC1
+2025-09-08 00:47:04,6,Kai Tak,43.0,74.0,Southeast,TC3
+2025-09-08 00:47:04,7,King's Park,27.0,47.0,South,TC1
+2025-09-08 00:47:04,8,Lamma Island,43.0,66.0,Southeast,TC3
+2025-09-08 00:47:04,9,Lau Fau Shan,46.0,87.0,Southeast,TC3
+2025-09-08 00:47:04,10,Ngong Ping,79.0,145.0,Southwest,TC8
+2025-09-08 00:47:04,11,North Point,6.0,25.0,Variable,TC1
+2025-09-08 00:47:04,12,Peng Chau,46.0,76.0,South,TC3
+2025-09-08 00:47:04,13,Sai Kung,55.0,71.0,Southeast,TC3
+2025-09-08 00:47:04,14,Sha Chau,67.0,110.0,South,TC8
+2025-09-08 00:47:04,15,Sha Tin,28.0,55.0,South,TC1
+2025-09-08 00:47:04,16,Shek Kong,14.0,37.0,South,TC1
+2025-09-08 00:47:04,17,Stanley,54.0,74.0,South,TC3
+2025-09-08 00:47:04,18,Star Ferry,35.0,70.0,Southeast,TC1
+2025-09-08 00:47:04,19,Ta Kwu Ling,25.0,47.0,Southeast,TC1
+2025-09-08 00:47:04,20,Tai Mei Tuk,39.0,56.0,Southeast,TC1
+2025-09-08 00:47:04,21,Tai Po Kau,32.0,60.0,Southeast,TC1
+2025-09-08 00:47:04,22,Tap Mun,73.0,89.0,Southeast,TC8
+2025-09-08 00:47:04,23,Tate's Cairn,51.0,85.0,N/A,TC3
+2025-09-08 00:47:04,24,Tseung Kwan O,23.0,59.0,Southeast,TC1
+2025-09-08 00:47:04,25,Tsing Yi,46.0,73.0,Southeast,TC3
+2025-09-08 00:47:04,26,Tuen Mun,36.0,64.0,Southeast,TC1
+2025-09-08 00:47:04,27,Waglan Island,86.0,102.0,Southeast,TC8
+2025-09-08 00:47:04,28,Wetland Park,21.0,46.0,Southeast,TC1
+2025-09-08 00:47:04,29,Wong Chuk Hang,12.0,30.0,Northwest,TC1
+2025-09-08 00:57:26,0,Central Pier,25.0,44.0,Southeast,TC1
+2025-09-08 00:57:26,1,Chek Lap Kok,51.0,81.0,Southeast,TC3
+2025-09-08 00:57:26,2,Cheung Chau,72.0,95.0,Southeast,TC8
+2025-09-08 00:57:26,3,Cheung Chau Beach,34.0,62.0,Southeast,TC1
+2025-09-08 00:57:26,4,Green Island,37.0,80.0,Southeast,TC1
+2025-09-08 00:57:26,5,Hong Kong Sea School,12.0,56.0,Variable,TC1
+2025-09-08 00:57:26,6,Kai Tak,53.0,79.0,Southeast,TC3
+2025-09-08 00:57:26,7,King's Park,19.0,46.0,South,TC1
+2025-09-08 00:57:26,8,Lamma Island,43.0,66.0,Southeast,TC3
+2025-09-08 00:57:26,9,Lau Fau Shan,42.0,64.0,Southeast,TC3
+2025-09-08 00:57:26,10,Ngong Ping,55.0,116.0,Variable,TC3
+2025-09-08 00:57:26,11,North Point,16.0,39.0,East,TC1
+2025-09-08 00:57:26,12,Peng Chau,34.0,51.0,Southeast,TC1
+2025-09-08 00:57:26,13,Sai Kung,68.0,90.0,Southeast,TC8
+2025-09-08 00:57:26,14,Sha Chau,64.0,83.0,South,TC8
+2025-09-08 00:57:26,15,Sha Tin,30.0,55.0,Southeast,TC1
+2025-09-08 00:57:26,16,Shek Kong,12.0,43.0,Variable,TC1
+2025-09-08 00:57:26,17,Stanley,61.0,87.0,South,TC3
+2025-09-08 00:57:26,18,Star Ferry,37.0,65.0,Southeast,TC1
+2025-09-08 00:57:26,19,Ta Kwu Ling,22.0,58.0,Southeast,TC1
+2025-09-08 00:57:26,20,Tai Mei Tuk,45.0,67.0,Southeast,TC3
+2025-09-08 00:57:26,21,Tai Po Kau,36.0,72.0,Southeast,TC1
+2025-09-08 00:57:26,22,Tap Mun,74.0,92.0,Southeast,TC8
+2025-09-08 00:57:26,23,Tate's Cairn,65.0,97.0,N/A,TC8
+2025-09-08 00:57:26,24,Tseung Kwan O,16.0,63.0,Southeast,TC1
+2025-09-08 00:57:26,25,Tsing Yi,32.0,64.0,Southeast,TC1
+2025-09-08 00:57:26,26,Tuen Mun,26.0,55.0,Southeast,TC1
+2025-09-08 00:57:26,27,Waglan Island,79.0,89.0,Southeast,TC8
+2025-09-08 00:57:26,28,Wetland Park,16.0,39.0,Southeast,TC1
+2025-09-08 00:57:26,29,Wong Chuk Hang,19.0,53.0,East,TC1
+2025-09-08 01:07:45,0,Central Pier,21.0,44.0,Southeast,TC1
+2025-09-08 01:07:45,1,Chek Lap Kok,51.0,75.0,Southeast,TC3
+2025-09-08 01:07:45,2,Cheung Chau,71.0,103.0,Southeast,TC8
+2025-09-08 01:07:45,3,Cheung Chau Beach,35.0,72.0,Southeast,TC1
+2025-09-08 01:07:45,4,Green Island,41.0,72.0,South,TC3
+2025-09-08 01:07:45,5,Hong Kong Sea School,10.0,32.0,Variable,TC1
+2025-09-08 01:07:45,6,Kai Tak,54.0,76.0,Southeast,TC3
+2025-09-08 01:07:45,7,King's Park,29.0,59.0,Southeast,TC1
+2025-09-08 01:07:45,8,Lamma Island,51.0,74.0,Southeast,TC3
+2025-09-08 01:07:45,9,Lau Fau Shan,35.0,60.0,Southeast,TC1
+2025-09-08 01:07:45,10,Ngong Ping,80.0,125.0,Southwest,TC8
+2025-09-08 01:07:45,11,North Point,13.0,39.0,East,TC1
+2025-09-08 01:07:45,12,Peng Chau,34.0,62.0,Southeast,TC1
+2025-09-08 01:07:45,13,Sai Kung,69.0,86.0,Southeast,TC8
+2025-09-08 01:07:45,14,Sha Chau,62.0,87.0,South,TC3
+2025-09-08 01:07:45,15,Sha Tin,20.0,56.0,South,TC1
+2025-09-08 01:07:45,16,Shek Kong,12.0,42.0,East,TC1
+2025-09-08 01:07:45,17,Stanley,66.0,87.0,South,TC8
+2025-09-08 01:07:45,18,Star Ferry,39.0,67.0,Southeast,TC1
+2025-09-08 01:07:45,19,Ta Kwu Ling,20.0,53.0,Southeast,TC1
+2025-09-08 01:07:45,20,Tai Mei Tuk,30.0,70.0,Southeast,TC1
+2025-09-08 01:07:45,21,Tai Po Kau,47.0,89.0,Southeast,TC3
+2025-09-08 01:07:45,22,Tap Mun,81.0,103.0,Southeast,TC8
+2025-09-08 01:07:45,23,Tate's Cairn,67.0,103.0,N/A,TC8
+2025-09-08 01:07:45,24,Tseung Kwan O,14.0,36.0,Variable,TC1
+2025-09-08 01:07:45,25,Tsing Yi,24.0,56.0,Southeast,TC1
+2025-09-08 01:07:45,26,Tuen Mun,22.0,53.0,Southeast,TC1
+2025-09-08 01:07:45,27,Waglan Island,74.0,90.0,Southeast,TC8
+2025-09-08 01:07:45,28,Wetland Park,17.0,42.0,Southeast,TC1
+2025-09-08 01:07:45,29,Wong Chuk Hang,24.0,66.0,East,TC1
+2025-09-08 01:18:04,0,Central Pier,22.0,50.0,Southeast,TC1
+2025-09-08 01:18:04,1,Chek Lap Kok,46.0,72.0,Southeast,TC3
+2025-09-08 01:18:04,2,Cheung Chau,69.0,88.0,Southeast,TC8
+2025-09-08 01:18:04,3,Cheung Chau Beach,37.0,64.0,Southeast,TC1
+2025-09-08 01:18:04,4,Green Island,51.0,89.0,South,TC3
+2025-09-08 01:18:04,5,Hong Kong Sea School,11.0,35.0,South,TC1
+2025-09-08 01:18:04,6,Kai Tak,48.0,69.0,Southeast,TC3
+2025-09-08 01:18:04,7,King's Park,28.0,57.0,South,TC1
+2025-09-08 01:18:04,8,Lamma Island,48.0,76.0,Southeast,TC3
+2025-09-08 01:18:04,9,Lau Fau Shan,34.0,55.0,Southeast,TC1
+2025-09-08 01:18:04,10,Ngong Ping,68.0,121.0,Southwest,TC8
+2025-09-08 01:18:04,11,North Point,16.0,40.0,Variable,TC1
+2025-09-08 01:18:04,12,Peng Chau,47.0,77.0,Southeast,TC3
+2025-09-08 01:18:04,13,Sai Kung,63.0,82.0,South,TC8
+2025-09-08 01:18:04,14,Sha Chau,63.0,96.0,Southeast,TC8
+2025-09-08 01:18:04,15,Sha Tin,21.0,56.0,South,TC1
+2025-09-08 01:18:04,16,Shek Kong,12.0,56.0,East,TC1
+2025-09-08 01:18:04,17,Stanley,60.0,80.0,South,TC3
+2025-09-08 01:18:04,18,Star Ferry,42.0,68.0,Southeast,TC3
+2025-09-08 01:18:04,19,Ta Kwu Ling,33.0,64.0,South,TC1
+2025-09-08 01:18:04,20,Tai Mei Tuk,24.0,65.0,Southeast,TC1
+2025-09-08 01:18:04,21,Tai Po Kau,36.0,66.0,Southeast,TC1
+2025-09-08 01:18:04,22,Tap Mun,68.0,99.0,Southeast,TC8
+2025-09-08 01:18:04,23,Tate's Cairn,61.0,96.0,N/A,TC3
+2025-09-08 01:18:04,24,Tseung Kwan O,11.0,24.0,Southeast,TC1
+2025-09-08 01:18:04,25,Tsing Yi,26.0,71.0,Southeast,TC1
+2025-09-08 01:18:04,26,Tuen Mun,32.0,62.0,Southeast,TC1
+2025-09-08 01:18:04,27,Waglan Island,76.0,87.0,Southeast,TC8
+2025-09-08 01:18:04,28,Wetland Park,14.0,46.0,Southeast,TC1
+2025-09-08 01:18:04,29,Wong Chuk Hang,20.0,60.0,Variable,TC1
+2025-09-08 01:28:24,0,Central Pier,22.0,39.0,Southeast,TC1
+2025-09-08 01:28:24,1,Chek Lap Kok,46.0,76.0,Southeast,TC3
+2025-09-08 01:28:24,2,Cheung Chau,70.0,91.0,Southeast,TC8
+2025-09-08 01:28:24,3,Cheung Chau Beach,31.0,58.0,Southeast,TC1
+2025-09-08 01:28:24,4,Green Island,41.0,68.0,Southeast,TC3
+2025-09-08 01:28:24,5,Hong Kong Sea School,12.0,38.0,South,TC1
+2025-09-08 01:28:24,6,Kai Tak,44.0,62.0,Southeast,TC3
+2025-09-08 01:28:24,7,King's Park,26.0,58.0,South,TC1
+2025-09-08 01:28:24,8,Lamma Island,42.0,64.0,Southeast,TC3
+2025-09-08 01:28:24,9,Lau Fau Shan,35.0,67.0,Southeast,TC1
+2025-09-08 01:28:24,10,Ngong Ping,85.0,140.0,Southwest,TC8
+2025-09-08 01:28:24,11,North Point,12.0,40.0,East,TC1
+2025-09-08 01:28:24,12,Peng Chau,46.0,78.0,Southeast,TC3
+2025-09-08 01:28:24,13,Sai Kung,67.0,87.0,Southeast,TC8
+2025-09-08 01:28:24,14,Sha Chau,54.0,80.0,South,TC3
+2025-09-08 01:28:24,15,Sha Tin,27.0,68.0,Southeast,TC1
+2025-09-08 01:28:24,16,Shek Kong,18.0,53.0,Southeast,TC1
+2025-09-08 01:28:24,17,Stanley,59.0,79.0,South,TC3
+2025-09-08 01:28:24,18,Star Ferry,37.0,71.0,Southeast,TC1
+2025-09-08 01:28:24,19,Ta Kwu Ling,23.0,43.0,Southeast,TC1
+2025-09-08 01:28:24,20,Tai Mei Tuk,22.0,61.0,Southeast,TC1
+2025-09-08 01:28:24,21,Tai Po Kau,40.0,72.0,Southeast,TC1
+2025-09-08 01:28:24,22,Tap Mun,65.0,98.0,Southeast,TC8
+2025-09-08 01:28:24,23,Tate's Cairn,62.0,94.0,N/A,TC3
+2025-09-08 01:28:24,24,Tseung Kwan O,14.0,48.0,Southeast,TC1
+2025-09-08 01:28:24,25,Tsing Yi,33.0,68.0,Southeast,TC1
+2025-09-08 01:28:24,26,Tuen Mun,30.0,64.0,Southeast,TC1
+2025-09-08 01:28:24,27,Waglan Island,67.0,84.0,Southeast,TC8
+2025-09-08 01:28:24,28,Wetland Park,19.0,49.0,Southeast,TC1
+2025-09-08 01:28:24,29,Wong Chuk Hang,17.0,42.0,East,TC1

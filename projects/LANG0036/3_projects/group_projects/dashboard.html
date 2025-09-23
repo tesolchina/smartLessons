@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong Real-Time Wind Monitor | Typhoon Signal Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .explanation {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            color: #2c5aa0;
+            font-size: 1.1rem;
+        }
+        
+        .explanation-toggle:hover {
+            color: #1e3a8a;
+        }
+        
+        .explanation-content {
+            display: none;
+            margin-top: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .explanation-content.show {
+            display: block;
+        }
+        
+        .explanation-content h4 {
+            color: #2c5aa0;
+            margin: 15px 0 8px 0;
+        }
+        
+        .explanation-content ul {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .explanation-content li {
+            margin: 5px 0;
+        }
+        
+        .signal-status {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .signal-indicator {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .signal-0, .signal-1 {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            color: #1b5e20;
+            border: 3px solid #4caf50;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+        
+        .signal-3 {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            color: #bf360c;
+            border: 3px solid #ff9800;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+        }
+        
+        .signal-8 {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            color: #b71c1c;
+            border: 3px solid #f44336;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 16px rgba(244, 67, 54, 0.5);
+        }
+        
+        @keyframes pulse {
+            0% { 
+                box-shadow: 0 4px 16px rgba(244, 67, 54, 0.5), 0 0 0 0 rgba(244, 67, 54, 0.7); 
+                transform: scale(1);
+            }
+            70% { 
+                box-shadow: 0 4px 16px rgba(244, 67, 54, 0.3), 0 0 0 15px rgba(244, 67, 54, 0); 
+                transform: scale(1.02);
+            }
+            100% { 
+                box-shadow: 0 4px 16px rgba(244, 67, 54, 0.5), 0 0 0 0 rgba(244, 67, 54, 0); 
+                transform: scale(1);
+            }
+        }
+        
+        .status-details {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: #666;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .stations-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .table-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .table-header h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+            position: sticky;
+            top: 0;
+        }
+        
+        .station-row {
+            transition: background-color 0.3s ease;
+        }
+        
+        .station-row:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .signal-3-row {
+            background-color: #fff8e1;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .signal-8-row {
+            background-color: #ffebee;
+            font-weight: bold;
+            border-left: 4px solid #f44336;
+            animation: rowPulse 3s infinite;
+        }
+        
+        @keyframes rowPulse {
+            0%, 100% { background-color: #ffebee; }
+            50% { background-color: #ffcdd2; }
+        }
+        
+        .wind-speed {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .signal-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .badge-signal-1 {
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+            color: #1b5e20;
+            font-weight: bold;
+        }
+        
+        .badge-signal-3 {
+            background: linear-gradient(135deg, #ffb74d, #ff9800);
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .badge-signal-8 {
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: badgePulse 2s infinite;
+        }
+        
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .last-update {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 15px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌪️ Hong Kong Wind Monitor</h1>
+            <p>Real-Time Typhoon Signal Assessment • Updated Every 10 Minutes</p>
+        </div>
+        
+        <div class="explanation">
+            <div class="explanation-toggle" onclick="toggleExplanation()">
+                <span>ℹ️ About This Research Dashboard</span>
+                <span id="toggle-arrow">▼</span>
+            </div>
+            <div class="explanation-content" id="explanation-content">
+                <h4>Purpose</h4>
+                <p>This dashboard compares <strong>calculated typhoon signals</strong> based on real-time wind measurements from 30 Hong Kong Observatory stations against the <strong>official signals</strong> issued by the Hong Kong Observatory.</p>
+                
+                <h4>Methodology</h4>
+                <ul>
+                    <li><strong>Data Collection:</strong> Real-time wind speed and gust data from 30 HKO automatic weather stations, updated every 10 minutes</li>
+                    <li><strong>Signal Calculation:</strong> Using HKO's own criteria - when 15 or more stations (half) record sustained winds ≥41 km/h or gusts ≥70 km/h, our system calculates "Signal 3"</li>
+                    <li><strong>Signal 8 Threshold:</strong> When 15 or more stations record sustained winds ≥88 km/h or gusts ≥180 km/h</li>
+                    <li><strong>Comparison:</strong> Track matches and mismatches between calculated and official signals to understand timing differences</li>
+                </ul>
+                
+                <h4>Research Context</h4>
+                <p>This analysis helps understand:</p>
+                <ul>
+                    <li>How quickly meteorological conditions meet technical signal criteria</li>
+                    <li>Timing differences between measurable wind conditions and official signal announcements</li>
+                    <li>The relationship between automated calculations and human meteorological judgment</li>
+                </ul>
+                
+                <p><em>Note: Official signals consider additional factors beyond wind speed, including storm trajectory, expected duration, and public safety timing.</em></p>
+            </div>
+        </div>
+        
+        <div class="signal-status">
+            <div id="signal-indicator" class="signal-indicator">
+                <div class="loading">Loading wind data</div>
+            </div>
+            <div id="status-details" class="status-details">
+                Connecting to Hong Kong Observatory data sources...
+            </div>
+            <div id="signal-comparison" class="signal-comparison" style="margin-top: 15px; display: none;">
+                <strong>Official vs Calculated Signal Comparison</strong>
+            </div>
+            <div id="early-concern" class="early-concern" style="margin-top: 15px; padding: 10px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; display: none;">
+                <strong>⚠️ Research Concern:</strong> Earlier than usual announcement of Signal 8 until 11 AM on September 9, 2025
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div id="total-stations" class="stat-value">-</div>
+                <div class="stat-label">Total Stations</div>
+            </div>
+            <div class="stat-card">
+                <div id="signal3-stations" class="stat-value">-</div>
+                <div class="stat-label">Signal 3+ Stations</div>
+            </div>
+            <div class="stat-card">
+                <div id="signal8-stations" class="stat-value">-</div>
+                <div class="stat-label">Signal 8+ Stations</div>
+            </div>
+            <div class="stat-card">
+                <div id="official-signal" class="stat-value">-</div>
+                <div class="stat-label">Official HKO Signal</div>
+            </div>
+            <div class="stat-card">
+                <div id="calculated-signal" class="stat-value">-</div>
+                <div class="stat-label">Calculated Signal</div>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div style="font-size: 1rem; color: #666; margin-bottom: 10px;">📊 <strong>Raw Wind Data CSV</strong></div>
+                <a href="/data/csv" target="_blank" style="display: inline-block; background: #007bff; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-size: 0.9rem;">
+                    📥 Download CSV Data
+                </a>
+            </div>
+            <div class="stat-card">
+                <div style="font-size: 1rem; color: #666; margin-bottom: 10px;">👨‍🔬 <strong>Research Credits</strong></div>
+                <div style="font-size: 0.8rem; color: #666;">
+                    Dr Simon Wang (HKBU)<br>
+                    GitHub Copilot assistant
+                </div>
+            </div>
+            <div class="stat-card">
+                <div id="next-update" class="stat-value">-</div>
+                <div class="stat-label">Next Update (min)</div>
+            </div>
+        </div>
+        
+        <div class="stations-table">
+            <div class="table-header">
+                <h2>Weather Station Wind Readings</h2>
+            </div>
+            <div style="overflow-x: auto; max-height: 600px; overflow-y: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Station Name</th>
+                            <th>Location</th>
+                            <th>Wind Speed (km/h)</th>
+                            <th>Wind Gust (km/h)</th>
+                            <th>Signal Level</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stations-tbody">
+                        <tr>
+                            <td colspan="6" class="loading">Loading station data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="stations-table">
+            <div class="table-header">
+                <h2>📊 Signal Comparison</h2>
+                <div style="margin-top: 8px; color: #555; font-size: 0.95rem;">
+                    This section is under construction. You can still download the raw CSV data below.
+                </div>
+            </div>
+            <div style="padding: 20px; background: #fff;">
+                <a href="/analysis" style="display:inline-block;background:#6c757d;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;">View details (Under Construction)</a>
+                <span style="margin-left:12px; color:#666; font-size:0.95rem;">— returns soon with historical + live comparisons</span>
+            </div>
+        </div>
+
+        <div id="last-update" class="last-update">
+            Last Update: Connecting...
+        </div>
+        
+        <div class="footer">
+            <p>Data Source: <a href="https://www.hko.gov.hk" target="_blank">Hong Kong Observatory</a> • 
+               <a href="/about">About This Dashboard</a> • 
+               Emergency: 999</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+               Research: Dr Simon Wang, HKBU (simonwang@hkbu.edu.hk) • 
+               Technical Assistant: GitHub Copilot • 
+               <a href="/data/csv" style="color: white;">📊 Raw CSV Data</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let updateInterval;
+        let nextUpdateTimer;
+        
+    async function fetchWindData() {
+            try {
+                const response = await fetch('/api/wind-data');
+                const data = await response.json();
+                updateDashboard(data);
+                startNextUpdateTimer(data.next_update);
+            } catch (error) {
+                console.error('Error fetching wind data:', error);
+                document.getElementById('signal-indicator').innerHTML = 
+                    '<div class="loading">Connection Error</div>';
+                document.getElementById('status-details').textContent = 
+                    'Unable to connect to wind data service. Retrying...';
+            }
+        }
+        
+        
+        function updateDashboard(data) {
+            // Use OFFICIAL HKO signal for main display, not calculated
+            const officialSignal = data.official_signal && data.official_signal.signal !== -1 ? data.official_signal.signal : 1;
+            const calculatedSignal = data.overall_signal || 0;
+            const signalIndicator = document.getElementById('signal-indicator');
+            const statusDetails = document.getElementById('status-details');
+            const signalComparison = document.getElementById('signal-comparison');
+            const earlyConcern = document.getElementById('early-concern');
+            
+            // Display OFFICIAL signal prominently
+            signalIndicator.className = `signal-indicator signal-${officialSignal}`;
+            
+            if (officialSignal >= 8) {
+                signalIndicator.innerHTML = '🚨 OFFICIAL TYPHOON SIGNAL 8';
+            } else if (officialSignal >= 3) {
+                signalIndicator.innerHTML = '⚠️ OFFICIAL STRONG WIND SIGNAL 3';
+            } else {
+                signalIndicator.innerHTML = '✅ NO SPECIAL SIGNAL';
+            }
+            
+            // Show HKO official info as primary status
+            if (data.official_signal && data.official_signal.info) {
+                statusDetails.innerHTML = `<strong>HKO Official:</strong> ${data.official_signal.info}`;
+            } else {
+                statusDetails.textContent = data.signal_reason || 'No data available';
+            }
+            
+            // Show official vs calculated signal comparison
+            if (data.official_signal && data.official_signal.signal !== -1) {
+                const officialSignal = data.official_signal.signal;
+                const calculatedSignal = data.overall_signal;
+                const match = data.signal_match ? '✅' : '⚠️';
+                const officialInfo = data.official_signal.info || '';
+                const issueTime = data.official_signal.issue_time ? 
+                    new Date(data.official_signal.issue_time).toLocaleString('en-HK', {timeZone: 'Asia/Hong_Kong'}) : '';
+                
+                signalComparison.innerHTML = `
+                    ${match} <strong>Official HKO:</strong> Signal ${officialSignal} ${officialInfo ? `(${officialInfo})` : ''}
+                    <br><strong>Wind Analysis:</strong> Signal ${calculatedSignal} based on ${data.total_stations} stations
+                    ${!data.signal_match ? '<br><span style="color: #f44336; font-weight: bold;">⚠️ DATA ANALYSIS DIFFERS FROM OFFICIAL</span>' : '<br><span style="color: #4caf50; font-weight: bold;">✅ WIND DATA SUPPORTS OFFICIAL SIGNAL</span>'}
+                    ${issueTime ? `<br><small>Official issued: ${issueTime}</small>` : ''}
+                `;
+                signalComparison.style.display = 'block';
+                signalComparison.style.color = data.signal_match ? '#4caf50' : '#f44336';
+                signalComparison.style.fontWeight = 'bold';
+                signalComparison.style.padding = '10px';
+                signalComparison.style.borderRadius = '5px';
+                signalComparison.style.background = data.signal_match ? '#e8f5e8' : '#ffebee';
+            }
+            
+            // Show early concern if applicable
+            if (data.early_signal8_concern && data.early_signal8_concern.active) {
+                earlyConcern.style.display = 'block';
+            }
+            
+            // Update statistics - emphasize official signal
+            document.getElementById('total-stations').textContent = data.total_stations || 0;
+            document.getElementById('signal3-stations').textContent = data.signal3_stations || 0;
+            document.getElementById('signal8-stations').textContent = data.signal8_stations || 0;
+            
+            // Show official signal prominently
+            const officialElement = document.getElementById('official-signal');
+            if (data.official_signal && data.official_signal.signal !== -1) {
+                officialElement.textContent = `Signal ${data.official_signal.signal}`;
+                officialElement.style.color = data.official_signal.signal >= 8 ? '#f44336' : 
+                                               data.official_signal.signal >= 3 ? '#ff9800' : '#4caf50';
+                officialElement.style.fontWeight = 'bold';
+            } else {
+                officialElement.textContent = 'N/A';
+            }
+            
+            document.getElementById('calculated-signal').textContent = `Signal ${data.overall_signal || 0}`;
+            
+            // Update stations table
+            updateStationsTable(data.stations || []);
+            
+            // Update last update time
+            const lastUpdate = data.last_update ? 
+                new Date(data.last_update).toLocaleString('en-HK', {
+                    timeZone: 'Asia/Hong_Kong',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }) : 'Never';
+            
+            document.getElementById('last-update').innerHTML = 
+                `<span style="color: #333; font-weight: bold;">Last Update:</span> ${lastUpdate} HKT • <span style="color: #007bff; font-weight: bold;">Credits:</span> ${data.credits ? data.credits.researcher : 'Dr Simon Wang (HKBU)'} • <span style="color: #666;">Next: Every 10 minutes</span>`;
+        }
+        
+        function updateStationsTable(stations) {
+            const tbody = document.getElementById('stations-tbody');
+            
+            if (!stations || stations.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6">No station data available</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = stations.map((station, index) => {
+                const windSpeed = station.last_wind_speed;
+                const windGust = station.last_wind_gust;
+                const signalLevel = station.signal_level || 0;
+                const status = station.status || 'unknown';
+                
+                let rowClass = 'station-row';
+                if (signalLevel >= 8) {
+                    rowClass += ' signal-8-row';
+                } else if (signalLevel >= 3) {
+                    rowClass += ' signal-3-row';
+                }
+                
+                let signalBadge = '';
+                if (signalLevel >= 8) {
+                    signalBadge = '<span class="signal-badge badge-signal-8">SIGNAL 8</span>';
+                } else if (signalLevel >= 3) {
+                    signalBadge = '<span class="signal-badge badge-signal-3">SIGNAL 3</span>';
+                } else {
+                    signalBadge = '<span class="signal-badge badge-signal-1">Normal</span>';
+                }
+                
+                return `
+                    <tr class="${rowClass}">
+                        <td><strong>${station.station_name}</strong></td>
+                        <td>${station.latitude?.toFixed(4)}°N, ${station.longitude?.toFixed(4)}°E</td>
+                        <td class="wind-speed">${windSpeed !== null ? windSpeed.toFixed(1) : 'N/A'}</td>
+                        <td>${windGust !== null ? windGust.toFixed(1) : 'N/A'}</td>
+                        <td>${signalBadge}</td>
+                        <td>${status === 'active' ? '🟢 Active' : status === 'error' ? '🔴 Error' : '⚪ No Data'}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+        
+        function startNextUpdateTimer(nextUpdateTime) {
+            if (nextUpdateTimer) {
+                clearInterval(nextUpdateTimer);
+            }
+            
+            nextUpdateTimer = setInterval(() => {
+                const now = new Date();
+                const next = new Date(nextUpdateTime);
+                const diff = Math.max(0, Math.ceil((next - now) / 1000 / 60));
+                document.getElementById('next-update').textContent = diff;
+            }, 1000);
+        }
+        
+    // Initialize dashboard
+    fetchWindData();
+        
+        // Auto-refresh every 10 minutes (600,000 ms)
+    updateInterval = setInterval(fetchWindData, 600000);
+
+    // (Signal comparison UI temporarily disabled)
+        
+        // Manual refresh button (hidden, can be added later)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F5' || (e.ctrlKey && e.key === 'r')) {
+                e.preventDefault();
+                fetchWindData();
+            }
+        });
+        
+        // Toggle explanation section
+        function toggleExplanation() {
+            const content = document.getElementById('explanation-content');
+            const arrow = document.getElementById('toggle-arrow');
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                arrow.textContent = '▼';
+            } else {
+                content.classList.add('show');
+                arrow.textContent = '▲';
+            }
+        }
+    </script>
+</body>
+</html>

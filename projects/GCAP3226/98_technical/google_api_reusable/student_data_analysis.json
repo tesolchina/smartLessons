@@ -1,0 +1,2062 @@
+{
+  "timestamp": "2025-09-22T18:42:56.292281",
+  "team_formation": {
+    "headers": [
+      "Team 1",
+      "name ",
+      "student ID",
+      "WhatsApp ",
+      "small WhatsApp group link ",
+      "Gmail ",
+      "Google drive folder link"
+    ],
+    "total_students": 51,
+    "teams": {
+      "member 1.1": [
+        {
+          "Team 1": "member 1.1",
+          "name ": "Yeung Wing Yu",
+          "student ID": "23238283",
+          "WhatsApp ": "97728503",
+          "small WhatsApp group link ": "",
+          "Gmail ": "opheliasheep123@gmail.com",
+          "Google drive folder link": "teacher to provide "
+        }
+      ],
+      "member 1.2": [
+        {
+          "Team 1": "member 1.2",
+          "name ": "Kwok Tsz Yau",
+          "student ID": "22234020",
+          "WhatsApp ": "96232165",
+          "small WhatsApp group link ": "",
+          "Gmail ": "kwoktszyau2004@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 1.3": [
+        {
+          "Team 1": "member 1.3",
+          "name ": "Tsoi Yik Hon",
+          "student ID": "22232192",
+          "WhatsApp ": "61722240",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 1.4": [
+        {
+          "Team 1": "member 1.4",
+          "name ": "SuJiaLu",
+          "student ID": "22256946",
+          "WhatsApp ": "53986330",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 1.5": [
+        {
+          "Team 1": "member 1.5",
+          "name ": "",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 1.6": [
+        {
+          "Team 1": "member 1.6",
+          "name ": "",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "topic": [
+        {
+          "Team 1": "topic ",
+          "name ": "6",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        },
+        {
+          "Team 1": "topic ",
+          "name ": "3",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        },
+        {
+          "Team 1": "topic ",
+          "name ": "7",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        },
+        {
+          "Team 1": "topic ",
+          "name ": "4",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        },
+        {
+          "Team 1": "topic ",
+          "name ": "5",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        },
+        {
+          "Team 1": "topic ",
+          "name ": "2",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "Team 2": [
+        {
+          "Team 1": "Team 2",
+          "name ": "name",
+          "student ID": "student ID",
+          "WhatsApp ": "WhatsApp ",
+          "small WhatsApp group link ": "small WhatsApp group link ",
+          "Gmail ": "Gmail",
+          "Google drive folder link": "Google drive folder link"
+        }
+      ],
+      "member 2.1": [
+        {
+          "Team 1": "member 2.1",
+          "name ": "Chan Hei Tung",
+          "student ID": "23232099",
+          "WhatsApp ": "92107071",
+          "small WhatsApp group link ": "https://chat.whatsapp.com/Lq16DaYCqb326p8mlXBwJ0?mode=ems_copy_t",
+          "Gmail ": "adriennecht@gmail.com",
+          "Google drive folder link": "teacher to provide "
+        }
+      ],
+      "member 2.2": [
+        {
+          "Team 1": "member 2.2",
+          "name ": "Yip Tsz Ying",
+          "student ID": "23229543",
+          "WhatsApp ": "93118850",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 2.3": [
+        {
+          "Team 1": "member 2.3",
+          "name ": "Ko Man Wai",
+          "student ID": "23234997",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 2.4": [
+        {
+          "Team 1": "member 2.4",
+          "name ": "Wong Ling Yan Cassy",
+          "student ID": "23233168",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 2.5": [
+        {
+          "Team 1": "member 2.5",
+          "name ": "Tsoi Tsz Yan",
+          "student ID": "23229101",
+          "WhatsApp ": "61597468",
+          "small WhatsApp group link ": "",
+          "Gmail ": "tsoitszyannn@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 2.6": [
+        {
+          "Team 1": "member 2.6",
+          "name ": "Zi Xing Saul Ma",
+          "student ID": "23200278",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "Team 3": [
+        {
+          "Team 1": "Team 3",
+          "name ": "name",
+          "student ID": "student ID",
+          "WhatsApp ": "WhatsApp ",
+          "small WhatsApp group link ": "small WhatsApp group link ",
+          "Gmail ": "Gmail ",
+          "Google drive folder link": "Google drive folder link"
+        }
+      ],
+      "member 3.1": [
+        {
+          "Team 1": "member 3.1",
+          "name ": "Chen Man Ching",
+          "student ID": "23232781",
+          "WhatsApp ": "60450640",
+          "small WhatsApp group link ": "https://chat.whatsapp.com/E5U0JTMcXAiIO8kdLUtpIi?mode=ac_t",
+          "Gmail ": "chenwenjing1023@gmail.com",
+          "Google drive folder link": "teacher to provide "
+        }
+      ],
+      "member 3.2": [
+        {
+          "Team 1": "member 3.2",
+          "name ": "Hui Man Hei",
+          "student ID": "25223305",
+          "WhatsApp ": "90158707",
+          "small WhatsApp group link ": "",
+          "Gmail ": "shuaimangguo0813@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 3.3": [
+        {
+          "Team 1": "member 3.3",
+          "name ": "HONG KAM YIN",
+          "student ID": "25227394",
+          "WhatsApp ": "52261355",
+          "small WhatsApp group link ": "",
+          "Gmail ": "hhkamyin369@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 3.4": [
+        {
+          "Team 1": "member 3.4",
+          "name ": "Kung Tsz Lok",
+          "student ID": "25206354",
+          "WhatsApp ": "56850521",
+          "small WhatsApp group link ": "",
+          "Gmail ": "joannakung3009@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 3.5": [
+        {
+          "Team 1": "member 3.5",
+          "name ": "ZHENG ZIAN",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 3.6": [
+        {
+          "Team 1": "member 3.6",
+          "name ": "Chan Ching Yin",
+          "student ID": "22224009",
+          "WhatsApp ": "69935955",
+          "small WhatsApp group link ": "",
+          "Gmail ": "Leonchanchingyin@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "Team 4": [
+        {
+          "Team 1": "Team 4",
+          "name ": "name",
+          "student ID": "student ID",
+          "WhatsApp ": "WhatsApp ",
+          "small WhatsApp group link ": "small WhatsApp group link ",
+          "Gmail ": "Gmail",
+          "Google drive folder link": "Google drive folder link"
+        }
+      ],
+      "member 4.1": [
+        {
+          "Team 1": "member 4.1",
+          "name ": "Liu Wai Man",
+          "student ID": "24221872",
+          "WhatsApp ": "95820542",
+          "small WhatsApp group link ": "https://chat.whatsapp.com/G5ocJeK5GgjCFBVBseVcre?mode=ems_copy_t",
+          "Gmail ": "lwm95820542@gmail.com",
+          "Google drive folder link": "teacher to provide "
+        }
+      ],
+      "member 4.2": [
+        {
+          "Team 1": "member 4.2",
+          "name ": "Kwok Lai Ki",
+          "student ID": "25215833",
+          "WhatsApp ": "59842385",
+          "small WhatsApp group link ": "",
+          "Gmail ": "kinkikwoki116@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 4.3": [
+        {
+          "Team 1": "member 4.3",
+          "name ": "",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 4.4": [
+        {
+          "Team 1": "member 4.4",
+          "name ": "Chan Tsz Ying",
+          "student ID": "25200135",
+          "WhatsApp ": "51923705",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 4.5": [
+        {
+          "Team 1": "member 4.5",
+          "name ": "Wong Wai Lun",
+          "student ID": "25221310",
+          "WhatsApp ": "59182048",
+          "small WhatsApp group link ": "",
+          "Gmail ": "aw07133@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 4.6": [
+        {
+          "Team 1": "member 4.6",
+          "name ": "",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "Team 5": [
+        {
+          "Team 1": "Team 5",
+          "name ": "name",
+          "student ID": "student ID",
+          "WhatsApp ": "WhatsApp ",
+          "small WhatsApp group link ": "small WhatsApp group link ",
+          "Gmail ": "Gmail",
+          "Google drive folder link": "Google drive folder link"
+        }
+      ],
+      "member 5.1": [
+        {
+          "Team 1": "member 5.1",
+          "name ": "MAN Wai Yin",
+          "student ID": "24202509",
+          "WhatsApp ": "95821706",
+          "small WhatsApp group link ": "https://chat.whatsapp.com/E93BYRjp2FuClTcmzVxPc0?mode=ems_copy_t",
+          "Gmail ": "manyin201612@gmail.com",
+          "Google drive folder link": "teacher to provide "
+        }
+      ],
+      "member 5.2": [
+        {
+          "Team 1": "member 5.2",
+          "name ": "Chan Chi Ki",
+          "student ID": "23233885",
+          "WhatsApp ": "91845208",
+          "small WhatsApp group link ": "",
+          "Gmail ": "cks171302@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 5.3": [
+        {
+          "Team 1": "member 5.3",
+          "name ": "Tag Tsz Tung",
+          "student ID": "23230371",
+          "WhatsApp ": "60485775",
+          "small WhatsApp group link ": "",
+          "Gmail ": "jessie.one.air@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 5.4": [
+        {
+          "Team 1": "member 5.4",
+          "name ": "HO Chun Chit",
+          "student ID": "24202495",
+          "WhatsApp ": "54819060",
+          "small WhatsApp group link ": "",
+          "Gmail ": "tony030824@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 5.5": [
+        {
+          "Team 1": "member 5.5",
+          "name ": "Xu Jingyi",
+          "student ID": "24205397",
+          "WhatsApp ": "84902278",
+          "small WhatsApp group link ": "",
+          "Gmail ": "zjldbzq1314@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 5.6": [
+        {
+          "Team 1": "member 5.6",
+          "name ": "Cheung Kwun Ho",
+          "student ID": "24219169",
+          "WhatsApp ": "65733021",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "Team 6": [
+        {
+          "Team 1": "Team 6",
+          "name ": "name",
+          "student ID": "student ID",
+          "WhatsApp ": "WhatsApp ",
+          "small WhatsApp group link ": "small WhatsApp group link ",
+          "Gmail ": "Gmail",
+          "Google drive folder link": "Google drive folder link"
+        }
+      ],
+      "member 6.1": [
+        {
+          "Team 1": "member 6.1",
+          "name ": "Tam Tin Chun",
+          "student ID": "23236353",
+          "WhatsApp ": "92250633",
+          "small WhatsApp group link ": "https://chat.whatsapp.com/E9hLnEJmoy11GPrzlSGYrj",
+          "Gmail ": "tamtinchun@gmail.com",
+          "Google drive folder link": "teacher to provide "
+        }
+      ],
+      "member 6.2": [
+        {
+          "Team 1": "member 6.2",
+          "name ": "Chan Dik On",
+          "student ID": "23230851",
+          "WhatsApp ": "44144124",
+          "small WhatsApp group link ": "",
+          "Gmail ": "chandikon7@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 6.3": [
+        {
+          "Team 1": "member 6.3",
+          "name ": "Wong Chun Hang",
+          "student ID": "23213116",
+          "WhatsApp ": "67351119",
+          "small WhatsApp group link ": "",
+          "Gmail ": "qazwedc12369@gmail.com",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 6.4": [
+        {
+          "Team 1": "member 6.4",
+          "name ": "",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 6.5": [
+        {
+          "Team 1": "member 6.5",
+          "name ": "",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ],
+      "member 6.6": [
+        {
+          "Team 1": "member 6.6",
+          "name ": "",
+          "student ID": "",
+          "WhatsApp ": "",
+          "small WhatsApp group link ": "",
+          "Gmail ": "",
+          "Google drive folder link": ""
+        }
+      ]
+    },
+    "students": [
+      {
+        "Team 1": "member 1.1",
+        "name ": "Yeung Wing Yu",
+        "student ID": "23238283",
+        "WhatsApp ": "97728503",
+        "small WhatsApp group link ": "",
+        "Gmail ": "opheliasheep123@gmail.com",
+        "Google drive folder link": "teacher to provide "
+      },
+      {
+        "Team 1": "member 1.2",
+        "name ": "Kwok Tsz Yau",
+        "student ID": "22234020",
+        "WhatsApp ": "96232165",
+        "small WhatsApp group link ": "",
+        "Gmail ": "kwoktszyau2004@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 1.3",
+        "name ": "Tsoi Yik Hon",
+        "student ID": "22232192",
+        "WhatsApp ": "61722240",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 1.4",
+        "name ": "SuJiaLu",
+        "student ID": "22256946",
+        "WhatsApp ": "53986330",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 1.5",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 1.6",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "topic ",
+        "name ": "6",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "Team 2",
+        "name ": "name",
+        "student ID": "student ID",
+        "WhatsApp ": "WhatsApp ",
+        "small WhatsApp group link ": "small WhatsApp group link ",
+        "Gmail ": "Gmail",
+        "Google drive folder link": "Google drive folder link"
+      },
+      {
+        "Team 1": "member 2.1",
+        "name ": "Chan Hei Tung",
+        "student ID": "23232099",
+        "WhatsApp ": "92107071",
+        "small WhatsApp group link ": "https://chat.whatsapp.com/Lq16DaYCqb326p8mlXBwJ0?mode=ems_copy_t",
+        "Gmail ": "adriennecht@gmail.com",
+        "Google drive folder link": "teacher to provide "
+      },
+      {
+        "Team 1": "member 2.2",
+        "name ": "Yip Tsz Ying",
+        "student ID": "23229543",
+        "WhatsApp ": "93118850",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 2.3",
+        "name ": "Ko Man Wai",
+        "student ID": "23234997",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 2.4",
+        "name ": "Wong Ling Yan Cassy",
+        "student ID": "23233168",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 2.5",
+        "name ": "Tsoi Tsz Yan",
+        "student ID": "23229101",
+        "WhatsApp ": "61597468",
+        "small WhatsApp group link ": "",
+        "Gmail ": "tsoitszyannn@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 2.6",
+        "name ": "Zi Xing Saul Ma",
+        "student ID": "23200278",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "topic ",
+        "name ": "3",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "Team 3",
+        "name ": "name",
+        "student ID": "student ID",
+        "WhatsApp ": "WhatsApp ",
+        "small WhatsApp group link ": "small WhatsApp group link ",
+        "Gmail ": "Gmail ",
+        "Google drive folder link": "Google drive folder link"
+      },
+      {
+        "Team 1": "member 3.1",
+        "name ": "Chen Man Ching",
+        "student ID": "23232781",
+        "WhatsApp ": "60450640",
+        "small WhatsApp group link ": "https://chat.whatsapp.com/E5U0JTMcXAiIO8kdLUtpIi?mode=ac_t",
+        "Gmail ": "chenwenjing1023@gmail.com",
+        "Google drive folder link": "teacher to provide "
+      },
+      {
+        "Team 1": "member 3.2",
+        "name ": "Hui Man Hei",
+        "student ID": "25223305",
+        "WhatsApp ": "90158707",
+        "small WhatsApp group link ": "",
+        "Gmail ": "shuaimangguo0813@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 3.3",
+        "name ": "HONG KAM YIN",
+        "student ID": "25227394",
+        "WhatsApp ": "52261355",
+        "small WhatsApp group link ": "",
+        "Gmail ": "hhkamyin369@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 3.4",
+        "name ": "Kung Tsz Lok",
+        "student ID": "25206354",
+        "WhatsApp ": "56850521",
+        "small WhatsApp group link ": "",
+        "Gmail ": "joannakung3009@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 3.5",
+        "name ": "ZHENG ZIAN",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 3.6",
+        "name ": "Chan Ching Yin",
+        "student ID": "22224009",
+        "WhatsApp ": "69935955",
+        "small WhatsApp group link ": "",
+        "Gmail ": "Leonchanchingyin@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "topic ",
+        "name ": "7",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "Team 4",
+        "name ": "name",
+        "student ID": "student ID",
+        "WhatsApp ": "WhatsApp ",
+        "small WhatsApp group link ": "small WhatsApp group link ",
+        "Gmail ": "Gmail",
+        "Google drive folder link": "Google drive folder link"
+      },
+      {
+        "Team 1": "member 4.1",
+        "name ": "Liu Wai Man",
+        "student ID": "24221872",
+        "WhatsApp ": "95820542",
+        "small WhatsApp group link ": "https://chat.whatsapp.com/G5ocJeK5GgjCFBVBseVcre?mode=ems_copy_t",
+        "Gmail ": "lwm95820542@gmail.com",
+        "Google drive folder link": "teacher to provide "
+      },
+      {
+        "Team 1": "member 4.2",
+        "name ": "Kwok Lai Ki",
+        "student ID": "25215833",
+        "WhatsApp ": "59842385",
+        "small WhatsApp group link ": "",
+        "Gmail ": "kinkikwoki116@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 4.3",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 4.4",
+        "name ": "Chan Tsz Ying",
+        "student ID": "25200135",
+        "WhatsApp ": "51923705",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 4.5",
+        "name ": "Wong Wai Lun",
+        "student ID": "25221310",
+        "WhatsApp ": "59182048",
+        "small WhatsApp group link ": "",
+        "Gmail ": "aw07133@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 4.6",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "topic ",
+        "name ": "4",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "Team 5",
+        "name ": "name",
+        "student ID": "student ID",
+        "WhatsApp ": "WhatsApp ",
+        "small WhatsApp group link ": "small WhatsApp group link ",
+        "Gmail ": "Gmail",
+        "Google drive folder link": "Google drive folder link"
+      },
+      {
+        "Team 1": "member 5.1",
+        "name ": "MAN Wai Yin",
+        "student ID": "24202509",
+        "WhatsApp ": "95821706",
+        "small WhatsApp group link ": "https://chat.whatsapp.com/E93BYRjp2FuClTcmzVxPc0?mode=ems_copy_t",
+        "Gmail ": "manyin201612@gmail.com",
+        "Google drive folder link": "teacher to provide "
+      },
+      {
+        "Team 1": "member 5.2",
+        "name ": "Chan Chi Ki",
+        "student ID": "23233885",
+        "WhatsApp ": "91845208",
+        "small WhatsApp group link ": "",
+        "Gmail ": "cks171302@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 5.3",
+        "name ": "Tag Tsz Tung",
+        "student ID": "23230371",
+        "WhatsApp ": "60485775",
+        "small WhatsApp group link ": "",
+        "Gmail ": "jessie.one.air@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 5.4",
+        "name ": "HO Chun Chit",
+        "student ID": "24202495",
+        "WhatsApp ": "54819060",
+        "small WhatsApp group link ": "",
+        "Gmail ": "tony030824@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 5.5",
+        "name ": "Xu Jingyi",
+        "student ID": "24205397",
+        "WhatsApp ": "84902278",
+        "small WhatsApp group link ": "",
+        "Gmail ": "zjldbzq1314@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 5.6",
+        "name ": "Cheung Kwun Ho",
+        "student ID": "24219169",
+        "WhatsApp ": "65733021",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "topic ",
+        "name ": "5",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "Team 6",
+        "name ": "name",
+        "student ID": "student ID",
+        "WhatsApp ": "WhatsApp ",
+        "small WhatsApp group link ": "small WhatsApp group link ",
+        "Gmail ": "Gmail",
+        "Google drive folder link": "Google drive folder link"
+      },
+      {
+        "Team 1": "member 6.1",
+        "name ": "Tam Tin Chun",
+        "student ID": "23236353",
+        "WhatsApp ": "92250633",
+        "small WhatsApp group link ": "https://chat.whatsapp.com/E9hLnEJmoy11GPrzlSGYrj",
+        "Gmail ": "tamtinchun@gmail.com",
+        "Google drive folder link": "teacher to provide "
+      },
+      {
+        "Team 1": "member 6.2",
+        "name ": "Chan Dik On",
+        "student ID": "23230851",
+        "WhatsApp ": "44144124",
+        "small WhatsApp group link ": "",
+        "Gmail ": "chandikon7@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 6.3",
+        "name ": "Wong Chun Hang",
+        "student ID": "23213116",
+        "WhatsApp ": "67351119",
+        "small WhatsApp group link ": "",
+        "Gmail ": "qazwedc12369@gmail.com",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 6.4",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 6.5",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "member 6.6",
+        "name ": "",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      },
+      {
+        "Team 1": "topic ",
+        "name ": "2",
+        "student ID": "",
+        "WhatsApp ": "",
+        "small WhatsApp group link ": "",
+        "Gmail ": "",
+        "Google drive folder link": ""
+      }
+    ],
+    "team_count": 42
+  },
+  "student_list": {
+    "headers": [
+      "Academic Year",
+      "Term",
+      "Course Code",
+      "Section Code",
+      "Student No.",
+      "Student Name",
+      "Chinese Name",
+      "Study Programme",
+      "Study Year",
+      "Attendance Record"
+    ],
+    "total_students": 25,
+    "students": [
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22229906",
+        "Student Name": "CHAN Lok Yi",
+        "Chinese Name": "陳樂怡",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "23210826",
+        "Student Name": "CHUI Siu Ting",
+        "Chinese Name": "崔紹廷",
+        "Study Programme": "*BSC MATH & STAT",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22232648",
+        "Student Name": "CHUNG Yan Ching",
+        "Chinese Name": "鍾欣澄",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22201890",
+        "Student Name": "DAUD Mariam",
+        "Chinese Name": "",
+        "Study Programme": "*BBA ECON & DA",
+        "Study Year": "3",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "23219068",
+        "Student Name": "HO Pui Ying",
+        "Chinese Name": "何佩盈",
+        "Study Programme": "*BA - PERM",
+        "Study Year": "3",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22256261",
+        "Student Name": "HU Kaijie",
+        "Chinese Name": "胡凱杰",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22229388",
+        "Student Name": "KUNG Yuen Ki",
+        "Chinese Name": "龔琬淇",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22240977",
+        "Student Name": "KUO Karen",
+        "Chinese Name": "郭琪琪",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "25229478",
+        "Student Name": "LAI Tsz Yan",
+        "Chinese Name": "賴紫欣",
+        "Study Programme": "*B - SOWK",
+        "Study Year": "3",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22227601",
+        "Student Name": "LAU Zhi Yi",
+        "Chinese Name": "劉芷伊",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22237364",
+        "Student Name": "LEE Lai Yu",
+        "Chinese Name": "李麗如",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22234543",
+        "Student Name": "LEUNG Lok Hin",
+        "Chinese Name": "梁樂騫",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22228756",
+        "Student Name": "LI Tsoi Yiu",
+        "Chinese Name": "李采遙",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22231102",
+        "Student Name": "LO Pui Chun",
+        "Chinese Name": "盧佩珍",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "24226939",
+        "Student Name": "ON Tsz Tung",
+        "Chinese Name": "安紫彤",
+        "Study Programme": "*BA VISUAL ARTS",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22256288",
+        "Student Name": "QI Yinzhe",
+        "Chinese Name": "亓胤哲",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22201394",
+        "Student Name": "RAKAN Md Tanvir Nur",
+        "Chinese Name": "",
+        "Study Programme": "*BSC AP BIOL BIOTECH STD",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22235043",
+        "Student Name": "SITU Feiyang",
+        "Chinese Name": "司徒飛揚",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22258590",
+        "Student Name": "SU Ruiling",
+        "Chinese Name": "宿瑞玲",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22241205",
+        "Student Name": "TAM Ka Hei Kenny",
+        "Chinese Name": "譚嘉羲",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "25209302",
+        "Student Name": "TANG Yee Man",
+        "Chinese Name": "鄧綺雯",
+        "Study Programme": "*BCOMM IMP",
+        "Study Year": "3",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "24203181",
+        "Student Name": "TSANG Pak Ho",
+        "Chinese Name": "曾柏豪",
+        "Study Programme": "*BBA ENTREP & BI",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22229116",
+        "Student Name": "TSOI Nga Ching",
+        "Chinese Name": "蔡雅晴",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "22228616",
+        "Student Name": "WONG San Man",
+        "Chinese Name": "黃新文",
+        "Study Programme": "*BCM & BSC BIOMED",
+        "Study Year": "4",
+        "Attendance Record": ""
+      },
+      {
+        "Academic Year": "2025",
+        "Term": "S1",
+        "Course Code": "GCAP3056",
+        "Section Code": "1",
+        "Student No.": "23232137",
+        "Student Name": "YIP Pak To",
+        "Chinese Name": "葉栢濤",
+        "Study Programme": "*BSSC - GIS",
+        "Study Year": "3",
+        "Attendance Record": ""
+      }
+    ]
+  },
+  "raw_team_data": [
+    [
+      "Team 1",
+      "name ",
+      "student ID",
+      "WhatsApp ",
+      "small WhatsApp group link ",
+      "Gmail ",
+      "Google drive folder link"
+    ],
+    [
+      "member 1.1",
+      "Yeung Wing Yu",
+      "23238283",
+      "97728503",
+      "",
+      "opheliasheep123@gmail.com",
+      "teacher to provide "
+    ],
+    [
+      "member 1.2",
+      "Kwok Tsz Yau",
+      "22234020",
+      "96232165",
+      "",
+      "kwoktszyau2004@gmail.com",
+      ""
+    ],
+    [
+      "member 1.3",
+      "Tsoi Yik Hon",
+      "22232192",
+      "61722240",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 1.4",
+      "SuJiaLu",
+      "22256946",
+      "53986330",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 1.5",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 1.6",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "topic ",
+      "6",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Team 2",
+      "name",
+      "student ID",
+      "WhatsApp ",
+      "small WhatsApp group link ",
+      "Gmail",
+      "Google drive folder link"
+    ],
+    [
+      "member 2.1",
+      "Chan Hei Tung",
+      "23232099",
+      "92107071",
+      "https://chat.whatsapp.com/Lq16DaYCqb326p8mlXBwJ0?mode=ems_copy_t",
+      "adriennecht@gmail.com",
+      "teacher to provide "
+    ],
+    [
+      "member 2.2",
+      "Yip Tsz Ying",
+      "23229543",
+      "93118850",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 2.3",
+      "Ko Man Wai",
+      "23234997",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 2.4",
+      "Wong Ling Yan Cassy",
+      "23233168",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 2.5",
+      "Tsoi Tsz Yan",
+      "23229101",
+      "61597468",
+      "",
+      "tsoitszyannn@gmail.com",
+      ""
+    ],
+    [
+      "member 2.6",
+      "Zi Xing Saul Ma",
+      "23200278",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "topic ",
+      "3",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Team 3",
+      "name",
+      "student ID",
+      "WhatsApp ",
+      "small WhatsApp group link ",
+      "Gmail ",
+      "Google drive folder link"
+    ],
+    [
+      "member 3.1",
+      "Chen Man Ching",
+      "23232781",
+      "60450640",
+      "https://chat.whatsapp.com/E5U0JTMcXAiIO8kdLUtpIi?mode=ac_t",
+      "chenwenjing1023@gmail.com",
+      "teacher to provide "
+    ],
+    [
+      "member 3.2",
+      "Hui Man Hei",
+      "25223305",
+      "90158707",
+      "",
+      "shuaimangguo0813@gmail.com",
+      ""
+    ],
+    [
+      "member 3.3",
+      "HONG KAM YIN",
+      "25227394",
+      "52261355",
+      "",
+      "hhkamyin369@gmail.com",
+      ""
+    ],
+    [
+      "member 3.4",
+      "Kung Tsz Lok",
+      "25206354",
+      "56850521",
+      "",
+      "joannakung3009@gmail.com",
+      ""
+    ],
+    [
+      "member 3.5",
+      "ZHENG ZIAN",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 3.6",
+      "Chan Ching Yin",
+      "22224009",
+      "69935955",
+      "",
+      "Leonchanchingyin@gmail.com",
+      ""
+    ],
+    [
+      "topic ",
+      "7",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Team 4",
+      "name",
+      "student ID",
+      "WhatsApp ",
+      "small WhatsApp group link ",
+      "Gmail",
+      "Google drive folder link"
+    ],
+    [
+      "member 4.1",
+      "Liu Wai Man",
+      "24221872",
+      "95820542",
+      "https://chat.whatsapp.com/G5ocJeK5GgjCFBVBseVcre?mode=ems_copy_t",
+      "lwm95820542@gmail.com",
+      "teacher to provide "
+    ],
+    [
+      "member 4.2",
+      "Kwok Lai Ki",
+      "25215833",
+      "59842385",
+      "",
+      "kinkikwoki116@gmail.com",
+      ""
+    ],
+    [
+      "member 4.3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 4.4",
+      "Chan Tsz Ying",
+      "25200135",
+      "51923705",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 4.5",
+      "Wong Wai Lun",
+      "25221310",
+      "59182048",
+      "",
+      "aw07133@gmail.com",
+      ""
+    ],
+    [
+      "member 4.6",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "topic ",
+      "4",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Team 5",
+      "name",
+      "student ID",
+      "WhatsApp ",
+      "small WhatsApp group link ",
+      "Gmail",
+      "Google drive folder link"
+    ],
+    [
+      "member 5.1",
+      "MAN Wai Yin",
+      "24202509",
+      "95821706",
+      "https://chat.whatsapp.com/E93BYRjp2FuClTcmzVxPc0?mode=ems_copy_t",
+      "manyin201612@gmail.com",
+      "teacher to provide "
+    ],
+    [
+      "member 5.2",
+      "Chan Chi Ki",
+      "23233885",
+      "91845208",
+      "",
+      "cks171302@gmail.com",
+      ""
+    ],
+    [
+      "member 5.3",
+      "Tag Tsz Tung",
+      "23230371",
+      "60485775",
+      "",
+      "jessie.one.air@gmail.com",
+      ""
+    ],
+    [
+      "member 5.4",
+      "HO Chun Chit",
+      "24202495",
+      "54819060",
+      "",
+      "tony030824@gmail.com",
+      ""
+    ],
+    [
+      "member 5.5",
+      "Xu Jingyi",
+      "24205397",
+      "84902278",
+      "",
+      "zjldbzq1314@gmail.com",
+      ""
+    ],
+    [
+      "member 5.6",
+      "Cheung Kwun Ho",
+      "24219169",
+      "65733021",
+      "",
+      "",
+      ""
+    ],
+    [
+      "topic ",
+      "5",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Team 6",
+      "name",
+      "student ID",
+      "WhatsApp ",
+      "small WhatsApp group link ",
+      "Gmail",
+      "Google drive folder link"
+    ],
+    [
+      "member 6.1",
+      "Tam Tin Chun",
+      "23236353",
+      "92250633",
+      "https://chat.whatsapp.com/E9hLnEJmoy11GPrzlSGYrj",
+      "tamtinchun@gmail.com",
+      "teacher to provide "
+    ],
+    [
+      "member 6.2",
+      "Chan Dik On",
+      "23230851",
+      "44144124",
+      "",
+      "chandikon7@gmail.com",
+      ""
+    ],
+    [
+      "member 6.3",
+      "Wong Chun Hang",
+      "23213116",
+      "67351119",
+      "",
+      "qazwedc12369@gmail.com",
+      ""
+    ],
+    [
+      "member 6.4",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 6.5",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "member 6.6",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "topic ",
+      "2",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "raw_student_data": [
+    [
+      "Academic Year",
+      "Term",
+      "Course Code",
+      "Section Code",
+      "Student No.",
+      "Student Name",
+      "Chinese Name",
+      "Study Programme",
+      "Study Year",
+      "Attendance Record"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22229906",
+      "CHAN Lok Yi",
+      "陳樂怡",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "23210826",
+      "CHUI Siu Ting",
+      "崔紹廷",
+      "*BSC MATH & STAT",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22232648",
+      "CHUNG Yan Ching",
+      "鍾欣澄",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22201890",
+      "DAUD Mariam",
+      "",
+      "*BBA ECON & DA",
+      "3"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "23219068",
+      "HO Pui Ying",
+      "何佩盈",
+      "*BA - PERM",
+      "3"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22256261",
+      "HU Kaijie",
+      "胡凱杰",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22229388",
+      "KUNG Yuen Ki",
+      "龔琬淇",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22240977",
+      "KUO Karen",
+      "郭琪琪",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "25229478",
+      "LAI Tsz Yan",
+      "賴紫欣",
+      "*B - SOWK",
+      "3"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22227601",
+      "LAU Zhi Yi",
+      "劉芷伊",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22237364",
+      "LEE Lai Yu",
+      "李麗如",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22234543",
+      "LEUNG Lok Hin",
+      "梁樂騫",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22228756",
+      "LI Tsoi Yiu",
+      "李采遙",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22231102",
+      "LO Pui Chun",
+      "盧佩珍",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "24226939",
+      "ON Tsz Tung",
+      "安紫彤",
+      "*BA VISUAL ARTS",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22256288",
+      "QI Yinzhe",
+      "亓胤哲",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22201394",
+      "RAKAN Md Tanvir Nur",
+      "",
+      "*BSC AP BIOL BIOTECH STD",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22235043",
+      "SITU Feiyang",
+      "司徒飛揚",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22258590",
+      "SU Ruiling",
+      "宿瑞玲",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22241205",
+      "TAM Ka Hei Kenny",
+      "譚嘉羲",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "25209302",
+      "TANG Yee Man",
+      "鄧綺雯",
+      "*BCOMM IMP",
+      "3"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "24203181",
+      "TSANG Pak Ho",
+      "曾柏豪",
+      "*BBA ENTREP & BI",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22229116",
+      "TSOI Nga Ching",
+      "蔡雅晴",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "22228616",
+      "WONG San Man",
+      "黃新文",
+      "*BCM & BSC BIOMED",
+      "4"
+    ],
+    [
+      "2025",
+      "S1",
+      "GCAP3056",
+      "1",
+      "23232137",
+      "YIP Pak To",
+      "葉栢濤",
+      "*BSSC - GIS",
+      "3"
+    ]
+  ]
+}

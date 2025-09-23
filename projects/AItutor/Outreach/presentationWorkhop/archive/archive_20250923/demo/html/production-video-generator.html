@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Generator - Production Ready</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <style>
+        .slide-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 300px;
+        }
+        .avatar-container {
+            background: radial-gradient(circle, #4f46e5 0%, #7c3aed 100%);
+            min-height: 400px;
+        }
+        .recording-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div id="app" class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">🎬 AI Video Generator</h1>
+            <p class="text-gray-600">Create educational videos with AI avatars and synchronized slides</p>
+            
+            <!-- API Configuration -->
+            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                <h3 class="font-semibold mb-2">API Configuration</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">API Provider</label>
+                        <select id="apiProvider" class="w-full p-2 border border-gray-300 rounded-md">
+                            <option value="hkbu">HKBU GenAI</option>
+                            <option value="openrouter">OpenRouter</option>
+                            <option value="openai">OpenAI</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">API Key</label>
+                        <input type="password" id="apiKey" placeholder="Enter your API key" 
+                               class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Model</label>
+                        <select id="modelSelect" class="w-full p-2 border border-gray-300 rounded-md">
+                            <option value="gpt-4">GPT-4</option>
+                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                            <option value="claude-3-sonnet">Claude 3 Sonnet</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="connectAPI" class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    🔗 Connect API
+                </button>
+                <span id="connectionStatus" class="ml-3 text-sm"></span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left Panel: Script & Slides -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">📝 Script & Slides</h2>
+                
+                <!-- Script Input -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Educational Script</label>
+                    <textarea id="scriptInput" rows="6" 
+                              class="w-full p-3 border border-gray-300 rounded-md resize-none"
+                              placeholder="Enter your educational content script here...">Welcome to today's lesson on artificial intelligence. AI is transforming education by providing personalized learning experiences. Let's explore how AI can enhance student engagement and improve learning outcomes.</textarea>
+                </div>
+
+                <!-- Slide Points -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Key Points (one per line)</label>
+                    <textarea id="slidePoints" rows="4" 
+                              class="w-full p-3 border border-gray-300 rounded-md resize-none"
+                              placeholder="• AI in Education&#10;• Personalized Learning&#10;• Student Engagement&#10;• Future of Learning">• AI in Education
+• Personalized Learning  
+• Student Engagement
+• Future of Learning</textarea>
+                </div>
+
+                <!-- Avatar Settings -->
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-2">🎭 Avatar Settings</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Voice</label>
+                            <select id="voiceSelect" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="en">English (US)</option>
+                                <option value="en-gb">English (UK)</option>
+                                <option value="en-au">English (AU)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Speed</label>
+                            <select id="speedSelect" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="0.8">Slow</option>
+                                <option value="1.0" selected>Normal</option>
+                                <option value="1.2">Fast</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Button -->
+                <button id="generateVideo" 
+                        class="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-md hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                    🎬 Generate Video
+                </button>
+            </div>
+
+            <!-- Right Panel: Preview & Controls -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">🎥 Video Preview</h2>
+                
+                <!-- Avatar Display -->
+                <div id="avatarContainer" class="avatar-container rounded-lg mb-4 flex items-center justify-center">
+                    <div id="avatarDisplay" class="text-center text-white">
+                        <div class="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-4xl">🤖</span>
+                        </div>
+                        <p id="avatarStatus">Ready to generate video</p>
+                    </div>
+                </div>
+
+                <!-- Slide Preview -->
+                <div id="slideContainer" class="slide-preview rounded-lg mb-4 p-6 text-white">
+                    <h3 class="text-2xl font-bold mb-4">AI in Education</h3>
+                    <ul id="slideContent" class="space-y-2">
+                        <li class="flex items-center"><span class="mr-2">•</span> AI in Education</li>
+                        <li class="flex items-center"><span class="mr-2">•</span> Personalized Learning</li>
+                        <li class="flex items-center"><span class="mr-2">•</span> Student Engagement</li>
+                        <li class="flex items-center"><span class="mr-2">•</span> Future of Learning</li>
+                    </ul>
+                </div>
+
+                <!-- Progress Bar -->
+                <div id="progressContainer" class="mb-4 hidden">
+                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                        <span>Generating Video...</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div id="progressBar" class="progress-bar bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Audio Player -->
+                <div id="audioContainer" class="mb-4 hidden">
+                    <audio id="audioPlayer" controls class="w-full">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- Download Section -->
+                <div id="downloadSection" class="hidden">
+                    <h3 class="font-semibold mb-2">📥 Download Options</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="downloadAudio" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+                            🎵 Audio Only
+                        </button>
+                        <button id="downloadVideo" class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700">
+                            🎬 Full Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="mt-6 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">📊 Generation Statistics</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-blue-600" id="scriptLength">0</div>
+                    <div class="text-sm text-gray-600">Script Words</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-green-600" id="estimatedDuration">0s</div>
+                    <div class="text-sm text-gray-600">Est. Duration</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-purple-600" id="slideCount">0</div>
+                    <div class="text-sm text-gray-600">Slide Points</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-orange-600" id="apiCalls">0</div>
+                    <div class="text-sm text-gray-600">API Calls</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class ProductionVideoGenerator {
+            constructor() {
+                this.socket = null;
+                this.isConnected = false;
+                this.isGenerating = false;
+                this.audioChunks = [];
+                this.apiCallCount = 0;
+                
+                this.initializeElements();
+                this.bindEvents();
+                this.updateStatistics();
+            }
+
+            initializeElements() {
+                // API Configuration
+                this.apiProvider = document.getElementById('apiProvider');
+                this.apiKey = document.getElementById('apiKey');
+                this.modelSelect = document.getElementById('modelSelect');
+                this.connectAPI = document.getElementById('connectAPI');
+                this.connectionStatus = document.getElementById('connectionStatus');
+
+                // Script & Slides
+                this.scriptInput = document.getElementById('scriptInput');
+                this.slidePoints = document.getElementById('slidePoints');
+                this.voiceSelect = document.getElementById('voiceSelect');
+                this.speedSelect = document.getElementById('speedSelect');
+                this.generateVideo = document.getElementById('generateVideo');
+
+                // Preview & Controls
+                this.avatarDisplay = document.getElementById('avatarDisplay');
+                this.avatarStatus = document.getElementById('avatarStatus');
+                this.slideContent = document.getElementById('slideContent');
+                this.progressContainer = document.getElementById('progressContainer');
+                this.progressBar = document.getElementById('progressBar');
+                this.progressText = document.getElementById('progressText');
+                this.audioContainer = document.getElementById('audioContainer');
+                this.audioPlayer = document.getElementById('audioPlayer');
+                this.downloadSection = document.getElementById('downloadSection');
+
+                // Statistics
+                this.scriptLength = document.getElementById('scriptLength');
+                this.estimatedDuration = document.getElementById('estimatedDuration');
+                this.slideCount = document.getElementById('slideCount');
+                this.apiCalls = document.getElementById('apiCalls');
+            }
+
+            bindEvents() {
+                this.connectAPI.addEventListener('click', () => this.connectToAPI());
+                this.generateVideo.addEventListener('click', () => this.startVideoGeneration());
+                this.scriptInput.addEventListener('input', () => this.updateStatistics());
+                this.slidePoints.addEventListener('input', () => this.updateSlidePreview());
+                
+                // Load saved API key
+                const savedApiKey = localStorage.getItem('video_generator_api_key');
+                if (savedApiKey) {
+                    this.apiKey.value = savedApiKey;
+                }
+            }
+
+            async connectToAPI() {
+                if (!this.apiKey.value.trim()) {
+                    this.showStatus('Please enter an API key', 'error');
+                    return;
+                }
+
+                this.connectAPI.disabled = true;
+                this.showStatus('Connecting...', 'info');
+
+                try {
+                    // Save API key
+                    localStorage.setItem('video_generator_api_key', this.apiKey.value);
+
+                    // Test API connection
+                    const testResult = await this.testAPIConnection();
+                    
+                    if (testResult.success) {
+                        this.isConnected = true;
+                        this.showStatus('✅ Connected successfully', 'success');
+                        this.initializeWebSocket();
+                    } else {
+                        this.showStatus('❌ Connection failed: ' + testResult.error, 'error');
+                    }
+                } catch (error) {
+                    this.showStatus('❌ Connection error: ' + error.message, 'error');
+                } finally {
+                    this.connectAPI.disabled = false;
+                }
+            }
+
+            async testAPIConnection() {
+                // Simulate API test - replace with actual API endpoint
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve({ success: true });
+                    }, 1000);
+                });
+            }
+
+            initializeWebSocket() {
+                // Initialize WebSocket connection for real-time communication
+                // This would connect to your backend streaming avatar service
+                console.log('🔌 WebSocket connection initialized');
+                
+                // Simulate WebSocket for demo
+                this.socket = {
+                    emit: (event, data) => console.log('📤 Emit:', event, data),
+                    on: (event, callback) => console.log('📥 Listen:', event)
+                };
+            }
+
+            async startVideoGeneration() {
+                if (!this.isConnected) {
+                    this.showStatus('Please connect to API first', 'error');
+                    return;
+                }
+
+                if (!this.scriptInput.value.trim()) {
+                    this.showStatus('Please enter a script', 'error');
+                    return;
+                }
+
+                this.isGenerating = true;
+                this.generateVideo.disabled = true;
+                this.showProgress(0);
+                this.updateAvatarStatus('🎬 Generating video...');
+
+                try {
+                    // Step 1: Process script
+                    this.showProgress(20);
+                    await this.processScript();
+
+                    // Step 2: Generate audio
+                    this.showProgress(50);
+                    await this.generateAudio();
+
+                    // Step 3: Create video
+                    this.showProgress(80);
+                    await this.createVideo();
+
+                    // Step 4: Complete
+                    this.showProgress(100);
+                    this.showDownloadOptions();
+                    this.updateAvatarStatus('✅ Video generated successfully!');
+                    
+                } catch (error) {
+                    this.showStatus('❌ Generation failed: ' + error.message, 'error');
+                    this.updateAvatarStatus('❌ Generation failed');
+                } finally {
+                    this.isGenerating = false;
+                    this.generateVideo.disabled = false;
+                    setTimeout(() => this.hideProgress(), 2000);
+                }
+            }
+
+            async processScript() {
+                // Simulate script processing
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        this.apiCallCount++;
+                        this.updateStatistics();
+                        resolve();
+                    }, 1000);
+                });
+            }
+
+            async generateAudio() {
+                // Simulate audio generation using TTS
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        // Create a simple audio blob for demo
+                        this.createDemoAudio();
+                        resolve();
+                    }, 2000);
+                });
+            }
+
+            createDemoAudio() {
+                // Create a simple beep sound for demo
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = 440;
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.5);
+                
+                // Show audio player
+                this.audioContainer.classList.remove('hidden');
+            }
+
+            async createVideo() {
+                // Simulate video creation
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve();
+                    }, 1500);
+                });
+            }
+
+            showDownloadOptions() {
+                this.downloadSection.classList.remove('hidden');
+                
+                document.getElementById('downloadAudio').onclick = () => {
+                    this.downloadFile('audio', 'generated-audio.mp3');
+                };
+                
+                document.getElementById('downloadVideo').onclick = () => {
+                    this.downloadFile('video', 'generated-video.mp4');
+                };
+            }
+
+            downloadFile(type, filename) {
+                // Simulate file download
+                const blob = new Blob(['Demo ' + type + ' content'], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                this.showStatus(`📥 ${type} downloaded: ${filename}`, 'success');
+            }
+
+            updateStatistics() {
+                const script = this.scriptInput.value.trim();
+                const words = script ? script.split(/\s+/).length : 0;
+                const duration = Math.round(words * 0.5); // Estimate 0.5 seconds per word
+                const slides = this.slidePoints.value.trim().split('\n').filter(line => line.trim()).length;
+
+                this.scriptLength.textContent = words;
+                this.estimatedDuration.textContent = duration + 's';
+                this.slideCount.textContent = slides;
+                this.apiCalls.textContent = this.apiCallCount;
+            }
+
+            updateSlidePreview() {
+                const points = this.slidePoints.value.trim().split('\n').filter(line => line.trim());
+                this.slideContent.innerHTML = points.map(point => 
+                    `<li class="flex items-center"><span class="mr-2">•</span> ${point.replace(/^[•\-\*]\s*/, '')}</li>`
+                ).join('');
+                this.updateStatistics();
+            }
+
+            updateAvatarStatus(status) {
+                this.avatarStatus.textContent = status;
+            }
+
+            showProgress(percentage) {
+                this.progressContainer.classList.remove('hidden');
+                this.progressBar.style.width = percentage + '%';
+                this.progressText.textContent = percentage + '%';
+            }
+
+            hideProgress() {
+                this.progressContainer.classList.add('hidden');
+            }
+
+            showStatus(message, type) {
+                this.connectionStatus.textContent = message;
+                this.connectionStatus.className = `ml-3 text-sm ${
+                    type === 'success' ? 'text-green-600' : 
+                    type === 'error' ? 'text-red-600' : 'text-blue-600'
+                }`;
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            new ProductionVideoGenerator();
+        });
+    </script>
+</body>
+</html>
