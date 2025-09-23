@@ -124,7 +124,7 @@
     </div>
 
     <!-- Tab Content Container -->
-    <div class="container mx-auto px-6 py-8 max-w-6xl">
+    <div class="container mx-auto px-6 py-8 max-w-7xl">
         
         <!-- Tab 1: Introduction & Instructions -->
         <div id="intro-panel" class="tab-content" role="tabpanel" aria-labelledby="intro-tab">
@@ -181,6 +181,16 @@
                 
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full mb-4">
+                            <span class="text-2xl">🔑</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Get Your HKBU API Key</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            Visit <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" class="text-blue-600 hover:text-blue-800 underline">HKBU GenAI Settings</a>
+                        </p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500">Login → Click "GENERATE API KEY" → Save securely</p>
+                    </div>
+                    <div class="text-center">
                         <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
                             <span class="text-2xl">1️⃣</span>
                         </div>
@@ -192,14 +202,27 @@
                             <span class="text-2xl">2️⃣</span>
                         </div>
                         <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Start the Conversation</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Type <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">ok</code> in the chat to begin guided questions</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Enter your API key, then type <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">ok</code> to begin</p>
                     </div>
-                    <div class="text-center">
-                        <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full mb-4">
-                            <span class="text-2xl">3️⃣</span>
+                </div>
+                
+                <div class="text-center mt-6">
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 max-w-3xl mx-auto">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <span class="text-yellow-500 text-xl">🔒</span>
+                            </div>
+                            <div class="ml-3 text-left">
+                                <h4 class="text-sm font-medium text-yellow-800 dark:text-yellow-200">HKBU API Key Required</h4>
+                                <div class="mt-2 text-sm text-yellow-700 dark:text-yellow-300">
+                                    <p class="mb-2"><strong>Step 1:</strong> Visit <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" class="underline hover:text-yellow-900">genai.hkbu.edu.hk/settings/api-docs</a></p>
+                                    <p class="mb-2"><strong>Step 2:</strong> Login with your HKBU credentials</p>
+                                    <p class="mb-2"><strong>Step 3:</strong> Click the blue <strong>"GENERATE API KEY"</strong> button</p>
+                                    <p class="mb-2"><strong>Step 4:</strong> Copy and save your API key securely (do not share with others)</p>
+                                    <p><strong>Step 5:</strong> Enter the API key in the chatbot to start your writing session</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Complete & Submit</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Click the <strong>green check button</strong> next to the text field when done to generate your report</p>
                     </div>
                 </div>
                 
@@ -432,7 +455,7 @@
                         <p class="opacity-90">Ready to help you craft your reflective essay</p>
                         <div class="mt-4 flex justify-center">
                             <div class="bg-white/20 rounded-lg px-4 py-2 text-sm">
-                                Type <code class="bg-white/30 px-2 py-1 rounded">ok</code> to start • Click <code class="bg-white/30 px-2 py-1 rounded">✓ green check</code> to finish
+                                Need HKBU API Key • Type <code class="bg-white/30 px-2 py-1 rounded">ok</code> to start • Click <code class="bg-white/30 px-2 py-1 rounded">✓ green check</code> to finish
                             </div>
                         </div>
                     </div>
@@ -452,10 +475,10 @@
                         id="chatbotFrame"
                         src="https://textbot.hkbu.tech/chat/GCAP3226-reflectEssayTutor" 
                         width="100%" 
-                        height="700" 
+                        height="800" 
                         frameborder="0"
                         class="w-full"
-                        style="min-height: 700px;"
+                        style="min-height: 800px;"
                         loading="lazy"
                         sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                         title="GCAP3226 Reflective Essay Writing Tutor">
@@ -472,7 +495,8 @@
                     <div class="ml-3">
                         <h3 class="text-sm font-medium text-blue-800 dark:text-blue-200">Quick Help</h3>
                         <div class="mt-2 text-sm text-blue-700 dark:text-blue-300">
-                            <p class="mb-2"><strong>To get started:</strong> Type "ok" in the chat</p>
+                            <p class="mb-2"><strong>Need API Key:</strong> Visit <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" class="underline hover:text-blue-900">genai.hkbu.edu.hk/settings/api-docs</a> and click "GENERATE API KEY"</p>
+                            <p class="mb-2"><strong>To get started:</strong> Enter your API key, then type "ok" in the chat</p>
                             <p class="mb-2"><strong>To end session:</strong> Click the green check button (✓) to get your report</p>
                             <p><strong>Need to restart?</strong> Click the refresh button (↻) in the top right corner</p>
                         </div>
