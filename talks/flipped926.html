@@ -818,25 +818,48 @@
         }
         
         // Initialize with slide 1 content and start detection
+        // Wait for a selector to appear in DOM
+        async function waitForElement(selector, timeout = 3000) {
+            const start = performance.now();
+            return new Promise((resolve, reject) => {
+                const check = () => {
+                    const el = document.querySelector(selector);
+                    if (el) return resolve(el);
+                    if (performance.now() - start > timeout) return reject(new Error(`Timeout waiting for ${selector}`));
+                    requestAnimationFrame(check);
+                };
+                check();
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', async function() {
-            // Initialize module loader
-            if (typeof SlideModuleLoader !== 'undefined') {
-                window.slideModuleLoader = new SlideModuleLoader();
-                console.log('Slide module loader initialized');
+            try {
+                // Initialize module loader once
+                if (typeof SlideModuleLoader !== 'undefined' && !window.slideModuleLoader) {
+                    window.slideModuleLoader = new SlideModuleLoader();
+                    console.log('Slide module loader initialized');
+                }
+
+                // Ensure demo-content exists before first update
+                await waitForElement('.demo-content');
+                await updateCanvasContent(1);
+                initializeSlideDetection();
+
+                // Add CSS transitions for smooth content updates (only once)
+                if (!document.getElementById('canvas-transition-styles')) {
+                    const style = document.createElement('style');
+                    style.id = 'canvas-transition-styles';
+                    style.innerHTML = `
+                        .canvas-content { transition: opacity 0.3s ease; }
+                        .canvas-section { transition: all 0.3s ease; }
+                    `;
+                    document.head.appendChild(style);
+                }
+
+                console.log('Flipped Classroom Workshop initialized with auto slide detection');
+            } catch (e) {
+                console.error('Initialization error:', e);
             }
-            
-            await updateCanvasContent(1);
-            initializeSlideDetection();
-            
-            // Add CSS transitions for smooth content updates
-            const style = document.createElement('style');
-            style.innerHTML = `
-                .canvas-content { transition: opacity 0.3s ease; }
-                .canvas-section { transition: all 0.3s ease; }
-            `;
-            document.head.appendChild(style);
-            
-            console.log('Flipped Classroom Workshop initialized with auto slide detection');
         });
 
         function initializeAvatarInfo() {
