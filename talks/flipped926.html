@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipped Classroom Workshop - September 26, 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2px;
+            border-radius: 16px;
+        }
+        
+        .gradient-border-inner {
+            background: white;
+            border-radius: 14px;
+        }
+        
+        .dark .gradient-border-inner {
+            background: #1f2937;
+        }
+        
+        .floating-indicator {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .presentation-frame {
+            transition: all 0.3s ease;
+        }
+        
+        .presentation-frame:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fullscreen-button {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 min-h-screen">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="text-center mb-8">
+            <div class="floating-indicator inline-block mb-4">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-2xl">🎓</span>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+                Flipped Classroom Workshop
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-2">Interactive Learning with AI Assistance</p>
+            <p class="text-lg text-gray-500 dark:text-gray-500">September 26, 2024</p>
+        </div>
+
+        <div class="mb-8">
+            <div class="gradient-border shadow-2xl presentation-frame">
+                <div class="gradient-border-inner p-6">
+                    <div class="flex justify-end items-center mb-4">
+                        <button onclick="openFullscreen()" class="fullscreen-button text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                            🔍 Full Screen View
+                        </button>
+                    </div>
+                    <div class="w-full rounded-lg overflow-hidden bg-white" style="height: 80vh; min-height: 600px;">
+                        <div style="position: relative; width: 100%; height: 100%; padding-top: 0; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); overflow: hidden; border-radius: 8px; will-change: transform;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                                src="https://docs.google.com/presentation/d/e/2PACX-1vS7ZQ1Bx_pi0trXqCEdcvSTz2JE7EdGN_S43f_u0BV2YWmmgQOlh93-V6jmAttR-IBx4d4u5Ro4hOjv/embed?start=false&loop=false&delayms=3000" 
+                                allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <a href="https://docs.google.com/presentation/d/e/2PACX-1vS7ZQ1Bx_pi0trXqCEdcvSTz2JE7EdGN_S43f_u0BV2YWmmgQOlh93-V6jmAttR-IBx4d4u5Ro4hOjv/pub?start=false&loop=false&delayms=3000" target="_blank" rel="noopener" class="text-primary hover:underline text-sm">
+                            📖 View Full Presentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gradient-border shadow-lg">
+            <div class="gradient-border-inner p-6">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-xl">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI Assistant Ready</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Interactive AI assistant will appear in the bottom-left corner to help you explore flipped classroom strategies</p>
+                    <div class="flex justify-center items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span>💬 Real-time Chat</span>
+                        <span>🎯 Personalized Responses</span>
+                        <span>📚 Educational Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar Info Panel -->
+    <div id="avatarInfoPanel" class="fixed bottom-6 left-6 bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600 shadow-lg max-w-xs z-40 hidden">
+        <div class="font-semibold text-gray-900 dark:text-white text-sm">Flipped Classroom AI Assistant</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400">Workshop Support Team</div>
+        <div class="text-xs text-primary hover:underline cursor-pointer">Learn More →</div>
+    </div>
+
+    <!-- HeyGen Avatar Embed Script - To be added when provided -->
+    <!-- Placeholder for HeyGen avatar embed code -->
+
+    <script>
+        function initializeAvatarInfo() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarInfoPanel = document.getElementById('avatarInfoPanel');
+            
+            if (avatarEmbed && avatarInfoPanel) {
+                let hoverTimeout;
+                
+                avatarEmbed.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                    avatarInfoPanel.classList.remove('hidden');
+                });
+                
+                avatarEmbed.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 2000);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 1000);
+                });
+            }
+        }
+
+        function openFullscreen() {
+            window.open('https://docs.google.com/presentation/d/e/2PACX-1vS7ZQ1Bx_pi0trXqCEdcvSTz2JE7EdGN_S43f_u0BV2YWmmgQOlh93-V6jmAttR-IBx4d4u5Ro4hOjv/pub?start=false&loop=false&delayms=3000', '_blank');
+        }
+
+        function initializePiPHandler() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarContainer = document.getElementById('heygen-streaming-container');
+            
+            if (avatarContainer) {
+                const iframe = avatarContainer.querySelector('iframe');
+                
+                if (iframe) {
+                    iframe.addEventListener('enterpictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '0';
+                            avatarEmbed.style.visibility = 'hidden';
+                            avatarEmbed.style.pointerEvents = 'none';
+                        }
+                    });
+                    
+                    iframe.addEventListener('leavepictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '1';
+                            avatarEmbed.style.visibility = 'visible';
+                            avatarEmbed.style.pointerEvents = 'auto';
+                        }
+                    });
+                }
+            }
+            
+            document.addEventListener('enterpictureinpicture', function() {
+                if (avatarEmbed) {
+                    avatarEmbed.style.opacity = '0';
+                    avatarEmbed.style.visibility = 'hidden';
+                    avatarEmbed.style.pointerEvents = 'none';
+                }
+            });
+            
+            document.addEventListener('leavepictureinpicture', function() {
+                if (avatarEmbed) {
+                    avatarEmbed.style.opacity = '1';
+                    avatarEmbed.style.visibility = 'visible';
+                    avatarEmbed.style.pointerEvents = 'auto';
+                }
+            });
+        }
+
+        // Initialize when HeyGen avatar is loaded
+        setTimeout(() => {
+            initializeAvatarInfo();
+            initializePiPHandler();
+        }, 2000);
+    </script>
+</body>
+</html>
