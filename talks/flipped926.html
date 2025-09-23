@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipped Classroom Workshop - September 26, 2024</title>
+    <script>
+        // Suppress Tailwind CSS production warning
+        const originalWarn = console.warn;
+        console.warn = function(...args) {
+            if (args[0] && args[0].includes && args[0].includes('should not be used in production')) {
+                return; // Suppress Tailwind production warning
+            }
+            originalWarn.apply(console, args);
+        };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Suppress production warning for demo purposes
-        if (typeof tailwind !== 'undefined') {
-            tailwind.config = {
-                corePlugins: {
-                    preflight: false
-                }
-            };
-        }
-        
-        tailwind.config = {
+        // Tailwind configuration
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
             darkMode: 'class',
+            corePlugins: {
+                preflight: false
+            },
             theme: {
                 extend: {
                     colors: {
