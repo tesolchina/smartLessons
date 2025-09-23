@@ -730,11 +730,27 @@
             console.log(`Canvas updated for slide ${slideNum}`);
         }
 
-        async function updateDemoContent(slideNum) {
+        async function updateDemoContent(slideNum, _retry=false) {
             console.log(`🎯 UpdateDemoContent called for slide ${slideNum}`);
-            const demoContent = document.querySelector('.demo-content');
+            let demoContent = document.querySelector('.demo-content');
             if (!demoContent) {
                 console.warn('❌ demo-content element not found');
+                // Attempt to create it dynamically (race condition resilience)
+                const demoSection = document.getElementById('demoSection');
+                if (demoSection) {
+                    const created = document.createElement('div');
+                    created.className = 'demo-content';
+                    created.innerHTML = '<div class="p-4 text-sm text-gray-500">(Creating demo container...)</div>';
+                    demoSection.appendChild(created);
+                    console.warn('⚠️ Created missing .demo-content container dynamically');
+                    if (!_retry) {
+                        // Allow next frame for layout, then retry once
+                        await new Promise(r => requestAnimationFrame(r));
+                        return updateDemoContent(slideNum, true);
+                    }
+                } else {
+                    console.warn('❌ demoSection not found; cannot create demo-content');
+                }
                 return;
             }
 
