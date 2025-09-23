@@ -772,9 +772,14 @@
         // Initialize with slide 1 content and start detection
         document.addEventListener('DOMContentLoaded', async function() {
             // Initialize module loader
+            console.log('Checking SlideModuleLoader...', typeof SlideModuleLoader);
             if (typeof SlideModuleLoader !== 'undefined') {
                 window.slideModuleLoader = new SlideModuleLoader();
                 console.log('Slide module loader initialized');
+            } else {
+                console.error('SlideModuleLoader not found - module-loader.js may not have loaded');
+            } else {
+                console.error("SlideModuleLoader not found - module-loader.js may not have loaded");
             }
             
             await updateCanvasContent(1);
