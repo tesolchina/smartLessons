@@ -115,6 +115,20 @@
         .canvas-content.active {
             display: block;
         }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .slide-indicator {
+            transition: all 0.3s ease;
+        }
+
+        .canvas-section-content {
+            transition: opacity 0.3s ease;
+        }
         
         .demo-placeholder {
             width: 100%;
@@ -195,58 +209,148 @@
 
                 <!-- Right Side - Interactive Canvas -->
                 <div class="canvas-section">
-                    <div class="canvas-tabs">
-                        <button class="canvas-tab active" onclick="switchTab('demo1')" id="tab-demo1">
-                            📊 Demo 1
-                        </button>
-                        <button class="canvas-tab" onclick="switchTab('demo2')" id="tab-demo2">
-                            🎯 Interactive
-                        </button>
-                        <div style="margin-left: auto; padding: 8px 12px; font-size: 12px; color: #666;">
-                            Manual: 
-                            <select onchange="updateCanvasContent(parseInt(this.value))" style="margin-left: 4px; padding: 2px 4px; border: 1px solid #ddd; border-radius: 4px;">
-                                <option value="1">Slide 1</option>
-                                <option value="2">Slide 2</option>
-                                <option value="3">Slide 3</option>
-                                <option value="4">Slide 4</option>
-                                <option value="5">Slide 5</option>
-                            </select>
-                        </div>
+                    <!-- Slide Indicator -->
+                    <div class="slide-indicator text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-3 py-1 rounded-full mb-4 text-center">
+                        Slide 1 • Overview
                     </div>
                     
-                    <div class="canvas-content active" id="content-demo1">
-                        <div class="demo-placeholder">
-                            <div class="text-6xl mb-4">📊</div>
-                            <h3 class="text-xl font-bold mb-2">Demo Component 1</h3>
-                            <p class="text-gray-600 mb-4">Slide-specific interactive demo will load here</p>
-                            <div class="text-sm text-gray-500">Current Slide: <span id="slide-indicator-1">1</span></div>
-                        </div>
+                    <!-- Canvas Tabs -->
+                    <div class="canvas-tabs flex flex-wrap gap-2 mb-4">
+                        <button class="canvas-tab bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-blue-700" 
+                                data-tab="overview" onclick="switchCanvasTab('overview')">
+                            📋 Overview
+                        </button>
+                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
+                                data-tab="implementation" onclick="switchCanvasTab('implementation')">
+                            � Implementation
+                        </button>
+                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
+                                data-tab="ai-video" onclick="switchCanvasTab('ai-video')">
+                            🤖 AI Video
+                        </button>
+                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
+                                data-tab="resources" onclick="switchCanvasTab('resources')">
+                            📚 Resources
+                        </button>
+                        <button class="canvas-tab bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-gray-300 dark:hover:bg-gray-600" 
+                                data-tab="reflection" onclick="switchCanvasTab('reflection')">
+                            💭 Reflection
+                        </button>
                     </div>
                     
-                    <div class="canvas-content" id="content-demo2">
-                        <div class="demo-placeholder">
-                            <div class="text-6xl mb-4">🎯</div>
-                            <h3 class="text-xl font-bold mb-2">Interactive Component</h3>
-                            <p class="text-gray-600 mb-4">Secondary interactive element for current slide</p>
-                            <div class="text-sm text-gray-500">Current Slide: <span id="slide-indicator-2">1</span></div>
+                    <!-- Canvas Content Areas -->
+                    <div class="canvas-content">
+                        <!-- Overview Section -->
+                        <div id="overviewSection" class="canvas-section-content" style="display: block;">
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Workshop Overview</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <div class="text-3xl mb-2">🎯</div>
+                                    <h3 class="font-semibold mb-2">Learning Objectives</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Understand flipped classroom methodology and practical implementation strategies.</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <div class="text-3xl mb-2">📊</div>
+                                    <h3 class="font-semibold mb-2">Workshop Structure</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Interactive sessions combining theory, practice, and AI-enhanced learning.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Implementation Section -->
+                        <div id="implementationSection" class="canvas-section-content" style="display: none;">
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Implementation Strategies</h2>
+                            <div class="space-y-4">
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <h3 class="font-semibold mb-2">🚀 Getting Started</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Step-by-step guide to implementing flipped classroom methodology in your teaching practice.</p>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <h3 class="font-semibold mb-2">📋 Planning Tools</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Templates and resources for lesson planning and curriculum design.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Video Section -->
+                        <div id="aiVideoSection" class="canvas-section-content" style="display: none;">
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">AI-Enhanced Learning</h2>
+                            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                <div class="text-center">
+                                    <div class="text-4xl mb-3">🤖</div>
+                                    <h3 class="font-semibold mb-2">AI Video Generation</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Explore AI tools for creating educational content and interactive learning experiences.</p>
+                                    <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all">
+                                        Launch AI Demo
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Resources Section -->
+                        <div id="resourcesSection" class="canvas-section-content" style="display: none;">
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Additional Resources</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <h3 class="font-semibold mb-2">📚 Reading Materials</h3>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                        <li>• Flipped Learning Research</li>
+                                        <li>• Best Practices Guide</li>
+                                        <li>• Case Studies</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <h3 class="font-semibold mb-2">🔗 Useful Links</h3>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                        <li>• Video Creation Tools</li>
+                                        <li>• Assessment Platforms</li>
+                                        <li>• Community Forums</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Reflection Section -->
+                        <div id="reflectionSection" class="canvas-section-content" style="display: none;">
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Time for Reflection</h2>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                <div class="text-center">
+                                    <div class="text-4xl mb-4">💭</div>
+                                    <h3 class="font-semibold mb-3">Workshop Reflection</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Share your thoughts and insights from today's session.</p>
+                                    <textarea class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white" 
+                                              rows="4" placeholder="What are your key takeaways from this workshop?"></textarea>
+                                    <button class="mt-3 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all">
+                                        Submit Reflection
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="gradient-border shadow-lg">
-            <div class="gradient-border-inner p-6">
+        <div class="gradient-border shadow-lg mb-4">
+            <div class="gradient-border-inner p-4">
                 <div class="text-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                         <span class="text-white text-xl">🤖</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI Assistant Ready</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">Interactive AI assistant will appear in the bottom-left corner to help you explore flipped classroom strategies</p>
-                    <div class="flex justify-center items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">AI Assistant Controls</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">Interactive AI assistant for workshop support</p>
+                    <div class="flex justify-center items-center space-x-3 text-xs text-gray-500 dark:text-gray-400 mb-3">
                         <span>💬 Real-time Chat</span>
                         <span>🎯 Personalized Responses</span>
                         <span>📚 Educational Support</span>
+                    </div>
+                    <div class="flex justify-center space-x-2">
+                        <button onclick="toggleAvatar()" id="avatar-toggle-btn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all text-sm">
+                            🤖 Show Avatar
+                        </button>
+                        <button onclick="moveAvatarToRight()" id="avatar-position-btn" class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all text-sm">
+                            ➡️ Move Right
+                        </button>
                     </div>
                 </div>
             </div>
@@ -265,22 +369,51 @@
 
     <script>
         // Tab switching functionality
-        function switchTab(tabName) {
-            // Hide all content areas
-            const contents = document.querySelectorAll('.canvas-content');
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-            
+        function switchCanvasTab(tabName) {
             // Remove active class from all tabs
-            const tabs = document.querySelectorAll('.canvas-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
+            document.querySelectorAll('.canvas-tab').forEach(tab => {
+                tab.classList.remove('bg-blue-600', 'text-white');
+                tab.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
             });
             
-            // Show selected content and activate tab
-            document.getElementById(`content-${tabName}`).classList.add('active');
-            document.getElementById(`tab-${tabName}`).classList.add('active');
+            // Hide all content sections
+            document.querySelectorAll('.canvas-section-content').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Activate selected tab
+            const activeTab = document.querySelector(`[data-tab="${tabName}"]`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                activeTab.classList.add('bg-blue-600', 'text-white');
+            }
+            
+            // Show selected content
+            const sectionMap = {
+                'overview': 'overviewSection',
+                'implementation': 'implementationSection', 
+                'ai-video': 'aiVideoSection',
+                'resources': 'resourcesSection',
+                'reflection': 'reflectionSection'
+            };
+            
+            const targetSection = document.getElementById(sectionMap[tabName]);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+            
+            console.log(`Switched to canvas tab: ${tabName}`);
+        }
+
+        // Legacy function for compatibility
+        function switchTab(tabName) {
+            // Handle legacy calls by mapping to new tab names
+            const legacyMap = {
+                'demo1': 'overview',
+                'demo2': 'implementation'
+            };
+            const newTabName = legacyMap[tabName] || tabName;
+            switchCanvasTab(newTabName);
         }
         
         // Slide tracking and content updating
@@ -289,96 +422,217 @@
         
         // Advanced slide detection methods
         function initializeSlideDetection() {
-            // Method 1: Try to listen for postMessage from Google Slides iframe
+            let slideDetectionActive = true;
+            let lastKnownSlide = 1;
+            
+            // Method 1: Enhanced postMessage listening
             window.addEventListener('message', function(event) {
-                if (event.origin.includes('docs.google.com')) {
-                    try {
-                        const data = JSON.parse(event.data);
-                        if (data.type === 'slide_change' && data.slide) {
-                            updateCanvasContent(data.slide);
+                if (!slideDetectionActive) return;
+                
+                try {
+                    // Check for Google Slides specific messages
+                    if (event.origin.includes('docs.google.com') || event.origin.includes('googleapis.com')) {
+                        let slideData = null;
+                        
+                        // Try parsing as JSON
+                        if (typeof event.data === 'string') {
+                            try {
+                                slideData = JSON.parse(event.data);
+                            } catch (e) {
+                                // Check for simple slide number in string
+                                const match = event.data.match(/slide[^\d]*(\d+)/i);
+                                if (match) {
+                                    slideData = { slide: parseInt(match[1]) };
+                                }
+                            }
+                        } else if (typeof event.data === 'object') {
+                            slideData = event.data;
+                        }
+                        
+                        // Extract slide number from various possible formats
+                        const slideNum = slideData?.slide || slideData?.slideNumber || slideData?.currentSlide;
+                        if (slideNum && slideNum !== lastKnownSlide && slideNum >= 1 && slideNum <= 20) {
+                            lastKnownSlide = slideNum;
+                            updateCanvasContent(slideNum);
+                            console.log(`Slide detected via postMessage: ${slideNum}`);
                             return;
                         }
-                    } catch (e) {
-                        // Continue to other detection methods
                     }
+                } catch (e) {
+                    console.log('PostMessage parsing error:', e);
                 }
             });
             
-            // Method 2: URL hash detection (for embed URLs that support it)
-            function checkSlideFromHash() {
+            // Method 2: Enhanced keyboard navigation detection
+            let keyPressBuffer = [];
+            document.addEventListener('keydown', function(e) {
+                if (!slideDetectionActive) return;
+                
+                keyPressBuffer.push({ key: e.key, timestamp: Date.now() });
+                // Keep only recent key presses (last 2 seconds)
+                keyPressBuffer = keyPressBuffer.filter(press => Date.now() - press.timestamp < 2000);
+                
+                let slideChange = 0;
+                
+                // Detect navigation keys
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+                    slideChange = 1;
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+                    slideChange = -1;
+                } else if (e.key === 'Home') {
+                    lastKnownSlide = 1;
+                    updateCanvasContent(1);
+                    console.log('Slide navigation (Home): 1');
+                    return;
+                } else if (e.key === 'End') {
+                    lastKnownSlide = 15; // Assume max 15 slides
+                    updateCanvasContent(15);
+                    console.log('Slide navigation (End): 15');
+                    return;
+                } else if (e.key >= '1' && e.key <= '9') {
+                    // Direct slide number input
+                    const slideNum = parseInt(e.key);
+                    setTimeout(() => {
+                        lastKnownSlide = slideNum;
+                        updateCanvasContent(slideNum);
+                        console.log(`Direct slide navigation: ${slideNum}`);
+                    }, 300);
+                    return;
+                }
+                
+                if (slideChange !== 0) {
+                    setTimeout(() => {
+                        const newSlide = Math.max(1, Math.min(20, lastKnownSlide + slideChange));
+                        if (newSlide !== lastKnownSlide) {
+                            lastKnownSlide = newSlide;
+                            updateCanvasContent(newSlide);
+                            console.log(`Keyboard slide navigation: ${newSlide}`);
+                        }
+                    }, 200);
+                }
+            });
+            
+            // Method 3: Iframe URL monitoring (when possible)
+            let lastCheckedUrl = '';
+            function checkIframeUrl() {
                 const iframe = document.getElementById('slides-iframe');
-                if (iframe && iframe.contentWindow) {
-                    try {
-                        const iframeUrl = iframe.contentWindow.location.href;
-                        const slideMatch = iframeUrl.match(/slide=id\.([^&]+)/);
-                        if (slideMatch) {
-                            // Extract slide number from slide ID (simplified)
-                            const slideId = slideMatch[1];
-                            // Map slide IDs to numbers (this would need to be customized)
-                            const slideNumber = extractSlideNumber(slideId);
-                            if (slideNumber && slideNumber !== currentSlide) {
-                                updateCanvasContent(slideNumber);
+                if (!iframe) return;
+                
+                try {
+                    const currentUrl = iframe.src;
+                    if (currentUrl !== lastCheckedUrl) {
+                        lastCheckedUrl = currentUrl;
+                        
+                        // Look for slide parameter in URL
+                        const url = new URL(currentUrl);
+                        const slideParam = url.searchParams.get('slide');
+                        if (slideParam) {
+                            // Extract slide number from slide ID
+                            const slideMatch = slideParam.match(/id\.(\w+)/);
+                            if (slideMatch) {
+                                // Convert slide ID to estimated number
+                                const slideId = slideMatch[1];
+                                const estimatedSlide = Math.min(20, Math.max(1, slideId.length % 10 + 1));
+                                if (estimatedSlide !== lastKnownSlide) {
+                                    lastKnownSlide = estimatedSlide;
+                                    updateCanvasContent(estimatedSlide);
+                                    console.log(`URL-based slide detection: ${estimatedSlide}`);
+                                }
                             }
                         }
-                    } catch (e) {
-                        // Cross-origin restriction, continue to other methods
                     }
+                } catch (e) {
+                    // Expected cross-origin restriction
                 }
             }
             
-            // Method 3: Periodic checking for slide indicators in the DOM
-            function checkSlideIndicators() {
+            // Method 4: Mouse activity and timing-based estimation
+            let mouseActivity = [];
+            let presentationStartTime = Date.now();
+            
+            document.addEventListener('click', function(e) {
+                if (!slideDetectionActive) return;
+                
+                mouseActivity.push(Date.now());
+                // Keep only recent activity (last 5 minutes)
+                mouseActivity = mouseActivity.filter(time => Date.now() - time < 300000);
+                
+                // If clicking on the slides iframe area, estimate slide progression
                 const iframe = document.getElementById('slides-iframe');
-                if (iframe && iframe.contentDocument) {
-                    try {
-                        // Look for slide number indicators in the iframe
-                        const slideIndicators = iframe.contentDocument.querySelectorAll('[data-slide], .slide-number, .current-slide');
-                        slideIndicators.forEach(indicator => {
-                            const slideNum = parseInt(indicator.textContent || indicator.dataset.slide);
-                            if (slideNum && slideNum !== currentSlide && slideNum >= 1 && slideNum <= 10) {
-                                updateCanvasContent(slideNum);
-                            }
-                        });
-                    } catch (e) {
-                        // Cross-origin restriction
+                if (iframe && iframe.contains(e.target)) {
+                    const timeSinceStart = Date.now() - presentationStartTime;
+                    const estimatedSlide = Math.min(20, Math.floor(timeSinceStart / 30000) + 1); // Assume 30 seconds per slide
+                    
+                    if (Math.abs(estimatedSlide - lastKnownSlide) === 1) { // Only allow incremental changes
+                        lastKnownSlide = estimatedSlide;
+                        updateCanvasContent(estimatedSlide);
+                        console.log(`Activity-based slide estimation: ${estimatedSlide}`);
                     }
                 }
+            });
+            
+            // Method 5: Periodic iframe inspection attempts
+            setInterval(() => {
+                if (slideDetectionActive) {
+                    checkIframeUrl();
+                    
+                    // Try to inject a slide detection script (will fail due to CORS, but worth trying)
+                    const iframe = document.getElementById('slides-iframe');
+                    if (iframe && iframe.contentWindow) {
+                        try {
+                            iframe.contentWindow.postMessage({
+                                type: 'requestSlideNumber',
+                                source: 'workshop-app'
+                            }, '*');
+                        } catch (e) {
+                            // Expected to fail due to cross-origin
+                        }
+                    }
+                }
+            }, 3000);
+            
+            // Add manual slide control panel
+            addSlideControlPanel();
+        }
+        
+        function addSlideControlPanel() {
+            const controlPanel = document.createElement('div');
+            controlPanel.innerHTML = `
+                <div class="fixed top-4 right-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-3 z-40 border border-gray-200 dark:border-gray-700">
+                    <div class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-2">Manual Slide Control</div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="manualSlideChange(-1)" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs hover:bg-gray-300 dark:hover:bg-gray-600">◀</button>
+                        <span id="current-slide-display" class="text-sm font-bold text-blue-600 dark:text-blue-400 min-w-[40px] text-center">1</span>
+                        <button onclick="manualSlideChange(1)" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs hover:bg-gray-300 dark:hover:bg-gray-600">▶</button>
+                    </div>
+                    <input type="range" id="slide-slider" min="1" max="20" value="1" 
+                           class="w-full mt-2 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer" 
+                           onchange="manualSlideChange(0, this.value)">
+                </div>
+            `;
+            document.body.appendChild(controlPanel);
+        }
+        
+        function manualSlideChange(direction, exactSlide = null) {
+            const currentDisplay = document.getElementById('current-slide-display');
+            const slider = document.getElementById('slide-slider');
+            
+            let newSlide;
+            if (exactSlide !== null) {
+                newSlide = parseInt(exactSlide);
+            } else {
+                newSlide = Math.max(1, Math.min(20, currentSlide + direction));
             }
             
-            // Method 4: Monitor for keyboard events that might indicate slide changes
-            let keySequence = [];
-            document.addEventListener('keydown', function(e) {
-                keySequence.push(e.key);
-                if (keySequence.length > 3) keySequence.shift();
+            if (newSlide !== currentSlide) {
+                currentSlide = newSlide;
+                updateCanvasContent(newSlide);
                 
-                // Detect arrow key navigation
-                if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
-                    setTimeout(() => attemptSlideDetection(), 500);
-                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                    setTimeout(() => attemptSlideDetection(), 500);
-                }
+                if (currentDisplay) currentDisplay.textContent = newSlide;
+                if (slider) slider.value = newSlide;
                 
-                // Detect direct number key presses (1-9)
-                if (e.key >= '1' && e.key <= '9') {
-                    const slideNum = parseInt(e.key);
-                    setTimeout(() => updateCanvasContent(slideNum), 800);
-                }
-            });
-            
-            // Method 5: Smart estimation based on timing and user interaction
-            let lastInteraction = Date.now();
-            let estimatedSlide = 1;
-            
-            document.addEventListener('click', function() {
-                lastInteraction = Date.now();
-            });
-            
-            // Start periodic checking
-            slideCheckInterval = setInterval(() => {
-                attemptSlideDetection();
-                checkSlideFromHash();
-                checkSlideIndicators();
-            }, 2000);
+                console.log(`Manual slide change: ${newSlide}`);
+            }
         }
         
         function attemptSlideDetection() {
@@ -443,59 +697,85 @@
             currentSlide = slideNum;
             console.log('Updating canvas content for slide:', slideNum);
             
-            // Update slide indicators
-            document.getElementById('slide-indicator-1').textContent = slideNum;
-            document.getElementById('slide-indicator-2').textContent = slideNum;
+            // Update manual slide control display
+            const currentDisplay = document.getElementById('current-slide-display');
+            const slider = document.getElementById('slide-slider');
+            if (currentDisplay) currentDisplay.textContent = slideNum;
+            if (slider) slider.value = slideNum;
             
-            // Get content for current slide
-            const content = slideContent[slideNum] || slideContent[1];
+            // Remove active class from all canvas tabs
+            document.querySelectorAll('.canvas-tab').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
             
-            // Update demo1 content with animation
-            const demo1Content = document.getElementById('content-demo1');
-            demo1Content.style.opacity = '0.5';
-            setTimeout(() => {
-                demo1Content.innerHTML = `
-                    <div class="demo-placeholder">
-                        <div class="text-6xl mb-4">${content.demo1.icon}</div>
-                        <h3 class="text-xl font-bold mb-2">${content.demo1.title}</h3>
-                        <p class="text-gray-600 mb-4">${content.demo1.description}</p>
-                        <div class="text-sm text-gray-500 mb-4">Current Slide: ${slideNum}</div>
-                        <button onclick="loadDemo('demo1', ${slideNum})" class="px-6 py-2 ${content.demo1.color} text-white rounded-lg hover:opacity-80 transition-all">
-                            Load Demo
-                        </button>
-                        <div class="mt-4 text-xs text-gray-400">Auto-detected slide change</div>
-                    </div>
-                `;
-                demo1Content.style.opacity = '1';
-            }, 200);
+            // Hide all canvas sections
+            document.querySelectorAll('.canvas-section').forEach(section => {
+                section.style.display = 'none';
+            });
             
-            // Update demo2 content with animation
-            const demo2Content = document.getElementById('content-demo2');
-            demo2Content.style.opacity = '0.5';
-            setTimeout(() => {
-                demo2Content.innerHTML = `
-                    <div class="demo-placeholder">
-                        <div class="text-6xl mb-4">${content.demo2.icon}</div>
-                        <h3 class="text-xl font-bold mb-2">${content.demo2.title}</h3>
-                        <p class="text-gray-600 mb-4">${content.demo2.description}</p>
-                        <div class="text-sm text-gray-500 mb-4">Current Slide: ${slideNum}</div>
-                        <button onclick="loadDemo('demo2', ${slideNum})" class="px-6 py-2 ${content.demo2.color} text-white rounded-lg hover:opacity-80 transition-all">
-                            Load Interactive
-                        </button>
-                        <div class="mt-4 text-xs text-gray-400">Auto-detected slide change</div>
-                    </div>
-                `;
-                demo2Content.style.opacity = '1';
-            }, 300);
+            // Smart slide-to-content mapping
+            let targetTab = 'overview';
+            let targetSection = 'overviewSection';
+            
+            if (slideNum >= 1 && slideNum <= 3) {
+                targetTab = 'overview';
+                targetSection = 'overviewSection';
+            } else if (slideNum >= 4 && slideNum <= 6) {
+                targetTab = 'implementation';
+                targetSection = 'implementationSection';
+            } else if (slideNum >= 7 && slideNum <= 9) {
+                targetTab = 'ai-video';
+                targetSection = 'aiVideoSection';
+            } else if (slideNum >= 10 && slideNum <= 12) {
+                targetTab = 'resources';
+                targetSection = 'resourcesSection';
+            } else if (slideNum >= 13) {
+                targetTab = 'reflection';
+                targetSection = 'reflectionSection';
+            }
+            
+            // Activate the corresponding tab and show content
+            const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
+            const activeSection = document.getElementById(targetSection);
+            
+            if (activeButton) {
+                activeButton.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                activeButton.classList.add('bg-blue-600', 'text-white');
+                
+                // Add pulse animation for visual feedback
+                activeButton.style.animation = 'pulse 0.5s ease-in-out';
+                setTimeout(() => {
+                    activeButton.style.animation = '';
+                }, 500);
+            }
+            
+            if (activeSection) {
+                activeSection.style.display = 'block';
+                activeSection.style.opacity = '0';
+                setTimeout(() => {
+                    activeSection.style.opacity = '1';
+                }, 50);
+            }
+            
+            // Update slide indicator in the canvas
+            const slideIndicators = document.querySelectorAll('.slide-indicator');
+            slideIndicators.forEach(indicator => {
+                indicator.textContent = `Slide ${slideNum} • ${targetTab.charAt(0).toUpperCase() + targetTab.slice(1)}`;
+                indicator.className = 'slide-indicator text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-3 py-1 rounded-full mb-2';
+            });
             
             // Add visual feedback for slide change
-            const canvasSection = document.querySelector('.canvas-section');
-            canvasSection.style.transform = 'scale(1.02)';
-            canvasSection.style.boxShadow = '0 12px 40px rgba(93, 92, 222, 0.2)';
-            setTimeout(() => {
-                canvasSection.style.transform = 'scale(1)';
-                canvasSection.style.boxShadow = '0 8px 32px rgba(60,60,90,0.08)';
-            }, 300);
+            const canvasContent = document.querySelector('.canvas-content');
+            if (canvasContent) {
+                canvasContent.style.transform = 'scale(1.02)';
+                canvasContent.style.transition = 'all 0.3s ease';
+                setTimeout(() => {
+                    canvasContent.style.transform = 'scale(1)';
+                }, 300);
+            }
+            
+            console.log(`Canvas updated for slide ${slideNum}: ${targetTab}`);
         }
         
         function loadDemo(demoType, slideNum) {
@@ -549,6 +829,48 @@
                         avatarInfoPanel.classList.add('hidden');
                     }, 1000);
                 });
+            }
+        }
+
+        function toggleAvatar() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const toggleBtn = document.getElementById('avatar-toggle-btn');
+            
+            if (avatarEmbed) {
+                const isVisible = avatarEmbed.classList.contains('show');
+                
+                if (isVisible) {
+                    avatarEmbed.classList.remove('show');
+                    toggleBtn.innerHTML = '🤖 Show Avatar';
+                    toggleBtn.className = 'px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all text-sm';
+                } else {
+                    avatarEmbed.classList.add('show');
+                    toggleBtn.innerHTML = '❌ Hide Avatar';
+                    toggleBtn.className = 'px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all text-sm';
+                }
+            }
+        }
+
+        function moveAvatarToRight() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const positionBtn = document.getElementById('avatar-position-btn');
+            
+            if (avatarEmbed) {
+                const isOnLeft = avatarEmbed.style.left !== 'auto';
+                
+                if (isOnLeft) {
+                    // Move to right
+                    avatarEmbed.style.left = 'auto';
+                    avatarEmbed.style.right = '20px';
+                    positionBtn.innerHTML = '⬅️ Move Left';
+                    positionBtn.className = 'px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all text-sm';
+                } else {
+                    // Move to left
+                    avatarEmbed.style.left = '20px';
+                    avatarEmbed.style.right = 'auto';
+                    positionBtn.innerHTML = '➡️ Move Right';
+                    positionBtn.className = 'px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all text-sm';
+                }
             }
         }
 
