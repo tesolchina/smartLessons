@@ -1,0 +1,87 @@
+{
+  "sampleEssay": {
+    "title": "The Role of Individual Actions in Fighting Climate Change",
+    "type": "argumentative_essay",
+    "topic": "climate_change",
+    "prompt": "Some people believe that individual actions to combat climate change are insignificant compared to government and corporate efforts. To what extent do you agree or disagree with this statement?",
+    "wordCount": 314,
+    "structure": {
+      "introduction": {
+        "paragraph": 1,
+        "content": "Climate change is a big problem in the world today. Many people think that what individuals do is not important compared to what governments and companies do. I disagree with this statement because individual actions are also important for fighting climate change."
+      },
+      "body": [
+        {
+          "paragraph": 2,
+          "mainPoint": "Governments and companies have more power",
+          "content": "First, governments and companies have more power to make big changes. Governments can make laws about pollution and energy use. For example, they can ban plastic bags or make rules for factories. Companies can also change how they make products and use less energy. These actions affect many people at the same time, so they are very powerful."
+        },
+        {
+          "paragraph": 3,
+          "mainPoint": "Individual actions are still important",
+          "content": "However, individual actions are still important. When many people do small things, it becomes big. For instance, if everyone uses less electricity at home, it saves a lot of energy. People can also buy products from companies that care about the environment. This makes companies want to be more green because they want to sell their products."
+        },
+        {
+          "paragraph": 4,
+          "mainPoint": "Individual actions can influence governments",
+          "content": "Also, individual actions can influence governments. When people show they care about climate change by changing their lifestyle, politicians notice this. They want to get votes, so they make policies that people want. Individual actions can start movements that become bigger."
+        },
+        {
+          "paragraph": 5,
+          "mainPoint": "Counter-argument and refutation",
+          "content": "Some people say that individual actions are too small to matter. It is true that one person cannot solve climate change alone. But when millions of people act together, it makes a difference. Every action counts, even if it seems small."
+        }
+      ],
+      "conclusion": {
+        "paragraph": 6,
+        "content": "In conclusion, I think both individual actions and government and corporate efforts are needed to fight climate change. Individual actions may seem small, but they are still significant when many people participate. We need everyone to work together to solve this problem."
+      }
+    },
+    "fullText": "**Individual Actions vs. Government and Corporate Efforts in Fighting Climate Change**\n\nClimate change is a big problem in the world today. Many people think that what individuals do is not important compared to what governments and companies do. I disagree with this statement because individual actions are also important for fighting climate change.\n\nFirst, governments and companies have more power to make big changes. Governments can make laws about pollution and energy use. For example, they can ban plastic bags or make rules for factories. Companies can also change how they make products and use less energy. These actions affect many people at the same time, so they are very powerful.\n\nHowever, individual actions are still important. When many people do small things, it becomes big. For instance, if everyone uses less electricity at home, it saves a lot of energy. People can also buy products from companies that care about the environment. This makes companies want to be more green because they want to sell their products.\n\nAlso, individual actions can influence governments. When people show they care about climate change by changing their lifestyle, politicians notice this. They want to get votes, so they make policies that people want. Individual actions can start movements that become bigger.\n\nSome people say that individual actions are too small to matter. It is true that one person cannot solve climate change alone. But when millions of people act together, it makes a difference. Every action counts, even if it seems small.\n\nIn conclusion, I think both individual actions and government and corporate efforts are needed to fight climate change. Individual actions may seem small, but they are still significant when many people participate. We need everyone to work together to solve this problem.",
+    "analysisNotes": {
+      "rubricAssessment": {
+        "contentAndIdeas": {
+          "score": "2-3",
+          "description": "Ideas are relevant but basic; shows some awareness of the issue with a clear but weakly developed viewpoint"
+        },
+        "organization": {
+          "score": "2-3", 
+          "description": "Clear basic structure with paragraphing, but ideas lack depth and sophisticated logical flow"
+        },
+        "vocabulary": {
+          "score": "2-3",
+          "description": "Adequate vocabulary with some topic-specific terms (pollution, energy, environment, policies) but with repetition and simple word choices"
+        },
+        "grammar": {
+          "score": "2-3",
+          "description": "Mostly correct sentences with some variety, but lacks complex structures and has some minor errors in expression"
+        }
+      },
+      "strengths": [
+        "Clear thesis statement and position",
+        "Balanced argument acknowledging both sides",
+        "Use of specific examples (plastic bags, factories, electricity)",
+        "Logical paragraph structure with basic transitions",
+        "Appropriate use of topic-specific vocabulary"
+      ],
+      "areasForImprovement": [
+        "Language complexity could be enhanced with more sophisticated structures",
+        "Vocabulary repetition and simple word choices",
+        "Ideas lack depth and detailed development", 
+        "Could benefit from more varied sentence structures",
+        "Transitions between ideas could be more sophisticated",
+        "Examples could be more specific and detailed"
+      ],
+      "essayLevel": "developing",
+      "targetLevel": "2-3 on 5-point scale",
+      "recommendedImprovements": [
+        "Use more complex sentence structures and varied syntax",
+        "Incorporate advanced vocabulary and reduce repetition",
+        "Develop ideas with greater depth and sophistication",
+        "Add more specific statistics, data, or detailed examples",
+        "Improve transitions between paragraphs and ideas",
+        "Strengthen logical flow and argument progression"
+      ]
+    }
+  }
+}
