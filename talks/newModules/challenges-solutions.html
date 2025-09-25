@@ -1,66 +1,84 @@
-<style>
-    .gradient-bg {
-        background: linear-gradient(135deg, #FFF8DC 0%, #F5E6A8 50%, #FFE4B5 100%);
-    }
-    .text-gradient {
-        background: linear-gradient(135deg, #FF6B47, #7B68EE);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    .challenge-card {
-        transition: all 0.3s ease;
-    }
-    .challenge-card:hover {
-        transform: translateY(-4px) scale(1.02);
-    }
-    .solution-card {
-        transition: all 0.4s ease;
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    .solution-card.animate {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    .approach-card {
-        transition: all 0.5s ease;
-        cursor: pointer;
-    }
-    .approach-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    .floating-icon {
-        animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-    }
-    .pulse-dot {
-        animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
-    }
-    .slide-in {
-        animation: slideIn 0.6s ease-out forwards;
-    }
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipped Classroom Concept - Challenges & Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coral': '#FF6B47',
+                        'coral-light': '#FF8A6B',
+                        'purple-custom': '#7B68EE',
+                        'purple-light': '#9A8DEE',
+                        'cream': '#FFF8DC',
+                        'cream-dark': '#F5E6A8'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6A8 50%, #FFE4B5 100%);
         }
-    }
-</style>
-
-<!-- Main Content -->
+        .text-gradient {
+            background: linear-gradient(135deg, #FF6B47, #7B68EE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .challenge-card {
+            transition: all 0.3s ease;
+        }
+        .challenge-card:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+        .solution-card {
+            transition: all 0.3s ease;
+        }
+        .solution-card:hover {
+            transform: translateY(-4px);
+        }
+        .approach-card {
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        .approach-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .slide-in {
+            animation: slideIn 0.6s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Main Content -->
     <div class="max-w-6xl mx-auto px-4 py-12">
         
         <!-- Challenges Section -->
@@ -159,107 +177,134 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Solution 1 -->
-                <div id="solution1" class="solution-card bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl shadow-xl p-8 border border-blue-200">
+                <!-- Solution 1: AI Video Creation -->
+                <div class="solution-card bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl shadow-xl p-8 border border-blue-200">
                     <div class="text-center mb-6">
                         <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 floating-icon">
                             <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-blue-800 mb-3">AI Video Generation</h3>
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3">AI Video Creation</h3>
                     </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Cost-effective:</strong> Dramatically reduce video production costs</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Rapid creation:</strong> Generate content in minutes, not days</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Scalable:</strong> Create multiple versions for different topics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Consistent quality:</strong> Maintain professional standards</span>
-                        </li>
-                    </ul>
+                    <div class="space-y-4 text-gray-700">
+                        <p class="text-sm font-medium text-blue-700 mb-3">Comprehensive video production pipeline using AI technology:</p>
+                        
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                Video Avatar Generation
+                            </h4>
+                            <p class="text-sm">Create realistic digital presenters with customizable appearance, gestures, and expressions</p>
+                        </div>
+
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                Script Generation
+                            </h4>
+                            <p class="text-sm">AI-powered content creation tailored to learning objectives and student proficiency levels</p>
+                        </div>
+
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                Text-to-Speech Technology
+                            </h4>
+                            <p class="text-sm">Natural voice synthesis with multiple languages, accents, and speaking styles</p>
+                        </div>
+                    </div>
                     <div class="mt-6 text-center">
                         <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white">
-                            🤖 AI-Powered
+                            🎬 Full Pipeline
                         </span>
                     </div>
                 </div>
 
-                <!-- Solution 2 -->
-                <div id="solution2" class="solution-card bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl shadow-xl p-8 border border-green-200">
+                <!-- Solution 2: Streaming AI Avatar -->
+                <div class="solution-card bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl shadow-xl p-8 border border-green-200">
                     <div class="text-center mb-6">
                         <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 floating-icon">
                             <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-green-800 mb-3">Customized Chatbots</h3>
+                        <h3 class="text-2xl font-bold text-green-800 mb-3">Streaming AI Avatar</h3>
                     </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>24/7 availability:</strong> Students get instant support anytime</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Personalized responses:</strong> Tailored to individual learning needs</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Progress tracking:</strong> Monitor and adapt to learning patterns</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Interactive learning:</strong> Engaging conversational experiences</span>
-                        </li>
-                    </ul>
+                    <div class="space-y-4 text-gray-700">
+                        <p class="text-sm font-medium text-green-700 mb-3">Advanced upgrade of customized chatbots with real-time interaction:</p>
+                        
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                Real-time Responses
+                            </h4>
+                            <p class="text-sm">Instant AI-powered conversations with natural language processing and immediate feedback</p>
+                        </div>
+
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                Visual Presence
+                            </h4>
+                            <p class="text-sm">Live avatar with synchronized lip movement, facial expressions, and body language</p>
+                        </div>
+
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                Adaptive Learning
+                            </h4>
+                            <p class="text-sm">Personalized interaction patterns based on student progress and learning preferences</p>
+                        </div>
+                    </div>
                     <div class="mt-6 text-center">
                         <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-600 text-white">
-                            💬 Text-Based
+                            🎭 Live Interactive
                         </span>
                     </div>
                 </div>
 
-                <!-- Solution 3 -->
-                <div id="solution3" class="solution-card bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl shadow-xl p-8 border border-purple-200">
+                <!-- Solution 3: Analytics Dashboard -->
+                <div class="solution-card bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl shadow-xl p-8 border border-purple-200">
                     <div class="text-center mb-6">
                         <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 floating-icon">
                             <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-purple-800 mb-3">Interactive Avatars</h3>
+                        <h3 class="text-2xl font-bold text-purple-800 mb-3">Analytics Dashboard</h3>
                     </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Human-like interaction:</strong> Natural, engaging conversations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Visual presence:</strong> More engaging than text-only interfaces</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Emotional connection:</strong> Build rapport with students</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span><strong>Multi-modal learning:</strong> Combine visual, audio, and text</span>
-                        </li>
-                    </ul>
+                    <div class="space-y-4 text-gray-700">
+                        <p class="text-sm font-medium text-purple-700 mb-3">Comprehensive learning analytics and progress tracking:</p>
+                        
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Learning Insights
+                            </h4>
+                            <p class="text-sm">Track engagement patterns, completion rates, and learning milestones in real-time</p>
+                        </div>
+
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Performance Metrics
+                            </h4>
+                            <p class="text-sm">Detailed analytics on student performance, areas of difficulty, and improvement trends</p>
+                        </div>
+
+                        <div class="bg-white/60 rounded-lg p-4">
+                            <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Personalized Reports
+                            </h4>
+                            <p class="text-sm">Customized feedback and recommendations for both students and instructors</p>
+                        </div>
+                    </div>
                     <div class="mt-6 text-center">
                         <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-purple-600 text-white">
-                            🎭 Interactive
+                            📊 Data-Driven
                         </span>
                     </div>
                 </div>
@@ -402,25 +447,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Summary Call to Action -->
-        <div class="text-center bg-gradient-to-r from-coral/10 to-purple-custom/10 rounded-2xl p-12 border border-coral/20">
-            <h3 class="text-3xl font-bold text-gradient mb-4">Ready to Transform Your Classroom?</h3>
-            <p class="text-xl text-gray-700 mb-6 max-w-3xl mx-auto">
-                Choose the approach that best fits your institution's needs and start building the future of education
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="px-8 py-4 bg-coral hover:bg-coral-light text-white font-semibold rounded-xl transition-colors">
-                    Explore AI Video Tools
-                </button>
-                <button class="px-8 py-4 bg-purple-custom hover:bg-purple-light text-white font-semibold rounded-xl transition-colors">
-                    Build Interactive Avatars
-                </button>
-                <button class="px-8 py-4 bg-gradient-to-r from-coral to-purple-custom hover:from-coral-light hover:to-purple-light text-white font-semibold rounded-xl transition-colors">
-                    Try Vibe Coding
-                </button>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -434,26 +460,6 @@
             } else {
                 document.documentElement.classList.remove('dark');
             }
-        });
-
-        // Animate solutions on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe solution cards
-        document.querySelectorAll('.solution-card').forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.2}s`;
-            observer.observe(card);
         });
 
         // Toggle approach details
@@ -473,14 +479,6 @@
             }
         }
 
-        // Add pulse animation to key elements
-        setInterval(() => {
-            document.querySelectorAll('.pulse-dot').forEach(dot => {
-                dot.style.animation = 'none';
-                setTimeout(() => dot.style.animation = 'pulse 2s infinite', 10);
-            });
-        }, 5000);
-
         // Smooth scroll for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -494,4 +492,6 @@
                 }
             });
         });
-</script>
+    </script>
+</body>
+</html>
