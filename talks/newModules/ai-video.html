@@ -17,9 +17,93 @@
         </ul>
     </div>
     
-    <div class="text-center py-8 border-2 border-dashed border-gray-300 rounded-lg">
-        <div class="text-4xl mb-4">📝</div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Content Placeholder</h3>
-        <p class="text-gray-600">Please add your detailed content for the AI Video Creation section.</p>
+    <!-- In-House Solution Section -->
+    <div class="mb-8">
+        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <span class="text-2xl mr-3">🏠</span>In-House AI Video Generation Solution
+        </h3>
+        
+        <!-- Video Demo -->
+        <div class="bg-gray-100 rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3">Demo: Azure Speech + Video Synchronization</h4>
+            <div class="aspect-video bg-black rounded-lg flex items-center justify-center mb-4">
+                <video controls class="w-full h-full rounded-lg">
+                    <source src="../test_final_output.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="text-sm text-gray-600 italic">Sample output: AI-generated speech synchronized with looping video content</p>
+        </div>
+
+        <!-- Technical Approach -->
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-blue-50 rounded-lg p-4">
+                <h4 class="font-semibold text-blue-800 mb-3">🔧 How It Works</h4>
+                <ol class="text-sm text-gray-700 space-y-2">
+                    <li><strong>1. Text-to-Speech:</strong> Azure Cognitive Services converts text to natural speech</li>
+                    <li><strong>2. Video Processing:</strong> MoviePy handles video manipulation and synchronization</li>
+                    <li><strong>3. Duration Matching:</strong> Automatically repeats or trims video to match audio length</li>
+                    <li><strong>4. Final Assembly:</strong> Combines AI voice with visual content</li>
+                </ol>
+            </div>
+            
+            <div class="bg-green-50 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-3">💡 Use Cases</h4>
+                <ul class="text-sm text-gray-700 space-y-2">
+                    <li>• Educational tutorials with slide presentations</li>
+                    <li>• Product demonstration videos</li>
+                    <li>• Course announcements and updates</li>
+                    <li>• Multilingual content creation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Strengths and Limitations -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-emerald-50 border-l-4 border-emerald-400 rounded-lg p-4">
+                <h4 class="font-semibold text-emerald-800 mb-3 flex items-center">
+                    <span class="mr-2">✅</span>Strengths
+                </h4>
+                <ul class="text-sm text-emerald-700 space-y-2">
+                    <li>• <strong>Cost-effective:</strong> Only requires Azure Speech API (~$4/million characters)</li>
+                    <li>• <strong>Flexible content:</strong> Works with any existing video material</li>
+                    <li>• <strong>Quick implementation:</strong> Simple Python script, easy to customize</li>
+                    <li>• <strong>Multiple languages:</strong> 400+ neural voices in 140+ languages</li>
+                    <li>• <strong>Batch processing:</strong> Can automate large content volumes</li>
+                    <li>• <strong>Full control:</strong> Complete ownership of technology stack</li>
+                </ul>
+            </div>
+            
+            <div class="bg-red-50 border-l-4 border-red-400 rounded-lg p-4">
+                <h4 class="font-semibold text-red-800 mb-3 flex items-center">
+                    <span class="mr-2">⚠️</span>Limitations
+                </h4>
+                <ul class="text-sm text-red-700 space-y-2">
+                    <li>• <strong>No avatars:</strong> No realistic human presenter, just voice overlay</li>
+                    <li>• <strong>Static visuals:</strong> Video content loops, no dynamic interaction</li>
+                    <li>• <strong>No lip-sync:</strong> Audio not synchronized with facial movements</li>
+                    <li>• <strong>Technical setup:</strong> Requires programming knowledge to implement</li>
+                    <li>• <strong>Basic engagement:</strong> Less visually engaging than avatar-based solutions</li>
+                    <li>• <strong>Content dependency:</strong> Quality depends on source video material</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Implementation Code Sample -->
+        <div class="mt-6 bg-gray-900 rounded-lg p-4">
+            <h4 class="text-white font-semibold mb-3">📋 Implementation Sample</h4>
+            <pre class="text-green-400 text-xs overflow-x-auto"><code># Key components of the solution
+import azure.cognitiveservices.speech as speechsdk
+from moviepy import VideoFileClip, AudioFileClip
+
+# Generate AI speech
+speech_config = speechsdk.SpeechConfig(subscription=api_key)
+speech_config.speech_synthesis_voice_name = "en-AU-DarrenNeural"
+
+# Synchronize with video
+video_clip = VideoFileClip("presentation.mp4")
+audio_clip = AudioFileClip("ai_generated_speech.wav")
+final_video = video_clip.with_audio(audio_clip)</code></pre>
+        </div>
     </div>
 </div>
