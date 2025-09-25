@@ -100,21 +100,21 @@
     </div>
 
     <!-- Tab Content Container -->
-    <div class="px-8 py-8">
+    <div class="py-8" id="tab-container">
         <div id="tab-content-container">
-            <!-- Overview Tab (Default) -->
-            <div id="overview-content" class="tab-content active fade-in">
+            <!-- Overview Tab (Default) - wider spacing -->
+            <div id="overview-content" class="tab-content active fade-in px-16">
                 <div class="bg-white rounded-lg shadow-sm p-8">
                     <p class="text-gray-600 mb-4 text-lg">Loading overview content...</p>
                 </div>
             </div>
 
-            <!-- Other tabs will be loaded dynamically -->
-            <div id="concept-content" class="tab-content"></div>
-            <div id="challenges-solutions-content" class="tab-content"></div>
-            <div id="ai-video-content" class="tab-content"></div>
-            <div id="streaming-avatar-content" class="tab-content"></div>
-            <div id="implementation-future-content" class="tab-content"></div>
+            <!-- Other tabs will be loaded dynamically - tighter spacing -->
+            <div id="concept-content" class="tab-content px-4"></div>
+            <div id="challenges-solutions-content" class="tab-content px-4"></div>
+            <div id="ai-video-content" class="tab-content px-4"></div>
+            <div id="streaming-avatar-content" class="tab-content px-4"></div>
+            <div id="implementation-future-content" class="tab-content px-4"></div>
         </div>
     </div>
 
@@ -167,6 +167,30 @@
                 if (response.ok) {
                     const content = await response.text();
                     contentContainer.innerHTML = content;
+                    
+                    // Execute any scripts in the loaded content
+                    const scripts = contentContainer.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        
+                        // Special handling for streaming avatar
+                        if (tabName === 'streaming-avatar' && script.textContent.includes('initializeHeyGenAvatar')) {
+                            // Give it a moment to load, then execute
+                            setTimeout(() => {
+                                try {
+                                    eval(script.textContent);
+                                } catch (e) {
+                                    console.log('Avatar script execution:', e);
+                                }
+                            }, 200);
+                        }
+                    });
                 } else {
                     contentContainer.innerHTML = `
                         <div class="bg-white rounded-lg shadow-sm p-8">

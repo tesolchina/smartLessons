@@ -318,64 +318,91 @@
 
 <!-- Avatar Embed Script -->
 <script>
-!function(window){
-    const host="https://labs.heygen.com",
-    url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",
-    avatarContainer = document.getElementById('avatar-container'),
-    wrapDiv = document.createElement("div");
+// Function to initialize HeyGen avatar
+function initializeHeyGenAvatar() {
+    const avatarContainer = document.getElementById('avatar-container');
     
-    wrapDiv.id = "heygen-streaming-embed";
-    const container = document.createElement("div");
-    container.id = "heygen-streaming-container";
-    const stylesheet = document.createElement("style");
-    
-    stylesheet.innerHTML = `
-    #heygen-streaming-embed {
-        position: relative;
-        width: 100%;
-        height: 400px;
-        margin: 20px 0;
-        border-radius: 16px;
-        border: 2px solid #fff;
-        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
-        overflow: hidden;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    #heygen-streaming-container {
-        width: 100%;
-        height: 100%;
-        border-radius: 14px;
-        overflow: hidden;
-    }
-    
-    #heygen-streaming-container iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
-        border-radius: 14px;
-    }`;
-
-    const iframe = document.createElement("iframe");
-    iframe.allowFullscreen = false;
-    iframe.title = "Streaming Embed";
-    iframe.role = "dialog";
-    iframe.allow = "microphone";
-    iframe.src = url;
-    
-    container.appendChild(iframe);
-    wrapDiv.appendChild(stylesheet);
-    wrapDiv.appendChild(container);
-    
-    // Append to the avatar container instead of document.body
+    // Clear any existing content
     if (avatarContainer) {
-        avatarContainer.appendChild(wrapDiv);
-    } else {
-        document.body.appendChild(wrapDiv);
+        avatarContainer.innerHTML = '';
     }
-}(globalThis);
+    
+    // Use a slight delay to ensure DOM is ready
+    setTimeout(() => {
+        !function(window){
+            const host="https://labs.heygen.com",
+            url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",
+            avatarContainer = document.getElementById('avatar-container'),
+            wrapDiv = document.createElement("div");
+            
+            if (!avatarContainer) {
+                console.error('Avatar container not found');
+                return;
+            }
+            
+            wrapDiv.id = "heygen-streaming-embed";
+            const container = document.createElement("div");
+            container.id = "heygen-streaming-container";
+            const stylesheet = document.createElement("style");
+            
+            stylesheet.innerHTML = `
+            #heygen-streaming-embed {
+                position: relative;
+                width: 100%;
+                height: 400px;
+                margin: 20px 0;
+                border-radius: 16px;
+                border: 2px solid #fff;
+                box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+                overflow: hidden;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            #heygen-streaming-container {
+                width: 100%;
+                height: 100%;
+                border-radius: 14px;
+                overflow: hidden;
+            }
+            
+            #heygen-streaming-container iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                border-radius: 14px;
+            }`;
+
+            const iframe = document.createElement("iframe");
+            iframe.allowFullscreen = false;
+            iframe.title = "Streaming Embed";
+            iframe.role = "dialog";
+            iframe.allow = "microphone";
+            iframe.src = url;
+            
+            container.appendChild(iframe);
+            wrapDiv.appendChild(stylesheet);
+            wrapDiv.appendChild(container);
+            
+            // Append to the avatar container
+            avatarContainer.appendChild(wrapDiv);
+            
+            console.log('HeyGen avatar initialized successfully');
+            
+        }(globalThis);
+    }, 100);
+}
+
+// Initialize when DOM is ready or when this script loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeHeyGenAvatar);
+} else {
+    initializeHeyGenAvatar();
+}
+
+// Also try to initialize after a short delay to handle dynamic loading
+setTimeout(initializeHeyGenAvatar, 500);
 </script>
 
 <script>
