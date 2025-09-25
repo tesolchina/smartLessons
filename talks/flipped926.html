@@ -50,19 +50,19 @@
     
     <!-- Workshop Header -->
     <div class="bg-white/90 backdrop-blur-sm border-b border-coral/30">
-        <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="px-8 py-8">
             <div class="text-center">
                 <div class="flex items-center justify-center mb-4">
                     <div id="avatar-container" class="w-16 h-16 rounded-full mr-4"></div>
                     <div class="text-left">
-                        <h1 class="text-4xl font-bold bg-gradient-to-r from-coral to-purple-custom bg-clip-text text-transparent">
+                        <h1 class="text-6xl font-bold bg-gradient-to-r from-coral to-purple-custom bg-clip-text text-transparent">
                             AI-Powered Flipped Classroom Workshop
                         </h1>
-                        <p class="text-lg text-gray-600 mt-1">Transforming Education with Interactive AI Solutions</p>
+                        <p class="text-2xl text-gray-600 mt-1">Transforming Education with Interactive AI Solutions</p>
                     </div>
                 </div>
-                <div class="flex items-center justify-center mt-4 text-gray-700">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <div class="flex items-center justify-center mt-4 text-gray-700 text-xl">
+                    <svg class="w-7 h-7 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
                     </svg>
                     <span class="font-semibold text-coral">Dr. Simon WANG</span>
@@ -75,24 +75,24 @@
     
     <!-- Tab Navigation -->
     <div class="bg-white/80 backdrop-blur-sm border-b border-coral/20 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-wrap gap-2 py-4">
-                <button class="tab-button active px-4 py-2 rounded-lg font-medium text-sm" onclick="showTab('overview')">
+        <div class="px-8">
+            <div class="flex flex-wrap gap-4 py-6">
+                <button class="tab-button active px-6 py-4 rounded-lg font-medium text-lg" onclick="showTab('overview')">
                     📋 Overview
                 </button>
-                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('concept')">
+                <button class="tab-button px-6 py-4 rounded-lg font-medium text-lg bg-gray-100 hover:bg-gray-200" onclick="showTab('concept')">
                     💡 Flipped Classroom Concept
                 </button>
-                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('challenges-solutions')">
+                <button class="tab-button px-6 py-4 rounded-lg font-medium text-lg bg-gray-100 hover:bg-gray-200" onclick="showTab('challenges-solutions')">
                     ⚡ Challenges & Solutions
                 </button>
-                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('ai-video')">
+                <button class="tab-button px-6 py-4 rounded-lg font-medium text-lg bg-gray-100 hover:bg-gray-200" onclick="showTab('ai-video')">
                     🎥 AI Video Creation
                 </button>
-                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('streaming-avatar')">
+                <button class="tab-button px-6 py-4 rounded-lg font-medium text-lg bg-gray-100 hover:bg-gray-200" onclick="showTab('streaming-avatar')">
                     🤖 Streaming AI Avatar
                 </button>
-                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('implementation-future')">
+                <button class="tab-button px-6 py-4 rounded-lg font-medium text-lg bg-gray-100 hover:bg-gray-200" onclick="showTab('implementation-future')">
                     🔮 Implementation & Future
                 </button>
             </div>
@@ -100,12 +100,12 @@
     </div>
 
     <!-- Tab Content Container -->
-    <div class="max-w-7xl mx-auto px-4 py-6">
+    <div class="px-8 py-8">
         <div id="tab-content-container">
             <!-- Overview Tab (Default) -->
             <div id="overview-content" class="tab-content active fade-in">
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <p class="text-gray-600 mb-4">Loading overview content...</p>
+                <div class="bg-white rounded-lg shadow-sm p-8">
+                    <p class="text-gray-600 mb-4 text-lg">Loading overview content...</p>
                 </div>
             </div>
 
@@ -154,10 +154,10 @@
             
             // Show loading state
             contentContainer.innerHTML = `
-                <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="bg-white rounded-lg shadow-sm p-8">
                     <div class="text-center py-8">
-                        <div class="animate-spin w-8 h-8 border-4 border-coral/30 border-t-coral rounded-full mx-auto mb-4"></div>
-                        <p class="text-gray-600">Loading content...</p>
+                        <div class="animate-spin w-10 h-10 border-4 border-coral/30 border-t-coral rounded-full mx-auto mb-4"></div>
+                        <p class="text-gray-600 text-lg">Loading content...</p>
                     </div>
                 </div>
             `;
@@ -169,22 +169,22 @@
                     contentContainer.innerHTML = content;
                 } else {
                     contentContainer.innerHTML = `
-                        <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="bg-white rounded-lg shadow-sm p-8">
                             <div class="text-center py-8">
-                                <div class="text-4xl mb-4">🔧</div>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Content Coming Soon</h3>
-                                <p class="text-gray-600">This section is being prepared. Please check back later.</p>
+                                <div class="text-6xl mb-4">🔧</div>
+                                <h3 class="text-3xl font-semibold text-gray-800 mb-2">Content Coming Soon</h3>
+                                <p class="text-gray-600 text-lg">This section is being prepared. Please check back later.</p>
                             </div>
                         </div>
                     `;
                 }
             } catch (error) {
                 contentContainer.innerHTML = `
-                    <div class="bg-white rounded-lg shadow-sm p-6">
+                    <div class="bg-white rounded-lg shadow-sm p-8">
                         <div class="text-center py-8">
-                            <div class="text-4xl mb-4">⚠️</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Content Not Available</h3>
-                            <p class="text-gray-600">Unable to load content for this section.</p>
+                            <div class="text-6xl mb-4">⚠️</div>
+                            <h3 class="text-3xl font-semibold text-gray-800 mb-2">Content Not Available</h3>
+                            <p class="text-gray-600 text-lg">Unable to load content for this section.</p>
                         </div>
                     </div>
                 `;
