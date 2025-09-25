@@ -44,6 +44,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
+    <script src="avatar-assets/avatar-animation.js"></script>
 </head>
 <body class="bg-gradient-to-br from-cream via-white to-cream-dark min-h-screen">
     
@@ -52,9 +53,7 @@
         <div class="max-w-7xl mx-auto px-4 py-8">
             <div class="text-center">
                 <div class="flex items-center justify-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-coral to-purple-custom rounded-full flex items-center justify-center mr-4">
-                        <span class="text-white font-bold text-2xl">AI</span>
-                    </div>
+                    <div id="avatar-container" class="w-16 h-16 rounded-full mr-4"></div>
                     <div class="text-left">
                         <h1 class="text-4xl font-bold bg-gradient-to-r from-coral to-purple-custom bg-clip-text text-transparent">
                             AI-Powered Flipped Classroom Workshop
@@ -201,6 +200,29 @@
             loadTabContent('overview');
             // Update page title
             document.title = 'AI-Powered Flipped Classroom Workshop - Dr. Simon WANG';
+        });
+    </script>
+    <script>
+        // Initialize avatar in header
+        document.addEventListener("DOMContentLoaded", function() {
+            const avatar = new AvatarAnimation("avatar-container", {
+                size: 64,
+                avatarType: "image",
+                imagePath: "avatar-assets/tex/Meet Lingua.png",
+                defaultEmoji: "👨‍💻",
+                enableSpeech: false,
+                autoAnimations: true
+            });
+            
+            // Add subtle animations
+            setTimeout(() => {
+                avatar.playAnimation("pulse");
+            }, 2000);
+            
+            // Repeat animation every 10 seconds
+            setInterval(() => {
+                avatar.playAnimation("pulse");
+            }, 10000);
         });
     </script>
 </body>
