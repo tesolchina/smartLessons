@@ -1,0 +1,172 @@
+<div class="bg-white rounded-lg shadow-sm p-6">
+    <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <span class="text-3xl mr-3">🤖</span>
+            Streaming AI Avatar
+        </h2>
+        <p class="text-gray-600">Interactive AI avatars serving as 24/7 co-teachers and student engagement tools in modern education.</p>
+    </div>
+    
+    <div class="bg-gradient-to-r from-cream to-cream-dark rounded-lg p-6 mb-6">
+        <h3 class="text-lg font-semibold text-coral mb-3">🎯 Key Topics to Cover:</h3>
+        <ul class="space-y-2 text-gray-700">
+            <li>• Real-time AI avatar technology and capabilities</li>
+            <li>• Implementation as virtual co-teachers</li>
+            <li>• 24/7 student support and engagement strategies</li>
+            <li>• Integration with learning management systems</li>
+        </ul>
+    </div>
+    
+    <!-- HeyGen Avatar Demo Section -->
+    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 mb-6">
+        <h3 class="text-lg font-semibold text-purple-600 mb-4 flex items-center">
+            <span class="text-2xl mr-2">🎭</span>
+            Interactive AI Avatar Demo
+        </h3>
+        <p class="text-gray-700 mb-4">Experience our AI-powered avatar that can interact with students in real-time, providing personalized support and engagement.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h4 class="font-semibold text-gray-800 mb-2">🎯 Capabilities:</h4>
+                <div class="space-y-1 text-sm text-gray-600">
+                    <span>💬 Real-time Chat</span>
+                    <span>🎯 Personalized Responses</span>
+                    <span>📚 Educational Support</span>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h4 class="font-semibold text-gray-800 mb-2">⚙️ Controls:</h4>
+                <div class="flex flex-col space-y-2">
+                    <button onclick="toggleAvatar()" id="avatar-toggle-btn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all text-sm">
+                        🤖 Show Avatar
+                    </button>
+                    <button onclick="moveAvatarToRight()" id="avatar-position-btn" class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all text-sm">
+                        ➡️ Move Right
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <p class="text-sm text-yellow-800">
+                <strong>💡 Try it out:</strong> Click "Show Avatar" to activate the AI assistant. You can chat with it about flipped classroom strategies, ask questions, or get educational support!
+            </p>
+        </div>
+    </div>
+
+    <!-- Avatar Info Panel -->
+    <div id="avatarInfoPanel" class="fixed bottom-6 left-6 bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600 shadow-lg max-w-xs z-40 hidden">
+        <div class="font-semibold text-gray-900 dark:text-white text-sm">Flipped Classroom AI Assistant</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400">Workshop Support Team</div>
+        <div class="text-xs text-purple-600 hover:underline cursor-pointer">Learn More →</div>
+    </div>
+
+    <!-- Integration Examples -->
+    <div class="bg-gray-50 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">🔧 Implementation Guide</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <h4 class="font-semibold text-gray-700 mb-2">📱 Platform Integration</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• LMS integration (Moodle, Canvas, Blackboard)</li>
+                    <li>• Video conferencing platforms</li>
+                    <li>• Mobile learning applications</li>
+                    <li>• Custom educational websites</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gray-700 mb-2">⏰ Use Cases</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• 24/7 student question answering</li>
+                    <li>• Pre-class preparation guidance</li>
+                    <li>• Assignment help and feedback</li>
+                    <li>• Study group facilitation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HeyGen Avatar Embed Script -->
+<script>!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 20px;\n    bottom: 20px;\n    width: 260px;\n    height: 280px;\n    border-radius: 16px;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease;\n    overflow: hidden;\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 340px; width: calc(100vw - 40px); left: 20px;":"height: 380px; width: 300px; right: 20px; left: auto;"}\n    border-radius: 16px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n    border-radius: 14px;\n    overflow: hidden;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n    border-radius: 14px;\n  }\n  `;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);</script>
+
+<script>
+// Avatar control functions
+function initializeAvatarInfo() {
+    const avatarEmbed = document.getElementById('heygen-streaming-embed');
+    const avatarInfoPanel = document.getElementById('avatarInfoPanel');
+    
+    if (avatarEmbed && avatarInfoPanel) {
+        let hoverTimeout;
+        
+        avatarEmbed.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimeout);
+            avatarInfoPanel.classList.remove('hidden');
+        });
+        
+        avatarEmbed.addEventListener('mouseleave', function() {
+            hoverTimeout = setTimeout(() => {
+                avatarInfoPanel.classList.add('hidden');
+            }, 2000);
+        });
+        
+        avatarInfoPanel.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimeout);
+        });
+        
+        avatarInfoPanel.addEventListener('mouseleave', function() {
+            hoverTimeout = setTimeout(() => {
+                avatarInfoPanel.classList.add('hidden');
+            }, 1000);
+        });
+    }
+}
+
+function toggleAvatar() {
+    const avatarEmbed = document.getElementById('heygen-streaming-embed');
+    const toggleBtn = document.getElementById('avatar-toggle-btn');
+    
+    if (avatarEmbed) {
+        const isVisible = avatarEmbed.classList.contains('show');
+        
+        if (isVisible) {
+            avatarEmbed.classList.remove('show');
+            toggleBtn.innerHTML = '🤖 Show Avatar';
+            toggleBtn.className = 'px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all text-sm';
+        } else {
+            avatarEmbed.classList.add('show');
+            toggleBtn.innerHTML = '❌ Hide Avatar';
+            toggleBtn.className = 'px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all text-sm';
+        }
+    }
+}
+
+function moveAvatarToRight() {
+    const avatarEmbed = document.getElementById('heygen-streaming-embed');
+    const positionBtn = document.getElementById('avatar-position-btn');
+    
+    if (avatarEmbed) {
+        const isOnLeft = avatarEmbed.style.left !== 'auto';
+        
+        if (isOnLeft) {
+            // Move to right
+            avatarEmbed.style.left = 'auto';
+            avatarEmbed.style.right = '20px';
+            positionBtn.innerHTML = '⬅️ Move Left';
+            positionBtn.className = 'px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all text-sm';
+        } else {
+            // Move to left
+            avatarEmbed.style.left = '20px';
+            avatarEmbed.style.right = 'auto';
+            positionBtn.innerHTML = '➡️ Move Right';
+            positionBtn.className = 'px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all text-sm';
+        }
+    }
+}
+
+// Initialize avatar info functionality when the module loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for the HeyGen script to initialize
+    setTimeout(initializeAvatarInfo, 1000);
+});
+</script>

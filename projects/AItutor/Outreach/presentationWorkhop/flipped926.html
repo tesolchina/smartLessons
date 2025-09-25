@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipped Classroom Workshop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coral': '#FF6B47',
+                        'coral-light': '#FF8A6B',
+                        'purple-custom': '#7B68EE',
+                        'purple-light': '#9A8DEE',
+                        'cream': '#FFF8DC',
+                        'cream-dark': '#F5E6A8'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background: linear-gradient(135deg, #FF6B47, #7B68EE);
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script src="avatar-assets/avatar-animation.js"></script>
+</head>
+<body class="bg-gradient-to-br from-cream via-white to-cream-dark min-h-screen">
+    
+    <!-- Workshop Header -->
+    <div class="bg-white/90 backdrop-blur-sm border-b border-coral/30">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <div id="avatar-container" class="w-16 h-16 rounded-full mr-4"></div>
+                    <div class="text-left">
+                        <h1 class="text-4xl font-bold bg-gradient-to-r from-coral to-purple-custom bg-clip-text text-transparent">
+                            AI-Powered Flipped Classroom Workshop
+                        </h1>
+                        <p class="text-lg text-gray-600 mt-1">Transforming Education with Interactive AI Solutions</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center mt-4 text-gray-700">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-semibold text-coral">Dr. Simon WANG</span>
+                    <span class="mx-2">•</span>
+                    <span>Language Centre, HKBU</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tab Navigation -->
+    <div class="bg-white/80 backdrop-blur-sm border-b border-coral/20 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap gap-2 py-4">
+                <button class="tab-button active px-4 py-2 rounded-lg font-medium text-sm" onclick="showTab('overview')">
+                    📋 Overview
+                </button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('concept')">
+                    💡 Flipped Classroom Concept
+                </button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('challenges-solutions')">
+                    ⚡ Challenges & Solutions
+                </button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('ai-video')">
+                    🎥 AI Video Creation
+                </button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('streaming-avatar')">
+                    🤖 Streaming AI Avatar
+                </button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('vendor-inhouse')">
+                    ⚖️ Vendor vs In-house
+                </button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm bg-gray-100 hover:bg-gray-200" onclick="showTab('vibe-coding')">
+                    🚀 Vibe Coding
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content Container -->
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <div id="tab-content-container">
+            <!-- Overview Tab (Default) -->
+            <div id="overview-content" class="tab-content active fade-in">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <p class="text-gray-600 mb-4">Loading overview content...</p>
+                </div>
+            </div>
+
+            <!-- Other tabs will be loaded dynamically -->
+            <div id="concept-content" class="tab-content"></div>
+            <div id="challenges-solutions-content" class="tab-content"></div>
+            <div id="ai-video-content" class="tab-content"></div>
+            <div id="streaming-avatar-content" class="tab-content"></div>
+            <div id="vendor-inhouse-content" class="tab-content"></div>
+            <div id="vibe-coding-content" class="tab-content"></div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Reset all tab buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+                button.classList.add('bg-gray-100', 'hover:bg-gray-200');
+            });
+
+            // Show selected tab content
+            const selectedContent = document.getElementById(`${tabName}-content`);
+            if (selectedContent) {
+                selectedContent.classList.add('active', 'fade-in');
+                
+                // Load content if not already loaded
+                if (selectedContent.innerHTML.trim() === '') {
+                    loadTabContent(tabName);
+                }
+            }
+
+            // Activate selected tab button
+            event.target.classList.add('active');
+            event.target.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+        }
+
+        // Load tab content dynamically
+        async function loadTabContent(tabName) {
+            const contentContainer = document.getElementById(`${tabName}-content`);
+            
+            // Show loading state
+            contentContainer.innerHTML = `
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <div class="text-center py-8">
+                        <div class="animate-spin w-8 h-8 border-4 border-coral/30 border-t-coral rounded-full mx-auto mb-4"></div>
+                        <p class="text-gray-600">Loading content...</p>
+                    </div>
+                </div>
+            `;
+            
+            try {
+                const response = await fetch(`newModules/${tabName}.html`);
+                if (response.ok) {
+                    const content = await response.text();
+                    contentContainer.innerHTML = content;
+                } else {
+                    contentContainer.innerHTML = `
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <div class="text-center py-8">
+                                <div class="text-4xl mb-4">🔧</div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Content Coming Soon</h3>
+                                <p class="text-gray-600">This section is being prepared. Please check back later.</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                contentContainer.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="text-center py-8">
+                            <div class="text-4xl mb-4">⚠️</div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Content Not Available</h3>
+                            <p class="text-gray-600">Unable to load content for this section.</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Load overview content on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTabContent('overview');
+            // Update page title
+            document.title = 'AI-Powered Flipped Classroom Workshop - Dr. Simon WANG';
+        });
+    </script>
+    <script>
+        // Initialize avatar in header
+        document.addEventListener("DOMContentLoaded", function() {
+            const avatar = new AvatarAnimation("avatar-container", {
+                size: 64,
+                avatarType: "image",
+                imagePath: "avatar-assets/tex/Meet Lingua.png",
+                defaultEmoji: "👨‍💻",
+                enableSpeech: false,
+                autoAnimations: true
+            });
+            
+            // Add subtle animations
+            setTimeout(() => {
+                avatar.playAnimation("pulse");
+            }, 2000);
+            
+            // Repeat animation every 10 seconds
+            setInterval(() => {
+                avatar.playAnimation("pulse");
+            }, 10000);
+        });
+    </script>
+</body>
+</html>
