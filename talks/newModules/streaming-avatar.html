@@ -191,8 +191,11 @@
             </p>
             
             <!-- Avatar Container -->
-            <div id="avatar-container" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <!-- Avatar will be embedded directly here by the script -->
+            <div id="avatar-container" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden min-h-[400px] flex items-center justify-center">
+                <div class="text-gray-500 dark:text-gray-400">
+                    <div class="text-4xl mb-2">🤖</div>
+                    <p class="text-center">Loading Avatar...</p>
+                </div>
             </div>
             
             <div class="mt-4 p-4 bg-blue-100 dark:bg-blue-800 rounded-lg">
@@ -322,10 +325,16 @@
 function initializeHeyGenAvatar() {
     const avatarContainer = document.getElementById('avatar-container');
     
-    // Clear any existing content
-    if (avatarContainer) {
-        avatarContainer.innerHTML = '';
+    if (!avatarContainer) {
+        console.error('Avatar container not found');
+        return;
     }
+    
+    // Clear any existing content completely
+    avatarContainer.innerHTML = '';
+    avatarContainer.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden min-h-[400px]';
+    
+    console.log('Initializing HeyGen avatar...');
     
     // Use a slight delay to ensure DOM is ready
     setTimeout(() => {
