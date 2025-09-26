@@ -22,6 +22,30 @@
                 }
             }
         }
+    </script>
+    <style>
+        /* Prevent HeyGen avatar from floating */
+        #avatar-container {
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        #avatar-container * {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            transform: none !important;
+        }
+        
+        /* Ensure any floating elements stay within bounds */
+        body > div[style*="position: fixed"],
+        body > div[style*="position: absolute"] {
+            position: relative !important;
+        }
+    </style>
+    <script>
         
         // Dark mode detection
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -332,7 +356,9 @@ function initializeHeyGenAvatar() {
     
     // Clear any existing content completely
     avatarContainer.innerHTML = '';
-    avatarContainer.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden min-h-[400px]';
+    avatarContainer.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden min-h-[400px] relative';
+    avatarContainer.style.position = 'relative';
+    avatarContainer.style.zIndex = '1';
     
     console.log('Initializing HeyGen avatar...');
     
@@ -356,10 +382,10 @@ function initializeHeyGenAvatar() {
             
             stylesheet.innerHTML = `
             #heygen-streaming-embed {
-                position: relative;
-                width: 100%;
-                height: 400px;
-                margin: 20px 0;
+                position: relative !important;
+                width: 100% !important;
+                height: 400px !important;
+                margin: 0 !important;
                 border-radius: 16px;
                 border: 2px solid #fff;
                 box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
@@ -367,20 +393,28 @@ function initializeHeyGenAvatar() {
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 opacity: 1;
                 visibility: visible;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                z-index: auto !important;
+                transform: none !important;
             }
             
             #heygen-streaming-container {
-                width: 100%;
-                height: 100%;
+                width: 100% !important;
+                height: 100% !important;
                 border-radius: 14px;
                 overflow: hidden;
+                position: relative !important;
             }
             
             #heygen-streaming-container iframe {
-                width: 100%;
-                height: 100%;
+                width: 100% !important;
+                height: 100% !important;
                 border: 0;
                 border-radius: 14px;
+                position: relative !important;
             }`;
 
             const iframe = document.createElement("iframe");
