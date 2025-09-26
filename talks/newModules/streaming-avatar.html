@@ -216,16 +216,26 @@
             
             <!-- Avatar Container -->
             <div id="avatar-container" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden min-h-[400px] flex items-center justify-center">
-                <div class="text-gray-500 dark:text-gray-400">
-                    <div class="text-4xl mb-2">🤖</div>
-                    <p class="text-center">Loading Avatar...</p>
+                <div class="text-gray-500 dark:text-gray-400 text-center">
+                    <div class="text-6xl mb-4">🎭</div>
+                    <h4 class="text-xl font-semibold mb-2">Avatar Demo Placeholder</h4>
+                    <p class="text-sm max-w-md">
+                        HeyGen avatar integration temporarily disabled due to floating overlay issues. 
+                        This space will showcase the streaming AI avatar functionality once the embedding is properly contained.
+                    </p>
+                    <div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900 rounded-lg">
+                        <p class="text-xs text-blue-600 dark:text-blue-300">
+                            💡 The avatar technology combines NLP, TTS, STT, and real-time video synthesis for interactive educational support.
+                        </p>
+                    </div>
                 </div>
             </div>
             
-            <div class="mt-4 p-4 bg-blue-100 dark:bg-blue-800 rounded-lg">
-                <p class="text-sm text-blue-800 dark:text-blue-200">
-                    <strong>💡 Try it:</strong> The HeyGen avatar is embedded directly above. Interact with it by asking about flipped classroom strategies, educational technology, or request guidance on implementing AI in education. 
-                    The avatar uses customized prompts to provide contextually relevant educational support.
+            <div class="mt-4 p-4 bg-yellow-100 dark:bg-yellow-800 rounded-lg">
+                <p class="text-sm text-yellow-800 dark:text-yellow-200">
+                    <strong>� Demo Status:</strong> Avatar embedding temporarily disabled due to floating overlay behavior. 
+                    The technology works by combining customized educational knowledge with real-time AI interaction, 
+                    supporting voice input/output and visual engagement for enhanced learning experiences.
                 </p>
             </div>
         </div>
@@ -343,109 +353,10 @@
     </div>
 </div>
 
-<!-- Avatar Embed Script -->
+<!-- Avatar Embed Script Removed -->
+<!-- HeyGen avatar was causing floating overlay issues across tabs -->
 <script>
-// Function to initialize HeyGen avatar
-function initializeHeyGenAvatar() {
-    const avatarContainer = document.getElementById('avatar-container');
-    
-    if (!avatarContainer) {
-        console.error('Avatar container not found');
-        return;
-    }
-    
-    // Clear any existing content completely
-    avatarContainer.innerHTML = '';
-    avatarContainer.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden min-h-[400px] relative';
-    avatarContainer.style.position = 'relative';
-    avatarContainer.style.zIndex = '1';
-    
-    console.log('Initializing HeyGen avatar...');
-    
-    // Use a slight delay to ensure DOM is ready
-    setTimeout(() => {
-        !function(window){
-            const host="https://labs.heygen.com",
-            url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",
-            avatarContainer = document.getElementById('avatar-container'),
-            wrapDiv = document.createElement("div");
-            
-            if (!avatarContainer) {
-                console.error('Avatar container not found');
-                return;
-            }
-            
-            wrapDiv.id = "heygen-streaming-embed";
-            const container = document.createElement("div");
-            container.id = "heygen-streaming-container";
-            const stylesheet = document.createElement("style");
-            
-            stylesheet.innerHTML = `
-            #heygen-streaming-embed {
-                position: relative !important;
-                width: 100% !important;
-                height: 400px !important;
-                margin: 0 !important;
-                border-radius: 16px;
-                border: 2px solid #fff;
-                box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
-                overflow: hidden;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                opacity: 1;
-                visibility: visible;
-                top: auto !important;
-                left: auto !important;
-                right: auto !important;
-                bottom: auto !important;
-                z-index: auto !important;
-                transform: none !important;
-            }
-            
-            #heygen-streaming-container {
-                width: 100% !important;
-                height: 100% !important;
-                border-radius: 14px;
-                overflow: hidden;
-                position: relative !important;
-            }
-            
-            #heygen-streaming-container iframe {
-                width: 100% !important;
-                height: 100% !important;
-                border: 0;
-                border-radius: 14px;
-                position: relative !important;
-            }`;
-
-            const iframe = document.createElement("iframe");
-            iframe.allowFullscreen = false;
-            iframe.title = "Streaming Embed";
-            iframe.role = "dialog";
-            iframe.allow = "microphone";
-            iframe.src = url;
-            
-            container.appendChild(iframe);
-            wrapDiv.appendChild(stylesheet);
-            wrapDiv.appendChild(container);
-            
-            // Append to the avatar container
-            avatarContainer.appendChild(wrapDiv);
-            
-            console.log('HeyGen avatar initialized successfully');
-            
-        }(globalThis);
-    }, 100);
-}
-
-// Initialize when DOM is ready or when this script loads
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeHeyGenAvatar);
-} else {
-    initializeHeyGenAvatar();
-}
-
-// Also try to initialize after a short delay to handle dynamic loading
-setTimeout(initializeHeyGenAvatar, 500);
+console.log('HeyGen avatar embed script removed to prevent floating overlay issues');
 </script>
 
 <script>
