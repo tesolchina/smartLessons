@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration - HKBU Language Centre</title>
+    <meta name="description" content="Register for supplementary language courses at Hong Kong Baptist University Language Centre. Online registration system for students and staff.">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="icon" type="image/png" href="https://lclep.hkbu.edu.hk/logolc.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logos -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="https://lclep.hkbu.edu.hk/logohkbu.png" alt="Hong Kong Baptist University" class="logo hkbu-logo">
+                <img src="https://lclep.hkbu.edu.hk/logolc.png" alt="Language Centre" class="logo lc-logo">
+            </div>
+            <h1>Online Registration for Supplementary Courses</h1>
+            <p class="subtitle">(Non Credit-Bearing)</p>
+        </header>
+
+        <!-- Main Login Section -->
+        <section class="login-section">
+            <div class="login-card">
+                <h2>🚀 Start Your Registration</h2>
+                <p>Access the course registration system using your HKBU credentials</p>
+                <a href="https://lclep.hkbu.edu.hk/sup" class="login-button">
+                    <span class="login-icon">🔐</span>
+                    <span class="login-text">LOGIN TO REGISTER</span>
+                </a>
+                <p class="login-note">Use your HKBU Single Sign-On (SSOID) to access the system</p>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="enhanced-paymentinfo.html">💳 Payment Info</a>
+                </li>
+                <li class="nav-item">
+                    <a href="enhanced-news.html">📢 Announcements</a>
+                </li>
+                <li class="nav-item">
+                    <a href="enhanced-userguide.html">📚 User Guide</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Course Information -->
+        <main class="main-content">
+            <div class="card">
+                <h3>📚 Available Course Categories</h3>
+                <div class="course-categories">
+                    <div class="course-category">
+                        <div class="category-icon">🇨🇳</div>
+                        <h4>Chinese Language</h4>
+                        <p>Comprehensive Chinese language courses for all proficiency levels</p>
+                        <div class="course-count">Multiple Levels</div>
+                    </div>
+                    <div class="course-category">
+                        <div class="category-icon">🇺🇸</div>
+                        <h4>English Enhancement</h4>
+                        <p>English language improvement courses and workshops</p>
+                        <div class="course-count">Various Topics</div>
+                    </div>
+                    <div class="course-category">
+                        <div class="category-icon">🗣️</div>
+                        <h4>Putonghua/Mandarin</h4>
+                        <p>Mandarin Chinese pronunciation and speaking courses</p>
+                        <div class="course-count">All Levels</div>
+                    </div>
+                    <div class="course-category">
+                        <div class="category-icon">🌍</div>
+                        <h4>Foreign Languages</h4>
+                        <p>French, German, Japanese, Korean, and Spanish courses</p>
+                        <div class="course-count">5 Languages</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eligibility Information -->
+            <div class="card">
+                <h3>✅ Course Eligibility</h3>
+                <div class="eligibility-info">
+                    <div class="eligibility-section">
+                        <h4>🎓 UGC-Funded Students</h4>
+                        <p>All courses are open to UGC-funded undergraduate and postgraduate degree students as stipulated by the UGC.</p>
+                        <div class="status-badge status-enrolled">Eligible for All Courses</div>
+                    </div>
+                    <div class="eligibility-section">
+                        <h4>🌍 Foreign Language Courses</h4>
+                        <p>Foreign language courses (French, German, Japanese, Korean and Spanish) can be taken by non UGC-funded undergraduate and postgraduate degree students.</p>
+                        <div class="status-badge status-waiting">Limited Eligibility</div>
+                    </div>
+                    <div class="eligibility-section">
+                        <h4>🚫 Exclusions</h4>
+                        <p>Students from the School of Continuing Education are excluded from foreign language course enrollment.</p>
+                        <div class="status-badge status-dropped">Not Eligible</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Start Guide -->
+            <div class="card">
+                <h3>🚀 How to Get Started</h3>
+                <div class="quick-steps">
+                    <div class="quick-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Login</h4>
+                            <p>Click the LOGIN button above and use your HKBU SSOID</p>
+                        </div>
+                    </div>
+                    <div class="quick-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Browse Courses</h4>
+                            <p>Explore available courses and select your preferences</p>
+                        </div>
+                    </div>
+                    <div class="quick-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Enroll</h4>
+                            <p>Complete your registration and follow payment instructions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Lookup Table -->
+            <div class="card">
+                <h3>📚 Available Courses - Semester 1, 2025-2026</h3>
+                <div class="course-lookup">
+                    <div class="search-controls">
+                        <input type="text" id="courseSearch" placeholder="Search courses by name or code..." class="search-input">
+                        <select id="categoryFilter" class="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="English">English</option>
+                            <option value="Chinese">Chinese/Cantonese</option>
+                            <option value="Putonghua">Putonghua/Mandarin</option>
+                            <option value="French">French</option>
+                            <option value="German">German</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Korean">Korean</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="Latin">Latin</option>
+                            <option value="Workshop">Workshop</option>
+                        </select>
+                    </div>
+                    <div class="course-table-container">
+                        <table class="course-table" id="courseTable">
+                            <thead>
+                                <tr>
+                                    <th>Course Code</th>
+                                    <th>Course Name</th>
+                                    <th>Category</th>
+                                    <th>Fee (HKD)</th>
+                                    <th>Duration</th>
+                                    <th>Start Date</th>
+                                    <th>Status</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- English Courses -->
+                                <tr data-category="English">
+                                    <td>SUPW1002</td>
+                                    <td>IELTS Writing Strategies Workshop</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPW1002')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPW1001</td>
+                                    <td>IELTS Speaking Practice Workshop</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPW1001')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPW0001</td>
+                                    <td>Free IELTS Workshop</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPW0001')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE2242</td>
+                                    <td>Intensive IELTS Prep Course (Speaking)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE2242')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE2243</td>
+                                    <td>Intensive IELTS Prep Course (Writing)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE2243')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE2240</td>
+                                    <td>IELTS Prep Course (Speaking & Listening)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE2240')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE2290</td>
+                                    <td>IELTS Prep Course (Reading & Writing)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE2290')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1640</td>
+                                    <td>Improving Your Academic Listening and Speaking</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1640')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE0050</td>
+                                    <td>Improving your Speaking</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE0050')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1670</td>
+                                    <td>Pronunciation in Practice (Intensive - Vowels and Consonants)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1670')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1770</td>
+                                    <td>Pronunciation in Practice (Intonation and Stress)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1770')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1900</td>
+                                    <td>Culture Exchange</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1900')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1890</td>
+                                    <td>Socialising in English - Module 1</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1890')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE2610</td>
+                                    <td>Intensive Prep Course for the Common Recruitment Examination of the HKSAR Government</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE2610')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1031</td>
+                                    <td>Learning Cantonese the Easy Way (Part 1: Eating Out & Shopping)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1031')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1032</td>
+                                    <td>Learning Cantonese the Easy Way (Part 2: Getting Around)</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1032')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPW0002</td>
+                                    <td>Talking About Table Manners</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPW0002')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPW0003</td>
+                                    <td>From Confused to Commentator: Crack the Code of American Football</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPW0003')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPW0020</td>
+                                    <td>English Board Game Night</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPW0020')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPW0021</td>
+                                    <td>Technical and Scientific Writing Workshop</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPW0021')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1890</td>
+                                    <td>Socialising in English - Module 2</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1890-M2')">View Details</button></td>
+                                </tr>
+                                <tr data-category="English">
+                                    <td>SUPE1890</td>
+                                    <td>Socialising in English - Module 3</td>
+                                    <td><span class="category-badge english">English</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPE1890-M3')">View Details</button></td>
+                                </tr>
+
+                                <!-- Chinese/Cantonese Courses -->
+                                <tr data-category="Chinese">
+                                    <td>SUPC1020</td>
+                                    <td>粵語發音改進班</td>
+                                    <td><span class="category-badge chinese">Chinese</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPC1020')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Chinese">
+                                    <td>SUPC1321</td>
+                                    <td>香港粵語說講入門</td>
+                                    <td><span class="category-badge chinese">Chinese</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPC1321')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Chinese">
+                                    <td>SUPC1310</td>
+                                    <td>粵語入門</td>
+                                    <td><span class="category-badge chinese">Chinese</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPC1310')">View Details</button></td>
+                                </tr>
+
+                                <!-- Putonghua/Mandarin Courses -->
+                                <tr data-category="Putonghua">
+                                    <td>PUTO1300</td>
+                                    <td>Mandarin for Beginners I (Part 1) (for non-Chinese speakers)</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO1300')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO2270</td>
+                                    <td>電腦普通話測試 (COPA) 預備班 Preparation Course for Computerized Oral Proficiency Assessment (為普通話畢業要求指定課程之一)</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO2270')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO0010</td>
+                                    <td>普通話面試技巧訓練工作坊Putonghua Interview Skills Training Workshop</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO0010')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO0012</td>
+                                    <td>「普通話能力檢定及豁免測試」(DET) 應試工作坊</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO0012')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO0014</td>
+                                    <td>「普通話水平測試」(PSC)應試工作坊 Preparation Workshop for Putonghua Shuiping Ceshi (PSC)</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO0014')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO0015</td>
+                                    <td>「普通話水平測試」(PSC)模擬測試 Mock Test for Putonghua Shuiping Ceshi (PSC)</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO0015')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO0016</td>
+                                    <td>「普通話水平測試」(PSC)應試工作坊_字詞正音&詞句判斷訓練 Preparation Workshop for Putonghua Shuiping Ceshi_Part I</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO0016')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO0017</td>
+                                    <td>「普通話水平測試」(PSC)應試工作坊_朗讀短文&命題說話訓練 Preparation Workshop for Putonghua Shuiping Ceshi_Part II</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO0017')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Putonghua">
+                                    <td>PUTO0018</td>
+                                    <td>書法（漢字與書法入門） Introductory to Chinese Characters and Calligraphy</td>
+                                    <td><span class="category-badge putonghua">Putonghua</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('PUTO0018')">View Details</button></td>
+                                </tr>
+
+                                <!-- French Courses -->
+                                <tr data-category="French">
+                                    <td>SUPF1030</td>
+                                    <td>French Conversation for Intermediate Levels (for French III/IV/V-level students)</td>
+                                    <td><span class="category-badge french">French</span></td>
+                                    <td>$0</td>
+                                    <td>6 hours</td>
+                                    <td>2025-09-26</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPF1030')">View Details</button></td>
+                                </tr>
+                                <tr data-category="French">
+                                    <td>SUPF1029</td>
+                                    <td>French Culture through Music, Cinema and Literature</td>
+                                    <td><span class="category-badge french">French</span></td>
+                                    <td>$0</td>
+                                    <td>6 hours</td>
+                                    <td>2025-10-22</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPF1029')">View Details</button></td>
+                                </tr>
+                                <tr data-category="French">
+                                    <td>SUPF1027</td>
+                                    <td>Survival French for Travellers</td>
+                                    <td><span class="category-badge french">French</span></td>
+                                    <td>$0</td>
+                                    <td>6 hours</td>
+                                    <td>2025-10-22</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPF1027')">View Details</button></td>
+                                </tr>
+                                <tr data-category="French">
+                                    <td>SUPF1019</td>
+                                    <td>Explore France and Paris</td>
+                                    <td><span class="category-badge french">French</span></td>
+                                    <td>$0</td>
+                                    <td>6 hours</td>
+                                    <td>2025-10-08</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPF1019')">View Details</button></td>
+                                </tr>
+                                <tr data-category="French">
+                                    <td>SUPF1017</td>
+                                    <td>Order Food and Drinks in French</td>
+                                    <td><span class="category-badge french">French</span></td>
+                                    <td>$0</td>
+                                    <td>6 hours</td>
+                                    <td>2025-10-08</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPF1017')">View Details</button></td>
+                                </tr>
+
+                                <!-- German Courses -->
+                                <tr data-category="German">
+                                    <td>SUPG1010</td>
+                                    <td>German I (Part 1)</td>
+                                    <td><span class="category-badge german">German</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPG1010')">View Details</button></td>
+                                </tr>
+
+                                <!-- Japanese Courses -->
+                                <tr data-category="Japanese">
+                                    <td>SUPJ0007</td>
+                                    <td>Japanese for Travelling</td>
+                                    <td><span class="category-badge japanese">Japanese</span></td>
+                                    <td>$0</td>
+                                    <td>8 hours</td>
+                                    <td>2025-10-15</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPJ0007')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Japanese">
+                                    <td>SUPJ0006</td>
+                                    <td>The On and Kun Readings of Kanji （漢字の音読みと訓読み）</td>
+                                    <td><span class="category-badge japanese">Japanese</span></td>
+                                    <td>$0</td>
+                                    <td>2 hours</td>
+                                    <td>2025-11-19</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPJ0006')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Japanese">
+                                    <td>SUPJ1010</td>
+                                    <td>Japanese I (Part 1)</td>
+                                    <td><span class="category-badge japanese">Japanese</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPJ1010')">View Details</button></td>
+                                </tr>
+
+                                <!-- Korean Courses -->
+                                <tr data-category="Korean">
+                                    <td>SUPK1010</td>
+                                    <td>Korean I (Part 1)</td>
+                                    <td><span class="category-badge korean">Korean</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPK1010')">View Details</button></td>
+                                </tr>
+
+                                <!-- Spanish Courses -->
+                                <tr data-category="Spanish">
+                                    <td>SUPS1021</td>
+                                    <td>Introduction to the Spanish Language</td>
+                                    <td><span class="category-badge spanish">Spanish</span></td>
+                                    <td>$0</td>
+                                    <td>6 hours</td>
+                                    <td>2025-10-02</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPS1021')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Spanish">
+                                    <td>SUPS1022</td>
+                                    <td>Learning Spanish through Travel and Photography</td>
+                                    <td><span class="category-badge spanish">Spanish</span></td>
+                                    <td>$200</td>
+                                    <td>10 hours</td>
+                                    <td>2025-10-06</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPS1022')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Spanish">
+                                    <td>SUPS1010</td>
+                                    <td>Spanish I (Part 1)</td>
+                                    <td><span class="category-badge spanish">Spanish</span></td>
+                                    <td>$400</td>
+                                    <td>20 hours</td>
+                                    <td>2025-09-29</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPS1010')">View Details</button></td>
+                                </tr>
+
+                                <!-- Latin Courses -->
+                                <tr data-category="Latin">
+                                    <td>SUPF1024</td>
+                                    <td>Salvēte! An Introduction to Latin</td>
+                                    <td><span class="category-badge latin">Latin</span></td>
+                                    <td>$400</td>
+                                    <td>20 hours</td>
+                                    <td>2025-09-29</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SUPF1024')">View Details</button></td>
+                                </tr>
+
+                                <!-- Workshop Courses -->
+                                <tr data-category="Workshop">
+                                    <td>SALW0170</td>
+                                    <td>Research Proposal Writing Workshop</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0170')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Workshop">
+                                    <td>SALW0038</td>
+                                    <td>TOEFL iBT Orientation Workshop (Listening & Speaking)</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0038')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Workshop">
+                                    <td>SALW0039</td>
+                                    <td>TOEFL iBT Orientation Workshop (Reading & Writing)</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0039')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Workshop">
+                                    <td>SALW0081</td>
+                                    <td>Effective English Learning by Leveraging Technology and AI Tools</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0081')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Workshop">
+                                    <td>SALW0150</td>
+                                    <td>Avoid Common Mistakes in English by Leveraging Technology and AI Tools</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0150')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Workshop">
+                                    <td>SALW0160</td>
+                                    <td>GRE Orientation Workshop</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0160')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Workshop">
+                                    <td>SALW0180</td>
+                                    <td>Jazz up your Cover Letter and CV/Resume Workshop!</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0180')">View Details</button></td>
+                                </tr>
+                                <tr data-category="Workshop">
+                                    <td>SALW0190</td>
+                                    <td>Tips for JRE: Use of English Feedback workshop</td>
+                                    <td><span class="category-badge workshop">Workshop</span></td>
+                                    <td>$0</td>
+                                    <td>2 Hours</td>
+                                    <td>2025-10-27</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td><button class="details-btn" onclick="showCourseDetails('SALW0190')">View Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="course-stats">
+                        <p>Total Courses Available: <span id="totalCourses">0</span></p>
+                        <p>Showing: <span id="showingCourses">0</span> courses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Information -->
+            <div class="card">
+                <h3>📋 Important Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>📅 Registration Period</h4>
+                        <p>Check announcements for current registration periods and deadlines</p>
+                        <a href="enhanced-news.html" class="info-link">View Announcements →</a>
+                    </div>
+                    <div class="info-item">
+                        <h4>💳 Payment Process</h4>
+                        <p>Learn about payment methods, bank details, and refund policies</p>
+                        <a href="enhanced-paymentinfo.html" class="info-link">Payment Info →</a>
+                    </div>
+                    <div class="info-item">
+                        <h4>📚 User Guide</h4>
+                        <p>Step-by-step instructions for enrollment and course management</p>
+                        <a href="enhanced-userguide.html" class="info-link">View Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Course Details Modal -->
+        <div id="courseDetailsModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalCourseName">Course Details</h2>
+                    <span class="close" onclick="closeCourseDetails()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="course-details-grid">
+                        <div class="detail-item">
+                            <label>Name:</label>
+                            <span id="detailName">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Code:</label>
+                            <span id="detailCode">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Semester:</label>
+                            <span id="detailSemester">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Status:</label>
+                            <span id="detailStatus">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Description:</label>
+                            <span id="detailDescription">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Fee (HKD):</label>
+                            <span id="detailFee">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Course open to UGC-funded students only:</label>
+                            <span id="detailUGCOnly">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Duration:</label>
+                            <span id="detailDuration">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Hours per week:</label>
+                            <span id="detailHoursPerWeek">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Start Date:</label>
+                            <span id="detailStartDate">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>End Date:</label>
+                            <span id="detailEndDate">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Remarks:</label>
+                            <span id="detailRemarks">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Enable:</label>
+                            <span id="detailEnable">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Admin Remarks:</label>
+                            <span id="detailAdminRemarks">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Created Timestamp:</label>
+                            <span id="detailCreatedTimestamp">-</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn secondary" onclick="closeCourseDetails()">Close</button>
+                    <button class="modal-btn primary" onclick="proceedToRegistration()">Proceed to Registration</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-section">
+            <div class="contact-card">
+                <h3>📞 Need Help?</h3>
+                <p>Our support team is here to assist you with any questions about course registration.</p>
+                <div class="contact-links">
+                    <a href="mailto:lcsup@hkbu.edu.hk" class="contact-link email">Email: lcsup@hkbu.edu.hk</a>
+                    <a href="tel:34115804" class="contact-link phone">Phone: 3411-5804</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Language Centre, Hong Kong Baptist University. All rights reserved.</p>
+            <p><a href="https://lclep.hkbu.edu.hk/privacy.html" target="_blank">Privacy Policy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click tracking for the main login button
+            const loginButton = document.querySelector('.login-button');
+            if (loginButton) {
+                loginButton.addEventListener('click', function() {
+                    console.log('Main login button clicked');
+                    // Add visual feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            }
+
+            // Add hover effects for course categories
+            const courseCategories = document.querySelectorAll('.course-category');
+            courseCategories.forEach(category => {
+                category.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                category.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add animation delays for staggered loading
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Initialize course lookup functionality
+            initializeCourseLookup();
+        });
+
+        // Course lookup functionality
+        function initializeCourseLookup() {
+            const searchInput = document.getElementById('courseSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const courseTable = document.getElementById('courseTable');
+            const totalCoursesSpan = document.getElementById('totalCourses');
+            const showingCoursesSpan = document.getElementById('showingCourses');
+
+            // Count total courses
+            const allRows = courseTable.querySelectorAll('tbody tr');
+            totalCoursesSpan.textContent = allRows.length;
+
+            // Search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', filterCourses);
+            }
+
+            // Category filter functionality
+            if (categoryFilter) {
+                categoryFilter.addEventListener('change', filterCourses);
+            }
+
+            // Initial count
+            updateCourseCount();
+
+            function filterCourses() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+                let visibleCount = 0;
+
+                allRows.forEach(row => {
+                    const courseCode = row.cells[0].textContent.toLowerCase();
+                    const courseName = row.cells[1].textContent.toLowerCase();
+                    const courseCategory = row.getAttribute('data-category');
+
+                    const matchesSearch = courseCode.includes(searchTerm) || courseName.includes(searchTerm);
+                    const matchesCategory = !selectedCategory || courseCategory === selectedCategory;
+
+                    if (matchesSearch && matchesCategory) {
+                        row.style.display = '';
+                        visibleCount++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                showingCoursesSpan.textContent = visibleCount;
+            }
+
+            function updateCourseCount() {
+                const visibleRows = courseTable.querySelectorAll('tbody tr:not([style*="display: none"])');
+                showingCoursesSpan.textContent = visibleRows.length;
+            }
+        }
+
+        // Course details functionality
+        function showCourseDetails(courseCode) {
+            const courseData = getCourseData(courseCode);
+            if (courseData) {
+                // Populate modal with course data
+                document.getElementById('modalCourseName').textContent = courseData.name;
+                document.getElementById('detailName').textContent = courseData.name;
+                document.getElementById('detailCode').textContent = courseData.code;
+                document.getElementById('detailSemester').textContent = courseData.semester;
+                document.getElementById('detailStatus').innerHTML = `<span class="status-badge status-available">${courseData.status}</span>`;
+                document.getElementById('detailDescription').textContent = courseData.description;
+                document.getElementById('detailFee').textContent = courseData.fee;
+                document.getElementById('detailUGCOnly').textContent = courseData.ugcOnly;
+                document.getElementById('detailDuration').textContent = courseData.duration;
+                document.getElementById('detailHoursPerWeek').textContent = courseData.hoursPerWeek;
+                document.getElementById('detailStartDate').textContent = courseData.startDate;
+                document.getElementById('detailEndDate').textContent = courseData.endDate;
+                document.getElementById('detailRemarks').textContent = courseData.remarks;
+                document.getElementById('detailEnable').textContent = courseData.enable;
+                document.getElementById('detailAdminRemarks').textContent = courseData.adminRemarks;
+                document.getElementById('detailCreatedTimestamp').textContent = courseData.createdTimestamp;
+                
+                // Show modal
+                document.getElementById('courseDetailsModal').style.display = 'block';
+            }
+        }
+
+        function closeCourseDetails() {
+            document.getElementById('courseDetailsModal').style.display = 'none';
+        }
+
+        function proceedToRegistration() {
+            // Close modal and redirect to registration
+            closeCourseDetails();
+            window.location.href = 'https://lclep.hkbu.edu.hk/sup';
+        }
+
+        // Course data - in a real implementation, this would come from a database
+        function getCourseData(courseCode) {
+            const courseDatabase = {
+                'SUPW1002': {
+                    name: 'IELTS Writing Strategies Workshop',
+                    code: 'SUPW1002',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This 2-hour workshop aims to provide some strategies for attempting the IELTS writing tasks. Useful test tips will be provided. This workshop is designed for students who need to have extra guidance for IELTS writing tasks.',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '2 Hours',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-27',
+                    endDate: '2025-11-24',
+                    remarks: '',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-29 16:53:40'
+                },
+                'SUPW1001': {
+                    name: 'IELTS Speaking Practice Workshop',
+                    code: 'SUPW1001',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This 2-hour workshop aims to provide intensive practice for the IELTS speaking test. Useful test tips and hands-on practice will be provided. This workshop is designed for students who need to have face-to-face practice for IELTS speaking.',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '2 Hours',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-13',
+                    endDate: '2025-11-10',
+                    remarks: '',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-29 16:47:31'
+                },
+                'SUPS1021': {
+                    name: 'Introduction to the Spanish Language',
+                    code: 'SUPS1021',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This course is a basic introduction to learning the Spanish language.',
+                    fee: '$0',
+                    ugcOnly: 'No',
+                    duration: '6 hours (2 hours x 3 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-02',
+                    endDate: '2025-11-13',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lc.hkbu.edu.hk/main/course-certificates/ for details. The completion of these courses will NOT be listed on undergraduate students\' academic transcripts.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 10:15:33'
+                },
+                'SUPS1022': {
+                    name: 'Learning Spanish through Travel and Photography',
+                    code: 'SUPS1022',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'Introduction and basic phrases for your perfect trip to Spain, accompanied by a beginner\'s photography guide, a list of the best places to photograph in Spain, tips to have a safe and joyful trip and the best times to go.',
+                    fee: '$200',
+                    ugcOnly: 'Yes',
+                    duration: '10 hours (2.5 hours x 4 weeks)',
+                    hoursPerWeek: '2.5',
+                    startDate: '2025-10-06',
+                    endDate: '2025-10-27',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lc.hkbu.edu.hk/main/course-certificates/ for details. UGC-funded students who have attended at least 85% of lessons are eligible to apply for a full refund of course fees within one month after the last lesson of the course. Please refer to https://lc.hkbu.edu.hk/main/refund-policy/ for details. The completion of these courses will NOT be listed on undergraduate students\' academic transcripts.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 10:11:26'
+                },
+                'SUPS1010': {
+                    name: 'Spanish I (Part 1)',
+                    code: 'SUPS1010',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This course introduces both the language and culture of the Hispanic world. Along with the basic grammar points and phonetic system, students will also be able to experience the beauty and passion of the language through history, arts and music. By the end of the course, students will be able to conduct simple dialogues in Spanish such as greeting, introducing oneself in the Spanish manner, giving and asking for information about family and friends, as well as describing people and places.',
+                    fee: '$400',
+                    ugcOnly: 'No',
+                    duration: '20 hours (2.5 hours x 8 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-09-29',
+                    endDate: '2025-11-17',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lc.hkbu.edu.hk/main/course-certificates/ for details. The completion of this course will NOT be listed on students\' academic transcripts. UGC-funded students who have attended at least 85% of lessons are eligible to apply for a full refund of course fees within one month after the last lesson of the course. Please refer to https://lc.hkbu.edu.hk/main/refund-policy/ for details.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 10:09:59'
+                },
+                'SUPF1030': {
+                    name: 'French Conversation for Intermediate Levels (for French III/IV/V-level students)',
+                    code: 'SUPF1030',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: '',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '6 hours (1 hour x 6 weeks)',
+                    hoursPerWeek: '1',
+                    startDate: '2025-09-26',
+                    endDate: '2025-10-31',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lcsystem.hkbu.edu.hk/newmain/course-certificates/ for details. The completion of these courses will NOT be listed on undergraduate students\' academic transcripts.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 10:01:15'
+                },
+                'SUPF1029': {
+                    name: 'French Culture through Music, Cinema and Literature',
+                    code: 'SUPF1029',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: '',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '6 hours (2 hours x 3 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-22',
+                    endDate: '2025-11-12',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lcsystem.hkbu.edu.hk/newmain/course-certificates/ for details. The completion of these courses will NOT be listed on undergraduate students\' academic transcripts.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 09:58:21'
+                },
+                'SUPF1027': {
+                    name: 'Survival French for Travellers',
+                    code: 'SUPF1027',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: '',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '6 hours (2 hours x 3 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-22',
+                    endDate: '2025-11-12',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lcsystem.hkbu.edu.hk/newmain/course-certificates/ for details. The completion of these courses will NOT be listed on undergraduate students\' academic transcripts.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 09:56:26'
+                },
+                'SUPF1019': {
+                    name: 'Explore France and Paris',
+                    code: 'SUPF1019',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This introductory course is designed for beginners in French. Students will get acquainted with simple expressions to get ready for a first trip to France. They will learn how to get around while exploring Paris and the French regions. By the end of this course, they will be able to find their way in the city and know how to name various places.',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '6 hours (2 hours x 3 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-08',
+                    endDate: '2025-10-22',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lcsystem.hkbu.edu.hk/newmain/course-certificates/ for details. The completion of these courses will NOT be listed on undergraduate students\' academic transcripts.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 09:52:33'
+                },
+                'SUPF1017': {
+                    name: 'Order Food and Drinks in French',
+                    code: 'SUPF1017',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This introductory course is designed for student with a beginner level in French - who have already completed the equivalent of 6 hours of French studies. Students will review the basics of greetings. They will learn how to order drinks and food in various settings (at the bakery, in a café, in a restaurant). This course will also introduce them to French food culture.',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '6 hours (2 hours x 3 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-08',
+                    endDate: '2025-10-22',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lcsystem.hkbu.edu.hk/newmain/course-certificates/ for details. The completion of these courses will NOT be listed on undergraduate students\' academic transcripts.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 09:51:15'
+                },
+                'SUPF1024': {
+                    name: 'Salvēte! An Introduction to Latin',
+                    code: 'SUPF1024',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This course gives students an introduction to the Latin language and the Roman world. Knowledge of Latin helps develop an understanding of both English and Romance languages (French, Spanish, Italian etc.) allowing students to deepen their vocabulary as well as insight into the origins of common phrases used today. Students also learn about Roman history and culture which form the foundations of modern Western ideas.',
+                    fee: '$400',
+                    ugcOnly: 'Yes',
+                    duration: '20 hours (2 hours x 10 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-09-29',
+                    endDate: '2025-12-01',
+                    remarks: 'Students who have attended at least 75% of lessons in the course may apply for a Certificate of Attendance within one month after the last lesson of the course. Please refer to https://lc.hkbu.edu.hk/main/course-certificates/ for details. The completion of this course will NOT be listed on students\' academic transcripts. UGC-funded students who have attended at least 85% of lessons are eligible to apply for a full refund of course fees within one month after the last lesson of the course. Please refer to https://lc.hkbu.edu.hk/main/refund-policy/ for details.',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 09:49:01'
+                },
+                'SUPJ0007': {
+                    name: 'Japanese for Travelling',
+                    code: 'SUPJ0007',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'This course introduces essential vocabulary, sentence structures, and conversations relevant to travelling in Japan. As Romanization system is used as the medium of instruction, no prior knowledge of Japanese syllabaries (kana) is necessary. By the end of the course, students should be able to: i). greet someone and self-introduce oneself ii). conduct simple conversations during trips iii). request someone for assistance in case of emergency',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '8 hours (2 hours x 4 weeks)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-10-15',
+                    endDate: '2025-11-12',
+                    remarks: '',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 09:46:54'
+                },
+                'SUPJ0006': {
+                    name: 'The On and Kun Readings of Kanji （漢字の音読みと訓読み）',
+                    code: 'SUPJ0006',
+                    semester: 'Semester 1, 2025-2026',
+                    status: 'Available',
+                    description: 'In this workshop, participants will learn the special readings of some Japanese words, and the different readings of different kanji. The workshop aims at improving participants\' reading ability of the vocabulary for better communication.',
+                    fee: '$0',
+                    ugcOnly: 'Yes',
+                    duration: '2 hours (2 hours x 1 week)',
+                    hoursPerWeek: '2',
+                    startDate: '2025-11-19',
+                    endDate: '2025-11-19',
+                    remarks: '',
+                    enable: 'Yes',
+                    adminRemarks: 'N.A.',
+                    createdTimestamp: '2025-09-11 09:45:21'
+                }
+                // Add more courses as needed
+            };
+            
+            return courseDatabase[courseCode] || {
+                name: 'Course Not Found',
+                code: courseCode,
+                semester: 'N/A',
+                status: 'Unknown',
+                description: 'Course details not available.',
+                fee: 'N/A',
+                ugcOnly: 'N/A',
+                duration: 'N/A',
+                hoursPerWeek: 'N/A',
+                startDate: 'N/A',
+                endDate: 'N/A',
+                remarks: 'N/A',
+                enable: 'N/A',
+                adminRemarks: 'N/A',
+                createdTimestamp: 'N/A'
+            };
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('courseDetailsModal');
+            if (event.target === modal) {
+                closeCourseDetails();
+            }
+        }
+    </script>
+
+    <style>
+        /* Additional styles for main registration page */
+        .logo-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            margin: 0 10px;
+        }
+
+        .hkbu-logo {
+            max-height: 60px;
+        }
+
+        .lc-logo {
+            max-height: 60px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .login-section {
+            margin-bottom: 30px;
+        }
+
+        .login-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .login-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .login-card p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .login-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: #667eea;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+            background: #f8f9fa;
+        }
+
+        .login-icon {
+            font-size: 1.4rem;
+        }
+
+        .login-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .course-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .course-category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .course-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .course-category p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .course-count {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .eligibility-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .eligibility-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .eligibility-section h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .eligibility-section p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .quick-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .quick-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .step-content p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .info-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #27ae60;
+        }
+
+        .info-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-item p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .info-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .info-link:hover {
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            margin: 30px 0;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        /* Course Lookup Table Styles */
+        .course-lookup {
+            margin: 20px 0;
+        }
+
+        .search-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .category-filter {
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 25px;
+            font-size: 1rem;
+            background: white;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .category-filter:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .course-table-container {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.9rem;
+        }
+
+        .course-table th {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .course-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: middle;
+        }
+
+        .course-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .course-table tr:nth-child(even) {
+            background: #fafbfc;
+        }
+
+        .course-table tr:nth-child(even):hover {
+            background: #f1f3f4;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .category-badge.english { background: #e3f2fd; color: #1976d2; }
+        .category-badge.chinese { background: #f3e5f5; color: #7b1fa2; }
+        .category-badge.putonghua { background: #e8f5e8; color: #388e3c; }
+        .category-badge.french { background: #fff3e0; color: #f57c00; }
+        .category-badge.german { background: #fce4ec; color: #c2185b; }
+        .category-badge.japanese { background: #e0f2f1; color: #00796b; }
+        .category-badge.korean { background: #f1f8e9; color: #689f38; }
+        .category-badge.spanish { background: #fff8e1; color: #f9a825; }
+        .category-badge.latin { background: #e8eaf6; color: #3f51b5; }
+        .category-badge.workshop { background: #fafafa; color: #424242; }
+
+        .details-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        .details-btn:hover {
+            background: #2980b9;
+            transform: translateY(-1px);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status-available { background: #d4edda; color: #155724; }
+        .status-waiting { background: #fff3cd; color: #856404; }
+        .status-confirmed { background: #d1ecf1; color: #0c5460; }
+        .status-dropped { background: #f8d7da; color: #721c24; }
+        .status-expired { background: #f8d7da; color: #721c24; }
+
+        .course-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .course-stats span {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Course Selection Notification */
+        .course-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            max-width: 350px;
+        }
+
+        .course-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 20px;
+        }
+
+        .notification-icon {
+            font-size: 1.2rem;
+        }
+
+        .notification-text {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .course-details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .detail-item label {
+            font-weight: 600;
+            color: #2c3e50;
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+
+        .detail-item span {
+            color: #555;
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .modal-footer {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-radius: 0 0 15px 15px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .modal-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .modal-btn.primary {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .modal-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .modal-btn.secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .modal-btn.secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                height: 50px;
+                margin: 0 5px;
+            }
+
+            .hkbu-logo,
+            .lc-logo {
+                max-height: 50px;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+            }
+
+            .login-card h2 {
+                font-size: 1.8rem;
+            }
+
+            .login-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .quick-steps {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .quick-step {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .course-categories,
+            .eligibility-info,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-controls {
+                flex-direction: column;
+            }
+
+            .search-input,
+            .category-filter {
+                min-width: 100%;
+            }
+
+            .course-table {
+                font-size: 0.8rem;
+            }
+
+            .course-table th,
+            .course-table td {
+                padding: 8px 5px;
+            }
+
+            .course-stats {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+
+            .course-notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+                transform: translateY(-100px);
+            }
+
+            .course-notification.show {
+                transform: translateY(0);
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+            }
+
+            .modal-header {
+                padding: 15px 20px;
+            }
+
+            .modal-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .detail-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .detail-item label {
+                min-width: auto;
+                font-size: 0.9rem;
+            }
+
+            .modal-footer {
+                padding: 15px 20px;
+                flex-direction: column;
+            }
+
+            .modal-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</body>
+</html>
