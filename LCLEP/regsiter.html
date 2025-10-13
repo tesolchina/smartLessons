@@ -138,16 +138,10 @@
                         <input type="text" id="courseSearch" placeholder="Search courses by name or code..." class="search-input">
                         <select id="categoryFilter" class="category-filter">
                             <option value="">All Categories</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="Putonghua">Putonghua</option>
                             <option value="English">English</option>
-                            <option value="Chinese">Chinese/Cantonese</option>
-                            <option value="Putonghua">Putonghua/Mandarin</option>
-                            <option value="French">French</option>
-                            <option value="German">German</option>
-                            <option value="Japanese">Japanese</option>
-                            <option value="Korean">Korean</option>
-                            <option value="Spanish">Spanish</option>
-                            <option value="Latin">Latin</option>
-                            <option value="Workshop">Workshop</option>
+                            <option value="Foreign">Foreign Languages</option>
                         </select>
                     </div>
                     <div class="course-table-container">
@@ -946,7 +940,17 @@
                     const courseCategory = row.getAttribute('data-category');
 
                     const matchesSearch = courseCode.includes(searchTerm) || courseName.includes(searchTerm);
-                    const matchesCategory = !selectedCategory || courseCategory === selectedCategory;
+                    
+                    // Handle Foreign Languages category
+                    let matchesCategory = false;
+                    if (!selectedCategory) {
+                        matchesCategory = true;
+                    } else if (selectedCategory === 'Foreign') {
+                        // Foreign Languages includes: French, German, Japanese, Korean, Spanish, Latin
+                        matchesCategory = ['French', 'German', 'Japanese', 'Korean', 'Spanish', 'Latin'].includes(courseCategory);
+                    } else {
+                        matchesCategory = courseCategory === selectedCategory;
+                    }
 
                     if (matchesSearch && matchesCategory) {
                         row.style.display = '';
