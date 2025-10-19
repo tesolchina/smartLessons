@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .quadrant {
+      fill: #FFF5E6;
+      stroke: #FFA500;
+      stroke-width: 2px;
+      rx: 15px;
+      ry: 15px;
+    }
+    .title {
+      font-weight: bold;
+      fill: #FF7F50;
+      font-size: 16px;
+    }
+    .item {
+      fill: black;
+      font-size: 14px;
+    }
+    .arrow {
+      fill: none;
+      stroke: #FFA500;
+      stroke-width: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div id="learning-cycle"></div>
+  
+  <script>
+    // Create SVG
+    const width = 700;
+    const height = 700;
+    const svg = d3.select("#learning-cycle")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", `translate(${width/2}, ${height/2})`);
+    
+    // Define quadrants
+    const quadrants = [
+      {
+        title: "Active Experimentation",
+        items: ["Point-of-view Writing", "Advocacy Speech", "Opportunities for Practice"],
+        x: -250, y: -250
+      },
+      {
+        title: "Concrete Experience",
+        items: ["Listening and Reading", "Discussion/Feedback", "Real-world Experiences"],
+        x: 50, y: -250
+      },
+      {
+        title: "Reflective Observation",
+        items: ["AI-Assisted Review", "Reflection Activities", "Critical Dialogues"],
+        x: 50, y: 50
+      },
+      {
+        title: "Abstract Conceptualisation",
+        items: ["Understanding", "Infographics", "Multimodal presentation"],
+        x: -250, y: 50
+      }
+    ];
+    
+    // Draw quadrants
+    svg.selectAll(".quadrant")
+      .data(quadrants)
+      .enter()
+      .append("rect")
+      .attr("class", "quadrant")
+      .attr("x", d => d.x)
+      .attr("y", d => d.y)
+      .attr("width", 200)
+      .attr("height", 200);
+    
+    // Add titles
+    svg.selectAll(".title")
+      .data(quadrants)
+      .enter()
+      .append("text")
+      .attr("class", "title")
+      .attr("x", d => d.x + 100)
+      .attr("y", d => d.y + 30)
+      .attr("text-anchor", "middle")
+      .text(d => d.title);
+    
+    // Add items
+    quadrants.forEach((q, i) => {
+      svg.selectAll(`.item-${i}`)
+        .data(q.items)
+        .enter()
+        .append("text")
+        .attr("class", "item")
+        .attr("x", q.x + 20)
+        .attr("y", (d, j) => q.y + 60 + j * 30)
+        .text((d, j) => `• ${d}`);
+    });
+    
+    // Define arrow paths
+    const arrowPaths = [
+      "M -50 -150 A 100 100 0 0 1 50 -150", // Top
+      "M 150 -50 A 100 100 0 0 1 150 50",   // Right
+      "M 50 150 A 100 100 0 0 1 -50 150",   // Bottom
+      "M -150 50 A 100 100 0 0 1 -150 -50"  // Left
+    ];
+    
+    // Add arrow marker
+    svg.append("defs").append("marker")
+      .attr("id", "arrowhead")
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 8)
+      .attr("refY", 0)
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .attr("orient", "auto")
+      .append("path")
+      .attr("d", "M0,-5L10,0L0,5")
+      .attr("fill", "#FFA500");
+    
+    // Draw arrows
+    svg.selectAll(".arrow")
+      .data(arrowPaths)
+      .enter()
+      .append("path")
+      .attr("class", "arrow")
+      .attr("d", d => d)
+      .attr("marker-end", "url(#arrowhead)");
+  </script>
+</body>
+</html>

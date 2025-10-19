@@ -1,0 +1,119 @@
+:root {
+    --primary-color: #3B82F6;
+    --secondary-color: #8B5CF6;
+    --accent-color: #F59E0B;
+    --success-color: #10B981;
+    --warning-color: #F59E0B;
+    --danger-color: #EF4444;
+    --text-dark: #1F2937;
+    --text-medium: #4B5563;
+    --text-light: #9CA3AF;
+    --bg-light: #F3F4F6;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F9FAFB;
+    color: var(--text-dark);
+}
+
+.header-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem 0;
+}
+
+.assessment-circle {
+    transition: all 0.3s ease;
+}
+
+.assessment-circle:hover {
+    transform: scale(1.05);
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.details-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.details-panel.open {
+    max-height: 500px;
+}
+
+.assessment-item {
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.assessment-item:nth-child(even) {
+    border-left-color: var(--secondary-color);
+}
+
+.assessment-item:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tag-speaking {
+    background-color: #DBEAFE;
+    color: #2563EB;
+}
+
+.tag-writing {
+    background-color: #DCFCE7;
+    color: #16A34A;
+}
+
+.tag-reading {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.tag-listening {
+    background-color: #E0E7FF;
+    color: #4F46E5;
+}
+
+.tag-critical {
+    background-color: #F3E8FF;
+    color: #9333EA;
+}
+
+.tag-reflection {
+    background-color: #FEF3C7;
+    color: #D97706;
+}
+
+.summary-section {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.key-date-item {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* For iframe compatibility */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}

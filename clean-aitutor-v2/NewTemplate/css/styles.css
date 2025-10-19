@@ -1,0 +1,50 @@
+/* 
+  Styles for the learning module content (interactive.html).
+*/
+
+.slide-container {
+    transition: transform 0.3s ease-in-out;
+}
+
+.chat-message {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.annotation-highlight {
+    background: linear-gradient(120deg, rgba(93, 92, 222, 0.125) 0%, rgba(93, 92, 222, 0.125) 100%);
+    border-left: 3px solid #5D5CDE;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border-radius: 4px;
+}
+
+.interactive-circle {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.interactive-circle:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.progress-bar {
+    transition: width 0.5s ease;
+}
+
+textarea:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    --tw-ring-color: #5D5CDE;
+    box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+}

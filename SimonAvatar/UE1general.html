@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat with Digital Simon</title>
+  <style>
+    :root {
+      --container-max: 1200px;
+      --avatar-max: 1100px;
+      --avatar-h: 420px;      /* normal height */
+      --avatar-h-lg: 500px;   /* very wide screens */
+      --avatar-h-sm: 260px;   /* mobile */
+    }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #f6f7fb;
+      margin: 0;
+      padding: 24px;
+    }
+    .wrap {
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: clamp(28px, 4vw, 48px);
+      margin: 16px 0 20px;
+    }
+    .panel {
+      background: #fff;
+      border: 1px solid #e7e9f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.04);
+      padding: clamp(16px, 3vw, 28px);
+      margin-bottom: 18px;
+    }
+    .avatar-section {
+      background: #fbfcff;
+    }
+    .avatar-title {
+      margin: 0 0 14px;
+      font-size: clamp(22px, 3.2vw, 36px);
+    }
+    .avatar-frame {
+      width: 100%;
+      max-width: var(--avatar-max);
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, .08);
+      height: var(--avatar-h);
+      background: #000;
+    }
+    .avatar-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    @media (min-width: 1400px) {
+      .avatar-frame { height: var(--avatar-h-lg); }
+    }
+    @media (max-width: 640px) {
+      .avatar-frame { height: var(--avatar-h-sm); }
+    }
+    .credit {
+      color: #57607a;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>💬 Chat with Digital Simon</h1>
+
+    <div class="panel">
+      <h2 style="margin-top:0">📝 Before you start</h2>
+      <ul>
+        <li>Open <a href="https://otter.ai" target="_blank" rel="noopener">Otter.ai</a> and start a recording.</li>
+        <li>Use this space to discuss academic English: writing, grammar, tone, and referencing.</li>
+        <li>Speak clearly; your transcript will help with review and reflection.</li>
+      </ul>
+    </div>
+
+    <div class="panel avatar-section">
+      <h2 class="avatar-title">🗣️ Talk to Digital Simon</h2>
+      <div class="avatar-frame">
+        <iframe
+          title="Digital Simon"
+          allow="microphone"
+          src="https://labs.heygen.com/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0A%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0A%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0A%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjMz%0A%0ANWY0ZTZiMTkwMjQ2Y2NiMmIwYzZmYjUxNzI4NTE1IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0A%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1">
+        </iframe>
+      </div>
+      <p class="credit">
+        Credit: Dr Simon Wang, Lecturer and Innovation Officer, The Language Centre, Hong Kong Baptist University
+        (<a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a>)
+      </p>
+    </div>
+  </div>
+</body>
+</html>

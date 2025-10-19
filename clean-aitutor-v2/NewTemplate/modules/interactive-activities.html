@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Research & Ph.D. Studies - UCLC 1008</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Paths go up one level to find the css folder -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <script>
+        // Dark mode script
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            document.documentElement.classList.toggle('dark', event.matches);
+        });
+    </script>
+
+    <div class="min-h-screen">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-primary to-primary-light text-white p-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-2">Understanding Research & Ph.D. Studies</h1>
+                        <p class="text-primary-light">UCLC 1008 University English I • Module 4: Research Foundations</p>
+                    </div>
+                    <a href="https://smartlessons.hkbu.tech/UCLC1008/index.html" 
+                       class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-colors flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Back to Course
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Learning Progress</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400" id="progressText">0% Complete</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div class="progress-bar bg-primary h-2 rounded-full" style="width: 0%" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="max-w-6xl mx-auto p-6">
+            <!-- 
+              THIS IS THE KEY FIX: 
+              These are the empty containers that main.js will fill with content.
+            -->
+            <div id="overview-container"></div>
+            <div id="learning-content-container"></div>
+            <div id="interactive-activities-container"></div>
+            <div id="reflection-tasks-container"></div>
+            <div id="learning-report-container"></div>
+            <div id="ai-assistant-container"></div>
+            <div id="moodle-discussion-container"></div>
+        </main>
+    </div>
+
+    <!-- Paths go up one level to find the js folder -->
+    <script src="../js/state.js"></script>
+    <script src="../js/slides.js" defer></script>
+    <script src="../js/activities.js" defer></script>
+    <script src="../js/reports.js" defer></script>
+    <script src="../js/ai-assistant.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

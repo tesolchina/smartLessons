@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKBU AI Tutor - Demo Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .embed-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 HKBU AI Learning Assistant</h1>
+        <p>Interactive chatbot for personalized learning support</p>
+    </div>
+
+    <div class="content">
+        <h2>Welcome to the HKBU AI Tutor Demo</h2>
+        <p>This page demonstrates how to embed the HKBU chatbot into any website. The chatbot provides personalized learning assistance powered by AI.</p>
+
+        <h3>✨ Features</h3>
+        <div class="features">
+            <div class="feature">
+                <h4>📚 Multiple AI Models</h4>
+                <p>Choose from GPT-4.1, GPT-3.5 Turbo, and more</p>
+            </div>
+            <div class="feature">
+                <h4>💬 Custom System Prompts</h4>
+                <p>Tailored responses for different learning scenarios</p>
+            </div>
+            <div class="feature">
+                <h4>📊 Learning Reports</h4>
+                <p>Generate PDF/Markdown summaries of chat sessions</p>
+            </div>
+            <div class="feature">
+                <h4>🔒 Secure API</h4>
+                <p>Uses HKBU GenAI platform with secure authentication</p>
+            </div>
+        </div>
+
+        <h3>🚀 Try the Chatbot</h3>
+        <p>The embedded chatbot below is fully functional. You'll need an API key from the <a href="https://genai.hkbu.edu.hk" target="_blank">HKBU GenAI Platform</a> to start chatting.</p>
+    </div>
+
+    <div class="embed-container">
+        <iframe 
+            src="https://aitutor.hkbu.tech/embed/basicBot" 
+            width="650" 
+            height="750"
+            style="border: none; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+        </iframe>
+    </div>
+
+    <div class="content">
+        <h3>💻 How to Embed</h3>
+        <p>To embed this chatbot in your own website, simply add the following HTML code:</p>
+        
+        <div class="code-block">
+            <pre>&lt;iframe 
+    src="https://aitutor.hkbu.tech/embed/basicBot" 
+    width="650" 
+    height="750"
+    style="border: none; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);"&gt;
+&lt;/iframe&gt;</pre>
+        </div>
+
+        <h3>🎨 Customization Options</h3>
+        <ul>
+            <li>Adjust <code>width</code> and <code>height</code> to fit your layout</li>
+            <li>Modify the <code>style</code> attribute for custom appearance</li>
+            <li>Use <code>width="100%"</code> for responsive design</li>
+        </ul>
+
+        <h3>📝 Available Endpoints</h3>
+        <ul>
+            <li><code>/basicBot</code> - Full chatbot interface</li>
+            <li><code>/embed/basicBot</code> - Embeddable version</li>
+            <li><code>/api/chat</code> - Direct API access</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Created by Dr. Simon Wang, Innovation Officer<br>
+        Language Centre, Hong Kong Baptist University<br>
+        <a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a></p>
+    </div>
+</body>
+</html>

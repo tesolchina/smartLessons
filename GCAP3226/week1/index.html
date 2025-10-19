@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP3226 Week 1 - Course Introduction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <!-- Notification Container -->
+    <div id="notification" class="notification bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
+        <span id="notificationText"></span>
+    </div>
+
+    <div class="min-h-screen">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-primary to-primary-light text-white p-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-2">📊 GCAP3226: Empowering Citizens Through Data</h1>
+                        <p class="text-primary-light">Participatory Policy Analysis for Hong Kong</p>
+                        <div class="mt-2">
+                            <div class="bg-white bg-opacity-20 rounded-full h-2 w-64">
+                                <div id="overallProgressBar" class="progress-bar w-0"></div>
+                            </div>
+                            <p class="text-sm mt-1">Overall Progress: <span id="overallProgressText">0%</span></p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <!-- Dark Mode Toggle -->
+                        <button onclick="toggleDarkMode()" 
+                                class="bg-white bg-opacity-20 hover:bg-opacity-30 p-2 rounded-lg transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path class="dark:hidden" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                                <path class="hidden dark:block" d="M10 2L13 7l5-1-3 5 3 5-5-1-3 5-3-5-5 1 3-5-3-5 5 1z"/>
+                            </svg>
+                        </button>
+                        
+                        <a href="https://smartlessons.hkbu.tech/GCAP3226/intro.html" 
+                           class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-colors flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                            </svg>
+                            Back to Course Hub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-4xl mx-auto p-6">
+            <!-- Course Overview Section -->
+            <div class="mb-8">
+                <div class="bg-gradient-to-br from-primary/5 to-primary-light/5 dark:from-primary/10 dark:to-primary-light/10 rounded-xl p-8 border border-primary/20">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary to-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl">📊</span>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2" id="courseName">GCAP3226: Empowering Citizens Through Data</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4" id="courseCode">Participatory Policy Analysis for Hong Kong (3,3,0)</p>
+                        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                            Week 1 - Course Introduction
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Course Information -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-bold text-primary mb-4">🏛️ Course Information</h3>
+                            <div class="space-y-3 text-gray-700 dark:text-gray-300">
+                                <div><strong>Week:</strong> <span id="weekInfo">Week 1 - Course Introduction & Data Governance Fundamentals</span></div>
+                                <div><strong>Duration:</strong> <span id="duration">2.5 hours (9:30-12:20)</span></div>
+                                <div><strong>Format:</strong> Interactive Learning</div>
+                                <div><strong>Department:</strong> <span id="prerequisites">Mathematics, Faculty of Science, HKBU</span></div>
+                                <div><strong>Prerequisites:</strong> Nil</div>
+                                <div><strong>Last Updated:</strong> <span id="lastUpdated">August 2025</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-bold text-primary mb-4">🎯 Week 1 Learning Objectives</h3>
+                            <ul id="learningObjectives" class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <li>• Understand the course structure and assessment requirements</li>
+                                <li>• Explore the role of data in Hong Kong public policy making</li>
+                                <li>• Examine data governance practices and transparency issues</li>
+                                <li>• Identify opportunities for mathematical modeling in policy analysis</li>
+                                <li>• Connect course content to UN SDGs, particularly SDG 11</li>
+                                <li>• Prepare for AI-assisted research methodologies</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Content Overview -->
+                    <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">📖 Week 1 Content Overview</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" id="contentDescription">
+                            This introductory module establishes the foundation for data-informed policy analysis in Hong Kong. 
+                            You'll explore real-world examples of how data governance impacts policy effectiveness, understand the 
+                            course's interdisciplinary approach combining mathematics and public policy, and examine case studies 
+                            that demonstrate the power of quantitative analysis in addressing social issues aligned with UN Sustainable Development Goals.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="sectionIcons">
+                            <div class="text-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                                <div class="text-2xl mb-2">📚</div>
+                                <div class="text-sm font-medium text-blue-800 dark:text-blue-200">Interactive Lecture</div>
+                            </div>
+                            <div class="text-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                <div class="text-2xl mb-2">💬</div>
+                                <div class="text-sm font-medium text-green-800 dark:text-green-200">Case Study Discussion</div>
+                            </div>
+                            <div class="text-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                <div class="text-2xl mb-2">🎯</div>
+                                <div class="text-sm font-medium text-purple-800 dark:text-purple-200">Reflect & Assess</div>
+                            </div>
+                            <div class="text-center p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
+                                <div class="text-2xl mb-2">📊</div>
+                                <div class="text-sm font-medium text-orange-800 dark:text-orange-200">Progress Tracking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Section -->
+            <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">🧭 Week 1 Learning Activities</h3>
+                    
+                                       <div class="flex gap-3">
+                        <button onclick="resetContentArea()" 
+                                class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5"></path></svg>
+                            Reset View
+                        </button>
+
+                        <button onclick="saveProgress()" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                            <!-- ... existing SVG ... -->
+                            Save Progress
+                        </button>
+                        
+                        <button onclick="generateReport()" 
+                                class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                            <!-- ... existing SVG ... -->
+                            Generate Report
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <button onclick="loadContent('interactiveLecture.html')" 
+                            data-section="lecture"
+                            class="section-btn section-transition bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 p-6 rounded-lg text-center transition-all border-2 border-transparent hover:border-blue-200 dark:hover:border-blue-700 hover:scale-105">
+                        <div class="text-2xl mb-2">📚</div>
+                        <div class="text-lg font-medium text-blue-800 dark:text-blue-200">Interactive Lecture</div>
+                        <div class="text-sm text-blue-600 dark:text-blue-300 mt-2">Course introduction & data governance concepts</div>
+                        <div class="text-sm text-blue-600 dark:text-blue-300 mt-1">
+                            <span class="completion-status">⭕ Not Started</span>
+                        </div>
+                        <div class="mt-2 bg-blue-200 dark:bg-blue-800 rounded-full h-2">
+                            <div class="section-progress bg-blue-600 dark:bg-blue-400 h-2 rounded-full w-0 transition-all duration-300"></div>
+                        </div>
+                    </button>
+
+                    <button onclick="loadContent('PracticeDiscussion.html')" 
+                            data-section="practice"
+                            class="section-btn section-transition bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 p-6 rounded-lg text-center transition-all border-2 border-transparent hover:border-green-200 dark:hover:border-green-700 hover:scale-105">
+                        <div class="text-2xl mb-2">💬</div>
+                        <div class="text-lg font-medium text-green-800 dark:text-green-200">Case Study Discussion</div>
+                        <div class="text-sm text-green-600 dark:text-green-300 mt-2">Analyze HK data governance & math modeling</div>
+                        <div class="text-sm text-green-600 dark:text-green-300 mt-1">
+                            <span class="completion-status">⭕ Not Started</span>
+                        </div>
+                        <div class="mt-2 bg-green-200 dark:bg-green-800 rounded-full h-2">
+                            <div class="section-progress bg-green-600 dark:bg-green-400 h-2 rounded-full w-0 transition-all duration-300"></div>
+                        </div>
+                    </button>
+
+                    <button onclick="loadContent('ReflectAssess.html')" 
+                            data-section="reflect"
+                            class="section-btn section-transition bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 p-6 rounded-lg text-center transition-all border-2 border-transparent hover:border-purple-200 dark:hover:border-purple-700 hover:scale-105">
+                        <div class="text-2xl mb-2">🎯</div>
+                        <div class="text-lg font-medium text-purple-800 dark:text-purple-200">Reflect & Assess</div>
+                        <div class="text-sm text-purple-600 dark:text-purple-300 mt-2">Self-assessment on course expectations</div>
+                        <div class="text-sm text-purple-600 dark:text-purple-300 mt-1">
+                            <span class="completion-status">⭕ Not Started</span>
+                        </div>
+                        <div class="mt-2 bg-purple-200 dark:bg-purple-800 rounded-full h-2">
+                            <div class="section-progress bg-purple-600 dark:bg-purple-400 h-2 rounded-full w-0 transition-all duration-300"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Display Area -->
+            <div class="mt-8">
+                <div id="contentArea" class="bg-white dark:bg-gray-800 rounded-lg p-6 min-h-96 shadow-sm">
+                    <div class="text-center text-gray-500 dark:text-gray-400 py-12">
+                        <div class="text-6xl mb-4">🎓</div>
+                        <h3 class="text-xl font-semibold mb-2">Welcome to GCAP3226 Week 1</h3>
+                        <p class="mb-4">Select a learning activity above to begin exploring data-driven policy analysis in Hong Kong.</p>
+                        <div class="text-sm text-gray-400 dark:text-gray-500">
+                            Start with the Interactive Lecture to understand course fundamentals and data governance concepts, 
+                            then analyze real Hong Kong case studies and reflect on mathematical modeling opportunities.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Tracking -->
+            <div id="progressTracker" class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 hidden">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">📊 Progress Overview</h3>
+                <div class="space-y-4" id="progressDetails"></div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow-sm">
+                    <div class="text-2xl font-bold text-blue-600" id="statSections">0/3</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Sections Complete</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow-sm">
+                    <div class="text-2xl font-bold text-green-600" id="statTime">0m</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Time Spent</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow-sm">
+                    <div class="text-2xl font-bold text-purple-600" id="statProgress">0%</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Overall Progress</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow-sm">
+                    <div class="text-2xl font-bold text-orange-600" id="statInteractions">0</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Interactions</div>
+                </div>
+            </div>
+
+                        <!-- START: AI Tutor Link Card -->
+            <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">🤖 AI Learning Companion</h3>
+                <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h4 class="font-semibold text-gray-800 dark:text-gray-200">HKBU AI Tutor: Discussion Prep</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Use the AI Tutor to help prepare your thoughts and arguments for class discussions.</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <a href="https://aitutor.hkbu.tech/chat/discussionPrep" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg transition-colors font-semibold shadow-md flex items-center gap-2">
+                            Launch AI Tutor
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END: AI Tutor Link Card -->
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="fixed top-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform duration-300 z-50"></div>
+
+    <!-- Load the combined JavaScript file -->
+    <script src="js/course-app.js"></script>
+
+    <!-- Additional CSS for enhanced styling -->
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #10B981, #059669);
+            transition: width 0.5s ease-in-out;
+            border-radius: 9999px;
+        }
+        
+        .section-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-transition:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        #contentArea {
+            transition: all 0.3s ease;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Dark mode improvements */
+        .dark .section-btn {
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Loading state */
+        .loading {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .section-transition:hover {
+                transform: none;
+            }
+        }
+    </style>
+</body>
+</html>

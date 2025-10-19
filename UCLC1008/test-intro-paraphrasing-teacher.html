@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraphrasing Teacher - Master Academic Writing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',    // More vibrant blue
+                        'primary-light': '#3B82F6',
+                        'primary-dark': '#1D4ED8',
+                        secondary: '#DC2626',  // More vibrant red
+                        'secondary-light': '#EF4444',
+                        'secondary-dark': '#B91C1C',
+                        accent: '#059669',     // Vibrant green
+                        'accent-light': '#10B981',
+                        'accent-dark': '#047857'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #1D4ED8 100%);
+        }
+        .strategy-card {
+            transition: all 0.3s ease;
+        }
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+        .chat-container {
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+        .user-message {
+            background-color: #2563EB;
+            color: white;
+            border-radius: 18px 18px 4px 18px;
+            margin-left: auto;
+        }
+        .bot-message {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            border-radius: 18px 18px 18px 4px;
+        }
+        .dark .bot-message {
+            background-color: #334155;
+            color: #f1f5f9;
+        }
+        .typing-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #94a3b8;
+            margin: 0 2px;
+            animation: bounce 1.3s linear infinite;
+        }
+        .typing-indicator:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+        .typing-indicator:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        @keyframes bounce {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { 
+            animation: fadeIn 0.3s ease-out forwards; 
+        }
+        .suggestion-chip {
+            transition: all 0.2s ease;
+        }
+        .suggestion-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .page-section {
+            scroll-margin-top: 80px;
+        }
+        .star-rating {
+            display: inline-flex;
+            direction: rtl;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            cursor: pointer;
+            color: #d1d5db;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #fbbf24;
+        }
+        .strategy-btn {
+            transition: all 0.3s ease;
+        }
+        .strategy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-pen-fancy text-white"></i>
+                        </div>
+                        <span class="ml-2 text-xl font-bold">Paraphrasing Teacher</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#features" class="hover:text-primary transition-colors">Features</a>
+                    <a href="#strategies" class="hover:text-primary transition-colors">Strategies</a>
+                    <a href="#how-it-works" class="hover:text-primary transition-colors">How It Works</a>
+                    <button id="launchChat" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition-colors">
+                        Try Paraphrasing Teacher
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Master Academic Paraphrasing with AI</h1>
+                    <p class="text-xl mb-8 text-blue-100">Develop essential writing skills through guided practice with our intelligent paraphrasing tutor.</p>
+                    <div class="flex space-x-4">
+                        <button id="heroLaunchChat" class="bg-white text-primary hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition-colors">
+                            Start Practicing Now
+                        </button>
+                        <a href="#how-it-works" class="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-6 py-3 rounded-lg transition-colors">
+                            How It Works
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 max-w-md w-full transform rotate-3 animate-float">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                                    <i class="fas fa-robot text-white text-sm"></i>
+                                </div>
+                                <span class="ml-2 font-medium">Paraphrasing Teacher</span>
+                            </div>
+                            <p class="mb-4">Welcome! I'll guide you through effective paraphrasing strategies to improve your academic writing.</p>
+                            <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3">
+                                <p class="text-sm">Try: "Paraphrase this sentence using synonyms"</p>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 max-w-xs w-full transform -rotate-6">
+                            <div class="flex items-center mb-2">
+                                <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center">
+                                    <i class="fas fa-user text-white text-xs"></i>
+                                </div>
+                                <span class="ml-2 text-sm font-medium">Student</span>
+                            </div>
+                            <p class="text-sm">"The implementation of facial recognition technology raises significant privacy concerns."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="page-section py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Why Use Paraphrasing Teacher?</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Our AI-powered tool helps students develop essential academic writing skills through guided practice and instant feedback.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 strategy-card">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expert Guidance</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Learn from an AI modeled after experienced academic English teachers specializing in paraphrasing techniques.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 strategy-card">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-list-ol text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Structured Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Follow a step-by-step approach that breaks down complex paraphrasing tasks into manageable steps.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 strategy-card">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-comment-dots text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Instant Feedback</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Receive constructive, detailed feedback on your paraphrases to continuously improve your skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategies Section -->
+    <section id="strategies" class="page-section py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Master Paraphrasing Strategies</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Learn and practice five essential paraphrasing techniques to enhance your academic writing.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 strategy-card border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                            <span class="text-blue-600 dark:text-blue-300 font-bold">1</span>
+                        </div>
+                        <h3 class="text-lg font-bold ml-3">Synonyms & Antonyms</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">Replace words with similar or opposite meanings while maintaining the original message.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 strategy-card border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+                            <span class="text-green-600 dark:text-green-300 font-bold">2</span>
+                        </div>
+                        <h3 class="text-lg font-bold ml-3">Changing Word Forms</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">Alter the grammatical form of words (nouns to verbs, adjectives to adverbs, etc.).</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 strategy-card border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                            <span class="text-purple-600 dark:text-purple-300 font-bold">3</span>
+                        </div>
+                        <h3 class="text-lg font-bold ml-3">Changing Voice</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">Switch between active and passive voice to vary sentence structure.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 strategy-card border-l-4 border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center">
+                            <span class="text-orange-600 dark:text-orange-300 font-bold">4</span>
+                        </div>
+                        <h3 class="text-lg font-bold ml-3">Sentence Patterns</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">Break complex sentences into simpler ones or combine simple sentences into more complex structures.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 strategy-card border-l-4 border-red-500 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center">
+                            <span class="text-red-600 dark:text-red-300 font-bold">5</span>
+                        </div>
+                        <h3 class="text-lg font-bold ml-3">All Strategies Combined</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">Integrate multiple paraphrasing techniques for more sophisticated rewriting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="page-section py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">How Paraphrasing Teacher Works</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Follow these simple steps to improve your paraphrasing skills</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <h3 class="text-lg font-bold mb-2">Select a Strategy</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Choose from five paraphrasing strategies based on your learning goals.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <h3 class="text-lg font-bold mb-2">Learn with Examples</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Study step-by-step demonstrations using academic sentences.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <h3 class="text-lg font-bold mb-2">Practice with Guidance</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Apply the strategy to SDG-related sentences with structured support.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                    <h3 class="text-lg font-bold mb-2">Receive Feedback</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Get detailed feedback and continue practicing with new strategies.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <button id="bottomLaunchChat" class="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3 rounded-lg transition-colors text-lg">
+                    Start Your Paraphrasing Journey
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Interface (Initially Hidden) -->
+    <div id="chatInterface" class="fixed inset-0 bg-white dark:bg-gray-900 z-50 hidden flex flex-col">
+        <!-- Chat Header -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm py-4 px-6 border-b border-gray-200 dark:border-gray-700">
+            <div class="max-w-full mx-auto flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <button id="backToHome" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">PT</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">Paraphrasing Teacher</h1>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Your AI assistant for better writing</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="toggleSidebar" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button id="themeToggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="clearChat" class="text-sm hover:text-primary transition-colors">
+                        Clear Chat
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Sidebar -->
+            <div id="sidebar" class="w-80 bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto transition-all duration-300">
+                <div class="p-4">
+                    <h3 class="font-bold mb-4">Chat Tools</h3>
+                    
+                    <!-- Chat History -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-medium text-gray-600 dark:text-gray-400">Chat History</h4>
+                            <button id="exportChat" class="text-xs text-primary hover:text-primary-dark transition-colors">
+                                <i class="fas fa-envelope mr-1"></i> Email Chat
+                            </button>
+                        </div>
+                        <div id="chatHistory" class="space-y-2 max-h-60 overflow-y-auto">
+                            <!-- Chat history items will be added here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Feedback Section -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-gray-600 dark:text-gray-400 mb-2">Rate Your Experience</h4>
+                        <div class="star-rating mb-3">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                        <textarea id="feedbackText" placeholder="Your feedback or suggestions..." class="w-full border border-gray-300 dark:border-gray-600 rounded-lg p-2 text-sm resize-none h-20 mb-2 bg-white dark:bg-gray-700"></textarea>
+                        <button id="submitFeedback" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition-colors text-sm">
+                            Submit Feedback
+                        </button>
+                    </div>
+                    
+                    <!-- Accessibility Options -->
+                    <div>
+                        <h4 class="font-medium text-gray-600 dark:text-gray-400 mb-2">Text Size</h4>
+                        <div class="space-y-2">
+                            <button id="textSizeIncrease" class="w-full text-left p-2 rounded-lg bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-primary transition-colors text-sm">
+                                <i class="fas fa-text-height mr-2"></i> Increase Text Size
+                            </button>
+                            <button id="textSizeDecrease" class="w-full text-left p-2 rounded-lg bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-primary transition-colors text-sm">
+                                <i class="fas fa-text-height mr-2"></i> Decrease Text Size
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="flex-1 flex flex-col">
+                <main class="flex-1 max-w-full mx-auto w-full p-4">
+                    <div id="chatContainer" class="chat-container bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 mb-4">
+                        <!-- Welcome Message -->
+                        <div class="bot-message p-4 max-w-xs md:max-w-md lg:max-w-lg mb-4 fade-in">
+                            <div class="flex items-start space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-primary-light flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold">PT</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Welcome to Paraphrasing Practice! 👋</p>
+                                    <p class="mt-1">I'm here to help you master academic paraphrasing through structured practice. You'll learn to effectively rephrase text while preserving original meaning.</p>
+                                    <p class="mt-3 font-medium">Please select a paraphrasing strategy to begin:</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Strategy Buttons -->
+                        <div class="mb-6 fade-in">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <button class="strategy-btn bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-lg text-center transition-colors" data-strategy="1">
+                                    <div class="font-bold text-lg mb-1">1</div>
+                                    <div class="font-medium">Synonyms & Antonyms</div>
+                                </button>
+                                <button class="strategy-btn bg-green-500 hover:bg-green-600 text-white p-4 rounded-lg text-center transition-colors" data-strategy="2">
+                                    <div class="font-bold text-lg mb-1">2</div>
+                                    <div class="font-medium">Changing Word Forms</div>
+                                </button>
+                                <button class="strategy-btn bg-purple-500 hover:bg-purple-600 text-white p-4 rounded-lg text-center transition-colors" data-strategy="3">
+                                    <div class="font-bold text-lg mb-1">3</div>
+                                    <div class="font-medium">Changing Voice</div>
+                                </button>
+                                <button class="strategy-btn bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-lg text-center transition-colors" data-strategy="4">
+                                    <div class="font-bold text-lg mb-1">4</div>
+                                    <div class="font-medium">Sentence Patterns</div>
+                                </button>
+                                <button class="strategy-btn bg-red-500 hover:bg-red-600 text-white p-4 rounded-lg text-center transition-colors" data-strategy="5">
+                                    <div class="font-bold text-lg mb-1">5</div>
+                                    <div class="font-medium">All Strategies Combined</div>
+                                </button>
+                                <button class="strategy-btn bg-indigo-500 hover:bg-indigo-600 text-white p-4 rounded-lg text-center transition-colors" data-strategy="general">
+                                    <div class="font-bold text-lg mb-1"><i class="fas fa-comments"></i></div>
+                                    <div class="font-medium">General Inquiries</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+                        <div class="flex space-x-2">
+                            <textarea 
+                                id="messageInput" 
+                                placeholder="Type your message here..." 
+                                class="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary resize-none bg-white dark:bg-gray-700"
+                                rows="1"
+                            ></textarea>
+                            <button id="sendButton" class="bg-primary hover:bg-primary-dark text-white rounded-lg px-4 py-3 transition-colors flex items-center justify-center">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="mt-2 flex justify-between text-xs text-gray-500 dark:text-gray-400">
+                            <div>
+                                <button id="voiceInput" class="flex items-center space-x-1 hover:text-primary transition-colors">
+                                    <i class="fas fa-microphone"></i>
+                                    <span>Voice Input</span>
+                                </button>
+                            </div>
+                            <div>
+                                <span id="charCount">0/500</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-pen-fancy text-white"></i>
+                        </div>
+                        <span class="ml-2 text-xl font-bold">Paraphrasing Teacher</span>
+                    </div>
+                    <p class="text-gray-400">Master academic paraphrasing with AI-powered guidance and feedback.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#strategies" class="text-gray-400 hover:text-white transition-colors">Strategies</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Get Started</h3>
+                    <p class="text-gray-400 mb-4">Ready to improve your paraphrasing skills?</p>
+                    <button class="bg-primary hover:bg-primary-dark text-white font-semibold px-4 py-2 rounded-lg transition-colors">
+                        Try Paraphrasing Teacher
+                    </button>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Paraphrasing Teacher. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const chatInterface = document.getElementById('chatInterface');
+        const launchChatButtons = document.querySelectorAll('#launchChat, #heroLaunchChat, #bottomLaunchChat');
+        const backToHome = document.getElementById('backToHome');
+        const chatContainer = document.getElementById('chatContainer');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const clearChatButton = document.getElementById('clearChat');
+        const themeToggle = document.getElementById('themeToggle');
+        const voiceInput = document.getElementById('voiceInput');
+        const charCount = document.getElementById('charCount');
+        const toggleSidebar = document.getElementById('toggleSidebar');
+        const sidebar = document.getElementById('sidebar');
+        const strategyButtons = document.querySelectorAll('.strategy-btn');
+        const exportChatButton = document.getElementById('exportChat');
+        const chatHistory = document.getElementById('chatHistory');
+        const feedbackText = document.getElementById('feedbackText');
+        const submitFeedback = document.getElementById('submitFeedback');
+        const textSizeIncrease = document.getElementById('textSizeIncrease');
+        const textSizeDecrease = document.getElementById('textSizeDecrease');
+
+        // Chat data storage
+        let chatData = {
+            messages: [],
+            currentStrategy: null,
+            startTime: null
+        };
+
+        // Launch chat interface
+        launchChatButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                chatInterface.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                messageInput.focus();
+                chatData.startTime = new Date();
+            });
+        });
+
+        // Back to home
+        backToHome.addEventListener('click', function() {
+            chatInterface.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Toggle sidebar
+        toggleSidebar.addEventListener('click', function() {
+            sidebar.classList.toggle('hidden');
+        });
+
+        // Strategy selection
+        strategyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const strategy = this.getAttribute('data-strategy');
+                chatData.currentStrategy = strategy;
+                
+                // Add to chat history
+                addToChatHistory(`Selected ${getStrategyName(strategy)}`);
+                
+                // Send strategy selection as message
+                if (strategy === 'general') {
+                    addMessageToChat(`I'd like to ask a general question.`, 'user');
+                    // In a real implementation, this would call your AI backend
+                    simulateAIResponse("Great! I'm here to help with any questions about paraphrasing or academic writing. What would you like to know?");
+                } else {
+                    const strategyName = getStrategyName(strategy);
+                    addMessageToChat(`I'd like to practice ${strategyName}.`, 'user');
+                    // In a real implementation, this would call your AI backend
+                    simulateAIResponse(generateStrategyResponse(strategy));
+                }
+            });
+        });
+
+        // Get strategy name
+        function getStrategyName(strategy) {
+            const strategies = {
+                '1': 'Synonyms & Antonyms',
+                '2': 'Changing Word Forms',
+                '3': 'Changing Voice',
+                '4': 'Changing Sentence Patterns',
+                '5': 'All Strategies Combined',
+                'general': 'General Inquiries'
+            };
+            return strategies[strategy];
+        }
+
+        // Add to chat history
+        function addToChatHistory(action) {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const historyItem = document.createElement('div');
+            historyItem.className = 'text-xs p-2 bg-white dark:bg-gray-700 rounded border border-gray-200 dark:border-gray-600';
+            historyItem.textContent = `${timeString} - ${action}`;
+            chatHistory.appendChild(historyItem);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        // Export chat via email
+        exportChatButton.addEventListener('click', function() {
+            const email = 'naina142r@gmail.com';
+            const subject = 'Paraphrasing Teacher Chat History';
+            const body = formatChatForEmail();
+            
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        });
+
+        // Format chat for email
+        function formatChatForEmail() {
+            let emailBody = `Paraphrasing Teacher Chat History\n`;
+            emailBody += `Date: ${new Date().toLocaleString()}\n`;
+            emailBody += `Duration: ${calculateChatDuration()}\n\n`;
+            emailBody += `Chat Messages:\n\n`;
+            
+            chatData.messages.forEach(msg => {
+                const sender = msg.sender === 'user' ? 'You' : 'Paraphrasing Teacher';
+                emailBody += `${sender}: ${msg.text}\n\n`;
+            });
+            
+            return emailBody;
+        }
+
+        // Calculate chat duration
+        function calculateChatDuration() {
+            if (!chatData.startTime) return 'Unknown';
+            const endTime = new Date();
+            const duration = Math.floor((endTime - chatData.startTime) / 1000);
+            const minutes = Math.floor(duration / 60);
+            const seconds = duration % 60;
+            return `${minutes}m ${seconds}s`;
+        }
+
+        // Submit feedback
+        submitFeedback.addEventListener('click', function() {
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const feedback = feedbackText.value.trim();
+            
+            if (!rating && !feedback) {
+                alert('Please provide a rating or feedback before submitting.');
+                return;
+            }
+            
+            // In a real app, this would send to a server
+            const email = 'naina142r@gmail.com';
+            const subject = 'Paraphrasing Teacher Feedback';
+            let body = `Feedback for Paraphrasing Teacher\n\n`;
+            
+            if (rating) {
+                body += `Rating: ${rating.value} stars\n`;
+            }
+            
+            if (feedback) {
+                body += `Feedback: ${feedback}\n`;
+            }
+            
+            body += `\nChat Duration: ${calculateChatDuration()}`;
+            
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            if (rating) rating.checked = false;
+            feedbackText.value = '';
+            
+            alert('Thank you for your feedback! An email has been prepared for you to send.');
+        });
+
+        // Text size adjustment
+        let fontSize = 1;
+        textSizeIncrease.addEventListener('click', function() {
+            fontSize += 0.1;
+            document.body.style.fontSize = `${fontSize}rem`;
+        });
+        
+        textSizeDecrease.addEventListener('click', function() {
+            fontSize = Math.max(0.8, fontSize - 0.1);
+            document.body.style.fontSize = `${fontSize}rem`;
+        });
+
+        // Auto-resize textarea
+        messageInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+            
+            // Update character count
+            charCount.textContent = `${this.value.length}/500`;
+            
+            // Disable if over limit
+            if (this.value.length > 500) {
+                this.classList.add('border-red-500');
+                sendButton.disabled = true;
+                sendButton.classList.add('opacity-50');
+            } else {
+                this.classList.remove('border-red-500');
+                sendButton.disabled = false;
+                sendButton.classList.remove('opacity-50');
+            }
+        });
+
+        // Send message function
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message === '' || message.length > 500) return;
+            
+            // Add user message to chat
+            addMessageToChat(message, 'user');
+            
+            // Clear input
+            messageInput.value = '';
+            messageInput.style.height = 'auto';
+            charCount.textContent = '0/500';
+            
+            // In a real implementation, this would call your AI backend
+            simulateAIResponse(generateBotResponse(message));
+        }
+
+        // Simulate AI response with typing indicator
+        function simulateAIResponse(response) {
+            showTypingIndicator();
+            
+            setTimeout(() => {
+                removeTypingIndicator();
+                addMessageToChat(response, 'bot');
+            }, 1500);
+        }
+
+        // Add message to chat
+        function addMessageToChat(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('fade-in');
+            
+            // Store message in chat data
+            chatData.messages.push({
+                text: message,
+                sender: sender,
+                timestamp: new Date()
+            });
+            
+            if (sender === 'user') {
+                messageElement.className = 'user-message p-4 max-w-xs md:max-w-md lg:max-w-lg mb-4 ml-auto';
+                messageElement.innerHTML = `
+                    <div class="flex items-start space-x-2 justify-end">
+                        <div class="text-right">
+                            <p class="font-medium text-white">You</p>
+                            <p class="mt-1 text-white">${message}</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-secondary flex-shrink-0 flex items-center justify-center">
+                            <span class="text-white text-sm font-bold">Y</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                messageElement.className = 'bot-message p-4 max-w-xs md:max-w-md lg:max-w-lg mb-4';
+                messageElement.innerHTML = `
+                    <div class="flex items-start space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-primary-light flex-shrink-0 flex items-center justify-center">
+                            <span class="text-white text-sm font-bold">PT</span>
+                        </div>
+                        <div>
+                            <p class="font-medium">Paraphrasing Teacher</p>
+                            <div class="mt-1">${message}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            chatContainer.appendChild(messageElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            
+            // Add to chat history
+            if (sender === 'user') {
+                addToChatHistory(`You: ${message.substring(0, 30)}${message.length > 30 ? '...' : ''}`);
+            }
+        }
+
+        // Show typing indicator
+        function showTypingIndicator() {
+            const typingElement = document.createElement('div');
+            typingElement.id = 'typingIndicator';
+            typingElement.className = 'bot-message p-4 max-w-xs md:max-w-md lg:max-w-lg mb-4 fade-in';
+            typingElement.innerHTML = `
+                <div class="flex items-start space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-primary-light flex-shrink-0 flex items-center justify-center">
+                        <span class="text-white text-sm font-bold">PT</span>
+                    </div>
+                    <div>
+                        <p class="font-medium">Paraphrasing Teacher</p>
+                        <div class="mt-1 flex space-x-1">
+                            <div class="typing-indicator"></div>
+                            <div class="typing-indicator"></div>
+                            <div class="typing-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            chatContainer.appendChild(typingElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // Remove typing indicator
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        // Generate strategy response
+        function generateStrategyResponse(strategy) {
+            const strategies = {
+                '1': `Great choice! You've selected <strong>Strategy 1: Using Synonyms and Antonyms</strong>.<br><br>
+                This strategy involves replacing words with similar or opposite meanings while maintaining the original message.<br><br>
+                <strong>Example sentence (Face Recognition):</strong> "The implementation of facial recognition technology raises significant privacy concerns."<br><br>
+                <strong>Step-by-step paraphrasing:</strong><br>
+                1. Identify key words: implementation, facial recognition, raises, significant, privacy concerns<br>
+                2. Find synonyms: implementation → deployment; facial recognition → biometric identification; raises → creates; significant → substantial; privacy concerns → data protection issues<br>
+                3. Construct new sentence: "The deployment of biometric identification systems creates substantial data protection issues."<br><br>
+                <strong>Now try this SDG sentence:</strong> "Climate change exacerbates global inequality by disproportionately affecting vulnerable populations."<br><br>
+                Follow these steps:<br>
+                1. Read and understand the original sentence<br>
+                2. Identify key words to replace<br>
+                3. Find appropriate synonyms<br>
+                4. Construct your paraphrased version<br><br>
+                Please attempt to paraphrase this sentence and share your version.`,
+                
+                '2': `Excellent! You've chosen <strong>Strategy 2: Changing Word Forms</strong>.<br><br>
+                This technique involves altering the grammatical form of words (nouns to verbs, adjectives to adverbs, etc.).<br><br>
+                <strong>Example sentence (Face Recognition):</strong> "The widespread adoption of facial recognition requires careful consideration of ethical implications."<br><br>
+                <strong>Step-by-step paraphrasing:</strong><br>
+                1. Identify words that can change form: adoption (noun) → adopt (verb); consideration (noun) → consider (verb)<br>
+                2. Restructure sentence: "As organizations widely adopt facial recognition, they must carefully consider ethical implications."<br><br>
+                <strong>Now try this SDG sentence:</strong> "The reduction of plastic waste necessitates international cooperation and policy implementation."<br><br>
+                Please attempt to paraphrase this sentence by changing word forms and share your version.`,
+                
+                '3': `Good choice! You've selected <strong>Strategy 3: Changing Voice</strong>.<br><br>
+                This strategy involves switching between active and passive voice to vary sentence structure.<br><br>
+                <strong>Example sentence (Face Recognition):</strong> "Law enforcement agencies use facial recognition to identify suspects." (Active)<br><br>
+                <strong>Step-by-step paraphrasing:</strong><br>
+                1. Identify the subject (law enforcement agencies), verb (use), and object (facial recognition)<br>
+                2. Convert to passive: "Facial recognition is used by law enforcement agencies to identify suspects."<br><br>
+                <strong>Now try this SDG sentence:</strong> "Governments should implement policies that promote renewable energy adoption."<br><br>
+                Please attempt to change the voice of this sentence and share your paraphrased version.`,
+                
+                '4': `Wonderful! You've chosen <strong>Strategy 4: Changing Sentence Patterns</strong>.<br><br>
+                This technique involves breaking complex sentences into simpler ones or combining simple sentences into more complex structures.<br><br>
+                <strong>Example sentence (Face Recognition):</strong> "While facial recognition offers security benefits, it also presents privacy challenges that require regulatory frameworks."<br><br>
+                <strong>Step-by-step paraphrasing:</strong><br>
+                1. Break into simpler sentences: "Facial recognition offers security benefits. However, it also presents privacy challenges. These challenges require regulatory frameworks."<br><br>
+                <strong>Now try this SDG sentence:</strong> "Sustainable development, which balances economic growth with environmental protection, requires innovative solutions that address both present and future needs."<br><br>
+                Please attempt to change the sentence pattern and share your paraphrased version.`,
+                
+                '5': `Perfect! You've selected <strong>Strategy 5: Using All Strategies Combined</strong>.<br><br>
+                This advanced approach integrates multiple paraphrasing techniques for more sophisticated rewriting.<br><br>
+                <strong>Example sentence (Face Recognition):</strong> "The ethical deployment of facial recognition technologies demands transparent policies that safeguard individual rights while enabling security applications."<br><br>
+                <strong>Step-by-step paraphrasing:</strong><br>
+                1. Use synonyms: ethical → moral; deployment → implementation; demands → requires; transparent → clear; safeguard → protect<br>
+                2. Change word forms: deployment (noun) → deploy (verb)<br>
+                3. Change voice: from active to passive or vice versa<br>
+                4. Alter sentence structure: break into multiple sentences or combine differently<br>
+                5. Result: "To implement facial recognition morally, clear policies are needed. These should protect people's rights but still allow security uses."<br><br>
+                <strong>Now try this SDG sentence:</strong> "Achieving quality education for all necessitates addressing systemic barriers that perpetuate inequality and limit access to learning opportunities."<br><br>
+                Please attempt to paraphrase this sentence using multiple strategies and share your version.`
+            };
+            
+            return strategies[strategy] || "I'm not sure which strategy you've selected. Please choose from the options below the welcome message.";
+        }
+
+        // Generate bot response (simulated)
+        function generateBotResponse(userMessage) {
+            // If we have a current strategy, use it
+            if (chatData.currentStrategy && chatData.currentStrategy !== 'general') {
+                return `I see you're working on your paraphrase for the ${getStrategyName(chatData.currentStrategy)} strategy. Let me provide feedback on your attempt:<br><br>
+                <strong>Your paraphrase:</strong> "${userMessage}"<br><br>
+                <strong>Feedback:</strong> You've done a good job maintaining the original meaning while changing the structure. Consider using more precise vocabulary to enhance academic tone. The sentence flow could be improved by varying sentence length.<br><br>
+                Would you like to try another sentence with the same strategy or select a different one from the options below?`;
+            }
+            
+            // Simple response logic for general inquiries
+            const lowerMessage = userMessage.toLowerCase();
+            
+            if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                return "Hello! I'm Paraphrasing Teacher, your AI writing assistant. Please select a paraphrasing strategy from the options below to begin practicing, or ask me a general question about paraphrasing.";
+            }
+            else if (lowerMessage.includes('paraphrase') || lowerMessage.includes('rewrite') || lowerMessage.includes('rephrase')) {
+                return "I'd be happy to help you paraphrase text! Please select a specific paraphrasing strategy from the options below so I can provide the most appropriate guidance for your needs.";
+            }
+            else if (lowerMessage.includes('thank')) {
+                return "You're welcome! I'm glad I could help. Feel free to select another strategy from the options below to continue practicing, or ask me any other questions about paraphrasing.";
+            }
+            else {
+                return "I understand you're asking about paraphrasing. To get the most relevant assistance, please select a specific paraphrasing strategy from the options below. For general questions about academic writing, I'm happy to help with those too!";
+            }
+        }
+
+        // Event Listeners
+        sendButton.addEventListener('click', sendMessage);
+        
+        messageInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        clearChatButton.addEventListener('click', function() {
+            // Keep only the welcome message and strategy buttons
+            const welcomeMessage = chatContainer.children[0];
+            const strategyButtons = chatContainer.children[1];
+            
+            while (chatContainer.children.length > 2) {
+                chatContainer.removeChild(chatContainer.lastChild);
+            }
+            
+            // Clear chat data
+            chatData.messages = [];
+            chatData.currentStrategy = null;
+            chatHistory.innerHTML = '';
+        });
+
+        themeToggle.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+
+        // Voice input (placeholder functionality)
+        voiceInput.addEventListener('click', function() {
+            alert('Voice input functionality would be implemented here in a production app.');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Load saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // =============================================
+        // AI INTEGRATION SECTION
+        // =============================================
+        
+const API_BASE_URL = window.location.origin + '/api';
+// Generate a session ID
+function generateSessionId() {
+    return 'session_' + Math.random().toString(36).substr(2, 9);
+}
+
+let currentSessionId = generateSessionId();
+
+// Updated sendMessage function
+async function sendMessage() {
+    const message = messageInput.value.trim();
+    if (message === '' || message.length > 500) return;
+    
+    // Add user message to chat
+    addMessageToChat(message, 'user');
+    
+    // Clear input
+    messageInput.value = '';
+    messageInput.style.height = 'auto';
+    charCount.textContent = '0/500';
+    
+    // Show typing indicator
+    showTypingIndicator();
+    
+    try {
+        // Send to your backend
+        const response = await fetch(`${API_BASE_URL}/chat`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: message,
+                sessionId: currentSessionId,
+                strategy: chatData.currentStrategy
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
+        const data = await response.json();
+        removeTypingIndicator();
+        addMessageToChat(data.response, 'bot');
+        
+    } catch (error) {
+        console.error('Error sending message:', error);
+        removeTypingIndicator();
+        addMessageToChat("I'm sorry, I'm having trouble connecting right now. Please try again later.", 'bot');
+    }
+}
+
+// Updated strategy selection
+strategyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const strategy = this.getAttribute('data-strategy');
+        chatData.currentStrategy = strategy;
+        
+        // Add to chat history
+        addToChatHistory(`Selected ${getStrategyName(strategy)}`);
+        
+        // Send strategy selection as message
+        if (strategy === 'general') {
+            addMessageToChat(`I'd like to ask a general question.`, 'user');
+            sendMessage(); // This will now call your backend
+        } else {
+            const strategyName = getStrategyName(strategy);
+            addMessageToChat(`I'd like to practice ${strategyName}.`, 'user');
+            sendMessage(); // This will now call your backend
+        }
+    });
+});
+
+// Updated feedback submission
+submitFeedback.addEventListener('click', async function() {
+    const rating = document.querySelector('input[name="rating"]:checked');
+    const feedback = feedbackText.value.trim();
+    
+    if (!rating && !feedback) {
+        alert('Please provide a rating or feedback before submitting.');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/feedback`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                sessionId: currentSessionId,
+                rating: rating ? rating.value : null,
+                feedback: feedback,
+                email: 'naina142r@gmail.com'
+            })
+        });
+        
+        if (response.ok) {
+            alert('Thank you for your feedback!');
+            // Reset form
+            if (rating) rating.checked = false;
+            feedbackText.value = '';
+        } else {
+            throw new Error('Failed to submit feedback');
+        }
+        
+    } catch (error) {
+        console.error('Error submitting feedback:', error);
+        alert('Failed to submit feedback. Please try again.');
+    }
+});
+
+// Get chat history
+async function loadChatHistory() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/chat-history/${currentSessionId}`);
+        if (response.ok) {
+            const data = await response.json();
+            // Display chat history in sidebar
+            displayChatHistory(data.messages);
+        }
+    } catch (error) {
+        console.error('Error loading chat history:', error);
+    }
+}
+    </script>
+</body>
+</html>

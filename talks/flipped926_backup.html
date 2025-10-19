@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipped Classroom Workshop - September 26, 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2px;
+            border-radius: 16px;
+        }
+        
+        .gradient-border-inner {
+            background: white;
+            border-radius: 14px;
+        }
+        
+        .dark .gradient-border-inner {
+            background: #1f2937;
+        }
+        
+        .floating-indicator {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .presentation-frame {
+            transition: all 0.3s ease;
+        }
+        
+        .presentation-frame:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fullscreen-button {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .split-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            min-height: 75vh;
+            width: 100%;
+        }
+        
+        .canvas-section {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(60,60,90,0.08);
+            overflow: hidden;
+        }
+        
+        .canvas-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .canvas-tab {
+            flex: 1;
+            padding: 10px 16px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-size: 14px;
+        }
+        
+        .canvas-tab:hover {
+            background: #e9ecef;
+            color: #333;
+        }
+        
+        .canvas-tab.active {
+            background: white;
+            color: #5D5CDE;
+            border-bottom-color: #5D5CDE;
+        }
+        
+        .canvas-content {
+            padding: 20px;
+            height: calc(75vh - 50px);
+            display: none;
+            overflow-y: auto;
+        }
+        
+        .canvas-content.active {
+            display: block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .slide-indicator {
+            transition: all 0.3s ease;
+        }
+
+        .canvas-section-content {
+            transition: opacity 0.3s ease;
+        }
+        
+        .demo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f3ff 100%);
+            border: 2px dashed #5D5CDE;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #666;
+            min-height: 400px;
+        }
+        
+        @media (max-width: 1024px) {
+            .split-container {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 min-h-screen">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="container mx-auto px-2 py-6 max-w-full" style="max-width: 98vw;">
+        <div class="text-center mb-6">
+            <div class="floating-indicator inline-block mb-4">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-2xl">🎓</span>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+                Flipped Classroom Workshop
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-2">Interactive Learning with AI Assistance</p>
+            <p class="text-lg text-gray-500 dark:text-gray-500">September 26, 2025</p>
+        </div>
+
+        <div class="mb-6">
+            <div class="split-container">
+                <!-- Left Side - Google Slides -->
+                <div class="gradient-border shadow-2xl presentation-frame">
+                    <div class="gradient-border-inner p-4">
+                        <div class="flex justify-end items-center mb-3">
+                            <button onclick="openFullscreen()" class="fullscreen-button text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all text-sm">
+                                🔍 Full Screen View
+                            </button>
+                        </div>
+                        <div class="w-full rounded-lg overflow-hidden bg-white" style="height: 75vh; min-height: 550px;">
+                            <div style="position: relative; width: 100%; height: 100%; padding-top: 0; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); overflow: hidden; border-radius: 8px; will-change: transform;">
+                                <iframe id="slides-iframe" loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                                    src="https://docs.google.com/presentation/d/e/2PACX-1vS7ZQ1Bx_pi0trXqCEdcvSTz2JE7EdGN_S43f_u0BV2YWmmgQOlh93-V6jmAttR-IBx4d4u5Ro4hOjv/embed?start=false&loop=false&delayms=3000" 
+                                    allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <a href="https://docs.google.com/presentation/d/e/2PACX-1vS7ZQ1Bx_pi0trXqCEdcvSTz2JE7EdGN_S43f_u0BV2YWmmgQOlh93-V6jmAttR-IBx4d4u5Ro4hOjv/pub?start=false&loop=false&delayms=3000" target="_blank" rel="noopener" class="text-primary hover:underline text-sm">
+                                📖 View Full Presentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Interactive Canvas -->
+                <div class="canvas-section">
+                    <!-- Manual Slide Control Panel -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 mb-4 border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="slide-indicator text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-3 py-1 rounded-full">
+                                Slide 1 • Demo
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                Controls both slides & content
+                            </div>
+                        </div>
+                        
+                        <!-- Manual Slide Controls -->
+                        <div class="flex items-center justify-center space-x-3 mb-3">
+                            <button onclick="changeSlide(-1)" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
+                                ◀ Prev
+                            </button>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Slide:</span>
+                                <span id="current-slide-display" class="text-lg font-bold text-blue-600 dark:text-blue-400 min-w-[30px] text-center">1</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">/ 15</span>
+                            </div>
+                            <button onclick="changeSlide(1)" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
+                                Next ▶
+                            </button>
+                        </div>
+                        
+                        <!-- Slide Slider -->
+                        <input type="range" id="slide-slider" min="1" max="15" value="1" 
+                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" 
+                               onchange="changeSlide(0, this.value)" oninput="updateSlideDisplay(this.value)">
+                        
+                        <!-- Quick Jump Buttons -->
+                        <div class="flex justify-center space-x-2 mt-3">
+                            <button onclick="changeSlide(0, 1)" class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded text-xs hover:bg-blue-200 dark:hover:bg-blue-800">Start</button>
+                            <button onclick="changeSlide(0, 5)" class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded text-xs hover:bg-green-200 dark:hover:bg-green-800">Mid</button>
+                            <button onclick="changeSlide(0, 10)" class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 rounded text-xs hover:bg-purple-200 dark:hover:bg-purple-800">End</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Canvas Tabs -->
+                                        <!-- Canvas Tabs -->
+                    <div class="flex space-x-2 mb-4">
+                        <button id="tab-demo" onclick="switchCanvasTab('demo')" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all">
+                            Demo
+                        </button>
+                        <button id="tab-resources" onclick="switchCanvasTab('resources')" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
+                            Resources
+                        </button>
+                    </div>
+                    
+                    <!-- Canvas Content Areas -->
+                    <div class="canvas-content">
+                        <!-- Demo Section -->
+                        <div id="demoSection" class="canvas-section-content" style="display: block;">
+                            <div id="demo-content" class="demo-content">
+                                <!-- Dynamic demo content will be injected here by updateDemoContent() -->
+                                <div class="text-center p-8">
+                                    <div class="text-6xl mb-4">🎯</div>
+                                    <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Workshop Overview</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Welcome to our interactive presentation on flipped classroom methodology.</p>
+                                    <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+                                        <p class="text-sm text-blue-700 dark:text-blue-300">Use the slide controls to navigate through different sections and demos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resources Section -->
+                        <div id="resourcesSection" class="canvas-section-content" style="display: none;">
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Additional Resources</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <h3 class="font-semibold mb-2">📚 Reading Materials</h3>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                        <li>• Flipped Learning Research</li>
+                                        <li>• Best Practices Guide</li>
+                                        <li>• Case Studies</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                                    <h3 class="font-semibold mb-2">🔗 Useful Links</h3>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                        <li>• Video Creation Tools</li>
+                                        <li>• Assessment Platforms</li>
+                                        <li>• Community Forums</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gradient-border shadow-lg mb-4">
+            <div class="gradient-border-inner p-4">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-white text-xl">🤖</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">AI Assistant Controls</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">Interactive AI assistant for workshop support</p>
+                    <div class="flex justify-center items-center space-x-3 text-xs text-gray-500 dark:text-gray-400 mb-3">
+                        <span>💬 Real-time Chat</span>
+                        <span>🎯 Personalized Responses</span>
+                        <span>📚 Educational Support</span>
+                    </div>
+                    <div class="flex justify-center space-x-2">
+                        <button onclick="toggleAvatar()" id="avatar-toggle-btn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all text-sm">
+                            🤖 Show Avatar
+                        </button>
+                        <button onclick="moveAvatarToRight()" id="avatar-position-btn" class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all text-sm">
+                            ➡️ Move Right
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar Info Panel -->
+    <div id="avatarInfoPanel" class="fixed bottom-6 left-6 bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600 shadow-lg max-w-xs z-40 hidden">
+        <div class="font-semibold text-gray-900 dark:text-white text-sm">Flipped Classroom AI Assistant</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400">Workshop Support Team</div>
+        <div class="text-xs text-primary hover:underline cursor-pointer">Learn More →</div>
+    </div>
+
+    <!-- Module Loader for Slide System -->
+    <script src="modules/module-loader.js"></script>
+
+    <!-- HeyGen Avatar Embed Script -->
+    <script>!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijlj%0D%0ANmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 20px;\n    bottom: 20px;\n    width: 260px;\n    height: 280px;\n    border-radius: 16px;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease;\n    overflow: hidden;\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 340px; width: calc(100vw - 40px); left: 20px;":"height: 380px; width: 300px; right: 20px; left: auto;"}\n    border-radius: 16px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n    border-radius: 14px;\n    overflow: hidden;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n    border-radius: 14px;\n  }\n  `;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);</script>
+
+    <script>
+        // Tab switching functionality
+        function switchCanvasTab(tabName) {
+            // Remove active class from all tabs
+            document.querySelectorAll('.canvas-tab').forEach(tab => {
+                tab.classList.remove('bg-blue-600', 'text-white');
+                tab.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
+            
+            // Hide all content sections
+            document.querySelectorAll('.canvas-section-content').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Activate selected tab
+            const activeTab = document.querySelector(`[data-tab="${tabName}"]`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                activeTab.classList.add('bg-blue-600', 'text-white');
+            }
+            
+            // Show selected content - updated for simplified structure
+            const sectionMap = {
+                'demo': 'demoSection',
+                'resources': 'resourcesSection',
+                // Legacy mappings for backward compatibility
+                'overview': 'demoSection',
+                'implementation': 'demoSection', 
+                'ai-video': 'demoSection',
+                'reflection': 'resourcesSection'
+            };
+            
+            const targetSection = document.getElementById(sectionMap[tabName]);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+            
+            console.log(`Switched to canvas tab: ${tabName}`);
+        }
+
+        // Legacy function for compatibility
+        function switchTab(tabName) {
+            // Handle legacy calls by mapping to new tab names
+            const legacyMap = {
+                'demo1': 'overview',
+                'demo2': 'implementation'
+            };
+            const newTabName = legacyMap[tabName] || tabName;
+            switchCanvasTab(newTabName);
+        }
+        
+        // Slide tracking and content updating
+        let currentSlide = 1;
+        let slideCheckInterval;
+        
+        // Advanced slide detection methods
+        function initializeSlideDetection() {
+            let slideDetectionActive = true;
+            let lastKnownSlide = 1;
+            
+            // Method 1: Enhanced postMessage listening
+            window.addEventListener('message', function(event) {
+                if (!slideDetectionActive) return;
+                
+                try {
+                    // Check for Google Slides specific messages
+                    if (event.origin.includes('docs.google.com') || event.origin.includes('googleapis.com')) {
+                        let slideData = null;
+                        
+                        // Try parsing as JSON
+                        if (typeof event.data === 'string') {
+                            try {
+                                slideData = JSON.parse(event.data);
+                            } catch (e) {
+                                // Check for simple slide number in string
+                                const match = event.data.match(/slide[^\d]*(\d+)/i);
+                                if (match) {
+                                    slideData = { slide: parseInt(match[1]) };
+                                }
+                            }
+                        } else if (typeof event.data === 'object') {
+                            slideData = event.data;
+                        }
+                        
+                        // Extract slide number from various possible formats
+                        const slideNum = slideData?.slide || slideData?.slideNumber || slideData?.currentSlide;
+                        if (slideNum && slideNum !== lastKnownSlide && slideNum >= 1 && slideNum <= 20) {
+                            lastKnownSlide = slideNum;
+                            updateCanvasContent(slideNum);
+                            console.log(`Slide detected via postMessage: ${slideNum}`);
+                            return;
+                        }
+                    }
+                } catch (e) {
+                    console.log('PostMessage parsing error:', e);
+                }
+            });
+            
+            // Method 2: Enhanced keyboard navigation detection
+            let keyPressBuffer = [];
+            document.addEventListener('keydown', function(e) {
+                if (!slideDetectionActive) return;
+                
+                keyPressBuffer.push({ key: e.key, timestamp: Date.now() });
+                // Keep only recent key presses (last 2 seconds)
+                keyPressBuffer = keyPressBuffer.filter(press => Date.now() - press.timestamp < 2000);
+                
+                let slideChange = 0;
+                
+                // Detect navigation keys
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+                    slideChange = 1;
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+                    slideChange = -1;
+                } else if (e.key === 'Home') {
+                    lastKnownSlide = 1;
+                    updateCanvasContent(1);
+                    console.log('Slide navigation (Home): 1');
+                    return;
+                } else if (e.key === 'End') {
+                    lastKnownSlide = 15; // Assume max 15 slides
+                    updateCanvasContent(15);
+                    console.log('Slide navigation (End): 15');
+                    return;
+                } else if (e.key >= '1' && e.key <= '9') {
+                    // Direct slide number input
+                    const slideNum = parseInt(e.key);
+                    setTimeout(() => {
+                        lastKnownSlide = slideNum;
+                        updateCanvasContent(slideNum);
+                        console.log(`Direct slide navigation: ${slideNum}`);
+                    }, 300);
+                    return;
+                }
+                
+                if (slideChange !== 0) {
+                    setTimeout(() => {
+                        const newSlide = Math.max(1, Math.min(20, lastKnownSlide + slideChange));
+                        if (newSlide !== lastKnownSlide) {
+                            lastKnownSlide = newSlide;
+                            updateCanvasContent(newSlide);
+                            console.log(`Keyboard slide navigation: ${newSlide}`);
+                        }
+                    }, 200);
+                }
+            });
+            
+            // Method 3: Iframe URL monitoring (when possible)
+            let lastCheckedUrl = '';
+            function checkIframeUrl() {
+                const iframe = document.getElementById('slides-iframe');
+                if (!iframe) return;
+                
+                try {
+                    const currentUrl = iframe.src;
+                    if (currentUrl !== lastCheckedUrl) {
+                        lastCheckedUrl = currentUrl;
+                        
+                        // Look for slide parameter in URL
+                        const url = new URL(currentUrl);
+                        const slideParam = url.searchParams.get('slide');
+                        if (slideParam) {
+                            // Extract slide number from slide ID
+                            const slideMatch = slideParam.match(/id\.(\w+)/);
+                            if (slideMatch) {
+                                // Convert slide ID to estimated number
+                                const slideId = slideMatch[1];
+                                const estimatedSlide = Math.min(20, Math.max(1, slideId.length % 10 + 1));
+                                if (estimatedSlide !== lastKnownSlide) {
+                                    lastKnownSlide = estimatedSlide;
+                                    updateCanvasContent(estimatedSlide);
+                                    console.log(`URL-based slide detection: ${estimatedSlide}`);
+                                }
+                            }
+                        }
+                    }
+                } catch (e) {
+                    // Expected cross-origin restriction
+                }
+            }
+            
+            // Method 4: Mouse activity and timing-based estimation
+            let mouseActivity = [];
+            let presentationStartTime = Date.now();
+            
+            document.addEventListener('click', function(e) {
+                if (!slideDetectionActive) return;
+                
+                mouseActivity.push(Date.now());
+                // Keep only recent activity (last 5 minutes)
+                mouseActivity = mouseActivity.filter(time => Date.now() - time < 300000);
+                
+                // If clicking on the slides iframe area, estimate slide progression
+                const iframe = document.getElementById('slides-iframe');
+                if (iframe && iframe.contains(e.target)) {
+                    const timeSinceStart = Date.now() - presentationStartTime;
+                    const estimatedSlide = Math.min(20, Math.floor(timeSinceStart / 30000) + 1); // Assume 30 seconds per slide
+                    
+                    if (Math.abs(estimatedSlide - lastKnownSlide) === 1) { // Only allow incremental changes
+                        lastKnownSlide = estimatedSlide;
+                        updateCanvasContent(estimatedSlide);
+                        console.log(`Activity-based slide estimation: ${estimatedSlide}`);
+                    }
+                }
+            });
+            
+            // Method 5: Periodic iframe inspection attempts
+            setInterval(() => {
+                if (slideDetectionActive) {
+                    checkIframeUrl();
+                    
+                    // Try to inject a slide detection script (will fail due to CORS, but worth trying)
+                    const iframe = document.getElementById('slides-iframe');
+                    if (iframe && iframe.contentWindow) {
+                        try {
+                            iframe.contentWindow.postMessage({
+                                type: 'requestSlideNumber',
+                                source: 'workshop-app'
+                            }, '*');
+                        } catch (e) {
+                            // Expected to fail due to cross-origin
+                        }
+                    }
+                }
+            }, 3000);
+            
+        }
+
+        // New simplified function for manual controls
+        function changeSlide(direction, exactSlide = null) {
+            const currentDisplay = document.getElementById('current-slide-display');
+            const slider = document.getElementById('slide-slider');
+            
+            let newSlide;
+            if (exactSlide !== null) {
+                newSlide = parseInt(exactSlide);
+            } else {
+                newSlide = Math.max(1, Math.min(15, currentSlide + direction));
+            }
+            
+            if (newSlide !== currentSlide) {
+                currentSlide = newSlide;
+                updateCanvasContent(newSlide);
+                
+                if (currentDisplay) currentDisplay.textContent = newSlide;
+                if (slider) slider.value = newSlide;
+                
+                console.log(`Slide changed to: ${newSlide}`);
+            }
+        }
+
+        function updateSlideDisplay(value) {
+            const currentDisplay = document.getElementById('current-slide-display');
+            if (currentDisplay) {
+                currentDisplay.textContent = value;
+            }
+        }
+        
+        function attemptSlideDetection() {
+            // Try multiple detection methods
+            const iframe = document.getElementById('slides-iframe');
+            
+            // Check if we can access iframe content
+            try {
+                if (iframe.contentWindow && iframe.contentWindow.location) {
+                    const url = iframe.contentWindow.location.href;
+                    console.log('Checking slide from URL:', url);
+                }
+            } catch (e) {
+                // Expected cross-origin restriction
+            }
+            
+            // Fallback: Use a simple slide progression estimator
+            // This is a basic implementation - in practice you'd want more sophisticated detection
+            const timeBasedEstimate = Math.min(5, Math.floor((Date.now() - pageLoadTime) / 60000) + 1);
+            if (timeBasedEstimate !== currentSlide && timeBasedEstimate >= 1) {
+                // Only update if it seems reasonable (not too frequent changes)
+                console.log('Time-based slide estimate:', timeBasedEstimate);
+            }
+        }
+        
+        function extractSlideNumber(slideId) {
+            // This would need to be customized based on your specific slide IDs
+            // For now, return a simple mapping or number extraction
+            const match = slideId.match(/(\d+)/);
+            return match ? parseInt(match[1]) : null;
+        }
+        
+        const pageLoadTime = Date.now();
+        
+        // Map slides to content for each tab
+        const slideContent = {
+            1: {
+                demo1: { title: "Welcome Demo", description: "Introduction and overview materials", icon: "👋", color: "bg-blue-500" },
+                demo2: { title: "Getting Started", description: "Initial setup and orientation", icon: "🚀", color: "bg-purple-500" }
+            },
+            2: {
+                demo1: { title: "Concept Explanation", description: "Core flipped classroom concepts", icon: "💡", color: "bg-yellow-500" },
+                demo2: { title: "Case Studies", description: "Real-world implementation examples", icon: "📚", color: "bg-green-500" }
+            },
+            3: {
+                demo1: { title: "Implementation Tools", description: "Tools and platforms for flipped learning", icon: "🔧", color: "bg-orange-500" },
+                demo2: { title: "Best Practices", description: "Tips and strategies for success", icon: "⭐", color: "bg-pink-500" }
+            },
+            4: {
+                demo1: { title: "Assessment Methods", description: "Evaluation strategies and rubrics", icon: "📊", color: "bg-indigo-500" },
+                demo2: { title: "Student Engagement", description: "Techniques for active participation", icon: "🎯", color: "bg-red-500" }
+            },
+            5: {
+                demo1: { title: "Technology Integration", description: "Digital tools and platforms", icon: "💻", color: "bg-teal-500" },
+                demo2: { title: "Troubleshooting", description: "Common challenges and solutions", icon: "🛠️", color: "bg-gray-500" }
+            }
+        };
+        
+        async function updateCanvasContent(slideNum) {
+            if (slideNum === currentSlide) return; // Avoid unnecessary updates
+            
+            currentSlide = slideNum;
+            console.log('Updating canvas content for slide:', slideNum);
+            
+            // Update manual slide control display
+            const currentDisplay = document.getElementById('current-slide-display');
+            const slider = document.getElementById('slide-slider');
+            if (currentDisplay) currentDisplay.textContent = slideNum;
+            if (slider) slider.value = slideNum;
+            
+            // Update slide indicator
+            const slideIndicators = document.querySelectorAll('.slide-indicator');
+            slideIndicators.forEach(indicator => {
+                indicator.textContent = `Slide ${slideNum} • Demo`;
+            });
+            
+            // Update demo content based on slide number
+            await updateDemoContent(slideNum);
+            
+            // Add visual feedback for slide change
+            const canvasContent = document.querySelector('.canvas-content');
+            if (canvasContent) {
+                canvasContent.style.transform = 'scale(1.02)';
+                canvasContent.style.transition = 'all 0.3s ease';
+                setTimeout(() => {
+                    canvasContent.style.transform = 'scale(1)';
+                }, 300);
+            }
+            
+            console.log(`Canvas updated for slide ${slideNum}`);
+        }
+
+        async function updateDemoContent(slideNum) {
+            const demoContent = document.getElementById('demo-content');
+            if (!demoContent) return;
+
+            // Try to use module loader if available
+            if (window.slideModuleLoader) {
+                try {
+                    await window.slideModuleLoader.switchToSlide(slideNum, demoContent);
+                    return;
+                } catch (error) {
+                    console.warn('Module loader failed, falling back to default content:', error);
+                }
+            }
+
+            // Fallback to default content for slides without modules
+            const slideContentMap = {
+                1: { title: "Workshop Introduction", icon: "🎓", description: "Welcome to the Flipped Classroom Workshop", color: "blue" },
+                2: { title: "What is Flipped Learning?", icon: "🔄", description: "Understanding the core concepts", color: "green" },
+                3: { title: "Benefits Overview", icon: "📈", description: "Why flip your classroom?", color: "purple" },
+                4: { title: "Implementation Planning", icon: "📋", description: "Step-by-step implementation guide", color: "orange" },
+                5: { title: "Content Creation", icon: "🎬", description: "Creating engaging video content", color: "red" },
+                6: { title: "Technology Tools", icon: "💻", description: "Essential tools and platforms", color: "teal" },
+                7: { title: "AI in Education", icon: "🤖", description: "Leveraging AI for better learning", color: "indigo" },
+                8: { title: "Video Generation", icon: "🎥", description: "AI-powered content creation", color: "pink" },
+                9: { title: "Interactive Elements", icon: "🎯", description: "Engaging student interactions", color: "yellow" },
+                10: { title: "Assessment Strategies", icon: "📊", description: "Evaluating flipped learning", color: "cyan" },
+                11: { title: "Student Feedback", icon: "💬", description: "Gathering and using feedback", color: "lime" },
+                12: { title: "Continuous Improvement", icon: "🔧", description: "Refining your approach", color: "amber" },
+                13: { title: "Community Building", icon: "👥", description: "Creating learning communities", color: "emerald" },
+                14: { title: "Future Trends", icon: "🚀", description: "What's next in flipped learning", color: "violet" },
+                15: { title: "Workshop Conclusion", icon: "✅", description: "Key takeaways and next steps", color: "rose" }
+            };
+
+            const content = slideContentMap[slideNum] || slideContentMap[1];
+
+            demoContent.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">${content.icon}</div>
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">${content.title}</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">${content.description}</p>
+                        <div class="text-sm text-${content.color}-600 dark:text-${content.color}-400 mb-4 font-medium">
+                            Slide ${slideNum} of 15
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <div class="text-2xl mb-2">📚</div>
+                                <h3 class="font-semibold mb-1">Learning Focus</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Interactive content for this topic</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <div class="text-2xl mb-2">🎯</div>
+                                <h3 class="font-semibold mb-1">Activities</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Hands-on exercises and demos</p>
+                            </div>
+                        </div>
+                        <button onclick="alert('Demo for slide ${slideNum} would launch here!')" 
+                                class="mt-4 px-6 py-2 bg-${content.color}-500 text-white rounded-lg hover:bg-${content.color}-600 transition-all">
+                            Launch Interactive Demo
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Add fade-in animation
+            demoContent.style.opacity = '0';
+            setTimeout(() => {
+                demoContent.style.opacity = '1';
+            }, 100);
+        }
+        
+        function loadDemo(demoType, slideNum) {
+            const content = slideContent[slideNum] || slideContent[1];
+            const demo = content[demoType];
+            
+            // Placeholder for actual demo loading logic
+            alert(`Loading ${demo.title} for Slide ${slideNum}...\\n\\nThis would load the actual interactive component or iframe.`);
+        }
+        
+        // Initialize with slide 1 content and start detection
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Initialize module loader
+            console.log('Checking SlideModuleLoader...', typeof SlideModuleLoader);
+            if (typeof SlideModuleLoader !== 'undefined') {
+                window.slideModuleLoader = new SlideModuleLoader();
+                console.log('Slide module loader initialized');
+            } else {
+                console.error('SlideModuleLoader not found - module-loader.js may not have loaded');
+            }
+            
+            await updateCanvasContent(1);
+            initializeSlideDetection();
+            
+            // Add CSS transitions for smooth content updates
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .canvas-content { transition: opacity 0.3s ease; }
+                .canvas-section { transition: all 0.3s ease; }
+            `;
+            document.head.appendChild(style);
+            
+            console.log('Flipped Classroom Workshop initialized with auto slide detection');
+        });
+
+        function initializeAvatarInfo() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarInfoPanel = document.getElementById('avatarInfoPanel');
+            
+            if (avatarEmbed && avatarInfoPanel) {
+                let hoverTimeout;
+                
+                avatarEmbed.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                    avatarInfoPanel.classList.remove('hidden');
+                });
+                
+                avatarEmbed.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 2000);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                });
+                
+                avatarInfoPanel.addEventListener('mouseleave', function() {
+                    hoverTimeout = setTimeout(() => {
+                        avatarInfoPanel.classList.add('hidden');
+                    }, 1000);
+                });
+            }
+        }
+
+        function toggleAvatar() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const toggleBtn = document.getElementById('avatar-toggle-btn');
+            
+            if (avatarEmbed) {
+                const isVisible = avatarEmbed.classList.contains('show');
+                
+                if (isVisible) {
+                    avatarEmbed.classList.remove('show');
+                    toggleBtn.innerHTML = '🤖 Show Avatar';
+                    toggleBtn.className = 'px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all text-sm';
+                } else {
+                    avatarEmbed.classList.add('show');
+                    toggleBtn.innerHTML = '❌ Hide Avatar';
+                    toggleBtn.className = 'px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all text-sm';
+                }
+            }
+        }
+
+        function moveAvatarToRight() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const positionBtn = document.getElementById('avatar-position-btn');
+            
+            if (avatarEmbed) {
+                const isOnLeft = avatarEmbed.style.left !== 'auto';
+                
+                if (isOnLeft) {
+                    // Move to right
+                    avatarEmbed.style.left = 'auto';
+                    avatarEmbed.style.right = '20px';
+                    positionBtn.innerHTML = '⬅️ Move Left';
+                    positionBtn.className = 'px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all text-sm';
+                } else {
+                    // Move to left
+                    avatarEmbed.style.left = '20px';
+                    avatarEmbed.style.right = 'auto';
+                    positionBtn.innerHTML = '➡️ Move Right';
+                    positionBtn.className = 'px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all text-sm';
+                }
+            }
+        }
+
+        function openFullscreen() {
+            window.open('https://docs.google.com/presentation/d/e/2PACX-1vS7ZQ1Bx_pi0trXqCEdcvSTz2JE7EdGN_S43f_u0BV2YWmmgQOlh93-V6jmAttR-IBx4d4u5Ro4hOjv/pub?start=false&loop=false&delayms=3000', '_blank');
+        }
+
+        function initializePiPHandler() {
+            const avatarEmbed = document.getElementById('heygen-streaming-embed');
+            const avatarContainer = document.getElementById('heygen-streaming-container');
+            
+            if (avatarContainer) {
+                const iframe = avatarContainer.querySelector('iframe');
+                
+                if (iframe) {
+                    iframe.addEventListener('enterpictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '0';
+                            avatarEmbed.style.visibility = 'hidden';
+                            avatarEmbed.style.pointerEvents = 'none';
+                        }
+                    });
+                    
+                    iframe.addEventListener('leavepictureinpicture', function() {
+                        if (avatarEmbed) {
+                            avatarEmbed.style.opacity = '1';
+                            avatarEmbed.style.visibility = 'visible';
+                            avatarEmbed.style.pointerEvents = 'auto';
+                        }
+                    });
+                }
+            }
+            
+            document.addEventListener('enterpictureinpicture', function() {
+                if (avatarEmbed) {
+                    avatarEmbed.style.opacity = '0';
+                    avatarEmbed.style.visibility = 'hidden';
+                    avatarEmbed.style.pointerEvents = 'none';
+                }
+            });
+            
+            document.addEventListener('leavepictureinpicture', function() {
+                if (avatarEmbed) {
+                    avatarEmbed.style.opacity = '1';
+                    avatarEmbed.style.visibility = 'visible';
+                    avatarEmbed.style.pointerEvents = 'auto';
+                }
+            });
+        }
+
+        // Initialize when HeyGen avatar is loaded
+        setTimeout(() => {
+            initializeAvatarInfo();
+            initializePiPHandler();
+        }, 2000);
+    </script>
+</body>
+</html>

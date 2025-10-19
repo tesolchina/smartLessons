@@ -1,0 +1,142 @@
+/**
+ * Slide 01 - QR Code Module Styles
+ * Custom styling specific to slide 1 QR code display
+ */
+
+.slide01-content {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* QR Code container styling */
+.slide01-content .qr-container {
+    transition: transform 0.3s ease;
+}
+
+.slide01-content .qr-container:hover {
+    transform: scale(1.05);
+}
+
+/* QR Code image specific styling */
+.slide01-content img[alt*="QR Code"] {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.slide01-content img[alt*="QR Code"]:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Information box styling */
+.slide01-content .info-box {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Action buttons styling */
+.slide01-content .action-buttons button {
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.slide01-content .action-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .slide01-content {
+        padding: 1rem;
+    }
+    
+    .slide01-content img[alt*="QR Code"] {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    
+    .slide01-content .action-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .slide01-content .action-buttons button {
+        width: 100%;
+    }
+}
+
+/* Animation for slide transition */
+.slide01-content.fade-in {
+    animation: slideInFade 0.6s ease-out;
+}
+
+@keyframes slideInFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Notification styles */
+.notification {
+    font-size: 0.875rem;
+    font-weight: 500;
+    max-width: 300px;
+    word-wrap: break-word;
+}
+
+.notification-success {
+    background-color: #10b981;
+}
+
+.notification-error {
+    background-color: #ef4444;
+}
+
+.notification-info {
+    background-color: #3b82f6;
+}
+
+/* Dark mode adjustments */
+.dark .slide01-content .info-box {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .slide01-content img[alt*="QR Code"] {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .slide01-content img[alt*="QR Code"]:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Loading state for QR code */
+.slide01-content .qr-loading {
+    width: 192px;
+    height: 192px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.dark .slide01-content .qr-loading {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+    background-size: 200% 100%;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKBU Basic Chat Assistant</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>🤖 Chatbot Configuration</h2>
+            </div>
+            
+                        <!-- Replace the sidebar content with this order: Welcome FIRST, then System -->
+            
+            <div class="sidebar-content">
+                <!-- API Configuration Section -->
+                <div class="api-section">
+                    <div class="api-header" onclick="toggleSection('api')">
+                        <h3>🔑 API Configuration</h3>
+                        <span class="toggle-icon" id="api-toggle">▼</span>
+                    </div>
+                    <div class="api-content" id="api-content">
+                        <div class="api-form">
+                            <label for="api-key">HKBU GenAI API Key:</label>
+                            <input type="password" id="api-key" placeholder="Enter your API key">
+                            
+                            <label for="model-select">Model:</label>
+                            <select id="model-select">
+                                <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                                <option value="gpt-4">GPT-4</option>
+                                <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                            </select>
+                            
+                            <div class="api-buttons">
+                                <button class="btn btn-secondary" onclick="testConnection()">🔍 Test</button>
+                                <button class="btn btn-primary" id="connect-btn" onclick="connectAPI()" disabled>🔌 Connect</button>
+                                <button class="btn btn-danger" onclick="clearAPI()">🧹 Clear</button>
+                            </div>
+                            
+                            <div id="connection-status" class="connection-status" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Welcome Message Section - MOVED TO TOP -->
+                <div class="prompt-section">
+                    <div class="prompt-header" onclick="togglePrompt('welcome')">
+                        <h3>👋 Welcome Message</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="prompt-content" id="welcome-content">
+                        <div class="prompt-display" id="welcome-display">Loading welcome message...</div>
+                        <div class="prompt-actions">
+                            <button class="btn btn-primary" onclick="handleWelcomePromptEdit()">✏️ Edit Welcome</button>
+                            <button class="btn btn-secondary" onclick="resetPrompt('welcome')">↺ Reset</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- System Instructions Section - MOVED BELOW -->
+                <div class="prompt-section">
+                    <div class="prompt-header" onclick="togglePrompt('system')">
+                        <h3>⚙️ System Instructions</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="prompt-content" id="system-content">
+                        <div class="prompt-display" id="system-display">Loading system instructions...</div>
+                        <div class="prompt-actions">
+                            <button class="btn btn-primary" onclick="handleSystemPromptEdit()">✏️ Edit System</button>
+                            <button class="btn btn-secondary" onclick="resetPrompt('system')">↺ Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <strong>Created by:</strong><br>
+                Dr. Simon Wang<br>
+                Innovation Officer, Language Centre<br>
+                Hong Kong Baptist University<br>
+                <a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <h1>HKBU Learning Assistant</h1>
+                <button class="new-session-btn" onclick="startNewSession()">🔄 New Session</button>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message assistant">
+                    <div class="message-content">
+                        🔑 Please configure your API key first to start chatting!<br><br>
+                        Follow the instructions in the sidebar to get your HKBU GenAI API key and test the connection.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea 
+                        class="chat-input" 
+                        id="message-input" 
+                        placeholder="Connect your API key first to start chatting..."
+                        rows="1"
+                        disabled
+                    ></textarea>
+                    <div class="input-buttons">
+                        <button class="send-btn" id="send-btn" onclick="sendMessage()" disabled>➤</button>
+                        <button class="done-btn" id="done-btn" onclick="generateReport()" disabled>📄 Export Chat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/core.js"></script>
+    <script src="js/prompts.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

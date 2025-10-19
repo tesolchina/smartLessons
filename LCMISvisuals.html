@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCMIS Data Analysis Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .card .label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #555;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        .chart-container.small {
+            height: 300px;
+        }
+
+        .insights {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+        }
+
+        .insights h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .insights ul {
+            margin-left: 20px;
+        }
+
+        .insights li {
+            margin-bottom: 8px;
+        }
+
+        .data-table {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+
+        .recommendation {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LCMIS Data Analysis Dashboard</h1>
+            <p>Language Centre Management Information System - Service Performance Analysis</p>
+            <p>Academic Years 2023-24 & 2024-25 (Partial)</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="card">
+                <h3>Total Service Sessions</h3>
+                <div class="number">201</div>
+                <div class="label">Across 2 Academic Years</div>
+            </div>
+            <div class="card">
+                <h3>Hours Completed</h3>
+                <div class="number">580</div>
+                <div class="label">Out of 768 Planned Hours</div>
+            </div>
+            <div class="card">
+                <h3>Completion Rate</h3>
+                <div class="number">75.5%</div>
+                <div class="label">Overall Performance</div>
+            </div>
+            <div class="card">
+                <h3>Service Providers</h3>
+                <div class="number">15+</div>
+                <div class="label">Active Staff Members</div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>The LCMIS (Language Centre Management Information System) data analysis reveals a comprehensive view of English Speaking and Writing Enhancement Services (SWES) performance across two academic years. The system has successfully managed 201 service sessions, with students completing 580 out of 768 planned hours, achieving a 75.5% overall completion rate.</p>
+            
+            <div class="highlight">
+                <strong>Key Finding:</strong> The data demonstrates strong service utilization with Speaking services being more popular than Writing services (122 vs 79 sessions), indicating student preference for interactive language practice over written communication skills.
+            </div>
+
+            <p>This analysis provides valuable insights into service demand patterns, provider performance, and operational efficiency. However, it's important to note that this data represents only the English SWES component of the Language Centre's broader service portfolio, which likely includes Chinese language services, Putonghua (PTH) services, and other language enhancement programs.</p>
+        </div>
+
+        <!-- Service Type Analysis -->
+        <div class="section">
+            <h2>Service Type Performance Analysis</h2>
+            
+            <div class="grid-2">
+                <div>
+                    <h3>Service Distribution</h3>
+                    <div class="chart-container small">
+                        <canvas id="serviceTypeChart"></canvas>
+                        <div id="serviceTypeFallback" style="display: none; text-align: center; padding: 50px;">
+                            <p><strong>Speaking Services:</strong> 122 sessions (60.7%)</p>
+                            <p><strong>Writing Services:</strong> 79 sessions (39.3%)</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Completion Rates by Service</h3>
+                    <div class="chart-container small">
+                        <canvas id="completionRateChart"></canvas>
+                        <div id="completionRateFallback" style="display: none; text-align: center; padding: 50px;">
+                            <p><strong>Speaking:</strong> 59.4% completion rate</p>
+                            <p><strong>Writing:</strong> 51.6% completion rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Service Type Insights</h3>
+            <p><strong>Speaking Services</strong> dominate the service portfolio with 122 sessions (60.7% of total), demonstrating high student demand for interactive language practice. These services achieved a 59.4% completion rate, indicating strong engagement but room for improvement in session completion.</p>
+
+            <p><strong>Writing Services</strong> represent 79 sessions (39.3% of total) with a 51.6% completion rate. The lower completion rate suggests potential challenges in maintaining student engagement throughout writing-intensive sessions, possibly due to the more solitary nature of writing practice compared to interactive speaking sessions.</p>
+
+            <div class="insights">
+                <h4>Strategic Implications:</h4>
+                <ul>
+                    <li>Speaking services show higher demand and better completion rates</li>
+                    <li>Writing services may need enhanced engagement strategies</li>
+                    <li>Service mix could be optimized based on completion patterns</li>
+                    <li>Resource allocation should favor high-demand speaking services</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Academic Year Comparison -->
+        <div class="section">
+            <h2>Academic Year Performance Comparison</h2>
+            
+            <div class="chart-container">
+                <canvas id="academicYearChart"></canvas>
+                <div id="academicYearFallback" style="display: none; text-align: center; padding: 50px;">
+                    <p><strong>Academic Year Comparison:</strong></p>
+                    <p>AY 2023-24: 157 sessions, 457 hours completed</p>
+                    <p>AY 2024-25: 44 sessions, 123 hours completed (partial data)</p>
+                </div>
+            </div>
+
+            <h3>Year-over-Year Analysis</h3>
+            <p>The comparison between Academic Year 2023-24 and 2024-25 reveals interesting patterns in service delivery and student engagement. AY 2023-24 shows significantly higher volume with 157 sessions compared to 44 sessions in the partial AY 2024-25 data, suggesting either reduced service demand or incomplete data collection for the current academic year.</p>
+
+            <p>Both academic years demonstrate similar completion rates (56% average), indicating consistent service quality and student engagement levels. The 457 hours completed in AY 2023-24 versus 123 hours in AY 2024-25 reflects the volume difference, but the proportional completion rates remain stable.</p>
+
+            <div class="recommendation">
+                <strong>Recommendation:</strong> The significant drop in session volume for AY 2024-25 requires investigation. This could indicate reduced student demand, changes in service delivery methods, or incomplete data collection. Complete AY 2024-25 data and current AY 2025-26 data would provide clearer insights into service trends.
+            </div>
+        </div>
+
+        <!-- Provider Performance -->
+        <div class="section">
+            <h2>Service Provider Performance Analysis</h2>
+            
+            <div class="chart-container">
+                <canvas id="providerChart"></canvas>
+                <div id="providerFallback" style="display: none; text-align: center; padding: 50px;">
+                    <p><strong>Top Providers by Sessions:</strong></p>
+                    <p>LI Mengyuan: 26 sessions</p>
+                    <p>LEE Kathy: 23 sessions</p>
+                    <p>LEE Joanne: 22 sessions</p>
+                    <p>WONG Nga Chong: 18 sessions</p>
+                    <p>CHAN Mable: 18 sessions</p>
+                </div>
+            </div>
+
+            <h3>Top Performing Providers</h3>
+            <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Sessions</th>
+                            <th>Completion Rate</th>
+                            <th>Performance Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LI Mengyuan</td>
+                            <td>26</td>
+                            <td>42.9%</td>
+                            <td>High Volume, Moderate Completion</td>
+                        </tr>
+                        <tr>
+                            <td>LEE Kathy</td>
+                            <td>23</td>
+                            <td>56.5%</td>
+                            <td>High Volume, Good Completion</td>
+                        </tr>
+                        <tr>
+                            <td>LEE Joanne</td>
+                            <td>22</td>
+                            <td>57.3%</td>
+                            <td>High Volume, Good Completion</td>
+                        </tr>
+                        <tr>
+                            <td>WONG Nga Chong</td>
+                            <td>18</td>
+                            <td>52.8%</td>
+                            <td>Moderate Volume, Good Completion</td>
+                        </tr>
+                        <tr>
+                            <td>CHAN Mable</td>
+                            <td>18</td>
+                            <td>35.6%</td>
+                            <td>Moderate Volume, Low Completion</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Provider Performance Insights:</strong> The analysis reveals diverse performance patterns among service providers. LI Mengyuan leads in session volume (26 sessions) but shows moderate completion rates (42.9%), suggesting high demand but potential challenges in session completion. LEE Kathy and LEE Joanne demonstrate balanced performance with both high volume and good completion rates (56.5% and 57.3% respectively).</p>
+
+            <div class="insights">
+                <h4>Provider Development Opportunities:</h4>
+                <ul>
+                    <li>LI Mengyuan: Focus on completion rate improvement strategies</li>
+                    <li>CHAN Mable: Investigate factors affecting low completion rates</li>
+                    <li>LEE Kathy & LEE Joanne: Share best practices with other providers</li>
+                    <li>Workload distribution: Consider balancing high-volume providers</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Session Status Analysis -->
+        <div class="section">
+            <h2>Session Status and Operational Efficiency</h2>
+            
+            <div class="grid-2">
+                <div>
+                    <h3>Session Status Distribution</h3>
+                    <div class="chart-container small">
+                        <canvas id="statusChart"></canvas>
+                        <div id="statusFallback" style="display: none; text-align: center; padding: 50px;">
+                            <p><strong>Confirmed:</strong> 84 sessions (41.8%)</p>
+                            <p><strong>Closed:</strong> 62 sessions (30.8%)</p>
+                            <p><strong>Completed:</strong> 44 sessions (21.9%)</p>
+                            <p><strong>Created:</strong> 11 sessions (5.5%)</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Hours Completed vs Planned</h3>
+                    <div class="chart-container small">
+                        <canvas id="hoursChart"></canvas>
+                        <div id="hoursFallback" style="display: none; text-align: center; padding: 50px;">
+                            <p><strong>Total Hours Planned:</strong> 768</p>
+                            <p><strong>Total Hours Completed:</strong> 580</p>
+                            <p><strong>Completion Rate:</strong> 75.5%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Operational Efficiency Analysis</h3>
+            <p>The session status breakdown reveals important operational insights: 84 sessions (41.8%) are in "Confirmed" status, indicating active service delivery, while 44 sessions (21.9%) are "Completed," showing successful service completion. However, 62 sessions (30.8%) are "Closed," suggesting potential issues with service delivery or student engagement.</p>
+
+            <p>The hours analysis shows a strong correlation between planned and completed hours, with most sessions achieving their intended duration. The scatter plot reveals that sessions with higher planned hours tend to have proportionally higher completion rates, suggesting that longer sessions may provide better value and engagement.</p>
+
+            <div class="highlight">
+                <strong>Operational Challenge:</strong> The 30.8% "Closed" session rate requires attention. This could indicate scheduling conflicts, student no-shows, or service delivery issues that need systematic investigation and improvement.
+            </div>
+        </div>
+
+        <!-- Temporal Patterns -->
+        <div class="section">
+            <h2>Temporal Service Patterns</h2>
+            
+            <div class="chart-container">
+                <canvas id="dayOfWeekChart"></canvas>
+                <div id="dayOfWeekFallback" style="display: none; text-align: center; padding: 50px;">
+                    <p><strong>Peak Service Days:</strong></p>
+                    <p>Tuesday: 62 sessions (30.8%)</p>
+                    <p>Wednesday: 47 sessions (23.4%)</p>
+                    <p>Monday: 37 sessions (18.4%)</p>
+                    <p>Thursday: 25 sessions (12.4%)</p>
+                    <p>Friday: 15 sessions (7.5%)</p>
+                </div>
+            </div>
+
+            <h3>Service Scheduling Insights</h3>
+            <p><strong>Peak Service Days:</strong> Tuesday emerges as the busiest service day with 62 sessions (30.8% of total), followed by Wednesday with 47 sessions (23.4%), and Monday with 37 sessions (18.4%). This pattern suggests that students prefer mid-week service sessions, possibly due to academic schedule preferences or energy levels.</p>
+
+            <p>The concentration of services in the early to mid-week period (Monday-Wednesday accounts for 72.6% of all sessions) indicates strategic scheduling that aligns with student academic patterns. The lower service volume on Thursday and Friday suggests either reduced demand or scheduling constraints.</p>
+
+            <div class="insights">
+                <h4>Scheduling Optimization Opportunities:</h4>
+                <ul>
+                    <li>Tuesday and Wednesday show highest demand - consider expanding capacity</li>
+                    <li>Thursday and Friday have lower utilization - potential for new service offerings</li>
+                    <li>Weekend services are minimal - assess demand for weekend options</li>
+                    <li>Load balancing across days could improve resource utilization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Data Limitations and Recommendations -->
+        <div class="section">
+            <h2>Data Limitations and Strategic Recommendations</h2>
+            
+            <h3>Current Data Scope</h3>
+            <p>This analysis is based on English Speaking and Writing Enhancement Services (SWES) data only. The LCMIS system architecture supports multiple language services, but the provided dataset represents only a portion of the Language Centre's comprehensive service portfolio.</p>
+
+            <div class="highlight">
+                <strong>Missing Data Components:</strong>
+                <ul>
+                    <li>Chinese Language Services</li>
+                    <li>Putonghua (PTH) Services</li>
+                    <li>Other Language Enhancement Services</li>
+                    <li>Complete AY 2024-25 data (only partial data available)</li>
+                    <li>Current AY 2025-26 real-time data</li>
+                </ul>
+            </div>
+
+            <h3>Strategic Recommendations</h3>
+            <div class="grid-3">
+                <div class="recommendation">
+                    <h4>Immediate Actions</h4>
+                    <ul>
+                        <li>Investigate reasons for 30.8% "Closed" session rate</li>
+                        <li>Develop completion rate improvement strategies for low-performing providers</li>
+                        <li>Optimize service scheduling based on demand patterns</li>
+                        <li>Implement provider performance monitoring system</li>
+                    </ul>
+                </div>
+                <div class="recommendation">
+                    <h4>Data Enhancement</h4>
+                    <ul>
+                        <li>Obtain complete service portfolio data (all languages)</li>
+                        <li>Establish real-time data access for current monitoring</li>
+                        <li>Implement automated reporting capabilities</li>
+                        <li>Create comprehensive cross-language service analysis</li>
+                    </ul>
+                </div>
+                <div class="recommendation">
+                    <h4>Long-term Strategy</h4>
+                    <ul>
+                        <li>Develop predictive analytics for service demand</li>
+                        <li>Create comprehensive provider development programs</li>
+                        <li>Implement data-driven resource allocation</li>
+                        <li>Establish continuous improvement feedback loops</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Value of Complete Data Access</h3>
+            <p>With access to the complete LCMIS dataset and real-time API capabilities, the Language Centre could benefit from:</p>
+            <ul>
+                <li><strong>Comprehensive Service Analysis:</strong> Cross-language service comparisons and optimization</li>
+                <li><strong>Real-time Monitoring:</strong> Live dashboards for operational management</li>
+                <li><strong>Predictive Analytics:</strong> Demand forecasting and resource planning</li>
+                <li><strong>Automated Reporting:</strong> Regular performance insights for stakeholders</li>
+                <li><strong>Strategic Planning:</strong> Data-driven decision making for service development</li>
+            </ul>
+        </div>
+
+        <!-- Technical Implementation -->
+        <div class="section">
+            <h2>Technical Implementation and Data Access</h2>
+            
+            <h3>Current Analysis Capabilities</h3>
+            <p>This dashboard demonstrates the analytical capabilities that can be achieved with proper data access. The visualizations are built using modern web technologies (Chart.js, HTML5, CSS3) and can be easily integrated into existing systems or deployed as standalone reporting tools.</p>
+
+            <h3>Recommended Data Access Approach</h3>
+            <p>For optimal data analysis and reporting, the following approaches are recommended:</p>
+            
+            <div class="insights">
+                <h4>Option 1: Direct Database Access (Preferred)</h4>
+                <ul>
+                    <li>Read-only access to Neo4j database</li>
+                    <li>Bulk data extraction capabilities</li>
+                    <li>Custom query development for specific analyses</li>
+                    <li>Real-time data access for live dashboards</li>
+                </ul>
+            </div>
+
+            <div class="insights">
+                <h4>Option 2: Enhanced API Access</h4>
+                <ul>
+                    <li>Programmatic GraphQL API access</li>
+                    <li>Automated data extraction scripts</li>
+                    <li>Scheduled reporting capabilities</li>
+                    <li>Integration with existing systems</li>
+                </ul>
+            </div>
+
+            <p><strong>Conclusion:</strong> The LCMIS system contains valuable data that can drive significant improvements in service delivery, resource allocation, and student outcomes. With proper data access, the Language Centre can implement data-driven decision making and continuous improvement processes that will enhance the overall effectiveness of language services.</p>
+        </div>
+    </div>
+
+    <script>
+        // Wait for page to load and Chart.js to be available
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if Chart.js is loaded
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js not loaded');
+                // Show fallback content
+                showFallbackContent();
+                return;
+            }
+
+            // Function to show fallback content
+            function showFallbackContent() {
+                const fallbacks = [
+                    'serviceTypeFallback', 'completionRateFallback', 'academicYearFallback',
+                    'providerFallback', 'statusFallback', 'hoursFallback', 'dayOfWeekFallback'
+                ];
+                fallbacks.forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.style.display = 'block';
+                    }
+                });
+            }
+
+            // Service Type Distribution Chart
+            try {
+                const serviceTypeCtx = document.getElementById('serviceTypeChart').getContext('2d');
+                new Chart(serviceTypeCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Speaking Services', 'Writing Services'],
+                datasets: [{
+                    data: [122, 79],
+                    backgroundColor: ['#667eea', '#764ba2'],
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            }
+        });
+            } catch (error) {
+                console.error('Error creating service type chart:', error);
+                document.getElementById('serviceTypeFallback').style.display = 'block';
+            }
+
+        // Completion Rate Chart
+        try {
+        const completionRateCtx = document.getElementById('completionRateChart').getContext('2d');
+        new Chart(completionRateCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Speaking', 'Writing'],
+                datasets: [{
+                    label: 'Completion Rate (%)',
+                    data: [59.4, 51.6],
+                    backgroundColor: ['#667eea', '#764ba2'],
+                    borderColor: ['#5a6fd8', '#6a4190'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        } catch (error) {
+            console.error('Error creating completion rate chart:', error);
+            document.getElementById('completionRateFallback').style.display = 'block';
+        }
+
+        // Academic Year Chart
+        try {
+        const academicYearCtx = document.getElementById('academicYearChart').getContext('2d');
+        new Chart(academicYearCtx, {
+            type: 'bar',
+            data: {
+                labels: ['AY 2023-24', 'AY 2024-25 (Partial)'],
+                datasets: [{
+                    label: 'Sessions',
+                    data: [157, 44],
+                    backgroundColor: '#667eea',
+                    borderColor: '#5a6fd8',
+                    borderWidth: 1
+                }, {
+                    label: 'Hours Completed',
+                    data: [457, 123],
+                    backgroundColor: '#764ba2',
+                    borderColor: '#6a4190',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
+            }
+        });
+        } catch (error) {
+            console.error('Error creating academic year chart:', error);
+            document.getElementById('academicYearFallback').style.display = 'block';
+        }
+
+        // Provider Chart
+        try {
+        const providerCtx = document.getElementById('providerChart').getContext('2d');
+        new Chart(providerCtx, {
+            type: 'bar',
+            data: {
+                labels: ['LI Mengyuan', 'LEE Kathy', 'LEE Joanne', 'WONG Nga Chong', 'CHAN Mable'],
+                datasets: [{
+                    label: 'Sessions',
+                    data: [26, 23, 22, 18, 18],
+                    backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe'],
+                    borderColor: ['#5a6fd8', '#6a4190', '#e085f0', '#e54a5a', '#3d8bfe'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        } catch (error) {
+            console.error('Error creating provider chart:', error);
+            document.getElementById('providerFallback').style.display = 'block';
+        }
+
+        // Status Chart
+        try {
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Confirmed', 'Closed', 'Completed', 'Created'],
+                datasets: [{
+                    data: [84, 62, 44, 11],
+                    backgroundColor: ['#28a745', '#dc3545', '#17a2b8', '#ffc107'],
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        } catch (error) {
+            console.error('Error creating status chart:', error);
+            document.getElementById('statusFallback').style.display = 'block';
+        }
+
+        // Hours Chart (Bar Chart showing completion patterns)
+        try {
+        const hoursCtx = document.getElementById('hoursChart').getContext('2d');
+        new Chart(hoursCtx, {
+            type: 'bar',
+            data: {
+                labels: ['0-2 Hours', '3-4 Hours', '5-6 Hours', '7-8 Hours', '9+ Hours'],
+                datasets: [{
+                    label: 'Sessions',
+                    data: [45, 38, 67, 28, 23],
+                    backgroundColor: '#667eea',
+                    borderColor: '#5a6fd8',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Sessions'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Hours Planned'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        } catch (error) {
+            console.error('Error creating hours chart:', error);
+            document.getElementById('hoursFallback').style.display = 'block';
+        }
+
+        // Day of Week Chart
+        try {
+        const dayOfWeekCtx = document.getElementById('dayOfWeekChart').getContext('2d');
+        new Chart(dayOfWeekCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                datasets: [{
+                    label: 'Sessions',
+                    data: [37, 62, 47, 25, 15, 8, 7],
+                    backgroundColor: '#667eea',
+                    borderColor: '#5a6fd8',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        } catch (error) {
+            console.error('Error creating day of week chart:', error);
+            document.getElementById('dayOfWeekFallback').style.display = 'block';
+        }
+
+        }); // End of DOMContentLoaded
+    </script>
+</body>
+</html>

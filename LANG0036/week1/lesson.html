@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANG0036 Lesson Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Dark mode support and transitions */
+        @media (prefers-color-scheme: dark) {
+            body { background: #1a1a1a; color: #f1f5f9; }
+        }
+        .transition-all { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div class="max-w-4xl mx-auto py-8 px-4">
+        <!-- Header Section -->
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-primary mb-2">Lesson Title</h1>
+            <p class="text-gray-600 dark:text-gray-400">Learning Objectives & Outcomes</p>
+        </div>
+
+        <!-- Video Section -->
+        <div class="mb-8 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+            <h2 class="text-xl font-bold mb-4">📺 Watch & Learn</h2>
+            <div class="aspect-w-16 aspect-h-9 mb-4">
+                <!-- Replace src with your video URL -->
+                <iframe class="w-full h-96 rounded-lg" 
+                        src="https://www.youtube.com/embed/your-video-id"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            <div class="prose dark:prose-invert max-w-none">
+                <h3>Key Points:</h3>
+                <ul class="list-disc pl-6">
+                    <li>Point 1</li>
+                    <li>Point 2</li>
+                    <li>Point 3</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Reading Section -->
+        <div class="mb-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-100 dark:border-blue-800">
+            <h2 class="text-xl font-bold mb-4">📚 Reading</h2>
+            <div class="prose dark:prose-invert max-w-none">
+                <p>Your reading content goes here...</p>
+            </div>
+        </div>
+
+        <!-- Multiple Choice Questions -->
+        <div class="mb-8 bg-green-50 dark:bg-green-900/20 rounded-xl p-6 border border-green-100 dark:border-green-800">
+            <h2 class="text-xl font-bold mb-4">✍️ Multiple Choice</h2>
+            <div class="space-y-6">
+                <div class="mcq-container">
+                    <p class="font-medium mb-2">1. Question text goes here?</p>
+                    <div class="space-y-2">
+                        <button class="w-full text-left p-3 rounded bg-white dark:bg-gray-800 hover:bg-green-100 dark:hover:bg-green-800 transition-all" data-correct="true">
+                            A) Correct answer
+                        </button>
+                        <button class="w-full text-left p-3 rounded bg-white dark:bg-gray-800 hover:bg-green-100 dark:hover:bg-green-800 transition-all" data-correct="false">
+                            B) Wrong answer
+                        </button>
+                    </div>
+                    <div class="feedback mt-3 hidden"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="mb-8 bg-purple-50 dark:bg-purple-900/20 rounded-xl p-6 border border-purple-100 dark:border-purple-800">
+            <h2 class="text-xl font-bold mb-4">🤔 True or False</h2>
+            <div class="space-y-4">
+                <div class="tf-container">
+                    <p class="font-medium mb-2">1. Statement to evaluate:</p>
+                    <div class="flex gap-4">
+                        <button class="flex-1 p-3 rounded bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-800 transition-all" data-answer="true">True</button>
+                        <button class="flex-1 p-3 rounded bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-800 transition-all" data-answer="false">False</button>
+                    </div>
+                    <div class="feedback mt-3 hidden"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Discussion Section -->
+        <div class="mb-8 bg-orange-50 dark:bg-orange-900/20 rounded-xl p-6 border border-orange-100 dark:border-orange-800">
+            <h2 class="text-xl font-bold mb-4">🤖 AI-Assisted Discussion</h2>
+            <div id="ai-chat" class="space-y-4">
+                <!-- Chat messages will be inserted here -->
+            </div>
+            <div class="mt-4 flex gap-2">
+                <input type="text" 
+                       class="flex-1 p-3 rounded bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+                       placeholder="Type your question...">
+                <button class="px-6 py-3 bg-primary text-white rounded hover:bg-primary-dark transition-all">
+                    Send
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center mt-8">
+            <button class="px-6 py-3 bg-gray-200 dark:bg-gray-800 rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition-all">
+                ← Previous
+            </button>
+            <button class="px-6 py-3 bg-primary text-white rounded hover:bg-primary-dark transition-all">
+                Next →
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript for interactions -->
+    <script>
+        // Add your JavaScript here for:
+        // - MCQ handling
+        // - True/False validation
+        // - AI chat integration
+        // - Progress tracking
+    </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming AI Avatars for Flipped Classroom</title>
+    <script src="https://            <div class="mt-4 p-4 bg-green-100 dark:bg-green-800 rounded-lg">
+                <p class="text-sm text-green-800 dark:text-green-200">
+                    <strong>✅ Demo Status:</strong> Interactive AI avatar is now live! 
+                    Experience real-time conversation with our educational AI assistant that combines customized knowledge 
+                    with voice input/output and visual engagement for enhanced learning experiences.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Reference Section -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B6B',
+                        secondary: '#8B5CF6',
+                        coral: '#FF6B6B',
+                        'coral-light': '#FFA8A8',
+                        purple: '#8B5CF6',
+                        'purple-light': '#A78BFA',
+                        cream: '#FFF8E7',
+                        'cream-dark': '#FFF0C4'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Prevent HeyGen avatar from floating */
+        #avatar-container {
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        #avatar-container * {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            transform: none !important;
+        }
+        
+        /* Ensure any floating elements stay within bounds */
+        body > div[style*="position: fixed"],
+        body > div[style*="position: absolute"] {
+            position: relative !important;
+        }
+    </style>
+    <script>
+        
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+
+<div class="max-w-7xl mx-auto p-4">
+    <!-- Header Section -->
+    <div class="mb-8">
+        <h1 class="text-5xl font-bold text-gray-800 dark:text-white mb-4 flex items-center">
+            <span class="text-6xl mr-4">🤖</span>
+            Streaming AI Avatars for Flipped Classroom
+        </h1>
+        <p class="text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            Traditional flipped classroom videos lack interactivity, limiting student engagement and personalized learning. 
+            Streaming AI avatars transform static educational content into dynamic, interactive experiences that respond 
+            to student needs in real-time, offering 24/7 support and personalized guidance.
+        </p>
+    </div>
+
+    <!-- Article Reference Section -->
+    <div class="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg p-6 mb-8">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-3xl font-semibold text-gray-800 dark:text-white flex items-center">
+                <span class="text-4xl mr-3">📚</span>
+                Foundation: Customized AI Chatbots in Education
+            </h2>
+            <button onclick="toggleArticleDetails()" id="article-toggle" 
+                    class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-coral-light transition-all">
+                Show Details
+            </button>
+        </div>
+        
+        <div class="mb-4">
+            <p class="text-xl text-gray-700 dark:text-gray-300 mb-2">
+                Based on insights from <strong>Simon Wang</strong> at Hong Kong Baptist University, the journey from generic to customized chatbots provides the foundation for streaming avatar technology.
+            </p>
+            <a href="https://www.timeshighereducation.com/campus/where-start-generative-ai-chatbot-customisation" 
+               target="_blank" 
+               class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+                📖 Read Full Article: "Where to start with generative AI chatbot customisation"
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div>
+
+        <div id="article-details" class="hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 dark:text-white mb-3">🎯 Key Insights</h3>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li>• Generic chatbots lack contextual information for educational needs</li>
+                        <li>• System prompts enable personalized learning experiences</li>
+                        <li>• Two approaches: branching (menu options) and sequencing (structured steps)</li>
+                        <li>• Custom chatbots reduce hallucination and prevent plagiarism</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 dark:text-white mb-3">💡 Implementation Pathways</h3>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li>• <strong>Platform-based:</strong> Poe.com (~$20/month, limited system prompts)</li>
+                        <li>• <strong>In-house development:</strong> Higher upfront costs, more control</li>
+                        <li>• API-based integration with OpenAI services</li>
+                        <li>• Collaboration between teachers and programmers essential</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Text-based Chatbot Example -->
+    <div class="bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900 dark:to-teal-900 rounded-lg p-6 mb-8">
+        <h2 class="text-3xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+            <span class="text-4xl mr-3">💬</span>
+            Text-based Customized Chatbot Platform
+        </h2>
+        <p class="text-xl text-gray-700 dark:text-gray-300 mb-4">
+            Explore our in-development text-based chatbot platform that demonstrates customized AI for career guidance and educational support.
+        </p>
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 mb-4">
+            <iframe src="https://busaitutor.hkbu.tech/" 
+                    class="w-full h-96 border-0 rounded-lg"
+                    title="HKBU AI Tutor Platform">
+            </iframe>
+        </div>
+        <a href="https://busaitutor.hkbu.tech/" target="_blank" 
+           class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+            🔗 Open CareerLink@BUS Platform
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Video Avatar Upgrade Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Left Column: Technology Explanation -->
+        <div class="space-y-6">
+            <div class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-lg p-6">
+                <h2 class="text-3xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                    <span class="text-4xl mr-3">🎭</span>
+                    From Text to Multimodal: The Avatar Upgrade
+                </h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                    Streaming AI avatars represent the evolution from text-based chatbots to multimodal conversational AI, 
+                    combining customized educational content with human-like visual and audio interaction.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 dark:text-white mb-2">🔧 Technology Stack</h3>
+                        <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
+                            <li>• <strong>NLP:</strong> Natural Language Processing for understanding</li>
+                            <li>• <strong>TTS:</strong> Text-to-Speech for voice generation</li>
+                            <li>• <strong>STT:</strong> Speech-to-Text for voice input</li>
+                            <li>• <strong>Avatar Synthesis:</strong> Real-time video generation</li>
+                            <li>• <strong>Custom Knowledge Base:</strong> Teacher-defined responses</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-green-100 dark:bg-green-800 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2">✅ Strengths</h4>
+                            <ul class="space-y-1 text-xs text-green-700 dark:text-green-300">
+                                <li>• 24/7 interactive support</li>
+                                <li>• Teacher-shaped responses</li>
+                                <li>• Multimodal engagement</li>
+                                <li>• Personalized learning paths</li>
+                                <li>• Consistent availability</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-100 dark:bg-orange-800 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Limitations</h4>
+                            <ul class="space-y-1 text-xs text-orange-700 dark:text-orange-300">
+                                <li>• High third-party costs</li>
+                                <li>• Cannot record audio</li>
+                                <li>• Internet dependency</li>
+                                <li>• Technical complexity</li>
+                                <li>• Privacy considerations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Avatar Demo -->
+        <div class="bg-gradient-to-br from-indigo-100 to-blue-100 dark:from-indigo-900 dark:to-blue-900 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                <span class="text-3xl mr-2">🎬</span>
+                Interactive AI Avatar Demo
+            </h3>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                Experience our streaming AI avatar that combines customized educational knowledge with real-time interaction. 
+                This demo showcases how traditional chatbot responses can be enhanced with human-like visual and audio engagement.
+            </p>
+            
+            <!-- Avatar Container -->
+            <div id="avatar-container" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden min-h-[400px] flex items-center justify-center">
+                <div class="text-gray-500 dark:text-gray-400 text-center">
+                    <iframe 
+                        src="https://labs.heygen.com/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2%0D%0ANDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjBm%0D%0AM2U0MzA4ZDVkODRhZTA4ZWY1NTViNGU2N2YwNDFmIiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0%0D%0AMjAyOWFjYjQ1ODlmZDhjNDgzYSJ9&inIFrame=1"
+                        class="w-full h-full border-0 rounded-lg"
+                        style="min-height: 400px;"
+                        allow="microphone"
+                        title="HeyGen Streaming Avatar Demo">
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-4 bg-yellow-100 dark:bg-yellow-800 rounded-lg">
+                <p class="text-sm text-yellow-800 dark:text-yellow-200">
+                    <strong>� Demo Status:</strong> Avatar embedding temporarily disabled due to floating overlay behavior. 
+                    The technology works by combining customized educational knowledge with real-time AI interaction, 
+                    supporting voice input/output and visual engagement for enhanced learning experiences.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- In-house Avatar Development Section -->
+    <div class="bg-gradient-to-r from-coral to-purple-light dark:from-coral dark:to-purple rounded-lg p-6 mb-8">
+        <h2 class="text-3xl font-semibold text-white mb-6 flex items-center">
+            <span class="text-4xl mr-3">🏗️</span>
+            Developing In-house Avatar Solutions
+        </h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Column: Cost-Effective Development -->
+            <div class="bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                    <span class="text-2xl mr-3">💰</span>
+                    Long-term Cost Efficiency
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Building in-house avatar solutions using fundamental cloud APIs provides significant cost advantages over third-party platforms, 
+                    offering greater control and customization for educational institutions.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2">🔧 Core Technologies</h4>
+                        <ul class="space-y-1 text-sm text-green-700 dark:text-green-300">
+                            <li>• <strong>Azure Cognitive Services:</strong> Text-to-Speech & Speech-to-Text APIs</li>
+                            <li>• <strong>OpenAI API:</strong> Natural language processing and understanding</li>
+                            <li>• <strong>Avatar Generation:</strong> Open-source or custom video synthesis</li>
+                            <li>• <strong>Web Technologies:</strong> WebRTC for real-time communication</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">💡 Economic Advantages</h4>
+                        <ul class="space-y-1 text-sm text-blue-700 dark:text-blue-300">
+                            <li>• Pay-per-use API pricing vs. fixed platform subscriptions</li>
+                            <li>• Scalable infrastructure that grows with usage</li>
+                            <li>• No per-user licensing fees for educational institutions</li>
+                            <li>• Full control over data privacy and compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: TCM Example Platform -->
+            <div class="bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                    <span class="text-2xl mr-3">🩺</span>
+                    In-Development Example: TCM Communication Practice
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Our Traditional Chinese Medicine (TCM) Communication Practice Platform demonstrates how specialized 
+                    educational domains can benefit from customized avatar solutions.
+                </p>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg mb-4 overflow-hidden border">
+                    <iframe src="https://tesolchina.github.io/ChineseMedAvatar/" 
+                            class="w-full h-80 border-0"
+                            title="TCM Communication Practice Platform">
+                    </iframe>
+                </div>
+                
+                <div class="space-y-3">
+                    <a href="https://tesolchina.github.io/ChineseMedAvatar/" target="_blank" 
+                       class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+                        🔗 Open TCM Practice Platform
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                    
+                    <div class="bg-yellow-50 dark:bg-yellow-900 p-3 rounded-lg">
+                        <p class="text-sm text-yellow-800 dark:text-yellow-200">
+                            <strong>🚧 Development Status:</strong> This platform is currently under active development, 
+                            showcasing the evolution from text-based interactions to multimodal avatar experiences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Architecture -->
+        <div class="mt-6 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 rounded-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                <span class="text-2xl mr-3">⚙️</span>
+                Technical Architecture for Cost-Effective Implementation
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🎤</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Speech Processing</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Azure Speech Services provide enterprise-grade TTS/STT at ~$4 per 1M characters
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🧠</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Language Understanding</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        OpenAI GPT API offers contextual responses at ~$0.03 per 1K tokens
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🎬</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Avatar Generation</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Open-source solutions or custom models for video synthesis
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Avatar Embed Script Removed -->
+<!-- HeyGen avatar was causing floating overlay issues across tabs -->
+<script>
+console.log('HeyGen avatar embed script removed to prevent floating overlay issues');
+</script>
+
+<script>
+// Toggle article details function
+function toggleArticleDetails() {
+    const details = document.getElementById('article-details');
+    const toggle = document.getElementById('article-toggle');
+    
+    if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        toggle.textContent = 'Hide Details';
+    } else {
+        details.classList.add('hidden');
+        toggle.textContent = 'Show Details';
+    }
+}
+</script>
+
+</body>
+</html>

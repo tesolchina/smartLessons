@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .avatar-container {
+            z-index: 9999;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 260px;
+            height: 280px;
+            border-radius: 16px;
+            border: 2px solid #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .avatar-container.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .avatar-container.expand {
+            height: 380px;
+            width: 300px;
+            border-radius: 16px;
+        }
+        
+        .avatar-iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 14px;
+        }
+        
+        .info-text {
+            position: fixed;
+            bottom: 310px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 8px 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            font-weight: 500;
+            color: #4f46e5;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 10000;
+            backdrop-filter: blur(4px);
+        }
+        
+        .info-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .dark-mode .info-text {
+            background: rgba(31, 41, 55, 0.95);
+            color: #818cf8;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Minimal text display -->
+    <div class="text-center px-4">
+        <div class="floating inline-block mb-6">
+            <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto shadow-lg">
+                <span class="text-white text-4xl">🤖</span>
+            </div>
+        </div>
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Dr Simon Wang's</h1>
+        <p class="text-xl text-gray-600">digital sidekick</p>
+    </div>
+
+    <!-- Info text that appears on hover -->
+    <div id="infoText" class="info-text">
+        Dr Simon Wang's digital sidekick
+    </div>
+
+    <!-- Avatar Container -->
+    <div id="avatarContainer" class="avatar-container">
+        <div id="avatarInnerContainer" class="h-full w-full rounded-[14px] overflow-hidden">
+            <!-- Avatar iframe will be inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Create and append the avatar iframe
+        function initAvatar() {
+            const host = "https://labs.heygen.com";
+            const shareParam = "eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI2MTkzODc3NWQxMDI0NmZlOGY2NGQ2MTM2NDE2ZGM1ZSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzYxOTM4Nzc1ZDEwMjQ2ZmU4ZjY0ZDYxMzY0MTZkYzVlL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjljNmM2ODJhNmFkNjRkNWM5MWNhNzZjYjQzMDU3MDI3IiwidXNlcm5hbWUiOiI5YmFiZDU5MTIxMTc0MjAyOWFjYjQ1ODlmZDhjNDgzYSJ9";
+            const url = `${host}/guest/streaming-embed?share=${shareParam}&inIFrame=1`;
+            
+            const iframe = document.createElement('iframe');
+            iframe.className = 'avatar-iframe';
+            iframe.allowFullscreen = false;
+            iframe.title = "AI Assistant";
+            iframe.allow = "microphone";
+            iframe.src = url;
+            
+            document.getElementById('avatarInnerContainer').appendChild(iframe);
+            
+            // Show the avatar container after a short delay
+            setTimeout(() => {
+                document.getElementById('avatarContainer').classList.add('show');
+            }, 1500);
+            
+            // Set up message listener for avatar events
+            window.addEventListener("message", (event) => {
+                if (event.origin === host && event.data && event.data.type === "streaming-embed") {
+                    if (event.data.action === "init") {
+                        document.getElementById('avatarContainer').classList.add('show');
+                    } else if (event.data.action === "show") {
+                        document.getElementById('avatarContainer').classList.add('expand');
+                    } else if (event.data.action === "hide") {
+                        document.getElementById('avatarContainer').classList.remove('expand');
+                    }
+                }
+            });
+        }
+        
+        // Initialize info text interactions
+        function initInfoText() {
+            const avatarContainer = document.getElementById('avatarContainer');
+            const infoText = document.getElementById('infoText');
+            
+            let hoverTimeout;
+            
+            avatarContainer.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+                infoText.classList.add('visible');
+            });
+            
+            avatarContainer.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(() => {
+                    infoText.classList.remove('visible');
+                }, 500);
+            });
+            
+            infoText.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+            });
+            
+            infoText.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(() => {
+                    infoText.classList.remove('visible');
+                }, 500);
+            });
+        }
+        
+        // Initialize everything when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            initAvatar();
+            setTimeout(initInfoText, 2000);
+        });
+    </script>
+</body>
+</html>

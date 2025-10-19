@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCAP3226 - Reflective Essay Writing Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+                             <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg text-center">
+                        <h3 class="font-semibold text-green-800 dark:text-green-200 mb-2">Presentation</h3>
+                        <div class="text-3xl font-bold text-green-600 dark:text-green-400">30%</div>
+                        <p class="text-sm text-green-700 dark:text-green-300 mt-2">Clear writing, word count (about 200 words), HTML formatting</p>
+                    </div>ilwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(93, 92, 222, 0.15);
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(93, 92, 222, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(93, 92, 222, 0.5); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Tab Styles */
+        .tab-button {
+            border-bottom: 2px solid transparent;
+            color: #6b7280;
+        }
+        .tab-button.active {
+            border-bottom-color: #5D5CDE;
+            color: #5D5CDE;
+        }
+        .tab-button:hover {
+            color: #5D5CDE;
+            border-bottom-color: #7B7AE8;
+        }
+        .tab-content {
+            animation: fadeInTab 0.4s ease-out forwards;
+        }
+        .tab-content.hidden {
+            display: none;
+        }
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- Header -->
+    <div class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center fade-in">
+                <h1 class="text-4xl font-bold mb-2">✍️ Reflective Essay Writing Tutor</h1>
+                <p class="text-xl opacity-90">GCAP3226 - Empowering Citizens Through Data</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="bg-white dark:bg-gray-800 shadow-sm">
+        <div class="container mx-auto px-6">
+            <nav class="flex space-x-8" role="tablist">
+                <button 
+                    id="intro-tab"
+                    class="py-4 px-2 border-b-2 font-medium text-sm transition-colors tab-button active"
+                    onclick="showTab('intro')"
+                    role="tab"
+                    aria-controls="intro-panel"
+                    aria-selected="true">
+                    📖 Introduction & Instructions
+                </button>
+                <button 
+                    id="chatbot-tab"
+                    class="py-4 px-2 border-b-2 font-medium text-sm transition-colors tab-button"
+                    onclick="showTab('chatbot')"
+                    role="tab"
+                    aria-controls="chatbot-panel"
+                    aria-selected="false">
+                    🤖 AI Writing Tutor
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Tab Content Container -->
+    <div class="container mx-auto px-6 py-8 max-w-7xl">
+        
+        <!-- Tab 1: Introduction & Instructions -->
+        <div id="intro-panel" class="tab-content" role="tabpanel" aria-labelledby="intro-tab">
+            
+            <!-- Introduction Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 fade-in card-hover">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full mb-4">
+                        <span class="text-3xl">🎯</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Welcome to Your AI Writing Assistant</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">Get personalized guidance for your 200-word reflective essay</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary mb-4">📝 What This Tutor Helps With</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-1">✓</span>
+                                <span>Reflecting on your <strong>team project</strong> and government decisions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-1">✓</span>
+                                <span>Understanding how <strong>data informed decision-making</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-1">✓</span>
+                                <span>Applying <strong>mathematical models</strong> to government scenarios</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-1">✓</span>
+                                <span>Improving <strong>data governance</strong> recommendations</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary mb-4">🎓 Expected Outcome</h3>
+                        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                                After your session, you'll have a clear structure and key insights for your <strong>200-word reflective essay</strong>. 
+                                You'll understand how to connect mathematical models to government decision-making and data governance improvements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Use Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 fade-in card-hover">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                    <span class="mr-2">🚀</span>How to Use the Tutor
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full mb-4">
+                            <span class="text-2xl">🔑</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Get Your HKBU API Key</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            Visit <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" class="text-blue-600 hover:text-blue-800 underline">HKBU GenAI Settings</a>
+                        </p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500">Login → Click "GENERATE API KEY" → Save securely</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
+                            <span class="text-2xl">1️⃣</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Switch to AI Tutor</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Click the <strong>"🤖 AI Writing Tutor"</strong> tab above to access the chatbot</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full mb-4">
+                            <span class="text-2xl">2️⃣</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Start the Conversation</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Enter your API key, then type <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">ok</code> to begin</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-6">
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 max-w-3xl mx-auto">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <span class="text-yellow-500 text-xl">🔒</span>
+                            </div>
+                            <div class="ml-3 text-left">
+                                <h4 class="text-sm font-medium text-yellow-800 dark:text-yellow-200">HKBU API Key Required</h4>
+                                <div class="mt-2 text-sm text-yellow-700 dark:text-yellow-300">
+                                    <p class="mb-2"><strong>Step 1:</strong> Visit <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" class="underline hover:text-yellow-900">genai.hkbu.edu.hk/settings/api-docs</a></p>
+                                    <p class="mb-2"><strong>Step 2:</strong> Login with your HKBU credentials</p>
+                                    <p class="mb-2"><strong>Step 3:</strong> Click the blue <strong>"GENERATE API KEY"</strong> button</p>
+                                    <p class="mb-2"><strong>Step 4:</strong> Copy and save your API key securely (do not share with others)</p>
+                                    <p><strong>Step 5:</strong> Enter the API key in the chatbot to start your writing session</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="text-center mt-8">
+                    <button onclick="showTab('chatbot')" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105">
+                        <span class="mr-2">🤖</span>
+                        Start Writing Session
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Key Tips Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 fade-in card-hover">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                    <span class="mr-2">💡</span>Writing Tips for Success
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-green-600 dark:text-green-400 mb-4">✅ Do Include</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-0.5">•</span>
+                                <span>Specific examples from your team project analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-0.5">•</span>
+                                <span>Clear connections between mathematical models and government decisions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-0.5">•</span>
+                                <span>Insights about data usage and governance improvements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-0.5">•</span>
+                                <span>Practical applications of course concepts</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-red-600 dark:text-red-400 mb-4">❌ Avoid</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2 mt-0.5">•</span>
+                                <span>Simply describing government policies without analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2 mt-0.5">•</span>
+                                <span>Generic statements about mathematical models</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2 mt-0.5">•</span>
+                                <span>Superficial connections to data governance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2 mt-0.5">•</span>
+                                <span>Exceeding the 200-word limit significantly</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grading Rubric Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 fade-in card-hover">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                    <span class="mr-2">📊</span>Simple Grading Rubric
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
+                        <h3 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Content</h3>
+                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">70%</div>
+                        <p class="text-sm text-blue-700 dark:text-blue-300 mt-2">Government decisions, data usage, mathematical models, data governance ideas</p>
+                    </div>
+                    <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg text-center">
+                        <h3 class="font-semibold text-green-800 dark:text-green-200 mb-2">Presentation</h3>
+                        <div class="text-3xl font-bold text-green-600 dark:text-green-400">30%</div>
+                        <p class="text-sm text-green-700 dark:text-green-300 mt-2">Clear writing, word count (up to 100 words), HTML formatting</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg p-6 border border-yellow-200 dark:border-yellow-800">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                        <span class="mr-2">🎯</span>What We're Looking For
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">Content (70 points)</h4>
+                            <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                                <li><span class="font-medium">Government decisions</span> your team is analyzing (20 pts)</li>
+                                <li><span class="font-medium">How data was used</span> to inform those decisions (20 pts)</li>
+                                <li><span class="font-medium">Mathematical models</span> that could help with better data (15 pts)</li>
+                                <li><span class="font-medium">Ideas for improving</span> government data governance (15 pts)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">Presentation (30 points)</h4>
+                            <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                                <li><span class="font-medium">Clear writing</span> and organization (20 pts)</li>
+                                <li><span class="font-medium">Word count</span> about 200 words (5 pts)</li>
+                                <li><span class="font-medium">HTML formatting</span> in Moodle post (5 pts)</li>
+                            </ul>
+                            <div class="mt-4 p-3 bg-green-100 dark:bg-green-900/30 rounded">
+                                <p class="text-sm text-green-800 dark:text-green-200">
+                                    <strong>💡 Keep it Focused:</strong> About 200 words - be clear and comprehensive!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                    <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-3">Simple Grade Scale</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                        <div class="bg-white dark:bg-gray-700 p-3 rounded-lg text-center">
+                            <div class="font-bold text-green-600 text-lg">A</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-300">90-100</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">Excellent insights</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-3 rounded-lg text-center">
+                            <div class="font-bold text-blue-600 text-lg">B</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-300">80-89</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">Good analysis</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-3 rounded-lg text-center">
+                            <div class="font-bold text-yellow-600 text-lg">C</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-300">70-79</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">Basic understanding</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-3 rounded-lg text-center">
+                            <div class="font-bold text-red-600 text-lg">F</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-300"><70</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">Needs major work</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- After Chat Section -->
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-8 fade-in card-hover border border-yellow-200 dark:border-yellow-800">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 dark:bg-yellow-900 rounded-full mb-4">
+                        <span class="text-3xl">📋</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Next Steps After Your Chat Session</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                            <span class="text-blue-500 mr-2">📝</span>Review Your Notes
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            Use the conversation summary and your own notes to organize your thoughts and key insights.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                            <span class="text-purple-500 mr-2">✍️</span>Write Your Essay
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            Draft your 200-word reflective essay using the structure and insights from your chat session.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                            <span class="text-green-500 mr-2">📤</span>Submit to Moodle
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            Submit your completed reflective essay to the <a href="https://buelearning.hkbu.edu.hk/mod/forum/discuss.php?d=332660" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Moodle forum</a> by the deadline.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 max-w-2xl mx-auto">
+                        <p class="text-sm text-gray-700 dark:text-gray-300">
+                            <strong>💡 Remember:</strong> This AI tutor guides your thinking process. The final essay should reflect your own insights and learning journey in your own words. Target 200 words - be comprehensive but focused!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="text-center mt-8 fade-in">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm max-w-2xl mx-auto">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                        <span class="mr-2">📧</span>Need Additional Help?
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                        If you have questions about the assignment or need further guidance after using the AI tutor:
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <a href="mailto:taliawu17@hkbu.edu.hk" class="inline-flex items-center text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300">
+                            <span class="mr-1">📧</span>Dr. Talia Wu
+                        </a>
+                        <a href="mailto:simonwang@hkbu.edu.hk" class="inline-flex items-center text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300">
+                            <span class="mr-1">📧</span>Dr. Simon Wang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Course Hub -->
+            <div class="text-center mt-8 mb-6">
+                <a href="./intro.html" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors shadow-lg">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to GCAP3226 Course Hub
+                </a>
+            </div>
+        </div>
+
+        <!-- Tab 2: AI Writing Tutor -->
+        <div id="chatbot-panel" class="tab-content hidden" role="tabpanel" aria-labelledby="chatbot-tab">
+            
+            <!-- Chatbot Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden fade-in">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold mb-2">🤖 Your AI Writing Tutor</h2>
+                        <p class="opacity-90">Ready to help you craft your reflective essay</p>
+                        <div class="mt-4 flex justify-center">
+                            <div class="bg-white/20 rounded-lg px-4 py-2 text-sm">
+                                Need HKBU API Key • Type <code class="bg-white/30 px-2 py-1 rounded">ok</code> to start • Click <code class="bg-white/30 px-2 py-1 rounded">✓ green check</code> to finish
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chatbot iframe with enhanced styling -->
+                <div class="relative">
+                    <div class="absolute top-4 right-4 z-10">
+                        <button onclick="refreshChatbot()" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 p-2 rounded-full transition-colors" title="Refresh chatbot">
+                            <svg class="w-4 h-4 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <iframe 
+                        id="chatbotFrame"
+                        src="https://textbot.hkbu.tech/chat/GCAP3226-reflectEssayTutor" 
+                        width="100%" 
+                        height="800" 
+                        frameborder="0"
+                        class="w-full"
+                        style="min-height: 800px;"
+                        loading="lazy"
+                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                        title="GCAP3226 Reflective Essay Writing Tutor">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Quick Help -->
+            <div class="mt-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <span class="text-blue-500 text-xl">💭</span>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-sm font-medium text-blue-800 dark:text-blue-200">Quick Help</h3>
+                        <div class="mt-2 text-sm text-blue-700 dark:text-blue-300">
+                            <p class="mb-2"><strong>Need API Key:</strong> Visit <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank" class="underline hover:text-blue-900">genai.hkbu.edu.hk/settings/api-docs</a> and click "GENERATE API KEY"</p>
+                            <p class="mb-2"><strong>To get started:</strong> Enter your API key, then type "ok" in the chat</p>
+                            <p class="mb-2"><strong>To end session:</strong> Click the green check button (✓) to get your report</p>
+                            <p><strong>Need to restart?</strong> Click the refresh button (↻) in the top right corner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.setAttribute('aria-selected', 'false');
+            });
+            
+            // Show selected tab content
+            const selectedTab = document.getElementById(`${tabName}-panel`);
+            if (selectedTab) {
+                selectedTab.classList.remove('hidden');
+            }
+            
+            // Add active class to clicked tab button
+            const selectedButton = document.getElementById(`${tabName}-tab`);
+            if (selectedButton) {
+                selectedButton.classList.add('active');
+                selectedButton.setAttribute('aria-selected', 'true');
+            }
+            
+            // If switching to chatbot tab, ensure iframe is loaded
+            if (tabName === 'chatbot') {
+                const iframe = document.getElementById('chatbotFrame');
+                if (iframe && !iframe.src) {
+                    iframe.src = 'https://textbot.hkbu.tech/chat/GCAP3226-reflectEssayTutor';
+                }
+            }
+        }
+
+        // Refresh chatbot iframe
+        function refreshChatbot() {
+            const iframe = document.getElementById('chatbotFrame');
+            iframe.src = iframe.src;
+        }
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations and tabs
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial state for fade-in elements
+            document.querySelectorAll('.fade-in').forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.animationDelay = `${index * 0.1}s`;
+                observer.observe(element);
+                
+                // Trigger animation after a short delay
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            // Check for hash in URL to determine initial tab
+            const hash = window.location.hash;
+            if (hash === '#chatbot') {
+                showTab('chatbot');
+            } else {
+                showTab('intro'); // Default to intro tab
+            }
+            
+            // Update URL hash when tab changes
+            document.getElementById('intro-tab').addEventListener('click', () => {
+                window.location.hash = '#intro';
+            });
+            
+            document.getElementById('chatbot-tab').addEventListener('click', () => {
+                window.location.hash = '#chatbot';
+            });
+        });
+
+        // Handle iframe loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('chatbotFrame');
+            if (iframe) {
+                iframe.addEventListener('load', function() {
+                    console.log('Chatbot loaded successfully');
+                });
+
+                iframe.addEventListener('error', function() {
+                    console.error('Error loading chatbot');
+                    // You could add error handling UI here
+                });
+            }
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash;
+            if (hash === '#chatbot') {
+                showTab('chatbot');
+            } else {
+                showTab('intro');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple AI Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .api-section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .api-section input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .api-section button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .api-section button:hover {
+            background: #357abd;
+        }
+        .api-section button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .chat-area {
+            height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .message.user {
+            background: #e3f2fd;
+            margin-left: auto;
+            text-align: right;
+        }
+        .message.assistant {
+            background: #f5f5f5;
+        }
+        .input-area {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .input-area textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 40px;
+        }
+        .input-area button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .input-area button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            display: none;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Tutor</h1>
+            <p>Enter your API key to start chatting</p>
+        </div>
+        
+        <div class="api-section">
+            <input type="password" id="api-key" placeholder="Enter your HKBU GenAI API key">
+            <button onclick="connectAPI()" id="connect-btn">Connect</button>
+            <button onclick="testConnection()" id="test-btn">Test Connection</button>
+            <div id="status" class="status"></div>
+        </div>
+        
+        <div class="chat-area" id="chat-area">
+            <div class="message assistant">
+                Welcome! Please enter your API key above to start chatting.
+            </div>
+        </div>
+        
+        <div class="input-area">
+            <textarea id="message-input" placeholder="Enter your API key first..." disabled></textarea>
+            <button onclick="sendMessage()" id="send-btn" disabled>Send</button>
+        </div>
+    </div>
+
+    <script>
+        let apiKey = '';
+        let isConnected = false;
+        let systemPrompt = '';
+        let welcomePrompt = '';
+
+        // Load prompts on page load (hidden from user)
+        async function loadPrompts() {
+            try {
+                // Load system prompt
+                const systemResponse = await fetch('/prompts/system.txt');
+                if (systemResponse.ok) {
+                    systemPrompt = await systemResponse.text();
+                }
+                
+                // Load welcome prompt  
+                const welcomeResponse = await fetch('/prompts/welcome.txt');
+                if (welcomeResponse.ok) {
+                    welcomePrompt = await welcomeResponse.text();
+                }
+                
+                console.log('Prompts loaded successfully');
+            } catch (error) {
+                console.log('Could not load prompts:', error);
+            }
+        }
+
+        async function testConnection() {
+            const key = document.getElementById('api-key').value.trim();
+            const status = document.getElementById('status');
+            
+            if (!key) {
+                showStatus('Please enter an API key first', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/test', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({apiKey: key})
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showStatus('✅ Connection successful!', 'success');
+                } else {
+                    showStatus('❌ ' + data.error, 'error');
+                }
+            } catch (error) {
+                showStatus('❌ Connection failed', 'error');
+            }
+        }
+
+        function connectAPI() {
+            const key = document.getElementById('api-key').value.trim();
+            
+            if (!key) {
+                showStatus('Please enter an API key first', 'error');
+                return;
+            }
+            
+            apiKey = key;
+            isConnected = true;
+            
+            // Enable chat
+            document.getElementById('message-input').disabled = false;
+            document.getElementById('message-input').placeholder = 'Type your message here...';
+            document.getElementById('send-btn').disabled = false;
+            
+            showStatus('✅ Connected! You can now start chatting.', 'success');
+        }
+
+        async function sendMessage() {
+            if (!isConnected) {
+                showStatus('Please connect your API key first', 'error');
+                return;
+            }
+            
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            addMessage('user', message);
+            input.value = '';
+            
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        message: message,
+                        apiKey: apiKey,
+                        systemPrompt: systemPrompt
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    addMessage('assistant', data.response);
+                } else {
+                    addMessage('assistant', 'Error: ' + data.error);
+                }
+            } catch (error) {
+                addMessage('assistant', 'Error: Could not send message');
+            }
+        }
+
+        function addMessage(type, content) {
+            const chatArea = document.getElementById('chat-area');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = content;
+            chatArea.appendChild(messageDiv);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 5000);
+        }
+
+        // Enter key support
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPrompts(); // Load prompts silently
+            
+            document.getElementById('message-input').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

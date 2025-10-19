@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEGC Video Helper</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .api-section {
+            background-color: #6c5ce7;
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+        }
+        .api-header h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .api-instructions {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .api-instructions a {
+            color: white;
+            text-decoration: underline;
+        }
+        .api-key-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .model-dropdown {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .btn-primary {
+            background-color: white;
+            color: #6c5ce7;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="api-section">
+            <div class="api-header">
+                <h2>🎥 EEGC Video Helper</h2>
+            </div>
+            
+            <div class="api-content">
+                <div class="api-instructions">
+                    <strong>Step 1:</strong> Get your API key from <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank">HKBU GenAI Platform</a><br>
+                    <strong>Step 2:</strong> Copy and paste your API key below
+                </div>
+                
+                <input 
+                    type="password" 
+                    id="api-key" 
+                    class="api-key-input"
+                    placeholder="Paste your HKBU GenAI API key here..."
+                >
+                
+                <div class="model-selection">
+                    <select id="model-select" class="model-dropdown">
+                        <option value="gpt-4.1-mini" selected>GPT-4.1 Mini (Default)</option>
+                        <option value="gpt-4.1">GPT-4.1 (Standard)</option>
+                        <option value="gpt-4.1-turbo">GPT-4.1 Turbo</option>
+                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+                    </select>
+                </div>
+
+                <button class="btn-primary" onclick="connectAPI()">Start Chat</button>
+            </div>
+        </div>
+
+        <div id="chat-container" class="chat-container" style="display: none;">
+            <div id="messages" class="messages"></div>
+            <div class="input-container">
+                <textarea 
+                    id="user-input" 
+                    class="chat-input" 
+                    placeholder="Type your message here..."
+                    rows="1"
+                ></textarea>
+                <button class="send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/core.js"></script>
+    <script src="js/video.js"></script>
+</body>
+</html> 

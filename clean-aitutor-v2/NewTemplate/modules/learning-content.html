@@ -1,0 +1,39 @@
+<div id="learning-content" class="mb-12">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📚 Learning Content</h2>
+    <div class="flex justify-center mb-6">
+        <div class="flex space-x-3">
+            <button onclick="prevSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">← Previous</button>
+            <span id="slideCounter" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium">1 / 5</span>
+            <button onclick="nextSlide()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">Next →</button>
+        </div>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <div id="slidesContainer" class="slide-container">
+            <!-- Slide 1 -->
+            <div class="slide p-8" data-slide="1">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🔬 What is Research?</h3>
+                <!-- ... content of slide 1 ... -->
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide p-8 hidden" data-slide="2">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🎓 The Educational Journey</h3>
+                <!-- ... content of slide 2 ... -->
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide p-8 hidden" data-slide="3">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🔍 The Research Process</h3>
+                <!-- ... content of slide 3 ... -->
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide p-8 hidden" data-slide="4">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📝 Academic Writing in Research</h3>
+                <!-- ... content of slide 4 ... -->
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide p-8 hidden" data-slide="5">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">🚀 Keep Pushing Forward</h3>
+                <!-- ... content of slide 5 ... -->
+            </div>
+        </div>
+    </div>
+</div>

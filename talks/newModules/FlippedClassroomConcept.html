@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipped Classroom Innovation at HKBU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coral': '#FF6B47',
+                        'coral-light': '#FF8A70',
+                        'purple-custom': '#7B68EE',
+                        'cream': '#FFF8DC',
+                        'cream-dark': '#F5E6A8'
+                    }
+                }
+            }
+        }
+        
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    <style>
+        .text-gradient {
+            background: linear-gradient(135deg, #FF6B47, #7B68EE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-fade {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="min-h-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+            <div class="mb-6">
+                <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-4 flex items-center">
+                    <span class="text-4xl mr-3">💡</span>
+                    Flipped Classroom Innovation at HKBU
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300">Revisiting the forgotten policy change of 2017</p>
+            </div>
+            
+            <!-- SCMP Letter Link - Prominent Placement -->
+            <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-red-700 dark:text-red-400">📰 SCMP Letter - September 2017</h2>
+                        <p class="text-red-600 dark:text-red-300 text-base">"Relaxed attendance rules will improve teaching quality"</p>
+                    </div>
+                    <a href="https://www.scmp.com/comment/letters/article/2109347/relaxed-attendance-rules-hong-kongs-baptist-university-will-improve" 
+                       target="_blank" 
+                       class="inline-flex items-center px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors whitespace-nowrap">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                        </svg>
+                        Read Original Letter
+                    </a>
+                </div>
+                
+                <!-- Toggle Button for Excerpts -->
+                <div class="mt-4 pt-4 border-t border-red-200 dark:border-red-700">
+                    <button id="toggleExcerpts" class="inline-flex items-center px-4 py-2 bg-red-100 dark:bg-red-800/30 hover:bg-red-200 dark:hover:bg-red-700/40 text-red-700 dark:text-red-300 font-semibold rounded-lg transition-colors">
+                        <svg id="toggleIcon" class="w-4 h-4 mr-2 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span id="toggleText">Show Key Excerpts from Letter</span>
+                    </button>
+                </div>
+                
+                <!-- Letter Excerpts - Collapsible -->
+                <div id="letterExcerpts" class="hidden mt-4 bg-gradient-to-r from-coral/10 to-purple-custom/10 rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">📝 Key Excerpts from the 2017 Letter</h3>
+                    
+                    <div class="space-y-6">
+                        <blockquote class="border-l-4 border-coral pl-6 bg-white/50 dark:bg-gray-700/50 p-4 rounded-r-lg">
+                            <h4 class="text-coral font-semibold mb-2">📋 Attendance Policy Change</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-base italic leading-relaxed">
+                                "In the past, students skipping more than 30 per cent of classes would fail a course automatically. Under the new policy, they can still pass with less-than-perfect attendance records."
+                            </p>
+                        </blockquote>
+                        
+                        <blockquote class="border-l-4 border-purple-custom pl-6 bg-white/50 dark:bg-gray-700/50 p-4 rounded-r-lg">
+                            <h4 class="text-purple-custom font-semibold mb-2">💡 The Challenge for Teachers</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-base italic leading-relaxed">
+                                "Under the new policy, all university faculty members must rethink how to attract students with more effective teaching, as their attendance is no longer guaranteed."
+                            </p>
+                        </blockquote>
+                        
+                        <blockquote class="border-l-4 border-green-500 pl-6 bg-white/50 dark:bg-gray-700/50 p-4 rounded-r-lg">
+                            <h4 class="text-green-600 font-semibold mb-2">🎥 Flipped Classroom Solution</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-base italic leading-relaxed">
+                                "In the new semester, I will experiment with the flipped classroom approach in my English courses. Unlike conventional lectures where teachers present new material in class, I have created a series of video lectures students will watch in advance."
+                            </p>
+                        </blockquote>
+                        
+                        <blockquote class="border-l-4 border-blue-500 pl-6 bg-white/50 dark:bg-gray-700/50 p-4 rounded-r-lg">
+                            <h4 class="text-blue-600 font-semibold mb-2">🎓 Harvard Scholar Reference</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-base italic leading-relaxed">
+                                "First adopted by Professor Eric Mazur at Harvard in the 1990s, the flipped classrooms have recently gained much currency in higher education. This approach is particularly suitable for language teaching, as students can practise language skills more autonomously and receive guidance from their tutors to further improve their skills of independent language learning."
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Note -->
+            <div class="bg-orange-50 dark:bg-orange-900/20 border-l-4 border-orange-500 p-6 mb-8 rounded-r-lg">
+                <h2 class="text-2xl font-bold text-orange-700 dark:text-orange-400 mb-3">⚠️ Implementation Reality</h2>
+                <p class="text-orange-700 dark:text-orange-300 text-base leading-relaxed">
+                    While the 2017 policy change created opportunities for innovation and the ideas discussed in the letter were promising, 
+                    <strong>progress on implementing these flipped classroom approaches has been limited</strong>. The gap between vision and 
+                    practical implementation remains a challenge that needs addressing.
+                </p>
+            </div>
+
+
+
+            <!-- Recent Policy Developments - PROMINENT -->
+            <div class="bg-gradient-to-r from-purple-600/20 to-coral/20 border-2 border-purple-400 rounded-xl p-8 mb-8 shadow-xl">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">🚀 GE Office: Frontier of Policy Innovation</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-purple-custom mb-3">Latest Development</h3>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300 text-base">
+                            <li>• <strong>Video/self-access materials</strong> encouraged in lieu of face-to-face teaching</li>
+                            <li>• <strong>Up to 50%</strong> of contact hours can be replaced</li>
+                            <li>• Official policy support for innovation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-coral mb-3">Teacher Benefits</h3>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300 text-base">
+                            <li>• <strong>Less classroom time</strong> needed</li>
+                            <li>• <strong>More development time</strong> for materials</li>
+                            <li>• <strong>Focus on lesson design</strong> and technology innovation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-4 bg-white/60 dark:bg-gray-600/60 rounded-lg">
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">
+                        <strong>🎯 The Result:</strong> A systematic shift from attendance-based to engagement-based education, 
+                        where innovation is not just encouraged but structurally supported.
+                    </p>
+                </div>
+            </div>
+
+            <!-- New Opportunity -->
+            <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r-lg">
+                <h2 class="text-2xl font-bold text-green-700 dark:text-green-400 mb-3">🌟 New Opportunity Ahead</h2>
+                <p class="text-green-700 dark:text-green-300 mb-4">
+                    Perhaps this time we can achieve better outcomes. The infrastructure and policy framework are now in place - 
+                    let's transition from discussing challenges to implementing real solutions.
+                </p>
+                <div class="bg-white/60 dark:bg-gray-600/60 rounded-lg p-4">
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">
+                        <strong>🎯 Focus Areas:</strong> Moving from theoretical discussions to practical implementation, 
+                        leveraging the GE office's new policy support to make the 2017 vision a reality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle functionality for letter excerpts
+        document.getElementById('toggleExcerpts').addEventListener('click', function() {
+            const excerpts = document.getElementById('letterExcerpts');
+            const icon = document.getElementById('toggleIcon');
+            const text = document.getElementById('toggleText');
+            
+            if (excerpts.classList.contains('hidden')) {
+                excerpts.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                text.textContent = 'Hide Key Excerpts from Letter';
+            } else {
+                excerpts.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                text.textContent = 'Show Key Excerpts from Letter';
+            }
+        });
+
+        // Animate sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-fade');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

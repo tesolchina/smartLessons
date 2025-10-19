@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKBU GenAI Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 800px;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .notification {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.9rem;
+            z-index: 2000;
+            min-width: 250px;
+            max-width: 400px;
+            animation: slideIn 0.3s ease-out;
+            cursor: pointer;
+            word-wrap: break-word;
+        }
+
+        .notification.success { background: #28a745; }
+        .notification.error { background: #dc3545; }
+        .notification.warning { background: #ffc107; color: #212529; }
+        .notification.info { background: #17a2b8; }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .notification.hiding {
+            animation: slideOut 0.3s ease-in forwards;
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        .api-key-section {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 20px;
+        }
+
+        .api-key-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .api-key-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .api-key-status {
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .api-key-status.connected {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .api-key-status.disconnected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .api-key-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .api-key-input {
+            flex: 1;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            font-family: 'Courier New', monospace;
+        }
+
+        .api-key-input:focus {
+            border-color: #667eea;
+        }
+
+        .api-btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            min-width: 80px;
+        }
+
+        .api-btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .api-btn-primary:hover:not(:disabled) {
+            background: #5a6fd8;
+        }
+
+        .api-btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .api-btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .api-key-help {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .api-key-help a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .chat-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .chat-header .subtitle {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-right: 10px;
+        }
+
+        .message.assistant .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            margin-left: 10px;
+        }
+
+        .message.system .message-content {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+            margin-left: 10px;
+            font-style: italic;
+        }
+
+        .message.error .message-content {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            margin-left: 10px;
+        }
+
+        .message-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .message.user .message-avatar {
+            background: #667eea;
+            color: white;
+        }
+
+        .message.assistant .message-avatar {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .message.system .message-avatar {
+            background: #ffeaa7;
+            color: #856404;
+        }
+
+        .message.error .message-avatar {
+            background: #f5c6cb;
+            color: #721c24;
+        }
+
+        .chat-input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .chat-input {
+            flex: 1;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            resize: none;
+            max-height: 100px;
+            min-height: 45px;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+        }
+
+        .chat-input:disabled {
+            background: #f8f9fa;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .send-btn:hover:not(:disabled) {
+            transform: scale(1.05);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 10px;
+            font-style: italic;
+            color: #666;
+            margin-left: 45px;
+        }
+
+        .status-bar {
+            padding: 8px 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.8rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            .chat-container {
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+
+            .api-key-input-group {
+                flex-direction: column;
+            }
+
+            .notification {
+                right: 10px;
+                left: 10px;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- API Key Section -->
+        <div class="api-key-section" id="apiKeySection">
+            <div class="api-key-header">
+                <div class="api-key-title">🔑 API Key Configuration</div>
+                <span class="api-key-status disconnected" id="apiKeyStatus">Not Connected</span>
+            </div>
+            
+            <div class="api-key-input-group">
+                <input 
+                    type="password" 
+                    class="api-key-input" 
+                    id="apiKeyInput" 
+                    placeholder="Enter your HKBU GenAI API key..."
+                >
+                <button class="api-btn api-btn-primary" id="connectBtn" onclick="connectApiKey()">Connect</button>
+                <button class="api-btn api-btn-secondary" onclick="clearApiKey()">Clear</button>
+            </div>
+            
+            <div class="api-key-help">
+                📖 Get your API key from: 
+                <a href="https://genai.hkbu.edu.hk/settings/api-docs" target="_blank">HKBU GenAI Platform</a>
+            </div>
+        </div>
+
+        <div class="chat-header">
+            <h1>🤖 HKBU GenAI Chatbot</h1>
+            <div class="subtitle">Powered by GPT Models via Flask Backend</div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message system">
+                <div class="message-avatar">ℹ️</div>
+                <div class="message-content">
+                    Welcome! Enter your HKBU GenAI API key above and start chatting. 
+                    <br><br>
+                    📋 <strong>Status:</strong> Using Python Flask backend to avoid CORS issues.
+                    <br>🌐 <strong>Backend:</strong> Running on http://localhost:5000
+                </div>
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+            🤖 Assistant is typing...
+        </div>
+
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <textarea 
+                    class="chat-input" 
+                    id="chatInput" 
+                    placeholder="Enter your API key first to start chatting..."
+                    rows="1"
+                    disabled
+                ></textarea>
+                <button class="send-btn" id="sendBtn" onclick="sendMessage()" disabled>➤</button>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <span id="messageCount">Messages: 0</span>
+            <span>Backend: Python Flask</span>
+        </div>
+    </div>
+
+    <script>
+        let messageCount = 0;
+        let isTyping = false;
+        let apiKey = '';
+        let isConnected = false;
+        let conversationHistory = [];
+
+        // Load API key from localStorage if available
+        const storedApiKey = localStorage.getItem('hkbu_genai_api_key');
+        if (storedApiKey) {
+            document.getElementById('apiKeyInput').value = storedApiKey;
+            apiKey = storedApiKey;
+        }
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            notification.onclick = () => hideNotification(notification);
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    hideNotification(notification);
+                }
+            }, 5000);
+        }
+
+        function hideNotification(notification) {
+            notification.classList.add('hiding');
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }
+
+        // Auto-resize textarea
+        const chatInput = document.getElementById('chatInput');
+        chatInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+        });
+
+        chatInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        async function connectApiKey() {
+            const key = document.getElementById('apiKeyInput').value.trim();
+            const connectBtn = document.getElementById('connectBtn');
+            
+            if (!key) {
+                showNotification('Please enter an API key', 'warning');
+                return;
+            }
+
+            connectBtn.disabled = true;
+            connectBtn.textContent = 'Testing...';
+            
+            try {
+                const response = await fetch('https://smartlessons-production.up.railway.app/api/test', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        apiKey: key,
+                        provider: 'hkbu',
+                        model: 'gpt-4.1'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && !data.error) {
+                    apiKey = key;
+                    isConnected = true;
+                    conversationHistory = [];
+                    
+                    localStorage.setItem('hkbu_genai_api_key', key);
+                    
+                    updateConnectionStatus();
+                    enableChat();
+                    
+                    showNotification('API key connected successfully!', 'success');
+                    
+                    const messagesContainer = document.getElementById('chatMessages');
+                    messagesContainer.innerHTML = '';
+                    addMessage('system', '✅ API key connected! How can I help you today?');
+                } else {
+                    throw new Error(data.error || 'Connection failed');
+                }
+                
+            } catch (error) {
+                showNotification(`Connection failed: ${error.message}`, 'error');
+            } finally {
+                connectBtn.disabled = false;
+                connectBtn.textContent = 'Connect';
+            }
+        }
+
+        function clearApiKey() {
+            apiKey = '';
+            isConnected = false;
+            conversationHistory = [];
+            document.getElementById('apiKeyInput').value = '';
+            
+            localStorage.removeItem('hkbu_genai_api_key');
+            
+            updateConnectionStatus();
+            disableChat();
+            
+            showNotification('API key cleared', 'info');
+            
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.innerHTML = `
+                <div class="message system">
+                    <div class="message-avatar">ℹ️</div>
+                    <div class="message-content">
+                        Welcome! Enter your HKBU GenAI API key above and start chatting.
+                        <br><br>
+                        📋 <strong>Status:</strong> Using Python Flask backend to avoid CORS issues.
+                        <br>🌐 <strong>Backend:</strong> Running on http://localhost:5000
+                    </div>
+                </div>
+            `;
+            messageCount = 0;
+            updateStatus();
+        }
+
+        function updateConnectionStatus() {
+            const statusElement = document.getElementById('apiKeyStatus');
+            
+            if (isConnected) {
+                statusElement.textContent = 'Connected';
+                statusElement.className = 'api-key-status connected';
+            } else {
+                statusElement.textContent = 'Not Connected';
+                statusElement.className = 'api-key-status disconnected';
+            }
+        }
+
+        function enableChat() {
+            document.getElementById('chatInput').disabled = false;
+            document.getElementById('chatInput').placeholder = 'Type your message here...';
+            document.getElementById('sendBtn').disabled = false;
+        }
+
+        function disableChat() {
+            document.getElementById('chatInput').disabled = true;
+            document.getElementById('chatInput').placeholder = 'Enter your API key first to start chatting...';
+            document.getElementById('sendBtn').disabled = true;
+        }
+
+        async function sendMessage() {
+            if (!isConnected) {
+                showNotification('Please connect your API key first', 'warning');
+                return;
+            }
+
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message || isTyping) return;
+
+            addMessage('user', message);
+            input.value = '';
+            input.style.height = 'auto';
+            
+            showTyping();
+            
+            try {
+                const response = await fetch('https://smartlessons-production.up.railway.app/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        apiKey: apiKey,
+                        provider: 'hkbu',
+                        model: 'gpt-4.1',
+                        systemPrompt: 'You are a helpful, knowledgeable, and friendly AI assistant.'
+                    })
+                });
+
+                const data = await response.json();
+                hideTyping();
+
+                if (response.ok && !data.error) {
+                    addMessage('assistant', data.response);
+                    
+                    // Update conversation history
+                    conversationHistory.push({role: 'user', content: message});
+                    conversationHistory.push({role: 'assistant', content: data.response});
+                } else {
+                    addMessage('error', `Error: ${data.error || 'Unknown error'}`);
+                    showNotification(`Error: ${data.error || 'Unknown error'}`, 'error');
+                }
+                
+            } catch (error) {
+                hideTyping();
+                addMessage('error', `Network error: ${error.message}`);
+                showNotification(`Network error: ${error.message}`, 'error');
+            }
+        }
+
+        function addMessage(type, content) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            let avatar;
+            switch(type) {
+                case 'user': avatar = '👤'; break;
+                case 'assistant': avatar = '🤖'; break;
+                case 'system': avatar = 'ℹ️'; break;
+                case 'error': avatar = '❌'; break;
+                default: avatar = '💬';
+            }
+            
+            messageDiv.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-content">${content}</div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            if (type !== 'system') {
+                messageCount++;
+                updateStatus();
+            }
+        }
+
+        function showTyping() {
+            isTyping = true;
+            document.getElementById('typingIndicator').style.display = 'block';
+            document.getElementById('sendBtn').disabled = true;
+            
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTyping() {
+            isTyping = false;
+            document.getElementById('typingIndicator').style.display = 'none';
+            document.getElementById('sendBtn').disabled = !isConnected;
+        }
+
+        function updateStatus() {
+            document.getElementById('messageCount').textContent = `Messages: ${messageCount}`;
+        }
+
+        // Initialize
+        updateConnectionStatus();
+        updateStatus();
+    </script>
+</body>
+</html>
