@@ -332,11 +332,11 @@
                 <canvas id="providerChart"></canvas>
                 <div id="providerFallback" style="display: none; text-align: center; padding: 50px;">
                     <p><strong>Top Providers by Sessions:</strong></p>
-                    <p>LI Mengyuan: 26 sessions</p>
-                    <p>LEE Kathy: 23 sessions</p>
-                    <p>LEE Joanne: 22 sessions</p>
-                    <p>WONG Nga Chong: 18 sessions</p>
-                    <p>CHAN Mable: 18 sessions</p>
+                    <p>Teacher 1: 26 sessions</p>
+                    <p>Teacher 2: 23 sessions</p>
+                    <p>Teacher 3: 22 sessions</p>
+                    <p>Teacher 4: 18 sessions</p>
+                    <p>Teacher 5: 18 sessions</p>
                 </div>
             </div>
 
@@ -353,31 +353,31 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>LI Mengyuan</td>
+                            <td>Teacher 1</td>
                             <td>26</td>
                             <td>42.9%</td>
                             <td>High Volume, Moderate Completion</td>
                         </tr>
                         <tr>
-                            <td>LEE Kathy</td>
+                            <td>Teacher 2</td>
                             <td>23</td>
                             <td>56.5%</td>
                             <td>High Volume, Good Completion</td>
                         </tr>
                         <tr>
-                            <td>LEE Joanne</td>
+                            <td>Teacher 3</td>
                             <td>22</td>
                             <td>57.3%</td>
                             <td>High Volume, Good Completion</td>
                         </tr>
                         <tr>
-                            <td>WONG Nga Chong</td>
+                            <td>Teacher 4</td>
                             <td>18</td>
                             <td>52.8%</td>
                             <td>Moderate Volume, Good Completion</td>
                         </tr>
                         <tr>
-                            <td>CHAN Mable</td>
+                            <td>Teacher 5</td>
                             <td>18</td>
                             <td>35.6%</td>
                             <td>Moderate Volume, Low Completion</td>
@@ -386,14 +386,14 @@
                 </table>
             </div>
 
-            <p><strong>Provider Performance Insights:</strong> The analysis reveals diverse performance patterns among service providers. LI Mengyuan leads in session volume (26 sessions) but shows moderate completion rates (42.9%), suggesting high demand but potential challenges in session completion. LEE Kathy and LEE Joanne demonstrate balanced performance with both high volume and good completion rates (56.5% and 57.3% respectively).</p>
+            <p><strong>Provider Performance Insights:</strong> The analysis reveals diverse performance patterns among service providers. Teacher 1 leads in session volume (26 sessions) but shows moderate completion rates (42.9%), suggesting high demand but potential challenges in session completion. Teacher 2 and Teacher 3 demonstrate balanced performance with both high volume and good completion rates (56.5% and 57.3% respectively).</p>
 
             <div class="insights">
                 <h4>Provider Development Opportunities:</h4>
                 <ul>
-                    <li>LI Mengyuan: Focus on completion rate improvement strategies</li>
-                    <li>CHAN Mable: Investigate factors affecting low completion rates</li>
-                    <li>LEE Kathy & LEE Joanne: Share best practices with other providers</li>
+                    <li>Teacher 1: Focus on completion rate improvement strategies</li>
+                    <li>Teacher 5: Investigate factors affecting low completion rates</li>
+                    <li>Teacher 2 & Teacher 3: Share best practices with other providers</li>
                     <li>Workload distribution: Consider balancing high-volume providers</li>
                 </ul>
             </div>
@@ -713,7 +713,7 @@
         new Chart(providerCtx, {
             type: 'bar',
             data: {
-                labels: ['LI Mengyuan', 'LEE Kathy', 'LEE Joanne', 'WONG Nga Chong', 'CHAN Mable'],
+                labels: ['Teacher 1', 'Teacher 2', 'Teacher 3', 'Teacher 4', 'Teacher 5'],
                 datasets: [{
                     label: 'Sessions',
                     data: [26, 23, 22, 18, 18],
