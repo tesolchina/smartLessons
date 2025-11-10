@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANG0036 Training Mode Completion Progress</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .stat-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        .stat-value {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .section-header {
+            font-weight: bold;
+            color: #333;
+        }
+        .timestamp {
+            text-align: center;
+            color: #999;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+        .sort-controls {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .sort-controls label {
+            font-weight: 600;
+            color: #333;
+        }
+        .sort-controls select {
+            padding: 10px 15px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 1em;
+            background: white;
+            cursor: pointer;
+            outline: none;
+        }
+        .sort-controls select:hover {
+            border-color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 LANG0036 Training Mode Completion</h1>
+        <p class="subtitle">Progress by Section - 2025-11-10 16:08:13</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Sections</h3>
+                <div class="stat-value">48</div>
+                <div class="stat-label">Active Sections</div>
+            </div>
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <div class="stat-value">840</div>
+                <div class="stat-label">Enrolled Students</div>
+            </div>
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <div class="stat-value">10</div>
+                <div class="stat-label">Training Mode Completed</div>
+            </div>
+            <div class="stat-card">
+                <h3>Overall Progress</h3>
+                <div class="stat-value">1.2%</div>
+                <div class="stat-label">Completion Rate</div>
+            </div>
+        </div>
+        
+        <div class="sort-controls">
+            <label for="sortBy">Sort by:</label>
+            <select id="sortBy" onchange="sortTable()">
+                <option value="section">Section Number</option>
+                <option value="teacher">Teacher Last Name</option>
+                <option value="percentage">Completion Percentage</option>
+            </select>
+        </div>
+        
+        <table id="statsTable">
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Teacher</th>
+                    <th>Completed</th>
+                    <th>Total</th>
+                    <th>Progress</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr data-section="1" data-teacher-last="Li" data-percentage="5.263157894736842">
+                    <td class="section-header">Section 1</td>
+                    <td>Dr Li, Cissy Y X</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5.263157894736842%">
+                                1/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>5.3%</strong></td>
+                </tr>
+
+                <tr data-section="2" data-teacher-last="Li" data-percentage="0.0">
+                    <td class="section-header">Section 2</td>
+                    <td>Ms Li, Mengyuan</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="3" data-teacher-last="Li" data-percentage="0.0">
+                    <td class="section-header">Section 3</td>
+                    <td>Ms Li, Mengyuan</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/15
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="4" data-teacher-last="Li" data-percentage="0.0">
+                    <td class="section-header">Section 4</td>
+                    <td>Ms Li, Mengyuan</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="6" data-teacher-last="Lee" data-percentage="5.555555555555555">
+                    <td class="section-header">Section 6</td>
+                    <td>Miss Lee, Joanne</td>
+                    <td>1</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5.555555555555555%">
+                                1/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>5.6%</strong></td>
+                </tr>
+
+                <tr data-section="7" data-teacher-last="Lee" data-percentage="0.0">
+                    <td class="section-header">Section 7</td>
+                    <td>Miss Lee, Joanne</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="8" data-teacher-last="Lee" data-percentage="5.263157894736842">
+                    <td class="section-header">Section 8</td>
+                    <td>Miss Lee, Joanne</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5.263157894736842%">
+                                1/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>5.3%</strong></td>
+                </tr>
+
+                <tr data-section="9" data-teacher-last="Zhang" data-percentage="0.0">
+                    <td class="section-header">Section 9</td>
+                    <td>Dr Zhang, Emma</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="11" data-teacher-last="Zhang" data-percentage="0.0">
+                    <td class="section-header">Section 11</td>
+                    <td>Dr Zhang, Emma</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="12" data-teacher-last="Zhang" data-percentage="5.263157894736842">
+                    <td class="section-header">Section 12</td>
+                    <td>Dr Zhang, Emma</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5.263157894736842%">
+                                1/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>5.3%</strong></td>
+                </tr>
+
+                <tr data-section="13" data-teacher-last="Yu" data-percentage="0.0">
+                    <td class="section-header">Section 13</td>
+                    <td>Mr Yu, Leo K H</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="14" data-teacher-last="Yu" data-percentage="5.263157894736842">
+                    <td class="section-header">Section 14</td>
+                    <td>Mr Yu, Leo K H</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5.263157894736842%">
+                                1/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>5.3%</strong></td>
+                </tr>
+
+                <tr data-section="15" data-teacher-last="Yu" data-percentage="0.0">
+                    <td class="section-header">Section 15</td>
+                    <td>Mr Yu, Leo K H</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/16
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="17" data-teacher-last="Acton" data-percentage="0.0">
+                    <td class="section-header">Section 17</td>
+                    <td>Mr Acton, Caleb</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="18" data-teacher-last="Acton" data-percentage="0.0">
+                    <td class="section-header">Section 18</td>
+                    <td>Mr Acton, Caleb</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="19" data-teacher-last="Acton" data-percentage="0.0">
+                    <td class="section-header">Section 19</td>
+                    <td>Mr Acton, Caleb</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="20" data-teacher-last="Acton" data-percentage="0.0">
+                    <td class="section-header">Section 20</td>
+                    <td>Mr Acton, Caleb</td>
+                    <td>0</td>
+                    <td>14</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/14
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="21" data-teacher-last="Wong" data-percentage="0.0">
+                    <td class="section-header">Section 21</td>
+                    <td>Ms Wong, Nga Chong</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="22" data-teacher-last="Wong" data-percentage="0.0">
+                    <td class="section-header">Section 22</td>
+                    <td>Ms Wong, Nga Chong</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="23" data-teacher-last="Wong" data-percentage="5.263157894736842">
+                    <td class="section-header">Section 23</td>
+                    <td>Ms Wong, Nga Chong</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5.263157894736842%">
+                                1/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>5.3%</strong></td>
+                </tr>
+
+                <tr data-section="24" data-teacher-last="Wong" data-percentage="0.0">
+                    <td class="section-header">Section 24</td>
+                    <td>Ms Wong, Nga Chong</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/16
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="25" data-teacher-last="Wong" data-percentage="0.0">
+                    <td class="section-header">Section 25</td>
+                    <td>Ms Wong, Nga Chong</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/16
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="26" data-teacher-last="Wong" data-percentage="0.0">
+                    <td class="section-header">Section 26</td>
+                    <td>Miss Wong, Louisa W M</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/15
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="27" data-teacher-last="Wong" data-percentage="0.0">
+                    <td class="section-header">Section 27</td>
+                    <td>Miss Wong, Louisa W M</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="28" data-teacher-last="Wong" data-percentage="0.0">
+                    <td class="section-header">Section 28</td>
+                    <td>Miss Wong, Louisa W M</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/16
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="30" data-teacher-last="Ngai" data-percentage="0.0">
+                    <td class="section-header">Section 30</td>
+                    <td>Mr Ngai, Hollis Ho Lun</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="31" data-teacher-last="Cheung" data-percentage="0.0">
+                    <td class="section-header">Section 31</td>
+                    <td>Mr Cheung, Angus H Y</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="32" data-teacher-last="Cheung" data-percentage="0.0">
+                    <td class="section-header">Section 32</td>
+                    <td>Mr Cheung, Angus H Y</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="33" data-teacher-last="Cheung" data-percentage="0.0">
+                    <td class="section-header">Section 33</td>
+                    <td>Mr Cheung, Angus H Y</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="34" data-teacher-last="Cheung" data-percentage="5.263157894736842">
+                    <td class="section-header">Section 34</td>
+                    <td>Mr Cheung, Angus H Y</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5.263157894736842%">
+                                1/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>5.3%</strong></td>
+                </tr>
+
+                <tr data-section="35" data-teacher-last="Cheung" data-percentage="0.0">
+                    <td class="section-header">Section 35</td>
+                    <td>Mr Cheung, Angus H Y</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="36" data-teacher-last="Wang" data-percentage="4.545454545454546">
+                    <td class="section-header">Section 36</td>
+                    <td>Dr Wang, Simon H</td>
+                    <td>1</td>
+                    <td>22</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 4.545454545454546%">
+                                1/22
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>4.5%</strong></td>
+                </tr>
+
+                <tr data-section="37" data-teacher-last="Wang" data-percentage="12.5">
+                    <td class="section-header">Section 37</td>
+                    <td>Dr Wang, Simon H</td>
+                    <td>2</td>
+                    <td>16</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 12.5%">
+                                2/16
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>12.5%</strong></td>
+                </tr>
+
+                <tr data-section="38" data-teacher-last="Wang" data-percentage="0.0">
+                    <td class="section-header">Section 38</td>
+                    <td>Dr Wang, Simon H</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="40" data-teacher-last="Guo" data-percentage="0.0">
+                    <td class="section-header">Section 40</td>
+                    <td>Dr Guo, Nancy</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/16
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="43" data-teacher-last="WONG" data-percentage="0.0">
+                    <td class="section-header">Section 43</td>
+                    <td>Mr WONG, Andrew</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/15
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="44" data-teacher-last="WONG" data-percentage="0.0">
+                    <td class="section-header">Section 44</td>
+                    <td>Mr WONG, Andrew</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/15
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="45" data-teacher-last="WONG" data-percentage="0.0">
+                    <td class="section-header">Section 45</td>
+                    <td>Mr WONG, Andrew</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/16
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="46" data-teacher-last="WONG" data-percentage="0.0">
+                    <td class="section-header">Section 46</td>
+                    <td>Mr WONG, Andrew</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="47" data-teacher-last="WONG" data-percentage="0.0">
+                    <td class="section-header">Section 47</td>
+                    <td>Mr WONG, Andrew</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="48" data-teacher-last="WOO" data-percentage="0.0">
+                    <td class="section-header">Section 48</td>
+                    <td>Mr WOO, Oscar TC</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/19
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="49" data-teacher-last="WOO" data-percentage="0.0">
+                    <td class="section-header">Section 49</td>
+                    <td>Mr WOO, Oscar TC</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/15
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="50" data-teacher-last="WOO" data-percentage="0.0">
+                    <td class="section-header">Section 50</td>
+                    <td>Mr WOO, Oscar TC</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="51" data-teacher-last="WOO" data-percentage="0.0">
+                    <td class="section-header">Section 51</td>
+                    <td>Mr WOO, Oscar TC</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="52" data-teacher-last="WOO" data-percentage="0.0">
+                    <td class="section-header">Section 52</td>
+                    <td>Mr WOO, Oscar TC</td>
+                    <td>0</td>
+                    <td>18</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/18
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="53" data-teacher-last="Della Pietra" data-percentage="0.0">
+                    <td class="section-header">Section 53</td>
+                    <td>Mr Della Pietra, John</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="54" data-teacher-last="Della Pietra" data-percentage="0.0">
+                    <td class="section-header">Section 54</td>
+                    <td>Mr Della Pietra, John</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+                <tr data-section="55" data-teacher-last="Della Pietra" data-percentage="0.0">
+                    <td class="section-header">Section 55</td>
+                    <td>Mr Della Pietra, John</td>
+                    <td>0</td>
+                    <td>17</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0.0%">
+                                0/17
+                            </div>
+                        </div>
+                    </td>
+                    <td><strong>0.0%</strong></td>
+                </tr>
+
+            </tbody>
+        </table>
+        
+        <p class="timestamp">Generated on 2025-11-10 16:08:13</p>
+    </div>
+    
+    <script>
+        function sortTable() {
+            const select = document.getElementById('sortBy');
+            const sortBy = select.value;
+            const table = document.getElementById('statsTable');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            rows.sort((a, b) => {
+                if (sortBy === 'section') {
+                    const aSection = parseInt(a.dataset.section) || 999;
+                    const bSection = parseInt(b.dataset.section) || 999;
+                    return aSection - bSection;
+                } else if (sortBy === 'teacher') {
+                    const aTeacher = (a.dataset.teacherLast || '').toLowerCase();
+                    const bTeacher = (b.dataset.teacherLast || '').toLowerCase();
+                    if (aTeacher === bTeacher) {
+                        // If same teacher, sort by section
+                        const aSection = parseInt(a.dataset.section) || 999;
+                        const bSection = parseInt(b.dataset.section) || 999;
+                        return aSection - bSection;
+                    }
+                    return aTeacher.localeCompare(bTeacher);
+                } else if (sortBy === 'percentage') {
+                    const aPct = parseFloat(a.dataset.percentage) || 0;
+                    const bPct = parseFloat(b.dataset.percentage) || 0;
+                    // Sort descending (highest percentage first)
+                    if (bPct === aPct) {
+                        // If same percentage, sort by section
+                        const aSection = parseInt(a.dataset.section) || 999;
+                        const bSection = parseInt(b.dataset.section) || 999;
+                        return aSection - bSection;
+                    }
+                    return bPct - aPct;
+                }
+                return 0;
+            });
+            
+            // Remove all rows and re-append in sorted order
+            rows.forEach(row => tbody.removeChild(row));
+            rows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
+</body>
+</html>
