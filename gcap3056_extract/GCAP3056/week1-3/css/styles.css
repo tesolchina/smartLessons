@@ -1,0 +1,163 @@
+/* ============================================
+   TEXT & COLOR ENHANCEMENTS
+   ============================================ */
+
+/* Strong text color for main content */
+body, .text-gray-700, .text-gray-800, .text-gray-900, .text-gray-500, .text-gray-600 {
+    color: #222 !important;
+    font-weight: 400;
+}
+
+.dark body, 
+.dark .text-gray-700, 
+.dark .text-gray-800, 
+.dark .text-gray-900,
+.dark .text-gray-500,
+.dark .text-gray-600 {
+    color: #f1f5f9 !important;
+}
+
+/* Feedback and status text */
+#govMcFeedback,
+#govTfFeedback,
+#transFb,
+#codeQuizFb,
+#ltrFb,
+.completion-status {
+    color: #222 !important;
+}
+.dark #govMcFeedback,
+.dark #govTfFeedback,
+.dark #transFb,
+.dark #codeQuizFb,
+.dark #ltrFb,
+.dark .completion-status {
+    color: #f1f5f9 !important;
+}
+
+/* MC/quiz button clarity */
+.gov-mc-btn,
+.trans-btn,
+.code-btn,
+.quiz-option {
+    color: #222 !important;
+    font-weight: 500;
+}
+.dark .gov-mc-btn,
+.dark .trans-btn,
+.dark .code-btn,
+.dark .quiz-option {
+    color: #f1f5f9 !important;
+    font-weight: 500;
+}
+
+/* ============================================
+   BULLET POINT ALIGNMENT
+   ============================================ */
+
+ul, ul.list-disc, ul.list-decimal {
+    margin-left: 0 !important;
+    padding-left: 1em !important;
+    list-style-position: outside !important;
+}
+li {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    margin-bottom: 0.5em !important;
+    color: inherit !important;
+}
+.dark ul li {
+    color: #f1f5f9 !important;
+}
+
+/* No faded bullets anywhere */
+ul li, ul.list-disc li, ul.list-decimal li {
+    color: inherit !important;
+}
+
+/* ============================================
+   PAGE WIDTH & LAYOUT
+   ============================================ */
+
+/* Max width for main containers */
+.max-w-4xl, .max-w-6xl {
+    max-width: 1400px !important;
+    width: 98% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (min-width: 1600px) {
+    .max-w-4xl, .max-w-6xl {
+        max-width: 1600px !important;
+        width: 95% !important;
+    }
+}
+
+/* Adjust for mobile/tablet */
+@media (max-width: 1023px) {
+    .max-w-4xl, .max-w-6xl {
+        width: 100% !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}
+
+/* Content area min-height for better visual balance */
+#contentArea {
+    min-height: 60vh;
+    transition: all 0.3s ease;
+    background: inherit;
+}
+
+/* ============================================
+   NOTIFICATION & FEEDBACK
+   ============================================ */
+
+.notification {
+    background: #fff;
+    color: #222;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+.dark .notification {
+    background: #222;
+    color: #f1f5f9;
+}
+
+/* ============================================
+   PRINT & ACCESSIBILITY
+   ============================================ */
+@media print {
+    .notification, #loadingIndicator, button { display: none !important; }
+    .max-w-4xl, .max-w-6xl { max-width: none !important; width: 100% !important; }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Accessibility: Focus ring for all buttons */
+button:focus, .section-btn:focus {
+    outline: 2px solid #5D5CDE;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   MISCELLANEOUS
+   ============================================ */
+
+/* Remove unwanted faded text for all gray variants */
+.text-gray-500, .text-gray-600, .text-gray-700 {
+    color: #222 !important;
+}
+.dark .text-gray-500, .dark .text-gray-600, .dark .text-gray-700 {
+    color: #f1f5f9 !important;
+}
+
+/* Ensure all list items are visible in dark mode */
+ul li {
+    color: inherit !important;
+}
+.dark ul li {
+    color: #f1f5f9 !important;
+}

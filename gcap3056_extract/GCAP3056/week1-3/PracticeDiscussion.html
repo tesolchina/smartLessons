@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice & Discussion Activities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-light': '#7B7AE8',
+                        'primary-dark': '#4A49C2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Reset and ensure compatibility */
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; }
+        
+        .practice-card {
+            transition: all 0.3s ease;
+        }
+        .practice-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+        .completed-task {
+            border-color: #10B981;
+            background-color: #F0FDF4;
+        }
+        .expandable-content {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .fade-in {
+            animation: fadeIn 0.4s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notificationText">Ready!</span>
+    </div>
+
+    <!-- Progress Header -->
+    <div class="bg-white rounded-lg p-4 mb-6 shadow-sm">
+        <div class="flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-900">Practice & Discussion</h1>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-600">Progress: <span id="progressText">0%</span></span>
+                <button id="reportBtn" class="bg-blue-600 text-white px-3 py-2 rounded text-sm">Report</button>
+            </div>
+        </div>
+        <div class="mt-2 bg-gray-200 rounded-full h-2">
+            <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
+        <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-xl">✍️</span>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-gray-900 mb-2">Writing & Discussion Activities</h2>
+                <p class="text-gray-700 mb-4">
+                    Complete these reflective writing tasks to deepen your understanding. Each task includes support for peer discussion and AI feedback.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        <span class="text-gray-600">Write your responses</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span class="text-gray-600">Discuss with peers</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span class="text-gray-600">Get AI feedback</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task 1: Personal Experience Reflection -->
+    <div class="practice-card bg-white rounded-lg border-2 border-gray-200 p-6 mb-6" data-task="1">
+        <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">1</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Personal Experience Reflection</h3>
+            </div>
+            <div class="task-status text-gray-400" id="status-1">⭕</div>
+        </div>
+
+        <div class="mb-4">
+            <p class="text-gray-700 mb-3">
+                Think about a time when you encountered a problem with a service or system that affected your daily life.
+            </p>
+            
+            <!-- Expandable Instructions -->
+            <button onclick="toggleInstructions(1)" class="text-blue-600 hover:underline text-sm flex items-center">
+                <span id="instruction-toggle-1">📖 Show detailed instructions</span>
+                <svg class="w-4 h-4 ml-1 transform transition-transform" id="chevron-1">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            
+            <div id="instructions-1" class="expandable-content max-h-0 mt-3">
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <h4 class="font-semibold text-blue-800 mb-2">Detailed Instructions:</h4>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• Choose a specific incident (transportation, healthcare, education, etc.)</li>
+                        <li>• Describe what went wrong and how it affected you</li>
+                        <li>• Write 2-3 sentences about your initial reaction</li>
+                        <li>• Consider: Did you take any action? Why or why not?</li>
+                        <li>• Be honest about your response - there's no "right" answer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Writing Area -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Your Response:</label>
+            <textarea id="response-1" 
+                      rows="4" 
+                      placeholder="Write about your experience here..."
+                      class="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      oninput="updateTaskProgress(1)"></textarea>
+            <div class="text-xs text-gray-500 mt-1">
+                Characters: <span id="char-count-1">0</span> | Words: <span id="word-count-1">0</span>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Peer Discussion -->
+            <div class="bg-green-50 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                    <span class="mr-2">👥</span> Peer Discussion
+                </h4>
+                <p class="text-sm text-green-700 mb-3">
+                    Share your experience with classmates and learn from their perspectives.
+                </p>
+                <button onclick="showPeerPrompts(1)" class="text-green-600 hover:underline text-sm">
+                    📋 Get discussion prompts
+                </button>
+            </div>
+
+            <!-- AI Feedback -->
+            <div class="bg-purple-50 rounded-lg p-4">
+                <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                    <span class="mr-2">🤖</span> AI Feedback
+                </h4>
+                <p class="text-sm text-purple-700 mb-3">
+                    Get personalized feedback on your reflection.
+                </p>
+                <button onclick="generateAIPrompt(1)" class="text-purple-600 hover:underline text-sm">
+                    ✨ Generate AI prompt
+                </button>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Areas -->
+        <div id="peer-prompts-1" class="hidden mt-4"></div>
+        <div id="ai-prompt-1" class="hidden mt-4"></div>
+    </div>
+
+    <!-- Task 2: Strategic Analysis -->
+    <div class="practice-card bg-white rounded-lg border-2 border-gray-200 p-6 mb-6" data-task="2">
+        <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">2</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Action Strategy Development</h3>
+            </div>
+            <div class="task-status text-gray-400" id="status-2">⭕</div>
+        </div>
+
+        <div class="mb-4">
+            <p class="text-gray-700 mb-3">
+                If you could go back to the situation you described, what would be your ideal action plan to address the problem?
+            </p>
+            
+            <button onclick="toggleInstructions(2)" class="text-blue-600 hover:underline text-sm flex items-center">
+                <span id="instruction-toggle-2">📖 Show detailed instructions</span>
+                <svg class="w-4 h-4 ml-1 transform transition-transform" id="chevron-2">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            
+            <div id="instructions-2" class="expandable-content max-h-0 mt-3">
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <h4 class="font-semibold text-blue-800 mb-2">Think about:</h4>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• Who has the power to fix this problem?</li>
+                        <li>• What would be your first step?</li>
+                        <li>• How would you escalate if needed?</li>
+                        <li>• What evidence would strengthen your case?</li>
+                        <li>• How would you stay motivated through setbacks?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Your Action Plan:</label>
+            <textarea id="response-2" 
+                      rows="5" 
+                      placeholder="Describe your strategic approach..."
+                      class="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      oninput="updateTaskProgress(2)"></textarea>
+            <div class="text-xs text-gray-500 mt-1">
+                Characters: <span id="char-count-2">0</span> | Words: <span id="word-count-2">0</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-green-50 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                    <span class="mr-2">👥</span> Peer Discussion
+                </h4>
+                <p class="text-sm text-green-700 mb-3">
+                    Compare strategies and learn from different approaches.
+                </p>
+                <button onclick="showPeerPrompts(2)" class="text-green-600 hover:underline text-sm">
+                    📋 Get discussion prompts
+                </button>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-4">
+                <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                    <span class="mr-2">🤖</span> AI Feedback
+                </h4>
+                <p class="text-sm text-purple-700 mb-3">
+                    Refine your strategy with AI suggestions.
+                </p>
+                <button onclick="generateAIPrompt(2)" class="text-purple-600 hover:underline text-sm">
+                    ✨ Generate AI prompt
+                </button>
+            </div>
+        </div>
+
+        <div id="peer-prompts-2" class="hidden mt-4"></div>
+        <div id="ai-prompt-2" class="hidden mt-4"></div>
+    </div>
+
+    <!-- Task 3: Professional Communication -->
+    <div class="practice-card bg-white rounded-lg border-2 border-gray-200 p-6 mb-6" data-task="3">
+        <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">3</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Professional Communication</h3>
+            </div>
+            <div class="task-status text-gray-400" id="status-3">⭕</div>
+        </div>
+
+        <div class="mb-4">
+            <p class="text-gray-700 mb-3">
+                Write a professional email or letter to the appropriate authority about your problem. Focus on clarity, evidence, and constructive tone.
+            </p>
+            
+            <button onclick="toggleInstructions(3)" class="text-blue-600 hover:underline text-sm flex items-center">
+                <span id="instruction-toggle-3">📖 Show writing guidelines</span>
+                <svg class="w-4 h-4 ml-1 transform transition-transform" id="chevron-3">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            
+            <div id="instructions-3" class="expandable-content max-h-0 mt-3">
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <h4 class="font-semibold text-blue-800 mb-2">Professional Email Structure:</h4>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• <strong>Subject:</strong> Clear, specific description</li>
+                        <li>• <strong>Opening:</strong> Polite greeting and purpose</li>
+                        <li>• <strong>Problem:</strong> Concise description with specifics</li>
+                        <li>• <strong>Impact:</strong> How it affects you/others</li>
+                        <li>• <strong>Request:</strong> Specific action you want</li>
+                        <li>• <strong>Closing:</strong> Professional sign-off</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Your Professional Communication:</label>
+            <textarea id="response-3" 
+                      rows="8" 
+                      placeholder="Subject: [Your subject line]
+
+Dear [Authority],
+
+[Write your professional message here...]
+
+Sincerely,
+[Your name]"
+                      class="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm"
+                      oninput="updateTaskProgress(3)"></textarea>
+            <div class="text-xs text-gray-500 mt-1">
+                Characters: <span id="char-count-3">0</span> | Words: <span id="word-count-3">0</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-green-50 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                    <span class="mr-2">👥</span> Peer Review
+                </h4>
+                <p class="text-sm text-green-700 mb-3">
+                    Get feedback on tone, clarity, and effectiveness.
+                </p>
+                <button onclick="showPeerPrompts(3)" class="text-green-600 hover:underline text-sm">
+                    📋 Get review prompts
+                </button>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-4">
+                <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                    <span class="mr-2">🤖</span> AI Review
+                </h4>
+                <p class="text-sm text-purple-700 mb-3">
+                    Improve your professional communication.
+                </p>
+                <button onclick="generateAIPrompt(3)" class="text-purple-600 hover:underline text-sm">
+                    ✨ Generate review prompt
+                </button>
+            </div>
+        </div>
+
+        <div id="peer-prompts-3" class="hidden mt-4"></div>
+        <div id="ai-prompt-3" class="hidden mt-4"></div>
+    </div>
+
+    <!-- Task 4: Learning Synthesis -->
+    <div class="practice-card bg-white rounded-lg border-2 border-gray-200 p-6 mb-6" data-task="4">
+        <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">4</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Key Insights & Takeaways</h3>
+            </div>
+            <div class="task-status text-gray-400" id="status-4">⭕</div>
+        </div>
+
+        <div class="mb-4">
+            <p class="text-gray-700 mb-3">
+                Reflect on what you've learned from this experience. What are the most important insights about citizen advocacy and policy change?
+            </p>
+            
+            <button onclick="toggleInstructions(4)" class="text-blue-600 hover:underline text-sm flex items-center">
+                <span id="instruction-toggle-4">📖 Show reflection guide</span>
+                <svg class="w-4 h-4 ml-1 transform transition-transform" id="chevron-4">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            
+            <div id="instructions-4" class="expandable-content max-h-0 mt-3">
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <h4 class="font-semibold text-blue-800 mb-2">Consider these questions:</h4>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• What surprised you about the advocacy process?</li>
+                        <li>• How has your confidence in taking action changed?</li>
+                        <li>• What skills do you still need to develop?</li>
+                        <li>• How might you apply these lessons in the future?</li>
+                        <li>• What advice would you give to others?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Your Learning Synthesis:</label>
+            <textarea id="response-4" 
+                      rows="6" 
+                      placeholder="Share your key insights and learning outcomes..."
+                      class="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      oninput="updateTaskProgress(4)"></textarea>
+            <div class="text-xs text-gray-500 mt-1">
+                Characters: <span id="char-count-4">0</span> | Words: <span id="word-count-4">0</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-green-50 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                    <span class="mr-2">👥</span> Peer Discussion
+                </h4>
+                <p class="text-sm text-green-700 mb-3">
+                    Share insights and learn from diverse perspectives.
+                </p>
+                <button onclick="showPeerPrompts(4)" class="text-green-600 hover:underline text-sm">
+                    📋 Get discussion prompts
+                </button>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-4">
+                <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                    <span class="mr-2">🤖</span> AI Feedback
+                </h4>
+                <p class="text-sm text-purple-700 mb-3">
+                    Deepen your reflection with AI guidance.
+                </p>
+                <button onclick="generateAIPrompt(4)" class="text-purple-600 hover:underline text-sm">
+                    ✨ Generate AI prompt
+                </button>
+            </div>
+        </div>
+
+        <div id="peer-prompts-4" class="hidden mt-4"></div>
+        <div id="ai-prompt-4" class="hidden mt-4"></div>
+    </div>
+
+    <!-- Completion Summary -->
+    <div id="completionSummary" class="hidden bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 border border-green-200">
+        <div class="text-center">
+            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white text-2xl">🎉</span>
+            </div>
+            <h3 class="text-2xl font-bold text-green-800 mb-4">Practice Tasks Complete!</h3>
+            <p class="text-green-700 mb-6">
+                Excellent work! You've completed all writing tasks and are ready to move forward in your learning journey.
+            </p>
+            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto text-sm text-green-600">
+                <div>📝 Words written: <span id="totalWords">0</span></div>
+                <div>⏱️ Time spent: <span id="totalTime">0 min</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Immediate execution - simple and robust
+        console.log('Practice & Discussion: Script starting...');
+        
+        // Simple state - no localStorage dependencies
+        window.practiceState = {
+            currentTask: 1,
+            taskResponses: {1: '', 2: '', 3: '', 4: ''},
+            taskProgress: {1: 0, 2: 0, 3: 0, 4: 0},
+            completedTasks: [],
+            startTime: Date.now(),
+            timeSpent: 0,
+            totalWords: 0
+        };
+        
+        // Utility functions
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const text = document.getElementById('notificationText');
+            if (notification && text) {
+                text.textContent = message;
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 3000);
+            }
+            console.log('Notification:', message);
+        }
+        
+        function updateProgress(percent) {
+            const bar = document.getElementById('progressBar');
+            const text = document.getElementById('progressText');
+            if (bar) bar.style.width = percent + '%';
+            if (text) text.textContent = percent + '%';
+        }
+        
+        // Toggle instructions
+        function toggleInstructions(taskId) {
+            const instructions = document.getElementById(`instructions-${taskId}`);
+            const toggle = document.getElementById(`instruction-toggle-${taskId}`);
+            const chevron = document.getElementById(`chevron-${taskId}`);
+            
+            if (instructions.style.maxHeight === '0px' || !instructions.style.maxHeight) {
+                instructions.style.maxHeight = instructions.scrollHeight + 'px';
+                toggle.textContent = '📖 Hide detailed instructions';
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                instructions.style.maxHeight = '0px';
+                toggle.textContent = '📖 Show detailed instructions';
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Update task progress
+        function updateTaskProgress(taskId) {
+            const textarea = document.getElementById(`response-${taskId}`);
+            const response = textarea.value.trim();
+            const wordCount = response ? response.split(/\s+/).filter(word => word.length > 0).length : 0;
+            const charCount = response.length;
+            
+            // Update counters
+            document.getElementById(`char-count-${taskId}`).textContent = charCount;
+            document.getElementById(`word-count-${taskId}`).textContent = wordCount;
+            
+            // Calculate progress (complete if 20+ words)
+            const progress = Math.min(wordCount / 20, 1);
+            window.practiceState.taskProgress[taskId] = progress;
+            window.practiceState.taskResponses[taskId] = response;
+            
+            // Update status indicator
+            const status = document.getElementById(`status-${taskId}`);
+            const card = document.querySelector(`[data-task="${taskId}"]`);
+            
+            if (progress >= 1) {
+                status.textContent = '✅';
+                card.classList.add('completed-task');
+                if (!window.practiceState.completedTasks.includes(taskId)) {
+                    window.practiceState.completedTasks.push(taskId);
+                }
+            } else if (progress > 0) {
+                status.textContent = '⏳';
+                card.classList.remove('completed-task');
+                window.practiceState.completedTasks = window.practiceState.completedTasks.filter(id => id !== taskId);
+            } else {
+                status.textContent = '⭕';
+                card.classList.remove('completed-task');
+                window.practiceState.completedTasks = window.practiceState.completedTasks.filter(id => id !== taskId);
+            }
+            
+            updateOverallProgress();
+            
+            // Notify parent if available
+            try {
+                if (window.parent && window.parent.updateSectionProgress) {
+                    window.parent.updateSectionProgress('practice', calculateOverallProgress());
+                }
+            } catch (e) {
+                console.log('Parent communication not available');
+            }
+        }
+
+        // Calculate overall progress
+        function calculateOverallProgress() {
+            const totalProgress = Object.values(window.practiceState.taskProgress).reduce((sum, progress) => sum + progress, 0);
+            return Math.round((totalProgress / 4) * 100);
+        }
+
+        // Update overall progress display
+        function updateOverallProgress() {
+            const progress = calculateOverallProgress();
+            const completedCount = window.practiceState.completedTasks.length;
+            
+            updateProgress(progress);
+            
+            // Calculate total words
+            window.practiceState.totalWords = Object.values(window.practiceState.taskResponses)
+                .join(' ')
+                .split(/\s+/)
+                .filter(word => word.length > 0).length;
+            
+            window.practiceState.timeSpent = Math.round((Date.now() - window.practiceState.startTime) / 1000 / 60);
+            
+            // Show completion summary if all tasks done
+            if (completedCount === 4) {
+                showCompletionSummary();
+            }
+        }
+
+        // Show completion summary
+        function showCompletionSummary() {
+            const summary = document.getElementById('completionSummary');
+            summary.classList.remove('hidden');
+            
+            document.getElementById('totalWords').textContent = window.practiceState.totalWords;
+            document.getElementById('totalTime').textContent = window.practiceState.timeSpent;
+            
+            summary.scrollIntoView({ behavior: 'smooth' });
+            showNotification('All practice tasks completed!');
+        }
+
+        // Show peer discussion prompts
+        function showPeerPrompts(taskId) {
+            const container = document.getElementById(`peer-prompts-${taskId}`);
+            
+            if (container.classList.contains('hidden')) {
+                const prompts = getPeerPrompts(taskId);
+                container.innerHTML = `
+                    <div class="bg-green-50 rounded-lg p-4 border border-green-200 fade-in">
+                        <h4 class="font-semibold text-green-800 mb-3">👥 Discussion Prompts for Peers</h4>
+                        <div class="space-y-3 text-sm text-green-700">
+                            ${prompts.map(prompt => `<div class="bg-white p-3 rounded border">💬 ${prompt}</div>`).join('')}
+                        </div>
+                        <button onclick="hidePeerPrompts(${taskId})" class="mt-3 text-green-600 hover:underline text-sm">
+                            ↑ Hide prompts
+                        </button>
+                    </div>
+                `;
+                container.classList.remove('hidden');
+            }
+        }
+
+        // Hide peer prompts
+        function hidePeerPrompts(taskId) {
+            document.getElementById(`peer-prompts-${taskId}`).classList.add('hidden');
+        }
+
+        // Get peer discussion prompts
+        function getPeerPrompts(taskId) {
+            const prompts = {
+                1: [
+                    "Share your experience briefly and ask: 'What would you have done in this situation?'",
+                    "Ask peers: 'Have you had similar frustrations with services? How did you handle them?'",
+                    "Discuss: 'What makes some people take action while others don't? What are the barriers?'"
+                ],
+                2: [
+                    "Compare action strategies: 'What's different about our approaches and why?'",
+                    "Ask for feedback: 'What strengths and gaps do you see in my action plan?'",
+                    "Discuss: 'Which strategies seem most realistic? What obstacles might we face?'"
+                ],
+                3: [
+                    "Exchange drafts and ask: 'How clear and persuasive is this communication?'",
+                    "Get feedback: 'What tone comes across? Is it professional but assertive enough?'",
+                    "Discuss: 'What makes official communication effective? Share examples you've seen.'"
+                ],
+                4: [
+                    "Share key insights: 'What surprised you most about this learning experience?'",
+                    "Compare takeaways: 'How are our lessons similar or different?'",
+                    "Plan forward: 'What specific actions will you take based on these insights?'"
+                ]
+            };
+            return prompts[taskId] || [];
+        }
+
+        // Generate AI feedback prompt
+        function generateAIPrompt(taskId) {
+            const container = document.getElementById(`ai-prompt-${taskId}`);
+            const response = window.practiceState.taskResponses[taskId];
+            
+            if (!response.trim()) {
+                showNotification('Please write your response first before generating an AI prompt.');
+                return;
+            }
+            
+            if (container.classList.contains('hidden')) {
+                const prompt = getAIPrompt(taskId, response);
+                container.innerHTML = `
+                    <div class="bg-purple-50 rounded-lg p-4 border border-purple-200 fade-in">
+                        <h4 class="font-semibold text-purple-800 mb-3">🤖 AI Feedback Prompt</h4>
+                        <div class="bg-white rounded border p-3 font-mono text-sm text-gray-700 mb-3 max-h-40 overflow-y-auto">
+                            ${prompt.replace(/\n/g, '<br>')}
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="copyToClipboard(${taskId}, \`${prompt.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`)" 
+                                    class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm flex items-center">
+                                📋 Copy Prompt
+                            </button>
+                            <button onclick="hideAIPrompt(${taskId})" 
+                                    class="text-purple-600 hover:underline text-sm px-4 py-2">
+                                ↑ Hide prompt
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.classList.remove('hidden');
+            }
+        }
+
+        // Hide AI prompt
+        function hideAIPrompt(taskId) {
+            document.getElementById(`ai-prompt-${taskId}`).classList.add('hidden');
+        }
+
+        // Get AI prompt for task
+        function getAIPrompt(taskId, response) {
+            const prompts = {
+                1: `Please review my reflection about a personal experience with a service problem and provide constructive feedback:
+
+MY REFLECTION:
+"${response}"
+
+Please provide feedback on:
+1. How clearly I described the problem and its impact
+2. Whether my emotional response seems realistic and relatable
+3. What insights I might be missing about the situation
+4. How this experience could connect to broader themes about citizen advocacy
+5. Suggestions for deeper reflection or additional perspectives to consider
+
+Keep your feedback encouraging while helping me think more critically about the experience.`,
+
+                2: `Please review my action strategy for addressing a service problem and provide constructive feedback:
+
+MY ACTION PLAN:
+"${response}"
+
+Please evaluate:
+1. How realistic and feasible my proposed actions are
+2. Whether I've identified the right stakeholders and decision-makers
+3. How well I've thought through potential obstacles and escalation
+4. The strategic logic of my approach (sequence, timing, tactics)
+5. What I might be overlooking or could strengthen
+
+Provide specific suggestions for improving the strategy while acknowledging what I've done well.`,
+
+                3: `Please review my professional communication draft and provide feedback for improvement:
+
+MY COMMUNICATION:
+"${response}"
+
+Please assess:
+1. Professional tone and appropriateness for the audience
+2. Clarity and organization of the message
+3. Strength of evidence and persuasiveness
+4. Specific and actionable requests
+5. Overall effectiveness for achieving my goal
+
+Provide specific suggestions for improving the communication style, structure, and content while noting strengths in my current draft.`,
+
+                4: `Please review my learning synthesis about citizen advocacy and help me deepen my insights:
+
+MY REFLECTION:
+"${response}"
+
+Please provide feedback on:
+1. How well I've identified key learning outcomes
+2. Whether my insights connect to broader principles of civic engagement
+3. How realistic my planned applications are
+4. What important lessons I might be missing
+5. How I could further develop my thinking about policy advocacy
+
+Help me think more critically about the implications of what I've learned and how to apply it effectively.`
+            };
+            
+            return prompts[taskId] || '';
+        }
+
+        // Copy to clipboard
+        function copyToClipboard(taskId, text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('Copied to clipboard!');
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showNotification('Copied to clipboard!');
+        }
+
+        // Export state for parent access
+        window.getPracticeState = function() {
+            return window.practiceState;
+        };
+
+        // Handle report generation
+        function handleReport() {
+            console.log('Practice data:', window.practiceState);
+            showNotification('Report generated! Check console.');
+            
+            // Try to send to parent
+            try {
+                if (window.parent && window.parent.generateReport) {
+                    window.parent.generateReport(window.practiceState);
+                }
+            } catch (e) {
+                console.log('Parent report function not available');
+            }
+        }
+
+        // Initialize
+        function initialize() {
+            console.log('Initializing practice module...');
+            
+            try {
+                // Setup report button
+                const reportBtn = document.getElementById('reportBtn');
+                if (reportBtn) {
+                    reportBtn.addEventListener('click', handleReport);
+                }
+                
+                updateProgress(0);
+                showNotification('Practice module loaded!');
+                console.log('Practice initialization complete');
+            } catch (error) {
+                console.error('Initialization error:', error);
+                showNotification('Error loading practice module');
+            }
+        }
+        
+        // Start when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initialize);
+        } else {
+            initialize();
+        }
+        
+        console.log('Practice & Discussion: Script loaded');
+    </script>
+</body>
+</html>
